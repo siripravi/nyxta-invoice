@@ -184,7 +184,7 @@ class SiteController extends Controller
     public function actionLogin()
     {
         // Yii::app()->theme = "fusion";
-        $this->layout = "login";
+        $this->layout = "login";  
         $model = new LoginForm;
 
         // if it is ajax validation request
