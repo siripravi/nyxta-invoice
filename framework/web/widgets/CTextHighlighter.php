@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CTextHighlighter class file.
  *
@@ -8,8 +9,8 @@
  * @license https://www.yiiframework.com/license/
  */
 
-require_once(Yii::getPathOfAlias('system.vendors.TextHighlighter.Text.Highlighter').'.php');
-require_once(Yii::getPathOfAlias('system.vendors.TextHighlighter.Text.Highlighter.Renderer.Html').'.php');
+require_once(Yii::getPathOfAlias('system.vendors.TextHighlighter.Text.Highlighter') . '.php');
+require_once(Yii::getPathOfAlias('system.vendors.TextHighlighter.Text.Highlighter.Renderer.Html') . '.php');
 
 /**
  * CTextHighlighter does syntax highlighting for its body content.
@@ -41,16 +42,16 @@ class CTextHighlighter extends COutputProcessor
 	 * @var boolean whether to show line numbers in the highlighted result. Defaults to false.
 	 * @see lineNumberStyle
 	 */
-	public $showLineNumbers=false;
+	public $showLineNumbers = false;
 	/**
 	 * @var string the style of line number display. It can be either 'list' or 'table'. Defaults to 'list'.
 	 * @see showLineNumbers
 	 */
-	public $lineNumberStyle='list';
+	public $lineNumberStyle = 'list';
 	/**
 	 * @var integer tab size. Defaults to 4.
 	 */
-	public $tabSize=4;
+	public $tabSize = 4;
 	/**
 	 * @var mixed the CSS file used for the widget. Defaults to null, meaning
 	 * using the default CSS file included together with the widget.
@@ -62,7 +63,7 @@ class CTextHighlighter extends COutputProcessor
 	 * @var array the HTML attributes to be applied to the container element.
 	 * The highlighted content is contained in a DIV element.
 	 */
-	public $containerOptions=array();
+	public $containerOptions = array();
 
 
 	/**
@@ -72,7 +73,7 @@ class CTextHighlighter extends COutputProcessor
 	 */
 	public function processOutput($output)
 	{
-		$output=$this->highlight($output);
+		$output = $this->highlight($output);
 		parent::processOutput($output);
 	}
 
@@ -85,21 +86,20 @@ class CTextHighlighter extends COutputProcessor
 	{
 		$this->registerClientScript();
 
-		$options['use_language']=true;
-		$options['tabsize']=$this->tabSize;
-		if($this->showLineNumbers)
-			$options['numbers']=($this->lineNumberStyle==='list')?HL_NUMBERS_LI:HL_NUMBERS_TABLE;
+		$options['use_language'] = true;
+		$options['tabsize'] = $this->tabSize;
+		if ($this->showLineNumbers)
+			$options['numbers'] = ($this->lineNumberStyle === 'list') ? HL_NUMBERS_LI : HL_NUMBERS_TABLE;
 
-		$highlighter=empty($this->language)?false:Text_Highlighter::factory($this->language);
-		if($highlighter===false)
-			$o='<pre>'.CHtml::encode($content).'</pre>';
-		else
-		{
+		$highlighter = empty($this->language) ? false : Text_Highlighter::factory($this->language);
+		if ($highlighter === false)
+			$o = '<pre>' . CHtml::encode($content) . '</pre>';
+		else {
 			$highlighter->setRenderer(new Text_Highlighter_Renderer_Html($options));
-			$o=preg_replace('/<span\s+[^>]*>(\s*)<\/span>/','\1',$highlighter->highlight($content));
+			$o = preg_replace('/<span\s+[^>]*>(\s*)<\/span>/', '\1', $highlighter->highlight($content));
 		}
 
-		return CHtml::tag('div',$this->containerOptions,$o);
+		return CHtml::tag('div', $this->containerOptions, $o);
 	}
 
 	/**
@@ -107,7 +107,7 @@ class CTextHighlighter extends COutputProcessor
 	 */
 	public function registerClientScript()
 	{
-		if($this->cssFile!==false)
+		if ($this->cssFile !== false)
 			self::registerCssFile($this->cssFile);
 	}
 
@@ -115,10 +115,10 @@ class CTextHighlighter extends COutputProcessor
 	 * Registers the needed CSS file.
 	 * @param string $url the CSS URL. If null, a default CSS URL will be used.
 	 */
-	public static function registerCssFile($url=null)
+	public static function registerCssFile($url = null)
 	{
-		if($url===null)
-			$url=CHtml::asset(Yii::getPathOfAlias('system.vendors.TextHighlighter.highlight').'.css');
+		if ($url === null)
+			$url = CHtml::asset(Yii::getPathOfAlias('system.vendors.TextHighlighter.highlight') . '.css');
 		Yii::app()->getClientScript()->registerCssFile($url);
 	}
 }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CEAcceleratorCache class file
  *
@@ -32,8 +33,8 @@ class CEAcceleratorCache extends CCache
 	public function init()
 	{
 		parent::init();
-		if(!function_exists('eaccelerator_get'))
-			throw new CException(Yii::t('yii','CEAcceleratorCache requires PHP eAccelerator extension to be loaded, enabled or compiled with the "--with-eaccelerator-shared-memory" option.'));
+		if (!function_exists('eaccelerator_get'))
+			throw new CException(Yii::t('yii', 'CEAcceleratorCache requires PHP eAccelerator extension to be loaded, enabled or compiled with the "--with-eaccelerator-shared-memory" option.'));
 	}
 
 	/**
@@ -57,9 +58,9 @@ class CEAcceleratorCache extends CCache
 	 * @param integer $expire the number of seconds in which the cached value will expire. 0 means never expire.
 	 * @return boolean true if the value is successfully stored into cache, false otherwise
 	 */
-	protected function setValue($key,$value,$expire)
+	protected function setValue($key, $value, $expire)
 	{
-		return eaccelerator_put($key,$value,$expire);
+		return eaccelerator_put($key, $value, $expire);
 	}
 
 	/**
@@ -71,9 +72,9 @@ class CEAcceleratorCache extends CCache
 	 * @param integer $expire the number of seconds in which the cached value will expire. 0 means never expire.
 	 * @return boolean true if the value is successfully stored into cache, false otherwise
 	 */
-	protected function addValue($key,$value,$expire)
+	protected function addValue($key, $value, $expire)
 	{
-		return (NULL === eaccelerator_get($key)) ? $this->setValue($key,$value,$expire) : false;
+		return (NULL === eaccelerator_get($key)) ? $this->setValue($key, $value, $expire) : false;
 	}
 
 	/**
@@ -99,7 +100,7 @@ class CEAcceleratorCache extends CCache
 		eaccelerator_gc();
 		// now, remove leftover cache-keys
 		$keys = eaccelerator_list_keys();
-		foreach($keys as $key)
+		foreach ($keys as $key)
 			$this->deleteValue(substr($key['name'], 1));
 		return true;
 	}

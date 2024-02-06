@@ -61,9 +61,11 @@ class UserController extends Controller
      */
     public function actionView($id)
     {
-        $this->render('view', array(
-            'model' => $this->loadModel($id),
-        )
+        $this->render(
+            'view',
+            array(
+                'model' => $this->loadModel($id),
+            )
         );
     }
 
@@ -100,9 +102,11 @@ class UserController extends Controller
             //Yii::log("errors saving SomeModel: " . var_export($model->getErrors(), true), CLogger::LEVEL_WARNING, __METHOD__);
         }
         if (!Yii::app()->request->isAjaxRequest)
-            $this->render('create', array(
-                'model' => $model,
-            )
+            $this->render(
+                'create',
+                array(
+                    'model' => $model,
+                )
             );
     }
 
@@ -125,9 +129,11 @@ class UserController extends Controller
                 $this->redirect('/user/admin');
         }
 
-        $this->render('update', array(
-            'model' => $model,
-        )
+        $this->render(
+            'update',
+            array(
+                'model' => $model,
+            )
         );
     }
 
@@ -151,9 +157,11 @@ class UserController extends Controller
     public function actionIndex()
     {
         $dataProvider = new CActiveDataProvider('User');
-        $this->render('index', array(
-            'dataProvider' => $dataProvider,
-        )
+        $this->render(
+            'index',
+            array(
+                'dataProvider' => $dataProvider,
+            )
         );
     }
 
@@ -167,9 +175,11 @@ class UserController extends Controller
         if (isset($_GET['User']))
             $model->attributes = $_GET['User'];
 
-        $this->render('admin', array(
-            'model' => $model,
-        )
+        $this->render(
+            'admin',
+            array(
+                'model' => $model,
+            )
         );
     }
 
@@ -199,5 +209,4 @@ class UserController extends Controller
             Yii::app()->end();
         }
     }
-
 }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'aa_ER'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -54,10 +55,10 @@ return array (
     'ETB' => 'Br',
     'ERN' => 'Nfk',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Qunxa Garablu',
       2 => 'Kudo',
       3 => 'Ciggilta Kudo',
@@ -71,8 +72,8 @@ return array (
       11 => 'Ximoli',
       12 => 'Kaxxa Garablu',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Qun',
       2 => 'Nah',
       3 => 'Cig',
@@ -87,10 +88,10 @@ return array (
       12 => 'Kax',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'Q',
       2 => 'N',
       3 => 'C',
@@ -105,10 +106,10 @@ return array (
       12 => 'K',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Acaada',
       1 => 'Etleeni',
       2 => 'Talaata',
@@ -117,8 +118,8 @@ return array (
       5 => 'Gumqata',
       6 => 'Sabti',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Aca',
       1 => 'Etl',
       2 => 'Tal',
@@ -128,10 +129,10 @@ return array (
       6 => 'Sab',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'A',
       1 => 'E',
       2 => 'T',
@@ -141,33 +142,33 @@ return array (
       6 => 'S',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'Yaasuusuk Duma',
       1 => 'Yaasuusuk Wadir',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Yaasuusuk Duma',
       1 => 'Yaasuusuk Wadir',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'Yaasuusuk Duma',
       1 => 'Yaasuusuk Wadir',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, MMMM dd, y',
     'long' => 'dd MMMM y',
     'medium' => 'dd-MMM-y',
     'short' => 'dd/MM/yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'h:mm:ss a zzzz',
     'long' => 'h:mm:ss a z',
     'medium' => 'h:mm:ss a',
@@ -177,12 +178,12 @@ return array (
   'amName' => 'saaku',
   'pmName' => 'carra',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'Qafar',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     'dj' => 'Yabuuti',
     'er' => 'Eretria',
     'et' => 'Otobbia',

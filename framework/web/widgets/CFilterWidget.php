@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CFilterWidget class file.
  *
@@ -33,7 +34,7 @@ class CFilterWidget extends CWidget implements IFilter
 	 * This property should be changed only in {@link CWidget::init} method.
 	 * Defaults to false, meaning the action should be executed.
 	 */
-	public $stopAction=false;
+	public $stopAction = false;
 
 	private $_isFilter;
 
@@ -41,10 +42,10 @@ class CFilterWidget extends CWidget implements IFilter
 	 * Constructor.
 	 * @param CBaseController $owner owner/creator of this widget. It could be either a widget or a controller.
 	 */
-	public function __construct($owner=null)
+	public function __construct($owner = null)
 	{
 		parent::__construct($owner);
-		$this->_isFilter=($owner===null);
+		$this->_isFilter = ($owner === null);
 	}
 
 	/**
@@ -65,8 +66,7 @@ class CFilterWidget extends CWidget implements IFilter
 	public function filter($filterChain)
 	{
 		$this->init();
-		if(!$this->stopAction)
-		{
+		if (!$this->stopAction) {
 			$filterChain->run();
 			$this->run();
 		}

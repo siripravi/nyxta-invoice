@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'mgo_CM'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤ #,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -52,10 +53,10 @@ return array (
     'XOF' => 'CFA',
     'XPF' => 'CFPF',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'iməg mbegtug',
       2 => 'imeg àbùbì',
       3 => 'imeg mbəŋchubi',
@@ -69,8 +70,8 @@ return array (
       11 => 'iməg zò',
       12 => 'iməg krizmed',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'mbegtug',
       2 => 'imeg àbùbì',
       3 => 'imeg mbəŋchubi',
@@ -84,8 +85,8 @@ return array (
       11 => 'iməg zò',
       12 => 'iməg krizmed',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       1 => 'M1',
       2 => 'A2',
       3 => 'M3',
@@ -100,10 +101,10 @@ return array (
       12 => '12',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'M1',
       2 => 'A2',
       3 => 'M3',
@@ -117,8 +118,8 @@ return array (
       11 => '11',
       12 => '12',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'mbegtug',
       2 => 'imeg àbùbì',
       3 => 'imeg mbəŋchubi',
@@ -132,8 +133,8 @@ return array (
       11 => 'iməg zò',
       12 => 'iməg krizmed',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       1 => 'iməg mbegtug',
       2 => 'imeg àbùbì',
       3 => 'imeg mbəŋchubi',
@@ -148,10 +149,10 @@ return array (
       12 => 'iməg krizmed',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Aneg 1',
       1 => 'Aneg 2',
       2 => 'Aneg 3',
@@ -160,8 +161,8 @@ return array (
       5 => 'Aneg 6',
       6 => 'Aneg 7',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Aneg 1',
       1 => 'Aneg 2',
       2 => 'Aneg 3',
@@ -170,8 +171,8 @@ return array (
       5 => 'Aneg 6',
       6 => 'Aneg 7',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'A1',
       1 => 'A2',
       2 => 'A3',
@@ -180,8 +181,8 @@ return array (
       5 => 'A6',
       6 => 'A7',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => '1',
       1 => '2',
       2 => '3',
@@ -191,10 +192,10 @@ return array (
       6 => '7',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'A1',
       1 => 'A2',
       2 => 'A3',
@@ -203,8 +204,8 @@ return array (
       5 => 'A6',
       6 => 'A7',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Aneg 1',
       1 => 'Aneg 2',
       2 => 'Aneg 3',
@@ -213,8 +214,8 @@ return array (
       5 => 'Aneg 6',
       6 => 'Aneg 7',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => '1',
       1 => '2',
       2 => '3',
@@ -223,8 +224,8 @@ return array (
       5 => '6',
       6 => '7',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Aneg 1',
       1 => 'Aneg 2',
       2 => 'Aneg 3',
@@ -234,33 +235,33 @@ return array (
       6 => 'Aneg 7',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'BCE',
       1 => 'CE',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'BCE',
       1 => 'CE',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'BCE',
       1 => 'CE',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, y MMMM dd',
     'long' => 'y MMMM d',
     'medium' => 'y MMM d',
     'short' => 'y-MM-dd',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -270,24 +271,24 @@ return array (
   'amName' => 'AM',
   'pmName' => 'PM',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'mgo' => 'metaʼ',
     'und' => 'ngam tisɔʼ',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'latn' => 'ngam ŋwaʼri',
     'zxxx' => 'ngam choʼ',
     'zzzz' => 'abo ŋwaʼri tisɔʼ',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     'cm' => 'Kamalun',
     'zz' => 'aba aben tisɔ̀',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

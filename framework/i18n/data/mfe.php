@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'mfe'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ' ',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤ #,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'MUR' => 'Rs',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'zanvie',
       2 => 'fevriye',
       3 => 'mars',
@@ -70,8 +71,8 @@ return array (
       11 => 'novam',
       12 => 'desam',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'zan',
       2 => 'fev',
       3 => 'mar',
@@ -86,10 +87,10 @@ return array (
       12 => 'des',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'z',
       2 => 'f',
       3 => 'm',
@@ -104,10 +105,10 @@ return array (
       12 => 'd',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'dimans',
       1 => 'lindi',
       2 => 'mardi',
@@ -116,8 +117,8 @@ return array (
       5 => 'vandredi',
       6 => 'samdi',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'dim',
       1 => 'lin',
       2 => 'mar',
@@ -127,10 +128,10 @@ return array (
       6 => 'sam',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'd',
       1 => 'l',
       2 => 'm',
@@ -140,33 +141,33 @@ return array (
       6 => 's',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'av. Z-K',
       1 => 'ap. Z-K',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'avan Zezi-Krist',
       1 => 'apre Zezi-Krist',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'av. Z-K',
       1 => 'ap. Z-K',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE d MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'd MMM, y',
     'short' => 'd/M/y',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -176,8 +177,8 @@ return array (
   'amName' => 'AM',
   'pmName' => 'PM',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ak' => 'akan',
     'am' => 'amarik',
     'ar' => 'arab',
@@ -224,8 +225,8 @@ return array (
     'zh' => 'sinwa, mandarin',
     'zu' => 'zoulou',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     'ad' => 'Andor',
     'ae' => 'Emira arab ini',
     'af' => 'Afganistan',

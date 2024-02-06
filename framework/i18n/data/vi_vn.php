@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'vi_VN'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => '.',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '#,##0.00 ¤',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'AU$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -52,10 +53,10 @@ return array (
     'XOF' => 'CFA',
     'XPF' => 'CFPF',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'tháng một',
       2 => 'tháng hai',
       3 => 'tháng ba',
@@ -69,8 +70,8 @@ return array (
       11 => 'tháng mười một',
       12 => 'tháng mười hai',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'thg 1',
       2 => 'thg 2',
       3 => 'thg 3',
@@ -84,8 +85,8 @@ return array (
       11 => 'thg 11',
       12 => 'thg 12',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -100,10 +101,10 @@ return array (
       12 => '12',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -117,8 +118,8 @@ return array (
       11 => '11',
       12 => '12',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       1 => 'tháng một',
       2 => 'tháng hai',
       3 => 'tháng ba',
@@ -133,10 +134,10 @@ return array (
       12 => 'tháng mười hai',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Chủ nhật',
       1 => 'Thứ hai',
       2 => 'Thứ ba',
@@ -145,8 +146,8 @@ return array (
       5 => 'Thứ sáu',
       6 => 'Thứ bảy',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'CN',
       1 => 'Th 2',
       2 => 'Th 3',
@@ -155,8 +156,8 @@ return array (
       5 => 'Th 6',
       6 => 'Th 7',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'CN',
       1 => 'T2',
       2 => 'T3',
@@ -165,8 +166,8 @@ return array (
       5 => 'T6',
       6 => 'T7',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'CN',
       1 => 'T2',
       2 => 'T3',
@@ -176,10 +177,10 @@ return array (
       6 => 'T7',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'CN',
       1 => 'T2',
       2 => 'T3',
@@ -188,8 +189,8 @@ return array (
       5 => 'T6',
       6 => 'T7',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'CN',
       1 => 'T2',
       2 => 'T3',
@@ -198,8 +199,8 @@ return array (
       5 => 'T6',
       6 => 'T7',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Chủ nhật',
       1 => 'Thứ hai',
       2 => 'Thứ ba',
@@ -209,33 +210,33 @@ return array (
       6 => 'Thứ bảy',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'tr. CN',
       1 => 'sau CN',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'tr. CN',
       1 => 'sau CN',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'tr. CN',
       1 => 'sau CN',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, \'ngày\' dd MMMM \'năm\' y',
     'long' => '\'Ngày\' dd \'tháng\' M \'năm\' y',
     'medium' => 'dd-MM-y',
     'short' => 'dd/MM/y',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -245,8 +246,8 @@ return array (
   'amName' => 'SA',
   'pmName' => 'CH',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'Tiếng Afar',
     'ab' => 'Tiếng Abkhazia',
     'ace' => 'Tiếng Achinese',
@@ -818,8 +819,8 @@ return array (
     'zxx' => 'Không có nội dung ngôn ngữ',
     'zza' => 'Tiếng Zaza',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'afak' => 'Chữ Afaka',
     'arab' => 'Chữ Ba Tư-Ả Rập',
     'armi' => 'Chữ Imperial Aramaic',
@@ -979,8 +980,8 @@ return array (
     'zyyy' => 'Chung',
     'zzzz' => 'Chữ viết Không xác định',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'Thế giới',
     '002' => 'Châu Phi',
     '003' => 'Bắc Mỹ',

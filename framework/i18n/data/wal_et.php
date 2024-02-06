@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'wal_ET'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'ETB' => 'Br',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'ጃንዩወሪ',
       2 => 'ፌብሩወሪ',
       3 => 'ማርች',
@@ -70,8 +71,8 @@ return array (
       11 => 'ኖቬምበር',
       12 => 'ዲሴምበር',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'ጃንዩ',
       2 => 'ፌብሩ',
       3 => 'ማርች',
@@ -86,10 +87,10 @@ return array (
       12 => 'ዲሴም',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'ጃ',
       2 => 'ፌ',
       3 => 'ማ',
@@ -104,10 +105,10 @@ return array (
       12 => 'ዲ',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'ወጋ',
       1 => 'ሳይኖ',
       2 => 'ማቆሳኛ',
@@ -116,8 +117,8 @@ return array (
       5 => 'አርባ',
       6 => 'ቄራ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Sun',
       1 => 'Mon',
       2 => 'Tue',
@@ -127,10 +128,10 @@ return array (
       6 => 'Sat',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'ወ',
       1 => 'ሳ',
       2 => 'ማ',
@@ -140,33 +141,33 @@ return array (
       6 => 'ቄ',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'አዳ ዎዴ',
       1 => 'ግሮተታ ላይታ',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'አዳ ዎዴ',
       1 => 'ግሮተታ ላይታ',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'አዳ ዎዴ',
       1 => 'ግሮተታ ላይታ',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE፥ dd MMMM ጋላሳ y G',
     'long' => 'dd MMMM y',
     'medium' => 'dd-MMM-y',
     'short' => 'dd/MM/yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'h:mm:ss a zzzz',
     'long' => 'h:mm:ss a z',
     'medium' => 'h:mm:ss a',
@@ -176,8 +177,8 @@ return array (
   'amName' => 'ማለዶ',
   'pmName' => 'ቃማ',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ar' => 'ዐርቢኛ',
     'de' => 'ጀርመን',
     'en' => 'እንግሊዝኛ',
@@ -191,12 +192,12 @@ return array (
     'wal' => 'ወላይታቱ',
     'zh' => 'ቻይንኛ',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'latn' => 'ላቲን',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     'ad' => 'አንዶራ',
     'ae' => 'የተባበሩት አረብ ኤምሬትስ',
     'al' => 'አልባኒያ',

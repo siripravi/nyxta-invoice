@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CFileValidator class file.
  *
@@ -67,7 +68,7 @@ class CFileValidator extends CValidator
 	 * When no file is uploaded, the owner attribute is set to null to prevent
 	 * setting arbitrary values.
 	 */
-	public $allowEmpty=false;
+	public $allowEmpty = false;
 	/**
 	 * @var mixed a list of file name extensions that are allowed to be uploaded.
 	 * This can be either an array or a string consisting of file extension names
@@ -126,7 +127,7 @@ class CFileValidator extends CValidator
 	 * It defaults to 1, meaning single file upload. By defining a higher number,
 	 * multiple uploads become possible.
 	 */
-	public $maxFiles=1;
+	public $maxFiles = 1;
 	/**
 	 * @var string the error message used if the count of multiple uploads exceeds
 	 * limit.
@@ -141,41 +142,31 @@ class CFileValidator extends CValidator
 	 */
 	protected function validateAttribute($object, $attribute)
 	{
-		$files=$object->$attribute;
-		if($this->maxFiles > 1)
-		{
-			if(!is_array($files) || !isset($files[0]) || !$files[0] instanceof CUploadedFile)
+		$files = $object->$attribute;
+		if ($this->maxFiles > 1) {
+			if (!is_array($files) || !isset($files[0]) || !$files[0] instanceof CUploadedFile)
 				$files = CUploadedFile::getInstances($object, $attribute);
-			if(array()===$files)
+			if (array() === $files)
 				return $this->emptyAttribute($object, $attribute);
-			if(count($files) > $this->maxFiles)
-			{
-				$message=$this->tooMany!==null?$this->tooMany : Yii::t('yii', '{attribute} cannot accept more than {limit} files.');
-				$this->addError($object, $attribute, $message, array('{attribute}'=>$attribute, '{limit}'=>$this->maxFiles));
-			}
-			else
-				foreach($files as $file)
+			if (count($files) > $this->maxFiles) {
+				$message = $this->tooMany !== null ? $this->tooMany : Yii::t('yii', '{attribute} cannot accept more than {limit} files.');
+				$this->addError($object, $attribute, $message, array('{attribute}' => $attribute, '{limit}' => $this->maxFiles));
+			} else
+				foreach ($files as $file)
 					$this->validateFile($object, $attribute, $file);
-		}
-		else
-		{
-			if (is_array($files))
-			{
-				if (count($files) > 1)
-				{
-					$message=$this->tooMany!==null?$this->tooMany : Yii::t('yii', '{attribute} cannot accept more than {limit} files.');
-					$this->addError($object, $attribute, $message, array('{attribute}'=>$attribute, '{limit}'=>$this->maxFiles));
+		} else {
+			if (is_array($files)) {
+				if (count($files) > 1) {
+					$message = $this->tooMany !== null ? $this->tooMany : Yii::t('yii', '{attribute} cannot accept more than {limit} files.');
+					$this->addError($object, $attribute, $message, array('{attribute}' => $attribute, '{limit}' => $this->maxFiles));
 					return;
-				}
-				else
+				} else
 					$file = empty($files) ? null : reset($files);
-			}
-			else
+			} else
 				$file = $files;
-			if(!$file instanceof CUploadedFile)
-			{
+			if (!$file instanceof CUploadedFile) {
 				$file = CUploadedFile::getInstance($object, $attribute);
-				if(null===$file)
+				if (null === $file)
 					return $this->emptyAttribute($object, $attribute);
 			}
 			$this->validateFile($object, $attribute, $file);
@@ -191,71 +182,61 @@ class CFileValidator extends CValidator
 	 */
 	protected function validateFile($object, $attribute, $file)
 	{
-		$error=(null===$file ? null : $file->getError());
-		if($error==UPLOAD_ERR_INI_SIZE || $error==UPLOAD_ERR_FORM_SIZE || $this->maxSize!==null && $file->getSize()>$this->maxSize)
-		{
-			$message=$this->tooLarge!==null?$this->tooLarge : Yii::t('yii','The file "{file}" is too large. Its size cannot exceed {limit} bytes.');
-			$this->addError($object,$attribute,$message,array('{file}'=>$file->getName(), '{limit}'=>$this->getSizeLimit()));
-			if($error!==UPLOAD_ERR_OK)
+		$error = (null === $file ? null : $file->getError());
+		if ($error == UPLOAD_ERR_INI_SIZE || $error == UPLOAD_ERR_FORM_SIZE || $this->maxSize !== null && $file->getSize() > $this->maxSize) {
+			$message = $this->tooLarge !== null ? $this->tooLarge : Yii::t('yii', 'The file "{file}" is too large. Its size cannot exceed {limit} bytes.');
+			$this->addError($object, $attribute, $message, array('{file}' => $file->getName(), '{limit}' => $this->getSizeLimit()));
+			if ($error !== UPLOAD_ERR_OK)
 				return;
-		}
-		elseif($error!==UPLOAD_ERR_OK)
-		{
-			if($error==UPLOAD_ERR_NO_FILE)
+		} elseif ($error !== UPLOAD_ERR_OK) {
+			if ($error == UPLOAD_ERR_NO_FILE)
 				return $this->emptyAttribute($object, $attribute);
-			elseif($error==UPLOAD_ERR_PARTIAL)
-				throw new CException(Yii::t('yii','The file "{file}" was only partially uploaded.',array('{file}'=>$file->getName())));
-			elseif($error==UPLOAD_ERR_NO_TMP_DIR)
-				throw new CException(Yii::t('yii','Missing the temporary folder to store the uploaded file "{file}".',array('{file}'=>$file->getName())));
-			elseif($error==UPLOAD_ERR_CANT_WRITE)
-				throw new CException(Yii::t('yii','Failed to write the uploaded file "{file}" to disk.',array('{file}'=>$file->getName())));
-			elseif(defined('UPLOAD_ERR_EXTENSION') && $error==UPLOAD_ERR_EXTENSION)  // available for PHP 5.2.0 or above
-				throw new CException(Yii::t('yii','A PHP extension stopped the file upload.'));
+			elseif ($error == UPLOAD_ERR_PARTIAL)
+				throw new CException(Yii::t('yii', 'The file "{file}" was only partially uploaded.', array('{file}' => $file->getName())));
+			elseif ($error == UPLOAD_ERR_NO_TMP_DIR)
+				throw new CException(Yii::t('yii', 'Missing the temporary folder to store the uploaded file "{file}".', array('{file}' => $file->getName())));
+			elseif ($error == UPLOAD_ERR_CANT_WRITE)
+				throw new CException(Yii::t('yii', 'Failed to write the uploaded file "{file}" to disk.', array('{file}' => $file->getName())));
+			elseif (defined('UPLOAD_ERR_EXTENSION') && $error == UPLOAD_ERR_EXTENSION)  // available for PHP 5.2.0 or above
+				throw new CException(Yii::t('yii', 'A PHP extension stopped the file upload.'));
 			else
-				throw new CException(Yii::t('yii','Unable to upload the file "{file}" because of an unrecognized error.',array('{file}'=>$file->getName())));
+				throw new CException(Yii::t('yii', 'Unable to upload the file "{file}" because of an unrecognized error.', array('{file}' => $file->getName())));
 		}
 
-		if($this->minSize!==null && $file->getSize()<$this->minSize)
-		{
-			$message=$this->tooSmall!==null?$this->tooSmall : Yii::t('yii','The file "{file}" is too small. Its size cannot be smaller than {limit} bytes.');
-			$this->addError($object,$attribute,$message,array('{file}'=>$file->getName(), '{limit}'=>$this->minSize));
+		if ($this->minSize !== null && $file->getSize() < $this->minSize) {
+			$message = $this->tooSmall !== null ? $this->tooSmall : Yii::t('yii', 'The file "{file}" is too small. Its size cannot be smaller than {limit} bytes.');
+			$this->addError($object, $attribute, $message, array('{file}' => $file->getName(), '{limit}' => $this->minSize));
 		}
 
-		if($this->types!==null)
-		{
-			if(is_string($this->types))
-				$types=preg_split('/[\s,]+/',strtolower($this->types),-1,PREG_SPLIT_NO_EMPTY);
+		if ($this->types !== null) {
+			if (is_string($this->types))
+				$types = preg_split('/[\s,]+/', strtolower($this->types), -1, PREG_SPLIT_NO_EMPTY);
 			else
-				$types=$this->types;
-			if(!in_array(strtolower($file->getExtensionName()),$types))
-			{
-				$message=$this->wrongType!==null?$this->wrongType : Yii::t('yii','The file "{file}" cannot be uploaded. Only files with these extensions are allowed: {extensions}.');
-				$this->addError($object,$attribute,$message,array('{file}'=>$file->getName(), '{extensions}'=>implode(', ',$types)));
+				$types = $this->types;
+			if (!in_array(strtolower($file->getExtensionName()), $types)) {
+				$message = $this->wrongType !== null ? $this->wrongType : Yii::t('yii', 'The file "{file}" cannot be uploaded. Only files with these extensions are allowed: {extensions}.');
+				$this->addError($object, $attribute, $message, array('{file}' => $file->getName(), '{extensions}' => implode(', ', $types)));
 			}
 		}
 
-		if($this->mimeTypes!==null && !empty($file->tempName))
-		{
-			if(function_exists('finfo_open'))
-			{
-				$mimeType=false;
-				if($info=finfo_open(defined('FILEINFO_MIME_TYPE') ? FILEINFO_MIME_TYPE : FILEINFO_MIME))
-					$mimeType=finfo_file($info,$file->getTempName());
-			}
-			elseif(function_exists('mime_content_type'))
-				$mimeType=mime_content_type($file->getTempName());
+		if ($this->mimeTypes !== null && !empty($file->tempName)) {
+			if (function_exists('finfo_open')) {
+				$mimeType = false;
+				if ($info = finfo_open(defined('FILEINFO_MIME_TYPE') ? FILEINFO_MIME_TYPE : FILEINFO_MIME))
+					$mimeType = finfo_file($info, $file->getTempName());
+			} elseif (function_exists('mime_content_type'))
+				$mimeType = mime_content_type($file->getTempName());
 			else
-				throw new CException(Yii::t('yii','In order to use MIME-type validation provided by CFileValidator fileinfo PECL extension should be installed.'));
+				throw new CException(Yii::t('yii', 'In order to use MIME-type validation provided by CFileValidator fileinfo PECL extension should be installed.'));
 
-			if(is_string($this->mimeTypes))
-				$mimeTypes=preg_split('/[\s,]+/',strtolower($this->mimeTypes),-1,PREG_SPLIT_NO_EMPTY);
+			if (is_string($this->mimeTypes))
+				$mimeTypes = preg_split('/[\s,]+/', strtolower($this->mimeTypes), -1, PREG_SPLIT_NO_EMPTY);
 			else
-				$mimeTypes=$this->mimeTypes;
+				$mimeTypes = $this->mimeTypes;
 
-			if($mimeType===false || !in_array(strtolower($mimeType),$mimeTypes))
-			{
-				$message=$this->wrongMimeType!==null?$this->wrongMimeType : Yii::t('yii','The file "{file}" cannot be uploaded. Only files of these MIME-types are allowed: {mimeTypes}.');
-				$this->addError($object,$attribute,$message,array('{file}'=>$file->getName(), '{mimeTypes}'=>implode(', ',$mimeTypes)));
+			if ($mimeType === false || !in_array(strtolower($mimeType), $mimeTypes)) {
+				$message = $this->wrongMimeType !== null ? $this->wrongMimeType : Yii::t('yii', 'The file "{file}" cannot be uploaded. Only files of these MIME-types are allowed: {mimeTypes}.');
+				$this->addError($object, $attribute, $message, array('{file}' => $file->getName(), '{mimeTypes}' => implode(', ', $mimeTypes)));
 			}
 		}
 	}
@@ -268,13 +249,12 @@ class CFileValidator extends CValidator
 	 */
 	protected function emptyAttribute($object, $attribute)
 	{
-		if($this->safe) 
-			$object->$attribute=null;
+		if ($this->safe)
+			$object->$attribute = null;
 
-		if(!$this->allowEmpty)
-		{
-			$message=$this->message!==null?$this->message : Yii::t('yii','{attribute} cannot be blank.');
-			$this->addError($object,$attribute,$message);
+		if (!$this->allowEmpty) {
+			$message = $this->message !== null ? $this->message : Yii::t('yii', '{attribute} cannot be blank.');
+			$this->addError($object, $attribute, $message);
 		}
 	}
 
@@ -291,12 +271,12 @@ class CFileValidator extends CValidator
 	 */
 	protected function getSizeLimit()
 	{
-		$limit=ini_get('upload_max_filesize');
-		$limit=$this->sizeToBytes($limit);
-		if($this->maxSize!==null && $limit>0 && $this->maxSize<$limit)
-			$limit=$this->maxSize;
-		if(isset($_POST['MAX_FILE_SIZE']) && $_POST['MAX_FILE_SIZE']>0 && $_POST['MAX_FILE_SIZE']<$limit)
-			$limit=$_POST['MAX_FILE_SIZE'];
+		$limit = ini_get('upload_max_filesize');
+		$limit = $this->sizeToBytes($limit);
+		if ($this->maxSize !== null && $limit > 0 && $this->maxSize < $limit)
+			$limit = $this->maxSize;
+		if (isset($_POST['MAX_FILE_SIZE']) && $_POST['MAX_FILE_SIZE'] > 0 && $_POST['MAX_FILE_SIZE'] < $limit)
+			$limit = $_POST['MAX_FILE_SIZE'];
 		return $limit;
 	}
 
@@ -316,12 +296,15 @@ class CFileValidator extends CValidator
 	public function sizeToBytes($sizeStr)
 	{
 		// get the latest character
-		switch (strtolower(substr($sizeStr, -1)))
-		{
-			case 'm': return (int)$sizeStr * 1048576; // 1024 * 1024
-			case 'k': return (int)$sizeStr * 1024; // 1024
-			case 'g': return (int)$sizeStr * 1073741824; // 1024 * 1024 * 1024
-			default: return (int)$sizeStr; // do nothing
+		switch (strtolower(substr($sizeStr, -1))) {
+			case 'm':
+				return (int)$sizeStr * 1048576; // 1024 * 1024
+			case 'k':
+				return (int)$sizeStr * 1024; // 1024
+			case 'g':
+				return (int)$sizeStr * 1073741824; // 1024 * 1024 * 1024
+			default:
+				return (int)$sizeStr; // do nothing
 		}
 	}
 }

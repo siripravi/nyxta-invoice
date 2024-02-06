@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'cch_NG'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2013 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '4123',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'alias' => '',
     'decimal' => '.',
     'group' => ',',
@@ -29,8 +30,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤ #,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'AU$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -54,10 +55,10 @@ return array (
     'XPF' => 'CFPF',
     'NGN' => '₦',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Pen Dyon',
       2 => 'Pen Ba\'a',
       3 => 'Pen Atat',
@@ -71,8 +72,8 @@ return array (
       11 => 'Pen Kur Naba',
       12 => 'Pen Kur Natat',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Dyon',
       2 => 'Baa',
       3 => 'Atat',
@@ -87,10 +88,10 @@ return array (
       12 => 'Nata',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -105,10 +106,10 @@ return array (
       12 => '12',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Wai Yoka Bawai',
       1 => 'Wai Tunga',
       2 => 'Toki Gitung',
@@ -117,8 +118,8 @@ return array (
       5 => 'Wai Na Tiyon',
       6 => 'Wai Na Chirim',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Yok',
       1 => 'Tung',
       2 => 'T. Tung',
@@ -128,10 +129,10 @@ return array (
       6 => 'Chir',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => '1',
       1 => '2',
       2 => '3',
@@ -141,33 +142,33 @@ return array (
       6 => '7',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'GM',
       1 => 'M',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Gabanin Miladi',
       1 => 'Miladi',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'GM',
       1 => 'M',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, y MMMM dd',
     'long' => 'y MMMM d',
     'medium' => 'y MMM d',
     'short' => 'yy/MM/dd',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',

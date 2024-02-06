@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CJavaScript helper class file.
  *
@@ -25,13 +26,13 @@ class CJavaScript
 	 * @param boolean $forUrl whether this string is used as a URL
 	 * @return string the quoted string
 	 */
-	public static function quote($js,$forUrl=false)
+	public static function quote($js, $forUrl = false)
 	{
 		$js = (string)$js;
 
 		Yii::import('system.vendors.zend-escaper.Escaper');
-		$escaper=new Escaper(Yii::app()->charset);
-		if($forUrl)
+		$escaper = new Escaper(Yii::app()->charset);
+		if ($forUrl)
 			return $escaper->escapeUrl($js);
 		else
 			return $escaper->escapeJs($js);
@@ -60,51 +61,42 @@ class CJavaScript
 	 * Default is false. This parameter is available since 1.1.11.
 	 * @return string the encoded string
 	 */
-	public static function encode($value,$safe=false)
+	public static function encode($value, $safe = false)
 	{
-		if(is_string($value))
-		{
-			if(strpos($value,'js:')===0 && $safe===false)
-				return substr($value,3);
+		if (is_string($value)) {
+			if (strpos($value, 'js:') === 0 && $safe === false)
+				return substr($value, 3);
 			else
-				return "'".self::quote($value)."'";
-		}
-		elseif($value===null)
+				return "'" . self::quote($value) . "'";
+		} elseif ($value === null)
 			return 'null';
-		elseif(is_bool($value))
-			return $value?'true':'false';
-		elseif(is_integer($value))
+		elseif (is_bool($value))
+			return $value ? 'true' : 'false';
+		elseif (is_integer($value))
 			return "$value";
-		elseif(is_float($value))
-		{
-			if($value===-INF)
+		elseif (is_float($value)) {
+			if ($value === -INF)
 				return 'Number.NEGATIVE_INFINITY';
-			elseif($value===INF)
+			elseif ($value === INF)
 				return 'Number.POSITIVE_INFINITY';
 			else
-				return str_replace(',','.',(float)$value);  // locale-independent representation
-		}
-		elseif($value instanceof CJavaScriptExpression)
+				return str_replace(',', '.', (float)$value);  // locale-independent representation
+		} elseif ($value instanceof CJavaScriptExpression)
 			return $value->__toString();
-		elseif(is_object($value))
-			return self::encode(get_object_vars($value),$safe);
-		elseif(is_array($value))
-		{
-			$es=array();
-			if(($n=count($value))>0 && array_keys($value)!==range(0,$n-1))
-			{
-				foreach($value as $k=>$v)
-					$es[]="'".self::quote($k)."':".self::encode($v,$safe);
-				return '{'.implode(',',$es).'}';
+		elseif (is_object($value))
+			return self::encode(get_object_vars($value), $safe);
+		elseif (is_array($value)) {
+			$es = array();
+			if (($n = count($value)) > 0 && array_keys($value) !== range(0, $n - 1)) {
+				foreach ($value as $k => $v)
+					$es[] = "'" . self::quote($k) . "':" . self::encode($v, $safe);
+				return '{' . implode(',', $es) . '}';
+			} else {
+				foreach ($value as $v)
+					$es[] = self::encode($v, $safe);
+				return '[' . implode(',', $es) . ']';
 			}
-			else
-			{
-				foreach($value as $v)
-					$es[]=self::encode($v,$safe);
-				return '['.implode(',',$es).']';
-			}
-		}
-		else
+		} else
 			return '';
 	}
 
@@ -124,8 +116,8 @@ class CJavaScript
 	 * @param boolean $useArray whether to use associative array to represent object data
 	 * @return mixed the decoded PHP data
 	 */
-	public static function jsonDecode($data,$useArray=true)
+	public static function jsonDecode($data, $useArray = true)
 	{
-		return CJSON::decode($data,$useArray);
+		return CJSON::decode($data, $useArray);
 	}
 }

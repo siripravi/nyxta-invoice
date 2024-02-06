@@ -84,7 +84,6 @@ class getPdf extends CAction
 
     public function getTitle()
     {
-
     }
 
     public function calc_subtotal($items)

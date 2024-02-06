@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'sw_UG'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00;(¤#,##0.00)',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -55,10 +56,10 @@ return array (
     'TZS' => 'TSh',
     'UGX' => 'USh',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Januari',
       2 => 'Februari',
       3 => 'Machi',
@@ -72,8 +73,8 @@ return array (
       11 => 'Novemba',
       12 => 'Desemba',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Jan',
       2 => 'Feb',
       3 => 'Mac',
@@ -88,10 +89,10 @@ return array (
       12 => 'Des',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'J',
       2 => 'F',
       3 => 'M',
@@ -106,10 +107,10 @@ return array (
       12 => 'D',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Jumapili',
       1 => 'Jumatatu',
       2 => 'Jumanne',
@@ -118,8 +119,8 @@ return array (
       5 => 'Ijumaa',
       6 => 'Jumamosi',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'J2',
       1 => 'J3',
       2 => 'J4',
@@ -128,8 +129,8 @@ return array (
       5 => 'Ij',
       6 => 'J1',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'Jumapili',
       1 => 'Jumatatu',
       2 => 'Jumanne',
@@ -139,10 +140,10 @@ return array (
       6 => 'Jumamosi',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => '2',
       1 => '3',
       2 => '4',
@@ -151,8 +152,8 @@ return array (
       5 => 'I',
       6 => '1',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'Jumapili',
       1 => 'Jumatatu',
       2 => 'Jumanne',
@@ -162,33 +163,33 @@ return array (
       6 => 'Jumamosi',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'KK',
       1 => 'BK',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Kabla ya Kristo',
       1 => 'Baada ya Kristo',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'KK',
       1 => 'BK',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, d MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'd MMM y',
     'short' => 'dd/MM/y',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'h:mm:ss a zzzz',
     'long' => 'h:mm:ss a z',
     'medium' => 'h:mm:ss a',
@@ -198,8 +199,8 @@ return array (
   'amName' => 'asubuhi',
   'pmName' => 'alasiri',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ab' => 'Kiabkhazi',
     'ach' => 'Kiakoli',
     'af' => 'Kiafrikana',
@@ -477,8 +478,8 @@ return array (
     'zu' => 'Kizulu',
     'zxx' => 'Hakuna maudhui ya lugha',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'Kiajemi/Kiarabu',
     'armn' => 'Kiarmenia',
     'beng' => 'Kibengali',
@@ -519,8 +520,8 @@ return array (
     'zyyy' => 'Kawaida',
     'zzzz' => 'Hati isiyojulikana',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'Dunia',
     '002' => 'Afrika',
     '003' => 'Amerika Kaskazini',
@@ -812,8 +813,8 @@ return array (
     'zw' => 'Zimbabwe',
     'zz' => 'Eneo lisilojulikana',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

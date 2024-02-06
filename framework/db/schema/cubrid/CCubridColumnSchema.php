@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CCubridColumnSchema class file.
  *
@@ -10,7 +11,7 @@
 
 /**
  * CCubridColumnSchema class describes the column meta data of a CUBRID table.
-  *
+ *
  * @author Esen Sagynov <kadismal@gmail.com>
  * @package system.db.schema.cubrid
  * @since 1.1.16
@@ -23,16 +24,16 @@ class CCubridColumnSchema extends CDbColumnSchema
 	 */
 	protected function extractType($dbType)
 	{
-		if(preg_match('/(FLO|REA|DOU|NUM|DEC)/',$dbType))
-			$this->type='double';
+		if (preg_match('/(FLO|REA|DOU|NUM|DEC)/', $dbType))
+			$this->type = 'double';
 		// The following "bool" and 'boolean" are for future compatibility.
 		// As of CUBRID 9.0, they are not supported.
-		elseif(strpos($dbType,'BOOL')!==false)
-			$this->type='boolean';
-		elseif(preg_match('/(INT|BIT|SMA|SHO|NUM)/',$dbType))
-			$this->type='integer';
+		elseif (strpos($dbType, 'BOOL') !== false)
+			$this->type = 'boolean';
+		elseif (preg_match('/(INT|BIT|SMA|SHO|NUM)/', $dbType))
+			$this->type = 'integer';
 		else
-			$this->type='string';
+			$this->type = 'string';
 	}
 
 	/**
@@ -42,8 +43,8 @@ class CCubridColumnSchema extends CDbColumnSchema
 	 */
 	protected function extractDefault($defaultValue)
 	{
-		if($this->dbType==='TIMESTAMP' && $defaultValue==='CURRENT_TIMESTAMP')
-			$this->defaultValue=null;
+		if ($this->dbType === 'TIMESTAMP' && $defaultValue === 'CURRENT_TIMESTAMP')
+			$this->defaultValue = null;
 		else
 			parent::extractDefault($defaultValue);
 	}

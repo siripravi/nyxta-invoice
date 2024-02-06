@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'oc'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2013 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '5859',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'alias' => '',
     'decimal' => '.',
     'group' => ',',
@@ -29,8 +30,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤ #,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'AU$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XOF' => 'CFA',
     'XPF' => 'CFPF',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'genièr',
       2 => 'febrièr',
       3 => 'març',
@@ -70,8 +71,8 @@ return array (
       11 => 'novembre',
       12 => 'dezembre',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -86,10 +87,10 @@ return array (
       12 => '12',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -104,10 +105,10 @@ return array (
       12 => '12',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Dimenge',
       1 => 'diluns',
       2 => 'dimarç',
@@ -116,8 +117,8 @@ return array (
       5 => 'divèndres',
       6 => 'dissabte',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => '1',
       1 => '2',
       2 => '3',
@@ -127,10 +128,10 @@ return array (
       6 => '7',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => '1',
       1 => '2',
       2 => '3',
@@ -140,33 +141,33 @@ return array (
       6 => '7',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'BCE',
       1 => 'CE',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'BCE',
       1 => 'CE',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'BCE',
       1 => 'CE',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, y MMMM dd',
     'long' => 'y MMMM d',
     'medium' => 'y MMM d',
     'short' => 'yyyy-MM-dd',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -176,8 +177,8 @@ return array (
   'amName' => 'AM',
   'pmName' => 'PM',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ar' => 'arabi',
     'art' => 'lenga artificiala',
     'az' => 'azerbaijani',
@@ -206,8 +207,8 @@ return array (
     'roa' => 'lenga romança',
     'zh' => 'chinés',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'arabi',
     'armn' => 'armèni',
     'cyrl' => 'cirilic',
@@ -221,8 +222,8 @@ return array (
     'syrj' => 'siriac occidental',
     'syrn' => 'siriac oriental',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '002' => 'Africa',
     '013' => 'America centrala',
     '019' => 'Americas',

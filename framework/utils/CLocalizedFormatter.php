@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CLocalizedFormatter class file.
  *
@@ -40,12 +41,12 @@ class CLocalizedFormatter extends CFormatter
 	 * @var string the width of the date pattern. It can be 'full', 'long', 'medium' and 'short'. Defaults to 'medium'.
 	 * @see CDateFormatter::formatDateTime()
 	 */
-	public $dateFormat='medium';
+	public $dateFormat = 'medium';
 	/**
 	 * @var string the width of the time pattern. It can be 'full', 'long', 'medium' and 'short'. Defaults to 'medium'.
 	 * @see CDateFormatter::formatDateTime()
 	 */
-	public $timeFormat='medium';
+	public $timeFormat = 'medium';
 
 	/**
 	 * Set the locale to use for formatting values.
@@ -53,10 +54,10 @@ class CLocalizedFormatter extends CFormatter
 	 */
 	public function setLocale($locale)
 	{
-		if(is_string($locale))
-			$locale=CLocale::getInstance($locale);
-		$this->sizeFormat['decimalSeparator']=$locale->getNumberSymbol('decimal');
-		$this->_locale=$locale;
+		if (is_string($locale))
+			$locale = CLocale::getInstance($locale);
+		$this->sizeFormat['decimalSeparator'] = $locale->getNumberSymbol('decimal');
+		$this->_locale = $locale;
 	}
 
 	/**
@@ -64,7 +65,7 @@ class CLocalizedFormatter extends CFormatter
 	 */
 	public function getLocale()
 	{
-		if($this->_locale === null) {
+		if ($this->_locale === null) {
 			$this->setLocale(Yii::app()->locale);
 		}
 		return $this->_locale;
@@ -78,7 +79,7 @@ class CLocalizedFormatter extends CFormatter
 	 */
 	public function formatBoolean($value)
 	{
-		return $value ? Yii::t('yii','Yes') : Yii::t('yii','No');
+		return $value ? Yii::t('yii', 'Yes') : Yii::t('yii', 'No');
 	}
 
 	/**

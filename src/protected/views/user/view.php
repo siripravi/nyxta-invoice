@@ -20,14 +20,16 @@ $this->menu = array(
 	<?php echo $model->id; ?>
 </h1>
 
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data' => $model,
-	'attributes' => array(
-		'id',
-		'username',
-		'password',
-		'email',
-		'profile',
-	),
-)
+<?php $this->widget(
+	'zii.widgets.CDetailView',
+	array(
+		'data' => $model,
+		'attributes' => array(
+			'id',
+			'username',
+			'password',
+			'email',
+			'profile',
+		),
+	)
 ); ?>

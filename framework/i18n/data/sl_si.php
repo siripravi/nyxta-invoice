@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'sl_SI'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => '.',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00;(¤#,##0.00)',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -52,10 +53,10 @@ return array (
     'XOF' => 'CFA',
     'XPF' => 'CFPF',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'januar',
       2 => 'februar',
       3 => 'marec',
@@ -69,8 +70,8 @@ return array (
       11 => 'november',
       12 => 'december',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'jan.',
       2 => 'feb.',
       3 => 'mar.',
@@ -85,10 +86,10 @@ return array (
       12 => 'dec.',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'j',
       2 => 'f',
       3 => 'm',
@@ -102,8 +103,8 @@ return array (
       11 => 'n',
       12 => 'd',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'jan',
       2 => 'feb',
       3 => 'mar',
@@ -118,10 +119,10 @@ return array (
       12 => 'dec',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'nedelja',
       1 => 'ponedeljek',
       2 => 'torek',
@@ -130,8 +131,8 @@ return array (
       5 => 'petek',
       6 => 'sobota',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'ned.',
       1 => 'pon.',
       2 => 'tor.',
@@ -140,8 +141,8 @@ return array (
       5 => 'pet.',
       6 => 'sob.',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'ned.',
       1 => 'pon.',
       2 => 'tor.',
@@ -151,10 +152,10 @@ return array (
       6 => 'sob.',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'n',
       1 => 'p',
       2 => 't',
@@ -163,8 +164,8 @@ return array (
       5 => 'p',
       6 => 's',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'ned',
       1 => 'pon',
       2 => 'tor',
@@ -173,8 +174,8 @@ return array (
       5 => 'pet',
       6 => 'sob',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'ned.',
       1 => 'pon.',
       2 => 'tor.',
@@ -184,33 +185,33 @@ return array (
       6 => 'sob.',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'pr. n. št.',
       1 => 'po Kr.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'pred našim štetjem',
       1 => 'naše štetje',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'pr. n. št.',
       1 => 'po Kr.',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, dd. MMMM y',
     'long' => 'dd. MMMM y',
     'medium' => 'd. MMM y',
     'short' => 'd. MM. yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -220,8 +221,8 @@ return array (
   'amName' => 'dop.',
   'pmName' => 'pop.',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'afarščina',
     'ab' => 'abhaščina',
     'ace' => 'ačejščina',
@@ -716,8 +717,8 @@ return array (
     'zxx' => 'brez jezikoslovne vsebine',
     'zza' => 'zazajščina',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'Perzijskoarabski',
     'armi' => 'imperialno-aramejski',
     'armn' => 'armenski',
@@ -839,8 +840,8 @@ return array (
     'zyyy' => 'splošno',
     'zzzz' => 'neznan ali neveljaven zapis',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'Svet',
     '002' => 'Afrika',
     '003' => 'Severna Amerika',
@@ -1132,8 +1133,8 @@ return array (
     'zw' => 'Zimbabve',
     'zz' => 'Neznano ali neveljavno območje',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'fmod(n,100)==1',
     1 => 'fmod(n,100)==2',
     2 => '(fmod(n,100)>=3&&fmod(n,100)<=4&&fmod(fmod(n,100),1)==0)',

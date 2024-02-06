@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CFormModel class file.
  *
@@ -25,7 +26,7 @@
  */
 class CFormModel extends CModel
 {
-	private static $_names=array();
+	private static $_names = array();
 
 	/**
 	 * Constructor.
@@ -33,7 +34,7 @@ class CFormModel extends CModel
 	 * See {@link CModel::scenario} on how scenario is used by models.
 	 * @see getScenario
 	 */
-	public function __construct($scenario='')
+	public function __construct($scenario = '')
 	{
 		$this->setScenario($scenario);
 		$this->init();
@@ -59,20 +60,17 @@ class CFormModel extends CModel
 	 */
 	public function attributeNames()
 	{
-		$className=get_class($this);
-		if(!isset(self::$_names[$className]))
-		{
-			$class=new ReflectionClass(get_class($this));
-			$names=array();
-			foreach($class->getProperties() as $property)
-			{
-				$name=$property->getName();
-				if($property->isPublic() && !$property->isStatic())
-					$names[]=$name;
+		$className = get_class($this);
+		if (!isset(self::$_names[$className])) {
+			$class = new ReflectionClass(get_class($this));
+			$names = array();
+			foreach ($class->getProperties() as $property) {
+				$name = $property->getName();
+				if ($property->isPublic() && !$property->isStatic())
+					$names[] = $name;
 			}
-			return self::$_names[$className]=$names;
-		}
-		else
+			return self::$_names[$className] = $names;
+		} else
 			return self::$_names[$className];
 	}
 }

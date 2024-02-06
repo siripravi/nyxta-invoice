@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'my'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤ #,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'MMK' => 'K',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'ဇန်နဝါရီ',
       2 => 'ဖေဖော်ဝါရီ',
       3 => 'မတ်',
@@ -70,8 +71,8 @@ return array (
       11 => 'နိုဝင်ဘာ',
       12 => 'ဒီဇင်ဘာ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'ဇန်',
       2 => 'ဖေ',
       3 => 'မတ်',
@@ -86,10 +87,10 @@ return array (
       12 => 'ဒီ',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'ဇ',
       2 => 'ဖ',
       3 => 'မ',
@@ -104,10 +105,10 @@ return array (
       12 => 'ဒ',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'တနင်္ဂနွေ',
       1 => 'တနင်္လာ',
       2 => 'အင်္ဂါ',
@@ -116,8 +117,8 @@ return array (
       5 => 'သောကြာ',
       6 => 'စနေ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'နွေ',
       1 => 'လာ',
       2 => 'ဂါ',
@@ -127,10 +128,10 @@ return array (
       6 => 'နေ',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'တ',
       1 => 'တ',
       2 => 'အ',
@@ -140,33 +141,33 @@ return array (
       6 => 'စ',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'ဘီစီ',
       1 => 'အေဒီ',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'ခရစ်တော် မပေါ်မီကာလ',
       1 => 'ခရစ်တော် ပေါ်ထွန်းပြီးကာလ',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'ဘီစီ',
       1 => 'အေဒီ',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, y MMMM dd',
     'long' => 'y MMMM d',
     'medium' => 'y MMM d',
     'short' => 'yy/MM/dd',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -176,8 +177,8 @@ return array (
   'amName' => 'နံနက်',
   'pmName' => 'ညနေ',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ang' => 'အင်္ဂလိပ်စာဟောင်း',
     'ar' => 'အာရေဗီ',
     'art' => 'အယောင်ဆောင် ဘာသာစကား',
@@ -319,8 +320,8 @@ return array (
     'zu' => 'ဇူလူ',
     'zxx' => 'ဘာသာစကား နှင့် ပတ်သက် သောအရာမရှိ',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'အာရေဗျ',
     'armn' => 'အာမေးနီးယား',
     'beng' => 'ဘင်္ဂါလီ',
@@ -361,8 +362,8 @@ return array (
     'zxxx' => 'မရေးထားသော',
     'zzzz' => 'မသိ သို့မဟုတ် မရှိသော စကားလုံး',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'ကမ္ဘာ',
     '002' => 'အာဖရိက',
     '003' => 'မြောက် အမေရိက',

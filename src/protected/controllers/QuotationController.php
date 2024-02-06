@@ -120,10 +120,12 @@ class QuotationController extends Controller
         $this->document = $this->loadDoc($id);
         // $model = $this->loadModel($id);
 
-        $this->render('update', array(
-            'stmt' => $this->document,
-            'dp' => new CArrayDataProvider($this->document, array('keyField' => 'st_id', 'id' => 'stmt-dp'))
-        )
+        $this->render(
+            'update',
+            array(
+                'stmt' => $this->document,
+                'dp' => new CArrayDataProvider($this->document, array('keyField' => 'st_id', 'id' => 'stmt-dp'))
+            )
         );
     }
     /**
@@ -133,10 +135,12 @@ class QuotationController extends Controller
     public function actionView($id)
     {
         $model = $this->loadModel2($id);
-        $this->render('view', array(
-            'model' => $model,
-            'items' => $model->items
-        )
+        $this->render(
+            'view',
+            array(
+                'model' => $model,
+                'items' => $model->items
+            )
         );
     }
 
@@ -167,7 +171,6 @@ class QuotationController extends Controller
             } else {
                 print_r($stmt->errors);
             }
-
         }
         $this->renderPartial('_make', array('model' => $inv), false, true);
     }
@@ -179,9 +182,11 @@ class QuotationController extends Controller
      */
     public function actionEdit($id)
     {
-        $this->render('view2', array(
-            'model' => $this->loadModel2($id),
-        )
+        $this->render(
+            'view2',
+            array(
+                'model' => $this->loadModel2($id),
+            )
         );
     }
 
@@ -465,10 +470,12 @@ class QuotationController extends Controller
         */
         $st_type = 1;
         $model->st_type = $st_type;
-        $this->render('admin2', array(
-            'model' => $model,
-            'dp' => $model->search(),
-        )
+        $this->render(
+            'admin2',
+            array(
+                'model' => $model,
+                'dp' => $model->search(),
+            )
         );
     }
 
@@ -526,5 +533,4 @@ class QuotationController extends Controller
             //'dp' => new CArrayDataProvider($model->payments, array('keyField' => 'ID'))
                 ), false, true);
     }*/
-
 }

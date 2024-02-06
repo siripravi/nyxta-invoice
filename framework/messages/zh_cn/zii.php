@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -13,7 +14,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   'Home' => '首页',
   'The button type "{type}" is not supported.' => '按钮类型 "{type}" 不支持。',
   'Are you sure you want to delete this item?' => '确定要删除这条数据吗?',

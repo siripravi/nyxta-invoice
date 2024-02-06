@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CSqlDataProvider implements a data provider based on a plain SQL statement.
  *
@@ -50,22 +51,22 @@ class CSqlDataProvider extends CDataProvider
 	/**
 	 * @var array parameters (name=>value) to be bound to the SQL statement.
 	 */
-	public $params=array();
+	public $params = array();
 	/**
 	 * @var string the name of key field. Defaults to 'id'.
 	 */
-	public $keyField='id';
+	public $keyField = 'id';
 
 	/**
 	 * Constructor.
 	 * @param string|CDbCommand $sql the SQL statement to be used for fetching data rows. Since version 1.1.13 this can also be an instance of {@link CDbCommand}.
 	 * @param array $config configuration (name=>value) to be applied as the initial property values of this class.
 	 */
-	public function __construct($sql,$config=array())
+	public function __construct($sql, $config = array())
 	{
-		$this->sql=$sql;
-		foreach($config as $key=>$value)
-			$this->$key=$value;
+		$this->sql = $sql;
+		foreach ($config as $key => $value)
+			$this->$key = $value;
 	}
 
 	/**
@@ -74,36 +75,31 @@ class CSqlDataProvider extends CDataProvider
 	 */
 	protected function fetchData()
 	{
-		if(!($this->sql instanceof CDbCommand))
-		{
-			$db=$this->db===null ? Yii::app()->db : $this->db;
-			$command=$db->createCommand($this->sql);
-		}
-		else
-			$command=clone $this->sql;
+		if (!($this->sql instanceof CDbCommand)) {
+			$db = $this->db === null ? Yii::app()->db : $this->db;
+			$command = $db->createCommand($this->sql);
+		} else
+			$command = clone $this->sql;
 
-		if(($sort=$this->getSort())!==false)
-		{
-			$order=$sort->getOrderBy();
-			if(!empty($order))
-			{
-				if(preg_match('/\s+order\s+by\s+[\w\s,\.]+$/i',$command->text))
-					$command->text.=', '.$order;
+		if (($sort = $this->getSort()) !== false) {
+			$order = $sort->getOrderBy();
+			if (!empty($order)) {
+				if (preg_match('/\s+order\s+by\s+[\w\s,\.]+$/i', $command->text))
+					$command->text .= ', ' . $order;
 				else
-					$command->text.=' ORDER BY '.$order;
+					$command->text .= ' ORDER BY ' . $order;
 			}
 		}
 
-		if(($pagination=$this->getPagination())!==false)
-		{
+		if (($pagination = $this->getPagination()) !== false) {
 			$pagination->setItemCount($this->getTotalItemCount());
-			$limit=$pagination->getLimit();
-			$offset=$pagination->getOffset();
-			$command->text=$command->getConnection()->getCommandBuilder()->applyLimit($command->text,$limit,$offset);
+			$limit = $pagination->getLimit();
+			$offset = $pagination->getOffset();
+			$command->text = $command->getConnection()->getCommandBuilder()->applyLimit($command->text, $limit, $offset);
 		}
 
-		foreach($this->params as $name=>$value)
-			$command->bindValue($name,$value);
+		foreach ($this->params as $name => $value)
+			$command->bindValue($name, $value);
 
 		return $command->queryAll();
 	}
@@ -114,15 +110,14 @@ class CSqlDataProvider extends CDataProvider
 	 */
 	protected function fetchKeys()
 	{
-		$keys=array();
-		if($data=$this->getData())
-		{
-			if(is_object(reset($data)))
-				foreach($data as $i=>$item)
-					$keys[$i]=$item->{$this->keyField};
+		$keys = array();
+		if ($data = $this->getData()) {
+			if (is_object(reset($data)))
+				foreach ($data as $i => $item)
+					$keys[$i] = $item->{$this->keyField};
 			else
-				foreach($data as $i=>$item)
-					$keys[$i]=$item[$this->keyField];
+				foreach ($data as $i => $item)
+					$keys[$i] = $item[$this->keyField];
 		}
 		return $keys;
 	}

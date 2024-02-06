@@ -61,9 +61,11 @@ class EmployeeController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->render('view', array(
-			'model' => $this->loadModel($id),
-		)
+		$this->render(
+			'view',
+			array(
+				'model' => $this->loadModel($id),
+			)
 		);
 	}
 
@@ -103,9 +105,11 @@ class EmployeeController extends Controller
 			}
 		}
 		if (!$flag)
-			$this->render('create', array(
-				'model' => $model,
-			)
+			$this->render(
+				'create',
+				array(
+					'model' => $model,
+				)
 			);
 	}
 
@@ -163,9 +167,11 @@ class EmployeeController extends Controller
 				$this->redirect(array('view', 'id' => $model->id));
 		}
 
-		$this->render('update', array(
-			'model' => $model,
-		)
+		$this->render(
+			'update',
+			array(
+				'model' => $model,
+			)
 		);
 	}
 
@@ -189,9 +195,11 @@ class EmployeeController extends Controller
 	public function actionIndex()
 	{
 		$dataProvider = new CActiveDataProvider('Employee');
-		$this->render('index', array(
-			'dataProvider' => $dataProvider,
-		)
+		$this->render(
+			'index',
+			array(
+				'dataProvider' => $dataProvider,
+			)
 		);
 	}
 
@@ -205,9 +213,11 @@ class EmployeeController extends Controller
 		if (isset($_GET['Employee']))
 			$model->attributes = $_GET['Employee'];
 
-		$this->render('admin', array(
-			'model' => $model,
-		)
+		$this->render(
+			'admin',
+			array(
+				'model' => $model,
+			)
 		);
 	}
 

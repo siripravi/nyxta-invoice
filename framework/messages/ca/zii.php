@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -16,7 +17,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   'Home' => 'Home',
   'The button type "{type}" is not supported.' => 'El tipus de botó "{type}" no és suportat.',
   'The property filterSelector should be defined.' => 'La propietat filterSelector hauría d\'estar definida.',

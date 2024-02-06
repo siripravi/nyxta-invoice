@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CDbHttpSession class
  *
@@ -63,12 +64,12 @@ class CDbHttpSession extends CHttpSession
 	 * </pre>
 	 * @see autoCreateSessionTable
 	 */
-	public $sessionTableName='YiiSession';
+	public $sessionTableName = 'YiiSession';
 	/**
 	 * @var boolean whether the session DB table should be automatically created if not exists. Defaults to true.
 	 * @see sessionTableName
 	 */
-	public $autoCreateSessionTable=true;
+	public $autoCreateSessionTable = true;
 	/**
 	 * @var CDbConnection the DB connection instance
 	 */
@@ -91,42 +92,38 @@ class CDbHttpSession extends CHttpSession
 	 * @param boolean $deleteOldSession Whether to delete the old associated session file or not.
 	 * @since 1.1.8
 	 */
-	public function regenerateID($deleteOldSession=false)
+	public function regenerateID($deleteOldSession = false)
 	{
-		$oldID=session_id();
+		$oldID = session_id();
 
 		// if no session is started, there is nothing to regenerate
-		if(empty($oldID))
+		if (empty($oldID))
 			return;
 
 		parent::regenerateID(false);
-		$newID=session_id();
-		$db=$this->getDbConnection();
+		$newID = session_id();
+		$db = $this->getDbConnection();
 
-		$row=$db->createCommand()
+		$row = $db->createCommand()
 			->select()
 			->from($this->sessionTableName)
-			->where('id=:id',array(':id'=>$oldID))
+			->where('id=:id', array(':id' => $oldID))
 			->queryRow();
-		if($row!==false)
-		{
-			if($deleteOldSession)
-				$db->createCommand()->update($this->sessionTableName,array(
-					'id'=>$newID
-				),'id=:oldID',array(':oldID'=>$oldID));
-			else
-			{
-				$row['id']=$newID;
+		if ($row !== false) {
+			if ($deleteOldSession)
+				$db->createCommand()->update($this->sessionTableName, array(
+					'id' => $newID
+				), 'id=:oldID', array(':oldID' => $oldID));
+			else {
+				$row['id'] = $newID;
 				$db->createCommand()->insert($this->sessionTableName, $row);
 			}
-		}
-		else
-		{
+		} else {
 			// shouldn't reach here normally
 			$db->createCommand()->insert($this->sessionTableName, array(
-				'id'=>$newID,
-				'expire'=>time()+$this->getTimeout(),
-				'data'=>'',
+				'id' => $newID,
+				'expire' => time() + $this->getTimeout(),
+				'data' => '',
 			));
 		}
 	}
@@ -136,29 +133,28 @@ class CDbHttpSession extends CHttpSession
 	 * @param CDbConnection $db the database connection
 	 * @param string $tableName the name of the table to be created
 	 */
-	protected function createSessionTable($db,$tableName)
+	protected function createSessionTable($db, $tableName)
 	{
-		switch($db->getDriverName())
-		{
+		switch ($db->getDriverName()) {
 			case 'mysql':
-				$blob='LONGBLOB';
+				$blob = 'LONGBLOB';
 				break;
 			case 'pgsql':
-				$blob='BYTEA';
+				$blob = 'BYTEA';
 				break;
 			case 'sqlsrv':
 			case 'mssql':
 			case 'dblib':
-				$blob='VARBINARY(MAX)';
+				$blob = 'VARBINARY(MAX)';
 				break;
 			default:
-				$blob='BLOB';
+				$blob = 'BLOB';
 				break;
 		}
-		$db->createCommand()->createTable($tableName,array(
-			'id'=>'CHAR(32) PRIMARY KEY',
-			'expire'=>'integer',
-			'data'=>$blob,
+		$db->createCommand()->createTable($tableName, array(
+			'id' => 'CHAR(32) PRIMARY KEY',
+			'expire' => 'integer',
+			'data' => $blob,
 		));
 	}
 
@@ -168,20 +164,20 @@ class CDbHttpSession extends CHttpSession
 	 */
 	protected function getDbConnection()
 	{
-		if($this->_db!==null)
+		if ($this->_db !== null)
 			return $this->_db;
-		elseif(($id=$this->connectionID)!==null)
-		{
-			if(($this->_db=Yii::app()->getComponent($id)) instanceof CDbConnection)
+		elseif (($id = $this->connectionID) !== null) {
+			if (($this->_db = Yii::app()->getComponent($id)) instanceof CDbConnection)
 				return $this->_db;
 			else
-				throw new CException(Yii::t('yii','CDbHttpSession.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.',
-					array('{id}'=>$id)));
-		}
-		else
-		{
-			$dbFile=Yii::app()->getRuntimePath().DIRECTORY_SEPARATOR.'session-'.Yii::getVersion().'.db';
-			return $this->_db=new CDbConnection('sqlite:'.$dbFile);
+				throw new CException(Yii::t(
+					'yii',
+					'CDbHttpSession.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.',
+					array('{id}' => $id)
+				));
+		} else {
+			$dbFile = Yii::app()->getRuntimePath() . DIRECTORY_SEPARATOR . 'session-' . Yii::getVersion() . '.db';
+			return $this->_db = new CDbConnection('sqlite:' . $dbFile);
 		}
 	}
 
@@ -192,19 +188,15 @@ class CDbHttpSession extends CHttpSession
 	 * @param string $sessionName session name
 	 * @return boolean whether session is opened successfully
 	 */
-	public function openSession($savePath,$sessionName)
+	public function openSession($savePath, $sessionName)
 	{
-		if($this->autoCreateSessionTable)
-		{
-			$db=$this->getDbConnection();
+		if ($this->autoCreateSessionTable) {
+			$db = $this->getDbConnection();
 			$db->setActive(true);
-			try
-			{
-				$db->createCommand()->delete($this->sessionTableName,'expire<:expire',array(':expire'=>time()));
-			}
-			catch(Exception $e)
-			{
-				$this->createSessionTable($db,$this->sessionTableName);
+			try {
+				$db->createCommand()->delete($this->sessionTableName, 'expire<:expire', array(':expire' => time()));
+			} catch (Exception $e) {
+				$this->createSessionTable($db, $this->sessionTableName);
 			}
 		}
 		return true;
@@ -218,17 +210,17 @@ class CDbHttpSession extends CHttpSession
 	 */
 	public function readSession($id)
 	{
-		$db=$this->getDbConnection();
-		if($db->getDriverName()=='sqlsrv' || $db->getDriverName()=='mssql' || $db->getDriverName()=='dblib')
-			$select='CONVERT(VARCHAR(MAX), data)';
+		$db = $this->getDbConnection();
+		if ($db->getDriverName() == 'sqlsrv' || $db->getDriverName() == 'mssql' || $db->getDriverName() == 'dblib')
+			$select = 'CONVERT(VARCHAR(MAX), data)';
 		else
-			$select='data';
-		$data=$db->createCommand()
+			$select = 'data';
+		$data = $db->createCommand()
 			->select($select)
 			->from($this->sessionTableName)
-			->where('expire>:expire AND id=:id',array(':expire'=>time(),':id'=>$id))
+			->where('expire>:expire AND id=:id', array(':expire' => time(), ':id' => $id))
 			->queryScalar();
-		return ($data===null || $data===false)?'':$data;
+		return ($data === null || $data === false) ? '' : $data;
 	}
 
 	/**
@@ -238,33 +230,30 @@ class CDbHttpSession extends CHttpSession
 	 * @param string $data session data
 	 * @return boolean whether session write is successful
 	 */
-	public function writeSession($id,$data)
+	public function writeSession($id, $data)
 	{
 		// exception must be caught in session write handler
 		// https://us.php.net/manual/en/function.session-set-save-handler.php
-		try
-		{
-			$expire=time()+$this->getTimeout();
-			$db=$this->getDbConnection();
-			if($db->getDriverName()=='pgsql')
-				$data=new CDbExpression($db->quoteValueWithType($data, PDO::PARAM_LOB)."::bytea");
-			if($db->getDriverName()=='sqlsrv' || $db->getDriverName()=='mssql' || $db->getDriverName()=='dblib')
-				$data=new CDbExpression('CONVERT(VARBINARY(MAX), '.$db->quoteValue($data).')');
-			if($db->createCommand()->select('id')->from($this->sessionTableName)->where('id=:id',array(':id'=>$id))->queryScalar()===false)
-				$db->createCommand()->insert($this->sessionTableName,array(
-					'id'=>$id,
-					'data'=>$data,
-					'expire'=>$expire,
+		try {
+			$expire = time() + $this->getTimeout();
+			$db = $this->getDbConnection();
+			if ($db->getDriverName() == 'pgsql')
+				$data = new CDbExpression($db->quoteValueWithType($data, PDO::PARAM_LOB) . "::bytea");
+			if ($db->getDriverName() == 'sqlsrv' || $db->getDriverName() == 'mssql' || $db->getDriverName() == 'dblib')
+				$data = new CDbExpression('CONVERT(VARBINARY(MAX), ' . $db->quoteValue($data) . ')');
+			if ($db->createCommand()->select('id')->from($this->sessionTableName)->where('id=:id', array(':id' => $id))->queryScalar() === false)
+				$db->createCommand()->insert($this->sessionTableName, array(
+					'id' => $id,
+					'data' => $data,
+					'expire' => $expire,
 				));
 			else
-				$db->createCommand()->update($this->sessionTableName,array(
-					'data'=>$data,
-					'expire'=>$expire
-				),'id=:id',array(':id'=>$id));
-		}
-		catch(Exception $e)
-		{
-			if(YII_DEBUG)
+				$db->createCommand()->update($this->sessionTableName, array(
+					'data' => $data,
+					'expire' => $expire
+				), 'id=:id', array(':id' => $id));
+		} catch (Exception $e) {
+			if (YII_DEBUG)
 				echo $e->getMessage();
 			// it is too late to log an error message here
 			return false;
@@ -281,7 +270,7 @@ class CDbHttpSession extends CHttpSession
 	public function destroySession($id)
 	{
 		$this->getDbConnection()->createCommand()
-			->delete($this->sessionTableName,'id=:id',array(':id'=>$id));
+			->delete($this->sessionTableName, 'id=:id', array(':id' => $id));
 		return true;
 	}
 
@@ -294,7 +283,7 @@ class CDbHttpSession extends CHttpSession
 	public function gcSession($maxLifetime)
 	{
 		$this->getDbConnection()->createCommand()
-			->delete($this->sessionTableName,'expire<:expire',array(':expire'=>time()));
+			->delete($this->sessionTableName, 'expire<:expire', array(':expire' => time()));
 		return true;
 	}
 }

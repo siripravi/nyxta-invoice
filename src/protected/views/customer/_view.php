@@ -72,6 +72,6 @@
   <?php echo CHtml::encode($data->notes); ?>
   <br />
 
-  */?>
+  */ ?>
 
 </div>

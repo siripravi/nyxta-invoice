@@ -6,95 +6,97 @@
         <?php
 
         //  $pmt->invoice_id = $stmt->primaryKey;
-        
-        $this->widget('editable.EditableDetailView', array(
-            'data' => $pmt,
-            //you can define any default params for child EditableFields 
-            'url' => $this->createUrl('payments/updatePmt'),
-            //common submit url for all fields
-            'params' => array('YII_CSRF_TOKEN' => Yii::app()->request->csrfToken),
-            //params for all fields
-            'emptytext' => 'no value',
-            //'apply' => false, //you can turn off applying editable to all attributes
-        
-            'attributes' => array(
-                array(
-                    'name' => 'invoice_id',
-                    'label' => false,
 
-                    //'type' => 'raw',
-                    //'visible' => false,
-                    'value' => $stmt->primaryKey,
-                    'editable' => array(
-                        'disabled' => true,
-                        'type' => 'text',
-                        //'value' => $stmt->primaryKey,
-                        //  'text' => $stmt->invoice_id,
-                        'inputclass' => 'input-medium',
-                        'emptytext' => '',
-                        'validate' => 'function(value) {
+        $this->widget(
+            'editable.EditableDetailView',
+            array(
+                'data' => $pmt,
+                //you can define any default params for child EditableFields 
+                'url' => $this->createUrl('payments/updatePmt'),
+                //common submit url for all fields
+                'params' => array('YII_CSRF_TOKEN' => Yii::app()->request->csrfToken),
+                //params for all fields
+                'emptytext' => 'no value',
+                //'apply' => false, //you can turn off applying editable to all attributes
+
+                'attributes' => array(
+                    array(
+                        'name' => 'invoice_id',
+                        'label' => false,
+
+                        //'type' => 'raw',
+                        //'visible' => false,
+                        'value' => $stmt->primaryKey,
+                        'editable' => array(
+                            'disabled' => true,
+                            'type' => 'text',
+                            //'value' => $stmt->primaryKey,
+                            //  'text' => $stmt->invoice_id,
+                            'inputclass' => 'input-medium',
+                            'emptytext' => '',
+                            'validate' => 'function(value) {
                     if(!value) return "invoicce is required"
                 }',
-                        'htmlOptions' => array('style' => 'display:none;')
-                    )
-                ),
-                array(
-                    'name' => 'deposited_by',
-                    'editable' => array(
-                        'type' => 'text',
-                        'inputclass' => 'input-medium',
-                        'emptytext' => 'person name',
-                    )
-                ),
-                array(
-                    'name' => 'amount',
-                    'editable' => array(
-                        'type' => 'text',
-                        'inputclass' => 'input-medium',
-                        'emptytext' => 'amount here',
-                        'validate' => 'function(value) {
+                            'htmlOptions' => array('style' => 'display:none;')
+                        )
+                    ),
+                    array(
+                        'name' => 'deposited_by',
+                        'editable' => array(
+                            'type' => 'text',
+                            'inputclass' => 'input-medium',
+                            'emptytext' => 'person name',
+                        )
+                    ),
+                    array(
+                        'name' => 'amount',
+                        'editable' => array(
+                            'type' => 'text',
+                            'inputclass' => 'input-medium',
+                            'emptytext' => 'amount here',
+                            'validate' => 'function(value) {
                     if(!value) return "please enter amount"
                 }'
-                    )
-                ),
+                        )
+                    ),
 
-                array(
-                    //select loaded from database
-                    'name' => 'mode_id',
-                    'editable' => array(
-                        'type' => 'select',
-                        'source' => Editable::source(Mode::model()->findAll(), 'mode_id', function ($post) {
-                            return CHtml::encode($post->mode_description);
-                        }),
-                        'validate' => 'function(value) {
+                    array(
+                        //select loaded from database
+                        'name' => 'mode_id',
+                        'editable' => array(
+                            'type' => 'select',
+                            'source' => Editable::source(Mode::model()->findAll(), 'mode_id', function ($post) {
+                                return CHtml::encode($post->mode_description);
+                            }),
+                            'validate' => 'function(value) {
                     if(!value) return "please specify mode of payment"
                 }',
-                    )
-                ),
+                        )
+                    ),
 
-                array(
-                    'name' => 'pay_date',
-                    'editable' => array(
-                        'type' => 'date',
-                        'viewformat' => 'dd/mm/yyyy',
-                        'validate' => 'function(value) {
+                    array(
+                        'name' => 'pay_date',
+                        'editable' => array(
+                            'type' => 'date',
+                            'viewformat' => 'dd/mm/yyyy',
+                            'validate' => 'function(value) {
                     if(!value) return "date of payment is required"
                 }',
-                    )
-                ),
-                array(
-                    'name' => 'details',
-                    'editable' => array(
-                        'type' => 'textarea',
+                        )
+                    ),
+                    array(
+                        'name' => 'details',
+                        'editable' => array(
+                            'type' => 'textarea',
 
-                    )
-                ),
+                        )
+                    ),
 
-                // 'deposited_by',
-                // 'created'
-        
+                    // 'deposited_by',
+                    // 'created'
 
-                /*  array( //edit related record
+
+                    /*  array( //edit related record
                       'name' => 'profile.language',
                       'editable' => array(
                           'url'  => array('site/updateProfile') //related record requires own submit url
@@ -104,9 +106,9 @@
                   'created_at', //will not be editable as attribute is not safe
                  * 
                  */
-            ),
-            'htmlOptions' => array('class' => 'table table-hover')
-        )
+                ),
+                'htmlOptions' => array('class' => 'table table-hover')
+            )
         );
         ?>
         <hr>

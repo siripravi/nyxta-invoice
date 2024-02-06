@@ -54,8 +54,7 @@ class Venue extends CActiveRecord
 	{
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
-		return array(
-		);
+		return array();
 	}
 
 	/**
@@ -108,9 +107,11 @@ class Venue extends CActiveRecord
 		$criteria->compare('ship_email1', $this->ship_email1, true);
 		$criteria->compare('ship_details', $this->ship_details, true);
 
-		return new CActiveDataProvider($this, array(
-			'criteria' => $criteria,
-		)
+		return new CActiveDataProvider(
+			$this,
+			array(
+				'criteria' => $criteria,
+			)
 		);
 	}
 

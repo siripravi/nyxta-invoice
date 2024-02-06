@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CMenu class file.
  *
@@ -69,7 +70,7 @@ class CMenu extends CWidget
 	 * This option has been available since version 1.1.6.</li>
 	 * </ul>
 	 */
-	public $items=array();
+	public $items = array();
 	/**
 	 * @var string the template used to render an individual menu item. In this template,
 	 * the token "{menu}" will be replaced with the corresponding menu link or text.
@@ -81,37 +82,37 @@ class CMenu extends CWidget
 	/**
 	 * @var boolean whether the labels for menu items should be HTML-encoded. Defaults to true.
 	 */
-	public $encodeLabel=true;
+	public $encodeLabel = true;
 	/**
 	 * @var string the CSS class to be appended to the active menu item. Defaults to 'active'.
 	 * If empty, the CSS class of menu items will not be changed.
 	 */
-	public $activeCssClass='active';
+	public $activeCssClass = 'active';
 	/**
 	 * @var boolean whether to automatically activate items according to whether their route setting
 	 * matches the currently requested route. Defaults to true.
 	 * @since 1.1.3
 	 */
-	public $activateItems=true;
+	public $activateItems = true;
 	/**
 	 * @var boolean whether to activate parent menu items when one of the corresponding child menu items is active.
 	 * The activated parent menu items will also have its CSS classes appended with {@link activeCssClass}.
 	 * Defaults to false.
 	 */
-	public $activateParents=false;
+	public $activateParents = false;
 	/**
 	 * @var boolean whether to hide empty menu items. An empty menu item is one whose 'url' option is not
 	 * set and which doesn't contain visible child menu items. Defaults to true.
 	 */
-	public $hideEmptyItems=true;
+	public $hideEmptyItems = true;
 	/**
 	 * @var array HTML attributes for the menu's root container tag
 	 */
-	public $htmlOptions=array();
+	public $htmlOptions = array();
 	/**
 	 * @var array HTML attributes for the submenu's container tag.
 	 */
-	public $submenuHtmlOptions=array();
+	public $submenuHtmlOptions = array();
 	/**
 	 * @var string the HTML element name that will be used to wrap the label of all menu links.
 	 * For example, if this property is set as 'span', a menu item may be rendered as
@@ -126,7 +127,7 @@ class CMenu extends CWidget
 	 * {@link linkLabelWrapper}.
 	 * @since 1.1.13
 	 */
-	public $linkLabelWrapperHtmlOptions=array();
+	public $linkLabelWrapperHtmlOptions = array();
 	/**
 	 * @var string the CSS class that will be assigned to the first item in the main menu or each submenu.
 	 * Defaults to null, meaning no such CSS class will be assigned.
@@ -153,12 +154,12 @@ class CMenu extends CWidget
 	 */
 	public function init()
 	{
-		if(isset($this->htmlOptions['id']))
-			$this->id=$this->htmlOptions['id'];
+		if (isset($this->htmlOptions['id']))
+			$this->id = $this->htmlOptions['id'];
 		else
-			$this->htmlOptions['id']=$this->id;
-		$route=$this->getController()->getRoute();
-		$this->items=$this->normalizeItems($this->items,$route,$hasActiveChild);
+			$this->htmlOptions['id'] = $this->id;
+		$route = $this->getController()->getRoute();
+		$this->items = $this->normalizeItems($this->items, $route, $hasActiveChild);
 	}
 
 	/**
@@ -176,9 +177,8 @@ class CMenu extends CWidget
 	 */
 	protected function renderMenu($items)
 	{
-		if(count($items))
-		{
-			echo CHtml::openTag('ul',$this->htmlOptions)."\n";
+		if (count($items)) {
+			echo CHtml::openTag('ul', $this->htmlOptions) . "\n";
 			$this->renderMenuRecursive($items);
 			echo CHtml::closeTag('ul');
 		}
@@ -190,48 +190,43 @@ class CMenu extends CWidget
 	 */
 	protected function renderMenuRecursive($items)
 	{
-		$count=0;
-		$n=count($items);
-		foreach($items as $item)
-		{
+		$count = 0;
+		$n = count($items);
+		foreach ($items as $item) {
 			$count++;
-			$options=isset($item['itemOptions']) ? $item['itemOptions'] : array();
-			$class=array();
-			if($item['active'] && $this->activeCssClass!='')
-				$class[]=$this->activeCssClass;
-			if($count===1 && $this->firstItemCssClass!==null)
-				$class[]=$this->firstItemCssClass;
-			if($count===$n && $this->lastItemCssClass!==null)
-				$class[]=$this->lastItemCssClass;
-			if($this->itemCssClass!==null)
-				$class[]=$this->itemCssClass;
-			if($class!==array())
-			{
-				if(empty($options['class']))
-					$options['class']=implode(' ',$class);
+			$options = isset($item['itemOptions']) ? $item['itemOptions'] : array();
+			$class = array();
+			if ($item['active'] && $this->activeCssClass != '')
+				$class[] = $this->activeCssClass;
+			if ($count === 1 && $this->firstItemCssClass !== null)
+				$class[] = $this->firstItemCssClass;
+			if ($count === $n && $this->lastItemCssClass !== null)
+				$class[] = $this->lastItemCssClass;
+			if ($this->itemCssClass !== null)
+				$class[] = $this->itemCssClass;
+			if ($class !== array()) {
+				if (empty($options['class']))
+					$options['class'] = implode(' ', $class);
 				else
-					$options['class'].=' '.implode(' ',$class);
+					$options['class'] .= ' ' . implode(' ', $class);
 			}
 
 			echo CHtml::openTag('li', $options);
 
-			$menu=$this->renderMenuItem($item);
-			if(isset($this->itemTemplate) || isset($item['template']))
-			{
-				$template=isset($item['template']) ? $item['template'] : $this->itemTemplate;
-				echo strtr($template,array('{menu}'=>$menu));
-			}
-			else
+			$menu = $this->renderMenuItem($item);
+			if (isset($this->itemTemplate) || isset($item['template'])) {
+				$template = isset($item['template']) ? $item['template'] : $this->itemTemplate;
+				echo strtr($template, array('{menu}' => $menu));
+			} else
 				echo $menu;
 
-			if(isset($item['items']) && count($item['items']))
-			{
-				echo "\n".CHtml::openTag('ul',isset($item['submenuOptions']) ? $item['submenuOptions'] : $this->submenuHtmlOptions)."\n";
+			if (isset($item['items']) && count($item['items'])) {
+				echo "\n" . CHtml::openTag('ul', isset($item['submenuOptions']) ? $item['submenuOptions'] : $this->submenuHtmlOptions) . "\n";
 				$this->renderMenuRecursive($item['items']);
-				echo CHtml::closeTag('ul')."\n";
+				echo CHtml::closeTag('ul') . "\n";
 			}
 
-			echo CHtml::closeTag('li')."\n";
+			echo CHtml::closeTag('li') . "\n";
 		}
 	}
 
@@ -244,13 +239,11 @@ class CMenu extends CWidget
 	 */
 	protected function renderMenuItem($item)
 	{
-		if(isset($item['url']))
-		{
-			$label=$this->linkLabelWrapper===null ? $item['label'] : CHtml::tag($this->linkLabelWrapper, $this->linkLabelWrapperHtmlOptions, $item['label']);
-			return CHtml::link($label,$item['url'],isset($item['linkOptions']) ? $item['linkOptions'] : array());
-		}
-		else
-			return CHtml::tag('span',isset($item['linkOptions']) ? $item['linkOptions'] : array(), $item['label']);
+		if (isset($item['url'])) {
+			$label = $this->linkLabelWrapper === null ? $item['label'] : CHtml::tag($this->linkLabelWrapper, $this->linkLabelWrapperHtmlOptions, $item['label']);
+			return CHtml::link($label, $item['url'], isset($item['linkOptions']) ? $item['linkOptions'] : array());
+		} else
+			return CHtml::tag('span', isset($item['linkOptions']) ? $item['linkOptions'] : array(), $item['label']);
 	}
 
 	/**
@@ -260,43 +253,36 @@ class CMenu extends CWidget
 	 * @param boolean $active whether there is an active child menu item.
 	 * @return array the normalized menu items
 	 */
-	protected function normalizeItems($items,$route,&$active)
+	protected function normalizeItems($items, $route, &$active)
 	{
-		foreach($items as $i=>$item)
-		{
-			if(isset($item['visible']) && !$item['visible'])
-			{
+		foreach ($items as $i => $item) {
+			if (isset($item['visible']) && !$item['visible']) {
 				unset($items[$i]);
 				continue;
 			}
-			if(!isset($item['label']))
-				$item['label']='';
+			if (!isset($item['label']))
+				$item['label'] = '';
 			$encodeLabel = isset($item['encodeLabel']) ? $item['encodeLabel'] : $this->encodeLabel;
-			if($encodeLabel)
-				$items[$i]['label']=CHtml::encode($item['label']);
-			$hasActiveChild=false;
-			if(isset($item['items']))
-			{
-				$items[$i]['items']=$this->normalizeItems($item['items'],$route,$hasActiveChild);
-				if(empty($items[$i]['items']) && $this->hideEmptyItems)
-				{
+			if ($encodeLabel)
+				$items[$i]['label'] = CHtml::encode($item['label']);
+			$hasActiveChild = false;
+			if (isset($item['items'])) {
+				$items[$i]['items'] = $this->normalizeItems($item['items'], $route, $hasActiveChild);
+				if (empty($items[$i]['items']) && $this->hideEmptyItems) {
 					unset($items[$i]['items']);
-					if(!isset($item['url']))
-					{
+					if (!isset($item['url'])) {
 						unset($items[$i]);
 						continue;
 					}
 				}
 			}
-			if(!isset($item['active']))
-			{
-				if($this->activateParents && $hasActiveChild || $this->activateItems && $this->isItemActive($item,$route))
-					$active=$items[$i]['active']=true;
+			if (!isset($item['active'])) {
+				if ($this->activateParents && $hasActiveChild || $this->activateItems && $this->isItemActive($item, $route))
+					$active = $items[$i]['active'] = true;
 				else
-					$items[$i]['active']=false;
-			}
-			elseif($item['active'])
-				$active=true;
+					$items[$i]['active'] = false;
+			} elseif ($item['active'])
+				$active = true;
 		}
 		return array_values($items);
 	}
@@ -309,16 +295,13 @@ class CMenu extends CWidget
 	 * @param string $route the route of the current request
 	 * @return boolean whether the menu item is active
 	 */
-	protected function isItemActive($item,$route)
+	protected function isItemActive($item, $route)
 	{
-		if(isset($item['url']) && is_array($item['url']) && !strcasecmp(trim($item['url'][0],'/'),$route))
-		{
+		if (isset($item['url']) && is_array($item['url']) && !strcasecmp(trim($item['url'][0], '/'), $route)) {
 			unset($item['url']['#']);
-			if(count($item['url'])>1)
-			{
-				foreach(array_splice($item['url'],1) as $name=>$value)
-				{
-					if(!isset($_GET[$name]) || $_GET[$name]!=$value)
+			if (count($item['url']) > 1) {
+				foreach (array_splice($item['url'], 1) as $name => $value) {
+					if (!isset($_GET[$name]) || $_GET[$name] != $value)
 						return false;
 				}
 			}

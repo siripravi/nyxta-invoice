@@ -112,8 +112,7 @@ class Lookup extends CActiveRecord
 	 */
 	public function relations()
 	{
-		return array(
-		);
+		return array();
 	}
 
 	/**
@@ -140,13 +139,15 @@ class Lookup extends CActiveRecord
 		$criteria = new CDbCriteria;
 		$criteria->compare('type', $this->type);
 
-		return new CActiveDataProvider('Lookup', array(
-			'criteria' => $criteria,
-			'pagination' => false,
-			'sort' => array(
-				'defaultOrder' => 'type,position',
-			),
-		)
+		return new CActiveDataProvider(
+			'Lookup',
+			array(
+				'criteria' => $criteria,
+				'pagination' => false,
+				'sort' => array(
+					'defaultOrder' => 'type,position',
+				),
+			)
 		);
 	}
 

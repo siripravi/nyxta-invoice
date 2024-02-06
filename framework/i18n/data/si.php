@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'si'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8671',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##,##0%',
   'currencyFormat' => '¤ #,##,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'කැ.ඩො.',
@@ -54,10 +55,10 @@ return array (
     'BMD' => 'බ.ඩො.',
     'LKR' => 'රු.',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'ජනවාරි',
       2 => 'පෙබරවාරි',
       3 => 'මාර්තු',
@@ -71,8 +72,8 @@ return array (
       11 => 'නොවැම්බර්',
       12 => 'දෙසැම්බර්',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'ජන',
       2 => 'පෙබ',
       3 => 'මාර්තු',
@@ -86,8 +87,8 @@ return array (
       11 => 'නොවැ',
       12 => 'දෙසැ',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       1 => 'ජ',
       2 => 'පෙ',
       3 => 'මා',
@@ -102,10 +103,10 @@ return array (
       12 => 'දෙ',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'ජ',
       2 => 'පෙ',
       3 => 'මා',
@@ -119,8 +120,8 @@ return array (
       11 => 'නෙ',
       12 => 'දෙ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'ජන',
       2 => 'පෙබ',
       3 => 'මාර්',
@@ -134,8 +135,8 @@ return array (
       11 => 'නොවැ',
       12 => 'දෙසැ',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       1 => 'ජනවාරි',
       2 => 'පෙබරවාරි',
       3 => 'මාර්තු',
@@ -150,10 +151,10 @@ return array (
       12 => 'දෙසැම්බර්',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'ඉරිදා',
       1 => 'සඳුදා',
       2 => 'අඟහරුවාදා',
@@ -162,8 +163,8 @@ return array (
       5 => 'සිකුරාදා',
       6 => 'සෙනසුරාදා',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'ඉරි',
       1 => 'සඳු',
       2 => 'අඟ',
@@ -172,8 +173,8 @@ return array (
       5 => 'සිකු',
       6 => 'සෙන',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'ඉ',
       1 => 'ස',
       2 => 'අ',
@@ -182,8 +183,8 @@ return array (
       5 => 'සි',
       6 => 'සෙ',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'ඉ',
       1 => 'ස',
       2 => 'අ',
@@ -193,10 +194,10 @@ return array (
       6 => 'සෙ',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'ඉ',
       1 => 'ස',
       2 => 'අ',
@@ -205,8 +206,8 @@ return array (
       5 => 'සි',
       6 => 'සෙ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'ඉරි',
       1 => 'සඳු',
       2 => 'අඟ',
@@ -215,8 +216,8 @@ return array (
       5 => 'සිකු',
       6 => 'සෙන',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'ඉරි',
       1 => 'සඳු',
       2 => 'අඟ',
@@ -225,8 +226,8 @@ return array (
       5 => 'සිකු',
       6 => 'සෙන',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'ඉරිදා',
       1 => 'සඳුදා',
       2 => 'අඟහරුවාදා',
@@ -236,33 +237,33 @@ return array (
       6 => 'සෙනසුරාදා',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'ක්‍රි.පූ.',
       1 => 'ක්‍රි.ව.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'ක්‍රිස්තු පූර්‍ව',
       1 => 'ක්‍රිස්තු වර්‍ෂ',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'ක්‍රි.පූ.',
       1 => 'ක්‍රි.ව.',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'y MMMM d, EEEE',
     'long' => 'y MMMM d',
     'medium' => 'y MMM d',
     'short' => 'y/MM/dd',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'a HH:mm:ss zzzz',
     'long' => 'a h:mm:ss z',
     'medium' => 'a h.mm.ss',
@@ -272,8 +273,8 @@ return array (
   'amName' => 'පෙ.ව.',
   'pmName' => 'ප.ව.',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ab' => 'ඇබ්කාසියානු',
     'af' => 'අප්‍රිකානු',
     'am' => 'ඇම්හැරික්',
@@ -405,8 +406,8 @@ return array (
     'zu' => 'සුලු',
     'zxx' => 'වාග් විද්‍යා අන්තර්ගතයක් නැත',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'අරාබි',
     'armn' => 'ආර්මේනියානු',
     'beng' => 'බෙංගාලි',
@@ -447,8 +448,8 @@ return array (
     'zyyy' => 'පොදු.',
     'zzzz' => 'නොදත් අක්ෂර මාලාව',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'ලෝකය',
     '002' => 'අප්‍රිකාව',
     '003' => 'උතුරු ඇමෙරිකාව',

@@ -1,7 +1,7 @@
 <div id="ven-details-adrs">
-    <p class="category"><span class="label white label-success" id="lbl-evdt"
-            style="color:white;padding: 1.2em 1.6em .3em;"><i class="pe-7s-date"></i>
-            <?php //echo Yii::app()->dateFormatter->formatDateTime($stmt->ship_date, "medium", null);  ?>
+    <p class="category"><span class="label white label-success" id="lbl-evdt" style="color:white;padding: 1.2em 1.6em .3em;"><i class="pe-7s-date"></i>
+            <?php //echo Yii::app()->dateFormatter->formatDateTime($stmt->ship_date, "medium", null);  
+            ?>
             <?php $this->widget(
                 'editable.EditableField',
                 array(
@@ -21,32 +21,35 @@
                 )
             );
             ?>
-            <?php //echo date("F jS, Y", strtotime($stmt->ship_date)); ?>
+            <?php //echo date("F jS, Y", strtotime($stmt->ship_date)); 
+            ?>
         </span>
     </p>
 
     <div class="org"><strong>
             <?php
-            $this->widget('editable.EditableField', array(
-                'type' => 'select2',
-                'text' => $stmt->statement->venue->ship_name,
-                'model' => $stmt->statement,
-                'attribute' => 'venue_id',
-                'url' => $this->createUrl('statement/chgStmt'),
-                'source' => CHtml::listData(Venue::model()->findAll(), 'venue_id', function ($post) {
-                    return CHtml::encode($post->ship_name . ' ' . $post->ship_add1);
-                }),
-                'placement' => 'right',
-                'inputclass' => 'input-large',
-                'success' => 'js: function(data) {
+            $this->widget(
+                'editable.EditableField',
+                array(
+                    'type' => 'select2',
+                    'text' => $stmt->statement->venue->ship_name,
+                    'model' => $stmt->statement,
+                    'attribute' => 'venue_id',
+                    'url' => $this->createUrl('statement/chgStmt'),
+                    'source' => CHtml::listData(Venue::model()->findAll(), 'venue_id', function ($post) {
+                        return CHtml::encode($post->ship_name . ' ' . $post->ship_add1);
+                    }),
+                    'placement' => 'right',
+                    'inputclass' => 'input-large',
+                    'success' => 'js: function(data) {
                                         $.fn.yiiListView.update("stmt-list-view");
                                         location.reload();
                                         if(typeof data == "object" && !data.success) return data.msg;
                                     }',
-                'select2' => array(
-                    // 'multiple' => true
+                    'select2' => array(
+                        // 'multiple' => true
+                    )
                 )
-            )
             ); ?>
         </strong></div>
     <div class="adr">

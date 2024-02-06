@@ -67,7 +67,6 @@ class WebUser extends CWebUser
     function getHomeUrl()
     {
         return $this->user->homeUrl;
-
     }
     public function loginRequired()
     {
@@ -102,6 +101,4 @@ class WebUser extends CWebUser
             $request->redirect($this->user->homeUrl);
         }
     }
-
-
 }

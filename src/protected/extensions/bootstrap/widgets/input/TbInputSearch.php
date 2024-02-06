@@ -1,4 +1,5 @@
 <?php
+
 /**
  * TbInputSearch class file.
  * @author Christoffer Niska <ChristofferNiska@gmail.com>

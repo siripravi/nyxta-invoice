@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CFormButtonElement class file.
  *
@@ -41,15 +42,15 @@ class CFormButtonElement extends CFormElement
 	/**
 	 * @var array Core button types (alias=>CHtml method name)
 	 */
-	public static $coreTypes=array(
-		'htmlButton'=>'htmlButton',
-		'htmlSubmit'=>'htmlButton',
-		'htmlReset'=>'htmlButton',
-		'button'=>'button',
-		'submit'=>'submitButton',
-		'reset'=>'resetButton',
-		'image'=>'imageButton',
-		'link'=>'linkButton',
+	public static $coreTypes = array(
+		'htmlButton' => 'htmlButton',
+		'htmlSubmit' => 'htmlButton',
+		'htmlReset' => 'htmlButton',
+		'button' => 'button',
+		'submit' => 'submitButton',
+		'reset' => 'resetButton',
+		'image' => 'imageButton',
+		'link' => 'linkButton',
 	);
 
 	/**
@@ -86,7 +87,7 @@ class CFormButtonElement extends CFormElement
 	 */
 	public function setOn($value)
 	{
-		$this->_on=preg_split('/[\s,]+/',$value,-1,PREG_SPLIT_NO_EMPTY);
+		$this->_on = preg_split('/[\s,]+/', $value, -1, PREG_SPLIT_NO_EMPTY);
 	}
 
 	/**
@@ -95,30 +96,23 @@ class CFormButtonElement extends CFormElement
 	 */
 	public function render()
 	{
-		$attributes=$this->attributes;
-		if(isset(self::$coreTypes[$this->type]))
-		{
-			$method=self::$coreTypes[$this->type];
-			if($method==='linkButton')
-			{
-				if(!isset($attributes['params'][$this->name]))
-					$attributes['params'][$this->name]=1;
-			}
-			elseif($method==='htmlButton')
-			{
-				$attributes['type']=$this->type==='htmlSubmit' ? 'submit' : ($this->type==='htmlReset' ? 'reset' : 'button');
-				$attributes['name']=$this->name;
-			}
+		$attributes = $this->attributes;
+		if (isset(self::$coreTypes[$this->type])) {
+			$method = self::$coreTypes[$this->type];
+			if ($method === 'linkButton') {
+				if (!isset($attributes['params'][$this->name]))
+					$attributes['params'][$this->name] = 1;
+			} elseif ($method === 'htmlButton') {
+				$attributes['type'] = $this->type === 'htmlSubmit' ? 'submit' : ($this->type === 'htmlReset' ? 'reset' : 'button');
+				$attributes['name'] = $this->name;
+			} else
+				$attributes['name'] = $this->name;
+			if ($method === 'imageButton')
+				return CHtml::imageButton(isset($attributes['src']) ? $attributes['src'] : '', $attributes);
 			else
-				$attributes['name']=$this->name;
-			if($method==='imageButton')
-				return CHtml::imageButton(isset($attributes['src']) ? $attributes['src'] : '',$attributes);
-			else
-				return CHtml::$method($this->label,$attributes);
-		}
-		else
-		{
-			$attributes['name']=$this->name;
+				return CHtml::$method($this->label, $attributes);
+		} else {
+			$attributes['name'] = $this->name;
 			ob_start();
 			$this->getParent()->getOwner()->widget($this->type, $attributes);
 			return ob_get_clean();
@@ -133,6 +127,6 @@ class CFormButtonElement extends CFormElement
 	 */
 	protected function evaluateVisible()
 	{
-		return empty($this->_on) || in_array($this->getParent()->getModel()->getScenario(),$this->_on);
+		return empty($this->_on) || in_array($this->getParent()->getModel()->getScenario(), $this->_on);
 	}
 }

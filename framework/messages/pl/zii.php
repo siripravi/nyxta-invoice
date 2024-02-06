@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -13,7 +14,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   'Home' => 'Start',
   'The button type "{type}" is not supported.' => 'Typ przycisku "{type}" nie jest obsługiwany.',
   'Are you sure you want to delete this item?' => 'Czy na pewno usunąć ten element?',

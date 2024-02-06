@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CPropertyValue class file.
  *
@@ -53,9 +54,9 @@ class CPropertyValue
 	public static function ensureBoolean($value)
 	{
 		if (is_string($value))
-			return !strcasecmp($value,'true') || ($value!=0 && $value!=='' && is_numeric($value));
+			return !strcasecmp($value, 'true') || ($value != 0 && $value !== '' && is_numeric($value));
 		else
-			return (boolean)$value;
+			return (bool)$value;
 	}
 
 	/**
@@ -68,7 +69,7 @@ class CPropertyValue
 	public static function ensureString($value)
 	{
 		if (is_bool($value))
-			return $value?'true':'false';
+			return $value ? 'true' : 'false';
 		else
 			return (string)$value;
 	}
@@ -80,7 +81,7 @@ class CPropertyValue
 	 */
 	public static function ensureInteger($value)
 	{
-		return (integer)$value;
+		return (int)$value;
 	}
 
 	/**
@@ -107,25 +108,18 @@ class CPropertyValue
 	 */
 	public static function ensureArray($value)
 	{
-		if(is_string($value))
-		{
+		if (is_string($value)) {
 			$value = trim($value);
 			$len = strlen($value);
-			if ($len >= 2 && $value[0] == '(' && $value[$len-1] == ')')
-			{
-				try
-				{
+			if ($len >= 2 && $value[0] == '(' && $value[$len - 1] == ')') {
+				try {
 					return eval('return array' . $value . ';');
-				}
-				catch (ParseError $e)
-				{
+				} catch (ParseError $e) {
 					return array();
 				}
-			}
-			else
-				return $len>0?array($value):array();
-		}
-		else
+			} else
+				return $len > 0 ? array($value) : array();
+		} else
 			return (array)$value;
 	}
 
@@ -152,15 +146,18 @@ class CPropertyValue
 	 * @return string the valid enumeration value
 	 * @throws CException if the value is not a valid enumerable value
 	 */
-	public static function ensureEnum($value,$enumType)
+	public static function ensureEnum($value, $enumType)
 	{
-		static $types=array();
-		if(!isset($types[$enumType]))
-			$types[$enumType]=new ReflectionClass($enumType);
-		if($types[$enumType]->hasConstant($value))
+		static $types = array();
+		if (!isset($types[$enumType]))
+			$types[$enumType] = new ReflectionClass($enumType);
+		if ($types[$enumType]->hasConstant($value))
 			return $value;
 		else
-			throw new CException(Yii::t('yii','Invalid enumerable value "{value}". Please make sure it is among ({enum}).',
-				array('{value}'=>$value, '{enum}'=>implode(', ',$types[$enumType]->getConstants()))));
+			throw new CException(Yii::t(
+				'yii',
+				'Invalid enumerable value "{value}". Please make sure it is among ({enum}).',
+				array('{value}' => $value, '{enum}' => implode(', ', $types[$enumType]->getConstants()))
+			));
 	}
 }

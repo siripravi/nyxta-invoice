@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CInputWidget class file.
  *
@@ -42,7 +43,7 @@ abstract class CInputWidget extends CWidget
 	/**
 	 * @var array additional HTML options to be rendered in the input tag
 	 */
-	public $htmlOptions=array();
+	public $htmlOptions = array();
 
 
 	/**
@@ -51,24 +52,23 @@ abstract class CInputWidget extends CWidget
 	 */
 	protected function resolveNameID()
 	{
-		if($this->name!==null)
-			$name=$this->name;
-		elseif(isset($this->htmlOptions['name']))
-			$name=$this->htmlOptions['name'];
-		elseif($this->hasModel())
-			$name=CHtml::activeName($this->model,$this->attribute);
+		if ($this->name !== null)
+			$name = $this->name;
+		elseif (isset($this->htmlOptions['name']))
+			$name = $this->htmlOptions['name'];
+		elseif ($this->hasModel())
+			$name = CHtml::activeName($this->model, $this->attribute);
 		else
-			throw new CException(Yii::t('yii','{class} must specify "model" and "attribute" or "name" property values.',array('{class}'=>get_class($this))));
+			throw new CException(Yii::t('yii', '{class} must specify "model" and "attribute" or "name" property values.', array('{class}' => get_class($this))));
 
-		if(($id=$this->getId(false))===null)
-		{
-			if(isset($this->htmlOptions['id']))
-				$id=$this->htmlOptions['id'];
+		if (($id = $this->getId(false)) === null) {
+			if (isset($this->htmlOptions['id']))
+				$id = $this->htmlOptions['id'];
 			else
-				$id=CHtml::getIdByName($name);
+				$id = CHtml::getIdByName($name);
 		}
 
-		return array($name,$id);
+		return array($name, $id);
 	}
 
 	/**
@@ -76,6 +76,6 @@ abstract class CInputWidget extends CWidget
 	 */
 	protected function hasModel()
 	{
-		return $this->model instanceof CModel && $this->attribute!==null;
+		return $this->model instanceof CModel && $this->attribute !== null;
 	}
 }

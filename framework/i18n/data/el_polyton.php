@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'el_POLYTON'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2013 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '6444',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'alias' => '',
     'decimal' => ',',
     'group' => '.',
@@ -29,8 +30,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '#,##0.00 ¤',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'AU$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -54,10 +55,10 @@ return array (
     'XPF' => 'CFPF',
     'GRD' => 'Δρχ',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Ιανουαρίου',
       2 => 'Φεβρουαρίου',
       3 => 'Μαρτίου',
@@ -71,8 +72,8 @@ return array (
       11 => 'Νοεμβρίου',
       12 => 'Δεκεμβρίου',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Ιαν',
       2 => 'Φεβ',
       3 => 'Μαρ',
@@ -86,8 +87,8 @@ return array (
       11 => 'Νοε',
       12 => 'Δεκ',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       1 => 'Ι',
       2 => 'Φ',
       3 => 'Μ',
@@ -102,10 +103,10 @@ return array (
       12 => 'Δ',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'Ι',
       2 => 'Φ',
       3 => 'Μ',
@@ -119,8 +120,8 @@ return array (
       11 => 'Ν',
       12 => 'Δ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Ιαν',
       2 => 'Φεβ',
       3 => 'Μάρ',
@@ -134,8 +135,8 @@ return array (
       11 => 'Νοέ',
       12 => 'Δεκ',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       1 => 'Ιανουάριος',
       2 => 'Φεβρουάριος',
       3 => 'Μάρτιος',
@@ -150,10 +151,10 @@ return array (
       12 => 'Δεκέμβριος',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Κυριακή',
       1 => 'Δευτέρα',
       2 => 'Τρίτη',
@@ -162,8 +163,8 @@ return array (
       5 => 'Παρασκευή',
       6 => 'Σάββατο',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Κυρ',
       1 => 'Δευ',
       2 => 'Τρι',
@@ -172,8 +173,8 @@ return array (
       5 => 'Παρ',
       6 => 'Σαβ',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'Κ',
       1 => 'Δ',
       2 => 'Τ',
@@ -183,10 +184,10 @@ return array (
       6 => 'Σ',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'Κ',
       1 => 'Δ',
       2 => 'Τ',
@@ -195,8 +196,8 @@ return array (
       5 => 'Π',
       6 => 'Σ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Κυρ',
       1 => 'Δευ',
       2 => 'Τρί',
@@ -205,8 +206,8 @@ return array (
       5 => 'Παρ',
       6 => 'Σάβ',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Κυριακή',
       1 => 'Δευτέρα',
       2 => 'Τρίτη',
@@ -216,33 +217,33 @@ return array (
       6 => 'Σάββατο',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'π.Χ.',
       1 => 'μ.Χ.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'π.Χ.',
       1 => 'μ.Χ.',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'π.Χ.',
       1 => 'μ.Χ.',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, d MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'd MMM y',
     'short' => 'd/M/yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'h:mm:ss a zzzz',
     'long' => 'h:mm:ss a z',
     'medium' => 'h:mm:ss a',
@@ -252,8 +253,8 @@ return array (
   'amName' => 'π.μ.',
   'pmName' => 'μ.μ.',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'Αφάρ',
     'ab' => 'Αμπχαζικά',
     'ace' => 'Αχινίζ',
@@ -772,8 +773,8 @@ return array (
     'zxx' => 'Χωρίς γλωσσολογικό περιεχόμενο',
     'zza' => 'Ζάζα',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'Ἀραβικό',
     'armi' => 'Αυτοκρατορικό Αραμαϊκό',
     'armn' => 'Ἀρμενικό',
@@ -905,8 +906,8 @@ return array (
     'zyyy' => 'Κοινό',
     'zzzz' => 'Άγνωστη ή ακατάλληλη γραφή',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'Κόσμος',
     '002' => 'Αφρική',
     '003' => 'Βόρεια Αμερική',
@@ -1195,8 +1196,8 @@ return array (
     'zw' => 'Ζιμπάμπουε',
     'zz' => 'Άγνωστη ή μη έγκυρη περιοχή',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

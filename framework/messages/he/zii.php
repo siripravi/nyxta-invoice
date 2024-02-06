@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -13,7 +14,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   'Are you sure to delete this item?' => 'האם אתה בטוח שאתה רוצה למחוק את הרשומה הזאת?',
   'Delete' => 'מחק',
   'Displaying {start}-{end} of 1 result.|Displaying {start}-{end} of {count} results.' => 'מציג {start}-{end} מתוך {count} תוצאות.',

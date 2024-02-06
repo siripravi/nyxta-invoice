@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CGridColumn class file.
  *
@@ -50,7 +51,7 @@ abstract class CGridColumn extends CComponent
 	/**
 	 * @var boolean whether this column is visible. Defaults to true.
 	 */
-	public $visible=true;
+	public $visible = true;
 	/**
 	 * @var string a PHP expression that is evaluated for every data cell and whose result
 	 * is used as the CSS class name for the data cell. In this expression, you can use the following variables:
@@ -74,19 +75,19 @@ abstract class CGridColumn extends CComponent
 	/**
 	 * @var array the HTML options for the data cell tags.
 	 */
-	public $htmlOptions=array();
+	public $htmlOptions = array();
 	/**
 	 * @var array the HTML options for the filter cell tag.
 	 */
-	public $filterHtmlOptions=array();
+	public $filterHtmlOptions = array();
 	/**
 	 * @var array the HTML options for the header cell tag.
 	 */
-	public $headerHtmlOptions=array();
+	public $headerHtmlOptions = array();
 	/**
 	 * @var array the HTML options for the footer cell tag.
 	 */
-	public $footerHtmlOptions=array();
+	public $footerHtmlOptions = array();
 
 	/**
 	 * Constructor.
@@ -94,7 +95,7 @@ abstract class CGridColumn extends CComponent
 	 */
 	public function __construct($grid)
 	{
-		$this->grid=$grid;
+		$this->grid = $grid;
 	}
 
 	/**
@@ -112,7 +113,7 @@ abstract class CGridColumn extends CComponent
 	 */
 	public function getHasFooter()
 	{
-		return $this->footer!==null;
+		return $this->footer !== null;
 	}
 
 	/**
@@ -121,7 +122,7 @@ abstract class CGridColumn extends CComponent
 	 */
 	public function renderFilterCell()
 	{
-		echo CHtml::openTag('td',$this->filterHtmlOptions);
+		echo CHtml::openTag('td', $this->filterHtmlOptions);
 		$this->renderFilterCellContent();
 		echo "</td>";
 	}
@@ -131,8 +132,8 @@ abstract class CGridColumn extends CComponent
 	 */
 	public function renderHeaderCell()
 	{
-		$this->headerHtmlOptions['id']=$this->id;
-		echo CHtml::openTag('th',$this->headerHtmlOptions);
+		$this->headerHtmlOptions['id'] = $this->id;
+		echo CHtml::openTag('th', $this->headerHtmlOptions);
 		$this->renderHeaderCellContent();
 		echo "</th>";
 	}
@@ -143,21 +144,19 @@ abstract class CGridColumn extends CComponent
 	 */
 	public function renderDataCell($row)
 	{
-		$data=$this->grid->dataProvider->data[$row];
-		$options=$this->htmlOptions;
-		if($this->cssClassExpression!==null)
-		{
-			$class=$this->evaluateExpression($this->cssClassExpression,array('row'=>$row,'data'=>$data));
-			if(!empty($class))
-			{
-				if(isset($options['class']))
-					$options['class'].=' '.$class;
+		$data = $this->grid->dataProvider->data[$row];
+		$options = $this->htmlOptions;
+		if ($this->cssClassExpression !== null) {
+			$class = $this->evaluateExpression($this->cssClassExpression, array('row' => $row, 'data' => $data));
+			if (!empty($class)) {
+				if (isset($options['class']))
+					$options['class'] .= ' ' . $class;
 				else
-					$options['class']=$class;
+					$options['class'] = $class;
 			}
 		}
-		echo CHtml::openTag('td',$options);
-		$this->renderDataCellContent($row,$data);
+		echo CHtml::openTag('td', $options);
+		$this->renderDataCellContent($row, $data);
 		echo '</td>';
 	}
 
@@ -166,7 +165,7 @@ abstract class CGridColumn extends CComponent
 	 */
 	public function renderFooterCell()
 	{
-		echo CHtml::openTag('td',$this->footerHtmlOptions);
+		echo CHtml::openTag('td', $this->footerHtmlOptions);
 		$this->renderFooterCellContent();
 		echo '</td>';
 	}
@@ -180,7 +179,7 @@ abstract class CGridColumn extends CComponent
 	 */
 	public function getHeaderCellContent()
 	{
-		return $this->header!==null && trim($this->header)!=='' ? $this->header : $this->grid->blankDisplay;
+		return $this->header !== null && trim($this->header) !== '' ? $this->header : $this->grid->blankDisplay;
 	}
 
 	/**
@@ -201,7 +200,7 @@ abstract class CGridColumn extends CComponent
 	 */
 	public function getFooterCellContent()
 	{
-		return $this->footer!==null && trim($this->footer)!=='' ? $this->footer : $this->grid->blankDisplay;
+		return $this->footer !== null && trim($this->footer) !== '' ? $this->footer : $this->grid->blankDisplay;
 	}
 
 	/**
@@ -232,7 +231,7 @@ abstract class CGridColumn extends CComponent
 	 * @param mixed $data the data associated with the row
 	 * @deprecated since 1.1.16. Use {@link getDataCellContent()} instead.
 	 */
-	protected function renderDataCellContent($row,$data)
+	protected function renderDataCellContent($row, $data)
 	{
 		echo $this->getDataCellContent($row);
 	}

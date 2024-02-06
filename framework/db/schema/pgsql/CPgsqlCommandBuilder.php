@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CPgsqlCommandBuilder class file.
  *

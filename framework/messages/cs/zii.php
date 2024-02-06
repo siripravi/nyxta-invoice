@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations for [cs].
  *
@@ -13,7 +14,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   'Are you sure you want to delete this item?' => 'Odstranit záznam?',
   'Delete' => 'Odstranit',
   'Displaying {start}-{end} of 1 result.|Displaying {start}-{end} of {count} results.' => 'Zobrazených {start}-{end} z celkově {count} záznamů.',

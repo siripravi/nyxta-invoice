@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'ha_NG'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2013 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '4123',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -30,8 +31,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤ #,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AFN' => 'Af',
     'ANG' => 'NAf.',
     'AOA' => 'Kz',
@@ -195,10 +196,10 @@ return array (
     'ZRZ' => 'ZRZ',
     'ZWD' => 'Z$',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Janairu',
       2 => 'Faburairu',
       3 => 'Maris',
@@ -212,8 +213,8 @@ return array (
       11 => 'Nuwamba',
       12 => 'Disamba',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Jan',
       2 => 'Fab',
       3 => 'Mar',
@@ -228,10 +229,10 @@ return array (
       12 => 'Dis',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'J',
       2 => 'F',
       3 => 'M',
@@ -246,10 +247,10 @@ return array (
       12 => 'D',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Lahadi',
       1 => 'Litinin',
       2 => 'Talata',
@@ -258,8 +259,8 @@ return array (
       5 => 'Jumma\'a',
       6 => 'Asabar',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Lh',
       1 => 'Li',
       2 => 'Ta',
@@ -269,10 +270,10 @@ return array (
       6 => 'As',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'L',
       1 => 'L',
       2 => 'T',
@@ -282,33 +283,33 @@ return array (
       6 => 'A',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'KHAI',
       1 => 'BHAI',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Kafin haihuwar annab',
       1 => 'Bayan haihuwar annab',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'KHAI',
       1 => 'BHAI',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, d MMMM, y',
     'long' => 'd MMMM, y',
     'medium' => 'd MMM, y',
     'short' => 'd/M/yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -318,8 +319,8 @@ return array (
   'amName' => 'AM',
   'pmName' => 'PM',
   'orientation' => 'ltr',
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

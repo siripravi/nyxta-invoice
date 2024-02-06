@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CFilterValidator class file.
  *
@@ -40,10 +41,10 @@ class CFilterValidator extends CValidator
 	 * @param string $attribute the attribute being validated
 	 * @throws CException if given {@link filter} is not callable
 	 */
-	protected function validateAttribute($object,$attribute)
+	protected function validateAttribute($object, $attribute)
 	{
-		if($this->filter===null || !is_callable($this->filter))
-			throw new CException(Yii::t('yii','The "filter" property must be specified with a valid callback.'));
-		$object->$attribute=call_user_func_array($this->filter,array($object->$attribute));
+		if ($this->filter === null || !is_callable($this->filter))
+			throw new CException(Yii::t('yii', 'The "filter" property must be specified with a valid callback.'));
+		$object->$attribute = call_user_func_array($this->filter, array($object->$attribute));
 	}
 }

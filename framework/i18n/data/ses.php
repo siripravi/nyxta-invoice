@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'ses'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ' ',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '#,##0.00¤',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -52,10 +53,10 @@ return array (
     'XOF' => 'CFA',
     'XPF' => 'CFPF',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Žanwiye',
       2 => 'Feewiriye',
       3 => 'Marsi',
@@ -69,8 +70,8 @@ return array (
       11 => 'Noowanbur',
       12 => 'Deesanbur',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Žan',
       2 => 'Fee',
       3 => 'Mar',
@@ -85,10 +86,10 @@ return array (
       12 => 'Dee',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'Ž',
       2 => 'F',
       3 => 'M',
@@ -103,10 +104,10 @@ return array (
       12 => 'D',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Alhadi',
       1 => 'Atinni',
       2 => 'Atalaata',
@@ -115,8 +116,8 @@ return array (
       5 => 'Alzuma',
       6 => 'Asibti',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Alh',
       1 => 'Ati',
       2 => 'Ata',
@@ -126,10 +127,10 @@ return array (
       6 => 'Asi',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'H',
       1 => 'T',
       2 => 'T',
@@ -139,33 +140,33 @@ return array (
       6 => 'S',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'IJ',
       1 => 'IZ',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Isaa jine',
       1 => 'Isaa zamanoo',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'IJ',
       1 => 'IZ',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE d MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'd MMM, y',
     'short' => 'd/M/y',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -175,8 +176,8 @@ return array (
   'amName' => 'Adduha',
   'pmName' => 'Aluula',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ak' => 'Akan senni',
     'am' => 'Amhaarik senni',
     'ar' => 'Laaraw senni',
@@ -223,8 +224,8 @@ return array (
     'zh' => 'Sinuwa senni, Mandareŋ',
     'zu' => 'Zulu senni',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     'ad' => 'Andoora',
     'ae' => 'Laaraw Imaarawey Margantey',
     'af' => 'Afgaanistan',

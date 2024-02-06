@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'naq'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'NAD' => '$',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'ǃKhanni',
       2 => 'ǃKhanǀgôab',
       3 => 'ǀKhuuǁkhâb',
@@ -70,8 +71,8 @@ return array (
       11 => 'ǀHooǂgaeb',
       12 => 'Hôasoreǁkhâb',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Jan',
       2 => 'Feb',
       3 => 'Mar',
@@ -86,10 +87,10 @@ return array (
       12 => 'Dec',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'J',
       2 => 'F',
       3 => 'M',
@@ -104,10 +105,10 @@ return array (
       12 => 'D',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Sontaxtsees',
       1 => 'Mantaxtsees',
       2 => 'Denstaxtsees',
@@ -116,8 +117,8 @@ return array (
       5 => 'Fraitaxtsees',
       6 => 'Satertaxtsees',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Son',
       1 => 'Ma',
       2 => 'De',
@@ -127,10 +128,10 @@ return array (
       6 => 'Sat',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'S',
       1 => 'M',
       2 => 'E',
@@ -140,33 +141,33 @@ return array (
       6 => 'A',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'BC',
       1 => 'AD',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Xristub aiǃâ',
       1 => 'Xristub khaoǃgâ',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'BC',
       1 => 'AD',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, d MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'd MMM y',
     'short' => 'dd/MM/y',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'h:mm:ss a zzzz',
     'long' => 'h:mm:ss a z',
     'medium' => 'h:mm:ss a',
@@ -176,8 +177,8 @@ return array (
   'amName' => 'ǁgoagas',
   'pmName' => 'ǃuias',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ak' => 'Akangowab',
     'am' => 'Amharicgowab',
     'ar' => 'Arabiǁî gowab',
@@ -224,8 +225,8 @@ return array (
     'zh' => 'Chineesǁî gowab, Mandarinni',
     'zu' => 'Zulub',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     'ad' => 'Andorrab',
     'ae' => 'United Arab Emirates',
     'af' => 'Afghanistanni',
@@ -452,8 +453,8 @@ return array (
     'zm' => 'Zambiab',
     'zw' => 'Zimbabweb',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'n==2',
     2 => 'true',

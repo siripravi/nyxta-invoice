@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CMysqlColumnSchema class file.
  *
@@ -23,16 +24,16 @@ class CMysqlColumnSchema extends CDbColumnSchema
 	 */
 	protected function extractType($dbType)
 	{
-		if(strncmp($dbType,'enum',4)===0)
-			$this->type='string';
-		elseif(strpos($dbType,'float')!==false || strpos($dbType,'double')!==false)
-			$this->type='double';
-		elseif(strpos($dbType,'bool')!==false)
-			$this->type='boolean';
-		elseif(strpos($dbType,'int')===0 && strpos($dbType,'unsigned')===false || preg_match('/(bit|tinyint|smallint|mediumint)/',$dbType))
-			$this->type='integer';
+		if (strncmp($dbType, 'enum', 4) === 0)
+			$this->type = 'string';
+		elseif (strpos($dbType, 'float') !== false || strpos($dbType, 'double') !== false)
+			$this->type = 'double';
+		elseif (strpos($dbType, 'bool') !== false)
+			$this->type = 'boolean';
+		elseif (strpos($dbType, 'int') === 0 && strpos($dbType, 'unsigned') === false || preg_match('/(bit|tinyint|smallint|mediumint)/', $dbType))
+			$this->type = 'integer';
 		else
-			$this->type='string';
+			$this->type = 'string';
 	}
 
 	/**
@@ -42,10 +43,10 @@ class CMysqlColumnSchema extends CDbColumnSchema
 	 */
 	protected function extractDefault($defaultValue)
 	{
-		if(strncmp($this->dbType,'bit',3)===0)
-			$this->defaultValue=bindec(trim($defaultValue,'b\''));
-		elseif(($this->dbType==='timestamp' || $this->dbType==='datetime')  && ($defaultValue==='CURRENT_TIMESTAMP' || $defaultValue==='current_timestamp()'))
-			$this->defaultValue=null;
+		if (strncmp($this->dbType, 'bit', 3) === 0)
+			$this->defaultValue = bindec(trim($defaultValue, 'b\''));
+		elseif (($this->dbType === 'timestamp' || $this->dbType === 'datetime')  && ($defaultValue === 'CURRENT_TIMESTAMP' || $defaultValue === 'current_timestamp()'))
+			$this->defaultValue = null;
 		else
 			parent::extractDefault($defaultValue);
 	}
@@ -56,19 +57,16 @@ class CMysqlColumnSchema extends CDbColumnSchema
 	 */
 	protected function extractLimit($dbType)
 	{
-		if (strncmp($dbType, 'enum', 4)===0 && preg_match('/\(([\'"])(.*)\\1\)/',$dbType,$matches))
-		{
+		if (strncmp($dbType, 'enum', 4) === 0 && preg_match('/\(([\'"])(.*)\\1\)/', $dbType, $matches)) {
 			// explode by (single or double) quote and comma (ENUM values may contain commas)
-			$values = explode($matches[1].','.$matches[1], $matches[2]);
+			$values = explode($matches[1] . ',' . $matches[1], $matches[2]);
 			$size = 0;
-			foreach($values as $value)
-			{
-				if(($n=strlen($value)) > $size)
-					$size=$n;
+			foreach ($values as $value) {
+				if (($n = strlen($value)) > $size)
+					$size = $n;
 			}
 			$this->size = $this->precision = $size;
-		}
-		else
+		} else
 			parent::extractLimit($dbType);
 	}
 }

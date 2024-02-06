@@ -12,7 +12,6 @@ class SupportController extends Controller
         if ($this->ship_date) {
             $results = $model->freeSearch($this->ship_date);
             $this->renderPartial('//layouts/clips/_search_clip', array('results' => $results));
-
         }
         return parent::beforeRender($view);
     }
@@ -81,7 +80,6 @@ class SupportController extends Controller
             $this->render('index', array('model' => $this->model, 'key' => $key, 'header' => $header, 'results' => $results));
         else
             $this->render('index', array('model' => $this->model, 'key' => $key, 'header' => $header));
-
     }
 
     public function actionSearchEngine($keyword)
@@ -91,9 +89,11 @@ class SupportController extends Controller
         $model = new statement();
         $model->unsetAttributes(); // clear any default values
         $results = $model->freeSearch($keyword);
-        $this->renderPartial('_ajax_search', array(
-            'results' => $results,
-        )
+        $this->renderPartial(
+            '_ajax_search',
+            array(
+                'results' => $results,
+            )
         );
     }
 
@@ -129,5 +129,4 @@ class SupportController extends Controller
         Yii::app()->user->logout(false);
         $this->redirect(Yii::app()->getModule('support')->user->loginUrl);
     }
-
 }

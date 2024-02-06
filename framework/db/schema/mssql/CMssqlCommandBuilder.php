@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CMsCommandBuilder class file.
  *
@@ -28,10 +29,10 @@ class CMssqlCommandBuilder extends CDbCommandBuilder
 	 * @param string $alias the alias name of the primary table. Defaults to 't'.
 	 * @return CDbCommand query command.
 	 */
-	public function createCountCommand($table,$criteria,$alias='t')
+	public function createCountCommand($table, $criteria, $alias = 't')
 	{
-		$criteria->order='';
-		return parent::createCountCommand($table, $criteria,$alias);
+		$criteria->order = '';
+		return parent::createCountCommand($table, $criteria, $alias);
 	}
 
 	/**
@@ -42,11 +43,10 @@ class CMssqlCommandBuilder extends CDbCommandBuilder
 	 * @param string $alias the alias name of the primary table. Defaults to 't'.
 	 * @return CDbCommand query command.
 	 */
-	public function createFindCommand($table,$criteria,$alias='t')
+	public function createFindCommand($table, $criteria, $alias = 't')
 	{
-		$criteria=$this->checkCriteria($table,$criteria);
-		return parent::createFindCommand($table,$criteria,$alias);
-
+		$criteria = $this->checkCriteria($table, $criteria);
+		return parent::createFindCommand($table, $criteria, $alias);
 	}
 
 	/**
@@ -58,50 +58,46 @@ class CMssqlCommandBuilder extends CDbCommandBuilder
 	 * @throws CDbException if no columns are being updated
 	 * @return CDbCommand update command.
 	 */
-	public function createUpdateCommand($table,$data,$criteria)
+	public function createUpdateCommand($table, $data, $criteria)
 	{
 		$this->ensureTable($table);
-		$criteria=$this->checkCriteria($table,$criteria);
-		$fields=array();
-		$values=array();
-		$bindByPosition=isset($criteria->params[0]);
-		$i=0;
-		foreach($data as $name=>$value)
-		{
-			if(($column=$table->getColumn($name))!==null)
-			{
+		$criteria = $this->checkCriteria($table, $criteria);
+		$fields = array();
+		$values = array();
+		$bindByPosition = isset($criteria->params[0]);
+		$i = 0;
+		foreach ($data as $name => $value) {
+			if (($column = $table->getColumn($name)) !== null) {
 				if ($table->sequenceName !== null && $column->isPrimaryKey === true) continue;
 				if ($column->dbType === 'timestamp') continue;
-				if($value instanceof CDbExpression)
-				{
-					$fields[]=$column->rawName.'='.$value->expression;
-					foreach($value->params as $n=>$v)
-						$values[$n]=$v;
-				}
-				elseif($bindByPosition)
-				{
-					$fields[]=$column->rawName.'=?';
-					$values[]=$column->typecast($value);
-				}
-				else
-				{
-					$fields[]=$column->rawName.'='.self::PARAM_PREFIX.$i;
-					$values[self::PARAM_PREFIX.$i]=$column->typecast($value);
+				if ($value instanceof CDbExpression) {
+					$fields[] = $column->rawName . '=' . $value->expression;
+					foreach ($value->params as $n => $v)
+						$values[$n] = $v;
+				} elseif ($bindByPosition) {
+					$fields[] = $column->rawName . '=?';
+					$values[] = $column->typecast($value);
+				} else {
+					$fields[] = $column->rawName . '=' . self::PARAM_PREFIX . $i;
+					$values[self::PARAM_PREFIX . $i] = $column->typecast($value);
 					$i++;
 				}
 			}
 		}
-		if($fields===array())
-			throw new CDbException(Yii::t('yii','No columns are being updated for table "{table}".',
-				array('{table}'=>$table->name)));
-		$sql="UPDATE {$table->rawName} SET ".implode(', ',$fields);
-		$sql=$this->applyJoin($sql,$criteria->join);
-		$sql=$this->applyCondition($sql,$criteria->condition);
-		$sql=$this->applyOrder($sql,$criteria->order);
-		$sql=$this->applyLimit($sql,$criteria->limit,$criteria->offset);
+		if ($fields === array())
+			throw new CDbException(Yii::t(
+				'yii',
+				'No columns are being updated for table "{table}".',
+				array('{table}' => $table->name)
+			));
+		$sql = "UPDATE {$table->rawName} SET " . implode(', ', $fields);
+		$sql = $this->applyJoin($sql, $criteria->join);
+		$sql = $this->applyCondition($sql, $criteria->condition);
+		$sql = $this->applyOrder($sql, $criteria->order);
+		$sql = $this->applyLimit($sql, $criteria->limit, $criteria->offset);
 
-		$command=$this->getDbConnection()->createCommand($sql);
-		$this->bindValues($command,array_merge($values,$criteria->params));
+		$command = $this->getDbConnection()->createCommand($sql);
+		$this->bindValues($command, array_merge($values, $criteria->params));
 
 		return $command;
 	}
@@ -113,9 +109,9 @@ class CMssqlCommandBuilder extends CDbCommandBuilder
 	 * @param CDbCriteria $criteria the query criteria
 	 * @return CDbCommand delete command.
 	 */
-	public function createDeleteCommand($table,$criteria)
+	public function createDeleteCommand($table, $criteria)
 	{
-		$criteria=$this->checkCriteria($table, $criteria);
+		$criteria = $this->checkCriteria($table, $criteria);
 		return parent::createDeleteCommand($table, $criteria);
 	}
 
@@ -128,9 +124,9 @@ class CMssqlCommandBuilder extends CDbCommandBuilder
 	 * @return CDbCommand the created command
 	 * @throws CException if no counter is specified
 	 */
-	public function createUpdateCounterCommand($table,$counters,$criteria)
+	public function createUpdateCounterCommand($table, $counters, $criteria)
 	{
-		$criteria=$this->checkCriteria($table, $criteria);
+		$criteria = $this->checkCriteria($table, $criteria);
 		return parent::createUpdateCounterCommand($table, $counters, $criteria);
 	}
 
@@ -141,11 +137,11 @@ class CMssqlCommandBuilder extends CDbCommandBuilder
 	 * @param string $join the JOIN clause (starting with join type, such as INNER JOIN)
 	 * @return string the altered SQL statement
 	 */
-	public function applyJoin($sql,$join)
+	public function applyJoin($sql, $join)
 	{
-		if(trim($join)!=='')
-			$sql=preg_replace('/^\s*DELETE\s+FROM\s+((\[.+\])|([^\s]+))\s*/i',"DELETE \\1 FROM \\1",$sql);
-		return parent::applyJoin($sql,$join);
+		if (trim($join) !== '')
+			$sql = preg_replace('/^\s*DELETE\s+FROM\s+((\[.+\])|([^\s]+))\s*/i', "DELETE \\1 FROM \\1", $sql);
+		return parent::applyJoin($sql, $join);
 	}
 
 	/**
@@ -158,15 +154,15 @@ class CMssqlCommandBuilder extends CDbCommandBuilder
 	 */
 	public function applyLimit($sql, $limit, $offset)
 	{
-		$limit = $limit!==null ? (int)$limit : -1;
-		$offset = $offset!==null ? (int)$offset : -1;
+		$limit = $limit !== null ? (int)$limit : -1;
+		$offset = $offset !== null ? (int)$offset : -1;
 
-		if($limit <= 0 && $offset <=0) // no limit, no offset
+		if ($limit <= 0 && $offset <= 0) // no limit, no offset
 			return $sql;
-		if($limit > 0 && $offset <= 0) // only limit
-			return preg_replace('/^([\s(])*SELECT( DISTINCT)?(?!\s*TOP\s*\()/i',"\\1SELECT\\2 TOP $limit", $sql);
+		if ($limit > 0 && $offset <= 0) // only limit
+			return preg_replace('/^([\s(])*SELECT( DISTINCT)?(?!\s*TOP\s*\()/i', "\\1SELECT\\2 TOP $limit", $sql);
 
-		if(version_compare($this->dbConnection->getServerVersion(), '11', '<'))
+		if (version_compare($this->dbConnection->getServerVersion(), '11', '<'))
 			return $this->oldRewriteLimitOffsetSql($sql, $limit, $offset);
 		else
 			return $this->newRewriteLimitOffsetSql($sql, $limit, $offset);
@@ -223,8 +219,8 @@ class CMssqlCommandBuilder extends CDbCommandBuilder
 		if ($limit <= 0) // Offset without limit has never worked for MSSQL 10 and older, see https://github.com/yiisoft/yii/pull/4501
 			return $sql;
 
-		$fetch = $limit+$offset;
-		$sql = preg_replace('/^([\s(])*SELECT( DISTINCT)?(?!\s*TOP\s*\()/i',"\\1SELECT\\2 TOP $fetch", $sql);
+		$fetch = $limit + $offset;
+		$sql = preg_replace('/^([\s(])*SELECT( DISTINCT)?(?!\s*TOP\s*\()/i', "\\1SELECT\\2 TOP $fetch", $sql);
 		$ordering = $this->findOrdering($sql);
 		$originalOrdering = $this->joinOrdering($ordering, '[__outer__]');
 		$reverseOrdering = $this->joinOrdering($this->reverseDirection($ordering), '[__inner__]');
@@ -244,12 +240,12 @@ class CMssqlCommandBuilder extends CDbCommandBuilder
 	protected function newRewriteLimitOffsetSql($sql, $limit, $offset)
 	{
 		// ORDER BY is required when using OFFSET and FETCH
-		if(count($this->findOrdering($sql)) === 0)
+		if (count($this->findOrdering($sql)) === 0)
 			$sql .= " ORDER BY (SELECT NULL)";
 
 		$sql .= sprintf(" OFFSET %d ROWS", $offset);
 
-		if($limit > 0)
+		if ($limit > 0)
 			$sql .= sprintf(' FETCH NEXT %d ROWS ONLY', $limit);
 
 		return $sql;
@@ -265,45 +261,37 @@ class CMssqlCommandBuilder extends CDbCommandBuilder
 	 */
 	protected function findOrdering($sql)
 	{
-		if(!preg_match('/ORDER BY/i', $sql))
+		if (!preg_match('/ORDER BY/i', $sql))
 			return array();
-		$matches=array();
-		$ordering=array();
+		$matches = array();
+		$ordering = array();
 		preg_match_all('/(ORDER BY)[\s"\[](.*)(ASC|DESC)?(?:[\s"\[]|$|COMPUTE|FOR)/i', $sql, $matches);
-		if(count($matches)>1 && count($matches[2]) > 0)
-		{
+		if (count($matches) > 1 && count($matches[2]) > 0) {
 			$parts = explode(',', $matches[2][0]);
-			foreach($parts as $part)
-			{
-				$subs=array();
-				if(preg_match_all('/(.*)[\s"\]](ASC|DESC)$/i', trim($part), $subs))
-				{
-					if(count($subs) > 1 && count($subs[2]) > 0)
-					{
-						$name='';
-						foreach(explode('.', $subs[1][0]) as $p)
-						{
-							if($name!=='')
-								$name.='.';
-							$name.='[' . trim($p, '[]') . ']';
+			foreach ($parts as $part) {
+				$subs = array();
+				if (preg_match_all('/(.*)[\s"\]](ASC|DESC)$/i', trim($part), $subs)) {
+					if (count($subs) > 1 && count($subs[2]) > 0) {
+						$name = '';
+						foreach (explode('.', $subs[1][0]) as $p) {
+							if ($name !== '')
+								$name .= '.';
+							$name .= '[' . trim($p, '[]') . ']';
 						}
 						$ordering[$name] = $subs[2][0];
 					}
 					//else what?
-				}
-				else
+				} else
 					$ordering[trim($part)] = 'ASC';
 			}
 		}
 
 		// replacing column names with their alias names
-		foreach($ordering as $name => $direction)
-		{
+		foreach ($ordering as $name => $direction) {
 			$matches = array();
-			$pattern = '/\s+'.str_replace(array('[',']'), array('\[','\]'), $name).'\s+AS\s+(\[[^\]]+\])/i';
+			$pattern = '/\s+' . str_replace(array('[', ']'), array('\[', '\]'), $name) . '\s+AS\s+(\[[^\]]+\])/i';
 			preg_match($pattern, $sql, $matches);
-			if(isset($matches[1]))
-			{
+			if (isset($matches[1])) {
 				$ordering[$matches[1]] = $ordering[$name];
 				unset($ordering[$name]);
 			}
@@ -321,13 +309,12 @@ class CMssqlCommandBuilder extends CDbCommandBuilder
 	 */
 	protected function joinOrdering($orders, $newPrefix)
 	{
-		if(count($orders)>0)
-		{
-			$str=array();
-			foreach($orders as $column => $direction)
-				$str[] = $column.' '.$direction;
-			$orderBy = 'ORDER BY '.implode(', ', $str);
-			return preg_replace('/\s+\[[^\]]+\]\.(\[[^\]]+\])/i', ' '.$newPrefix.'.\1', $orderBy);
+		if (count($orders) > 0) {
+			$str = array();
+			foreach ($orders as $column => $direction)
+				$str[] = $column . ' ' . $direction;
+			$orderBy = 'ORDER BY ' . implode(', ', $str);
+			return preg_replace('/\s+\[[^\]]+\]\.(\[[^\]]+\])/i', ' ' . $newPrefix . '.\1', $orderBy);
 		}
 	}
 
@@ -339,8 +326,8 @@ class CMssqlCommandBuilder extends CDbCommandBuilder
 	 */
 	protected function reverseDirection($orders)
 	{
-		foreach($orders as $column => $direction)
-			$orders[$column] = strtolower(trim($direction))==='desc' ? 'ASC' : 'DESC';
+		foreach ($orders as $column => $direction)
+			$orders[$column] = strtolower(trim($direction)) === 'desc' ? 'ASC' : 'DESC';
 		return $orders;
 	}
 
@@ -355,9 +342,8 @@ class CMssqlCommandBuilder extends CDbCommandBuilder
 	 */
 	protected function checkCriteria($table, $criteria)
 	{
-		if ($criteria->offset > 0 && $criteria->order==='')
-		{
-			$criteria->order=is_array($table->primaryKey)?implode(',',$table->primaryKey):$table->primaryKey;
+		if ($criteria->offset > 0 && $criteria->order === '') {
+			$criteria->order = is_array($table->primaryKey) ? implode(',', $table->primaryKey) : $table->primaryKey;
 		}
 		return $criteria;
 	}
@@ -369,16 +355,15 @@ class CMssqlCommandBuilder extends CDbCommandBuilder
 	 * @param string $prefix column prefix (ended with dot)
 	 * @return string the expression for selection
 	 */
-	protected function createCompositeInCondition($table,$values,$prefix)
+	protected function createCompositeInCondition($table, $values, $prefix)
 	{
-		$vs=array();
-		foreach($values as $value)
-		{
-			$c=array();
-			foreach($value as $k=>$v)
-				$c[]=$prefix.$table->columns[$k]->rawName.'='.$v;
-			$vs[]='('.implode(' AND ',$c).')';
+		$vs = array();
+		foreach ($values as $value) {
+			$c = array();
+			foreach ($value as $k => $v)
+				$c[] = $prefix . $table->columns[$k]->rawName . '=' . $v;
+			$vs[] = '(' . implode(' AND ', $c) . ')';
 		}
-		return '('.implode(' OR ',$vs).')';
+		return '(' . implode(' OR ', $vs) . ')';
 	}
 }

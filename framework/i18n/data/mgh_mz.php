@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'mgh_MZ'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => '.',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤ #,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'MZN' => 'MTn',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Mweri wo kwanza',
       2 => 'Mweri wo unayeli',
       3 => 'Mweri wo uneraru',
@@ -70,8 +71,8 @@ return array (
       11 => 'Mweri wo kumi na moja',
       12 => 'Mweri wo kumi na yel\'li',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Kwa',
       2 => 'Una',
       3 => 'Rar',
@@ -86,10 +87,10 @@ return array (
       12 => 'Yel',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'K',
       2 => 'U',
       3 => 'R',
@@ -104,10 +105,10 @@ return array (
       12 => 'Y',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Sabato',
       1 => 'Jumatatu',
       2 => 'Jumanne',
@@ -116,8 +117,8 @@ return array (
       5 => 'Ijumaa',
       6 => 'Jumamosi',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Sab',
       1 => 'Jtt',
       2 => 'Jnn',
@@ -127,10 +128,10 @@ return array (
       6 => 'Jmo',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'S',
       1 => 'J',
       2 => 'J',
@@ -140,33 +141,33 @@ return array (
       6 => 'J',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'HY',
       1 => 'YY',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Hinapiya yesu',
       1 => 'Yopia yesu',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'HY',
       1 => 'YY',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, d MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'd MMM y',
     'short' => 'dd/MM/y',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'h:mm:ss a zzzz',
     'long' => 'h:mm:ss a z',
     'medium' => 'h:mm:ss a',
@@ -176,8 +177,8 @@ return array (
   'amName' => 'wichishu',
   'pmName' => 'mchochil\'l',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ak' => 'Ikan',
     'am' => 'Imhari',
     'ar' => 'Iarabu',
@@ -223,8 +224,8 @@ return array (
     'zh' => 'Ichina',
     'zu' => 'Izulu',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     'ad' => 'Uandora',
     'af' => 'Ufugustani',
     'al' => 'Ualbania',

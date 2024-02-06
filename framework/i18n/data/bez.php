@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'bez'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '#,##0.00¤',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'TZS' => 'TSh',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'pa mwedzi gwa hutala',
       2 => 'pa mwedzi gwa wuvili',
       3 => 'pa mwedzi gwa wudatu',
@@ -70,8 +71,8 @@ return array (
       11 => 'pa mwedzi gwa kumi na moja',
       12 => 'pa mwedzi gwa kumi na mbili',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Hut',
       2 => 'Vil',
       3 => 'Dat',
@@ -86,10 +87,10 @@ return array (
       12 => 'Kmb',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'H',
       2 => 'V',
       3 => 'D',
@@ -104,10 +105,10 @@ return array (
       12 => 'K',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'pa mulungu',
       1 => 'pa shahuviluha',
       2 => 'pa hivili',
@@ -116,8 +117,8 @@ return array (
       5 => 'pa hihanu',
       6 => 'pa shahulembela',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Mul',
       1 => 'Vil',
       2 => 'Hiv',
@@ -127,10 +128,10 @@ return array (
       6 => 'Lem',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'M',
       1 => 'J',
       2 => 'H',
@@ -140,33 +141,33 @@ return array (
       6 => 'J',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'KM',
       1 => 'BM',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Kabla ya Mtwaa',
       1 => 'Baada ya Mtwaa',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'KM',
       1 => 'BM',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, d MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'd MMM y',
     'short' => 'dd/MM/y',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'h:mm:ss a zzzz',
     'long' => 'h:mm:ss a z',
     'medium' => 'h:mm:ss a',
@@ -176,8 +177,8 @@ return array (
   'amName' => 'pamilau',
   'pmName' => 'pamunyi',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ak' => 'Hiakan',
     'am' => 'Hiamhari',
     'ar' => 'Hiharabu',
@@ -224,8 +225,8 @@ return array (
     'zh' => 'Hichina',
     'zu' => 'Hizulu',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     'ad' => 'Huandola',
     'ae' => 'Hufalme dza Hihalabu',
     'af' => 'Huafuganistani',
@@ -452,8 +453,8 @@ return array (
     'zm' => 'Huzambia',
     'zw' => 'Huzimbabwe',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

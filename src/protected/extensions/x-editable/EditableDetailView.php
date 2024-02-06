@@ -1,4 +1,5 @@
 <?php
+
 /**
  * EditableDetailView class file.
  *
@@ -111,7 +112,8 @@ class EditableDetailView extends CDetailView
         if (!isset($this->_editableProperties)) {
             $reflection = new ReflectionClass('EditableField');
             $this->_editableProperties = array_map(function ($d) {
-                return $d->getName(); }, $reflection->getProperties());
+                return $d->getName();
+            }, $reflection->getProperties());
         }
         return $this->_editableProperties;
     }

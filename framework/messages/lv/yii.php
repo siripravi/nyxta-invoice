@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -13,7 +14,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   'CDbTestFixture.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'Nekorekts CDbTestFixture.connectionID "{id}". Pārbaudiet vai tas norāda uz CDbConnection komponentes ID.',
   'Column "{column}" does not exist in table "{table}".' => 'Kolonna "{column}" neeksistē tabulā "{table}".',
   'Failed to set unsafe attribute "{attribute}".' => 'Neizdevās uzstādīt vērtību nedrošam atribūtam "{attribute}".',
@@ -23,7 +24,7 @@ return array (
   'The requested view "{name}" was not found.' => 'Pieprasītais skats "{name}" netika atrasts.',
   'Unknown type "{type}".' => 'Nezināms tips "{type}".',
   'Virtual attribute {name} must specify "asc" and "desc" options.' => 'Virtuālajam atribūtam "{name}" ir jābūt norādītām opcijām "asc" un "desc".',
-  '{attribute} cannot accept more than {limit} files.' => '{attribute} nevar pieņemt vairāk kā {limit} failus.',      
+  '{attribute} cannot accept more than {limit} files.' => '{attribute} nevar pieņemt vairāk kā {limit} failus.',
   '"{path}" is not a valid directory.' => 'Ceļš "{path}" nav korekts direkotrijs.',
   '&lt; Previous' => '&lt; Iepriekšējā',
   '&lt;&lt; First' => '&lt;&lt; Pirmā',

@@ -5,23 +5,25 @@ Yii::import('application.controllers.statementController');
 ?>
 <?php
 //------------ add the CJuiDialog widget -----------------
-if (!empty($asDialog)):
-	$this->beginWidget('zii.widgets.jui.CJuiDialog', array(
-		// the dialog
-		'id' => 'dlg-payment-view-' . $model->ID,
-		'options' => array(
-			'title' => 'Payment Details',
-			'autoOpen' => true,
-			'modal' => false,
-			'width' => 450,
-			'height' => 320,
-		),
-	)
+if (!empty($asDialog)) :
+	$this->beginWidget(
+		'zii.widgets.jui.CJuiDialog',
+		array(
+			// the dialog
+			'id' => 'dlg-payment-view-' . $model->ID,
+			'options' => array(
+				'title' => 'Payment Details',
+				'autoOpen' => true,
+				'modal' => false,
+				'width' => 450,
+				'height' => 320,
+			),
+		)
 	);
 
-else:
+else :
 	//-------- default code starts here ------------------
-	?>
+?>
 	<?php
 	$this->breadcrumbs = array(
 		'Payments' => array('index'),
@@ -37,40 +39,43 @@ else:
 	);
 	?>
 
-	<?php //echo BsHtml::pageHeader('View','Payment') ?>
+	<?php //echo BsHtml::pageHeader('View','Payment') 
+	?>
 	//--------------------- begin added --------------------------
 <?php endif; ?>
 
 
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'htmlOptions' => array(
-		'class' => 'table table-striped table-condensed table-hover',
-	),
-	'data' => $model,
-	'attributes' => array(
-		//'ID',
-		array(
-			'label' => 'invoice#',
-			'value' => $model->invoice->invoice_id,
+<?php $this->widget(
+	'zii.widgets.CDetailView',
+	array(
+		'htmlOptions' => array(
+			'class' => 'table table-striped table-condensed table-hover',
 		),
-		array(
-			'label' => 'Mode',
-			'type' => 'raw',
-			'value' => $this->getPayMode($model),
-		),
-		array(
-			'label' => 'Paid',
-			'type' => 'raw',
-			'value' => Payments::makeMoney($model->amount),
+		'data' => $model,
+		'attributes' => array(
+			//'ID',
+			array(
+				'label' => 'invoice#',
+				'value' => $model->invoice->invoice_id,
+			),
+			array(
+				'label' => 'Mode',
+				'type' => 'raw',
+				'value' => $this->getPayMode($model),
+			),
+			array(
+				'label' => 'Paid',
+				'type' => 'raw',
+				'value' => Payments::makeMoney($model->amount),
 
+			),
+			'pay_date',
+			'details',
+			'deposited_by',
+			array('label' => 'Created User', 'type' => 'raw', 'value' => $model->getUserName($model->cuser_id), 'filter' => ''),
+			array('label' => 'Updated User', 'type' => 'raw', 'value' => $model->getUserName($model->uuser_id))
 		),
-		'pay_date',
-		'details',
-		'deposited_by',
-		array('label' => 'Created User', 'type' => 'raw', 'value' => $model->getUserName($model->cuser_id), 'filter' => ''),
-		array('label' => 'Updated User', 'type' => 'raw', 'value' => $model->getUserName($model->uuser_id))
-	),
-)
+	)
 ); ?>
 
 

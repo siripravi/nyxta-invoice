@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CMssqlPdo class file
  *
@@ -24,7 +25,7 @@ class CMssqlPdoAdapter extends PDO
 	 * @return integer last inserted id
 	 */
 	#[ReturnTypeWillChange]
-	public function lastInsertId ($sequence=NULL)
+	public function lastInsertId($sequence = NULL)
 	{
 		return $this->query('SELECT CAST(COALESCE(SCOPE_IDENTITY(), @@IDENTITY) AS bigint)')->fetchColumn();
 	}
@@ -38,7 +39,7 @@ class CMssqlPdoAdapter extends PDO
 	 * @return boolean
 	 */
 	#[ReturnTypeWillChange]
-	public function beginTransaction ()
+	public function beginTransaction()
 	{
 		$this->exec('BEGIN TRANSACTION');
 		return true;
@@ -53,7 +54,7 @@ class CMssqlPdoAdapter extends PDO
 	 * @return boolean
 	 */
 	#[ReturnTypeWillChange]
-	public function commit ()
+	public function commit()
 	{
 		$this->exec('COMMIT TRANSACTION');
 		return true;
@@ -68,7 +69,7 @@ class CMssqlPdoAdapter extends PDO
 	 * @return boolean
 	 */
 	#[ReturnTypeWillChange]
-	public function rollBack ()
+	public function rollBack()
 	{
 		$this->exec('ROLLBACK TRANSACTION');
 		return true;

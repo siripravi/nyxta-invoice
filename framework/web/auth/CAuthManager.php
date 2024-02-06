@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CAuthManager class file.
  *
@@ -56,7 +57,7 @@ abstract class CAuthManager extends CApplicationComponent implements IAuthManage
 	 * And then declare 'authenticated' in this property so that it can be applied to
 	 * every authenticated user.
 	 */
-	public $defaultRoles=array();
+	public $defaultRoles = array();
 
 	/**
 	 * Creates a role.
@@ -67,9 +68,9 @@ abstract class CAuthManager extends CApplicationComponent implements IAuthManage
 	 * @param mixed $data additional data to be passed when evaluating the business rule
 	 * @return CAuthItem the authorization item
 	 */
-	public function createRole($name,$description='',$bizRule=null,$data=null)
+	public function createRole($name, $description = '', $bizRule = null, $data = null)
 	{
-		return $this->createAuthItem($name,CAuthItem::TYPE_ROLE,$description,$bizRule,$data);
+		return $this->createAuthItem($name, CAuthItem::TYPE_ROLE, $description, $bizRule, $data);
 	}
 
 	/**
@@ -81,9 +82,9 @@ abstract class CAuthManager extends CApplicationComponent implements IAuthManage
 	 * @param mixed $data additional data to be passed when evaluating the business rule
 	 * @return CAuthItem the authorization item
 	 */
-	public function createTask($name,$description='',$bizRule=null,$data=null)
+	public function createTask($name, $description = '', $bizRule = null, $data = null)
 	{
-		return $this->createAuthItem($name,CAuthItem::TYPE_TASK,$description,$bizRule,$data);
+		return $this->createAuthItem($name, CAuthItem::TYPE_TASK, $description, $bizRule, $data);
 	}
 
 	/**
@@ -95,9 +96,9 @@ abstract class CAuthManager extends CApplicationComponent implements IAuthManage
 	 * @param mixed $data additional data to be passed when evaluating the business rule
 	 * @return CAuthItem the authorization item
 	 */
-	public function createOperation($name,$description='',$bizRule=null,$data=null)
+	public function createOperation($name, $description = '', $bizRule = null, $data = null)
 	{
-		return $this->createAuthItem($name,CAuthItem::TYPE_OPERATION,$description,$bizRule,$data);
+		return $this->createAuthItem($name, CAuthItem::TYPE_OPERATION, $description, $bizRule, $data);
 	}
 
 	/**
@@ -107,9 +108,9 @@ abstract class CAuthManager extends CApplicationComponent implements IAuthManage
 	 * will be returned. Otherwise, all roles will be returned.
 	 * @return array roles (name=>CAuthItem)
 	 */
-	public function getRoles($userId=null)
+	public function getRoles($userId = null)
 	{
-		return $this->getAuthItems(CAuthItem::TYPE_ROLE,$userId);
+		return $this->getAuthItems(CAuthItem::TYPE_ROLE, $userId);
 	}
 
 	/**
@@ -119,9 +120,9 @@ abstract class CAuthManager extends CApplicationComponent implements IAuthManage
 	 * will be returned. Otherwise, all tasks will be returned.
 	 * @return array tasks (name=>CAuthItem)
 	 */
-	public function getTasks($userId=null)
+	public function getTasks($userId = null)
 	{
-		return $this->getAuthItems(CAuthItem::TYPE_TASK,$userId);
+		return $this->getAuthItems(CAuthItem::TYPE_TASK, $userId);
 	}
 
 	/**
@@ -131,9 +132,9 @@ abstract class CAuthManager extends CApplicationComponent implements IAuthManage
 	 * will be returned. Otherwise, all operations will be returned.
 	 * @return array operations (name=>CAuthItem)
 	 */
-	public function getOperations($userId=null)
+	public function getOperations($userId = null)
 	{
-		return $this->getAuthItems(CAuthItem::TYPE_OPERATION,$userId);
+		return $this->getAuthItems(CAuthItem::TYPE_OPERATION, $userId);
 	}
 
 	/**
@@ -144,20 +145,16 @@ abstract class CAuthManager extends CApplicationComponent implements IAuthManage
 	 * @return boolean whether the business rule returns true.
 	 * If the business rule is empty, it will still return true.
 	 */
-	public function executeBizRule($bizRule,$params,$data)
+	public function executeBizRule($bizRule, $params, $data)
 	{
-		if($bizRule==='' || $bizRule===null)
+		if ($bizRule === '' || $bizRule === null)
 			return true;
 		if ($this->showErrors)
-			return eval($bizRule)!=0;
-		else
-		{
-			try
-			{
-				return @eval($bizRule)!=0;
-			}
-			catch (ParseError $e)
-			{
+			return eval($bizRule) != 0;
+		else {
+			try {
+				return @eval($bizRule) != 0;
+			} catch (ParseError $e) {
 				return false;
 			}
 		}
@@ -169,11 +166,14 @@ abstract class CAuthManager extends CApplicationComponent implements IAuthManage
 	 * @param integer $childType child item type
 	 * @throws CException if the item cannot be added as a child due to its incompatible type.
 	 */
-	protected function checkItemChildType($parentType,$childType)
+	protected function checkItemChildType($parentType, $childType)
 	{
-		static $types=array('operation','task','role');
-		if($parentType < $childType)
-			throw new CException(Yii::t('yii','Cannot add an item of type "{child}" to an item of type "{parent}".',
-				array('{child}'=>$types[$childType], '{parent}'=>$types[$parentType])));
+		static $types = array('operation', 'task', 'role');
+		if ($parentType < $childType)
+			throw new CException(Yii::t(
+				'yii',
+				'Cannot add an item of type "{child}" to an item of type "{parent}".',
+				array('{child}' => $types[$childType], '{parent}' => $types[$parentType])
+			));
 	}
 }

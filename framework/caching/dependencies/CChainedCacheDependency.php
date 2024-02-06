@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CChainedCacheDependency class file.
  *
@@ -27,16 +28,16 @@
  */
 class CChainedCacheDependency extends CComponent implements ICacheDependency
 {
-	private $_dependencies=null;
+	private $_dependencies = null;
 
 	/**
 	 * Constructor.
 	 * @param array $dependencies the dependencies to be added to this chain.
 	 * @since 1.1.4
 	 */
-	public function __construct($dependencies=array())
+	public function __construct($dependencies = array())
 	{
-		if(!empty($dependencies))
+		if (!empty($dependencies))
 			$this->setDependencies($dependencies);
 	}
 
@@ -45,8 +46,8 @@ class CChainedCacheDependency extends CComponent implements ICacheDependency
 	 */
 	public function getDependencies()
 	{
-		if($this->_dependencies===null)
-			$this->_dependencies=new CTypedList('ICacheDependency');
+		if ($this->_dependencies === null)
+			$this->_dependencies = new CTypedList('ICacheDependency');
 		return $this->_dependencies;
 	}
 
@@ -57,11 +58,10 @@ class CChainedCacheDependency extends CComponent implements ICacheDependency
 	 */
 	public function setDependencies($values)
 	{
-		$dependencies=$this->getDependencies();
-		foreach($values as $value)
-		{
-			if(is_array($value))
-				$value=Yii::createComponent($value);
+		$dependencies = $this->getDependencies();
+		foreach ($values as $value) {
+			if (is_array($value))
+				$value = Yii::createComponent($value);
 			$dependencies->add($value);
 		}
 	}
@@ -71,9 +71,8 @@ class CChainedCacheDependency extends CComponent implements ICacheDependency
 	 */
 	public function evaluateDependency()
 	{
-		if($this->_dependencies!==null)
-		{
-			foreach($this->_dependencies as $dependency)
+		if ($this->_dependencies !== null) {
+			foreach ($this->_dependencies as $dependency)
 				$dependency->evaluateDependency();
 		}
 	}
@@ -86,10 +85,9 @@ class CChainedCacheDependency extends CComponent implements ICacheDependency
 	 */
 	public function getHasChanged()
 	{
-		if($this->_dependencies!==null)
-		{
-			foreach($this->_dependencies as $dependency)
-				if($dependency->getHasChanged())
+		if ($this->_dependencies !== null) {
+			foreach ($this->_dependencies as $dependency)
+				if ($dependency->getHasChanged())
 					return true;
 		}
 		return false;

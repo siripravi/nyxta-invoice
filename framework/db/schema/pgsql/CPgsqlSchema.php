@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CPgsqlSchema class file.
  *
@@ -17,13 +18,13 @@
  */
 class CPgsqlSchema extends CDbSchema
 {
-	const DEFAULT_SCHEMA='public';
+	const DEFAULT_SCHEMA = 'public';
 
 	/**
 	 * @var array the abstract column types mapped to physical column types.
 	 * @since 1.1.6
 	 */
-	public $columnTypes=array(
+	public $columnTypes = array(
 		'pk' => 'serial NOT NULL PRIMARY KEY',
 		'bigpk' => 'bigserial NOT NULL PRIMARY KEY',
 		'string' => 'character varying (255)',
@@ -41,7 +42,7 @@ class CPgsqlSchema extends CDbSchema
 		'money' => 'decimal(19,4)',
 	);
 
-	private $_sequences=array();
+	private $_sequences = array();
 
 	/**
 	 * Quotes a table name for use in a query.
@@ -52,7 +53,7 @@ class CPgsqlSchema extends CDbSchema
 	 */
 	public function quoteSimpleTableName($name)
 	{
-		return '"'.$name.'"';
+		return '"' . $name . '"';
 	}
 
 	/**
@@ -65,17 +66,17 @@ class CPgsqlSchema extends CDbSchema
 	 * key plus one (i.e. sequence trimming).
 	 * @since 1.1
 	 */
-	public function resetSequence($table,$value=null)
+	public function resetSequence($table, $value = null)
 	{
-		if($table->sequenceName===null)
+		if ($table->sequenceName === null)
 			return;
-		$sequence='"'.$table->sequenceName.'"';
-		if(strpos($sequence,'.')!==false)
-			$sequence=str_replace('.','"."',$sequence);
-		if($value!==null)
-			$value=(int)$value;
+		$sequence = '"' . $table->sequenceName . '"';
+		if (strpos($sequence, '.') !== false)
+			$sequence = str_replace('.', '"."', $sequence);
+		if ($value !== null)
+			$value = (int)$value;
 		else
-			$value="(SELECT COALESCE(MAX(\"{$table->primaryKey}\"),0) FROM {$table->rawName})+1";
+			$value = "(SELECT COALESCE(MAX(\"{$table->primaryKey}\"),0) FROM {$table->rawName})+1";
 		$this->getDbConnection()
 			->createCommand("SELECT SETVAL('$sequence',$value,false)")
 			->execute();
@@ -87,16 +88,15 @@ class CPgsqlSchema extends CDbSchema
 	 * @param string $schema the schema of the tables. Defaults to empty string, meaning the current or default schema.
 	 * @since 1.1
 	 */
-	public function checkIntegrity($check=true,$schema='')
+	public function checkIntegrity($check = true, $schema = '')
 	{
-		$enable=$check ? 'ENABLE' : 'DISABLE';
-		$tableNames=$this->getTableNames($schema);
-		$db=$this->getDbConnection();
-		foreach($tableNames as $tableName)
-		{
-			$tableName='"'.$tableName.'"';
-			if(strpos($tableName,'.')!==false)
-				$tableName=str_replace('.','"."',$tableName);
+		$enable = $check ? 'ENABLE' : 'DISABLE';
+		$tableNames = $this->getTableNames($schema);
+		$db = $this->getDbConnection();
+		foreach ($tableNames as $tableName) {
+			$tableName = '"' . $tableName . '"';
+			if (strpos($tableName, '.') !== false)
+				$tableName = str_replace('.', '"."', $tableName);
 			$db->createCommand("ALTER TABLE $tableName $enable TRIGGER ALL")->execute();
 		}
 	}
@@ -108,21 +108,18 @@ class CPgsqlSchema extends CDbSchema
 	 */
 	protected function loadTable($name)
 	{
-		$table=new CPgsqlTableSchema;
-		$this->resolveTableNames($table,$name);
-		if(!$this->findColumns($table))
+		$table = new CPgsqlTableSchema;
+		$this->resolveTableNames($table, $name);
+		if (!$this->findColumns($table))
 			return null;
 		$this->findConstraints($table);
 
-		if(is_string($table->primaryKey) && isset($this->_sequences[$table->rawName.'.'.$table->primaryKey]))
-			$table->sequenceName=$this->_sequences[$table->rawName.'.'.$table->primaryKey];
-		elseif(is_array($table->primaryKey))
-		{
-			foreach($table->primaryKey as $pk)
-			{
-				if(isset($this->_sequences[$table->rawName.'.'.$pk]))
-				{
-					$table->sequenceName=$this->_sequences[$table->rawName.'.'.$pk];
+		if (is_string($table->primaryKey) && isset($this->_sequences[$table->rawName . '.' . $table->primaryKey]))
+			$table->sequenceName = $this->_sequences[$table->rawName . '.' . $table->primaryKey];
+		elseif (is_array($table->primaryKey)) {
+			foreach ($table->primaryKey as $pk) {
+				if (isset($this->_sequences[$table->rawName . '.' . $pk])) {
+					$table->sequenceName = $this->_sequences[$table->rawName . '.' . $pk];
 					break;
 				}
 			}
@@ -136,26 +133,23 @@ class CPgsqlSchema extends CDbSchema
 	 * @param CPgsqlTableSchema $table the table instance
 	 * @param string $name the unquoted table name
 	 */
-	protected function resolveTableNames($table,$name)
+	protected function resolveTableNames($table, $name)
 	{
-		$parts=explode('.',str_replace('"','',$name));
-		if(isset($parts[1]))
-		{
-			$schemaName=$parts[0];
-			$tableName=$parts[1];
-		}
-		else
-		{
-			$schemaName=self::DEFAULT_SCHEMA;
-			$tableName=$parts[0];
+		$parts = explode('.', str_replace('"', '', $name));
+		if (isset($parts[1])) {
+			$schemaName = $parts[0];
+			$tableName = $parts[1];
+		} else {
+			$schemaName = self::DEFAULT_SCHEMA;
+			$tableName = $parts[0];
 		}
 
-		$table->name=$tableName;
-		$table->schemaName=$schemaName;
-		if($schemaName===self::DEFAULT_SCHEMA)
-			$table->rawName=$this->quoteTableName($tableName);
+		$table->name = $tableName;
+		$table->schemaName = $schemaName;
+		if ($schemaName === self::DEFAULT_SCHEMA)
+			$table->rawName = $this->quoteTableName($tableName);
 		else
-			$table->rawName=$this->quoteTableName($schemaName).'.'.$this->quoteTableName($tableName);
+			$table->rawName = $this->quoteTableName($schemaName) . '.' . $this->quoteTableName($tableName);
 	}
 
 	/**
@@ -165,7 +159,7 @@ class CPgsqlSchema extends CDbSchema
 	 */
 	protected function findColumns($table)
 	{
-		$sql=<<<EOD
+		$sql = <<<EOD
 SELECT
 	a.attname,
 	LOWER(format_type(a.atttypid, a.atttypmod)) AS type,
@@ -179,25 +173,23 @@ WHERE a.attnum > 0 AND NOT a.attisdropped
 		AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = :schema))
 ORDER BY a.attnum
 EOD;
-		$command=$this->getDbConnection()->createCommand($sql);
-		$command->bindValue(':table',$table->name);
-		$command->bindValue(':schema',$table->schemaName);
+		$command = $this->getDbConnection()->createCommand($sql);
+		$command->bindValue(':table', $table->name);
+		$command->bindValue(':schema', $table->schemaName);
 
-		if(($columns=$command->queryAll())===array())
+		if (($columns = $command->queryAll()) === array())
 			return false;
 
-		foreach($columns as $column)
-		{
-			$c=$this->createColumn($column);
-			$table->columns[$c->name]=$c;
+		foreach ($columns as $column) {
+			$c = $this->createColumn($column);
+			$table->columns[$c->name] = $c;
 
-			if(isset($column['adsrc']) && stripos($column['adsrc'],'nextval')===0 && preg_match('/nextval\([^\']*\'([^\']+)\'[^\)]*\)/i',$column['adsrc'],$matches))
-			{
-				if(strpos($matches[1],'.')!==false || $table->schemaName===self::DEFAULT_SCHEMA)
-					$this->_sequences[$table->rawName.'.'.$c->name]=$matches[1];
+			if (isset($column['adsrc']) && stripos($column['adsrc'], 'nextval') === 0 && preg_match('/nextval\([^\']*\'([^\']+)\'[^\)]*\)/i', $column['adsrc'], $matches)) {
+				if (strpos($matches[1], '.') !== false || $table->schemaName === self::DEFAULT_SCHEMA)
+					$this->_sequences[$table->rawName . '.' . $c->name] = $matches[1];
 				else
-					$this->_sequences[$table->rawName.'.'.$c->name]=$table->schemaName.'.'.$matches[1];
-				$c->autoIncrement=true;
+					$this->_sequences[$table->rawName . '.' . $c->name] = $table->schemaName . '.' . $matches[1];
+				$c->autoIncrement = true;
 			}
 		}
 		return true;
@@ -210,15 +202,15 @@ EOD;
 	 */
 	protected function createColumn($column)
 	{
-		$c=new CPgsqlColumnSchema;
-		$c->name=$column['attname'];
-		$c->rawName=$this->quoteColumnName($c->name);
-		$c->allowNull=!$column['attnotnull'];
-		$c->isPrimaryKey=false;
-		$c->isForeignKey=false;
-		$c->comment=$column['comment']===null ? '' : $column['comment'];
+		$c = new CPgsqlColumnSchema;
+		$c->name = $column['attname'];
+		$c->rawName = $this->quoteColumnName($c->name);
+		$c->allowNull = !$column['attnotnull'];
+		$c->isPrimaryKey = false;
+		$c->isForeignKey = false;
+		$c->comment = $column['comment'] === null ? '' : $column['comment'];
 
-		$c->init($column['type'],$column['atthasdef'] ? $column['adsrc'] : null);
+		$c->init($column['type'], $column['atthasdef'] ? $column['adsrc'] : null);
 
 		return $c;
 	}
@@ -229,7 +221,7 @@ EOD;
 	 */
 	protected function findConstraints($table)
 	{
-		$sql=<<<EOD
+		$sql = <<<EOD
 SELECT
 	conname,
 	consrc,
@@ -272,15 +264,14 @@ WHERE relid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
 	AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace
 	WHERE nspname=:schema))
 EOD;
-		$command=$this->getDbConnection()->createCommand($sql);
-		$command->bindValue(':table',$table->name);
-		$command->bindValue(':schema',$table->schemaName);
-		foreach($command->queryAll() as $row)
-		{
-			if($row['contype']==='p') // primary key
-				$this->findPrimaryKey($table,$row['indkey']);
-			elseif($row['contype']==='f') // foreign key
-				$this->findForeignKey($table,$row['consrc']);
+		$command = $this->getDbConnection()->createCommand($sql);
+		$command->bindValue(':table', $table->name);
+		$command->bindValue(':schema', $table->schemaName);
+		foreach ($command->queryAll() as $row) {
+			if ($row['contype'] === 'p') // primary key
+				$this->findPrimaryKey($table, $row['indkey']);
+			elseif ($row['contype'] === 'f') // foreign key
+				$this->findForeignKey($table, $row['consrc']);
 		}
 	}
 
@@ -289,10 +280,10 @@ EOD;
 	 * @param CPgsqlTableSchema $table the table metadata
 	 * @param string $indices pgsql primary key index list
 	 */
-	protected function findPrimaryKey($table,$indices)
+	protected function findPrimaryKey($table, $indices)
 	{
-		$indices=implode(', ',preg_split('/\s+/',$indices));
-		$sql=<<<EOD
+		$indices = implode(', ', preg_split('/\s+/', $indices));
+		$sql = <<<EOD
 SELECT attnum, attname FROM pg_catalog.pg_attribute WHERE
 	attrelid=(
 		SELECT oid FROM pg_catalog.pg_class WHERE relname=:table AND relnamespace=(
@@ -301,21 +292,19 @@ SELECT attnum, attname FROM pg_catalog.pg_attribute WHERE
 	)
 	AND attnum IN ({$indices})
 EOD;
-		$command=$this->getDbConnection()->createCommand($sql);
-		$command->bindValue(':table',$table->name);
-		$command->bindValue(':schema',$table->schemaName);
-		foreach($command->queryAll() as $row)
-		{
-			$name=$row['attname'];
-			if(isset($table->columns[$name]))
-			{
-				$table->columns[$name]->isPrimaryKey=true;
-				if($table->primaryKey===null)
-					$table->primaryKey=$name;
-				elseif(is_string($table->primaryKey))
-					$table->primaryKey=array($table->primaryKey,$name);
+		$command = $this->getDbConnection()->createCommand($sql);
+		$command->bindValue(':table', $table->name);
+		$command->bindValue(':schema', $table->schemaName);
+		foreach ($command->queryAll() as $row) {
+			$name = $row['attname'];
+			if (isset($table->columns[$name])) {
+				$table->columns[$name]->isPrimaryKey = true;
+				if ($table->primaryKey === null)
+					$table->primaryKey = $name;
+				elseif (is_string($table->primaryKey))
+					$table->primaryKey = array($table->primaryKey, $name);
 				else
-					$table->primaryKey[]=$name;
+					$table->primaryKey[] = $name;
 			}
 		}
 	}
@@ -325,21 +314,19 @@ EOD;
 	 * @param CPgsqlTableSchema $table the table metadata
 	 * @param string $src pgsql foreign key definition
 	 */
-	protected function findForeignKey($table,$src)
+	protected function findForeignKey($table, $src)
 	{
-		$matches=array();
-		$brackets='\(([^\)]+)\)';
-		$pattern="/FOREIGN\s+KEY\s+{$brackets}\s+REFERENCES\s+([^\(]+){$brackets}/i";
-		if(preg_match($pattern,str_replace('"','',$src),$matches))
-		{
-			$keys=preg_split('/,\s+/', $matches[1]);
-			$tableName=$matches[2];
-			$fkeys=preg_split('/,\s+/', $matches[3]);
-			foreach($keys as $i=>$key)
-			{
-				$table->foreignKeys[$key]=array($tableName,$fkeys[$i]);
-				if(isset($table->columns[$key]))
-					$table->columns[$key]->isForeignKey=true;
+		$matches = array();
+		$brackets = '\(([^\)]+)\)';
+		$pattern = "/FOREIGN\s+KEY\s+{$brackets}\s+REFERENCES\s+([^\(]+){$brackets}/i";
+		if (preg_match($pattern, str_replace('"', '', $src), $matches)) {
+			$keys = preg_split('/,\s+/', $matches[1]);
+			$tableName = $matches[2];
+			$fkeys = preg_split('/,\s+/', $matches[3]);
+			foreach ($keys as $i => $key) {
+				$table->foreignKeys[$key] = array($tableName, $fkeys[$i]);
+				if (isset($table->columns[$key]))
+					$table->columns[$key]->isForeignKey = true;
 			}
 		}
 	}
@@ -350,24 +337,23 @@ EOD;
 	 * If not empty, the returned table names will be prefixed with the schema name.
 	 * @return array all table names in the database.
 	 */
-	protected function findTableNames($schema='')
+	protected function findTableNames($schema = '')
 	{
-		if($schema==='')
-			$schema=self::DEFAULT_SCHEMA;
-		$sql=<<<EOD
+		if ($schema === '')
+			$schema = self::DEFAULT_SCHEMA;
+		$sql = <<<EOD
 SELECT table_name, table_schema FROM information_schema.tables
 WHERE table_schema=:schema AND table_type='BASE TABLE'
 EOD;
-		$command=$this->getDbConnection()->createCommand($sql);
-		$command->bindParam(':schema',$schema);
-		$rows=$command->queryAll();
-		$names=array();
-		foreach($rows as $row)
-		{
-			if($schema===self::DEFAULT_SCHEMA)
-				$names[]=$row['table_name'];
+		$command = $this->getDbConnection()->createCommand($sql);
+		$command->bindParam(':schema', $schema);
+		$rows = $command->queryAll();
+		$names = array();
+		foreach ($rows as $row) {
+			if ($schema === self::DEFAULT_SCHEMA)
+				$names[] = $row['table_name'];
 			else
-				$names[]=$row['table_schema'].'.'.$row['table_name'];
+				$names[] = $row['table_schema'] . '.' . $row['table_name'];
 		}
 		return $names;
 	}
@@ -396,8 +382,8 @@ EOD;
 	 */
 	public function addColumn($table, $column, $type)
 	{
-		$type=$this->getColumnType($type);
-		$sql='ALTER TABLE ' . $this->quoteTableName($table)
+		$type = $this->getColumnType($type);
+		$sql = 'ALTER TABLE ' . $this->quoteTableName($table)
 			. ' ADD COLUMN ' . $this->quoteColumnName($column) . ' '
 			. $type;
 		return $sql;
@@ -415,8 +401,8 @@ EOD;
 	 */
 	public function alterColumn($table, $column, $type)
 	{
-		$type=$this->getColumnType($type);
-		$sql='ALTER TABLE ' . $this->quoteTableName($table) . ' ALTER COLUMN '
+		$type = $this->getColumnType($type);
+		$sql = 'ALTER TABLE ' . $this->quoteTableName($table) . ' ALTER COLUMN '
 			. $this->quoteColumnName($column) . ' TYPE ' . $this->getColumnType($type);
 		return $sql;
 	}
@@ -430,7 +416,7 @@ EOD;
 	 */
 	public function dropIndex($name, $table)
 	{
-		return 'DROP INDEX '.$this->quoteTableName($name);
+		return 'DROP INDEX ' . $this->quoteTableName($name);
 	}
 
 	/**

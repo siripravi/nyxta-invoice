@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The EYiiPdfException exception class.
  * @author Borales <bordun.alexandr@gmail.com>

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CPgsqlTable class file.
  *

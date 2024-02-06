@@ -64,6 +64,6 @@
   <?php echo CHtml::encode($data->SHIP_DETAILS); ?>
   <br />
 
-  */?>
+  */ ?>
 
 </div>

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CMemCache class file
  *
@@ -66,15 +67,15 @@ class CMemCache extends CCache
 	 * If false {@link https://pecl.php.net/package/memcache memcache}. will be used.
 	 * Defaults to false.
 	 */
-	public $useMemcached=false;
+	public $useMemcached = false;
 	/**
 	 * @var Memcache the Memcache instance
 	 */
-	private $_cache=null;
+	private $_cache = null;
 	/**
 	 * @var array list of memcache server configurations
 	 */
-	private $_servers=array();
+	private $_servers = array();
 
 	/**
 	 * Initializes this application component.
@@ -85,20 +86,17 @@ class CMemCache extends CCache
 	public function init()
 	{
 		parent::init();
-		$servers=$this->getServers();
-		$cache=$this->getMemCache();
-		if(count($servers))
-		{
-			foreach($servers as $server)
-			{
-				if($this->useMemcached)
-					$cache->addServer($server->host,$server->port,$server->weight);
+		$servers = $this->getServers();
+		$cache = $this->getMemCache();
+		if (count($servers)) {
+			foreach ($servers as $server) {
+				if ($this->useMemcached)
+					$cache->addServer($server->host, $server->port, $server->weight);
 				else
-					$cache->addServer($server->host,$server->port,$server->persistent,$server->weight,$server->timeout,$server->retryInterval,$server->status);
+					$cache->addServer($server->host, $server->port, $server->persistent, $server->weight, $server->timeout, $server->retryInterval, $server->status);
 			}
-		}
-		else
-			$cache->addServer('localhost',11211);
+		} else
+			$cache->addServer('localhost', 11211);
 	}
 
 	/**
@@ -107,15 +105,17 @@ class CMemCache extends CCache
 	 */
 	public function getMemCache()
 	{
-		if($this->_cache!==null)
+		if ($this->_cache !== null)
 			return $this->_cache;
-		else
-		{
-			$extension=$this->useMemcached ? 'memcached' : 'memcache';
-			if(!extension_loaded($extension))
-				throw new CException(Yii::t('yii',"CMemCache requires PHP {extension} extension to be loaded.",
-					array('{extension}'=>$extension)));
-			return $this->_cache=$this->useMemcached ? new Memcached : new Memcache;
+		else {
+			$extension = $this->useMemcached ? 'memcached' : 'memcache';
+			if (!extension_loaded($extension))
+				throw new CException(Yii::t(
+					'yii',
+					"CMemCache requires PHP {extension} extension to be loaded.",
+					array('{extension}' => $extension)
+				));
+			return $this->_cache = $this->useMemcached ? new Memcached : new Memcache;
 		}
 	}
 
@@ -134,8 +134,8 @@ class CMemCache extends CCache
 	 */
 	public function setServers($config)
 	{
-		foreach($config as $c)
-			$this->_servers[]=new CMemCacheServerConfiguration($c);
+		foreach ($config as $c)
+			$this->_servers[] = new CMemCacheServerConfiguration($c);
 	}
 
 	/**
@@ -168,11 +168,11 @@ class CMemCache extends CCache
 	 * @param integer $duration the number of seconds in which the cached value will expire. 0 means never expire.
 	 * @return boolean true if the value is successfully stored into cache, false otherwise
 	 */
-	protected function setValue($key,$value,$duration)
+	protected function setValue($key, $value, $duration)
 	{
 		$expire = $this->normalizeDuration($duration);
 
-		return $this->useMemcached ? $this->_cache->set($key,$value,$expire) : $this->_cache->set($key,$value,0,$expire);
+		return $this->useMemcached ? $this->_cache->set($key, $value, $expire) : $this->_cache->set($key, $value, 0, $expire);
 	}
 
 	/**
@@ -184,37 +184,37 @@ class CMemCache extends CCache
 	 * @param integer $duration the number of seconds in which the cached value will expire. 0 means never expire.
 	 * @return boolean true if the value is successfully stored into cache, false otherwise
 	 */
-	protected function addValue($key,$value,$duration)
+	protected function addValue($key, $value, $duration)
 	{
 		$expire = $this->normalizeDuration($duration);
 
-		return $this->useMemcached ? $this->_cache->add($key,$value,$expire) : $this->_cache->add($key,$value,0,$expire);
+		return $this->useMemcached ? $this->_cache->add($key, $value, $expire) : $this->_cache->add($key, $value, 0, $expire);
 	}
 
 	/**
-         * Normalizes duration value.
-         * Ported code from yii2 after identifying issue with memcache falsely handling short term duration based on unix timestamps
-         *
-         * @see https://github.com/yiisoft/yii2/issues/17710
-         * @see https://secure.php.net/manual/en/memcache.set.php
-         * @see https://secure.php.net/manual/en/memcached.expiration.php
-         * @see https://github.com/php-memcached-dev/php-memcached/issues/368#issuecomment-359137077
-         *
-         * @param int $duration
-         * @return int
-         */
-        protected function normalizeDuration($duration)
-        {
-            if ($duration < 0) {
-                return 0;
-            }
+	 * Normalizes duration value.
+	 * Ported code from yii2 after identifying issue with memcache falsely handling short term duration based on unix timestamps
+	 *
+	 * @see https://github.com/yiisoft/yii2/issues/17710
+	 * @see https://secure.php.net/manual/en/memcache.set.php
+	 * @see https://secure.php.net/manual/en/memcached.expiration.php
+	 * @see https://github.com/php-memcached-dev/php-memcached/issues/368#issuecomment-359137077
+	 *
+	 * @param int $duration
+	 * @return int
+	 */
+	protected function normalizeDuration($duration)
+	{
+		if ($duration < 0) {
+			return 0;
+		}
 
-            if ($duration < 2592001) {
-                return $duration;
-            }
+		if ($duration < 2592001) {
+			return $duration;
+		}
 
-            return $duration + time();
-        }
+		return $duration + time();
+	}
 
 	/**
 	 * Deletes a value with the specified key from cache
@@ -258,27 +258,27 @@ class CMemCacheServerConfiguration extends CComponent
 	/**
 	 * @var integer memcache server port
 	 */
-	public $port=11211;
+	public $port = 11211;
 	/**
 	 * @var boolean whether to use a persistent connection
 	 */
-	public $persistent=true;
+	public $persistent = true;
 	/**
 	 * @var integer probability of using this server among all servers.
 	 */
-	public $weight=1;
+	public $weight = 1;
 	/**
 	 * @var integer value in seconds which will be used for connecting to the server
 	 */
-	public $timeout=15;
+	public $timeout = 15;
 	/**
 	 * @var integer how often a failed server will be retried (in seconds)
 	 */
-	public $retryInterval=15;
+	public $retryInterval = 15;
 	/**
 	 * @var boolean if the server should be flagged as online upon a failure
 	 */
-	public $status=true;
+	public $status = true;
 
 	/**
 	 * Constructor.
@@ -287,14 +287,12 @@ class CMemCacheServerConfiguration extends CComponent
 	 */
 	public function __construct($config)
 	{
-		if(is_array($config))
-		{
-			foreach($config as $key=>$value)
-				$this->$key=$value;
-			if($this->host===null)
-				throw new CException(Yii::t('yii','CMemCache server configuration must have "host" value.'));
-		}
-		else
-			throw new CException(Yii::t('yii','CMemCache server configuration must be an array.'));
+		if (is_array($config)) {
+			foreach ($config as $key => $value)
+				$this->$key = $value;
+			if ($this->host === null)
+				throw new CException(Yii::t('yii', 'CMemCache server configuration must have "host" value.'));
+		} else
+			throw new CException(Yii::t('yii', 'CMemCache server configuration must be an array.'));
 	}
 }

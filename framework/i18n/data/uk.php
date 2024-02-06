@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'uk'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8671',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => ' ',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '#,##0.00 ¤',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'AU$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -57,10 +58,10 @@ return array (
     'UAH' => '₴',
     'UAK' => 'крб.',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'січня',
       2 => 'лютого',
       3 => 'березня',
@@ -74,8 +75,8 @@ return array (
       11 => 'листопада',
       12 => 'грудня',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'січ.',
       2 => 'лют.',
       3 => 'бер.',
@@ -90,10 +91,10 @@ return array (
       12 => 'груд.',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'С',
       2 => 'Л',
       3 => 'Б',
@@ -107,8 +108,8 @@ return array (
       11 => 'Л',
       12 => 'Г',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Січ',
       2 => 'Лют',
       3 => 'Бер',
@@ -122,8 +123,8 @@ return array (
       11 => 'Лис',
       12 => 'Гру',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       1 => 'Січень',
       2 => 'Лютий',
       3 => 'Березень',
@@ -138,10 +139,10 @@ return array (
       12 => 'Грудень',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Неділя',
       1 => 'Понеділок',
       2 => 'Вівторок',
@@ -150,8 +151,8 @@ return array (
       5 => 'Пʼятниця',
       6 => 'Субота',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Нд',
       1 => 'Пн',
       2 => 'Вт',
@@ -160,8 +161,8 @@ return array (
       5 => 'Пт',
       6 => 'Сб',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'Нд',
       1 => 'Пн',
       2 => 'Вт',
@@ -171,10 +172,10 @@ return array (
       6 => 'Сб',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'Н',
       1 => 'П',
       2 => 'В',
@@ -183,8 +184,8 @@ return array (
       5 => 'П',
       6 => 'С',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'Нд',
       1 => 'Пн',
       2 => 'Вт',
@@ -194,33 +195,33 @@ return array (
       6 => 'Сб',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'до н.е.',
       1 => 'н.е.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'до нашої ери',
       1 => 'нашої ери',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'до н.е.',
       1 => 'н.е.',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, d MMMM y \'р\'.',
     'long' => 'd MMMM y \'р\'.',
     'medium' => 'd MMM y',
     'short' => 'dd.MM.yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -230,8 +231,8 @@ return array (
   'amName' => 'дп',
   'pmName' => 'пп',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'афарська',
     'ab' => 'абхазька',
     'ace' => 'ачехська',
@@ -805,8 +806,8 @@ return array (
     'zxx' => 'немає мовного вмісту',
     'zza' => 'зазакі',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'Персько-арабський',
     'armi' => 'Армі',
     'armn' => 'Вірменський',
@@ -938,8 +939,8 @@ return array (
     'zyyy' => 'Невизначений',
     'zzzz' => 'Невідомий сценарій',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'Світ',
     '002' => 'Африка',
     '003' => 'Північноамериканський континент',
@@ -1231,8 +1232,8 @@ return array (
     'zw' => 'Зімбабве',
     'zz' => 'Невідомий регіон',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'fmod(n,10)==1&&fmod(n,100)!=11',
     1 => '(fmod(n,10)>=2&&fmod(n,10)<=4&&fmod(fmod(n,10),1)==0)&&(fmod(n,100)<12||fmod(n,100)>14)',
     2 => 'fmod(n,10)==0||(fmod(n,10)>=5&&fmod(n,10)<=9&&fmod(fmod(n,10),1)==0)||(fmod(n,100)>=11&&fmod(n,100)<=14&&fmod(fmod(n,100),1)==0)',

@@ -8,7 +8,7 @@
                 <div class="header">
                     <h4 class="title">Payments</h4>
                 </div>
-                <?php if (Yii::app()->user->isAdmin): ?>
+                <?php if (Yii::app()->user->isAdmin) : ?>
                     <div class="btn-group btn-toggle pull-right">
                         <?php
                         $this->widget(
@@ -22,7 +22,8 @@
                                 'ajaxOptions' => array(
                                     "type" => "POST",
                                     "data" => array("paid" => 1),
-                                    'beforeSend' => new CJavaScriptExpression('function(){
+                                    'beforeSend' => new CJavaScriptExpression(
+                                        'function(){
                                                            // $(this).text("Working..");
                                                            // $(this).prop("disabled", true);
                                                         }'
@@ -49,7 +50,8 @@
                                 'ajaxOptions' => array(
                                     "type" => "POST",
                                     "data" => array("paid" => 0),
-                                    'beforeSend' => new CJavaScriptExpression('function(){
+                                    'beforeSend' => new CJavaScriptExpression(
+                                        'function(){
                                   //  $(this).text("Working..");
                                   //  $(this).prop("disabled", true);
                                 }'
@@ -68,56 +70,57 @@
                     </div>
 
                     <?php
-                    $this->widget('bootstrap.widgets.TbGridView', array(
-                        'id' => 'usergrid',
-                        'itemsCssClass' => 'table table-hover',
-                        'dataProvider' => $dp,
-                        'columns' => array(
-                            array(
-                                'class' => 'editable.EditableColumn',
-                                'name' => 'deposited_by',
-                                'header' => 'Deposited By',
-                                'headerHtmlOptions' => array('style' => 'width: 110px'),
-                                'editable' => array( //editable section
-                                    // 'apply'      => '$data->user_status != 4', //can't edit deleted users
-                                    'url' => $this->createUrl('payments/updatePmt'),
-                                    'placement' => 'right',
-                                )
-                            ),
-                            array(
-                                'class' => 'editable.EditableColumn',
-                                'name' => 'amount',
-                                'headerHtmlOptions' => array('style' => 'width: 110px'),
-                                'editable' => array( //editable section
-                                    // 'apply'      => '$data->user_status != 4', //can't edit deleted users
-                                    'url' => $this->createUrl('payments/updatePmt'),
-                                    'placement' => 'right',
-                                )
-                            ),
-                            array(
-                                'class' => 'editable.EditableColumn',
-                                'name' => 'mode_id',
-                                'header' => 'Mode',
-                                'headerHtmlOptions' => array('style' => 'width: 100px'),
-                                'editable' => array(
-                                    'type' => 'select',
-                                    'url' => $this->createUrl('payments/updatePmt'),
-                                    'source' => CHtml::listData(Mode::model()->findAll(), 'mode_id', function ($post) {
-                                        return CHtml::encode($post->mode_description);
-                                    }),
-                                    'options' => array( //custom display 
-                                        /* 'display' => 'js: function(value, sourceData) {
+                    $this->widget(
+                        'bootstrap.widgets.TbGridView',
+                        array(
+                            'id' => 'usergrid',
+                            'itemsCssClass' => 'table table-hover',
+                            'dataProvider' => $dp,
+                            'columns' => array(
+                                array(
+                                    'class' => 'editable.EditableColumn',
+                                    'name' => 'deposited_by',
+                                    'header' => 'Deposited By',
+                                    'headerHtmlOptions' => array('style' => 'width: 110px'),
+                                    'editable' => array( //editable section
+                                        // 'apply'      => '$data->user_status != 4', //can't edit deleted users
+                                        'url' => $this->createUrl('payments/updatePmt'),
+                                        'placement' => 'right',
+                                    )
+                                ),
+                                array(
+                                    'class' => 'editable.EditableColumn',
+                                    'name' => 'amount',
+                                    'headerHtmlOptions' => array('style' => 'width: 110px'),
+                                    'editable' => array( //editable section
+                                        // 'apply'      => '$data->user_status != 4', //can't edit deleted users
+                                        'url' => $this->createUrl('payments/updatePmt'),
+                                        'placement' => 'right',
+                                    )
+                                ),
+                                array(
+                                    'class' => 'editable.EditableColumn',
+                                    'name' => 'mode_id',
+                                    'header' => 'Mode',
+                                    'headerHtmlOptions' => array('style' => 'width: 100px'),
+                                    'editable' => array(
+                                        'type' => 'select',
+                                        'url' => $this->createUrl('payments/updatePmt'),
+                                        'source' => CHtml::listData(Mode::model()->findAll(), 'mode_id', function ($post) {
+                                            return CHtml::encode($post->mode_description);
+                                        }),
+                                        'options' => array( //custom display 
+                                            /* 'display' => 'js: function(value, sourceData) {
                                           var selected = $.grep(sourceData, function(o){ return value == o.value; }),
                                           colors = {1: "green", 2: "blue", 3: "red", 4: "gray"};
                                           $(this).text(selected[0].text).css("color", colors[value]);
-                                          }' */
-                                    ),
-                                    //onsave event handler 
-                                    'onSave' => 'js: function(e, params) {
+                                          }' */),
+                                        //onsave event handler 
+                                        'onSave' => 'js: function(e, params) {
                       console && console.log("saved value: "+params.newValue);
                  }',
-                                    //source url can depend on some parameters, then use js function:
-                                    /*
+                                        //source url can depend on some parameters, then use js function:
+                                        /*
                                       'source' => 'js: function() {
                                       var dob = $(this).closest("td").next().find(".editable").text();
                                       var username = $(this).data("username");
@@ -127,33 +130,33 @@
                                       'data-username' => '$data->user_name'
                                       )
                                      */
-                                )
-                            ),
-                            array(
-                                'class' => 'editable.EditableColumn',
-                                'name' => 'pay_date',
-                                'header' => 'Date',
-                                'headerHtmlOptions' => array('style' => 'width: 87px'),
-                                'editable' => array(
-                                    'type' => 'date',
-                                    'viewformat' => 'dd.mm.yyyy',
-                                    'url' => $this->createUrl('payments/updatePmt'),
-                                    'placement' => 'right',
-                                )
-                            ),
-                            array(
-                                'class' => 'editable.EditableColumn',
-                                'name' => 'details',
-                                'editable' => array(
-                                    'type' => 'textarea',
-                                    'url' => $this->createUrl('payments/updatePmt'),
-                                    'placement' => 'left',
-                                )
-                            ),
-                            'created'
-                            //editable related attribute with sorting.
-                            //see http://www.yiiframework.com/wiki/281/searching-and-sorting-by-related-model-in-cgridview  
-                            /*  array( 
+                                    )
+                                ),
+                                array(
+                                    'class' => 'editable.EditableColumn',
+                                    'name' => 'pay_date',
+                                    'header' => 'Date',
+                                    'headerHtmlOptions' => array('style' => 'width: 87px'),
+                                    'editable' => array(
+                                        'type' => 'date',
+                                        'viewformat' => 'dd.mm.yyyy',
+                                        'url' => $this->createUrl('payments/updatePmt'),
+                                        'placement' => 'right',
+                                    )
+                                ),
+                                array(
+                                    'class' => 'editable.EditableColumn',
+                                    'name' => 'details',
+                                    'editable' => array(
+                                        'type' => 'textarea',
+                                        'url' => $this->createUrl('payments/updatePmt'),
+                                        'placement' => 'left',
+                                    )
+                                ),
+                                'created'
+                                //editable related attribute with sorting.
+                                //see http://www.yiiframework.com/wiki/281/searching-and-sorting-by-related-model-in-cgridview  
+                                /*  array( 
                               'class' => 'editable.EditableColumn',
                               'name' => 'virtual_field',
                               'value' => 'CHtml::value($data, "profile.language")',
@@ -164,11 +167,11 @@
                               'placement' => 'left',
                               )
                               ), */
-                        ),
-                    )
+                            ),
+                        )
                     );
                     ?>
-                <?php else: ?>
+                <?php else : ?>
                     <?php $this->renderPartial('payments', array('dp' => $dp, 'stmt' => $stmt)); ?>
                 <?php endif; ?>
             </div>

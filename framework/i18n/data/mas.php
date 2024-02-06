@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'mas'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00;(¤#,##0.00)',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'KES' => 'Ksh',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Oladalʉ́',
       2 => 'Arát',
       3 => 'Ɔɛnɨ́ɔɨŋɔk',
@@ -70,8 +71,8 @@ return array (
       11 => 'Pʉshʉ́ka',
       12 => 'Ntʉ́ŋʉ́s',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Dal',
       2 => 'Ará',
       3 => 'Ɔɛn',
@@ -86,10 +87,10 @@ return array (
       12 => 'Ntʉ́',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -104,10 +105,10 @@ return array (
       12 => '12',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Jumapílí',
       1 => 'Jumatátu',
       2 => 'Jumane',
@@ -116,8 +117,8 @@ return array (
       5 => 'Jumáa',
       6 => 'Jumamósi',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Jpi',
       1 => 'Jtt',
       2 => 'Jnn',
@@ -127,10 +128,10 @@ return array (
       6 => 'Jmo',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => '2',
       1 => '3',
       2 => '4',
@@ -140,33 +141,33 @@ return array (
       6 => '1',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'MY',
       1 => 'EY',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Meínō Yɛ́sʉ',
       1 => 'Eínō Yɛ́sʉ',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'MY',
       1 => 'EY',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, d MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'd MMM y',
     'short' => 'dd/MM/y',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'h:mm:ss a zzzz',
     'long' => 'h:mm:ss a z',
     'medium' => 'h:mm:ss a',
@@ -176,8 +177,8 @@ return array (
   'amName' => 'Ɛnkakɛnyá',
   'pmName' => 'Ɛndámâ',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ak' => 'nkʉtʉ́k ɔ́ɔ̄ lAkan',
     'am' => 'nkʉtʉ́k ɔ́ɔ̄ lAmhari',
     'ar' => 'nkʉtʉ́k ɔ́ɔ̄ lmarabu',
@@ -224,8 +225,8 @@ return array (
     'zh' => 'nkʉtʉ́k ɔ́ɔ̄ lchina',
     'zu' => 'nkʉtʉ́k ɔ́ɔ̄ lzulu',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     'ad' => 'Andora',
     'ae' => 'Falme za Kiarabu',
     'af' => 'Afuganistani',
@@ -452,8 +453,8 @@ return array (
     'zm' => 'Sambia',
     'zw' => 'Simbabwe',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

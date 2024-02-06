@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'brx_IN'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##,##0%',
   'currencyFormat' => '¤ #,##,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -52,10 +53,10 @@ return array (
     'XOF' => 'CFA',
     'XPF' => 'CFPF',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'जानुवारी',
       2 => 'फेब्रुवारी',
       3 => 'मार्स',
@@ -69,8 +70,8 @@ return array (
       11 => 'नबेज्ब़र',
       12 => 'दिसेज्ब़र',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Month1',
       2 => 'Month2',
       3 => 'Month3',
@@ -85,10 +86,10 @@ return array (
       12 => 'Month12',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'ज',
       2 => 'फे',
       3 => 'मा',
@@ -103,10 +104,10 @@ return array (
       12 => 'दि',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'रबिबार',
       1 => 'समबार',
       2 => 'मंगलबार',
@@ -115,8 +116,8 @@ return array (
       5 => 'सुखुरबार',
       6 => 'सुनिबार',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'रबि',
       1 => 'सम',
       2 => 'मंगल',
@@ -126,10 +127,10 @@ return array (
       6 => 'सुनि',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'र',
       1 => 'स',
       2 => 'मं',
@@ -139,33 +140,33 @@ return array (
       6 => 'सु',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'ईसा.पूर्व',
       1 => 'सन',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'ईसा.पूर्व',
       1 => 'सन',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'ईसा.पूर्व',
       1 => 'सन',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, MMMM d, y',
     'long' => 'MMMM d, y',
     'medium' => 'MMM d, y',
     'short' => 'M/d/yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'h:mm:ss a zzzz',
     'long' => 'h:mm:ss a z',
     'medium' => 'h:mm:ss a',
@@ -175,8 +176,8 @@ return array (
   'amName' => 'फुं',
   'pmName' => 'बेलासे',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ab' => 'अब्खाज़ियन्',
     'ace' => 'अचेहनी',
     'ach' => 'अकोली',
@@ -674,8 +675,8 @@ return array (
     'zxx' => 'रिक्त',
     'zza' => 'ज़ाज़ा',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'अरबी',
     'armi' => 'शहनशाही आरामाईक',
     'armn' => 'अर्मेनियाई',
@@ -799,8 +800,8 @@ return array (
     'zyyy' => 'आम',
     'zzzz' => 'अज्ञात या अवैध लिपि',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'दुनिया',
     '002' => 'अफ्रीका',
     '003' => 'उत्तर अमरिका',
@@ -1081,8 +1082,8 @@ return array (
     'zw' => 'ज़ीम्बाब्वे',
     'zz' => 'अज्ञात या अवैध प्रदेश',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

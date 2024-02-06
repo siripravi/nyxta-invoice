@@ -14,7 +14,7 @@ $customer_id = 77;
 <input type="hidden" id="current_url" value="<?php echo $current_url; ?>" />
 <input type="hidden" id="doc_type" value="<?php echo $model->st_type; ?>" />
 
-<?php if (!empty($header)): ?>
+<?php if (!empty($header)) : ?>
     <?php $this->renderPartial('_statement', array('statement' => $model, 'filepath' => $filepath, 'key' => $key, 'header' => $header)); ?>
 <?php endif; ?>
 

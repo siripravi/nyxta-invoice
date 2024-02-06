@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'gez_ET'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2013 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '4123',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -30,8 +31,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AFN' => 'Af',
     'ANG' => 'NAf.',
     'AOA' => 'Kz',
@@ -195,10 +196,10 @@ return array (
     'ZRZ' => 'ZRZ',
     'ZWD' => 'Z$',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'ጠሐረ',
       2 => 'ከተተ',
       3 => 'መገበ',
@@ -212,8 +213,8 @@ return array (
       11 => 'ኀደረ',
       12 => 'ኀሠሠ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -228,10 +229,10 @@ return array (
       12 => '12',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'ጠ',
       2 => 'ከ',
       3 => 'መ',
@@ -246,10 +247,10 @@ return array (
       12 => 'ኀ',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'እኁድ',
       1 => 'ሰኑይ',
       2 => 'ሠሉስ',
@@ -258,8 +259,8 @@ return array (
       5 => 'ዓርበ',
       6 => 'ቀዳሚት',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => '1',
       1 => '2',
       2 => '3',
@@ -269,10 +270,10 @@ return array (
       6 => '7',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'እ',
       1 => 'ሰ',
       2 => 'ሠ',
@@ -282,33 +283,33 @@ return array (
       6 => 'ቀ',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'ዓ/ዓ',
       1 => 'ዓ/ም',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'ዓ/ዓ',
       1 => 'ዓ/ም',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'ዓ/ዓ',
       1 => 'ዓ/ም',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE፥ dd MMMM መዓልት y G',
     'long' => 'dd MMMM y',
     'medium' => 'dd-MMM-y',
     'short' => 'dd/MM/yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'h:mm:ss a zzzz',
     'long' => 'h:mm:ss a z',
     'medium' => 'h:mm:ss a',

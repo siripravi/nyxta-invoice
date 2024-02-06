@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'uz_Latn_UZ'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤ #,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'UZS' => 'soʻm',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Yanvar',
       2 => 'Fevral',
       3 => 'Mart',
@@ -70,8 +71,8 @@ return array (
       11 => 'Noyabr',
       12 => 'Dekabr',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Yanv',
       2 => 'Fev',
       3 => 'Mar',
@@ -86,10 +87,10 @@ return array (
       12 => 'Dek',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'Y',
       2 => 'F',
       3 => 'M',
@@ -104,10 +105,10 @@ return array (
       12 => 'D',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'yakshanba',
       1 => 'dushanba',
       2 => 'seshanba',
@@ -116,8 +117,8 @@ return array (
       5 => 'cuma',
       6 => 'shanba',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Yaksh',
       1 => 'Dush',
       2 => 'Sesh',
@@ -127,10 +128,10 @@ return array (
       6 => 'Shan',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'Y',
       1 => 'D',
       2 => 'S',
@@ -140,33 +141,33 @@ return array (
       6 => 'S',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'BCE',
       1 => 'CE',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'BCE',
       1 => 'CE',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'BCE',
       1 => 'CE',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, y MMMM dd',
     'long' => 'y MMMM d',
     'medium' => 'y MMM d',
     'short' => 'yy/MM/dd',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -176,8 +177,8 @@ return array (
   'amName' => 'AM',
   'pmName' => 'PM',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ar' => 'arabcha',
     'de' => 'olmoncha',
     'en' => 'inglizcha',
@@ -191,14 +192,14 @@ return array (
     'uz' => 'oʻzbekcha',
     'zh' => 'xitoycha',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'Араб',
     'cyrl' => 'Kiril',
     'latn' => 'Lotin',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     'af' => 'Afgʻoniston',
     'br' => 'Braziliya',
     'cn' => 'Xitoy',

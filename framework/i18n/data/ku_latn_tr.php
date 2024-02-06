@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'ku_Latn_TR'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2013 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '4123',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -29,8 +30,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤ #,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'AU$',
     'BRL' => 'BR$',
     'CAD' => 'CA$',
@@ -54,10 +55,10 @@ return array (
     'XPF' => 'CFPF',
     'TRY' => 'TL',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'çile',
       2 => 'sibat',
       3 => 'adar',
@@ -71,8 +72,8 @@ return array (
       11 => 'تشرینی دووەم',
       12 => 'کانونی یەکەم',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'çil',
       2 => 'sib',
       3 => 'adr',
@@ -86,15 +87,15 @@ return array (
       11 => 'تشرینی دووەم',
       12 => 'کانونی یەکەم',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       12 => 'D',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'ç',
       2 => 's',
       3 => 'a',
@@ -108,8 +109,8 @@ return array (
       11 => '11',
       12 => 'D',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'کانوونی دووەم',
       2 => 'شوبات',
       3 => 'ئازار',
@@ -123,8 +124,8 @@ return array (
       11 => 'تشرینی دووەم',
       12 => 'کانونی یەکەم',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       1 => 'کانوونی دووەم',
       2 => 'شوبات',
       3 => 'ئازار',
@@ -139,10 +140,10 @@ return array (
       12 => 'کانونی یەکەم',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'yekşem',
       1 => 'duşem',
       2 => 'şê',
@@ -151,8 +152,8 @@ return array (
       5 => 'în',
       6 => 'şemî',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'yş',
       1 => 'dş',
       2 => 'sş',
@@ -161,8 +162,8 @@ return array (
       5 => 'în',
       6 => 'ş',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'ی',
       1 => 'د',
       2 => 'س',
@@ -172,10 +173,10 @@ return array (
       6 => 'ش',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'y',
       1 => 'd',
       2 => 's',
@@ -184,8 +185,8 @@ return array (
       5 => 'î',
       6 => 'ş',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'یەکشەممە',
       1 => 'دووشەممە',
       2 => 'سێشەممە',
@@ -194,8 +195,8 @@ return array (
       5 => 'ھەینی',
       6 => 'شەممە',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'یەکشەممە',
       1 => 'دووشەممە',
       2 => 'سێشەممە',
@@ -205,33 +206,33 @@ return array (
       6 => 'شەممە',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'BZ',
       1 => 'PZ',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'پێش زایین',
       1 => 'زایینی',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'پ.ن',
       1 => 'ز',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, y MMMM dd',
     'long' => 'dی MMMMی y',
     'medium' => 'y MMM d',
     'short' => 'yyyy-MM-dd',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -241,8 +242,8 @@ return array (
   'amName' => 'BN',
   'pmName' => 'PN',
   'orientation' => 'rtl',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'af' => 'ئه‌فریكای',
     'am' => 'ئه‌مهه‌رینجی',
     'ar' => 'erebî',
@@ -356,8 +357,8 @@ return array (
     'zh' => 'چینی',
     'zu' => 'زولو',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'erebî',
     'armn' => 'ئەرمەنی',
     'beng' => 'بەنگالی',
@@ -395,8 +396,8 @@ return array (
     'zxxx' => 'نەنووسراو',
     'zzzz' => 'خەتی نەناسراو',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '002' => 'ئەفریقا',
     '003' => 'ئەمەریکای باکوور',
     '005' => 'ئەمەریکای باشوور',
@@ -618,8 +619,8 @@ return array (
     'zz' => 'نەناسراو',
     '001' => 'Cîhan',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

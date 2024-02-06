@@ -76,10 +76,12 @@ class InvoiceController extends Controller
         if (isset($_GET['SearchForm']))
             $search->attributes = $_GET['SearchForm'];
         $model = new Invoice;
-        $this->render('/search/admin', array(
-            'model' => $model,
-            'dp' => $search->search(),
-        )
+        $this->render(
+            '/search/admin',
+            array(
+                'model' => $model,
+                'dp' => $search->search(),
+            )
         );
     }
 
@@ -179,13 +181,14 @@ class InvoiceController extends Controller
     {
         $this->layout = false;
         $invoice = $this->loadModel($id);
-        $this->render('payments', array(
-            'pmt' => new Payments,
-            'stmt' => $invoice,
-            'dp' => new CArrayDataProvider($invoice->payments, array('keyField' => 'id'))
-        )
+        $this->render(
+            'payments',
+            array(
+                'pmt' => new Payments,
+                'stmt' => $invoice,
+                'dp' => new CArrayDataProvider($invoice->payments, array('keyField' => 'id'))
+            )
         );
-
     }
 
     public function actionSlip($id)
@@ -267,10 +270,12 @@ class InvoiceController extends Controller
         $this->invoice = $this->loadDoc($id);
         // $model = $this->loadModel($id);
 
-        $this->render('update', array(
-            'stmt' => $this->invoice,
-            'dp' => new CArrayDataProvider($this->invoice, array('keyField' => 'st_id', 'id' => 'stmt-dp'))
-        )
+        $this->render(
+            'update',
+            array(
+                'stmt' => $this->invoice,
+                'dp' => new CArrayDataProvider($this->invoice, array('keyField' => 'st_id', 'id' => 'stmt-dp'))
+            )
         );
     }
 
@@ -336,7 +341,6 @@ class InvoiceController extends Controller
             return 'U';
             //all fields
         }
-
     }
 
     public function actionSetPaid($id)
@@ -436,7 +440,9 @@ class InvoiceController extends Controller
     public function loadDoc($id)
     {
         $models = Invoice::model()->findAllByAttributes(
-            array(), $condition = 'invoice_id = :someVarName', $params = array(
+            array(),
+            $condition = 'invoice_id = :someVarName',
+            $params = array(
                 ':someVarName' => $id,
             )
         );
@@ -476,7 +482,4 @@ class InvoiceController extends Controller
             $model = new Statement();
         return $model;
     }
-
-
-
 }

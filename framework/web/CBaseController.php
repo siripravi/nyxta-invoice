@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CBaseController class file.
  *
@@ -66,7 +67,7 @@
  */
 abstract class CBaseController extends CComponent
 {
-	private $_widgetStack=array();
+	private $_widgetStack = array();
 
 	/**
 	 * Returns the view script file according to the specified view name.
@@ -86,20 +87,22 @@ abstract class CBaseController extends CComponent
 	 * @return string the rendering result. Null if the rendering result is not required.
 	 * @throws CException if the view file does not exist
 	 */
-	public function renderFile($viewFile,$data=null,$return=false)
+	public function renderFile($viewFile, $data = null, $return = false)
 	{
-		$widgetCount=count($this->_widgetStack);
-		if(($renderer=Yii::app()->getViewRenderer())!==null && $renderer->fileExtension==='.'.CFileHelper::getExtension($viewFile))
-			$content=$renderer->renderFile($this,$viewFile,$data,$return);
+		$widgetCount = count($this->_widgetStack);
+		if (($renderer = Yii::app()->getViewRenderer()) !== null && $renderer->fileExtension === '.' . CFileHelper::getExtension($viewFile))
+			$content = $renderer->renderFile($this, $viewFile, $data, $return);
 		else
-			$content=$this->renderInternal($viewFile,$data,$return);
-		if(count($this->_widgetStack)===$widgetCount)
+			$content = $this->renderInternal($viewFile, $data, $return);
+		if (count($this->_widgetStack) === $widgetCount)
 			return $content;
-		else
-		{
-			$widget=end($this->_widgetStack);
-			throw new CException(Yii::t('yii','{controller} contains improperly nested widget tags in its view "{view}". A {widget} widget does not have an endWidget() call.',
-				array('{controller}'=>get_class($this), '{view}'=>$viewFile, '{widget}'=>get_class($widget))));
+		else {
+			$widget = end($this->_widgetStack);
+			throw new CException(Yii::t(
+				'yii',
+				'{controller} contains improperly nested widget tags in its view "{view}". A {widget} widget does not have an endWidget() call.',
+				array('{controller}' => get_class($this), '{view}' => $viewFile, '{widget}' => get_class($widget))
+			));
 		}
 	}
 
@@ -112,21 +115,19 @@ abstract class CBaseController extends CComponent
 	 * @param boolean $_return_ whether the rendering result should be returned as a string
 	 * @return string the rendering result. Null if the rendering result is not required.
 	 */
-	public function renderInternal($_viewFile_,$_data_=null,$_return_=false)
+	public function renderInternal($_viewFile_, $_data_ = null, $_return_ = false)
 	{
 		// we use special variable names here to avoid conflict when extracting data
-		if(is_array($_data_))
-			extract($_data_,EXTR_PREFIX_SAME,'data');
+		if (is_array($_data_))
+			extract($_data_, EXTR_PREFIX_SAME, 'data');
 		else
-			$data=$_data_;
-		if($_return_)
-		{
+			$data = $_data_;
+		if ($_return_) {
 			ob_start();
 			ob_implicit_flush(false);
 			require($_viewFile_);
 			return ob_get_clean();
-		}
-		else
+		} else
 			require($_viewFile_);
 	}
 
@@ -141,9 +142,9 @@ abstract class CBaseController extends CComponent
 	 * @param array $properties initial property values
 	 * @return CWidget the fully initialized widget instance.
 	 */
-	public function createWidget($className,$properties=array())
+	public function createWidget($className, $properties = array())
 	{
-		$widget=Yii::app()->getWidgetFactory()->createWidget($this,$className,$properties);
+		$widget = Yii::app()->getWidgetFactory()->createWidget($this, $className, $properties);
 		$widget->init();
 		return $widget;
 	}
@@ -158,27 +159,21 @@ abstract class CBaseController extends CComponent
 	 * @return mixed the widget instance when $captureOutput is false, or the widget output when $captureOutput is true.
 	 * @throws Exception
 	 */
-	public function widget($className,$properties=array(),$captureOutput=false)
+	public function widget($className, $properties = array(), $captureOutput = false)
 	{
-		if($captureOutput)
-		{
+		if ($captureOutput) {
 			ob_start();
 			ob_implicit_flush(false);
-			try
-			{
-				$widget=$this->createWidget($className,$properties);
+			try {
+				$widget = $this->createWidget($className, $properties);
 				$widget->run();
-			}
-			catch(Exception $e)
-			{
+			} catch (Exception $e) {
 				ob_end_clean();
 				throw $e;
 			}
 			return ob_get_clean();
-		}
-		else
-		{
-			$widget=$this->createWidget($className,$properties);
+		} else {
+			$widget = $this->createWidget($className, $properties);
 			$widget->run();
 			return $widget;
 		}
@@ -193,10 +188,10 @@ abstract class CBaseController extends CComponent
 	 * @return CWidget the widget created to run
 	 * @see endWidget
 	 */
-	public function beginWidget($className,$properties=array())
+	public function beginWidget($className, $properties = array())
 	{
-		$widget=$this->createWidget($className,$properties);
-		$this->_widgetStack[]=$widget;
+		$widget = $this->createWidget($className, $properties);
+		$this->_widgetStack[] = $widget;
 		return $widget;
 	}
 
@@ -208,16 +203,17 @@ abstract class CBaseController extends CComponent
 	 * @throws CException if an extra endWidget call is made
 	 * @see beginWidget
 	 */
-	public function endWidget($id='')
+	public function endWidget($id = '')
 	{
-		if(($widget=array_pop($this->_widgetStack))!==null)
-		{
+		if (($widget = array_pop($this->_widgetStack)) !== null) {
 			$widget->run();
 			return $widget;
-		}
-		else
-			throw new CException(Yii::t('yii','{controller} has an extra endWidget({id}) call in its view.',
-				array('{controller}'=>get_class($this),'{id}'=>$id)));
+		} else
+			throw new CException(Yii::t(
+				'yii',
+				'{controller} has an extra endWidget({id}) call in its view.',
+				array('{controller}' => get_class($this), '{id}' => $id)
+			));
 	}
 
 	/**
@@ -226,10 +222,10 @@ abstract class CBaseController extends CComponent
 	 * @param string $id the clip ID.
 	 * @param array $properties initial property values for {@link CClipWidget}.
 	 */
-	public function beginClip($id,$properties=array())
+	public function beginClip($id, $properties = array())
 	{
-		$properties['id']=$id;
-		$this->beginWidget('CClipWidget',$properties);
+		$properties['id'] = $id;
+		$this->beginWidget('CClipWidget', $properties);
 	}
 
 	/**
@@ -259,16 +255,14 @@ abstract class CBaseController extends CComponent
 	 * @return boolean whether we need to generate content for caching. False if cached version is available.
 	 * @see endCache
 	 */
-	public function beginCache($id,$properties=array())
+	public function beginCache($id, $properties = array())
 	{
-		$properties['id']=$id;
-		$cache=$this->beginWidget('COutputCache',$properties);
-		if($cache->getIsContentCached())
-		{
+		$properties['id'] = $id;
+		$cache = $this->beginWidget('COutputCache', $properties);
+		if ($cache->getIsContentCached()) {
 			$this->endCache();
 			return false;
-		}
-		else
+		} else
 			return true;
 	}
 
@@ -295,9 +289,9 @@ abstract class CBaseController extends CComponent
 	 * @see endContent
 	 * @see CContentDecorator
 	 */
-	public function beginContent($view=null,$data=array())
+	public function beginContent($view = null, $data = array())
 	{
-		$this->beginWidget('CContentDecorator',array('view'=>$view, 'data'=>$data));
+		$this->beginWidget('CContentDecorator', array('view' => $view, 'data' => $data));
 	}
 
 	/**

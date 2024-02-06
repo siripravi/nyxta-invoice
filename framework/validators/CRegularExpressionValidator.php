@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CRegularExpressionValidator class file.
  *
@@ -26,13 +27,13 @@ class CRegularExpressionValidator extends CValidator
 	 * @var boolean whether the attribute value can be null or empty. Defaults to true,
 	 * meaning that if the attribute is empty, it is considered valid.
 	 */
-	public $allowEmpty=true;
+	public $allowEmpty = true;
 	/**
 	 * @var boolean whether to invert the validation logic. Defaults to false. If set to true,
 	 * the regular expression defined via {@link pattern} should NOT match the attribute value.
 	 * @since 1.1.5
 	 **/
- 	public $not=false;
+	public $not = false;
 
 	/**
 	 * Validates the attribute of the object.
@@ -41,20 +42,21 @@ class CRegularExpressionValidator extends CValidator
 	 * @param string $attribute the attribute being validated
 	 * @throws CException if given {@link pattern} is empty
 	 */
-	protected function validateAttribute($object,$attribute)
+	protected function validateAttribute($object, $attribute)
 	{
-		$value=$object->$attribute;
-		if($this->allowEmpty && $this->isEmpty($value))
+		$value = $object->$attribute;
+		if ($this->allowEmpty && $this->isEmpty($value))
 			return;
-		if($this->pattern===null)
-			throw new CException(Yii::t('yii','The "pattern" property must be specified with a valid regular expression.'));
+		if ($this->pattern === null)
+			throw new CException(Yii::t('yii', 'The "pattern" property must be specified with a valid regular expression.'));
 		// reason of array checking explained here: https://github.com/yiisoft/yii/issues/1955
-		if(is_array($value) ||
-			(!$this->not && !preg_match($this->pattern,$value)) ||
-			($this->not && preg_match($this->pattern,$value)))
-		{
-			$message=$this->message!==null?$this->message:Yii::t('yii','{attribute} is invalid.');
-			$this->addError($object,$attribute,$message);
+		if (
+			is_array($value) ||
+			(!$this->not && !preg_match($this->pattern, $value)) ||
+			($this->not && preg_match($this->pattern, $value))
+		) {
+			$message = $this->message !== null ? $this->message : Yii::t('yii', '{attribute} is invalid.');
+			$this->addError($object, $attribute, $message);
 		}
 	}
 
@@ -67,31 +69,31 @@ class CRegularExpressionValidator extends CValidator
 	 * @see CActiveForm::enableClientValidation
 	 * @since 1.1.7
 	 */
-	public function clientValidateAttribute($object,$attribute)
+	public function clientValidateAttribute($object, $attribute)
 	{
-		if($this->pattern===null)
-			throw new CException(Yii::t('yii','The "pattern" property must be specified with a valid regular expression.'));
+		if ($this->pattern === null)
+			throw new CException(Yii::t('yii', 'The "pattern" property must be specified with a valid regular expression.'));
 
-		$message=$this->message!==null ? $this->message : Yii::t('yii','{attribute} is invalid.');
-		$message=strtr($message, array(
-			'{attribute}'=>$object->getAttributeLabel($attribute),
+		$message = $this->message !== null ? $this->message : Yii::t('yii', '{attribute} is invalid.');
+		$message = strtr($message, array(
+			'{attribute}' => $object->getAttributeLabel($attribute),
 		));
 
-		$pattern=$this->pattern;
-		$pattern=preg_replace('/\\\\x\{?([0-9a-fA-F]+)\}?/', '\u$1', $pattern);
-		$delim=substr($pattern, 0, 1);
-		$endpos=strrpos($pattern, $delim, 1);
-		$flag=substr($pattern, $endpos + 1);
-		if ($delim!=='/')
-			$pattern='/' . str_replace('/', '\\/', substr($pattern, 1, $endpos - 1)) . '/';
+		$pattern = $this->pattern;
+		$pattern = preg_replace('/\\\\x\{?([0-9a-fA-F]+)\}?/', '\u$1', $pattern);
+		$delim = substr($pattern, 0, 1);
+		$endpos = strrpos($pattern, $delim, 1);
+		$flag = substr($pattern, $endpos + 1);
+		if ($delim !== '/')
+			$pattern = '/' . str_replace('/', '\\/', substr($pattern, 1, $endpos - 1)) . '/';
 		else
 			$pattern = substr($pattern, 0, $endpos + 1);
 		if (!empty($flag))
 			$pattern .= preg_replace('/[^igm]/', '', $flag);
 
 		return "
-if(".($this->allowEmpty ? "jQuery.trim(value)!='' && " : '').($this->not ? '' : '!')."value.match($pattern)) {
-	messages.push(".CJSON::encode($message).");
+if(" . ($this->allowEmpty ? "jQuery.trim(value)!='' && " : '') . ($this->not ? '' : '!') . "value.match($pattern)) {
+	messages.push(" . CJSON::encode($message) . ");
 }
 ";
 	}

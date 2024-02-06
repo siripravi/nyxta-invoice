@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'mn_CN'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2013 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '4123',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -30,8 +31,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤ #,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AFN' => 'Af',
     'ANG' => 'NAf.',
     'AOA' => 'Kz',
@@ -195,10 +196,10 @@ return array (
     'ZRZ' => 'ZRZ',
     'ZWD' => 'Z$',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Хулгана',
       2 => 'Үхэр',
       3 => 'Бар',
@@ -212,8 +213,8 @@ return array (
       11 => 'Нохой',
       12 => 'Гахай',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'хул',
       2 => 'үхэ',
       3 => 'бар',
@@ -228,10 +229,10 @@ return array (
       12 => 'гах',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -246,10 +247,10 @@ return array (
       12 => '12',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'ням',
       1 => 'даваа',
       2 => 'мягмар',
@@ -258,8 +259,8 @@ return array (
       5 => 'баасан',
       6 => 'бямба',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Ня',
       1 => 'Да',
       2 => 'Мя',
@@ -269,10 +270,10 @@ return array (
       6 => 'Бя',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => '1',
       1 => '2',
       2 => '3',
@@ -282,33 +283,33 @@ return array (
       6 => '7',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'м.э.ө',
       1 => 'м.э.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'манай эриний өмнөх',
       1 => 'манай эриний',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'м.э.ө',
       1 => 'м.э.',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, y MMMM dd',
     'long' => 'y MMMM d',
     'medium' => 'y MMM d',
     'short' => 'yyyy-MM-dd',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -318,8 +319,8 @@ return array (
   'amName' => 'AM',
   'pmName' => 'PM',
   'orientation' => 'ltr',
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

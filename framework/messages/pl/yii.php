@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -16,7 +17,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   '{class} and its behaviors do not have a method or closure named "{name}".' => 'Klasa {class} i jej zachowania nie posiadają metody lub domknięcia "{name}".',
   '"{path}" is not a valid directory.' => 'Ścieżka "{path}" nie jest poprawnym katalogiem.',
   '&lt; Previous' => '&lt; Poprzednia',
@@ -101,8 +102,8 @@ return array (
   'Extension path "{path}" does not exist.' => 'Ścieżka rozszerzenia "{path}" nie istnieje.',
   'Failed to initialize the mcrypt module.' => 'Inicjalizacja modułu mcrypt nie powiodła się.',
   'Failed to set unsafe attribute "{attribute}" of "{class}".' => 'Ustawianie niebezpiecznego (ang. unsafe) atrybutu "{attribute}" klasy "{class}" nie powiodło się',
-  'Failed to start session.' => 'Uruchamianie sesji nie powiodło się',  
-  'Failed to write the uploaded file "{file}" to disk.' => 'Zapis przesłanego pliku "{file}" na dysk nie powiódł się.',  
+  'Failed to start session.' => 'Uruchamianie sesji nie powiodło się',
+  'Failed to write the uploaded file "{file}" to disk.' => 'Zapis przesłanego pliku "{file}" na dysk nie powiódł się.',
   'File upload was stopped by extension.' => 'Przesyłanie pliku zostało zatrzymane przez rozszerzenie.',
   'Filter "{filter}" is invalid. Controller "{class}" does not have the filter method "filter{filter}".' => 'Filtr "{filter}" jest niepoprawny. Kontroler "{class}" nie posiada metody filtru "filter{filter}".',
   'GD and FreeType PHP extensions are required.' => 'Rozszerzenia GD oraz FreeType PHP są wymagane.',
@@ -123,7 +124,7 @@ return array (
   'No counter columns are being updated for table "{table}".' => 'Żadna kolumna licznika nie została zaktualizowana w tabeli "{table}".',
   'Object configuration must be an array containing a "class" element.' => 'Konfiguracja obiektu musi być tablicą zawierającą element "class".',
   'Please fix the following input errors:' => 'Popraw następujące błędy:',
-  'Powered by {yii}.' => 'Powered by {yii}',  
+  'Powered by {yii}.' => 'Powered by {yii}',
   'Property "{class}.{property}" is not defined.' => 'Właściwość "{class}.{property}" nie jest zdefiniowana.',
   'Property "{class}.{property}" is read only.' => 'Właściwość "{class}.{property}" jest tylko do odczytu.',
   'Property CMaskedTextField.mask cannot be empty.' => 'Właściwość CMaskedTextField.mask nie może być pusta.',

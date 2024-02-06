@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'kk_KZ'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2013 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '4123',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => ' ',
     'list' => ';',
@@ -30,8 +31,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '#,##0.00 ¤',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AFN' => 'Af',
     'ANG' => 'NAf.',
     'AOA' => 'Kz',
@@ -196,10 +197,10 @@ return array (
     'ZWD' => 'Z$',
     'KZT' => 'тңг.',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'қаңтар',
       2 => 'ақпан',
       3 => 'наурыз',
@@ -213,8 +214,8 @@ return array (
       11 => 'қараша',
       12 => 'желтоқсан',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'қаң.',
       2 => 'ақп.',
       3 => 'нау.',
@@ -229,10 +230,10 @@ return array (
       12 => 'желт.',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -247,10 +248,10 @@ return array (
       12 => '12',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'жексені',
       1 => 'дуйсенбі',
       2 => 'сейсенбі',
@@ -259,8 +260,8 @@ return array (
       5 => 'жұма',
       6 => 'сенбі',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'жс.',
       1 => 'дс.',
       2 => 'сс.',
@@ -270,10 +271,10 @@ return array (
       6 => 'сһ.',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => '1',
       1 => '2',
       2 => '3',
@@ -283,33 +284,33 @@ return array (
       6 => '7',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'BCE',
       1 => 'CE',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'BCE',
       1 => 'CE',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'BCE',
       1 => 'CE',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, d MMMM y \'ж\'.',
     'long' => 'd MMMM y \'ж\'.',
     'medium' => 'dd.MM.yyyy',
     'short' => 'dd.MM.yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',

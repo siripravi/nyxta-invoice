@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -16,7 +17,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   'A PHP extension stopped the file upload.' => 'Nahrávanie súboru bolo prerušené PHP rozšírením.',
   'Unable to upload the file "{file}" because of an unrecognized error.' => 'Súbor "{file}" sa nepodarilo nahrať v dôsledku neznámej chyby.',
   '"{path}" is not a valid directory.' => '"{path}" nie je platný adresár.',

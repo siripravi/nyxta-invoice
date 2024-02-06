@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CLogRoute class file.
  *
@@ -33,22 +34,22 @@ abstract class CLogRoute extends CComponent
 	/**
 	 * @var boolean whether to enable this log route. Defaults to true.
 	 */
-	public $enabled=true;
+	public $enabled = true;
 	/**
 	 * @var string list of levels separated by comma or space. Defaults to empty, meaning all levels.
 	 */
-	public $levels='';
+	public $levels = '';
 	/**
 	 * @var mixed array of categories, or string list separated by comma or space. 
 	 * Defaults to empty array, meaning all categories.
 	 */
-	public $categories=array();
+	public $categories = array();
 	/**
 	 * @var mixed array of categories, or string list separated by comma or space, to EXCLUDE from logs.
 	 * Defaults to empty array, meaning no categories are excluded.
 	 * This will exclude any categories after $categories has been ran.
 	 */
-	public $except=array();
+	public $except = array();
 	/**
 	 * @var mixed the additional filter (eg {@link CLogFilter}) that can be applied to the log messages.
 	 * The value of this property will be passed to {@link Yii::createComponent} to create
@@ -63,7 +64,7 @@ abstract class CLogRoute extends CComponent
 	 * @var array the logs that are collected so far by this log route.
 	 * @since 1.1.0
 	 */
-	public $logs=array();
+	public $logs = array();
 
 
 	/**
@@ -82,9 +83,9 @@ abstract class CLogRoute extends CComponent
 	 * @param integer $time timestamp
 	 * @return string formatted message
 	 */
-	protected function formatLogMessage($message,$level,$category,$time)
+	protected function formatLogMessage($message, $level, $category, $time)
 	{
-		return @date('Y/m/d H:i:s',(int)$time)." [$level] [$category] $message\n";
+		return @date('Y/m/d H:i:s', (int)$time) . " [$level] [$category] $message\n";
 	}
 
 	/**
@@ -92,17 +93,16 @@ abstract class CLogRoute extends CComponent
 	 * @param CLogger $logger logger instance
 	 * @param boolean $processLogs whether to process the logs after they are collected from the logger
 	 */
-	public function collectLogs($logger, $processLogs=false)
+	public function collectLogs($logger, $processLogs = false)
 	{
-		$logs=$logger->getLogs($this->levels,$this->categories,$this->except);
-		$this->logs=empty($this->logs) ? $logs : array_merge($this->logs,$logs);
-		if($processLogs && !empty($this->logs))
-		{
-			if($this->filter!==null)
+		$logs = $logger->getLogs($this->levels, $this->categories, $this->except);
+		$this->logs = empty($this->logs) ? $logs : array_merge($this->logs, $logs);
+		if ($processLogs && !empty($this->logs)) {
+			if ($this->filter !== null)
 				Yii::createComponent($this->filter)->filter($this->logs);
-			if($this->logs!==array())
+			if ($this->logs !== array())
 				$this->processLogs($this->logs);
-			$this->logs=array();
+			$this->logs = array();
 		}
 	}
 

@@ -1,1 +1,1 @@
-<?php $this->widget('CardsWidget'); ?>
+<?php $this->widget('CardsWidget');

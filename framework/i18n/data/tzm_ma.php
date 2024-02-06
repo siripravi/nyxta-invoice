@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'tzm_MA'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2013 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '4590',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => ' ',
     'list' => ';',
@@ -30,8 +31,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '#,##0.00 ¤',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AFN' => 'Af',
     'ANG' => 'NAf.',
     'AOA' => 'Kz',
@@ -195,10 +196,10 @@ return array (
     'ZRZ' => 'ZRZ',
     'ZWD' => 'Z$',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Yennayer',
       2 => 'Yebrayer',
       3 => 'Mars',
@@ -212,8 +213,8 @@ return array (
       11 => 'Nwanbir',
       12 => 'Dujanbir',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Yen',
       2 => 'Yeb',
       3 => 'Mar',
@@ -228,10 +229,10 @@ return array (
       12 => 'Duj',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'Y',
       2 => 'Y',
       3 => 'M',
@@ -246,10 +247,10 @@ return array (
       12 => 'D',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Asamas',
       1 => 'Aynas',
       2 => 'Asinas',
@@ -258,8 +259,8 @@ return array (
       5 => 'Asimwas',
       6 => 'Asiḍyas',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Asa',
       1 => 'Ayn',
       2 => 'Asn',
@@ -269,10 +270,10 @@ return array (
       6 => 'Asḍ',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'A',
       1 => 'A',
       2 => 'A',
@@ -282,33 +283,33 @@ return array (
       6 => 'A',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'ZƐ',
       1 => 'ḌƐ',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Zdat Ɛisa (TAƔ)',
       1 => 'Ḍeffir Ɛisa (TAƔ)',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'ZƐ',
       1 => 'ḌƐ',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, d MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'd MMM y',
     'short' => 'dd/MM/yyyy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'h:mm:ss a zzzz',
     'long' => 'h:mm:ss a z',
     'medium' => 'h:mm:ss a',

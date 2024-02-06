@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'eu'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8671',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => '.',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '% #,##0',
   'currencyFormat' => '#,##0.00 ¤;(#,##0.00 ¤)',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'ESP' => '₧',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'urtarrila',
       2 => 'otsaila',
       3 => 'martxoa',
@@ -70,8 +71,8 @@ return array (
       11 => 'azaroa',
       12 => 'abendua',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'urt',
       2 => 'ots',
       3 => 'mar',
@@ -86,10 +87,10 @@ return array (
       12 => 'abe',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'U',
       2 => 'O',
       3 => 'M',
@@ -104,10 +105,10 @@ return array (
       12 => 'A',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'igandea',
       1 => 'astelehena',
       2 => 'asteartea',
@@ -116,8 +117,8 @@ return array (
       5 => 'ostirala',
       6 => 'larunbata',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'ig',
       1 => 'al',
       2 => 'as',
@@ -126,8 +127,8 @@ return array (
       5 => 'or',
       6 => 'lr',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'I',
       1 => 'M',
       2 => 'A',
@@ -136,8 +137,8 @@ return array (
       5 => 'O',
       6 => 'I',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'ig.',
       1 => 'al.',
       2 => 'ar.',
@@ -147,10 +148,10 @@ return array (
       6 => 'lr.',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'I',
       1 => 'M',
       2 => 'A',
@@ -159,8 +160,8 @@ return array (
       5 => 'O',
       6 => 'I',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'ig.',
       1 => 'al.',
       2 => 'ar.',
@@ -170,33 +171,33 @@ return array (
       6 => 'lr.',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'K.a.',
       1 => 'K.o.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'K.a.',
       1 => 'K.o.',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'K.a.',
       1 => 'K.o.',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, y MMMM dd',
     'long' => 'y MMMM d',
     'medium' => 'y MMM d',
     'short' => 'y-MM-dd',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -206,8 +207,8 @@ return array (
   'amName' => 'AM',
   'pmName' => 'PM',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ab' => 'abkhazera',
     'ach' => 'Acholiera',
     'af' => 'afrikaans',
@@ -384,8 +385,8 @@ return array (
     'zu' => 'zuluera',
     'zxx' => 'ez dago eduki linguistikorik',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'Persiar-arabiarra',
     'armn' => 'Armeniera',
     'beng' => 'Bengalarra',
@@ -426,8 +427,8 @@ return array (
     'zyyy' => 'Ohikoa',
     'zzzz' => 'Idazkera ezezaguna',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'Mundua',
     '002' => 'Afrika',
     '003' => 'Ipar Amerika',
@@ -719,8 +720,8 @@ return array (
     'zw' => 'Zimbabwe',
     'zz' => 'Eskualde ezezaguna',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

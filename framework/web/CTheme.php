@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CTheme class file.
  *
@@ -34,11 +35,11 @@ class CTheme extends CComponent
 	 * @param string $basePath base theme path
 	 * @param string $baseUrl base theme URL
 	 */
-	public function __construct($name,$basePath,$baseUrl)
+	public function __construct($name, $basePath, $baseUrl)
 	{
-		$this->_name=$name;
-		$this->_baseUrl=$baseUrl;
-		$this->_basePath=$basePath;
+		$this->_name = $name;
+		$this->_baseUrl = $baseUrl;
+		$this->_basePath = $basePath;
 	}
 
 	/**
@@ -70,7 +71,7 @@ class CTheme extends CComponent
 	 */
 	public function getViewPath()
 	{
-		return $this->_basePath.DIRECTORY_SEPARATOR.'views';
+		return $this->_basePath . DIRECTORY_SEPARATOR . 'views';
 	}
 
 	/**
@@ -78,7 +79,7 @@ class CTheme extends CComponent
 	 */
 	public function getSystemViewPath()
 	{
-		return $this->getViewPath().DIRECTORY_SEPARATOR.'system';
+		return $this->getViewPath() . DIRECTORY_SEPARATOR . 'system';
 	}
 
 	/**
@@ -87,7 +88,7 @@ class CTheme extends CComponent
 	 */
 	public function getSkinPath()
 	{
-		return $this->getViewPath().DIRECTORY_SEPARATOR.'skins';
+		return $this->getViewPath() . DIRECTORY_SEPARATOR . 'skins';
 	}
 
 	/**
@@ -96,12 +97,12 @@ class CTheme extends CComponent
 	 * @param string $viewName the view name
 	 * @return string the view file path. False if the file does not exist.
 	 */
-	public function getViewFile($controller,$viewName)
+	public function getViewFile($controller, $viewName)
 	{
-		$moduleViewPath=$this->getViewPath();
-		if(($module=$controller->getModule())!==null)
-			$moduleViewPath.='/'.$module->getId();
-		return $controller->resolveViewFile($viewName,$this->getViewPath().'/'.$controller->getUniqueId(),$this->getViewPath(),$moduleViewPath);
+		$moduleViewPath = $this->getViewPath();
+		if (($module = $controller->getModule()) !== null)
+			$moduleViewPath .= '/' . $module->getId();
+		return $controller->resolveViewFile($viewName, $this->getViewPath() . '/' . $controller->getUniqueId(), $this->getViewPath(), $moduleViewPath);
 	}
 
 	/**
@@ -110,31 +111,27 @@ class CTheme extends CComponent
 	 * @param string $layoutName the layout name
 	 * @return string the layout file path. False if the file does not exist.
 	 */
-	public function getLayoutFile($controller,$layoutName)
+	public function getLayoutFile($controller, $layoutName)
 	{
-		$moduleViewPath=$basePath=$this->getViewPath();
-		$module=$controller->getModule();
-		if(empty($layoutName))
-		{
-			while($module!==null)
-			{
-				if($module->layout===false)
+		$moduleViewPath = $basePath = $this->getViewPath();
+		$module = $controller->getModule();
+		if (empty($layoutName)) {
+			while ($module !== null) {
+				if ($module->layout === false)
 					return false;
-				if(!empty($module->layout))
+				if (!empty($module->layout))
 					break;
-				$module=$module->getParentModule();
+				$module = $module->getParentModule();
 			}
-			if($module===null)
-				$layoutName=Yii::app()->layout;
-			else
-			{
-				$layoutName=$module->layout;
-				$moduleViewPath.='/'.$module->getId();
+			if ($module === null)
+				$layoutName = Yii::app()->layout;
+			else {
+				$layoutName = $module->layout;
+				$moduleViewPath .= '/' . $module->getId();
 			}
-		}
-		elseif($module!==null)
-			$moduleViewPath.='/'.$module->getId();
+		} elseif ($module !== null)
+			$moduleViewPath .= '/' . $module->getId();
 
-		return $controller->resolveViewFile($layoutName,$moduleViewPath.'/layouts',$basePath,$moduleViewPath);
+		return $controller->resolveViewFile($layoutName, $moduleViewPath . '/layouts', $basePath, $moduleViewPath);
 	}
 }

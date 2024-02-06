@@ -18,7 +18,8 @@ $('.search-button').click(function(){
 ");
 ?>
 
-<?php //echo BsHtml::pageHeader('Manage','Users') ?>
+<?php //echo BsHtml::pageHeader('Manage','Users') 
+?>
 <div class="panel panel-default">
     <div class="panel-heading">
         <h3 class="panel-title">
@@ -28,32 +29,36 @@ $('.search-button').click(function(){
     <div class="panel-body">
 
         <div class="user-form" style="display:none">
-            <?php $this->renderPartial('_form', array(
-                'model' => $model,
-            )
+            <?php $this->renderPartial(
+                '_form',
+                array(
+                    'model' => $model,
+                )
             ); ?>
         </div>
         <!-- search-form -->
 
-        <?php $this->widget('zii.widgets.grid.CGridView', array(
-            'id' => 'user-grid',
-            'dataProvider' => $model->search(),
-            'filter' => $model,
-            'columns' => array(
-                'id',
-                'username',
-                //'password',
-                array(
-                    'name' => 'level',
-                    'value' => '$data->getLevelList($data->level)',
+        <?php $this->widget(
+            'zii.widgets.grid.CGridView',
+            array(
+                'id' => 'user-grid',
+                'dataProvider' => $model->search(),
+                'filter' => $model,
+                'columns' => array(
+                    'id',
+                    'username',
+                    //'password',
+                    array(
+                        'name' => 'level',
+                        'value' => '$data->getLevelList($data->level)',
+                    ),
+                    'email',
+                    'profile',
+                    array(
+                        'class' => 'CButtonColumn',
+                    ),
                 ),
-                'email',
-                'profile',
-                array(
-                    'class' => 'CButtonColumn',
-                ),
-            ),
-        )
+            )
         ); ?>
     </div>
 </div>

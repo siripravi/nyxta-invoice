@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -13,7 +14,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   '&lt; Previous' => '&lt; หน้าที่แล้ว',
   '&lt;&lt; First' => '&lt;&lt; หน้าแรก',
   'Go to page: ' => 'ไปที่หน้า: ',

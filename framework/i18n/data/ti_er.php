@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'ti_ER'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -54,10 +55,10 @@ return array (
     'ETB' => 'Br',
     'ERN' => 'Nfk',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'ጥሪ',
       2 => 'ለካቲት',
       3 => 'መጋቢት',
@@ -71,8 +72,8 @@ return array (
       11 => 'ሕዳር',
       12 => 'ታሕሳስ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'ጥሪ',
       2 => 'ለካቲ',
       3 => 'መጋቢ',
@@ -87,10 +88,10 @@ return array (
       12 => 'ታሕሳ',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'ጃ',
       2 => 'ፌ',
       3 => 'ማ',
@@ -105,10 +106,10 @@ return array (
       12 => 'ዲ',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'ሰንበት',
       1 => 'ሰኑይ',
       2 => 'ሰሉስ',
@@ -117,8 +118,8 @@ return array (
       5 => 'ዓርቢ',
       6 => 'ቀዳም',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Sun',
       1 => 'Mon',
       2 => 'Tue',
@@ -128,10 +129,10 @@ return array (
       6 => 'Sat',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'ሰ',
       1 => 'ሰ',
       2 => 'ሠ',
@@ -141,33 +142,33 @@ return array (
       6 => 'ቀ',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'ዓ/ዓ',
       1 => 'ዓ/ም',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'ዓ/ዓ',
       1 => 'ዓ/ም',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'ዓ/ዓ',
       1 => 'ዓ/ም',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE፡ dd MMMM መዓልቲ y G',
     'long' => 'dd MMMM y',
     'medium' => 'dd-MMM-y',
     'short' => 'dd/MM/yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'h:mm:ss a zzzz',
     'long' => 'h:mm:ss a z',
     'medium' => 'h:mm:ss a',
@@ -177,8 +178,8 @@ return array (
   'amName' => 'ንጉሆ ሰዓተ',
   'pmName' => 'ድሕር ሰዓት',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'af' => 'አፍሪቃንሰኛ',
     'am' => 'አምሐረኛ',
     'ar' => 'ዓረበኛ',
@@ -274,13 +275,13 @@ return array (
     'yi' => 'ዪዲሽ',
     'zu' => 'ዙሉኛ',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'ethi' => 'ፊደል',
     'latn' => 'ላቲን',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'ዓለም',
     '002' => 'አፍሪካ',
     '005' => 'ደቡባዊ አሜሪካ',
@@ -543,8 +544,8 @@ return array (
     'zm' => 'ዛምቢያ',
     'zw' => 'ዚምቧቤ',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => '(n>=0&&n<=1&&fmod(n,1)==0)',
     1 => 'true',
   ),

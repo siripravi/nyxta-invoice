@@ -1,4 +1,5 @@
 <?php
+
 /**
  * TabularInputManager is a class of utility for manage tabular input.
  * it supplies all utlity necessary for create, save models in tabular input
@@ -86,7 +87,6 @@ abstract class TabularInputManager extends CComponent
 			//we want to validate all tags, even if there are errors
 			$valid = $model->validate() && $valid;
 		return $valid;
-
 	}
 
 	/**
@@ -127,7 +127,4 @@ abstract class TabularInputManager extends CComponent
 	 * @return tagManager the newly created tagManager
 	 */
 	public abstract static function load($model);
-
-
-
 }

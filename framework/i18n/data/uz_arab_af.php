@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'uz_Arab_AF'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => '.',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '#,##0.00 ¤',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -54,10 +55,10 @@ return array (
     'UZS' => 'сўм',
     'AFN' => '؋',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'جنوری',
       2 => 'فبروری',
       3 => 'مارچ',
@@ -71,8 +72,8 @@ return array (
       11 => 'نومبر',
       12 => 'دسمبر',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'جنو',
       2 => 'فبر',
       3 => 'مار',
@@ -87,10 +88,10 @@ return array (
       12 => 'دسم',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'Я',
       2 => 'Ф',
       3 => 'М',
@@ -105,10 +106,10 @@ return array (
       12 => 'Д',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'یکشنبه',
       1 => 'دوشنبه',
       2 => 'سه‌شنبه',
@@ -117,8 +118,8 @@ return array (
       5 => 'جمعه',
       6 => 'شنبه',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'ی.',
       1 => 'د.',
       2 => 'س.',
@@ -128,10 +129,10 @@ return array (
       6 => 'ش.',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'Я',
       1 => 'Д',
       2 => 'С',
@@ -141,33 +142,33 @@ return array (
       6 => 'Ш',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'ق.م.',
       1 => 'م.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'BCE',
       1 => 'CE',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'BCE',
       1 => 'CE',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'y نچی ییل d نچی MMMM EEEE کونی',
     'long' => 'd نچی MMMM y',
     'medium' => 'd MMM y',
     'short' => 'y/M/d',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'H:mm:ss (zzzz)',
     'long' => 'H:mm:ss (z)',
     'medium' => 'H:mm:ss',
@@ -177,8 +178,8 @@ return array (
   'amName' => 'AM',
   'pmName' => 'PM',
   'orientation' => 'rtl',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ar' => 'Арабча',
     'de' => 'Олмонча',
     'en' => 'Инглизча',
@@ -194,14 +195,14 @@ return array (
     'fa' => 'دری',
     'ps' => 'پشتو',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'Араб',
     'cyrl' => 'Кирил',
     'latn' => 'Лотин',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     'af' => 'افغانستان',
     'br' => 'Бразилия',
     'cn' => 'Хитой',

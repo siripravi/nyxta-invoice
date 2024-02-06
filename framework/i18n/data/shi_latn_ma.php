@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'shi_Latn_MA'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => ' ',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '#,##0.00¤',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -52,10 +53,10 @@ return array (
     'XOF' => 'CFA',
     'XPF' => 'CFPF',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'innayr',
       2 => 'bṛayṛ',
       3 => 'maṛṣ',
@@ -69,8 +70,8 @@ return array (
       11 => 'nuwanbir',
       12 => 'dujanbir',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'inn',
       2 => 'bṛa',
       3 => 'maṛ',
@@ -85,10 +86,10 @@ return array (
       12 => 'duj',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'i',
       2 => 'b',
       3 => 'm',
@@ -103,10 +104,10 @@ return array (
       12 => 'd',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'asamas',
       1 => 'aynas',
       2 => 'asinas',
@@ -115,8 +116,8 @@ return array (
       5 => 'asimwas',
       6 => 'asiḍyas',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'asa',
       1 => 'ayn',
       2 => 'asi',
@@ -126,10 +127,10 @@ return array (
       6 => 'asiḍ',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'S',
       1 => 'M',
       2 => 'T',
@@ -139,33 +140,33 @@ return array (
       6 => 'S',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'daɛ',
       1 => 'dfɛ',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'dat n ɛisa',
       1 => 'dffir n ɛisa',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'ⴷⴰⵄ',
       1 => 'ⴷⴼⵄ',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE d MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'd MMM, y',
     'short' => 'd/M/y',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -175,8 +176,8 @@ return array (
   'amName' => 'tifawt',
   'pmName' => 'tadggʷat',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ak' => 'takant',
     'am' => 'tamharit',
     'ar' => 'taɛrabt',
@@ -223,8 +224,8 @@ return array (
     'zh' => 'tacinwit',
     'zu' => 'tazulut',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     'ad' => 'andura',
     'ae' => 'limarat',
     'af' => 'afɣanistan',
@@ -451,8 +452,8 @@ return array (
     'zm' => 'zambya',
     'zw' => 'zimbabwi',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => '(n>=0&&n<=1)',
     1 => '(n>=2&&n<=10&&fmod(n,1)==0)',
     2 => 'true',

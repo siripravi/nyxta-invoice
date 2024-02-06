@@ -14,7 +14,8 @@ $maxPicDate = str_replace('-', '/', date('Y-m-d', strtotime('+7 days', strtotime
 $assDir = Yii::app()->assetManager->publish(dirname(__FILE__) . '/assets');*/
 ?>
 
-<?php //$this->renderPartial('invoice/_hdrOps', array('stmt' => $stmt)); ?>
+<?php //$this->renderPartial('invoice/_hdrOps', array('stmt' => $stmt)); 
+?>
 <?php
 /*  $this->widget('bootstrap.widgets.TbTabs', array(
   //'type' => 'pills',

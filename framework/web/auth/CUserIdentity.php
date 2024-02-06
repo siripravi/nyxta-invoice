@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CUserIdentity class file
  *
@@ -40,10 +41,10 @@ class CUserIdentity extends CBaseUserIdentity
 	 * @param string $username username
 	 * @param string $password password
 	 */
-	public function __construct($username,$password)
+	public function __construct($username, $password)
 	{
-		$this->username=$username;
-		$this->password=$password;
+		$this->username = $username;
+		$this->password = $password;
 	}
 
 	/**
@@ -55,7 +56,7 @@ class CUserIdentity extends CBaseUserIdentity
 	 */
 	public function authenticate()
 	{
-		throw new CException(Yii::t('yii','{class}::authenticate() must be implemented.',array('{class}'=>get_class($this))));
+		throw new CException(Yii::t('yii', '{class}::authenticate() must be implemented.', array('{class}' => get_class($this))));
 	}
 
 	/**

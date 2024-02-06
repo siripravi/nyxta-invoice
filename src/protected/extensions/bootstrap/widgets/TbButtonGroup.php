@@ -1,4 +1,5 @@
 <?php
+
 /**
  * TbButtonGroup class file.
  * @author Christoffer Niska <ChristofferNiska@gmail.com>
@@ -98,20 +99,22 @@ class TbButtonGroup extends CWidget
 			if (isset($button['visible']) && $button['visible'] === false)
 				continue;
 
-			$this->controller->widget('bootstrap.widgets.TbButton', array(
-				'buttonType' => isset($button['buttonType']) ? $button['buttonType'] : $this->buttonType,
-				'type' => isset($button['type']) ? $button['type'] : $this->type,
-				'size' => $this->size,
-				// all buttons in a group cannot vary in size
-				'icon' => isset($button['icon']) ? $button['icon'] : null,
-				'label' => isset($button['label']) ? $button['label'] : null,
-				'url' => isset($button['url']) ? $button['url'] : null,
-				'active' => isset($button['active']) ? $button['active'] : false,
-				'items' => isset($button['items']) ? $button['items'] : array(),
-				'ajaxOptions' => isset($button['ajaxOptions']) ? $button['ajaxOptions'] : array(),
-				'htmlOptions' => isset($button['htmlOptions']) ? $button['htmlOptions'] : array(),
-				'encodeLabel' => isset($button['encodeLabel']) ? $button['encodeLabel'] : $this->encodeLabel,
-			)
+			$this->controller->widget(
+				'bootstrap.widgets.TbButton',
+				array(
+					'buttonType' => isset($button['buttonType']) ? $button['buttonType'] : $this->buttonType,
+					'type' => isset($button['type']) ? $button['type'] : $this->type,
+					'size' => $this->size,
+					// all buttons in a group cannot vary in size
+					'icon' => isset($button['icon']) ? $button['icon'] : null,
+					'label' => isset($button['label']) ? $button['label'] : null,
+					'url' => isset($button['url']) ? $button['url'] : null,
+					'active' => isset($button['active']) ? $button['active'] : false,
+					'items' => isset($button['items']) ? $button['items'] : array(),
+					'ajaxOptions' => isset($button['ajaxOptions']) ? $button['ajaxOptions'] : array(),
+					'htmlOptions' => isset($button['htmlOptions']) ? $button['htmlOptions'] : array(),
+					'encodeLabel' => isset($button['encodeLabel']) ? $button['encodeLabel'] : $this->encodeLabel,
+				)
 			);
 		}
 

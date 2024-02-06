@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This is the template for generating a controller class file for CRUD feature.
  * The following variables are available in this template:

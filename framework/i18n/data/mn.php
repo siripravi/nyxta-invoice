@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'mn'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8671',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => ' ',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤ #,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -54,10 +55,10 @@ return array (
     'MNT' => '₮',
     'ZMW' => 'ZMW',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Хулгана',
       2 => 'Үхэр',
       3 => 'Бар',
@@ -71,8 +72,8 @@ return array (
       11 => 'Нохой',
       12 => 'Гахай',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'хул',
       2 => 'үхэ',
       3 => 'бар',
@@ -86,8 +87,8 @@ return array (
       11 => 'нох',
       12 => 'гах',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -102,10 +103,10 @@ return array (
       12 => '12',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -119,8 +120,8 @@ return array (
       11 => '11',
       12 => '12',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'хул',
       2 => 'үхэ',
       3 => 'бар',
@@ -134,8 +135,8 @@ return array (
       11 => 'нох',
       12 => 'гах',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       1 => 'Хулгана',
       2 => 'Үхэр',
       3 => 'Бар',
@@ -150,10 +151,10 @@ return array (
       12 => 'Гахай',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'ням',
       1 => 'даваа',
       2 => 'мягмар',
@@ -162,8 +163,8 @@ return array (
       5 => 'баасан',
       6 => 'бямба',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Ня',
       1 => 'Да',
       2 => 'Мя',
@@ -172,8 +173,8 @@ return array (
       5 => 'Ба',
       6 => 'Бя',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => '1',
       1 => '2',
       2 => '3',
@@ -182,8 +183,8 @@ return array (
       5 => '6',
       6 => '7',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'Ня',
       1 => 'Да',
       2 => 'Мя',
@@ -193,10 +194,10 @@ return array (
       6 => 'Бя',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => '1',
       1 => '2',
       2 => '3',
@@ -205,8 +206,8 @@ return array (
       5 => '6',
       6 => '7',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Ня',
       1 => 'Да',
       2 => 'Мя',
@@ -215,8 +216,8 @@ return array (
       5 => 'Ба',
       6 => 'Бя',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'Ня',
       1 => 'Да',
       2 => 'Мя',
@@ -225,8 +226,8 @@ return array (
       5 => 'Ба',
       6 => 'Бя',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'ням',
       1 => 'даваа',
       2 => 'мягмар',
@@ -236,33 +237,33 @@ return array (
       6 => 'бямба',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'МЭӨ',
       1 => 'МЭ',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'манай эриний өмнөх',
       1 => 'манай эриний',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'м.э.ө',
       1 => 'м.э.',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, y \'оны\' MMM \'сарын\' dd',
     'long' => 'y \'оны\' MMM \'сарын\' d',
     'medium' => 'y MMM d',
     'short' => 'y-MM-dd',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -272,8 +273,8 @@ return array (
   'amName' => 'ҮӨ',
   'pmName' => 'ҮХ',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ab' => 'абхаз',
     'af' => 'африк',
     'am' => 'амхар',
@@ -418,8 +419,8 @@ return array (
     'zu' => 'зулу',
     'zxx' => 'хэл зүйн агуулга байхгүй',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'Араб',
     'armn' => 'Армен',
     'beng' => 'Бенгал',
@@ -460,8 +461,8 @@ return array (
     'zyyy' => 'нийтлэг',
     'zzzz' => 'тодорхойгүй бичиг',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'Дэлхий',
     '002' => 'Африк',
     '003' => 'Хойд Америк',
@@ -752,8 +753,8 @@ return array (
     'zw' => 'Зимбабве',
     'zz' => 'Тодорхойгүй',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

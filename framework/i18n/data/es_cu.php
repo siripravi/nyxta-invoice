@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'es_CU'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => '.',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '#,##0.00 ¤',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'AU$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -60,10 +61,10 @@ return array (
     'ESP' => '₧',
     'CUP' => '$',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'enero',
       2 => 'febrero',
       3 => 'marzo',
@@ -77,8 +78,8 @@ return array (
       11 => 'noviembre',
       12 => 'diciembre',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'ene',
       2 => 'feb',
       3 => 'mar',
@@ -93,10 +94,10 @@ return array (
       12 => 'dic',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'E',
       2 => 'F',
       3 => 'M',
@@ -110,8 +111,8 @@ return array (
       11 => 'N',
       12 => 'D',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'ene',
       2 => 'feb',
       3 => 'mar',
@@ -126,10 +127,10 @@ return array (
       12 => 'dic',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'domingo',
       1 => 'lunes',
       2 => 'martes',
@@ -138,8 +139,8 @@ return array (
       5 => 'viernes',
       6 => 'sábado',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'dom',
       1 => 'lun',
       2 => 'mar',
@@ -148,8 +149,8 @@ return array (
       5 => 'vie',
       6 => 'sáb',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'D',
       1 => 'L',
       2 => 'M',
@@ -159,10 +160,10 @@ return array (
       6 => 'S',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'D',
       1 => 'L',
       2 => 'M',
@@ -171,8 +172,8 @@ return array (
       5 => 'V',
       6 => 'S',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'D',
       1 => 'L',
       2 => 'M',
@@ -182,33 +183,33 @@ return array (
       6 => 'S',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'a.C.',
       1 => 'd.C.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'antes de Cristo',
       1 => 'anno Dómini',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'a.C.',
       1 => 'd.C.',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, d \'de\' MMMM \'de\' y',
     'long' => 'd \'de\' MMMM \'de\' y',
     'medium' => 'dd/MM/y',
     'short' => 'dd/MM/yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -218,8 +219,8 @@ return array (
   'amName' => 'a.m.',
   'pmName' => 'p.m.',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'afar',
     'ab' => 'abjasio',
     'ace' => 'acehnés',
@@ -794,8 +795,8 @@ return array (
     'zxx' => 'sin contenido lingüístico',
     'zza' => 'zazaki',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'perso-arábigo',
     'armn' => 'armenio',
     'avst' => 'avéstico',
@@ -916,8 +917,8 @@ return array (
     'zyyy' => 'común',
     'zzzz' => 'alfabeto desconocido',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'Mundo',
     '002' => 'África',
     '003' => 'América del Norte',
@@ -1209,8 +1210,8 @@ return array (
     'zw' => 'Zimbabue',
     'zz' => 'Región desconocida',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

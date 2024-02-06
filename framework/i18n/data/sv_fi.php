@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'sv_FI'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => ' ',
     'list' => ';',
@@ -29,8 +30,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0 %',
   'currencyFormat' => '#,##0.00 ¤',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'AU$',
     'BRL' => 'BR$',
     'CAD' => 'CAN$',
@@ -68,10 +69,10 @@ return array (
     'NOK' => 'NKr',
     'SEK' => 'kr',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'januari',
       2 => 'februari',
       3 => 'mars',
@@ -85,8 +86,8 @@ return array (
       11 => 'november',
       12 => 'december',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'jan',
       2 => 'feb',
       3 => 'mar',
@@ -100,8 +101,8 @@ return array (
       11 => 'nov',
       12 => 'dec',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       1 => 'J',
       2 => 'F',
       3 => 'M',
@@ -116,10 +117,10 @@ return array (
       12 => 'D',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'J',
       2 => 'F',
       3 => 'M',
@@ -133,8 +134,8 @@ return array (
       11 => 'N',
       12 => 'D',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Jan',
       2 => 'Feb',
       3 => 'Mar',
@@ -148,8 +149,8 @@ return array (
       11 => 'Nov',
       12 => 'Dec',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       1 => 'Januari',
       2 => 'Februari',
       3 => 'Mars',
@@ -164,10 +165,10 @@ return array (
       12 => 'December',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'söndag',
       1 => 'måndag',
       2 => 'tisdag',
@@ -176,8 +177,8 @@ return array (
       5 => 'fredag',
       6 => 'lördag',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'sön',
       1 => 'mån',
       2 => 'tis',
@@ -186,8 +187,8 @@ return array (
       5 => 'fre',
       6 => 'lör',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'S',
       1 => 'M',
       2 => 'T',
@@ -196,8 +197,8 @@ return array (
       5 => 'F',
       6 => 'L',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'sö',
       1 => 'må',
       2 => 'ti',
@@ -207,10 +208,10 @@ return array (
       6 => 'lö',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'S',
       1 => 'M',
       2 => 'T',
@@ -219,8 +220,8 @@ return array (
       5 => 'F',
       6 => 'L',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Sön',
       1 => 'Mån',
       2 => 'Tis',
@@ -229,8 +230,8 @@ return array (
       5 => 'Fre',
       6 => 'Lör',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'Sö',
       1 => 'Må',
       2 => 'Ti',
@@ -239,8 +240,8 @@ return array (
       5 => 'Fr',
       6 => 'Lö',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Söndag',
       1 => 'Måndag',
       2 => 'Tisdag',
@@ -250,33 +251,33 @@ return array (
       6 => 'Lördag',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'f.Kr.',
       1 => 'e.Kr.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'före Kristus',
       1 => 'efter Kristus',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'f.Kr.',
       1 => 'e.Kr.',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE\'en\' \'den\' d:\'e\' MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'd MMM y',
     'short' => 'y-MM-dd',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => '\'kl\'. HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -286,8 +287,8 @@ return array (
   'amName' => 'fm',
   'pmName' => 'em',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'afar',
     'ab' => 'abchaziska',
     'ace' => 'acehnesiska',
@@ -862,8 +863,8 @@ return array (
     'zxx' => 'inget språkligt innehåll',
     'zza' => 'zazaiska',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'afak' => 'afakiska',
     'arab' => 'arabiska',
     'armi' => 'imperisk arameiska',
@@ -1023,8 +1024,8 @@ return array (
     'zyyy' => 'gemensamma',
     'zzzz' => 'okänt skriftsystem',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'världen',
     '002' => 'Afrika',
     '003' => 'Nordamerika',
@@ -1316,8 +1317,8 @@ return array (
     'zw' => 'Zimbabwe',
     'zz' => 'okänd region',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CDataColumn class file.
  *
@@ -58,14 +59,14 @@ class CDataColumn extends CGridColumn
 	 * datetime, boolean, number, email, image, url. For more details, please refer to {@link CFormatter}.
 	 * Defaults to 'text' which means the attribute value will be HTML-encoded.
 	 */
-	public $type='text';
+	public $type = 'text';
 	/**
 	 * @var boolean whether the column is sortable. If so, the header cell will contain a link that may trigger the sorting.
 	 * Defaults to true. Note that if {@link name} is not set, or if {@link name} is not allowed by {@link CSort},
 	 * this property will be treated as false.
 	 * @see name
 	 */
-	public $sortable=true;
+	public $sortable = true;
 	/**
 	 * @var mixed the HTML code representing a filter input (eg a text field, a dropdown list)
 	 * that is used for this data column. This property is effective only when
@@ -84,10 +85,10 @@ class CDataColumn extends CGridColumn
 	public function init()
 	{
 		parent::init();
-		if($this->name===null)
-			$this->sortable=false;
-		if($this->name===null && $this->value===null)
-			throw new CException(Yii::t('zii','Either "name" or "value" must be specified for CDataColumn.'));
+		if ($this->name === null)
+			$this->sortable = false;
+		if ($this->name === null && $this->value === null)
+			throw new CException(Yii::t('zii', 'Either "name" or "value" must be specified for CDataColumn.'));
 	}
 
 	/**
@@ -100,16 +101,14 @@ class CDataColumn extends CGridColumn
 	 */
 	public function getFilterCellContent()
 	{
-		if(is_string($this->filter))
+		if (is_string($this->filter))
 			return $this->filter;
-		elseif($this->filter!==false && $this->grid->filter!==null && $this->name!==null && strpos($this->name,'.')===false)
-		{
-			if(is_array($this->filter))
-				return CHtml::activeDropDownList($this->grid->filter, $this->name, $this->filter, array('id'=>false,'prompt'=>''));
-			elseif($this->filter===null)
-				return CHtml::activeTextField($this->grid->filter, $this->name, array('id'=>false));
-		}
-		else
+		elseif ($this->filter !== false && $this->grid->filter !== null && $this->name !== null && strpos($this->name, '.') === false) {
+			if (is_array($this->filter))
+				return CHtml::activeDropDownList($this->grid->filter, $this->name, $this->filter, array('id' => false, 'prompt' => ''));
+			elseif ($this->filter === null)
+				return CHtml::activeTextField($this->grid->filter, $this->name, array('id' => false));
+		} else
 			return parent::getFilterCellContent();
 	}
 
@@ -121,16 +120,14 @@ class CDataColumn extends CGridColumn
 	 */
 	public function getHeaderCellContent()
 	{
-		if($this->grid->enableSorting && $this->sortable && $this->name!==null)
-			return $this->grid->dataProvider->getSort()->link($this->name,$this->header,array('class'=>'sort-link'));
-		elseif($this->name!==null && $this->header===null)
-		{
-			if($this->grid->dataProvider instanceof CActiveDataProvider)
+		if ($this->grid->enableSorting && $this->sortable && $this->name !== null)
+			return $this->grid->dataProvider->getSort()->link($this->name, $this->header, array('class' => 'sort-link'));
+		elseif ($this->name !== null && $this->header === null) {
+			if ($this->grid->dataProvider instanceof CActiveDataProvider)
 				return CHtml::encode($this->grid->dataProvider->model->getAttributeLabel($this->name));
 			else
 				return CHtml::encode($this->name);
-		}
-		else
+		} else
 			return parent::getHeaderCellContent();
 	}
 
@@ -143,11 +140,11 @@ class CDataColumn extends CGridColumn
 	 */
 	public function getDataCellContent($row)
 	{
-		$data=$this->grid->dataProvider->data[$row];
-		if($this->value!==null)
-			$value=$this->evaluateExpression($this->value,array('data'=>$data,'row'=>$row));
-		elseif($this->name!==null)
-			$value=CHtml::value($data,$this->name);
-		return $value===null ? $this->grid->nullDisplay : $this->grid->getFormatter()->format($value,$this->type);
+		$data = $this->grid->dataProvider->data[$row];
+		if ($this->value !== null)
+			$value = $this->evaluateExpression($this->value, array('data' => $data, 'row' => $row));
+		elseif ($this->name !== null)
+			$value = CHtml::value($data, $this->name);
+		return $value === null ? $this->grid->nullDisplay : $this->grid->getFormatter()->format($value, $this->type);
 	}
 }

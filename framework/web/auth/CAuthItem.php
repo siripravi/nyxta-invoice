@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CAuthItem class file.
  *
@@ -30,9 +31,9 @@
  */
 class CAuthItem extends CComponent
 {
-	const TYPE_OPERATION=0;
-	const TYPE_TASK=1;
-	const TYPE_ROLE=2;
+	const TYPE_OPERATION = 0;
+	const TYPE_TASK = 1;
+	const TYPE_ROLE = 2;
 
 	private $_auth;
 	private $_type;
@@ -50,14 +51,14 @@ class CAuthItem extends CComponent
 	 * @param string $bizRule the business rule associated with this item
 	 * @param mixed $data additional data for this item
 	 */
-	public function __construct($auth,$name,$type,$description='',$bizRule=null,$data=null)
+	public function __construct($auth, $name, $type, $description = '', $bizRule = null, $data = null)
 	{
-		$this->_type=(int)$type;
-		$this->_auth=$auth;
-		$this->_name=$name;
-		$this->_description=$description;
-		$this->_bizRule=$bizRule;
-		$this->_data=$data;
+		$this->_type = (int)$type;
+		$this->_auth = $auth;
+		$this->_name = $name;
+		$this->_description = $description;
+		$this->_bizRule = $bizRule;
+		$this->_data = $data;
 	}
 
 	/**
@@ -68,16 +69,14 @@ class CAuthItem extends CComponent
 	 * @param array $params the parameters to be passed to business rule evaluation
 	 * @return boolean whether the specified item is within the hierarchy starting from this item.
 	 */
-	public function checkAccess($itemName,$params=array())
+	public function checkAccess($itemName, $params = array())
 	{
-		Yii::trace('Checking permission "'.$this->_name.'"','system.web.auth.CAuthItem');
-		if($this->_auth->executeBizRule($this->_bizRule,$params,$this->_data))
-		{
-			if($this->_name==$itemName)
+		Yii::trace('Checking permission "' . $this->_name . '"', 'system.web.auth.CAuthItem');
+		if ($this->_auth->executeBizRule($this->_bizRule, $params, $this->_data)) {
+			if ($this->_name == $itemName)
 				return true;
-			foreach($this->_auth->getItemChildren($this->_name) as $item)
-			{
-				if($item->checkAccess($itemName,$params))
+			foreach ($this->_auth->getItemChildren($this->_name) as $item) {
+				if ($item->checkAccess($itemName, $params))
 					return true;
 			}
 		}
@@ -113,11 +112,10 @@ class CAuthItem extends CComponent
 	 */
 	public function setName($value)
 	{
-		if($this->_name!==$value)
-		{
-			$oldName=$this->_name;
-			$this->_name=$value;
-			$this->_auth->saveAuthItem($this,$oldName);
+		if ($this->_name !== $value) {
+			$oldName = $this->_name;
+			$this->_name = $value;
+			$this->_auth->saveAuthItem($this, $oldName);
 		}
 	}
 
@@ -134,9 +132,8 @@ class CAuthItem extends CComponent
 	 */
 	public function setDescription($value)
 	{
-		if($this->_description!==$value)
-		{
-			$this->_description=$value;
+		if ($this->_description !== $value) {
+			$this->_description = $value;
 			$this->_auth->saveAuthItem($this);
 		}
 	}
@@ -154,9 +151,8 @@ class CAuthItem extends CComponent
 	 */
 	public function setBizRule($value)
 	{
-		if($this->_bizRule!==$value)
-		{
-			$this->_bizRule=$value;
+		if ($this->_bizRule !== $value) {
+			$this->_bizRule = $value;
 			$this->_auth->saveAuthItem($this);
 		}
 	}
@@ -174,9 +170,8 @@ class CAuthItem extends CComponent
 	 */
 	public function setData($value)
 	{
-		if($this->_data!==$value)
-		{
-			$this->_data=$value;
+		if ($this->_data !== $value) {
+			$this->_data = $value;
 			$this->_auth->saveAuthItem($this);
 		}
 	}
@@ -190,7 +185,7 @@ class CAuthItem extends CComponent
 	 */
 	public function addChild($name)
 	{
-		return $this->_auth->addItemChild($this->_name,$name);
+		return $this->_auth->addItemChild($this->_name, $name);
 	}
 
 	/**
@@ -202,7 +197,7 @@ class CAuthItem extends CComponent
 	 */
 	public function removeChild($name)
 	{
-		return $this->_auth->removeItemChild($this->_name,$name);
+		return $this->_auth->removeItemChild($this->_name, $name);
 	}
 
 	/**
@@ -213,7 +208,7 @@ class CAuthItem extends CComponent
 	 */
 	public function hasChild($name)
 	{
-		return $this->_auth->hasItemChild($this->_name,$name);
+		return $this->_auth->hasItemChild($this->_name, $name);
 	}
 
 	/**
@@ -236,9 +231,9 @@ class CAuthItem extends CComponent
 	 * @throws CException if the item has already been assigned to the user
 	 * @see IAuthManager::assign
 	 */
-	public function assign($userId,$bizRule=null,$data=null)
+	public function assign($userId, $bizRule = null, $data = null)
 	{
-		return $this->_auth->assign($this->_name,$userId,$bizRule,$data);
+		return $this->_auth->assign($this->_name, $userId, $bizRule, $data);
 	}
 
 	/**
@@ -249,7 +244,7 @@ class CAuthItem extends CComponent
 	 */
 	public function revoke($userId)
 	{
-		return $this->_auth->revoke($this->_name,$userId);
+		return $this->_auth->revoke($this->_name, $userId);
 	}
 
 	/**
@@ -260,7 +255,7 @@ class CAuthItem extends CComponent
 	 */
 	public function isAssigned($userId)
 	{
-		return $this->_auth->isAssigned($this->_name,$userId);
+		return $this->_auth->isAssigned($this->_name, $userId);
 	}
 
 	/**
@@ -272,6 +267,6 @@ class CAuthItem extends CComponent
 	 */
 	public function getAssignment($userId)
 	{
-		return $this->_auth->getAuthAssignment($this->_name,$userId);
+		return $this->_auth->getAuthAssignment($this->_name, $userId);
 	}
 }

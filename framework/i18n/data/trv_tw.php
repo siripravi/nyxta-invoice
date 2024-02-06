@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'trv_TW'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2013 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '4123',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'alias' => '',
     'decimal' => '.',
     'group' => ',',
@@ -29,8 +30,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤ #,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'AU$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XOF' => 'CFA',
     'XPF' => 'CFPF',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Kingal idas',
       2 => 'Dha idas',
       3 => 'Tru idas',
@@ -70,8 +71,8 @@ return array (
       11 => 'Maxal kingal idas',
       12 => 'Maxal dha idas',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Kii',
       2 => 'Dhi',
       3 => 'Tri',
@@ -86,10 +87,10 @@ return array (
       12 => 'Mxd',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'K',
       2 => 'D',
       3 => 'T',
@@ -104,10 +105,10 @@ return array (
       12 => 'D',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Jiyax sngayan',
       1 => 'tgKingal jiyax iyax sngayan',
       2 => 'tgDha jiyax iyax sngayan',
@@ -116,8 +117,8 @@ return array (
       5 => 'tgRima jiyax iyax sngayan',
       6 => 'tgMataru jiyax iyax sngayan',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Emp',
       1 => 'Kin',
       2 => 'Dha',
@@ -127,10 +128,10 @@ return array (
       6 => 'Mat',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'E',
       1 => 'K',
       2 => 'D',
@@ -140,33 +141,33 @@ return array (
       6 => 'M',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'BRY',
       1 => 'BUY',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Brah jikan Yisu Thulang',
       1 => 'Bukuy jikan Yisu Thulang',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'BRY',
       1 => 'BUY',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, y MMMM dd',
     'long' => 'y MMMM d',
     'medium' => 'y MMM d',
     'short' => 'yyyy-MM-dd',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -176,8 +177,8 @@ return array (
   'amName' => 'Brax kndaax',
   'pmName' => 'Baubau kndaax',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'bn' => 'patas Monchiara',
     'de' => 'patas Towjih',
     'en' => 'patas Ingrisi',
@@ -196,8 +197,8 @@ return array (
     'zh_hans' => 'Qantan Ipaw patas',
     'zh_hant' => 'Baday Ipaw patas',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'tasan Arapit',
     'cyrl' => 'tasan Sirorik',
     'hans' => 'Qantan tasan Ipaw',
@@ -206,8 +207,8 @@ return array (
     'zxxx' => 'Unat tasan',
     'zzzz' => 'ini klayi tasan ni',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     'aq' => 'alang Nanci',
     'ba' => 'alang Posniya',
     'br' => 'alang Pajey',

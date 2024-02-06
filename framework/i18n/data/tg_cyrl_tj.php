@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'tg_Cyrl_TJ'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤ #,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'TJS' => 'сом',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Январ',
       2 => 'Феврал',
       3 => 'Март',
@@ -70,8 +71,8 @@ return array (
       11 => 'Ноябр',
       12 => 'Декабр',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Янв',
       2 => 'Фев',
       3 => 'Мар',
@@ -86,10 +87,10 @@ return array (
       12 => 'Дек',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -104,10 +105,10 @@ return array (
       12 => '12',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Якшанбе',
       1 => 'Душанбе',
       2 => 'Сешанбе',
@@ -116,8 +117,8 @@ return array (
       5 => 'Ҷумъа',
       6 => 'Шанбе',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Яшб',
       1 => 'Дшб',
       2 => 'Сшб',
@@ -127,10 +128,10 @@ return array (
       6 => 'Шнб',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'S',
       1 => 'M',
       2 => 'T',
@@ -140,33 +141,33 @@ return array (
       6 => 'S',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'ПеМ',
       1 => 'ПаМ',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Пеш аз милод',
       1 => 'ПаМ',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'ПеМ',
       1 => 'ПаМ',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, y MMMM dd',
     'long' => 'y MMMM d',
     'medium' => 'y MMM d',
     'short' => 'yy/MM/dd',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -176,8 +177,8 @@ return array (
   'amName' => 'пе. чо.',
   'pmName' => 'па. чо.',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'be' => 'Белорусӣ',
     'bg' => 'Булғорӣ',
     'bh' => 'Биҳарӣ',
@@ -237,12 +238,12 @@ return array (
     'zh' => 'Чинӣ',
     'zu' => 'Зулу',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'Арабӣ',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     'af' => 'Афғонистан',
     'tj' => 'Тоҷикистон',
     'to' => 'Тонга',

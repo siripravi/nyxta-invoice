@@ -6,4 +6,3 @@
  */
 
 echo 'New Widget';
-?>

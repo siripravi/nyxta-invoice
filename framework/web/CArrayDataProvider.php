@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CArrayDataProvider class file.
  *
@@ -53,31 +54,31 @@ class CArrayDataProvider extends CDataProvider
 	 * data record. In database this would be the primary key.
 	 * Defaults to 'id'. If it's set to false, keys of {@link rawData} array are used.
 	 */
-	public $keyField='id';
+	public $keyField = 'id';
 	/**
 	 * @var array the data that is not paginated or sorted. When pagination is enabled,
 	 * this property usually contains more elements than {@link data}.
 	 * The array elements must use zero-based integer keys.
 	 */
-	public $rawData=array();
+	public $rawData = array();
 	/**
 	 * @var boolean controls how sorting works. True value means that case will be
 	 * taken into account. False value will lead to the case insensitive sort. Default
 	 * value is true.
 	 * @since 1.1.13
 	 */
-	public $caseSensitiveSort=true;
+	public $caseSensitiveSort = true;
 
 	/**
 	 * Constructor.
 	 * @param array $rawData the data that is not paginated or sorted. The array elements must use zero-based integer keys.
 	 * @param array $config configuration (name=>value) to be applied as the initial property values of this class.
 	 */
-	public function __construct($rawData,$config=array())
+	public function __construct($rawData, $config = array())
 	{
-		$this->rawData=$rawData;
-		foreach($config as $key=>$value)
-			$this->$key=$value;
+		$this->rawData = $rawData;
+		foreach ($config as $key => $value)
+			$this->$key = $value;
 	}
 
 	/**
@@ -86,15 +87,13 @@ class CArrayDataProvider extends CDataProvider
 	 */
 	protected function fetchData()
 	{
-		if(($sort=$this->getSort())!==false && ($order=$sort->getOrderBy())!='')
+		if (($sort = $this->getSort()) !== false && ($order = $sort->getOrderBy()) != '')
 			$this->sortData($this->getSortDirections($order));
 
-		if(($pagination=$this->getPagination())!==false)
-		{
+		if (($pagination = $this->getPagination()) !== false) {
 			$pagination->setItemCount($this->getTotalItemCount());
 			return array_slice($this->rawData, $pagination->getOffset(), $pagination->getLimit());
-		}
-		else
+		} else
 			return $this->rawData;
 	}
 
@@ -104,11 +103,11 @@ class CArrayDataProvider extends CDataProvider
 	 */
 	protected function fetchKeys()
 	{
-		if($this->keyField===false)
+		if ($this->keyField === false)
 			return array_keys($this->rawData);
-		$keys=array();
-		foreach($this->getData() as $i=>$data)
-			$keys[$i]=is_object($data) ? $data->{$this->keyField} : $data[$this->keyField];
+		$keys = array();
+		foreach ($this->getData() as $i => $data)
+			$keys[$i] = is_object($data) ? $data->{$this->keyField} : $data[$this->keyField];
 		return $keys;
 	}
 
@@ -129,32 +128,31 @@ class CArrayDataProvider extends CDataProvider
 	 */
 	protected function sortData($directions)
 	{
-		if(empty($directions) || empty($this->rawData))
+		if (empty($directions) || empty($this->rawData))
 			return;
-		$args=array();
-		$dummy=array();
-		foreach($directions as $name=>$descending)
-		{
-			$column=array();
-			$fields_array=preg_split('/\.+/',$name,-1,PREG_SPLIT_NO_EMPTY);
-			foreach($this->rawData as $index=>$data)
-				$column[$index]=$this->getSortingFieldValue($data, $fields_array);
-			$args[]=&$column;
-			$dummy[]=&$column;
+		$args = array();
+		$dummy = array();
+		foreach ($directions as $name => $descending) {
+			$column = array();
+			$fields_array = preg_split('/\.+/', $name, -1, PREG_SPLIT_NO_EMPTY);
+			foreach ($this->rawData as $index => $data)
+				$column[$index] = $this->getSortingFieldValue($data, $fields_array);
+			$args[] = &$column;
+			$dummy[] = &$column;
 			unset($column);
-			$direction=$descending ? SORT_DESC : SORT_ASC;
-			$args[]=&$direction;
-			$dummy[]=&$direction;
+			$direction = $descending ? SORT_DESC : SORT_ASC;
+			$args[] = &$direction;
+			$dummy[] = &$direction;
 			unset($direction);
 		}
 
 		// This fix is used for cases when main sorting specified by columns has equal values
 		// Without it it will lead to Fatal Error: Nesting level too deep - recursive dependency?
-		$args[]=range(1,count($this->rawData));
-		$args[]=SORT_ASC;
-		$args[]=SORT_NUMERIC;
+		$args[] = range(1, count($this->rawData));
+		$args[] = SORT_ASC;
+		$args[] = SORT_NUMERIC;
 
-		$args[]=&$this->rawData;
+		$args[] = &$this->rawData;
 		call_user_func_array('array_multisort', $args);
 	}
 
@@ -166,17 +164,14 @@ class CArrayDataProvider extends CDataProvider
 	 */
 	protected function getSortingFieldValue($data, $fields)
 	{
-		if(is_object($data))
-		{
-			foreach($fields as $field)
-				$data=isset($data->$field) ? $data->$field : null;
+		if (is_object($data)) {
+			foreach ($fields as $field)
+				$data = isset($data->$field) ? $data->$field : null;
+		} else {
+			foreach ($fields as $field)
+				$data = isset($data[$field]) ? $data[$field] : null;
 		}
-		else
-		{
-			foreach($fields as $field)
-				$data=isset($data[$field]) ? $data[$field] : null;
-		}
-		return $this->caseSensitiveSort ? $data : mb_strtolower($data,Yii::app()->charset);
+		return $this->caseSensitiveSort ? $data : mb_strtolower($data, Yii::app()->charset);
 	}
 
 	/**
@@ -186,14 +181,13 @@ class CArrayDataProvider extends CDataProvider
 	 */
 	protected function getSortDirections($order)
 	{
-		$segs=explode(',',$order);
-		$directions=array();
-		foreach($segs as $seg)
-		{
-			if(preg_match('/(.*?)(\s+(desc|asc))?$/i',trim($seg),$matches))
-				$directions[$matches[1]]=isset($matches[3]) && !strcasecmp($matches[3],'desc');
+		$segs = explode(',', $order);
+		$directions = array();
+		foreach ($segs as $seg) {
+			if (preg_match('/(.*?)(\s+(desc|asc))?$/i', trim($seg), $matches))
+				$directions[$matches[1]] = isset($matches[3]) && !strcasecmp($matches[3], 'desc');
 			else
-				$directions[trim($seg)]=false;
+				$directions[trim($seg)] = false;
 		}
 		return $directions;
 	}

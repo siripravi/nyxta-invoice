@@ -1,37 +1,37 @@
 /* solid-blue */
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 
-html{
+html {
   height: 100%;
 }
-.formoid-solid-blue{
-  margin:0 auto;
+.formoid-solid-blue {
+  margin: 0 auto;
 }
-.formoid-solid-blue>div,
-.formoid-solid-blue>.title{
+.formoid-solid-blue > div,
+.formoid-solid-blue > .title {
   margin: 8px;
 }
-.formoid-solid-blue .error-field .required{
-  color:#FF9999;
+.formoid-solid-blue .error-field .required {
+  color: #ff9999;
 }
 .formoid-solid-blue .error-field input,
-.formoid-solid-blue .error-field input[type=text],
-.formoid-solid-blue .error-field input[type=password],
-.formoid-solid-blue .error-field input[type=email],
-.formoid-solid-blue .error-field input[type=url],
-.formoid-solid-blue .error-field input[type=date],
-.formoid-solid-blue .error-field input[type=number],
-.formoid-solid-blue .error-field input[type=tel],
-.formoid-solid-blue .error-field textarea{
-  border-color:#D893A1;
-  background-color: #FBE6F2;
+.formoid-solid-blue .error-field input[type="text"],
+.formoid-solid-blue .error-field input[type="password"],
+.formoid-solid-blue .error-field input[type="email"],
+.formoid-solid-blue .error-field input[type="url"],
+.formoid-solid-blue .error-field input[type="date"],
+.formoid-solid-blue .error-field input[type="number"],
+.formoid-solid-blue .error-field input[type="tel"],
+.formoid-solid-blue .error-field textarea {
+  border-color: #d893a1;
+  background-color: #fbe6f2;
 }
-.formoid-solid-blue label.error{
-  display:inline-block;
-  font-size:0.9em;
+.formoid-solid-blue label.error {
+  display: inline-block;
+  font-size: 0.9em;
 }
 .formoid-solid-blue .error,
-.formoid-solid-blue .error #recaptcha_widget_div{
+.formoid-solid-blue .error #recaptcha_widget_div {
   padding: 3px 14px;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
   background-color: #fcf8e3;
@@ -54,42 +54,50 @@ html{
   right: -21px;
   line-height: 20px;
 }
-.formoid-solid-blue .column{
-  float:left; 
+.formoid-solid-blue .column {
+  float: left;
 }
 /* width = parseInt(100/columns.length)*/
-.formoid-solid-blue .column1{ width:100%;}
-.formoid-solid-blue .column2{ width:50%; }
-.formoid-solid-blue .column3{ width:33%; }
-.formoid-solid-blue .column4{ width:25%; }
-.formoid-solid-blue .column5{ width:20%; }
+.formoid-solid-blue .column1 {
+  width: 100%;
+}
+.formoid-solid-blue .column2 {
+  width: 50%;
+}
+.formoid-solid-blue .column3 {
+  width: 33%;
+}
+.formoid-solid-blue .column4 {
+  width: 25%;
+}
+.formoid-solid-blue .column5 {
+  width: 20%;
+}
 
-
-
-.formoid-solid-blue .large{
+.formoid-solid-blue .large {
   width: 100%;
   *width: 94%;
 }
-.formoid-solid-blue .medium{
+.formoid-solid-blue .medium {
   width: 50%;
   *width: 47%;
 }
-.formoid-solid-blue .small{
+.formoid-solid-blue .small {
   width: 25%;
   *width: 23%;
 }
 
-.formoid-solid-blue textarea.large{
+.formoid-solid-blue textarea.large {
   width: 100%;
   *width: 94%;
   height: 20em;
 }
-.formoid-solid-blue textarea.medium{
+.formoid-solid-blue textarea.medium {
   width: 100%;
   *width: 94%;
   height: 10em;
 }
-.formoid-solid-blue textarea.small{
+.formoid-solid-blue textarea.small {
   width: 100%;
   *width: 94%;
   height: 5.5em;
@@ -100,8 +108,8 @@ html{
   position: relative;
 }
 
-.frmd{
-  display:none;
+.frmd {
+  display: none;
 }
 .clearfix {
   *zoom: 1;
@@ -113,27 +121,91 @@ html{
   content: "";
 }
 
-
 .blurBg,
-.blurBg-true{
+.blurBg-true {
   background-attachment: fixed;
-  background-image:
-    -webkit-linear-gradient(5deg, rgba(255, 255, 255, 0.35) -10%, rgba(255, 255, 255, 0) 20%), /* linear bottom */
-    -webkit-radial-gradient(40% 60%, ellipse farthest-side, rgba(255, 255, 255, 0.45) -10%, rgba(255, 255, 255, 0) 100%),/* center white */
-    -webkit-radial-gradient(50% -10%, circle farthest-side, rgba(255, 255, 255, 0.35) -10%, rgba(255, 255, 255, 0) 30%),/* top center white */
-    -webkit-radial-gradient(100% 0%, ellipse farthest-side, rgba(255, 255, 255, 0.35) -10%, rgba(255, 255, 255, 0) 20%),/* top right white */
-    -webkit-radial-gradient(0% 0%, ellipse farthest-side, rgba(255, 255, 255, 0.35) -10%, rgba(255, 255, 255, 0) 10%),/* top left white */
-    -webkit-radial-gradient(90% 60%, ellipse farthest-side, rgba(0, 0, 0, 0.35) -10%, rgba(0, 0, 0, 0) 100%),/* center right black */
-    -webkit-radial-gradient(20% 10%, circle farthest-side, rgba(0, 0, 0, 0.25) -10%, rgba(0, 0, 0, 0) 20%);
-  
-  background-image:
-    linear-gradient(85deg, rgba(255, 255, 255, 0.35) -10%, rgba(255, 255, 255, 0) 20%), /* linear bottom */
-    radial-gradient(40% 60%,ellipse farthest-side, rgba(255, 255, 255, 0.45) -10%, rgba(255, 255, 255, 0) 100%),/* center white */
-    radial-gradient(50% -10%,circle farthest-side, rgba(255, 255, 255, 0.35) -10%, rgba(255, 255, 255, 0) 30%),/* top center white */
-    radial-gradient(100% 0%,ellipse farthest-side, rgba(255, 255, 255, 0.35) -10%, rgba(255, 255, 255, 0) 20%),/* top right white */
-    radial-gradient(0% 0%,ellipse farthest-side, rgba(255, 255, 255, 0.35) -10%, rgba(255, 255, 255, 0) 10%),/* top left white */
-    radial-gradient(90% 60%,ellipse farthest-side, rgba(0, 0, 0, 0.35) -10%, rgba(0, 0, 0, 0) 100%),/* center right black */
-    radial-gradient(20% 10%,circle farthest-side, rgba(0, 0, 0, 0.25) -10%, rgba(0, 0, 0, 0) 20%);/* top left black */
+  background-image: -webkit-linear-gradient(
+      5deg,
+      rgba(255, 255, 255, 0.35) -10%,
+      rgba(255, 255, 255, 0) 20%
+    ),
+    /* linear bottom */ -webkit-radial-gradient(40% 60%, ellipse farthest-side, rgba(
+            255,
+            255,
+            255,
+            0.45
+          ) -10%, rgba(255, 255, 255, 0) 100%),
+    /* center white */ -webkit-radial-gradient(50% -10%, circle farthest-side, rgba(
+            255,
+            255,
+            255,
+            0.35
+          ) -10%, rgba(255, 255, 255, 0) 30%),
+    /* top center white */ -webkit-radial-gradient(100% 0%, ellipse
+          farthest-side, rgba(255, 255, 255, 0.35) -10%, rgba(255, 255, 255, 0)
+          20%),
+    /* top right white */ -webkit-radial-gradient(0% 0%, ellipse farthest-side, rgba(
+            255,
+            255,
+            255,
+            0.35
+          ) -10%, rgba(255, 255, 255, 0) 10%),
+    /* top left white */ -webkit-radial-gradient(90% 60%, ellipse farthest-side, rgba(
+            0,
+            0,
+            0,
+            0.35
+          ) -10%, rgba(0, 0, 0, 0) 100%),
+    /* center right black */ -webkit-radial-gradient(20% 10%, circle
+          farthest-side, rgba(0, 0, 0, 0.25) -10%, rgba(0, 0, 0, 0) 20%);
+
+  background-image: linear-gradient(
+      85deg,
+      rgba(255, 255, 255, 0.35) -10%,
+      rgba(255, 255, 255, 0) 20%
+    ),
+    /* linear bottom */
+      radial-gradient(
+        40% 60%,
+        ellipse farthest-side,
+        rgba(255, 255, 255, 0.45) -10%,
+        rgba(255, 255, 255, 0) 100%
+      ),
+    /* center white */
+      radial-gradient(
+        50% -10%,
+        circle farthest-side,
+        rgba(255, 255, 255, 0.35) -10%,
+        rgba(255, 255, 255, 0) 30%
+      ),
+    /* top center white */
+      radial-gradient(
+        100% 0%,
+        ellipse farthest-side,
+        rgba(255, 255, 255, 0.35) -10%,
+        rgba(255, 255, 255, 0) 20%
+      ),
+    /* top right white */
+      radial-gradient(
+        0% 0%,
+        ellipse farthest-side,
+        rgba(255, 255, 255, 0.35) -10%,
+        rgba(255, 255, 255, 0) 10%
+      ),
+    /* top left white */
+      radial-gradient(
+        90% 60%,
+        ellipse farthest-side,
+        rgba(0, 0, 0, 0.35) -10%,
+        rgba(0, 0, 0, 0) 100%
+      ),
+    /* center right black */
+      radial-gradient(
+        20% 10%,
+        circle farthest-side,
+        rgba(0, 0, 0, 0.25) -10%,
+        rgba(0, 0, 0, 0) 20%
+      ); /* top left black */
   /*
     radial-gradient(40% 60%,ellipse farthest-side, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 50%),
     radial-gradient(50% -10%,circle closest-corner, rgba(255, 255, 255, 0.3) 20%, rgba(255, 255, 255, 0) 50%),
@@ -152,7 +224,7 @@ html{
   color: #c09853;
   font-size: 12px;
   max-width: 100%;
-}/*
+} /*
 
 
 Solid style
@@ -161,46 +233,44 @@ Solid style
 */
 @font-face {
   font-family: formoid;
-  src:url('formoid.eot');
-  src:url('formoid.eot?#iefix') format('embedded-opentype'),
-  url('formoid.ttf') format('truetype'),
-  url('formoid.woff') format('woff'),
-  url('formoid.svg#formoid') format('svg');
+  src: url("formoid.eot");
+  src: url("formoid.eot?#iefix") format("embedded-opentype"),
+    url("formoid.ttf") format("truetype"), url("formoid.woff") format("woff"),
+    url("formoid.svg#formoid") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'icons';
-  src: url('icons.eot');
-  src: url('icons.eot#iefix') format('embedded-opentype'),
-       url('icons.woff') format('woff'),
-       url('icons.ttf') format('truetype'),
-       url('icons.svg#icons') format('svg');
+  font-family: "icons";
+  src: url("icons.eot");
+  src: url("icons.eot#iefix") format("embedded-opentype"),
+    url("icons.woff") format("woff"), url("icons.ttf") format("truetype"),
+    url("icons.svg#icons") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
-.formoid-solid-blue{
+.formoid-solid-blue {
   font-size: 1em;
   line-height: 1.231;
 
   border-radius: 5px 5px 0 0;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
 }
-.formoid-solid-blue label.title{
+.formoid-solid-blue label.title {
   font-size: 1em;
   font-weight: 500;
   width: auto;
 }
-.formoid-solid-blue input[type=button]{
+.formoid-solid-blue input[type="button"] {
   outline: none;
   font-size: 1em;
 }
-.formoid-solid-blue input[type=submit]{
+.formoid-solid-blue input[type="submit"] {
   outline: none;
   font-size: 1.2em;
 }
-.formoid-solid-blue>div{
+.formoid-solid-blue > div {
   position: relative;
   margin-left: 25px;
   margin-right: 25px;
@@ -226,7 +296,16 @@ Solid style
   clear: both;
 }
 
-.formoid-solid-blue div, .formoid-solid-blue span, .formoid-solid-blue label, .formoid-solid-blue input, .formoid-solid-blue textarea, .formoid-solid-blue select, .formoid-solid-blue button, .formoid-solid-blue ul, .formoid-solid-blue li, .formoid-solid-blue a{
+.formoid-solid-blue div,
+.formoid-solid-blue span,
+.formoid-solid-blue label,
+.formoid-solid-blue input,
+.formoid-solid-blue textarea,
+.formoid-solid-blue select,
+.formoid-solid-blue button,
+.formoid-solid-blue ul,
+.formoid-solid-blue li,
+.formoid-solid-blue a {
   font-family: inherit;
   color: inherit;
 }
@@ -239,31 +318,29 @@ Not advised to edit stuff below this line
 -----------------------------------------------------
 */
 
-
 /* submit + title */
 .formoid-solid-blue div.submit,
-.formoid-solid-blue div.title{
+.formoid-solid-blue div.title {
   margin: 0;
   padding-top: 1em;
   padding-bottom: 1em;
 }
-.formoid-solid-blue div.submit{
+.formoid-solid-blue div.submit {
   vertical-align: middle;
   text-align: right;
   border-top: 2px solid #d6dbdf;
-  background-color: #F3F5FA;
+  background-color: #f3f5fa;
 }
 .formoid-solid-blue div.title {
   border-radius: 5px 5px 0 0;
 }
-.formoid-solid-blue div.title h2{
+.formoid-solid-blue div.title h2 {
   margin-left: 27px;
 }
 
-
 /* Button & submit*/
-.formoid-solid-blue input[type=button],
-.formoid-solid-blue input[type=submit]{
+.formoid-solid-blue input[type="button"],
+.formoid-solid-blue input[type="submit"] {
   display: inline-block;
   padding: 4px 12px;
   margin-bottom: 1px;
@@ -280,16 +357,16 @@ Not advised to edit stuff below this line
   border: 2px solid #bdc3c7;
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
-  border-radius:3px;
+  border-radius: 3px;
   box-shadow: inset 0 -0.3em 0 rgba(0, 0, 0, 0.2);
 }
 
-.formoid-solid-blue input[type=button][disabled] {
+.formoid-solid-blue input[type="button"][disabled] {
   cursor: default;
   opacity: 0.65;
 }
 
-.formoid-solid-blue input[type=submit]{
+.formoid-solid-blue input[type="submit"] {
   text-align: center;
   opacity: 1;
   color: #ffffff;
@@ -299,18 +376,18 @@ Not advised to edit stuff below this line
   padding: 11px 41px;
 }
 
-.formoid-solid-blue input[type=submit]:hover{
+.formoid-solid-blue input[type="submit"]:hover {
   text-decoration: none;
 }
-.formoid-solid-blue input[type=submit]:active{
+.formoid-solid-blue input[type="submit"]:active {
   box-shadow: inset 0 -0.15em 0 rgba(0, 0, 0, 0.2);
 }
 
 /* File input */
-.formoid-solid-blue .element-file label{
+.formoid-solid-blue .element-file label {
   position: relative;
 }
-.formoid-solid-blue .element-file .title{
+.formoid-solid-blue .element-file .title {
   position: static;
 }
 .formoid-solid-blue .element-file .button {
@@ -328,18 +405,18 @@ Not advised to edit stuff below this line
   cursor: pointer;
   box-shadow: inset 0 -0.3em 0 rgba(0, 0, 0, 0.2);
 
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
-.formoid-solid-blue .element-file .button:active{
+.formoid-solid-blue .element-file .button:active {
   box-shadow: inset 0 -0.15em 0 rgba(0, 0, 0, 0.2);
 }
-.formoid-solid-blue .element-file .file_text{
+.formoid-solid-blue .element-file .file_text {
   overflow: hidden;
-  color: #A9A9A9;
+  color: #a9a9a9;
   background-color: #fff;
-  -webkit-transition: border-color .25s ease-in-out;
-  transition: border-color .25s ease-in-out;
+  -webkit-transition: border-color 0.25s ease-in-out;
+  transition: border-color 0.25s ease-in-out;
 }
 
 .formoid-solid-blue .element-file .file_input {
@@ -354,7 +431,7 @@ Not advised to edit stuff below this line
   width: 100%;
 }
 * html .formoid-solid-blue .element-file .file_input,
-*+html .formoid-solid-blue .element-file .file_input{
+* + html .formoid-solid-blue .element-file .file_input {
   position: relative;
   left: auto;
   right: auto;
@@ -365,32 +442,32 @@ Not advised to edit stuff below this line
   filter: alpha(opacity=100);
 }
 * html .formoid-solid-blue .element-file .button,
-*+html .formoid-solid-blue .element-file .button{
+* + html .formoid-solid-blue .element-file .button {
   display: none;
 }
 * html .formoid-solid-blue .element-file label,
-*+html .formoid-solid-blue .element-file label,
+* + html .formoid-solid-blue .element-file label,
 * html .formoid-solid-blue .element-file .file_text,
-*+html .formoid-solid-blue .element-file .file_text{
+* + html .formoid-solid-blue .element-file .file_text {
   border: none;
 }
 * html .formoid-solid-blue .element-file .title,
-*+html .formoid-solid-blue .element-file .title{
+* + html .formoid-solid-blue .element-file .title {
   display: block;
 }
 
-
 /* Radio & checkbox */
-.formoid-solid-blue div.element-checkbox, .formoid-solid-blue div.element-radio{
-  overflow:hidden;
+.formoid-solid-blue div.element-checkbox,
+.formoid-solid-blue div.element-radio {
+  overflow: hidden;
   line-height: 2.2;
 }
-.formoid-solid-blue input[type=checkbox],
-.formoid-solid-blue input[type=radio]{
-  z-index:1;
-  position:absolute;
+.formoid-solid-blue input[type="checkbox"],
+.formoid-solid-blue input[type="radio"] {
+  z-index: 1;
+  position: absolute;
   float: left;
-  opacity:0.01;
+  opacity: 0.01;
   font-size: 1.3em;
   width: 1.2em;
   height: 1em;
@@ -398,32 +475,32 @@ Not advised to edit stuff below this line
   cursor: pointer;
 }
 
-.formoid-solid-blue input[type=radio]+span,
-.formoid-solid-blue input[type=checkbox]+span{
-  margin-right:-19px;
+.formoid-solid-blue input[type="radio"] + span,
+.formoid-solid-blue input[type="checkbox"] + span {
+  margin-right: -19px;
   padding-top: 0;
-  z-index:0;
+  z-index: 0;
   position: relative;
   left: 0;
   top: 0;
-  vertical-align:top;
+  vertical-align: top;
   font-size: 1em;
   line-height: 1.3;
   cursor: pointer;
 }
-.formoid-solid-blue input[type=checkbox]+span:before{
+.formoid-solid-blue input[type="checkbox"] + span:before {
   position: relative;
   font-family: formoid;
   margin-right: 0.2em;
   color: transparent;
   font-size: 1em;
   line-height: 1;
-  vertical-align:top;
+  vertical-align: top;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 /* checkbox */
-.formoid-solid-blue input[type=checkbox]+span:before{
+.formoid-solid-blue input[type="checkbox"] + span:before {
   content: "\e004";
   font-size: 0.65em;
   padding: 0.3em;
@@ -432,32 +509,31 @@ Not advised to edit stuff below this line
   line-height: 2;
   border-style: solid;
   border-width: 0.3em;
-  -webkit-transition: border-color .5s ease-in-out;
-  transition: border-color .5s ease-in-out;
-  border-radius:0.3em;
+  -webkit-transition: border-color 0.5s ease-in-out;
+  transition: border-color 0.5s ease-in-out;
+  border-radius: 0.3em;
 }
 
 /* radio */
-.formoid-solid-blue input[type=radio]+span:before {
+.formoid-solid-blue input[type="radio"] + span:before {
   position: relative;
   font-family: formoid;
   margin-right: 0.2em;
   color: transparent;
   font-size: 1.4em;
   line-height: 1;
-  vertical-align:top;
+  vertical-align: top;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-transition: color .5s ease-in-out;
-  transition: color .5s ease-in-out;
+  -webkit-transition: color 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out;
 }
-.formoid-solid-blue input[type=radio]+span:before{
+.formoid-solid-blue input[type="radio"] + span:before {
   content: "\e001";
 }
-.formoid-solid-blue input[type=radio]:checked+span:before{
+.formoid-solid-blue input[type="radio"]:checked + span:before {
   content: "\e000";
 }
-
 
 /* rating */
 .formoid-solid-blue .rating {
@@ -471,13 +547,13 @@ Not advised to edit stuff below this line
 .formoid-solid-blue .rating-star:after {
   font-family: formoid;
   font-size: 2em;
-  -webkit-transition: color .5s ease-in-out;
-  transition: color .5s ease-in-out;
+  -webkit-transition: color 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out;
 }
 .formoid-solid-blue .rating:hover .rating-star:hover:after,
 .formoid-solid-blue .rating:hover .rating-star:hover ~ .rating-star:after,
 .formoid-solid-blue .rating-input:checked ~ .rating-star:after {
-  content: '\e006';
+  content: "\e006";
 }
 .formoid-solid-blue .rating-star,
 .formoid-solid-blue .rating:hover .rating-star {
@@ -491,60 +567,56 @@ Not advised to edit stuff below this line
 }
 .formoid-solid-blue .rating-star:after,
 .formoid-solid-blue .rating:hover .rating-star:after {
-  content: '\e007';
+  content: "\e007";
 }
 
-
-
-.formoid-solid-blue input[type=text],
-.formoid-solid-blue input[type=password],
-.formoid-solid-blue input[type=email],
-.formoid-solid-blue input[type=url],
-.formoid-solid-blue input[type=date],
-.formoid-solid-blue input[type=number],
-.formoid-solid-blue input[type=tel],
+.formoid-solid-blue input[type="text"],
+.formoid-solid-blue input[type="password"],
+.formoid-solid-blue input[type="email"],
+.formoid-solid-blue input[type="url"],
+.formoid-solid-blue input[type="date"],
+.formoid-solid-blue input[type="number"],
+.formoid-solid-blue input[type="tel"],
 .formoid-solid-blue textarea,
 .formoid-solid-blue .element-file .file_text,
-.formoid-solid-blue select{
+.formoid-solid-blue select {
   border-style: solid;
   border-width: 2px;
   border-color: #bdc3c7;
   -webkit-transition: border-color 0.5s ease-in-out;
   transition: border-color 0.5s ease-in-out;
-  border-radius:3px;
+  border-radius: 3px;
 
   padding: 10px 10px 9px 2.3em;
-  
-  outline:none;
+
+  outline: none;
   -o-box-sizing: border-box;
   box-sizing: border-box;
 
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: normal;
-  
+
   font-size: 1em;
 }
-.formoid-solid-blue .element-address input[type=text],
-.formoid-solid-blue .element-name input[type=text],
+.formoid-solid-blue .element-address input[type="text"],
+.formoid-solid-blue .element-name input[type="text"],
 .formoid-solid-blue .element-file .file_text,
-.formoid-solid-blue textarea{
+.formoid-solid-blue textarea {
   width: 100%;
   *width: 94%;
 }
-.formoid-solid-blue textarea{
+.formoid-solid-blue textarea {
   height: auto;
 }
-.formoid-solid-blue  select{
+.formoid-solid-blue select {
   cursor: pointer;
   text-align: left;
   width: 100%;
 }
-.formoid-solid-blue .element-address input[type=text] {
+.formoid-solid-blue .element-address input[type="text"] {
   margin-bottom: 6px;
 }
-
-
 
 /* icons */
 /*
@@ -576,65 +648,63 @@ Not advised to edit stuff below this line
 
 .formoid-solid-blue .icon-place:before {
   position: absolute;
-  font: 1em 'icons';
+  font: 1em "icons";
   vertical-align: top;
   top: 15px;
   left: 0.9em;
   pointer-events: none;
-  color: #A2A6A8;
+  color: #a2a6a8;
   z-index: 2;
 }
 
 .formoid-solid-blue .element-input .item-cont .icon-place:before,
 .formoid-solid-blue .element-textarea .item-cont .icon-place:before {
-  content: '\e800';
+  content: "\e800";
 }
 .formoid-solid-blue .element-select .item-cont .icon-place:before,
 .formoid-solid-blue .element-multiple .item-cont .icon-place:before,
 .formoid-solid-blue .element-address .country .icon-place:before {
   top: 12px;
-  content: '\e801';
+  content: "\e801";
 }
 .formoid-solid-blue .element-date .item-cont .icon-place:before {
-  content: '\e802';
+  content: "\e802";
 }
 .formoid-solid-blue .element-number .item-cont .icon-place:before,
 .formoid-solid-blue .element-address .zip .icon-place:before {
-  content: '\e803';
+  content: "\e803";
 }
 .formoid-solid-blue .element-file .item-cont .icon-place:before {
-  content: '\e804';
+  content: "\e804";
 }
 .formoid-solid-blue .element-email .item-cont .icon-place:before {
-  content: '\e805';
+  content: "\e805";
 }
 .formoid-solid-blue .element-url .item-cont .icon-place:before {
-  content: '\e806';
+  content: "\e806";
 }
 .formoid-solid-blue .element-password .item-cont .icon-place:before {
-  content: '\e807';
+  content: "\e807";
 }
 .formoid-solid-blue .element-phone .item-cont .icon-place:before {
-  content: '\e808';
+  content: "\e808";
 }
 .formoid-solid-blue .element-name .nameFirst .icon-place:before,
 .formoid-solid-blue .element-name .nameLast .icon-place:before {
-  content: '\e80B';
+  content: "\e80B";
 }
 .formoid-solid-blue .element-address .addr1 .icon-place:before,
 .formoid-solid-blue .element-address .addr2 .icon-place:before {
   top: 0;
-  content: '\e809';
+  content: "\e809";
 }
 .formoid-solid-blue .element-address .city .icon-place:before,
 .formoid-solid-blue .element-address .state .icon-place:before {
-  content: '\e80A';
+  content: "\e80A";
 }
 
-
-
 /* NAME last first */
-.formoid-solid-blue .element-name .nameFirst{
+.formoid-solid-blue .element-name .nameFirst {
   width: 40%;
   *width: 39%;
   left: 0;
@@ -644,7 +714,7 @@ Not advised to edit stuff below this line
   zoom: 1;
   *display: inline;
 }
-.formoid-solid-blue .element-name .nameLast{
+.formoid-solid-blue .element-name .nameLast {
   width: 55%;
   *width: 50%;
   display: inline-block;
@@ -654,7 +724,7 @@ Not advised to edit stuff below this line
 }
 /* ADDRESS */
 .formoid-solid-blue .element-address .city,
-.formoid-solid-blue .element-address .zip{
+.formoid-solid-blue .element-address .zip {
   width: 47%;
   *width: 44%;
   display: inline-block;
@@ -664,7 +734,7 @@ Not advised to edit stuff below this line
   margin-right: 6%;
 }
 .formoid-solid-blue .element-address .state,
-.formoid-solid-blue .element-address .country{
+.formoid-solid-blue .element-address .country {
   width: 47%;
   *width: 44%;
   display: inline-block;
@@ -672,42 +742,42 @@ Not advised to edit stuff below this line
   *display: inline;
   vertical-align: top;
 }
-.formoid-solid-blue .element-address .country select{
+.formoid-solid-blue .element-address .country select {
   cursor: pointer;
 }
 .formoid-solid-blue .element-address label,
-.formoid-solid-blue .element-name label{
+.formoid-solid-blue .element-name label {
   font-size: 0.8em;
 }
 .formoid-solid-blue .element-address label.title,
-.formoid-solid-blue .element-name label.title{
+.formoid-solid-blue .element-name label.title {
   font-size: 1em;
 }
 
 /* type number */
-.formoid-solid-blue input[type=number]::-webkit-inner-spin-button, 
-.formoid-solid-blue input[type=number]::-webkit-outer-spin-button{ 
+.formoid-solid-blue input[type="number"]::-webkit-inner-spin-button,
+.formoid-solid-blue input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
 
 /* recaptcha */
 .formoid-solid-blue .recaptchatable,
 .formoid-solid-blue .recaptchatable #recaptcha_image,
-.formoid-solid-blue .recaptchatable #recaptcha_challenge_field_holder input{
+.formoid-solid-blue .recaptchatable #recaptcha_challenge_field_holder input {
   border-collapse: separate !important;
-  border: 2px solid #BDC3C7 !important;
+  border: 2px solid #bdc3c7 !important;
   border-radius: 6px;
 }
-.formoid-solid-blue .recaptchatable #recaptcha_image img{
+.formoid-solid-blue .recaptchatable #recaptcha_image img {
   border-color: transparent;
   border-radius: 6px;
 }
 
 /* ERRORs */
 .formoid-solid-blue .error,
-.formoid-solid-blue .error #recaptcha_widget_div{
+.formoid-solid-blue .error #recaptcha_widget_div {
   display: block;
-  background-color: #FBDBCF;
+  background-color: #fbdbcf;
   text-shadow: none;
   border: none;
   padding: 15px;
@@ -738,7 +808,7 @@ Not advised to edit stuff below this line
 .tooltip.bottom .tooltip-arrow {
   top: -8px;
   left: 20px;
-  border-bottom-color: #FBDBCF;
+  border-bottom-color: #fbdbcf;
   border-width: 0 8px 8px;
 }
 .alert {
@@ -764,7 +834,6 @@ Not advised to edit stuff below this line
   right: -21px;
   line-height: 20px;
 }
-
 
 .alert-success {
   color: #468847;
@@ -792,10 +861,7 @@ Not advised to edit stuff below this line
   color: #3a87ad;
 }
 
-
-
-
-@media all and (max-width:400px){
+@media all and (max-width: 400px) {
   .formoid-solid-blue .element-radio .column,
   .formoid-solid-blue .element-checkbox .column,
   .formoid-solid-blue .element-name .nameFirst,
@@ -803,92 +869,92 @@ Not advised to edit stuff below this line
   .formoid-solid-blue .element-address .city,
   .formoid-solid-blue .element-address span.state,
   .formoid-solid-blue .element-address .zip,
-  .formoid-solid-blue .element-address .country{
+  .formoid-solid-blue .element-address .country {
     width: 100%;
     display: block;
     margin-right: 0;
   }
-}/* .formoid-solid-blue color scheme begin */
+} /* .formoid-solid-blue color scheme begin */
 /*
     first: #3498DB;
     second: #2372A7;
     third: #70B6E5;
 */
 
-.formoid-solid-blue input[type=button]:focus,
-.formoid-solid-blue input[type=button]:active,
-.formoid-solid-blue input[type=button]:hover,
-.formoid-solid-blue input[type=button][disabled] {
-  border-color: #3498DB;
+.formoid-solid-blue input[type="button"]:focus,
+.formoid-solid-blue input[type="button"]:active,
+.formoid-solid-blue input[type="button"]:hover,
+.formoid-solid-blue input[type="button"][disabled] {
+  border-color: #3498db;
 }
-.formoid-solid-blue div.title{
-  background-color: #3498DB;
-  border-top: 1px solid #70B6E5;
-  border-bottom: 5px solid #2372A7;
-}
-
-.formoid-solid-blue input[type=submit]{
-  background-color: #3498DB;
+.formoid-solid-blue div.title {
+  background-color: #3498db;
+  border-top: 1px solid #70b6e5;
+  border-bottom: 5px solid #2372a7;
 }
 
-.formoid-solid-blue input[type=submit]:hover{
-  background-color: #70B6E5;
+.formoid-solid-blue input[type="submit"] {
+  background-color: #3498db;
 }
-.formoid-solid-blue input[type=submit]:active{
-  background-color: #2372A7;
+
+.formoid-solid-blue input[type="submit"]:hover {
+  background-color: #70b6e5;
+}
+.formoid-solid-blue input[type="submit"]:active {
+  background-color: #2372a7;
 }
 
 /* File input */
 .formoid-solid-blue .element-file .button {
-  background-color: #3498DB;
+  background-color: #3498db;
 }
-.formoid-solid-blue .element-file .file_text{
+.formoid-solid-blue .element-file .file_text {
   border-color: #bdc3c7;
 }
-.formoid-solid-blue .element-file label:hover .file_text{
-  border-color: #70B6E5;
+.formoid-solid-blue .element-file label:hover .file_text {
+  border-color: #70b6e5;
 }
 .formoid-solid-blue .element-file .button:hover {
-  background-color: #70B6E5;
+  background-color: #70b6e5;
 }
 .formoid-solid-blue .element-file .button:active {
-  background-color: #2372A7;
+  background-color: #2372a7;
 }
-.formoid-solid-blue .element-file label:active .file_text{
-  border-color: #3498DB;
+.formoid-solid-blue .element-file label:active .file_text {
+  border-color: #3498db;
 }
 
 /* element-submit + element-text */
 .formoid-solid-blue > .submit,
-.formoid-solid-blue > .title{
+.formoid-solid-blue > .title {
   background-color: #bcc3ca;
 }
-.formoid-solid-blue > .submit{
+.formoid-solid-blue > .submit {
   background-color: #edeff1;
   border-top: 2px solid #d6dbdf;
 }
 
 /* checkbox & radio*/
-.formoid-solid-blue input[type=checkbox]+span:before{
+.formoid-solid-blue input[type="checkbox"] + span:before {
   border-color: #bdc3c7;
 }
-.formoid-solid-blue input[type=checkbox]:hover+span:before{
-  border-color: #70B6E5;
+.formoid-solid-blue input[type="checkbox"]:hover + span:before {
+  border-color: #70b6e5;
 }
-.formoid-solid-blue input[type=checkbox]:checked+span:before{
-  color: #3498DB;
-  border-color: #3498DB;
+.formoid-solid-blue input[type="checkbox"]:checked + span:before {
+  color: #3498db;
+  border-color: #3498db;
 }
 
 /* radio */
-.formoid-solid-blue input[type=radio]+span:before{
+.formoid-solid-blue input[type="radio"] + span:before {
   color: #bdc3c7;
 }
-.formoid-solid-blue input[type=radio]:hover+span:before{
-  color: #70B6E5;
+.formoid-solid-blue input[type="radio"]:hover + span:before {
+  color: #70b6e5;
 }
-.formoid-solid-blue input[type=radio]:checked+span:before{
-  color: #3498DB;
+.formoid-solid-blue input[type="radio"]:checked + span:before {
+  color: #3498db;
 }
 
 /* rating */
@@ -898,52 +964,47 @@ Not advised to edit stuff below this line
 }
 .formoid-solid-blue .rating:hover .rating-star:hover:after,
 .formoid-solid-blue .rating:hover .rating-star:hover ~ .rating-star:after {
-  color: #70B6E5;
+  color: #70b6e5;
 }
 .formoid-solid-blue .rating-input:checked ~ .rating-star:after {
-  color: #3498DB;
+  color: #3498db;
 }
 
-
-.formoid-solid-blue input[type=text]:hover,
-.formoid-solid-blue input[type=tel]:hover,
-.formoid-solid-blue input[type=password]:hover,
-.formoid-solid-blue input[type=email]:hover,
-.formoid-solid-blue input[type=url]:hover,
-.formoid-solid-blue input[type=date]:hover,
-.formoid-solid-blue input[type=number]:hover,
-.formoid-solid-blue input[type=file]:hover,
+.formoid-solid-blue input[type="text"]:hover,
+.formoid-solid-blue input[type="tel"]:hover,
+.formoid-solid-blue input[type="password"]:hover,
+.formoid-solid-blue input[type="email"]:hover,
+.formoid-solid-blue input[type="url"]:hover,
+.formoid-solid-blue input[type="date"]:hover,
+.formoid-solid-blue input[type="number"]:hover,
+.formoid-solid-blue input[type="file"]:hover,
 .formoid-solid-blue textarea:hover,
 .formoid-solid-blue select:hover {
-  border-color: #70B6E5;
+  border-color: #70b6e5;
 }
-.formoid-solid-blue input[type=text]:focus,
-.formoid-solid-blue input[type=tel]:focus,
-.formoid-solid-blue input[type=password]:focus,
-.formoid-solid-blue input[type=email]:focus,
-.formoid-solid-blue input[type=url]:focus,
-.formoid-solid-blue input[type=date]:focus,
-.formoid-solid-blue input[type=number]:focus,
-.formoid-solid-blue input[type=file]:focus,
+.formoid-solid-blue input[type="text"]:focus,
+.formoid-solid-blue input[type="tel"]:focus,
+.formoid-solid-blue input[type="password"]:focus,
+.formoid-solid-blue input[type="email"]:focus,
+.formoid-solid-blue input[type="url"]:focus,
+.formoid-solid-blue input[type="date"]:focus,
+.formoid-solid-blue input[type="number"]:focus,
+.formoid-solid-blue input[type="file"]:focus,
 .formoid-solid-blue textarea:focus,
-.formoid-solid-blue select:focus{
-  border-color: #3498DB;
+.formoid-solid-blue select:focus {
+  border-color: #3498db;
 }
-
-
 
 /* element icons */
 .formoid-solid-blue input:focus ~ .icon-place:before,
 .formoid-solid-blue textarea:focus ~ .icon-place:before,
 .formoid-solid-blue select:focus ~ .icon-place:before,
 .formoid-solid-blue .select.open ~ .icon-place:before,
-.formoid-solid-blue input[type=file]:focus ~ .icon-place:before,
+.formoid-solid-blue input[type="file"]:focus ~ .icon-place:before,
 .formoid-solid-blue .button:focus ~ .icon-place:before,
 .formoid-solid-blue .file_text:focus ~ .icon-place:before {
-  color: #3498DB;
+  color: #3498db;
 }
-
-
 
 /* bootstrap select */
 .formoid-solid-blue .dropdown-menu li.active > a,
@@ -952,12 +1013,12 @@ Not advised to edit stuff below this line
 .formoid-solid-blue .dropdown-menu li.selected > a.highlighted,
 .formoid-solid-blue .dropdown-inverse li.active > a,
 .formoid-solid-blue .dropdown-inverse li.selected > a {
-  background-color: #3498DB;
+  background-color: #3498db;
 }
 .formoid-solid-blue .btn.btn-primary:hover,
 .formoid-solid-blue .btn.btn-primary:focus,
 .formoid-solid-blue .btn-group:focus .btn.btn-primary.dropdown-toggle {
-  border-color: #70B6E5;
+  border-color: #70b6e5;
 }
 .formoid-solid-blue .btn.btn-primary:active,
 .formoid-solid-blue .btn-group.open .btn.btn-primary.dropdown-toggle,
@@ -970,24 +1031,21 @@ Not advised to edit stuff below this line
 .formoid-solid-blue .dropdown-menu li.selected > a:focus,
 .formoid-solid-blue .dropdown-menu li.active > a.highlighted:focus,
 .formoid-solid-blue .dropdown-menu li.selected > a.highlighted:focus {
-  border-color: #3498DB;
+  border-color: #3498db;
 }
 .formoid-solid-blue .dropdown-arrow {
-  border-bottom: 8px solid #3498DB;
+  border-bottom: 8px solid #3498db;
 }
 .formoid-solid-blue .dropdown-menu {
-  border: 2px solid #3498DB;
+  border: 2px solid #3498db;
 }
-
-
-
 
 /* datepicker */
 .datepicker {
-  border: 2px solid #3498DB;
+  border: 2px solid #3498db;
 }
 .datepicker:before {
-  border-bottom: 7px solid #3498DB;
+  border-bottom: 7px solid #3498db;
 }
 .datepicker td.active,
 .datepicker td.active:hover,
@@ -1012,13 +1070,13 @@ Not advised to edit stuff below this line
 .datepicker td span.active:active,
 .datepicker td span.active.active,
 .datepicker td span.active.disabled,
-.datepicker td span.active[disabled]{
+.datepicker td span.active[disabled] {
   color: #ffffff;
   background-image: none;
-  background-color: #3498DB;
+  background-color: #3498db;
 }
 
-/* .formoid-solid-blue color scheme begin end *//* 
+/* .formoid-solid-blue color scheme begin end */ /* 
 
 bootstrap 
 
@@ -1051,17 +1109,17 @@ bootstrap
   position: relative;
   display: inline-block;
   *display: inline;
-  *margin-left: .3em;
+  *margin-left: 0.3em;
   white-space: nowrap;
   vertical-align: middle;
   *zoom: 1;
 }
 
-.formoid-solid-blue .btn-group > .dropdown-menu{
+.formoid-solid-blue .btn-group > .dropdown-menu {
   font-size: 1em;
 }
 
-.formoid-solid-blue .btn{
+.formoid-solid-blue .btn {
   text-align: left;
   border: 0;
   cursor: pointer;
@@ -1070,7 +1128,7 @@ bootstrap
   height: 100%;
   padding: 10px 10px 9px 2.3em;
 
-  outline:none;
+  outline: none;
 
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -1082,7 +1140,7 @@ bootstrap
   appearance: normal;
   border-radius: 3px;
 
-  border: 2px solid #BDC3C7;
+  border: 2px solid #bdc3c7;
   background-color: #fff;
 
   font-size: 1em;
@@ -1120,7 +1178,13 @@ bootstrap
   min-width: 100%;
   box-sizing: border-box;
 }
-.formoid-solid-blue .select .btn .dropdown-menu li:not(.disabled) > a:hover small {
+.formoid-solid-blue
+  .select
+  .btn
+  .dropdown-menu
+  li:not(.disabled)
+  > a:hover
+  small {
   color: rgba(255, 255, 255, 0.004);
 }
 
@@ -1254,8 +1318,8 @@ bootstrap
   -webkit-transition: 0.25s;
   transition: 0.25s;
   -webkit-backface-visibility: hidden;
-  width: 0; 
-  height: 0; 
+  width: 0;
+  height: 0;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
   z-index: 10;
@@ -1263,7 +1327,7 @@ bootstrap
 .formoid-solid-blue .open > .dropdown-arrow {
   margin-top: 0;
   opacity: 1;
-}/*!
+} /*!
  * Datepicker for Bootstrap
  *
  * Copyright 2012 Stefan Petre
@@ -1286,7 +1350,7 @@ bootstrap
   z-index: 10;
 }
 .datepicker:before {
-  content: '';
+  content: "";
   display: inline-block;
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
@@ -1295,7 +1359,7 @@ bootstrap
   left: 6px;
 }
 .datepicker:after {
-  content: '';
+  content: "";
   display: inline-block;
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;

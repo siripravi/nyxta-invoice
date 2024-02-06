@@ -7,7 +7,6 @@ class CardsWidget extends CWidget
 
     public static function actions()
     {
-
     }
 
     public function publishAssets()
@@ -21,7 +20,6 @@ class CardsWidget extends CWidget
         // $this->publishAssets();
         $this->id = !empty($_GET['id']) ? $_GET['id'] : '';
         $this->model = $this->controller->loadModel($this->id);
-
     }
 
     public function hasRef()
@@ -61,12 +59,13 @@ class CardsWidget extends CWidget
     public function run()
     {
         $cards = new CustomerCards;
-        $this->render('cards', array(
-            'cards' => $cards,
-            'cust' => $this->model,
-            'dp' => new CArrayDataProvider($this->model->cards, array('keyField' => 'id'))
-        )
+        $this->render(
+            'cards',
+            array(
+                'cards' => $cards,
+                'cust' => $this->model,
+                'dp' => new CArrayDataProvider($this->model->cards, array('keyField' => 'id'))
+            )
         );
     }
-
 }

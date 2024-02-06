@@ -1,17 +1,19 @@
-<?php if (Yii::app()->user->hasFlash('contact')): ?>
+<?php if (Yii::app()->user->hasFlash('contact')) : ?>
 
 	<div class="flash-success">
 		<?php echo Yii::app()->user->getFlash('contact'); ?>
 	</div>
 
-<?php else: ?>
+<?php else : ?>
 
 	<?php
-	$this->beginWidget('zii.widgets.CPortlet', array(
-		'title' => "send message",
-		//.ucfirst($model->getHeader2()),
-		'htmlOptions' => array('style' => "border:none;")
-	)
+	$this->beginWidget(
+		'zii.widgets.CPortlet',
+		array(
+			'title' => "send message",
+			//.ucfirst($model->getHeader2()),
+			'htmlOptions' => array('style' => "border:none;")
+		)
 	);
 
 	?>
@@ -23,13 +25,15 @@
 
 		<div class="form">
 
-			<?php $form = $this->beginWidget('CActiveForm', array(
-				'id' => 'contact-form',
-				'enableClientValidation' => true,
-				'clientOptions' => array(
-					'validateOnSubmit' => true,
-				),
-			)
+			<?php $form = $this->beginWidget(
+				'CActiveForm',
+				array(
+					'id' => 'contact-form',
+					'enableClientValidation' => true,
+					'clientOptions' => array(
+						'validateOnSubmit' => true,
+					),
+				)
 			); ?>
 
 			<p class="note">Fields with <span class="required">*</span> are required.</p>

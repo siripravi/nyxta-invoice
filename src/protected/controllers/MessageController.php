@@ -63,9 +63,11 @@ class MessageController extends Controller
     public function actionIndex()
     {
         $dataProvider = new CActiveDataProvider('statement');
-        $this->render('index', array(
-            'dataProvider' => $dataProvider,
-        )
+        $this->render(
+            'index',
+            array(
+                'dataProvider' => $dataProvider,
+            )
         );
     }
 
@@ -101,7 +103,7 @@ class MessageController extends Controller
                     //return $this->refresh();
                     //Yii::app()->end();//$this->redirect(array('view','id'=>$id));
                 } else {
-                    return $this->renderPartial('contact', array('model' => $model, ), false, true);
+                    return $this->renderPartial('contact', array('model' => $model,), false, true);
                 }
             }
         }
@@ -159,5 +161,4 @@ class MessageController extends Controller
             return '<small class="badge pull-left bg-red">U</small>'; //all fields
         }
     }
-
 }

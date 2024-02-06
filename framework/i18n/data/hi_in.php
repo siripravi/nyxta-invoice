@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'hi_IN'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##,##0%',
   'currencyFormat' => '¤ #,##,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -52,10 +53,10 @@ return array (
     'XOF' => 'CFA',
     'XPF' => 'CFPF',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'जनवरी',
       2 => 'फरवरी',
       3 => 'मार्च',
@@ -69,8 +70,8 @@ return array (
       11 => 'नवम्बर',
       12 => 'दिसम्बर',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Month1',
       2 => 'Month2',
       3 => 'Month3',
@@ -85,10 +86,10 @@ return array (
       12 => 'Month12',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'ज',
       2 => 'फ़',
       3 => 'मा',
@@ -103,10 +104,10 @@ return array (
       12 => 'दि',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'रविवार',
       1 => 'सोमवार',
       2 => 'मंगलवार',
@@ -115,8 +116,8 @@ return array (
       5 => 'शुक्रवार',
       6 => 'शनिवार',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'रवि.',
       1 => 'सोम.',
       2 => 'मंगल.',
@@ -125,8 +126,8 @@ return array (
       5 => 'शुक्र.',
       6 => 'शनि.',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'र',
       1 => 'सो',
       2 => 'मं',
@@ -136,10 +137,10 @@ return array (
       6 => 'श',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'र',
       1 => 'सो',
       2 => 'मं',
@@ -148,8 +149,8 @@ return array (
       5 => 'शु',
       6 => 'श',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'र',
       1 => 'सो',
       2 => 'मं',
@@ -159,33 +160,33 @@ return array (
       6 => 'श',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'ईसापूर्व',
       1 => 'सन',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'ईसापूर्व',
       1 => 'सन',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'ईसापूर्व',
       1 => 'सन',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, d MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'dd-MM-y',
     'short' => 'd-M-yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'h:mm:ss a zzzz',
     'long' => 'h:mm:ss a z',
     'medium' => 'h:mm:ss a',
@@ -195,8 +196,8 @@ return array (
   'amName' => 'पूर्वाह्न',
   'pmName' => 'अपराह्न',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'अफ़ार',
     'ab' => 'अब्खाज़ियन्',
     'ace' => 'अचाइनीस',
@@ -698,8 +699,8 @@ return array (
     'zxx' => 'कोई लिंग्विस्ट सामग्री नहीं',
     'zza' => 'ज़ाज़ा',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'फ़ारसी-अरबी',
     'armi' => 'इम्पिरियल आर्मेनिक',
     'armn' => 'अर्मेनियाई',
@@ -832,8 +833,8 @@ return array (
     'zyyy' => 'आम',
     'zzzz' => 'अज्ञात लिपि',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'दुनिया',
     '002' => 'अफ़्रीका',
     '003' => 'उत्तर अमेरिका',
@@ -1125,8 +1126,8 @@ return array (
     'zw' => 'ज़िम्बाब्वे',
     'zz' => 'अज्ञात क्षेत्र',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => '(n>=0&&n<=1&&fmod(n,1)==0)',
     1 => 'true',
   ),

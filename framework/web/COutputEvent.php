@@ -1,4 +1,5 @@
 <?php
+
 /**
  * COutputEvent class file.
  *
@@ -29,9 +30,9 @@ class COutputEvent extends CEvent
 	 * @param mixed $sender sender of the event
 	 * @param string $output the output to be processed
 	 */
-	public function __construct($sender,$output)
+	public function __construct($sender, $output)
 	{
 		parent::__construct($sender);
-		$this->output=$output;
+		$this->output = $output;
 	}
 }

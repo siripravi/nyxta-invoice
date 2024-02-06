@@ -1,4 +1,5 @@
 <?php
+
 /**
  * TbTabs class file.
  * @author Christoffer Niska <ChristofferNiska@gmail.com>
@@ -83,11 +84,13 @@ class TbTabs extends CWidget
 		$items = $this->normalizeTabs($this->tabs, $content);
 
 		ob_start();
-		$this->controller->widget('bootstrap.widgets.TbMenu', array(
-			'type' => $this->type,
-			'encodeLabel' => $this->encodeLabel,
-			'items' => $items,
-		)
+		$this->controller->widget(
+			'bootstrap.widgets.TbMenu',
+			array(
+				'type' => $this->type,
+				'encodeLabel' => $this->encodeLabel,
+				'items' => $items,
+			)
 		);
 		$tabs = ob_get_clean();
 

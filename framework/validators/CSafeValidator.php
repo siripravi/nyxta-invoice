@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CSafeValidator class file.
  *
@@ -23,8 +24,7 @@ class CSafeValidator extends CValidator
 	 * @param CModel $object the object being validated
 	 * @param string $attribute the attribute being validated
 	 */
-	protected function validateAttribute($object,$attribute)
+	protected function validateAttribute($object, $attribute)
 	{
 	}
 }
-

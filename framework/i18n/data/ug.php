@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'ug'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2013 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '10739',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'alias' => '',
     'decimal' => '.',
     'group' => ',',
@@ -31,8 +32,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AOA' => 'Kz',
     'ARS' => '$',
     'AUD' => 'A$',
@@ -133,10 +134,10 @@ return array (
     'ZAR' => 'R',
     'ZMW' => 'ZK',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'يانۋار',
       2 => 'فېۋرال',
       3 => 'مارت',
@@ -150,8 +151,8 @@ return array (
       11 => 'بويابىر',
       12 => 'دېكابىر',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'يانۋار',
       2 => 'فېۋرال',
       3 => 'مارت',
@@ -166,10 +167,10 @@ return array (
       12 => 'دېكابىر',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -184,10 +185,10 @@ return array (
       12 => '12',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'يەكشەنبە',
       1 => 'دۈشەنبە',
       2 => 'سەيشەنبە',
@@ -196,8 +197,8 @@ return array (
       5 => 'جۈمە',
       6 => 'شەنبە',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'يە',
       1 => 'دۈ',
       2 => 'سە',
@@ -206,8 +207,8 @@ return array (
       5 => 'چۈ',
       6 => 'شە',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'ي',
       1 => 'د',
       2 => 'س',
@@ -217,10 +218,10 @@ return array (
       6 => 'ش',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'ي',
       1 => 'د',
       2 => 'س',
@@ -230,33 +231,33 @@ return array (
       6 => 'ش',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'مىلادىيەدىن بۇرۇن',
       1 => 'مىلادىيە',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'مىلادىيەدىن بۇرۇن',
       1 => 'مىلادىيە',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'مىلادىيەدىن بۇرۇن',
       1 => 'مىلادىيە',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE، MMMM d، y',
     'long' => 'MMMM d، y',
     'medium' => 'MMM d، y',
     'short' => 'M/d/yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'h:mm:ss a zzzz',
     'long' => 'h:mm:ss a z',
     'medium' => 'h:mm:ss a',
@@ -266,14 +267,14 @@ return array (
   'amName' => 'چۈشتىن بۇرۇن',
   'pmName' => 'چۈشتىن كېيىن',
   'orientation' => 'ltr',
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000',
     1 => ' @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …',
     2 => 'true',
   ),
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'ئافارچە',
     'ab' => 'ئابخازچە',
     'ace' => 'ئاتجېچە',
@@ -783,8 +784,8 @@ return array (
     'zxx' => 'تىل مەزمۇنى يوق',
     'zza' => 'زازاچە',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'afak' => 'ئافاكا',
     'arab' => 'ئەرەب',
     'armi' => 'خان جەمەتى ئارامۇ',
@@ -943,8 +944,8 @@ return array (
     'zyyy' => 'ئورتاق',
     'zzzz' => 'يوچۇن يېزىق',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'دۇنيا',
     '002' => 'ئافرىقا',
     '003' => 'شىمالىي ئامېرىكا',

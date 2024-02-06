@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'bm'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00;(¤#,##0.00)',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -52,10 +53,10 @@ return array (
     'XOF' => 'CFA',
     'XPF' => 'CFPF',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'zanwuye',
       2 => 'feburuye',
       3 => 'marisi',
@@ -69,8 +70,8 @@ return array (
       11 => 'nowanburu',
       12 => 'desanburu',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'zan',
       2 => 'feb',
       3 => 'mar',
@@ -85,10 +86,10 @@ return array (
       12 => 'des',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'Z',
       2 => 'F',
       3 => 'M',
@@ -103,10 +104,10 @@ return array (
       12 => 'D',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'kari',
       1 => 'ntɛnɛ',
       2 => 'tarata',
@@ -115,8 +116,8 @@ return array (
       5 => 'juma',
       6 => 'sibiri',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'kar',
       1 => 'ntɛ',
       2 => 'tar',
@@ -126,10 +127,10 @@ return array (
       6 => 'sib',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'K',
       1 => 'N',
       2 => 'T',
@@ -139,33 +140,33 @@ return array (
       6 => 'S',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'J.-C. ɲɛ',
       1 => 'ni J.-C.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'jezu krisiti ɲɛ',
       1 => 'jezu krisiti minkɛ',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'J.-C. ɲɛ',
       1 => 'ni J.-C.',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE d MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'd MMM, y',
     'short' => 'd/M/y',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -175,8 +176,8 @@ return array (
   'amName' => 'AM',
   'pmName' => 'PM',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ak' => 'akankan',
     'am' => 'amarikikan',
     'ar' => 'larabukan',
@@ -223,8 +224,8 @@ return array (
     'zh' => 'siniwakan',
     'zu' => 'zulukan',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     'ad' => 'Andɔr',
     'ae' => 'Arabu mara kafoli',
     'af' => 'Afiganistaŋ',

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'lag'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤ #,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'TZS' => 'TSh',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Kʉfúngatɨ',
       2 => 'Kʉnaanɨ',
       3 => 'Kʉkeenda',
@@ -70,8 +71,8 @@ return array (
       11 => 'Kʉsaano',
       12 => 'Kʉsasatʉ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Fúngatɨ',
       2 => 'Naanɨ',
       3 => 'Keenda',
@@ -86,10 +87,10 @@ return array (
       12 => 'Sasatʉ',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'F',
       2 => 'N',
       3 => 'K',
@@ -104,10 +105,10 @@ return array (
       12 => 'S',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Jumapíiri',
       1 => 'Jumatátu',
       2 => 'Jumaíne',
@@ -116,8 +117,8 @@ return array (
       5 => 'Ijumáa',
       6 => 'Jumamóosi',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Píili',
       1 => 'Táatu',
       2 => 'Íne',
@@ -127,10 +128,10 @@ return array (
       6 => 'Móosi',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'P',
       1 => 'T',
       2 => 'E',
@@ -140,33 +141,33 @@ return array (
       6 => 'M',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'KSA',
       1 => 'KA',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Kɨrɨsitʉ sɨ anavyaal',
       1 => 'Kɨrɨsitʉ akavyaalwe',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'KSA',
       1 => 'KA',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, d MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'd MMM y',
     'short' => 'dd/MM/y',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'h:mm:ss a zzzz',
     'long' => 'h:mm:ss a z',
     'medium' => 'h:mm:ss a',
@@ -176,8 +177,8 @@ return array (
   'amName' => 'TOO',
   'pmName' => 'MUU',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ak' => 'Kɨakáani',
     'am' => 'Kɨmʉháari',
     'ar' => 'Kɨaráabu',
@@ -224,8 +225,8 @@ return array (
     'zh' => 'Kɨchíina',
     'zu' => 'Kɨzúulu',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     'ad' => 'Andóra',
     'ae' => 'Ʉtemi wa Kɨaráabu',
     'af' => 'Afuganisitáani',
@@ -452,8 +453,8 @@ return array (
     'zm' => 'Sámbia',
     'zw' => 'Simbáabwe',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==0',
     1 => '(n>=0&&n<=2)&&n!=0&&n!=2',
     2 => 'true',

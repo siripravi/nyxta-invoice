@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CStackIterator class file.
  *
@@ -38,9 +39,9 @@ class CStackIterator implements Iterator
 	 */
 	public function __construct(&$data)
 	{
-		$this->_d=&$data;
-		$this->_i=0;
-		$this->_c=count($this->_d);
+		$this->_d = &$data;
+		$this->_i = 0;
+		$this->_c = count($this->_d);
 	}
 
 	/**
@@ -50,7 +51,7 @@ class CStackIterator implements Iterator
 	#[ReturnTypeWillChange]
 	public function rewind()
 	{
-		$this->_i=0;
+		$this->_i = 0;
 	}
 
 	/**
@@ -93,6 +94,6 @@ class CStackIterator implements Iterator
 	#[ReturnTypeWillChange]
 	public function valid()
 	{
-		return $this->_i<$this->_c;
+		return $this->_i < $this->_c;
 	}
 }

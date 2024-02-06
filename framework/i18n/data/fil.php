@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'fil'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8671',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00;(¤#,##0.00)',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'PHP' => '₱',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Enero',
       2 => 'Pebrero',
       3 => 'Marso',
@@ -70,8 +71,8 @@ return array (
       11 => 'Nobyembre',
       12 => 'Disyembre',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Ene',
       2 => 'Peb',
       3 => 'Mar',
@@ -86,10 +87,10 @@ return array (
       12 => 'Dis',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'E',
       2 => 'P',
       3 => 'M',
@@ -104,10 +105,10 @@ return array (
       12 => 'D',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Linggo',
       1 => 'Lunes',
       2 => 'Martes',
@@ -116,8 +117,8 @@ return array (
       5 => 'Biyernes',
       6 => 'Sabado',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Lin',
       1 => 'Lun',
       2 => 'Mar',
@@ -126,8 +127,8 @@ return array (
       5 => 'Bye',
       6 => 'Sab',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'Li',
       1 => 'Lu',
       2 => 'Ma',
@@ -137,10 +138,10 @@ return array (
       6 => 'Sab',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'L',
       1 => 'L',
       2 => 'M',
@@ -149,8 +150,8 @@ return array (
       5 => 'B',
       6 => 'S',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Lin',
       1 => 'Lun',
       2 => 'Mar',
@@ -159,8 +160,8 @@ return array (
       5 => 'Biy',
       6 => 'Sab',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'Li',
       1 => 'Lu',
       2 => 'Ma',
@@ -170,33 +171,33 @@ return array (
       6 => 'Sab',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'BC',
       1 => 'AD',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'BC',
       1 => 'AD',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'BC',
       1 => 'AD',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, MMMM dd y',
     'long' => 'MMMM d, y',
     'medium' => 'MMM d, y',
     'short' => 'M/d/yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -206,8 +207,8 @@ return array (
   'amName' => 'AM',
   'pmName' => 'PM',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ab' => 'Abkhazian',
     'ach' => 'Acoli',
     'af' => 'Afrikaans',
@@ -392,8 +393,8 @@ return array (
     'zu' => 'Zulu',
     'zxx' => 'Walang nilalamang linguistic',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'Perso-Arabic',
     'armn' => 'Armenian',
     'beng' => 'Bengali',
@@ -434,8 +435,8 @@ return array (
     'zyyy' => 'Common',
     'zzzz' => 'Hindi Kilalang Script',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'Mundo',
     '002' => 'Africa',
     '003' => 'North America',
@@ -727,8 +728,8 @@ return array (
     'zw' => 'Zimbabwe',
     'zz' => 'Hindi kilala o Hindi wastong Rehiyon',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => '(n>=0&&n<=1&&fmod(n,1)==0)',
     1 => 'true',
   ),

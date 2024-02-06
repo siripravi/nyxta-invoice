@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CCacheHttpSession class
  *
@@ -31,11 +32,11 @@ class CCacheHttpSession extends CHttpSession
 	/**
 	 * Prefix to the keys for storing cached data
 	 */
-	const CACHE_KEY_PREFIX='Yii.CCacheHttpSession.';
+	const CACHE_KEY_PREFIX = 'Yii.CCacheHttpSession.';
 	/**
 	 * @var string the ID of the cache application component. Defaults to 'cache' (the primary cache application component.)
 	 */
-	public $cacheID='cache';
+	public $cacheID = 'cache';
 
 	/**
 	 * @var ICache the cache component
@@ -48,10 +49,13 @@ class CCacheHttpSession extends CHttpSession
 	 */
 	public function init()
 	{
-		$this->_cache=Yii::app()->getComponent($this->cacheID);
-		if(!($this->_cache instanceof ICache))
-			throw new CException(Yii::t('yii','CCacheHttpSession.cacheID is invalid. Please make sure "{id}" refers to a valid cache application component.',
-				array('{id}'=>$this->cacheID)));
+		$this->_cache = Yii::app()->getComponent($this->cacheID);
+		if (!($this->_cache instanceof ICache))
+			throw new CException(Yii::t(
+				'yii',
+				'CCacheHttpSession.cacheID is invalid. Please make sure "{id}" refers to a valid cache application component.',
+				array('{id}' => $this->cacheID)
+			));
 		parent::init();
 	}
 
@@ -73,8 +77,8 @@ class CCacheHttpSession extends CHttpSession
 	 */
 	public function readSession($id)
 	{
-		$data=$this->_cache->get($this->calculateKey($id));
-		return $data===false?'':$data;
+		$data = $this->_cache->get($this->calculateKey($id));
+		return $data === false ? '' : $data;
 	}
 
 	/**
@@ -84,9 +88,9 @@ class CCacheHttpSession extends CHttpSession
 	 * @param string $data session data
 	 * @return boolean whether session write is successful
 	 */
-	public function writeSession($id,$data)
+	public function writeSession($id, $data)
 	{
-		return $this->_cache->set($this->calculateKey($id),$data,$this->getTimeout());
+		return $this->_cache->set($this->calculateKey($id), $data, $this->getTimeout());
 	}
 
 	/**
@@ -113,6 +117,6 @@ class CCacheHttpSession extends CHttpSession
 	 */
 	protected function calculateKey($id)
 	{
-		return self::CACHE_KEY_PREFIX.$id;
+		return self::CACHE_KEY_PREFIX . $id;
 	}
 }

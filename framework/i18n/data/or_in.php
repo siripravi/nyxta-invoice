@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'or_IN'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##,##0%',
   'currencyFormat' => '¤ #,##,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -52,10 +53,10 @@ return array (
     'XOF' => 'CFA',
     'XPF' => 'CFPF',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'ଜାନୁଆରୀ',
       2 => 'ଫେବ୍ରୁୟାରୀ',
       3 => 'ମାର୍ଚ୍ଚ',
@@ -69,8 +70,8 @@ return array (
       11 => 'ନଭେମ୍ବର',
       12 => 'ଡିସେମ୍ବର',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Month1',
       2 => 'Month2',
       3 => 'Month3',
@@ -85,10 +86,10 @@ return array (
       12 => 'Month12',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'ଜା',
       2 => 'ଫେ',
       3 => 'ମା',
@@ -103,10 +104,10 @@ return array (
       12 => 'ଡି',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'ରବିବାର',
       1 => 'ସୋମବାର',
       2 => 'ମଙ୍ଗଳବାର',
@@ -115,8 +116,8 @@ return array (
       5 => 'ଶୁକ୍ରବାର',
       6 => 'ଶନିବାର',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'ରବି',
       1 => 'ସୋମ',
       2 => 'ମଙ୍ଗଳ',
@@ -126,10 +127,10 @@ return array (
       6 => 'ଶନି',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'ର',
       1 => 'ସୋ',
       2 => 'ମ',
@@ -139,33 +140,33 @@ return array (
       6 => 'ଶ',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'BCE',
       1 => 'CE',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'BCE',
       1 => 'CE',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'BCE',
       1 => 'CE',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, d MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'd MMM y',
     'short' => 'd-M-yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'h:mm:ss a zzzz',
     'long' => 'h:mm:ss a z',
     'medium' => 'h:mm:ss a',
@@ -175,8 +176,8 @@ return array (
   'amName' => 'am',
   'pmName' => 'pm',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'ଅଫାର୍',
     'ab' => 'ଆବ୍ଖାଜିଆନ୍',
     'ace' => 'ଆଚାଇନୀଜ୍',
@@ -684,8 +685,8 @@ return array (
     'zxx' => 'କୌଣସି ଲିଙ୍ଗୁଇଷ୍ଟ ସାମଗ୍ରୀ ନାହିଁ',
     'zza' => 'ଜାଜା',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'ଆରବିକ୍',
     'armi' => 'ଇମ୍ପେରିଆଲ୍ ଆରମିକ୍',
     'armn' => 'ଆର୍ମେନିଆନ୍',
@@ -817,8 +818,8 @@ return array (
     'zyyy' => 'ସାଧାରଣ',
     'zzzz' => 'ଅଞ୍ଜାତ କିମ୍ବା ଅବୈଧ ସ୍କ୍ରୀପ୍ଟ',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'ବିଶ୍ବ',
     '002' => 'ଆଫ୍ରିକା',
     '003' => 'ଉତ୍ତର ଆମେରିକା',
@@ -1100,8 +1101,8 @@ return array (
     'zw' => 'ଜିମ୍ବାୱେ',
     'zz' => 'ଅଜଣା କିମ୍ବା ଅବୈଧ ପ୍ରଦେଶ',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

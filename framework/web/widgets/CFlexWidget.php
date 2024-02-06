@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CFlexWidget class file.
  *
@@ -36,32 +37,32 @@ class CFlexWidget extends CWidget
 	/**
 	 * @var string width of the application region. Defaults to 450.
 	 */
-	public $width='100%';
+	public $width = '100%';
 	/**
 	 * @var string height of the application region. Defaults to 300.
 	 */
-	public $height='100%';
+	public $height = '100%';
 	/**
 	 * @var string quality of the animation. Defaults to 'high'.
 	 */
-	public $quality='high';
+	public $quality = 'high';
 	/**
 	 * @var string background color of the application region. Defaults to '#FFFFFF', meaning white.
 	 */
-	public $bgColor='#FFFFFF';
+	public $bgColor = '#FFFFFF';
 	/**
 	 * @var string align of the application region. Defaults to 'middle'.
 	 */
-	public $align='middle';
+	public $align = 'middle';
 	/**
 	 * @var string the access method of the script. Defaults to 'sameDomain'.
 	 */
-	public $allowScriptAccess='sameDomain';
+	public $allowScriptAccess = 'sameDomain';
 	/**
 	 * @var boolean whether to allow running the Flash in full screen mode. Defaults to false.
 	 * @since 1.1.1
 	 */
-	public $allowFullScreen=false;
+	public $allowFullScreen = false;
 	/**
 	 * @var string the HTML content to be displayed if Flash player is not installed.
 	 */
@@ -69,23 +70,23 @@ class CFlexWidget extends CWidget
 	/**
 	 * @var boolean whether history should be enabled. Defaults to true.
 	 */
-	public $enableHistory=true;
+	public $enableHistory = true;
 	/**
 	 * @var array parameters to be passed to the Flex application.
 	 */
-	public $flashVars=array();
+	public $flashVars = array();
 
 	/**
 	 * Renders the widget.
 	 */
 	public function run()
 	{
-		if(empty($this->name))
-			throw new CException(Yii::t('yii','CFlexWidget.name cannot be empty.'));
-		if(empty($this->baseUrl))
-			throw new CException(Yii::t('yii','CFlexWidget.baseUrl cannot be empty.'));
-		if($this->altHtmlContent===null)
-			$this->altHtmlContent=Yii::t('yii','This content requires the <a href="https://www.adobe.com/go/getflash/">Adobe Flash Player</a>.');
+		if (empty($this->name))
+			throw new CException(Yii::t('yii', 'CFlexWidget.name cannot be empty.'));
+		if (empty($this->baseUrl))
+			throw new CException(Yii::t('yii', 'CFlexWidget.baseUrl cannot be empty.'));
+		if ($this->altHtmlContent === null)
+			$this->altHtmlContent = Yii::t('yii', 'This content requires the <a href="https://www.adobe.com/go/getflash/">Adobe Flash Player</a>.');
 
 		$this->registerClientScript();
 
@@ -97,13 +98,12 @@ class CFlexWidget extends CWidget
 	 */
 	public function registerClientScript()
 	{
-		$cs=Yii::app()->getClientScript();
-		$cs->registerScriptFile($this->baseUrl.'/AC_OETags.js');
+		$cs = Yii::app()->getClientScript();
+		$cs->registerScriptFile($this->baseUrl . '/AC_OETags.js');
 
-		if($this->enableHistory)
-		{
-			$cs->registerCssFile($this->baseUrl.'/history/history.css');
-			$cs->registerScriptFile($this->baseUrl.'/history/history.js');
+		if ($this->enableHistory) {
+			$cs->registerCssFile($this->baseUrl . '/history/history.css');
+			$cs->registerScriptFile($this->baseUrl . '/history/history.js');
 		}
 	}
 
@@ -113,9 +113,9 @@ class CFlexWidget extends CWidget
 	 */
 	public function getFlashVarsAsString()
 	{
-		$params=array();
-		foreach($this->flashVars as $k=>$v)
-			$params[]=urlencode($k).'='.urlencode($v);
-		return CJavaScript::quote(implode('&',$params));
+		$params = array();
+		foreach ($this->flashVars as $k => $v)
+			$params[] = urlencode($k) . '=' . urlencode($v);
+		return CJavaScript::quote(implode('&', $params));
 	}
 }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'ky_KG'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => ' ',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤ #,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'KGS' => 'сом',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'январь',
       2 => 'февраль',
       3 => 'март',
@@ -70,8 +71,8 @@ return array (
       11 => 'ноябрь',
       12 => 'декабрь',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'янв.',
       2 => 'фев.',
       3 => 'мар.',
@@ -86,10 +87,10 @@ return array (
       12 => 'дек.',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -103,8 +104,8 @@ return array (
       11 => '11',
       12 => '12',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Янв.',
       2 => 'Февр.',
       3 => 'Мар.',
@@ -118,8 +119,8 @@ return array (
       11 => 'Ноя.',
       12 => 'Дек.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       1 => 'Январь',
       2 => 'Февраль',
       3 => 'Март',
@@ -134,10 +135,10 @@ return array (
       12 => 'Декабрь',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'жекшемби',
       1 => 'дүйшөмбү',
       2 => 'шейшемби',
@@ -146,8 +147,8 @@ return array (
       5 => 'жума',
       6 => 'ишемби',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'жк.',
       1 => 'дш.',
       2 => 'ше.',
@@ -157,10 +158,10 @@ return array (
       6 => 'иш.',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'S',
       1 => 'M',
       2 => 'T',
@@ -169,8 +170,8 @@ return array (
       5 => 'F',
       6 => 'S',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Жк.',
       1 => 'Дш.',
       2 => 'Ше.',
@@ -179,8 +180,8 @@ return array (
       5 => 'Жм.',
       6 => 'Иш.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Жекшемби',
       1 => 'Дүйшөмбү',
       2 => 'Шейшемби',
@@ -190,33 +191,33 @@ return array (
       6 => 'Ишемби',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'б.з. ч.',
       1 => 'б.з.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'б.з. чейин',
       1 => 'б.з.',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'б.з. ч.',
       1 => 'б.з.',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, d MMMM y \'ж\'.',
     'long' => 'd MMMM y \'ж\'.',
     'medium' => 'dd.MM.y',
     'short' => 'dd.MM.yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -226,8 +227,8 @@ return array (
   'amName' => 'AM',
   'pmName' => 'PM',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'af' => 'африкаанча',
     'ar' => 'арабча',
     'az' => 'азербайжанча',
@@ -309,12 +310,12 @@ return array (
     'yi' => 'еврей',
     'zh' => 'кытайча',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     'kg' => 'Кыргызстан',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

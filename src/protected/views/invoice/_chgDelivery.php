@@ -1,15 +1,17 @@
 <?php
-$form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
-    'id' => 'chg_delivery_form',
-    // Please note: When you enable ajax validation, make sure the corresponding
-    // controller action is handling ajax validation correctly.
-    // There is a call to performAjaxValidation() commented in generated controller code.
-    // See class documentation of CActiveForm for details on this.
-    'layout' => TbHtml::FORM_LAYOUT_INLINE,
-    'enableAjaxValidation' => false,
-    'action' => Yii::app()->createUrl('invoice/chgDelivery', array('id' => $stmt->id)),
-    'htmlOptions' => array()
-)
+$form = $this->beginWidget(
+    'bootstrap.widgets.TbActiveForm',
+    array(
+        'id' => 'chg_delivery_form',
+        // Please note: When you enable ajax validation, make sure the corresponding
+        // controller action is handling ajax validation correctly.
+        // There is a call to performAjaxValidation() commented in generated controller code.
+        // See class documentation of CActiveForm for details on this.
+        'layout' => TbHtml::FORM_LAYOUT_INLINE,
+        'enableAjaxValidation' => false,
+        'action' => Yii::app()->createUrl('invoice/chgDelivery', array('id' => $stmt->id)),
+        'htmlOptions' => array()
+    )
 );
 ?>
 <div class="row input-daterange input-group" id="delv-datepicker">

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CPgsqlColumnSchema class file.
  *
@@ -23,16 +24,16 @@ class CPgsqlColumnSchema extends CDbColumnSchema
 	 */
 	protected function extractType($dbType)
 	{
-		if(strpos($dbType,'[')!==false || strpos($dbType,'char')!==false || strpos($dbType,'text')!==false)
-			$this->type='string';
-		elseif(strpos($dbType,'bool')!==false)
-			$this->type='boolean';
-		elseif(preg_match('/(real|float|double)/',$dbType))
-			$this->type='double';
-		elseif(preg_match('/(integer|oid|serial|smallint)/',$dbType))
-			$this->type='integer';
+		if (strpos($dbType, '[') !== false || strpos($dbType, 'char') !== false || strpos($dbType, 'text') !== false)
+			$this->type = 'string';
+		elseif (strpos($dbType, 'bool') !== false)
+			$this->type = 'boolean';
+		elseif (preg_match('/(real|float|double)/', $dbType))
+			$this->type = 'double';
+		elseif (preg_match('/(integer|oid|serial|smallint)/', $dbType))
+			$this->type = 'integer';
 		else
-			$this->type='string';
+			$this->type = 'string';
 	}
 
 	/**
@@ -41,18 +42,14 @@ class CPgsqlColumnSchema extends CDbColumnSchema
 	 */
 	protected function extractLimit($dbType)
 	{
-		if(strpos($dbType,'('))
-		{
-			if (preg_match('/^time.*\((.*)\)/',$dbType,$matches))
-			{
-				$this->precision=(int)$matches[1];
-			}
-			elseif (preg_match('/\((.*)\)/',$dbType,$matches))
-			{
-				$values=explode(',',$matches[1]);
-				$this->size=$this->precision=(int)$values[0];
-				if(isset($values[1]))
-					$this->scale=(int)$values[1];
+		if (strpos($dbType, '(')) {
+			if (preg_match('/^time.*\((.*)\)/', $dbType, $matches)) {
+				$this->precision = (int)$matches[1];
+			} elseif (preg_match('/\((.*)\)/', $dbType, $matches)) {
+				$values = explode(',', $matches[1]);
+				$this->size = $this->precision = (int)$values[0];
+				if (isset($values[1]))
+					$this->scale = (int)$values[1];
 			}
 		}
 	}
@@ -64,16 +61,16 @@ class CPgsqlColumnSchema extends CDbColumnSchema
 	 */
 	protected function extractDefault($defaultValue)
 	{
-		if($defaultValue==='true')
-			$this->defaultValue=true;
-		elseif($defaultValue==='false')
-			$this->defaultValue=false;
-		elseif(strpos($defaultValue,'nextval')===0)
-			$this->defaultValue=null;
-		elseif(preg_match('/^\'(.*)\'::/',$defaultValue,$matches))
-			$this->defaultValue=$this->typecast(str_replace("''","'",$matches[1]));
-		elseif(preg_match('/^(-?\d+(\.\d*)?)(::.*)?$/',$defaultValue,$matches))
-			$this->defaultValue=$this->typecast($matches[1]);
+		if ($defaultValue === 'true')
+			$this->defaultValue = true;
+		elseif ($defaultValue === 'false')
+			$this->defaultValue = false;
+		elseif (strpos($defaultValue, 'nextval') === 0)
+			$this->defaultValue = null;
+		elseif (preg_match('/^\'(.*)\'::/', $defaultValue, $matches))
+			$this->defaultValue = $this->typecast(str_replace("''", "'", $matches[1]));
+		elseif (preg_match('/^(-?\d+(\.\d*)?)(::.*)?$/', $defaultValue, $matches))
+			$this->defaultValue = $this->typecast($matches[1]);
 		// else is null
 	}
 }

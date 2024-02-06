@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -13,7 +14,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   'Are you sure you want to delete this item?' => 'Сигурни ли сте че искате да изтриете този елемент?',
   'Home' => 'Начало',
   'The button type "{type}" is not supported.' => 'Не се поддържа бутон от тип "{type}"',
@@ -34,5 +35,3 @@ return array (
   'View' => 'Преглед',
   '{class} must specify "model" and "attribute" or "name" property values.' => '{class} трябва да има отбелязани "model" или "attribute" или "name" свойства.',
 );
-
-?>

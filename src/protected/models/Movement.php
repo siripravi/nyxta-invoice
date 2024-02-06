@@ -114,9 +114,11 @@ class Movement extends ManyManyActiveRecord
 		$criteria->compare('truck_number', $this->truck_number, true);
 		$criteria->compare('description', $this->description, true);
 
-		return new CActiveDataProvider($this, array(
-			'criteria' => $criteria,
-		)
+		return new CActiveDataProvider(
+			$this,
+			array(
+				'criteria' => $criteria,
+			)
 		);
 	}
 
@@ -149,6 +151,5 @@ class Movement extends ManyManyActiveRecord
 			return true;
 		} else
 			return false;
-
 	}
 }

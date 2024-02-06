@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'ln_CF'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8268',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => '.',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '#,##0.00 ¤',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'CDF' => 'FC',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'sánzá ya yambo',
       2 => 'sánzá ya míbalé',
       3 => 'sánzá ya mísáto',
@@ -70,8 +71,8 @@ return array (
       11 => 'sánzá ya zómi na mɔ̌kɔ́',
       12 => 'sánzá ya zómi na míbalé',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'yan',
       2 => 'fbl',
       3 => 'msi',
@@ -86,10 +87,10 @@ return array (
       12 => 'dsb',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'y',
       2 => 'f',
       3 => 'm',
@@ -104,10 +105,10 @@ return array (
       12 => 'd',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'eyenga',
       1 => 'mokɔlɔ mwa yambo',
       2 => 'mokɔlɔ mwa míbalé',
@@ -116,8 +117,8 @@ return array (
       5 => 'mokɔlɔ ya mítáno',
       6 => 'mpɔ́sɔ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'eye',
       1 => 'ybo',
       2 => 'mbl',
@@ -127,10 +128,10 @@ return array (
       6 => 'mps',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'e',
       1 => 'y',
       2 => 'm',
@@ -140,33 +141,33 @@ return array (
       6 => 'p',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'libóso ya',
       1 => 'nsima ya Y',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Yambo ya Yézu Krís',
       1 => 'Nsima ya Yézu Krís',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'libóso ya',
       1 => 'nsima ya Y',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE d MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'd MMM y',
     'short' => 'd/M/y',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -176,8 +177,8 @@ return array (
   'amName' => 'ntɔ́ngɔ́',
   'pmName' => 'mpókwa',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'af' => 'afrikansi',
     'ak' => 'akan',
     'am' => 'liamariki',
@@ -243,8 +244,8 @@ return array (
     'zh' => 'lisinwa',
     'zu' => 'zulu',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'Mabelé',
     '002' => 'Afríka',
     '003' => 'Ameríka ya Nola',
@@ -508,8 +509,8 @@ return array (
     'zm' => 'Zambi',
     'zw' => 'Zimbabwe',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => '(n>=0&&n<=1&&fmod(n,1)==0)',
     1 => 'true',
   ),

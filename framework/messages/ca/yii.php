@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -16,7 +17,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   'Action class {class} must implement the "run" method.' => 'La clase d\'acció {class} ha d\'implementar el mètode "run".',
   'Adding a foreign key constraint to an existing table is not supported by SQLite.' => 'Afegir una restricció de clau forània no és suportat per SQLite.',
   'Adding a primary key after table has been created is not supported by SQLite.' => 'Afegir una clau primària després de que la taula hagi set creada no és suportat per SQLite.',

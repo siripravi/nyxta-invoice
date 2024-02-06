@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CFormStringElement class file.
  *
@@ -44,7 +45,7 @@ class CFormStringElement extends CFormElement
 	 */
 	public function setOn($value)
 	{
-		$this->_on=preg_split('/[\s,]+/',$value,-1,PREG_SPLIT_NO_EMPTY);
+		$this->_on = preg_split('/[\s,]+/', $value, -1, PREG_SPLIT_NO_EMPTY);
 	}
 
 	/**
@@ -65,6 +66,6 @@ class CFormStringElement extends CFormElement
 	 */
 	protected function evaluateVisible()
 	{
-		return empty($this->_on) || in_array($this->getParent()->getModel()->getScenario(),$this->_on);
+		return empty($this->_on) || in_array($this->getParent()->getModel()->getScenario(), $this->_on);
 	}
 }

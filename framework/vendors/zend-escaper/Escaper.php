@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Zend Framework (http://framework.zend.com/)
  *
@@ -107,7 +108,7 @@ class Escaper
             if (!in_array($encoding, $this->supportedEncodings)) {
                 throw new Exception(
                     'Value of \'' . $encoding . '\' passed to ' . get_class($this)
-                    . ' constructor parameter is invalid. Provide an encoding supported by htmlspecialchars()'
+                        . ' constructor parameter is invalid. Provide an encoding supported by htmlspecialchars()'
                 );
             }
 
@@ -115,7 +116,7 @@ class Escaper
         }
 
         if (defined('ENT_SUBSTITUTE')) {
-            $this->htmlSpecialCharsFlags|= ENT_SUBSTITUTE;
+            $this->htmlSpecialCharsFlags |= ENT_SUBSTITUTE;
         }
 
         // set matcher callbacks
@@ -381,8 +382,8 @@ class Escaper
         } else {
             throw new Exception(
                 get_class($this)
-                . ' requires either the iconv or mbstring extension to be installed'
-                . ' when escaping for non UTF-8 strings.'
+                    . ' requires either the iconv or mbstring extension to be installed'
+                    . ' when escaping for non UTF-8 strings.'
             );
         }
 

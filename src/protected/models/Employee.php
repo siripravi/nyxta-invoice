@@ -139,9 +139,11 @@ class Employee extends CActiveRecord
 		$criteria->compare('date_created', $this->date_created, true);
 		$criteria->compare('notes', $this->notes, true);
 
-		return new CActiveDataProvider($this, array(
-			'criteria' => $criteria,
-		)
+		return new CActiveDataProvider(
+			$this,
+			array(
+				'criteria' => $criteria,
+			)
 		);
 	}
 

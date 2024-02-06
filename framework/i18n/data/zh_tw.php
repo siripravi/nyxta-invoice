@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'zh_TW'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2013 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '4123',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -30,8 +31,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AFN' => 'Af',
     'ANG' => 'NAf.',
     'AOA' => 'Kz',
@@ -195,10 +196,10 @@ return array (
     'ZRZ' => 'ZRZ',
     'ZWD' => 'Z$',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => '1月',
       2 => '2月',
       3 => '3月',
@@ -212,8 +213,8 @@ return array (
       11 => '11月',
       12 => '12月',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => '1月',
       2 => '2月',
       3 => '3月',
@@ -228,10 +229,10 @@ return array (
       12 => '12月',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => '1月',
       2 => '2月',
       3 => '3月',
@@ -245,8 +246,8 @@ return array (
       11 => '11月',
       12 => '12月',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => '一月',
       2 => '二月',
       3 => '三月',
@@ -260,8 +261,8 @@ return array (
       11 => '十一月',
       12 => '十二月',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       1 => '一月',
       2 => '二月',
       3 => '三月',
@@ -276,10 +277,10 @@ return array (
       12 => '十二月',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => '星期日',
       1 => '星期一',
       2 => '星期二',
@@ -288,8 +289,8 @@ return array (
       5 => '星期五',
       6 => '星期六',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => '周日',
       1 => '周一',
       2 => '周二',
@@ -299,10 +300,10 @@ return array (
       6 => '周六',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => '日',
       1 => '一',
       2 => '二',
@@ -312,33 +313,33 @@ return array (
       6 => '六',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => '公元前',
       1 => '公元',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => '公元前',
       1 => '公元',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => '公元前',
       1 => '公元',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'y年M月d日EEEE',
     'long' => 'y年M月d日',
     'medium' => 'yyyy-M-d',
     'short' => 'yy-M-d',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'zzzzah时mm分ss秒',
     'long' => 'zah时mm分ss秒',
     'medium' => 'ah:mm:ss',

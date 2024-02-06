@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CHttpRequest and CCookieCollection class file.
  *
@@ -72,7 +73,7 @@ class CHttpRequest extends CApplicationComponent
 	/**
 	 * @var boolean whether cookies should be validated to ensure they are not tampered. Defaults to false.
 	 */
-	public $enableCookieValidation=false;
+	public $enableCookieValidation = false;
 	/**
 	 * @var boolean whether to enable CSRF (Cross-Site Request Forgery) validation. Defaults to false.
 	 * By setting this property to true, forms submitted to an Yii Web application must be originated
@@ -82,12 +83,12 @@ class CHttpRequest extends CApplicationComponent
 	 * the needed HTML forms in your pages.
 	 * @see https://seclab.stanford.edu/websec/csrf/csrf.pdf
 	 */
-	public $enableCsrfValidation=false;
+	public $enableCsrfValidation = false;
 	/**
 	 * @var string the name of the token used to prevent CSRF. Defaults to 'YII_CSRF_TOKEN'.
 	 * This property is effectively only when {@link enableCsrfValidation} is true.
 	 */
-	public $csrfTokenName='YII_CSRF_TOKEN';
+	public $csrfTokenName = 'YII_CSRF_TOKEN';
 	/**
 	 * @var array the property values (in name-value pairs) used to initialize the CSRF cookie.
 	 * Any property of {@link CHttpCookie} may be initialized.
@@ -127,23 +128,21 @@ class CHttpRequest extends CApplicationComponent
 	protected function normalizeRequest()
 	{
 		// normalize request
-		if(version_compare(PHP_VERSION,'7.4.0','<'))
-		{
-			if(function_exists('get_magic_quotes_gpc') && get_magic_quotes_gpc())
-			{
-				if(isset($_GET))
-					$_GET=$this->stripSlashes($_GET);
-				if(isset($_POST))
-					$_POST=$this->stripSlashes($_POST);
-				if(isset($_REQUEST))
-					$_REQUEST=$this->stripSlashes($_REQUEST);
-				if(isset($_COOKIE))
-					$_COOKIE=$this->stripSlashes($_COOKIE);
+		if (version_compare(PHP_VERSION, '7.4.0', '<')) {
+			if (function_exists('get_magic_quotes_gpc') && get_magic_quotes_gpc()) {
+				if (isset($_GET))
+					$_GET = $this->stripSlashes($_GET);
+				if (isset($_POST))
+					$_POST = $this->stripSlashes($_POST);
+				if (isset($_REQUEST))
+					$_REQUEST = $this->stripSlashes($_REQUEST);
+				if (isset($_COOKIE))
+					$_COOKIE = $this->stripSlashes($_COOKIE);
 			}
 		}
 
-		if($this->enableCsrfValidation)
-			Yii::app()->attachEventHandler('onBeginRequest',array($this,'validateCsrfToken'));
+		if ($this->enableCsrfValidation)
+			Yii::app()->attachEventHandler('onBeginRequest', array($this, 'validateCsrfToken'));
 	}
 
 
@@ -155,15 +154,13 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	public function stripSlashes(&$data)
 	{
-		if(is_array($data))
-		{
-			if(count($data) == 0)
+		if (is_array($data)) {
+			if (count($data) == 0)
 				return $data;
-			$keys=array_map('stripslashes',array_keys($data));
-			$data=array_combine($keys,array_values($data));
-			return array_map(array($this,'stripSlashes'),$data);
-		}
-		else
+			$keys = array_map('stripslashes', array_keys($data));
+			$data = array_combine($keys, array_values($data));
+			return array_map(array($this, 'stripSlashes'), $data);
+		} else
 			return stripslashes($data);
 	}
 
@@ -177,7 +174,7 @@ class CHttpRequest extends CApplicationComponent
 	 * @see getQuery
 	 * @see getPost
 	 */
-	public function getParam($name,$defaultValue=null)
+	public function getParam($name, $defaultValue = null)
 	{
 		return isset($_GET[$name]) ? $_GET[$name] : (isset($_POST[$name]) ? $_POST[$name] : $defaultValue);
 	}
@@ -191,7 +188,7 @@ class CHttpRequest extends CApplicationComponent
 	 * @see getPost
 	 * @see getParam
 	 */
-	public function getQuery($name,$defaultValue=null)
+	public function getQuery($name, $defaultValue = null)
 	{
 		return isset($_GET[$name]) ? $_GET[$name] : $defaultValue;
 	}
@@ -205,7 +202,7 @@ class CHttpRequest extends CApplicationComponent
 	 * @see getParam
 	 * @see getQuery
 	 */
-	public function getPost($name,$defaultValue=null)
+	public function getPost($name, $defaultValue = null)
 	{
 		return isset($_POST[$name]) ? $_POST[$name] : $defaultValue;
 	}
@@ -221,17 +218,15 @@ class CHttpRequest extends CApplicationComponent
 	 * @return mixed the DELETE parameter value
 	 * @since 1.1.7
 	 */
-	public function getDelete($name,$defaultValue=null)
+	public function getDelete($name, $defaultValue = null)
 	{
-		if($this->getIsDeleteViaPostRequest())
+		if ($this->getIsDeleteViaPostRequest())
 			return $this->getPost($name, $defaultValue);
 
-		if($this->getIsDeleteRequest())
-		{
-			$restParams=$this->getRestParams();
+		if ($this->getIsDeleteRequest()) {
+			$restParams = $this->getRestParams();
 			return isset($restParams[$name]) ? $restParams[$name] : $defaultValue;
-		}
-		else
+		} else
 			return $defaultValue;
 	}
 
@@ -246,17 +241,15 @@ class CHttpRequest extends CApplicationComponent
 	 * @return mixed the PUT parameter value
 	 * @since 1.1.7
 	 */
-	public function getPut($name,$defaultValue=null)
+	public function getPut($name, $defaultValue = null)
 	{
-		if($this->getIsPutViaPostRequest())
+		if ($this->getIsPutViaPostRequest())
 			return $this->getPost($name, $defaultValue);
 
-		if($this->getIsPutRequest())
-		{
-			$restParams=$this->getRestParams();
+		if ($this->getIsPutRequest()) {
+			$restParams = $this->getRestParams();
 			return isset($restParams[$name]) ? $restParams[$name] : $defaultValue;
-		}
-		else
+		} else
 			return $defaultValue;
 	}
 
@@ -271,17 +264,15 @@ class CHttpRequest extends CApplicationComponent
 	 * @return mixed the PATCH parameter value
 	 * @since 1.1.16
 	 */
-	public function getPatch($name,$defaultValue=null)
+	public function getPatch($name, $defaultValue = null)
 	{
-		if($this->getIsPatchViaPostRequest())
+		if ($this->getIsPatchViaPostRequest())
 			return $this->getPost($name, $defaultValue);
 
-		if($this->getIsPatchRequest())
-		{
-			$restParams=$this->getRestParams();
+		if ($this->getIsPatchRequest()) {
+			$restParams = $this->getRestParams();
 			return isset($restParams[$name]) ? $restParams[$name] : $defaultValue;
-		}
-		else
+		} else
 			return $defaultValue;
 	}
 
@@ -293,16 +284,15 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	public function getRestParams()
 	{
-		if($this->_restParams===null)
-		{
-			$result=array();
+		if ($this->_restParams === null) {
+			$result = array();
 			if (strncmp((string)$this->getContentType(), 'application/json', 16) === 0)
 				$result = CJSON::decode($this->getRawBody(), $this->jsonAsArray);
-			elseif(function_exists('mb_parse_str'))
+			elseif (function_exists('mb_parse_str'))
 				mb_parse_str($this->getRawBody(), $result);
 			else
 				parse_str($this->getRawBody(), $result);
-			$this->_restParams=$result;
+			$this->_restParams = $result;
 		}
 
 		return $this->_restParams;
@@ -316,8 +306,8 @@ class CHttpRequest extends CApplicationComponent
 	public function getRawBody()
 	{
 		static $rawBody;
-		if($rawBody===null)
-			$rawBody=file_get_contents('php://input');
+		if ($rawBody === null)
+			$rawBody = file_get_contents('php://input');
 		return $rawBody;
 	}
 
@@ -340,40 +330,36 @@ class CHttpRequest extends CApplicationComponent
 	 * @return string schema and hostname part (with port number if needed) of the request URL (e.g. https://www.yiiframework.com)
 	 * @see setHostInfo
 	 */
-	public function getHostInfo($schema='')
+	public function getHostInfo($schema = '')
 	{
-		if($this->_hostInfo===null)
-		{
-			if($secure=$this->getIsSecureConnection())
-				$http='https';
+		if ($this->_hostInfo === null) {
+			if ($secure = $this->getIsSecureConnection())
+				$http = 'https';
 			else
-				$http='http';
-			if(isset($_SERVER['HTTP_HOST']))
-				$this->_hostInfo=$http.'://'.$_SERVER['HTTP_HOST'];
-			else
-			{
-				$this->_hostInfo=$http.'://'.$_SERVER['SERVER_NAME'];
-				$port=$secure ? $this->getSecurePort() : $this->getPort();
-				if(($port!==80 && !$secure) || ($port!==443 && $secure))
-					$this->_hostInfo.=':'.$port;
+				$http = 'http';
+			if (isset($_SERVER['HTTP_HOST']))
+				$this->_hostInfo = $http . '://' . $_SERVER['HTTP_HOST'];
+			else {
+				$this->_hostInfo = $http . '://' . $_SERVER['SERVER_NAME'];
+				$port = $secure ? $this->getSecurePort() : $this->getPort();
+				if (($port !== 80 && !$secure) || ($port !== 443 && $secure))
+					$this->_hostInfo .= ':' . $port;
 			}
 		}
-		if($schema!=='')
-		{
-			$secure=$this->getIsSecureConnection();
-			if($secure && $schema==='https' || !$secure && $schema==='http')
+		if ($schema !== '') {
+			$secure = $this->getIsSecureConnection();
+			if ($secure && $schema === 'https' || !$secure && $schema === 'http')
 				return $this->_hostInfo;
 
-			$port=$schema==='https' ? $this->getSecurePort() : $this->getPort();
-			if($port!==80 && $schema==='http' || $port!==443 && $schema==='https')
-				$port=':'.$port;
+			$port = $schema === 'https' ? $this->getSecurePort() : $this->getPort();
+			if ($port !== 80 && $schema === 'http' || $port !== 443 && $schema === 'https')
+				$port = ':' . $port;
 			else
-				$port='';
+				$port = '';
 
-			$pos=strpos($this->_hostInfo,':');
-			return $schema.substr($this->_hostInfo,$pos,strcspn($this->_hostInfo,':',$pos+1)+1).$port;
-		}
-		else
+			$pos = strpos($this->_hostInfo, ':');
+			return $schema . substr($this->_hostInfo, $pos, strcspn($this->_hostInfo, ':', $pos + 1) + 1) . $port;
+		} else
 			return $this->_hostInfo;
 	}
 
@@ -385,7 +371,7 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	public function setHostInfo($value)
 	{
-		$this->_hostInfo=rtrim($value,'/');
+		$this->_hostInfo = rtrim($value, '/');
 	}
 
 	/**
@@ -396,10 +382,10 @@ class CHttpRequest extends CApplicationComponent
 	 * @return string the relative URL for the application
 	 * @see setScriptUrl
 	 */
-	public function getBaseUrl($absolute=false)
+	public function getBaseUrl($absolute = false)
 	{
-		if($this->_baseUrl===null)
-			$this->_baseUrl=rtrim(dirname($this->getScriptUrl()),'\\/');
+		if ($this->_baseUrl === null)
+			$this->_baseUrl = rtrim(dirname($this->getScriptUrl()), '\\/');
 		return $absolute ? $this->getHostInfo() . $this->_baseUrl : $this->_baseUrl;
 	}
 
@@ -411,7 +397,7 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	public function setBaseUrl($value)
 	{
-		$this->_baseUrl=$value;
+		$this->_baseUrl = $value;
 	}
 
 	/**
@@ -422,21 +408,20 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	public function getScriptUrl()
 	{
-		if($this->_scriptUrl===null)
-		{
-			$scriptName=basename($_SERVER['SCRIPT_FILENAME']);
-			if(basename($_SERVER['SCRIPT_NAME'])===$scriptName)
-				$this->_scriptUrl=$_SERVER['SCRIPT_NAME'];
-			elseif(basename($_SERVER['PHP_SELF'])===$scriptName)
-				$this->_scriptUrl=$_SERVER['PHP_SELF'];
-			elseif(isset($_SERVER['ORIG_SCRIPT_NAME']) && basename($_SERVER['ORIG_SCRIPT_NAME'])===$scriptName)
-				$this->_scriptUrl=$_SERVER['ORIG_SCRIPT_NAME'];
-			elseif(($pos=strpos($_SERVER['PHP_SELF'],'/'.$scriptName))!==false)
-				$this->_scriptUrl=substr($_SERVER['SCRIPT_NAME'],0,$pos).'/'.$scriptName;
-			elseif(isset($_SERVER['DOCUMENT_ROOT']) && strpos($_SERVER['SCRIPT_FILENAME'],$_SERVER['DOCUMENT_ROOT'])===0)
-				$this->_scriptUrl=str_replace('\\','/',str_replace($_SERVER['DOCUMENT_ROOT'],'',$_SERVER['SCRIPT_FILENAME']));
+		if ($this->_scriptUrl === null) {
+			$scriptName = basename($_SERVER['SCRIPT_FILENAME']);
+			if (basename($_SERVER['SCRIPT_NAME']) === $scriptName)
+				$this->_scriptUrl = $_SERVER['SCRIPT_NAME'];
+			elseif (basename($_SERVER['PHP_SELF']) === $scriptName)
+				$this->_scriptUrl = $_SERVER['PHP_SELF'];
+			elseif (isset($_SERVER['ORIG_SCRIPT_NAME']) && basename($_SERVER['ORIG_SCRIPT_NAME']) === $scriptName)
+				$this->_scriptUrl = $_SERVER['ORIG_SCRIPT_NAME'];
+			elseif (($pos = strpos($_SERVER['PHP_SELF'], '/' . $scriptName)) !== false)
+				$this->_scriptUrl = substr($_SERVER['SCRIPT_NAME'], 0, $pos) . '/' . $scriptName;
+			elseif (isset($_SERVER['DOCUMENT_ROOT']) && strpos($_SERVER['SCRIPT_FILENAME'], $_SERVER['DOCUMENT_ROOT']) === 0)
+				$this->_scriptUrl = str_replace('\\', '/', str_replace($_SERVER['DOCUMENT_ROOT'], '', $_SERVER['SCRIPT_FILENAME']));
 			else
-				throw new CException(Yii::t('yii','CHttpRequest is unable to determine the entry script URL.'));
+				throw new CException(Yii::t('yii', 'CHttpRequest is unable to determine the entry script URL.'));
 		}
 		return $this->_scriptUrl;
 	}
@@ -449,7 +434,7 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	public function setScriptUrl($value)
 	{
-		$this->_scriptUrl='/'.trim($value,'/');
+		$this->_scriptUrl = '/' . trim($value, '/');
 	}
 
 	/**
@@ -464,35 +449,34 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	public function getPathInfo()
 	{
-		if($this->_pathInfo===null)
-		{
-			$pathInfo=$this->getRequestUri();
+		if ($this->_pathInfo === null) {
+			$pathInfo = $this->getRequestUri();
 
-			if(($pos=strpos($pathInfo,'?'))!==false)
-			   $pathInfo=substr($pathInfo,0,$pos);
+			if (($pos = strpos($pathInfo, '?')) !== false)
+				$pathInfo = substr($pathInfo, 0, $pos);
 
-			$pathInfo=$this->decodePathInfo($pathInfo);
+			$pathInfo = $this->decodePathInfo($pathInfo);
 
-			$scriptUrl=$this->getScriptUrl();
-			$baseUrl=$this->getBaseUrl();
-			if(strpos($pathInfo,$scriptUrl)===0)
-				$pathInfo=substr($pathInfo,strlen($scriptUrl));
-			elseif($baseUrl==='' || strpos($pathInfo,$baseUrl)===0)
-				$pathInfo=substr($pathInfo,strlen($baseUrl));
-			elseif(strpos($_SERVER['PHP_SELF'],$scriptUrl)===0)
-				$pathInfo=substr($_SERVER['PHP_SELF'],strlen($scriptUrl));
+			$scriptUrl = $this->getScriptUrl();
+			$baseUrl = $this->getBaseUrl();
+			if (strpos($pathInfo, $scriptUrl) === 0)
+				$pathInfo = substr($pathInfo, strlen($scriptUrl));
+			elseif ($baseUrl === '' || strpos($pathInfo, $baseUrl) === 0)
+				$pathInfo = substr($pathInfo, strlen($baseUrl));
+			elseif (strpos($_SERVER['PHP_SELF'], $scriptUrl) === 0)
+				$pathInfo = substr($_SERVER['PHP_SELF'], strlen($scriptUrl));
 			else
-				throw new CException(Yii::t('yii','CHttpRequest is unable to determine the path info of the request.'));
+				throw new CException(Yii::t('yii', 'CHttpRequest is unable to determine the path info of the request.'));
 
-			if($pathInfo==='/' || $pathInfo===false)
-				$pathInfo='';
-			elseif($pathInfo!=='' && $pathInfo[0]==='/')
-				$pathInfo=substr($pathInfo,1);
+			if ($pathInfo === '/' || $pathInfo === false)
+				$pathInfo = '';
+			elseif ($pathInfo !== '' && $pathInfo[0] === '/')
+				$pathInfo = substr($pathInfo, 1);
 
-			if(($posEnd=strlen($pathInfo)-1)>0 && $pathInfo[$posEnd]==='/')
-				$pathInfo=substr($pathInfo,0,$posEnd);
+			if (($posEnd = strlen($pathInfo) - 1) > 0 && $pathInfo[$posEnd] === '/')
+				$pathInfo = substr($pathInfo, 0, $posEnd);
 
-			$this->_pathInfo=$pathInfo;
+			$this->_pathInfo = $pathInfo;
 		}
 		return $this->_pathInfo;
 	}
@@ -511,7 +495,7 @@ class CHttpRequest extends CApplicationComponent
 
 		// is it UTF-8?
 		// https://w3.org/International/questions/qa-forms-utf-8.html
-		if(preg_match('%^(?:
+		if (preg_match('%^(?:
 		   [\x09\x0A\x0D\x20-\x7E]            # ASCII
 		 | [\xC2-\xDF][\x80-\xBF]             # non-overlong 2-byte
 		 | \xE0[\xA0-\xBF][\x80-\xBF]         # excluding overlongs
@@ -520,12 +504,9 @@ class CHttpRequest extends CApplicationComponent
 		 | \xF0[\x90-\xBF][\x80-\xBF]{2}      # planes 1-3
 		 | [\xF1-\xF3][\x80-\xBF]{3}          # planes 4-15
 		 | \xF4[\x80-\x8F][\x80-\xBF]{2}      # plane 16
-		)*$%xs', $pathInfo))
-		{
+		)*$%xs', $pathInfo)) {
 			return $pathInfo;
-		}
-		else
-		{
+		} else {
 			return $this->utf8Encode($pathInfo);
 		}
 	}
@@ -539,13 +520,21 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	private function utf8Encode($s)
 	{
-		$s.=$s;
-		$len=strlen($s);
-		for ($i=$len>>1,$j=0; $i<$len; ++$i,++$j) {
+		$s .= $s;
+		$len = strlen($s);
+		for ($i = $len >> 1, $j = 0; $i < $len; ++$i, ++$j) {
 			switch (true) {
-				case $s[$i] < "\x80": $s[$j] = $s[$i]; break;
-				case $s[$i] < "\xC0": $s[$j] = "\xC2"; $s[++$j] = $s[$i]; break;
-				default: $s[$j] = "\xC3"; $s[++$j] = chr(ord($s[$i]) - 64); break;
+				case $s[$i] < "\x80":
+					$s[$j] = $s[$i];
+					break;
+				case $s[$i] < "\xC0":
+					$s[$j] = "\xC2";
+					$s[++$j] = $s[$i];
+					break;
+				default:
+					$s[$j] = "\xC3";
+					$s[++$j] = chr(ord($s[$i]) - 64);
+					break;
 			}
 		}
 		return substr($s, 0, $j);
@@ -561,27 +550,21 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	public function getRequestUri()
 	{
-		if($this->_requestUri===null)
-		{
-			if(isset($_SERVER['REQUEST_URI']))
+		if ($this->_requestUri === null) {
+			if (isset($_SERVER['REQUEST_URI'])) {
+				$this->_requestUri = $_SERVER['REQUEST_URI'];
+				if (!empty($_SERVER['HTTP_HOST'])) {
+					if (strpos($this->_requestUri, $_SERVER['HTTP_HOST']) !== false)
+						$this->_requestUri = preg_replace('/^\w+:\/\/[^\/]+/', '', $this->_requestUri);
+				} else
+					$this->_requestUri = preg_replace('/^(http|https):\/\/[^\/]+/i', '', $this->_requestUri);
+			} elseif (isset($_SERVER['ORIG_PATH_INFO']))  // IIS 5.0 CGI
 			{
-				$this->_requestUri=$_SERVER['REQUEST_URI'];
-				if(!empty($_SERVER['HTTP_HOST']))
-				{
-					if(strpos($this->_requestUri,$_SERVER['HTTP_HOST'])!==false)
-						$this->_requestUri=preg_replace('/^\w+:\/\/[^\/]+/','',$this->_requestUri);
-				}
-				else
-					$this->_requestUri=preg_replace('/^(http|https):\/\/[^\/]+/i','',$this->_requestUri);
-			}
-			elseif(isset($_SERVER['ORIG_PATH_INFO']))  // IIS 5.0 CGI
-			{
-				$this->_requestUri=$_SERVER['ORIG_PATH_INFO'];
-				if(!empty($_SERVER['QUERY_STRING']))
-					$this->_requestUri.='?'.$_SERVER['QUERY_STRING'];
-			}
-			else
-				throw new CException(Yii::t('yii','CHttpRequest is unable to determine the request URI.'));
+				$this->_requestUri = $_SERVER['ORIG_PATH_INFO'];
+				if (!empty($_SERVER['QUERY_STRING']))
+					$this->_requestUri .= '?' . $_SERVER['QUERY_STRING'];
+			} else
+				throw new CException(Yii::t('yii', 'CHttpRequest is unable to determine the request URI.'));
 		}
 
 		return $this->_requestUri;
@@ -593,7 +576,7 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	public function getQueryString()
 	{
-		return isset($_SERVER['QUERY_STRING'])?$_SERVER['QUERY_STRING']:'';
+		return isset($_SERVER['QUERY_STRING']) ? $_SERVER['QUERY_STRING'] : '';
 	}
 
 	/**
@@ -602,8 +585,8 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	public function getIsSecureConnection()
 	{
-		return isset($_SERVER['HTTPS']) && (strcasecmp($_SERVER['HTTPS'],'on')===0 || $_SERVER['HTTPS']==1)
-			|| isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && strcasecmp($_SERVER['HTTP_X_FORWARDED_PROTO'],'https')===0;
+		return isset($_SERVER['HTTPS']) && (strcasecmp($_SERVER['HTTPS'], 'on') === 0 || $_SERVER['HTTPS'] == 1)
+			|| isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && strcasecmp($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') === 0;
 	}
 
 	/**
@@ -615,12 +598,12 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	public function getRequestType()
 	{
-		if(isset($_POST['_method']))
+		if (isset($_POST['_method']))
 			return strtoupper($_POST['_method']);
-		elseif(isset($_SERVER['HTTP_X_HTTP_METHOD_OVERRIDE']))
+		elseif (isset($_SERVER['HTTP_X_HTTP_METHOD_OVERRIDE']))
 			return strtoupper($_SERVER['HTTP_X_HTTP_METHOD_OVERRIDE']);
 
-		return strtoupper(isset($_SERVER['REQUEST_METHOD'])?$_SERVER['REQUEST_METHOD']:'GET');
+		return strtoupper(isset($_SERVER['REQUEST_METHOD']) ? $_SERVER['REQUEST_METHOD'] : 'GET');
 	}
 
 	/**
@@ -629,7 +612,7 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	public function getIsPostRequest()
 	{
-		return isset($_SERVER['REQUEST_METHOD']) && !strcasecmp($_SERVER['REQUEST_METHOD'],'POST');
+		return isset($_SERVER['REQUEST_METHOD']) && !strcasecmp($_SERVER['REQUEST_METHOD'], 'POST');
 	}
 
 	/**
@@ -639,7 +622,7 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	public function getIsDeleteRequest()
 	{
-		return (isset($_SERVER['REQUEST_METHOD']) && !strcasecmp($_SERVER['REQUEST_METHOD'],'DELETE')) || $this->getIsDeleteViaPostRequest();
+		return (isset($_SERVER['REQUEST_METHOD']) && !strcasecmp($_SERVER['REQUEST_METHOD'], 'DELETE')) || $this->getIsDeleteViaPostRequest();
 	}
 
 	/**
@@ -649,7 +632,7 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	protected function getIsDeleteViaPostRequest()
 	{
-		return isset($_POST['_method']) && !strcasecmp($_POST['_method'],'DELETE');
+		return isset($_POST['_method']) && !strcasecmp($_POST['_method'], 'DELETE');
 	}
 
 	/**
@@ -659,7 +642,7 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	public function getIsPutRequest()
 	{
-		return (isset($_SERVER['REQUEST_METHOD']) && !strcasecmp($_SERVER['REQUEST_METHOD'],'PUT')) || $this->getIsPutViaPostRequest();
+		return (isset($_SERVER['REQUEST_METHOD']) && !strcasecmp($_SERVER['REQUEST_METHOD'], 'PUT')) || $this->getIsPutViaPostRequest();
 	}
 
 	/**
@@ -669,7 +652,7 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	protected function getIsPutViaPostRequest()
 	{
-		return isset($_POST['_method']) && !strcasecmp($_POST['_method'],'PUT');
+		return isset($_POST['_method']) && !strcasecmp($_POST['_method'], 'PUT');
 	}
 
 	/**
@@ -679,7 +662,7 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	public function getIsPatchRequest()
 	{
-		return (isset($_SERVER['REQUEST_METHOD']) && !strcasecmp($_SERVER['REQUEST_METHOD'],'PATCH')) || $this->getIsPatchViaPostRequest();
+		return (isset($_SERVER['REQUEST_METHOD']) && !strcasecmp($_SERVER['REQUEST_METHOD'], 'PATCH')) || $this->getIsPatchViaPostRequest();
 	}
 
 	/**
@@ -689,7 +672,7 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	protected function getIsPatchViaPostRequest()
 	{
-		return isset($_POST['_method']) && !strcasecmp($_POST['_method'],'PATCH');
+		return isset($_POST['_method']) && !strcasecmp($_POST['_method'], 'PATCH');
 	}
 
 	/**
@@ -698,7 +681,7 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	public function getIsAjaxRequest()
 	{
-		return isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH']==='XMLHttpRequest';
+		return isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] === 'XMLHttpRequest';
 	}
 
 	/**
@@ -708,7 +691,7 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	public function getIsFlashRequest()
 	{
-		return isset($_SERVER['HTTP_USER_AGENT']) && (stripos($_SERVER['HTTP_USER_AGENT'],'Shockwave')!==false || stripos($_SERVER['HTTP_USER_AGENT'],'Flash')!==false);
+		return isset($_SERVER['HTTP_USER_AGENT']) && (stripos($_SERVER['HTTP_USER_AGENT'], 'Shockwave') !== false || stripos($_SERVER['HTTP_USER_AGENT'], 'Flash') !== false);
 	}
 
 	/**
@@ -735,7 +718,7 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	public function getUrlReferrer()
 	{
-		return isset($_SERVER['HTTP_REFERER'])?$_SERVER['HTTP_REFERER']:null;
+		return isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : null;
 	}
 
 	/**
@@ -744,7 +727,7 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	public function getUserAgent()
 	{
-		return isset($_SERVER['HTTP_USER_AGENT'])?$_SERVER['HTTP_USER_AGENT']:null;
+		return isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : null;
 	}
 
 	/**
@@ -753,7 +736,7 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	public function getUserHostAddress()
 	{
-		return isset($_SERVER['REMOTE_ADDR'])?$_SERVER['REMOTE_ADDR']:'127.0.0.1';
+		return isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '127.0.0.1';
 	}
 
 	/**
@@ -762,7 +745,7 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	public function getUserHost()
 	{
-		return isset($_SERVER['REMOTE_HOST'])?$_SERVER['REMOTE_HOST']:null;
+		return isset($_SERVER['REMOTE_HOST']) ? $_SERVER['REMOTE_HOST'] : null;
 	}
 
 	/**
@@ -771,10 +754,10 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	public function getScriptFile()
 	{
-		if($this->_scriptFile!==null)
+		if ($this->_scriptFile !== null)
 			return $this->_scriptFile;
 		else
-			return $this->_scriptFile=realpath($_SERVER['SCRIPT_FILENAME']);
+			return $this->_scriptFile = realpath($_SERVER['SCRIPT_FILENAME']);
 	}
 
 	/**
@@ -784,9 +767,9 @@ class CHttpRequest extends CApplicationComponent
 	 * @return array user browser capabilities.
 	 * @see https://www.php.net/manual/en/function.get-browser.php
 	 */
-	public function getBrowser($userAgent=null)
+	public function getBrowser($userAgent = null)
 	{
-		return get_browser($userAgent,true);
+		return get_browser($userAgent, true);
 	}
 
 	/**
@@ -795,9 +778,9 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	public function getAcceptTypes()
 	{
-		return isset($_SERVER['HTTP_ACCEPT'])?$_SERVER['HTTP_ACCEPT']:null;
+		return isset($_SERVER['HTTP_ACCEPT']) ? $_SERVER['HTTP_ACCEPT'] : null;
 	}
-	
+
 	/**
 	 * Returns request content-type
 	 * The Content-Type header field indicates the MIME type of the data
@@ -832,8 +815,8 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	public function getPort()
 	{
-		if($this->_port===null)
-			$this->_port=!$this->getIsSecureConnection() && isset($_SERVER['SERVER_PORT']) ? (int)$_SERVER['SERVER_PORT'] : 80;
+		if ($this->_port === null)
+			$this->_port = !$this->getIsSecureConnection() && isset($_SERVER['SERVER_PORT']) ? (int)$_SERVER['SERVER_PORT'] : 80;
 		return $this->_port;
 	}
 
@@ -846,8 +829,8 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	public function setPort($value)
 	{
-		$this->_port=(int)$value;
-		$this->_hostInfo=null;
+		$this->_port = (int)$value;
+		$this->_hostInfo = null;
 	}
 
 	private $_securePort;
@@ -863,8 +846,8 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	public function getSecurePort()
 	{
-		if($this->_securePort===null)
-			$this->_securePort=$this->getIsSecureConnection() && isset($_SERVER['SERVER_PORT']) ? (int)$_SERVER['SERVER_PORT'] : 443;
+		if ($this->_securePort === null)
+			$this->_securePort = $this->getIsSecureConnection() && isset($_SERVER['SERVER_PORT']) ? (int)$_SERVER['SERVER_PORT'] : 443;
 		return $this->_securePort;
 	}
 
@@ -877,8 +860,8 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	public function setSecurePort($value)
 	{
-		$this->_securePort=(int)$value;
-		$this->_hostInfo=null;
+		$this->_securePort = (int)$value;
+		$this->_hostInfo = null;
 	}
 
 	/**
@@ -890,10 +873,10 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	public function getCookies()
 	{
-		if($this->_cookies!==null)
+		if ($this->_cookies !== null)
 			return $this->_cookies;
 		else
-			return $this->_cookies=new CCookieCollection($this);
+			return $this->_cookies = new CCookieCollection($this);
 	}
 
 	/**
@@ -904,12 +887,12 @@ class CHttpRequest extends CApplicationComponent
 	 * @param integer $statusCode the HTTP status code. Defaults to 302. See {@link https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html}
 	 * for details about HTTP status code.
 	 */
-	public function redirect($url,$terminate=true,$statusCode=302)
+	public function redirect($url, $terminate = true, $statusCode = 302)
 	{
-		if(strpos($url,'/')===0 && strpos($url,'//')!==0)
-			$url=$this->getHostInfo().$url;
-		header('Location: '.$url, true, $statusCode);
-		if($terminate)
+		if (strpos($url, '/') === 0 && strpos($url, '//') !== 0)
+			$url = $this->getHostInfo() . $url;
+		header('Location: ' . $url, true, $statusCode);
+		if ($terminate)
 			Yii::app()->end();
 	}
 
@@ -940,54 +923,47 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	public static function parseAcceptHeader($header)
 	{
-		$matches=array();
-		$accepts=array();
+		$matches = array();
+		$accepts = array();
 		// get individual entries with their type, subtype, basetype and params
-		if($header!==null)
-			preg_match_all('/(?:\G\s?,\s?|^)(\w+|\*)\/(\w+|\*)(?:\+(\w+))?|(?<!^)\G(?:\s?;\s?(\w+)=([\w\.]+))/',$header,$matches);
+		if ($header !== null)
+			preg_match_all('/(?:\G\s?,\s?|^)(\w+|\*)\/(\w+|\*)(?:\+(\w+))?|(?<!^)\G(?:\s?;\s?(\w+)=([\w\.]+))/', $header, $matches);
 		// the regexp should (in theory) always return an array of 6 arrays
-		if(count($matches)===6)
-		{
-			$i=0;
-			$itemLen=count($matches[1]);
-			while($i<$itemLen)
-			{
+		if (count($matches) === 6) {
+			$i = 0;
+			$itemLen = count($matches[1]);
+			while ($i < $itemLen) {
 				// fill out a content type
-				$accept=array(
-					'type'=>$matches[1][$i],
-					'subType'=>$matches[2][$i],
-					'baseType'=>null,
-					'params'=>array(),
+				$accept = array(
+					'type' => $matches[1][$i],
+					'subType' => $matches[2][$i],
+					'baseType' => null,
+					'params' => array(),
 				);
 				// fill in the base type if it exists
-				if($matches[3][$i]!==null && $matches[3][$i]!=='')
-					$accept['baseType']=$matches[3][$i];
+				if ($matches[3][$i] !== null && $matches[3][$i] !== '')
+					$accept['baseType'] = $matches[3][$i];
 				// continue looping while there is no new content type, to fill in all accompanying params
-				for($i++;$i<$itemLen;$i++)
-				{
+				for ($i++; $i < $itemLen; $i++) {
 					// if the next content type is null, then the item is a param for the current content type
-					if($matches[1][$i]===null || $matches[1][$i]==='')
-					{
+					if ($matches[1][$i] === null || $matches[1][$i] === '') {
 						// if this is the quality param, convert it to a double
-						if($matches[4][$i]==='q')
-						{
+						if ($matches[4][$i] === 'q') {
 							// sanity check on q value
-							$q=(double)$matches[5][$i];
-							if($q>1)
-								$q=(double)1;
-							elseif($q<0)
-								$q=(double)0;
-							$accept['params'][$matches[4][$i]]=$q;
-						}
-						else
-							$accept['params'][$matches[4][$i]]=$matches[5][$i];
-					}
-					else
+							$q = (float)$matches[5][$i];
+							if ($q > 1)
+								$q = (float)1;
+							elseif ($q < 0)
+								$q = (float)0;
+							$accept['params'][$matches[4][$i]] = $q;
+						} else
+							$accept['params'][$matches[4][$i]] = $matches[5][$i];
+					} else
 						break;
 				}
 				// q defaults to 1 if not explicitly given
-				if(!isset($accept['params']['q']))
-					$accept['params']['q']=(double)1;
+				if (!isset($accept['params']['q']))
+					$accept['params']['q'] = (float)1;
 				$accepts[] = $accept;
 			}
 		}
@@ -1001,25 +977,25 @@ class CHttpRequest extends CApplicationComponent
 	 * @param array $b user accepted MIME type as an array map
 	 * @return integer -1, 0 or 1 if $a has respectively greater preference, equal preference or less preference than $b (higher preference comes first).
 	 */
-	public static function compareAcceptTypes($a,$b)
+	public static function compareAcceptTypes($a, $b)
 	{
 		// check for equal quality first
-		if($a['params']['q']===$b['params']['q'])
-			if(!($a['type']==='*' xor $b['type']==='*'))
-				if (!($a['subType']==='*' xor $b['subType']==='*'))
+		if ($a['params']['q'] === $b['params']['q'])
+			if (!($a['type'] === '*' xor $b['type'] === '*'))
+				if (!($a['subType'] === '*' xor $b['subType'] === '*'))
 					// finally, higher number of parameters counts as greater precedence
-					if(count($a['params'])===count($b['params']))
+					if (count($a['params']) === count($b['params']))
 						return 0;
 					else
-						return count($a['params'])<count($b['params']) ? 1 : -1;
+						return count($a['params']) < count($b['params']) ? 1 : -1;
 				// more specific takes precedence - whichever one doesn't have a * subType
 				else
-					return $a['subType']==='*' ? 1 : -1;
+					return $a['subType'] === '*' ? 1 : -1;
 			// more specific takes precedence - whichever one doesn't have a * type
 			else
-				return $a['type']==='*' ? 1 : -1;
+				return $a['type'] === '*' ? 1 : -1;
 		else
-			return ($a['params']['q']<$b['params']['q']) ? 1 : -1;
+			return ($a['params']['q'] < $b['params']['q']) ? 1 : -1;
 	}
 
 	/**
@@ -1030,11 +1006,10 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	public function getPreferredAcceptTypes()
 	{
-		if($this->_preferredAcceptTypes===null)
-		{
-			$accepts=self::parseAcceptHeader($this->getAcceptTypes());
-			usort($accepts,array(get_class($this),'compareAcceptTypes'));
-			$this->_preferredAcceptTypes=$accepts;
+		if ($this->_preferredAcceptTypes === null) {
+			$accepts = self::parseAcceptHeader($this->getAcceptTypes());
+			usort($accepts, array(get_class($this), 'compareAcceptTypes'));
+			$this->_preferredAcceptTypes = $accepts;
 		}
 		return $this->_preferredAcceptTypes;
 	}
@@ -1046,7 +1021,7 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	public function getPreferredAcceptType()
 	{
-		$preferredAcceptTypes=$this->getPreferredAcceptTypes();
+		$preferredAcceptTypes = $this->getPreferredAcceptTypes();
 		return empty($preferredAcceptTypes) ? false : $preferredAcceptTypes[0];
 	}
 
@@ -1073,27 +1048,24 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	public function getPreferredLanguages()
 	{
-		if($this->_preferredLanguages===null)
-		{
-			$sortedLanguages=array();
-			if(isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) && $n=preg_match_all('/([\w\-_]+)(?:\s*;\s*q\s*=\s*(\d*\.?\d*))?/',$_SERVER['HTTP_ACCEPT_LANGUAGE'],$matches))
-			{
-				$languages=array();
+		if ($this->_preferredLanguages === null) {
+			$sortedLanguages = array();
+			if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) && $n = preg_match_all('/([\w\-_]+)(?:\s*;\s*q\s*=\s*(\d*\.?\d*))?/', $_SERVER['HTTP_ACCEPT_LANGUAGE'], $matches)) {
+				$languages = array();
 
-				for($i=0;$i<$n;++$i)
-				{
-					$q=$matches[2][$i];
-					if($q==='')
-						$q=1;
-					if($q)
-						$languages[]=array((float)$q,$matches[1][$i]);
+				for ($i = 0; $i < $n; ++$i) {
+					$q = $matches[2][$i];
+					if ($q === '')
+						$q = 1;
+					if ($q)
+						$languages[] = array((float)$q, $matches[1][$i]);
 				}
 
 				usort($languages, array($this, 'stringCompare'));
-				foreach($languages as $language)
-					$sortedLanguages[]=$language[1];
+				foreach ($languages as $language)
+					$sortedLanguages[] = $language[1];
 			}
-			$this->_preferredLanguages=$sortedLanguages;
+			$this->_preferredLanguages = $sortedLanguages;
 		}
 		return $this->_preferredLanguages;
 	}
@@ -1107,18 +1079,18 @@ class CHttpRequest extends CApplicationComponent
 	 * @return string the language that the application should use. false is returned if both [[getPreferredLanguages()]]
 	 * and `$languages` are empty.
 	 */
-	public function getPreferredLanguage($languages=array())
+	public function getPreferredLanguage($languages = array())
 	{
-		$preferredLanguages=$this->getPreferredLanguages();
-		if(empty($languages)) {
+		$preferredLanguages = $this->getPreferredLanguages();
+		if (empty($languages)) {
 			return !empty($preferredLanguages) ? CLocale::getCanonicalID($preferredLanguages[0]) : false;
 		}
 		foreach ($preferredLanguages as $preferredLanguage) {
-			$preferredLanguage=CLocale::getCanonicalID($preferredLanguage);
+			$preferredLanguage = CLocale::getCanonicalID($preferredLanguage);
 			foreach ($languages as $language) {
-				$language=CLocale::getCanonicalID($language);
+				$language = CLocale::getCanonicalID($language);
 				// en_us==en_us, en==en_us, en_us==en
-				if($language===$preferredLanguage || strpos($preferredLanguage,$language.'_')===0 || strpos($language,$preferredLanguage.'_')===0) {
+				if ($language === $preferredLanguage || strpos($preferredLanguage, $language . '_') === 0 || strpos($language, $preferredLanguage . '_') === 0) {
 					return $language;
 				}
 			}
@@ -1134,88 +1106,80 @@ class CHttpRequest extends CApplicationComponent
 	 * @param boolean $terminate whether to terminate the current application after calling this method
 	 * @throws CHttpException
 	 */
-	public function sendFile($fileName,$content,$mimeType=null,$terminate=true)
+	public function sendFile($fileName, $content, $mimeType = null, $terminate = true)
 	{
-		if($mimeType===null)
-		{
-			if(($mimeType=CFileHelper::getMimeTypeByExtension($fileName))===null)
-				$mimeType='text/plain';
+		if ($mimeType === null) {
+			if (($mimeType = CFileHelper::getMimeTypeByExtension($fileName)) === null)
+				$mimeType = 'text/plain';
 		}
 
-		$fileSize=(function_exists('mb_strlen') ? mb_strlen($content,'8bit') : strlen($content));
-		$contentStart=0;
-		$contentEnd=$fileSize-1;
+		$fileSize = (function_exists('mb_strlen') ? mb_strlen($content, '8bit') : strlen($content));
+		$contentStart = 0;
+		$contentEnd = $fileSize - 1;
 
-		$httpVersion=$this->getHttpVersion();
-		if(isset($_SERVER['HTTP_RANGE']))
-		{
+		$httpVersion = $this->getHttpVersion();
+		if (isset($_SERVER['HTTP_RANGE'])) {
 			header('Accept-Ranges: bytes');
 
 			//client sent us a multibyte range, can not hold this one for now
-			if(strpos($_SERVER['HTTP_RANGE'],',')!==false)
-			{
+			if (strpos($_SERVER['HTTP_RANGE'], ',') !== false) {
 				header("Content-Range: bytes $contentStart-$contentEnd/$fileSize");
-				throw new CHttpException(416,'Requested Range Not Satisfiable');
+				throw new CHttpException(416, 'Requested Range Not Satisfiable');
 			}
 
-			$range=str_replace('bytes=','',$_SERVER['HTTP_RANGE']);
+			$range = str_replace('bytes=', '', $_SERVER['HTTP_RANGE']);
 
 			//range requests starts from "-", so it means that data must be dumped the end point.
-			if($range[0]==='-')
-				$contentStart=$fileSize-substr($range,1);
-			else
-			{
-				$range=explode('-',$range);
-				$contentStart=$range[0];
+			if ($range[0] === '-')
+				$contentStart = $fileSize - substr($range, 1);
+			else {
+				$range = explode('-', $range);
+				$contentStart = $range[0];
 
 				// check if the last-byte-pos presents in header
-				if((isset($range[1]) && is_numeric($range[1])))
-					$contentEnd=$range[1];
+				if ((isset($range[1]) && is_numeric($range[1])))
+					$contentEnd = $range[1];
 			}
 
 			/* Check the range and make sure it's treated according to the specs.
 			 * https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html
 			 */
 			// End bytes can not be larger than $end.
-			$contentEnd=($contentEnd > $fileSize) ? $fileSize-1 : $contentEnd;
+			$contentEnd = ($contentEnd > $fileSize) ? $fileSize - 1 : $contentEnd;
 
 			// Validate the requested range and return an error if it's not correct.
-			$wrongContentStart=($contentStart>$contentEnd || $contentStart>$fileSize-1 || $contentStart<0);
+			$wrongContentStart = ($contentStart > $contentEnd || $contentStart > $fileSize - 1 || $contentStart < 0);
 
-			if($wrongContentStart)
-			{
+			if ($wrongContentStart) {
 				header("Content-Range: bytes $contentStart-$contentEnd/$fileSize");
-				throw new CHttpException(416,'Requested Range Not Satisfiable');
+				throw new CHttpException(416, 'Requested Range Not Satisfiable');
 			}
 
 			header("HTTP/$httpVersion 206 Partial Content");
 			header("Content-Range: bytes $contentStart-$contentEnd/$fileSize");
-		}
-		else
+		} else
 			header("HTTP/$httpVersion 200 OK");
 
-		$length=$contentEnd-$contentStart+1; // Calculate new content length
+		$length = $contentEnd - $contentStart + 1; // Calculate new content length
 
 		header('Pragma: public');
 		header('Expires: 0');
 		header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
 		header("Content-Type: $mimeType");
-		header('Content-Length: '.$length);
+		header('Content-Length: ' . $length);
 		header("Content-Disposition: attachment; filename=\"$fileName\"");
 		header('Content-Transfer-Encoding: binary');
-		$content=function_exists('mb_substr') ? mb_substr($content,$contentStart,$length,'8bit') : substr($content,$contentStart,$length);
+		$content = function_exists('mb_substr') ? mb_substr($content, $contentStart, $length, '8bit') : substr($content, $contentStart, $length);
 
-		if($terminate)
-		{
+		if ($terminate) {
 			// clean up the application first because the file downloading could take long time
 			// which may cause timeout of some resources (such as DB connection)
 			ob_start();
-			Yii::app()->end(0,false);
+			Yii::app()->end(0, false);
 			ob_end_clean();
 			echo $content;
 			exit(0);
-		}
-		else
+		} else
 			echo $content;
 	}
 
@@ -1276,36 +1240,34 @@ class CHttpRequest extends CApplicationComponent
 	 * <li>addHeaders: an array of additional http headers in header-value pairs (available since version 1.1.10)</li>
 	 * </ul>
 	 */
-	public function xSendFile($filePath, $options=array())
+	public function xSendFile($filePath, $options = array())
 	{
-		if(!isset($options['forceDownload']) || $options['forceDownload'])
-			$disposition='attachment';
+		if (!isset($options['forceDownload']) || $options['forceDownload'])
+			$disposition = 'attachment';
 		else
-			$disposition='inline';
+			$disposition = 'inline';
 
-		if(!isset($options['saveName']))
-			$options['saveName']=basename($filePath);
+		if (!isset($options['saveName']))
+			$options['saveName'] = basename($filePath);
 
-		if(!isset($options['mimeType']))
-		{
-			if(($options['mimeType']=CFileHelper::getMimeTypeByExtension($filePath))===null)
-				$options['mimeType']='text/plain';
+		if (!isset($options['mimeType'])) {
+			if (($options['mimeType'] = CFileHelper::getMimeTypeByExtension($filePath)) === null)
+				$options['mimeType'] = 'text/plain';
 		}
 
-		if(!isset($options['xHeader']))
-			$options['xHeader']='X-Sendfile';
+		if (!isset($options['xHeader']))
+			$options['xHeader'] = 'X-Sendfile';
 
-		if($options['mimeType']!==null)
-			header('Content-Type: '.$options['mimeType']);
-		header('Content-Disposition: '.$disposition.'; filename="'.$options['saveName'].'"');
-		if(isset($options['addHeaders']))
-		{
-			foreach($options['addHeaders'] as $header=>$value)
-				header($header.': '.$value);
+		if ($options['mimeType'] !== null)
+			header('Content-Type: ' . $options['mimeType']);
+		header('Content-Disposition: ' . $disposition . '; filename="' . $options['saveName'] . '"');
+		if (isset($options['addHeaders'])) {
+			foreach ($options['addHeaders'] as $header => $value)
+				header($header . ': ' . $value);
 		}
-		header(trim($options['xHeader']).': '.$filePath);
+		header(trim($options['xHeader']) . ': ' . $filePath);
 
-		if(!isset($options['terminate']) || $options['terminate'])
+		if (!isset($options['terminate']) || $options['terminate'])
 			Yii::app()->end();
 	}
 
@@ -1318,14 +1280,12 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	public function getCsrfToken()
 	{
-		if($this->_csrfToken===null)
-		{
-			$cookie=$this->getCookies()->itemAt($this->csrfTokenName);
-			if(!$cookie || ($this->_csrfToken=$cookie->value)==null)
-			{
-				$cookie=$this->createCsrfCookie();
-				$this->_csrfToken=$cookie->value;
-				$this->getCookies()->add($cookie->name,$cookie);
+		if ($this->_csrfToken === null) {
+			$cookie = $this->getCookies()->itemAt($this->csrfTokenName);
+			if (!$cookie || ($this->_csrfToken = $cookie->value) == null) {
+				$cookie = $this->createCsrfCookie();
+				$this->_csrfToken = $cookie->value;
+				$this->getCookies()->add($cookie->name, $cookie);
 			}
 		}
 
@@ -1341,14 +1301,13 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	protected function createCsrfCookie()
 	{
-		$securityManager=Yii::app()->getSecurityManager();
-		$token=$securityManager->generateRandomBytes(32);
-		$maskedToken=$securityManager->maskToken($token);
-		$cookie=new CHttpCookie($this->csrfTokenName,$maskedToken);
-		if(is_array($this->csrfCookie))
-		{
-			foreach($this->csrfCookie as $name=>$value)
-				$cookie->$name=$value;
+		$securityManager = Yii::app()->getSecurityManager();
+		$token = $securityManager->generateRandomBytes(32);
+		$maskedToken = $securityManager->maskToken($token);
+		$cookie = new CHttpCookie($this->csrfTokenName, $maskedToken);
+		if (is_array($this->csrfCookie)) {
+			foreach ($this->csrfCookie as $name => $value)
+				$cookie->$name = $value;
 		}
 		return $cookie;
 	}
@@ -1363,41 +1322,39 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	public function validateCsrfToken($event)
 	{
-		if ($this->getIsPostRequest() ||
+		if (
+			$this->getIsPostRequest() ||
 			$this->getIsPutRequest() ||
 			$this->getIsPatchRequest() ||
-			$this->getIsDeleteRequest())
-		{
-			$cookies=$this->getCookies();
+			$this->getIsDeleteRequest()
+		) {
+			$cookies = $this->getCookies();
 
-			$method=$this->getRequestType();
-			switch($method)
-			{
+			$method = $this->getRequestType();
+			switch ($method) {
 				case 'POST':
-					$maskedUserToken=$this->getPost($this->csrfTokenName);
-				break;
+					$maskedUserToken = $this->getPost($this->csrfTokenName);
+					break;
 				case 'PUT':
-					$maskedUserToken=$this->getPut($this->csrfTokenName);
-				break;
+					$maskedUserToken = $this->getPut($this->csrfTokenName);
+					break;
 				case 'PATCH':
-					$maskedUserToken=$this->getPatch($this->csrfTokenName);
-				break;
+					$maskedUserToken = $this->getPatch($this->csrfTokenName);
+					break;
 				case 'DELETE':
-					$maskedUserToken=$this->getDelete($this->csrfTokenName);
+					$maskedUserToken = $this->getDelete($this->csrfTokenName);
 			}
 
-			if (!empty($maskedUserToken) && is_string($maskedUserToken) && $cookies->contains($this->csrfTokenName))
-			{
-				$securityManager=Yii::app()->getSecurityManager();
-				$maskedCookieToken=$cookies->itemAt($this->csrfTokenName)->value;
-				$cookieToken=$securityManager->unmaskToken($maskedCookieToken);
-				$userToken=$securityManager->unmaskToken($maskedUserToken);
-				$valid=$cookieToken===$userToken;
-			}
-			else
+			if (!empty($maskedUserToken) && is_string($maskedUserToken) && $cookies->contains($this->csrfTokenName)) {
+				$securityManager = Yii::app()->getSecurityManager();
+				$maskedCookieToken = $cookies->itemAt($this->csrfTokenName)->value;
+				$cookieToken = $securityManager->unmaskToken($maskedCookieToken);
+				$userToken = $securityManager->unmaskToken($maskedUserToken);
+				$valid = $cookieToken === $userToken;
+			} else
 				$valid = false;
 			if (!$valid)
-				throw new CHttpException(400,Yii::t('yii','The CSRF token could not be verified.'));
+				throw new CHttpException(400, Yii::t('yii', 'The CSRF token could not be verified.'));
 		}
 	}
 
@@ -1410,12 +1367,11 @@ class CHttpRequest extends CApplicationComponent
 	 */
 	public function getHttpVersion()
 	{
-		if($this->_httpVersion===null)
-		{
-			if(isset($_SERVER['SERVER_PROTOCOL']) && $_SERVER['SERVER_PROTOCOL']==='HTTP/1.0')
-				$this->_httpVersion='1.0';
+		if ($this->_httpVersion === null) {
+			if (isset($_SERVER['SERVER_PROTOCOL']) && $_SERVER['SERVER_PROTOCOL'] === 'HTTP/1.0')
+				$this->_httpVersion = '1.0';
 			else
-				$this->_httpVersion='1.1';
+				$this->_httpVersion = '1.1';
 		}
 		return $this->_httpVersion;
 	}
@@ -1442,7 +1398,7 @@ class CHttpRequest extends CApplicationComponent
 class CCookieCollection extends CMap
 {
 	private $_request;
-	private $_initialized=false;
+	private $_initialized = false;
 
 	/**
 	 * Constructor.
@@ -1450,9 +1406,9 @@ class CCookieCollection extends CMap
 	 */
 	public function __construct(CHttpRequest $request)
 	{
-		$this->_request=$request;
+		$this->_request = $request;
 		$this->copyfrom($this->getCookies());
-		$this->_initialized=true;
+		$this->_initialized = true;
 	}
 
 	/**
@@ -1468,20 +1424,16 @@ class CCookieCollection extends CMap
 	 */
 	protected function getCookies()
 	{
-		$cookies=array();
-		if($this->_request->enableCookieValidation)
-		{
-			$sm=Yii::app()->getSecurityManager();
-			foreach($_COOKIE as $name=>$value)
-			{
-				if(is_string($value) && ($value=$sm->validateData($value))!==false)
-					$cookies[$name]=new CHttpCookie($name,@unserialize($value));
+		$cookies = array();
+		if ($this->_request->enableCookieValidation) {
+			$sm = Yii::app()->getSecurityManager();
+			foreach ($_COOKIE as $name => $value) {
+				if (is_string($value) && ($value = $sm->validateData($value)) !== false)
+					$cookies[$name] = new CHttpCookie($name, @unserialize($value));
 			}
-		}
-		else
-		{
-			foreach($_COOKIE as $name=>$value)
-				$cookies[$name]=new CHttpCookie($name,$value);
+		} else {
+			foreach ($_COOKIE as $name => $value)
+				$cookies[$name] = new CHttpCookie($name, $value);
 		}
 		return $cookies;
 	}
@@ -1494,17 +1446,15 @@ class CCookieCollection extends CMap
 	 * @param CHttpCookie $cookie Cookie object.
 	 * @throws CException if the item to be inserted is not a CHttpCookie object.
 	 */
-	public function add($name,$cookie)
+	public function add($name, $cookie)
 	{
-		if($cookie instanceof CHttpCookie)
-		{
+		if ($cookie instanceof CHttpCookie) {
 			$this->remove($name);
-			parent::add($name,$cookie);
-			if($this->_initialized)
+			parent::add($name, $cookie);
+			if ($this->_initialized)
 				$this->addCookie($cookie);
-		}
-		else
-			throw new CException(Yii::t('yii','CHttpCookieCollection can only hold CHttpCookie objects.'));
+		} else
+			throw new CException(Yii::t('yii', 'CHttpCookieCollection can only hold CHttpCookie objects.'));
 	}
 
 	/**
@@ -1525,12 +1475,10 @@ class CCookieCollection extends CMap
 	 * @param array $options Cookie configuration array consisting of name-value pairs, available since 1.1.11.
 	 * @return CHttpCookie The removed cookie object.
 	 */
-	public function remove($name,$options=array())
+	public function remove($name, $options = array())
 	{
-		if(($cookie=parent::remove($name))!==null)
-		{
-			if($this->_initialized)
-			{
+		if (($cookie = parent::remove($name)) !== null) {
+			if ($this->_initialized) {
 				$cookie->configure($options);
 				$this->removeCookie($cookie);
 			}
@@ -1545,15 +1493,15 @@ class CCookieCollection extends CMap
 	 */
 	protected function addCookie($cookie)
 	{
-		$value=$cookie->value;
-		if($this->_request->enableCookieValidation)
-			$value=Yii::app()->getSecurityManager()->hashData(serialize($value));
-		if(version_compare(PHP_VERSION,'7.3.0','>='))
-			setcookie($cookie->name,$value,$this->getCookieOptions($cookie));
-		elseif(version_compare(PHP_VERSION,'5.2.0','>='))
-			setcookie($cookie->name,$value,$cookie->expire,$cookie->path,$cookie->domain,$cookie->secure,$cookie->httpOnly);
+		$value = $cookie->value;
+		if ($this->_request->enableCookieValidation)
+			$value = Yii::app()->getSecurityManager()->hashData(serialize($value));
+		if (version_compare(PHP_VERSION, '7.3.0', '>='))
+			setcookie($cookie->name, $value, $this->getCookieOptions($cookie));
+		elseif (version_compare(PHP_VERSION, '5.2.0', '>='))
+			setcookie($cookie->name, $value, $cookie->expire, $cookie->path, $cookie->domain, $cookie->secure, $cookie->httpOnly);
 		else
-			setcookie($cookie->name,$value,$cookie->expire,$cookie->path,$cookie->domain,$cookie->secure);
+			setcookie($cookie->name, $value, $cookie->expire, $cookie->path, $cookie->domain, $cookie->secure);
 	}
 
 	/**
@@ -1562,13 +1510,13 @@ class CCookieCollection extends CMap
 	 */
 	protected function removeCookie($cookie)
 	{
-		$cookie->expire=0;
-		if(version_compare(PHP_VERSION,'7.3.0','>='))
-			setcookie($cookie->name,'',$this->getCookieOptions($cookie));
-		elseif(version_compare(PHP_VERSION,'5.2.0','>='))
-			setcookie($cookie->name,'',$cookie->expire,$cookie->path,$cookie->domain,$cookie->secure,$cookie->httpOnly);
+		$cookie->expire = 0;
+		if (version_compare(PHP_VERSION, '7.3.0', '>='))
+			setcookie($cookie->name, '', $this->getCookieOptions($cookie));
+		elseif (version_compare(PHP_VERSION, '5.2.0', '>='))
+			setcookie($cookie->name, '', $cookie->expire, $cookie->path, $cookie->domain, $cookie->secure, $cookie->httpOnly);
 		else
-			setcookie($cookie->name,'',$cookie->expire,$cookie->path,$cookie->domain,$cookie->secure);
+			setcookie($cookie->name, '', $cookie->expire, $cookie->path, $cookie->domain, $cookie->secure);
 	}
 
 	/**
@@ -1579,12 +1527,12 @@ class CCookieCollection extends CMap
 	protected function getCookieOptions($cookie)
 	{
 		return array(
-			'expires'=>$cookie->expire,
-			'path'=>$cookie->path,
-			'domain'=>$cookie->domain,
-			'secure'=>$cookie->secure,
-			'httpOnly'=>$cookie->httpOnly,
-			'sameSite'=>$cookie->sameSite
+			'expires' => $cookie->expire,
+			'path' => $cookie->path,
+			'domain' => $cookie->domain,
+			'secure' => $cookie->secure,
+			'httpOnly' => $cookie->httpOnly,
+			'sameSite' => $cookie->sameSite
 		);
 	}
 }

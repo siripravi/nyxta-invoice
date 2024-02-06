@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CInlineValidator class file.
  *
@@ -36,10 +37,10 @@ class CInlineValidator extends CValidator
 	 * @param CModel $object the object being validated
 	 * @param string $attribute the attribute being validated
 	 */
-	protected function validateAttribute($object,$attribute)
+	protected function validateAttribute($object, $attribute)
 	{
-		$method=$this->method;
-		$object->$method($attribute,$this->params);
+		$method = $this->method;
+		$object->$method($attribute, $this->params);
 	}
 
 	/**
@@ -71,12 +72,11 @@ class CInlineValidator extends CValidator
 	 * @see CActiveForm::enableClientValidation
 	 * @since 1.1.9
 	 */
-	public function clientValidateAttribute($object,$attribute)
+	public function clientValidateAttribute($object, $attribute)
 	{
-		if($this->clientValidate!==null)
-		{
-			$method=$this->clientValidate;
-			return $object->$method($attribute,$this->params);
+		if ($this->clientValidate !== null) {
+			$method = $this->clientValidate;
+			return $object->$method($attribute, $this->params);
 		}
 	}
 }

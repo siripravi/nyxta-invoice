@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'byn_ER'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'ERN' => 'Nfk',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'ልደትሪ',
       2 => 'ካብኽብቲ',
       3 => 'ክብላ',
@@ -70,8 +71,8 @@ return array (
       11 => 'ምኪኤል መሽወሪ',
       12 => 'ተሕሳስሪ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'ልደት',
       2 => 'ካብኽ',
       3 => 'ክብላ',
@@ -86,10 +87,10 @@ return array (
       12 => 'ተሕሳ',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'ል',
       2 => 'ካ',
       3 => 'ክ',
@@ -104,10 +105,10 @@ return array (
       12 => 'ተ',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'ሰንበር ቅዳዅ',
       1 => 'ሰኑ',
       2 => 'ሰሊጝ',
@@ -116,8 +117,8 @@ return array (
       5 => 'ኣርብ',
       6 => 'ሰንበር ሽጓዅ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'ሰ/ቅ',
       1 => 'ሰኑ',
       2 => 'ሰሊጝ',
@@ -127,10 +128,10 @@ return array (
       6 => 'ሰ/ሽ',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'ሰ',
       1 => 'ሰ',
       2 => 'ሰ',
@@ -140,33 +141,33 @@ return array (
       6 => 'ሰ',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'ይጅ',
       1 => 'ኣድ',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'ይጅ',
       1 => 'ኣድ',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'ይጅ',
       1 => 'ኣድ',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE፡ dd MMMM ግርጋ y G',
     'long' => 'dd MMMM y',
     'medium' => 'dd-MMM-y',
     'short' => 'dd/MM/yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'h:mm:ss a zzzz',
     'long' => 'h:mm:ss a z',
     'medium' => 'h:mm:ss a',
@@ -176,8 +177,8 @@ return array (
   'amName' => 'ፋዱስ ጃብ',
   'pmName' => 'ፋዱስ ደምቢ',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'አፋርኛ',
     'ab' => 'አብሐዚኛ',
     'af' => 'አፍሪቃንስኛ',
@@ -321,12 +322,12 @@ return array (
     'zh' => 'ቻይንኛ',
     'zu' => 'ዙሉኛ',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'latn' => 'ላቲን',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     'ad' => 'አንዶራ',
     'ae' => 'የተባበሩት አረብ ኤምሬትስ',
     'al' => 'አልባኒያ',

@@ -51,8 +51,7 @@ class StatementItems extends CActiveRecord
 	{
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
-		return array(
-		);
+		return array();
 	}
 
 	/**
@@ -97,9 +96,11 @@ class StatementItems extends CActiveRecord
 		$criteria->compare('price', $this->price, true);
 		$criteria->compare('status', $this->status);
 
-		return new CActiveDataProvider($this, array(
-			'criteria' => $criteria,
-		)
+		return new CActiveDataProvider(
+			$this,
+			array(
+				'criteria' => $criteria,
+			)
 		);
 	}
 

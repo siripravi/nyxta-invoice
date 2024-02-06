@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CHttpCookie class file.
  *
@@ -25,7 +26,7 @@ class CHttpCookie extends CComponent
 	 * @see $sameSite
 	 * @since 1.1.22
 	 */
-	const SAME_SITE_LAX='Lax';
+	const SAME_SITE_LAX = 'Lax';
 	/**
 	 * SameSite policy Strict will prevent the cookie from being sent by the browser in all cross-site browsing context
 	 * regardless of the request method and even when following a regular link.
@@ -34,7 +35,7 @@ class CHttpCookie extends CComponent
 	 * @see $sameSite
 	 * @since 1.1.22
 	 */
-	const SAME_SITE_STRICT='Strict';
+	const SAME_SITE_STRICT = 'Strict';
 	/**
 	 * SameSite policy None will allow the cookie to be sent by the browser in all cross-site browsing context
 	 * regardless of the request methods (e.g. POST, PUT, PATCH etc).
@@ -52,37 +53,37 @@ class CHttpCookie extends CComponent
 	/**
 	 * @var string value of the cookie
 	 */
-	public $value='';
+	public $value = '';
 	/**
 	 * @var string domain of the cookie
 	 */
-	public $domain='';
+	public $domain = '';
 	/**
 	 * @var integer the timestamp at which the cookie expires. This is the server timestamp. Defaults to 0, meaning "until the browser is closed".
 	 */
-	public $expire=0;
+	public $expire = 0;
 	/**
 	 * @var string the path on the server in which the cookie will be available on. The default is '/'.
 	 */
-	public $path='/';
+	public $path = '/';
 	/**
 	 * @var boolean whether cookie should be sent via secure connection
 	 */
-	public $secure=false;
+	public $secure = false;
 	/**
 	 * @var boolean whether the cookie should be accessible only through the HTTP protocol.
 	 * By setting this property to true, the cookie will not be accessible by scripting languages,
 	 * such as JavaScript, which can effectly help to reduce identity theft through XSS attacks.
 	 * Note, this property is only effective for PHP 5.2.0 or above.
 	 */
-	public $httpOnly=false;
+	public $httpOnly = false;
 	/**
 	 * @var array Cookie attribute "SameSite".
 	 * @see https://www.owasp.org/index.php/SameSite
 	 * This property only works for PHP 7.3.0 or above.
 	 * @since 1.1.22
 	 */
-	public $sameSite=self::SAME_SITE_LAX;
+	public $sameSite = self::SAME_SITE_LAX;
 
 	/**
 	 * Constructor.
@@ -91,10 +92,10 @@ class CHttpCookie extends CComponent
 	 * @param array $options the configuration array consisting of name-value pairs
 	 * that are used to configure this cookie
 	 */
-	public function __construct($name,$value,$options=array())
+	public function __construct($name, $value, $options = array())
 	{
-		$this->name=$name;
-		$this->value=$value;
+		$this->name = $name;
+		$this->value = $value;
 		$this->configure($options);
 	}
 	/**
@@ -104,13 +105,12 @@ class CHttpCookie extends CComponent
 	 * that are used to configure this cookie
 	 * @since 1.1.11
 	 */
-	public function configure($options=array())
+	public function configure($options = array())
 	{
-		foreach($options as $name=>$value)
-		{
-			if($name==='name'||$name==='value')
+		foreach ($options as $name => $value) {
+			if ($name === 'name' || $name === 'value')
 				continue;
-			$this->$name=$value;
+			$this->$name = $value;
 		}
 	}
 	/**

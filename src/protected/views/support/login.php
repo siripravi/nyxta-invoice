@@ -26,16 +26,18 @@
         </div>
 
         <div style="padding-top:30px" class="panel-body">
-            <?php $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
-                'id' => 'login-form',
-                // 'type' => 'vertical',
-                'enableClientValidation' => false,
-                'clientOptions' => array(
-                    'validateOnSubmit' => true,
-                ),
-                'errorMessageCssClass' => 'alert alert-danger',
-                'htmlOptions' => array()
-            )
+            <?php $form = $this->beginWidget(
+                'bootstrap.widgets.TbActiveForm',
+                array(
+                    'id' => 'login-form',
+                    // 'type' => 'vertical',
+                    'enableClientValidation' => false,
+                    'clientOptions' => array(
+                        'validateOnSubmit' => true,
+                    ),
+                    'errorMessageCssClass' => 'alert alert-danger',
+                    'htmlOptions' => array()
+                )
             ); ?>
 
             <?php echo $form->error($model, 'username', array('errorCssClass' => 'alert alert-danger')); ?>

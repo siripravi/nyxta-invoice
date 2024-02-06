@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CSqliteCommandBuilder class file.
  *
@@ -26,15 +27,15 @@ class CSqliteCommandBuilder extends CDbCommandBuilder
 	 * @param string $prefix column prefix (ended with dot)
 	 * @return string the expression for selection
 	 */
-	protected function createCompositeInCondition($table,$values,$prefix)
+	protected function createCompositeInCondition($table, $values, $prefix)
 	{
-		$keyNames=array();
-		foreach(array_keys($values[0]) as $name)
-			$keyNames[]=$prefix.$table->columns[$name]->rawName;
-		$vs=array();
-		foreach($values as $value)
-			$vs[]=implode("||','||",$value);
-		return implode("||','||",$keyNames).' IN ('.implode(', ',$vs).')';
+		$keyNames = array();
+		foreach (array_keys($values[0]) as $name)
+			$keyNames[] = $prefix . $table->columns[$name]->rawName;
+		$vs = array();
+		foreach ($values as $value)
+			$vs[] = implode("||','||", $value);
+		return implode("||','||", $keyNames) . ' IN (' . implode(', ', $vs) . ')';
 	}
 
 	/**
@@ -48,16 +49,16 @@ class CSqliteCommandBuilder extends CDbCommandBuilder
 	 * @return CDbCommand multiple insert command
 	 * @since 1.1.14
 	 */
-	public function createMultipleInsertCommand($table,array $data)
+	public function createMultipleInsertCommand($table, array $data)
 	{
-		$templates=array(
-			'main'=>'INSERT INTO {{tableName}} ({{columnInsertNames}}) {{rowInsertValues}}',
-			'columnInsertValue'=>'{{value}} AS {{column}}',
-			'columnInsertValueGlue'=>', ',
-			'rowInsertValue'=>'SELECT {{columnInsertValues}}',
-			'rowInsertValueGlue'=>' UNION ',
-			'columnInsertNameGlue'=>', ',
+		$templates = array(
+			'main' => 'INSERT INTO {{tableName}} ({{columnInsertNames}}) {{rowInsertValues}}',
+			'columnInsertValue' => '{{value}} AS {{column}}',
+			'columnInsertValueGlue' => ', ',
+			'rowInsertValue' => 'SELECT {{columnInsertValues}}',
+			'rowInsertValueGlue' => ' UNION ',
+			'columnInsertNameGlue' => ', ',
 		);
-		return $this->composeMultipleInsertCommand($table,$data,$templates);
+		return $this->composeMultipleInsertCommand($table, $data, $templates);
 	}
 }

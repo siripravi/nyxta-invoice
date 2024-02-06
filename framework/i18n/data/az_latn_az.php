@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'az_Latn_AZ'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤ #,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'AZN' => 'man.',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Yanvar',
       2 => 'Fevral',
       3 => 'Mart',
@@ -70,8 +71,8 @@ return array (
       11 => 'Noyabr',
       12 => 'Dekabr',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'yan',
       2 => 'fev',
       3 => 'mar',
@@ -86,10 +87,10 @@ return array (
       12 => 'dek',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -104,10 +105,10 @@ return array (
       12 => '12',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'bazar',
       1 => 'bazar ertəsi',
       2 => 'çərşənbə axşamı',
@@ -116,8 +117,8 @@ return array (
       5 => 'cümə',
       6 => 'şənbə',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'B.',
       1 => 'B.E.',
       2 => 'Ç.A.',
@@ -127,10 +128,10 @@ return array (
       6 => 'Ş.',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => '7',
       1 => '1',
       2 => '2',
@@ -140,33 +141,33 @@ return array (
       6 => '6',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'e.ə.',
       1 => 'b.e.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'eramızdan əvvəl',
       1 => 'bizim eramızın',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'e.ə.',
       1 => 'b.e.',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, d, MMMM, y',
     'long' => 'd MMMM , y',
     'medium' => 'd MMM, y',
     'short' => 'yy/MM/dd',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -176,8 +177,8 @@ return array (
   'amName' => 'AM',
   'pmName' => 'PM',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'afarca',
     'ab' => 'abxazca',
     'ace' => 'akin dili',
@@ -677,8 +678,8 @@ return array (
     'zun' => 'zuni dili',
     'zza' => 'zaza dili',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'ərəb',
     'armi' => 'armi',
     'armn' => 'erməni',
@@ -805,8 +806,8 @@ return array (
     'zyyy' => 'adi yazi',
     'zzzz' => 'bilinməyən veya gəcərsiz',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'Dünya',
     '002' => 'Afrika',
     '003' => 'Şimal Amerika',

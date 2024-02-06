@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'ml_IN'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##,##0%',
   'currencyFormat' => '#,##,##0.00¤',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -52,10 +53,10 @@ return array (
     'XOF' => 'CFA',
     'XPF' => 'CFPF',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'ജനുവരി',
       2 => 'ഫെബ്രുവരി',
       3 => 'മാർച്ച്',
@@ -69,8 +70,8 @@ return array (
       11 => 'നവംബർ',
       12 => 'ഡിസംബർ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'ജനു',
       2 => 'ഫെബ്രു',
       3 => 'മാർ',
@@ -84,8 +85,8 @@ return array (
       11 => 'നവം',
       12 => 'ഡിസം',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       1 => 'ജ',
       2 => 'ഫെ',
       3 => 'മാ',
@@ -100,10 +101,10 @@ return array (
       12 => 'ഡി',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'ജ',
       2 => 'ഫെ',
       3 => 'മാ',
@@ -117,8 +118,8 @@ return array (
       11 => 'ന',
       12 => 'ഡി',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'ജനു',
       2 => 'ഫെബ്രു',
       3 => 'മാർ',
@@ -133,10 +134,10 @@ return array (
       12 => 'ഡിസം',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'ഞായറാഴ്ച',
       1 => 'തിങ്കളാഴ്ച',
       2 => 'ചൊവ്വാഴ്ച',
@@ -145,8 +146,8 @@ return array (
       5 => 'വെള്ളിയാഴ്ച',
       6 => 'ശനിയാഴ്ച',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'ഞായർ',
       1 => 'തിങ്കൾ',
       2 => 'ചൊവ്വ',
@@ -155,8 +156,8 @@ return array (
       5 => 'വെള്ളി',
       6 => 'ശനി',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'ഞാ',
       1 => 'തി',
       2 => 'ചൊ',
@@ -166,10 +167,10 @@ return array (
       6 => 'ശ',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'ഞാ',
       1 => 'തി',
       2 => 'ചൊ',
@@ -178,8 +179,8 @@ return array (
       5 => 'വെ',
       6 => 'ശ',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'ഞാ',
       1 => 'തി',
       2 => 'ചൊ',
@@ -189,33 +190,33 @@ return array (
       6 => 'ശ',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'ക്രി.മൂ',
       1 => 'ക്രി.പി.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'ക്രിസ്തുവിനു് മുമ്പ്‌',
       1 => 'ക്രിസ്തുവിന് പിൻപ്',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'ക്രി.മൂ',
       1 => 'ക്രി.പി.',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'y, MMMM d, EEEE',
     'long' => 'y, MMMM d',
     'medium' => 'y, MMM d',
     'short' => 'dd/MM/yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'h:mm:ss a zzzz',
     'long' => 'h:mm:ss a z',
     'medium' => 'h:mm:ss a',
@@ -225,8 +226,8 @@ return array (
   'amName' => 'AM',
   'pmName' => 'PM',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'അഫാർ',
     'ab' => 'അബ്ഖാസിയൻ',
     'ace' => 'അചിനീസ്',
@@ -738,8 +739,8 @@ return array (
     'zxx' => 'ഭാഷേതരം',
     'zza' => 'സാസാ',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'പേഴ്സോ-അറബിക്',
     'armi' => 'അർമി',
     'armn' => 'അർമേനിയൻ',
@@ -871,8 +872,8 @@ return array (
     'zyyy' => 'സാധാരണ',
     'zzzz' => 'അറിയപ്പെടാത്തതോ നിലവിലില്ലാത്തതോ ആയ ലിപി',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'ലോകം',
     '002' => 'ആഫ്രിക്ക',
     '003' => 'വടക്കേ അമേരിക്കൻ ഭൂഖണ്ഡം',
@@ -1164,8 +1165,8 @@ return array (
     'zw' => 'സിംബാബ്വേ',
     'zz' => 'അറിയപ്പെടാത്തതോ നിലവിലില്ലാത്തതോ ആയ പ്രദേശം',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

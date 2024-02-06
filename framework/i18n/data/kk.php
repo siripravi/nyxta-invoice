@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'kk'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => ' ',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '#,##0.00 ¤',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -54,10 +55,10 @@ return array (
     'KZT' => '₸',
     'RUB' => 'руб.',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'қаңтар',
       2 => 'ақпан',
       3 => 'наурыз',
@@ -71,8 +72,8 @@ return array (
       11 => 'қараша',
       12 => 'желтоқсан',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'қаң.',
       2 => 'ақп.',
       3 => 'нау.',
@@ -87,10 +88,10 @@ return array (
       12 => 'желт.',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -105,10 +106,10 @@ return array (
       12 => '12',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'жексені',
       1 => 'дуйсенбі',
       2 => 'сейсенбі',
@@ -117,8 +118,8 @@ return array (
       5 => 'жұма',
       6 => 'сенбі',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'жс.',
       1 => 'дс.',
       2 => 'сс.',
@@ -128,10 +129,10 @@ return array (
       6 => 'сһ.',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'S',
       1 => 'M',
       2 => 'T',
@@ -141,33 +142,33 @@ return array (
       6 => 'S',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'BCE',
       1 => 'CE',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'BCE',
       1 => 'CE',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'BCE',
       1 => 'CE',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, d MMMM y \'ж\'.',
     'long' => 'd MMMM y \'ж\'.',
     'medium' => 'dd.MM.y',
     'short' => 'dd.MM.yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -177,8 +178,8 @@ return array (
   'amName' => 'AM',
   'pmName' => 'PM',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ab' => 'Абхаз',
     'af' => 'Африкаан',
     'am' => 'амхар',
@@ -330,8 +331,8 @@ return array (
     'zh_hant' => 'дәстүрлік қытай тілі',
     'zu' => 'зулус',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'араб жазылуы',
     'armn' => 'армян жазуы',
     'beng' => 'бенгал',
@@ -363,8 +364,8 @@ return array (
     'zxxx' => 'жазылуысыз',
     'zzzz' => 'белгісіз жазылуы',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'Әлем',
     '002' => 'Африка',
     '003' => 'Солтүстік Америка',
@@ -458,8 +459,8 @@ return array (
     'za' => 'Оңтүстік Африка республикасы',
     'zz' => 'Белгісіз аймақ',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'mt_MT'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -52,10 +53,10 @@ return array (
     'XOF' => 'CFA',
     'XPF' => 'CFPF',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Jannar',
       2 => 'Frar',
       3 => 'Marzu',
@@ -69,8 +70,8 @@ return array (
       11 => 'Novembru',
       12 => 'Diċembru',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Jan',
       2 => 'Fra',
       3 => 'Mar',
@@ -85,10 +86,10 @@ return array (
       12 => 'Diċ',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'J',
       2 => 'F',
       3 => 'M',
@@ -103,10 +104,10 @@ return array (
       12 => 'D',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Il-Ħadd',
       1 => 'It-Tnejn',
       2 => 'It-Tlieta',
@@ -115,8 +116,8 @@ return array (
       5 => 'Il-Ġimgħa',
       6 => 'Is-Sibt',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Ħad',
       1 => 'Tne',
       2 => 'Tli',
@@ -126,10 +127,10 @@ return array (
       6 => 'Sib',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'Ħ',
       1 => 'T',
       2 => 'T',
@@ -139,33 +140,33 @@ return array (
       6 => 'S',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'QK',
       1 => 'WK',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Qabel Kristu',
       1 => 'Wara Kristu',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'QK',
       1 => 'WK',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, d \'ta\'’ MMMM y',
     'long' => 'd \'ta\'’ MMMM y',
     'medium' => 'dd MMM y',
     'short' => 'dd/MM/y',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -175,8 +176,8 @@ return array (
   'amName' => 'QN',
   'pmName' => 'WN',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'Afar',
     'ab' => 'Abkażjan',
     'ace' => 'Aċiniż',
@@ -655,8 +656,8 @@ return array (
     'zun' => 'Żuni',
     'zxx' => 'Bla kontent lingwistiku',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'Għarbi',
     'brai' => 'Braille',
     'cyrl' => 'Ċirilliku',
@@ -669,8 +670,8 @@ return array (
     'zyyy' => 'Komuni',
     'zzzz' => 'Skritt Mhux Magħruf jew Mhux Validu',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'Dinja',
     '002' => 'Affrika',
     '003' => 'Amerika ta’ Fuq',
@@ -944,8 +945,8 @@ return array (
     'zw' => 'Żimbabwe',
     'zz' => 'Reġjun Mhux Magħruf jew Mhux Validu',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'n==0||(fmod(n,100)>=2&&fmod(n,100)<=10&&fmod(fmod(n,100),1)==0)',
     2 => '(fmod(n,100)>=11&&fmod(n,100)<=19&&fmod(fmod(n,100),1)==0)',

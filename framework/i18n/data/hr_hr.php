@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'hr_HR'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => '.',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '#,##0.00 ¤',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'BRL',
     'CAD' => 'CAD',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'HRK' => 'kn',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'siječnja',
       2 => 'veljače',
       3 => 'ožujka',
@@ -70,8 +71,8 @@ return array (
       11 => 'studenoga',
       12 => 'prosinca',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'sij',
       2 => 'velj',
       3 => 'ožu',
@@ -85,8 +86,8 @@ return array (
       11 => 'stu',
       12 => 'pro',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       1 => '1.',
       2 => '2.',
       3 => '3.',
@@ -101,10 +102,10 @@ return array (
       12 => '12.',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => '1.',
       2 => '2.',
       3 => '3.',
@@ -118,8 +119,8 @@ return array (
       11 => '11.',
       12 => '12.',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'sij',
       2 => 'velj',
       3 => 'ožu',
@@ -133,8 +134,8 @@ return array (
       11 => 'stu',
       12 => 'pro',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       1 => 'siječanj',
       2 => 'veljača',
       3 => 'ožujak',
@@ -149,10 +150,10 @@ return array (
       12 => 'prosinac',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'nedjelja',
       1 => 'ponedjeljak',
       2 => 'utorak',
@@ -161,8 +162,8 @@ return array (
       5 => 'petak',
       6 => 'subota',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'ned',
       1 => 'pon',
       2 => 'uto',
@@ -171,8 +172,8 @@ return array (
       5 => 'pet',
       6 => 'sub',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'N',
       1 => 'P',
       2 => 'U',
@@ -181,8 +182,8 @@ return array (
       5 => 'P',
       6 => 'S',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'ned',
       1 => 'pon',
       2 => 'uto',
@@ -192,10 +193,10 @@ return array (
       6 => 'sub',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'n',
       1 => 'p',
       2 => 'u',
@@ -204,8 +205,8 @@ return array (
       5 => 'p',
       6 => 's',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'ned',
       1 => 'pon',
       2 => 'uto',
@@ -214,8 +215,8 @@ return array (
       5 => 'pet',
       6 => 'sub',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'ned',
       1 => 'pon',
       2 => 'uto',
@@ -224,8 +225,8 @@ return array (
       5 => 'pet',
       6 => 'sub',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'nedjelja',
       1 => 'ponedjeljak',
       2 => 'utorak',
@@ -235,33 +236,33 @@ return array (
       6 => 'subota',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'p. n. e.',
       1 => 'A. D.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Prije Krista',
       1 => 'Poslije Krista',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'pr.n.e.',
       1 => 'AD',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, d. MMMM y.',
     'long' => 'd. MMMM y.',
     'medium' => 'd. M. y.',
     'short' => 'd.M.y.',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -271,8 +272,8 @@ return array (
   'amName' => 'AM',
   'pmName' => 'PM',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'afarski',
     'ab' => 'abhaski',
     'ace' => 'achinese',
@@ -847,8 +848,8 @@ return array (
     'zxx' => 'bez jezičnog sadržaja',
     'zza' => 'zazaki',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'perzijsko-arapsko pismo',
     'armi' => 'aramejsko pismo',
     'armn' => 'armensko pismo',
@@ -980,8 +981,8 @@ return array (
     'zyyy' => 'zajedničko pismo',
     'zzzz' => 'nepoznato pismo',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'Svijet',
     '002' => 'Afrika',
     '003' => 'Sjevernoamerički kontinent',
@@ -1273,8 +1274,8 @@ return array (
     'zw' => 'Zimbabve',
     'zz' => 'nepoznato područje',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'fmod(n,10)==1&&fmod(n,100)!=11',
     1 => '(fmod(n,10)>=2&&fmod(n,10)<=4&&fmod(fmod(n,10),1)==0)&&(fmod(n,100)<12||fmod(n,100)>14)',
     2 => 'fmod(n,10)==0||(fmod(n,10)>=5&&fmod(n,10)<=9&&fmod(fmod(n,10),1)==0)||(fmod(n,100)>=11&&fmod(n,100)<=14&&fmod(fmod(n,100),1)==0)',

@@ -58,9 +58,11 @@ class VenueController extends Controller
      */
     public function actionView($id)
     {
-        $this->render('view', array(
-            'model' => $this->loadModel($id),
-        )
+        $this->render(
+            'view',
+            array(
+                'model' => $this->loadModel($id),
+            )
         );
     }
 
@@ -164,9 +166,11 @@ class VenueController extends Controller
     public function actionIndex()
     {
         $dataProvider = new CActiveDataProvider('Venue');
-        $this->render('index', array(
-            'dataProvider' => $dataProvider,
-        )
+        $this->render(
+            'index',
+            array(
+                'dataProvider' => $dataProvider,
+            )
         );
     }
 
@@ -180,9 +184,11 @@ class VenueController extends Controller
         if (isset($_GET['Venue']))
             $model->attributes = $_GET['Venue'];
 
-        $this->render('admin', array(
-            'model' => $model,
-        )
+        $this->render(
+            'admin',
+            array(
+                'model' => $model,
+            )
         );
     }
 

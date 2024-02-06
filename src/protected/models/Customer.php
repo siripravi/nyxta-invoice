@@ -125,9 +125,11 @@ class Customer extends CActiveRecord
 		$criteria->compare('email2', $this->email2, true);
 		$criteria->compare('notes', $this->notes, true);
 
-		return new CActiveDataProvider($this, array(
-			'criteria' => $criteria,
-		)
+		return new CActiveDataProvider(
+			$this,
+			array(
+				'criteria' => $criteria,
+			)
 		);
 	}
 	/**

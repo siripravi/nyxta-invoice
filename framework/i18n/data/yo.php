@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'yo'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00;(¤#,##0.00)',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'NGN' => '₦',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Oṣù Ṣẹ́rẹ́',
       2 => 'Oṣù Èrèlè',
       3 => 'Oṣù Ẹrẹ̀nà',
@@ -70,8 +71,8 @@ return array (
       11 => 'Oṣù Bélú',
       12 => 'Oṣù Ọ̀pẹ̀',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Ṣẹ́rẹ́',
       2 => 'Èrèlè',
       3 => 'Ẹrẹ̀nà',
@@ -86,10 +87,10 @@ return array (
       12 => 'Ọ̀pẹ̀',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -104,10 +105,10 @@ return array (
       12 => '12',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Ọjọ́ Àìkú',
       1 => 'Ọjọ́ Ajé',
       2 => 'Ọjọ́ Ìsẹ́gun',
@@ -116,8 +117,8 @@ return array (
       5 => 'Ọjọ́ Ẹtì',
       6 => 'Ọjọ́ Àbámẹ́ta',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Àìkú',
       1 => 'Ajé',
       2 => 'Ìsẹ́gun',
@@ -127,10 +128,10 @@ return array (
       6 => 'Àbámẹ́ta',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'S',
       1 => 'M',
       2 => 'T',
@@ -140,33 +141,33 @@ return array (
       6 => 'S',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'SK',
       1 => 'LK',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Saju Kristi',
       1 => 'Lehin Kristi',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'SK',
       1 => 'LK',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, d MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'd MMM y',
     'short' => 'dd/MM/y',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'h:mm:ss a zzzz',
     'long' => 'h:mm:ss a z',
     'medium' => 'h:mm:ss a',
@@ -176,8 +177,8 @@ return array (
   'amName' => 'Àárọ̀',
   'pmName' => 'Ọ̀sán',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'af' => 'Èdè Afrikani',
     'ak' => 'Èdè Akani',
     'am' => 'Èdè Amariki',
@@ -278,8 +279,8 @@ return array (
     'zh' => 'Èdè Mandari',
     'zu' => 'Èdè Ṣulu',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     'ad' => 'Orílẹ́ède Ààndórà',
     'ae' => 'Orílẹ́ède Ẹmirate ti Awọn Arabu',
     'af' => 'Orílẹ́ède Àfùgànístánì',

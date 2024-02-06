@@ -111,12 +111,14 @@ class EmailSpool extends EmailActiveRecord
         $criteria->compare('t.sent', $this->sent);
         $criteria->compare('t.created', $this->created);
 
-        return new CActiveDataProvider($this, array(
-            'criteria' => $criteria,
-            'sort' => array(
-                'defaultOrder' => 'id DESC',
-            ),
-        )
+        return new CActiveDataProvider(
+            $this,
+            array(
+                'criteria' => $criteria,
+                'sort' => array(
+                    'defaultOrder' => 'id DESC',
+                ),
+            )
         );
     }
 
@@ -146,5 +148,4 @@ class EmailSpool extends EmailActiveRecord
         Yii::app()->getComponent('emailManager');
         return $this->unpack($this->message);
     }
-
 }

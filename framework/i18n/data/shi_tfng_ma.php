@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'shi_Tfng_MA'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => ' ',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '#,##0.00¤',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -52,10 +53,10 @@ return array (
     'XOF' => 'CFA',
     'XPF' => 'CFPF',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'ⵉⵏⵏⴰⵢⵔ',
       2 => 'ⴱⵕⴰⵢⵕ',
       3 => 'ⵎⴰⵕⵚ',
@@ -69,8 +70,8 @@ return array (
       11 => 'ⵏⵓⵡⴰⵏⴱⵉⵔ',
       12 => 'ⴷⵓⵊⴰⵏⴱⵉⵔ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'ⵉⵏⵏ',
       2 => 'ⴱⵕⴰ',
       3 => 'ⵎⴰⵕ',
@@ -85,10 +86,10 @@ return array (
       12 => 'ⴷⵓⵊ',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'ⵉ',
       2 => 'ⴱ',
       3 => 'ⵎ',
@@ -103,10 +104,10 @@ return array (
       12 => 'ⴷ',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'ⴰⵙⴰⵎⴰⵙ',
       1 => 'ⴰⵢⵏⴰⵙ',
       2 => 'ⴰⵙⵉⵏⴰⵙ',
@@ -115,8 +116,8 @@ return array (
       5 => 'ⵙⵉⵎⵡⴰⵙ',
       6 => 'ⴰⵙⵉⴹⵢⴰⵙ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'ⴰⵙⴰ',
       1 => 'ⴰⵢⵏ',
       2 => 'ⴰⵙⵉ',
@@ -126,10 +127,10 @@ return array (
       6 => 'ⴰⵙⵉⴹ',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'S',
       1 => 'M',
       2 => 'T',
@@ -139,33 +140,33 @@ return array (
       6 => 'S',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'ⴷⴰⵄ',
       1 => 'ⴷⴼⵄ',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'ⴷⴰⵜ ⵏ ⵄⵉⵙⴰ',
       1 => 'ⴷⴼⴼⵉⵔ ⵏ ⵄⵉⵙⴰ',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'ⴷⴰⵄ',
       1 => 'ⴷⴼⵄ',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE d MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'd MMM, y',
     'short' => 'd/M/y',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -175,8 +176,8 @@ return array (
   'amName' => 'ⵜⵉⴼⴰⵡⵜ',
   'pmName' => 'ⵜⴰⴷⴳⴳⵯⴰⵜ',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ak' => 'ⵜⴰⴽⴰⵏⵜ',
     'am' => 'ⵜⴰⵎⵀⴰⵔⵉⵜ',
     'ar' => 'ⵜⴰⵄⵔⴰⴱⵜ',
@@ -223,8 +224,8 @@ return array (
     'zh' => 'ⵜⴰⵛⵉⵏⵡⵉⵜ',
     'zu' => 'ⵜⴰⵣⵓⵍⵓⵜ',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     'ad' => 'ⴰⵏⴷⵓⵔⴰ',
     'ae' => 'ⵍⵉⵎⴰⵔⴰⵜ',
     'af' => 'ⴰⴼⵖⴰⵏⵉⵙⵜⴰⵏ',
@@ -451,8 +452,8 @@ return array (
     'zm' => 'ⵣⴰⵎⴱⵢⴰ',
     'zw' => 'ⵣⵉⵎⴱⴰⴱⵡⵉ',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => '(n>=0&&n<=1)',
     1 => '(n>=2&&n<=10&&fmod(n,1)==0)',
     2 => 'true',

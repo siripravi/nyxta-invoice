@@ -191,18 +191,20 @@ class Quotation extends CActiveRecord
         //$criteria->compare('invoice_id',$this->invoice->invoice_id);
 
 
-        return new CActiveDataProvider($this, array(
-            'criteria' => $criteria,
-            'sort' => array(
-                'defaultOrder' => 'ship_date ASC',
-                // 'multisort'=>true, //maybe your solution!
-                // 'attributes'=>array(
-                //    'field_1','field_2', 'field_3','field_4','field_5'
-            ),
-            'pagination' => array(
-                'pageSize' => 50,
+        return new CActiveDataProvider(
+            $this,
+            array(
+                'criteria' => $criteria,
+                'sort' => array(
+                    'defaultOrder' => 'ship_date ASC',
+                    // 'multisort'=>true, //maybe your solution!
+                    // 'attributes'=>array(
+                    //    'field_1','field_2', 'field_3','field_4','field_5'
+                ),
+                'pagination' => array(
+                    'pageSize' => 50,
+                )
             )
-        )
         );
     }
 
@@ -233,8 +235,7 @@ class Quotation extends CActiveRecord
                 $this->create_time = $this->update_time = date('Y-m-d H:i:s');
                 $this->cuser_id = $this->uuser_id = Yii::app()->user->id;
             } else {
-                $this->update_time = date('Y-m-d H:i:s');
-                ;
+                $this->update_time = date('Y-m-d H:i:s');;
                 $this->uuser_id = Yii::app()->user->id;
             }
             // $this->closed = 0;
@@ -270,8 +271,6 @@ class Quotation extends CActiveRecord
                     $item->st_type = Statement::TYPE_INVOICE;
                     $ret = $item->update();
                 }
-
-
             }
             $ret ? $transaction->commit() : '';
         } catch (Exception $e) {

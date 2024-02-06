@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CTreeView class file.
  *
@@ -110,7 +111,7 @@ class CTreeView extends CWidget
 	/**
 	 * @var array additional options that can be passed to the constructor of the treeview js object.
 	 */
-	public $options=array();
+	public $options = array();
 	/**
 	 * @var array additional HTML attributes that will be rendered in the UL tag.
 	 * The default tree view CSS has defined the following CSS classes which can be enabled
@@ -133,23 +134,23 @@ class CTreeView extends CWidget
 	 */
 	public function init()
 	{
-		if(isset($this->htmlOptions['id']))
-			$id=$this->htmlOptions['id'];
+		if (isset($this->htmlOptions['id']))
+			$id = $this->htmlOptions['id'];
 		else
-			$id=$this->htmlOptions['id']=$this->getId();
-		if($this->url!==null)
-			$this->url=CHtml::normalizeUrl($this->url);
-		$cs=Yii::app()->getClientScript();
+			$id = $this->htmlOptions['id'] = $this->getId();
+		if ($this->url !== null)
+			$this->url = CHtml::normalizeUrl($this->url);
+		$cs = Yii::app()->getClientScript();
 		$cs->registerCoreScript('treeview');
-		$options=$this->getClientOptions();
-		$options=$options===array()?'{}' : CJavaScript::encode($options);
-		$cs->registerScript('Yii.CTreeView#'.$id,"jQuery(\"#{$id}\").treeview($options);");
-		if($this->cssFile===null)
-			$cs->registerCssFile($cs->getCoreScriptUrl().'/treeview/jquery.treeview.css');
-		elseif($this->cssFile!==false)
+		$options = $this->getClientOptions();
+		$options = $options === array() ? '{}' : CJavaScript::encode($options);
+		$cs->registerScript('Yii.CTreeView#' . $id, "jQuery(\"#{$id}\").treeview($options);");
+		if ($this->cssFile === null)
+			$cs->registerCssFile($cs->getCoreScriptUrl() . '/treeview/jquery.treeview.css');
+		elseif ($this->cssFile !== false)
 			$cs->registerCssFile($this->cssFile);
 
-		echo CHtml::tag('ul',$this->htmlOptions,false,false)."\n";
+		echo CHtml::tag('ul', $this->htmlOptions, false, false) . "\n";
 		echo self::saveDataAsHtml($this->data);
 	}
 
@@ -166,11 +167,10 @@ class CTreeView extends CWidget
 	 */
 	protected function getClientOptions()
 	{
-		$options=$this->options;
-		foreach(array('url','animated','collapsed','control','unique','toggle','persist','cookieId','prerendered') as $name)
-		{
-			if($this->$name!==null)
-				$options[$name]=$this->$name;
+		$options = $this->options;
+		foreach (array('url', 'animated', 'collapsed', 'control', 'unique', 'toggle', 'persist', 'cookieId', 'prerendered') as $name) {
+			if ($this->$name !== null)
+				$options[$name] = $this->$name;
 		}
 		return $options;
 	}
@@ -182,46 +182,41 @@ class CTreeView extends CWidget
 	 */
 	public static function saveDataAsHtml($data)
 	{
-		$html='';
-		if(is_array($data))
-		{
-			foreach($data as $node)
-			{
-				if(!isset($node['text']))
+		$html = '';
+		if (is_array($data)) {
+			foreach ($data as $node) {
+				if (!isset($node['text']))
 					continue;
 
-				if(isset($node['expanded']))
-					$css=$node['expanded'] ? 'open' : 'closed';
+				if (isset($node['expanded']))
+					$css = $node['expanded'] ? 'open' : 'closed';
 				else
-					$css='';
+					$css = '';
 
-				if(isset($node['hasChildren']) && $node['hasChildren'])
-				{
-					if($css!=='')
-						$css.=' ';
-					$css.='hasChildren';
+				if (isset($node['hasChildren']) && $node['hasChildren']) {
+					if ($css !== '')
+						$css .= ' ';
+					$css .= 'hasChildren';
 				}
 
-				$options=isset($node['htmlOptions']) ? $node['htmlOptions'] : array();
-				if($css!=='')
-				{
-					if(isset($options['class']))
-						$options['class'].=' '.$css;
+				$options = isset($node['htmlOptions']) ? $node['htmlOptions'] : array();
+				if ($css !== '') {
+					if (isset($options['class']))
+						$options['class'] .= ' ' . $css;
 					else
-						$options['class']=$css;
+						$options['class'] = $css;
 				}
 
-				if(isset($node['id']))
-					$options['id']=$node['id'];
+				if (isset($node['id']))
+					$options['id'] = $node['id'];
 
-				$html.=CHtml::tag('li',$options,$node['text'],false);
-				if(!empty($node['children']))
-				{
-					$html.="\n<ul>\n";
-					$html.=self::saveDataAsHtml($node['children']);
-					$html.="</ul>\n";
+				$html .= CHtml::tag('li', $options, $node['text'], false);
+				if (!empty($node['children'])) {
+					$html .= "\n<ul>\n";
+					$html .= self::saveDataAsHtml($node['children']);
+					$html .= "</ul>\n";
 				}
-				$html.=CHtml::closeTag('li')."\n";
+				$html .= CHtml::closeTag('li') . "\n";
 			}
 		}
 		return $html;
@@ -237,7 +232,7 @@ class CTreeView extends CWidget
 	 */
 	public static function saveDataAsJson($data)
 	{
-		if(empty($data))
+		if (empty($data))
 			return '[]';
 		else
 			return CJavaScript::jsonEncode($data);

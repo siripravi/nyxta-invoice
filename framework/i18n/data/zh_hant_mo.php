@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'zh_Hant_MO'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8251',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'AU$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'MOP' => 'MOP$',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => '1月',
       2 => '2月',
       3 => '3月',
@@ -70,8 +71,8 @@ return array (
       11 => '11月',
       12 => '12月',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => '1月',
       2 => '2月',
       3 => '3月',
@@ -85,8 +86,8 @@ return array (
       11 => '11月',
       12 => '12月',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -101,10 +102,10 @@ return array (
       12 => '12',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -118,8 +119,8 @@ return array (
       11 => '11',
       12 => '12',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => '1月',
       2 => '2月',
       3 => '3月',
@@ -133,8 +134,8 @@ return array (
       11 => '11月',
       12 => '12月',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       1 => '一月',
       2 => '二月',
       3 => '三月',
@@ -149,10 +150,10 @@ return array (
       12 => '十二月',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => '星期日',
       1 => '星期一',
       2 => '星期二',
@@ -161,8 +162,8 @@ return array (
       5 => '星期五',
       6 => '星期六',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => '週日',
       1 => '週一',
       2 => '週二',
@@ -171,8 +172,8 @@ return array (
       5 => '週五',
       6 => '週六',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => '日',
       1 => '一',
       2 => '二',
@@ -181,8 +182,8 @@ return array (
       5 => '五',
       6 => '六',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => '日',
       1 => '一',
       2 => '二',
@@ -192,10 +193,10 @@ return array (
       6 => '六',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => '日',
       1 => '一',
       2 => '二',
@@ -204,8 +205,8 @@ return array (
       5 => '五',
       6 => '六',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => '周日',
       1 => '周一',
       2 => '周二',
@@ -214,8 +215,8 @@ return array (
       5 => '周五',
       6 => '周六',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => '日',
       1 => '一',
       2 => '二',
@@ -224,8 +225,8 @@ return array (
       5 => '五',
       6 => '六',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => '星期日',
       1 => '星期一',
       2 => '星期二',
@@ -235,33 +236,33 @@ return array (
       6 => '星期六',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => '西元前',
       1 => '西元',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => '公元前',
       1 => '公元',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => '公元前',
       1 => '公元',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'y年MM月dd日EEEE',
     'long' => 'y年MM月dd日',
     'medium' => 'y年M月d日',
     'short' => 'yy年M月d日',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'ah:mm:ss [zzzz]',
     'long' => 'ah:mm:ss [z]',
     'medium' => 'ahh:mm:ss',
@@ -271,8 +272,8 @@ return array (
   'amName' => '上午',
   'pmName' => '下午',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => '阿法文',
     'ab' => '阿布哈茲文',
     'ace' => '亞齊文',
@@ -847,8 +848,8 @@ return array (
     'zxx' => '無語言內容',
     'zza' => '扎扎文',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'afak' => '阿法卡文字',
     'arab' => '波斯阿拉伯文字',
     'armi' => '皇室亞美尼亞文',
@@ -1008,8 +1009,8 @@ return array (
     'zyyy' => '一般文字',
     'zzzz' => '未知文字',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => '世界',
     '002' => '非洲',
     '003' => '北美洲',

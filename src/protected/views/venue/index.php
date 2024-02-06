@@ -15,8 +15,10 @@ $this->menu = array(
 ?>
 
 <?php echo BsHtml::pageHeader('Venues') ?>
-<?php $this->widget('bootstrap.widgets.BsListView', array(
-	'dataProvider' => $dataProvider,
-	'itemView' => '_view',
-)
+<?php $this->widget(
+	'bootstrap.widgets.BsListView',
+	array(
+		'dataProvider' => $dataProvider,
+		'itemView' => '_view',
+	)
 ); ?>

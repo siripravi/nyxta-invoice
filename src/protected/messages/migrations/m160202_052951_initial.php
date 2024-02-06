@@ -51,7 +51,6 @@ class m160202_052951_initial extends CDbMigration
         ), '');
 
         $this->createIndex('idx_emp_type_id', 'employee', 'emp_type_id', FALSE);
-
     }
 
     public function down()
@@ -60,7 +59,6 @@ class m160202_052951_initial extends CDbMigration
         $this->dropTable('customer_cards');
         $this->dropTable('designation');
         $this->dropTable('employee');
-
     }
     /*
        // Use safeUp/safeDown to do migration with transaction

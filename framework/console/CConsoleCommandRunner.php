@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CConsoleCommandRunner class file.
  *
@@ -39,7 +40,7 @@ class CConsoleCommandRunner extends CComponent
 	 * )
 	 * </pre>
 	 */
-	public $commands=array();
+	public $commands = array();
 
 	private $_scriptName;
 	private $_command;
@@ -53,23 +54,21 @@ class CConsoleCommandRunner extends CComponent
 	 */
 	public function run($args)
 	{
-		$this->_scriptName=$args[0];
+		$this->_scriptName = $args[0];
 		array_shift($args);
-		if(isset($args[0]))
-		{
-			$name=$args[0];
+		if (isset($args[0])) {
+			$name = $args[0];
 			array_shift($args);
-		}
-		else
-			$name='help';
+		} else
+			$name = 'help';
 
-		$oldCommand=$this->_command;
-		if(($command=$this->createCommand($name))===null)
-			$command=$this->createCommand('help');
-		$this->_command=$command;
+		$oldCommand = $this->_command;
+		if (($command = $this->createCommand($name)) === null)
+			$command = $this->createCommand('help');
+		$this->_command = $command;
 		$command->init();
-		$exitCode=$command->run($args);
-		$this->_command=$oldCommand;
+		$exitCode = $command->run($args);
+		$this->_command = $oldCommand;
 		return $exitCode;
 	}
 
@@ -97,7 +96,7 @@ class CConsoleCommandRunner extends CComponent
 	 */
 	public function setCommand($value)
 	{
-		$this->_command=$value;
+		$this->_command = $value;
 	}
 
 	/**
@@ -107,14 +106,13 @@ class CConsoleCommandRunner extends CComponent
 	 */
 	public function findCommands($path)
 	{
-		if(($dir=@opendir($path))===false)
+		if (($dir = @opendir($path)) === false)
 			return array();
-		$commands=array();
-		while(($name=readdir($dir))!==false)
-		{
-			$file=$path.DIRECTORY_SEPARATOR.$name;
-			if(!strcasecmp(substr($name,-11),'Command.php') && is_file($file))
-				$commands[strtolower(substr($name,0,-11))]=$file;
+		$commands = array();
+		while (($name = readdir($dir)) !== false) {
+			$file = $path . DIRECTORY_SEPARATOR . $name;
+			if (!strcasecmp(substr($name, -11), 'Command.php') && is_file($file))
+				$commands[strtolower(substr($name, 0, -11))] = $file;
 		}
 		closedir($dir);
 		return $commands;
@@ -127,12 +125,10 @@ class CConsoleCommandRunner extends CComponent
 	 */
 	public function addCommands($path)
 	{
-		if(($commands=$this->findCommands($path))!==array())
-		{
-			foreach($commands as $name=>$file)
-			{
-				if(!isset($this->commands[$name]))
-					$this->commands[$name]=$file;
+		if (($commands = $this->findCommands($path)) !== array()) {
+			foreach ($commands as $name => $file) {
+				if (!isset($this->commands[$name]))
+					$this->commands[$name] = $file;
 			}
 		}
 	}
@@ -143,37 +139,31 @@ class CConsoleCommandRunner extends CComponent
 	 */
 	public function createCommand($name)
 	{
-		$name=strtolower($name);
+		$name = strtolower($name);
 
-		$command=null;
-		if(isset($this->commands[$name]))
-			$command=$this->commands[$name];
-		else
-		{
-			$commands=array_change_key_case($this->commands);
-			if(isset($commands[$name]))
-				$command=$commands[$name];
+		$command = null;
+		if (isset($this->commands[$name]))
+			$command = $this->commands[$name];
+		else {
+			$commands = array_change_key_case($this->commands);
+			if (isset($commands[$name]))
+				$command = $commands[$name];
 		}
 
-		if($command!==null)
-		{
-			if(is_string($command)) // class file path or alias
+		if ($command !== null) {
+			if (is_string($command)) // class file path or alias
 			{
-				if(strpos($command,'/')!==false || strpos($command,'\\')!==false)
-				{
-					$className=substr(basename($command),0,-4);
-					if(!class_exists($className,false))
+				if (strpos($command, '/') !== false || strpos($command, '\\') !== false) {
+					$className = substr(basename($command), 0, -4);
+					if (!class_exists($className, false))
 						require_once($command);
-				}
-				else // an alias
-					$className=Yii::import($command);
-				return new $className($name,$this);
-			}
-			else // an array configuration
-				return Yii::createComponent($command,$name,$this);
-		}
-		elseif($name==='help')
-			return new CHelpCommand('help',$this);
+				} else // an alias
+					$className = Yii::import($command);
+				return new $className($name, $this);
+			} else // an array configuration
+				return Yii::createComponent($command, $name, $this);
+		} elseif ($name === 'help')
+			return new CHelpCommand('help', $this);
 		else
 			return null;
 	}

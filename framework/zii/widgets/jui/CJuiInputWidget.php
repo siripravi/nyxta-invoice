@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CJuiInputWidget class file.
  *
@@ -47,27 +48,29 @@ abstract class CJuiInputWidget extends CJuiWidget
 	 * @return array name and ID of the input: array('name','id').
 	 * @throws CException in case model and attribute property or name property cannot be resolved.
 	 */
-	protected function resolveNameID($nameProperty='name',$attributeProperty='attribute')
+	protected function resolveNameID($nameProperty = 'name', $attributeProperty = 'attribute')
 	{
-		if($this->$nameProperty!==null)
-			$name=$this->$nameProperty;
-		elseif(isset($this->htmlOptions[$nameProperty]))
-			$name=$this->htmlOptions[$nameProperty];
-		elseif($this->hasModel())
-			$name=CHtml::activeName($this->model,$this->$attributeProperty);
+		if ($this->$nameProperty !== null)
+			$name = $this->$nameProperty;
+		elseif (isset($this->htmlOptions[$nameProperty]))
+			$name = $this->htmlOptions[$nameProperty];
+		elseif ($this->hasModel())
+			$name = CHtml::activeName($this->model, $this->$attributeProperty);
 		else
-			throw new CException(Yii::t('zii','{class} must specify "model" and "{attribute}" or "{name}" property values.',
-				array('{class}'=>get_class($this),'{attribute}'=>$attributeProperty,'{name}'=>$nameProperty)));
+			throw new CException(Yii::t(
+				'zii',
+				'{class} must specify "model" and "{attribute}" or "{name}" property values.',
+				array('{class}' => get_class($this), '{attribute}' => $attributeProperty, '{name}' => $nameProperty)
+			));
 
-		if(($id=$this->getId(false))===null)
-		{
-			if(isset($this->htmlOptions['id']))
-				$id=$this->htmlOptions['id'];
+		if (($id = $this->getId(false)) === null) {
+			if (isset($this->htmlOptions['id']))
+				$id = $this->htmlOptions['id'];
 			else
-				$id=CHtml::getIdByName($name);
+				$id = CHtml::getIdByName($name);
 		}
 
-		return array($name,$id);
+		return array($name, $id);
 	}
 
 	/**
@@ -75,6 +78,6 @@ abstract class CJuiInputWidget extends CJuiWidget
 	 */
 	protected function hasModel()
 	{
-		return $this->model instanceof CModel && $this->attribute!==null;
+		return $this->model instanceof CModel && $this->attribute !== null;
 	}
 }

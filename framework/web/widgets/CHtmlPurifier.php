@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CHtmlPurifier class file.
  *
@@ -8,14 +9,13 @@
  * @license https://www.yiiframework.com/license/
  */
 
-if(!class_exists('HTMLPurifier_Bootstrap',false))
-{
-	require_once(Yii::getPathOfAlias('system.vendors.htmlpurifier').DIRECTORY_SEPARATOR.'HTMLPurifier.standalone.php');
+if (!class_exists('HTMLPurifier_Bootstrap', false)) {
+	require_once(Yii::getPathOfAlias('system.vendors.htmlpurifier') . DIRECTORY_SEPARATOR . 'HTMLPurifier.standalone.php');
 	HTMLPurifier_Bootstrap::registerAutoload();
 }
 
 /**
-     * CHtmlPurifier is wrapper of {@link http://htmlpurifier.org HTML Purifier}.
+ * CHtmlPurifier is wrapper of {@link http://htmlpurifier.org HTML Purifier}.
  *
  * CHtmlPurifier removes all malicious code (better known as XSS) with a thoroughly audited,
  * secure yet permissive whitelist. It will also make sure the resulting code
@@ -58,8 +58,8 @@ class CHtmlPurifier extends COutputProcessor
 	 * or the filename of an ini file.
 	 * @see http://htmlpurifier.org/live/configdoc/plain.html
 	 */
-	private $_options=null;
-	
+	private $_options = null;
+
 	/**
 	 * Processes the captured output.
 	 * This method purifies the output using {@link http://htmlpurifier.org HTML Purifier}.
@@ -67,10 +67,10 @@ class CHtmlPurifier extends COutputProcessor
 	 */
 	public function processOutput($output)
 	{
-		$output=$this->purify($output);
+		$output = $this->purify($output);
 		parent::processOutput($output);
 	}
-	
+
 	/**
 	 * Purifies the HTML content by removing malicious code.
 	 * @param mixed $content the content to be purified.
@@ -78,13 +78,13 @@ class CHtmlPurifier extends COutputProcessor
 	 */
 	public function purify($content)
 	{
-		if(is_array($content))
-			$content=array_map(array($this,'purify'),$content);
+		if (is_array($content))
+			$content = array_map(array($this, 'purify'), $content);
 		else
-			$content=$this->getPurifier()->purify($content);
+			$content = $this->getPurifier()->purify($content);
 		return $content;
 	}
-	
+
 	/**
 	 * Set the options for HTML Purifier and create a new HTML Purifier instance based on these options.
 	 * @param mixed $options the options for HTML Purifier
@@ -92,11 +92,11 @@ class CHtmlPurifier extends COutputProcessor
 	 */
 	public function setOptions($options)
 	{
-		$this->_options=$options;
+		$this->_options = $options;
 		$this->createNewHtmlPurifierInstance();
 		return $this;
 	}
-	
+
 	/**
 	 * Get the options for the HTML Purifier instance.
 	 * @return mixed the HTML Purifier instance options
@@ -105,26 +105,26 @@ class CHtmlPurifier extends COutputProcessor
 	{
 		return $this->_options;
 	}
-	
+
 	/**
 	 * Get the HTML Purifier instance or create a new one if it doesn't exist.
 	 * @return HTMLPurifier
 	 */
 	protected function getPurifier()
 	{
-		if($this->_purifier!==null)
+		if ($this->_purifier !== null)
 			return $this->_purifier;
 		return $this->createNewHtmlPurifierInstance();
 	}
-	
+
 	/**
 	 * Create a new HTML Purifier instance.
 	 * @return HTMLPurifier
 	 */
 	protected function createNewHtmlPurifierInstance()
 	{
-		$this->_purifier=new HTMLPurifier($this->getOptions());
-		$this->_purifier->config->set('Cache.SerializerPath',Yii::app()->getRuntimePath());
+		$this->_purifier = new HTMLPurifier($this->getOptions());
+		$this->_purifier->config->set('Cache.SerializerPath', Yii::app()->getRuntimePath());
 		return $this->_purifier;
 	}
 }

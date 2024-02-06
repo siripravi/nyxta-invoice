@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file contains CTypedMap class.
  *
@@ -28,7 +29,7 @@ class CTypedMap extends CMap
 	 */
 	public function __construct($type)
 	{
-		$this->_type=$type;
+		$this->_type = $type;
 	}
 
 	/**
@@ -40,12 +41,15 @@ class CTypedMap extends CMap
 	 * @throws CException If the index specified exceeds the bound,
 	 * the map is read-only or the element is not of the expected type.
 	 */
-	public function add($index,$item)
+	public function add($index, $item)
 	{
-		if($item instanceof $this->_type)
-			parent::add($index,$item);
+		if ($item instanceof $this->_type)
+			parent::add($index, $item);
 		else
-			throw new CException(Yii::t('yii','CTypedMap<{type}> can only hold objects of {type} class.',
-				array('{type}'=>$this->_type)));
+			throw new CException(Yii::t(
+				'yii',
+				'CTypedMap<{type}> can only hold objects of {type} class.',
+				array('{type}' => $this->_type)
+			));
 	}
 }

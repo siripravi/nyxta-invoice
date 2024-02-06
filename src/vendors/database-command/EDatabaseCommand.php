@@ -27,7 +27,7 @@ class EDatabaseCommand extends CConsoleCommand
      * Defaults to 'application.runtime' (meaning 'protected/runtime').
      * Copy the created migration into eg. application.migrations to activate it for your project.
      */
-    public $migrationPath='application.runtime';
+    public $migrationPath = 'application.runtime';
 
     /**
      * @var string database connection component
@@ -73,23 +73,22 @@ class EDatabaseCommand extends CConsoleCommand
      * @var bool whether to display the Foreign Keys warning
      */
     protected $_displayFkWarning = false;
-    
+
     /**
      * @var string wheter to ignore autoincrement column values
      */
     public $insertAutoIncrementValues = true;
 
-    public function beforeAction($action,$params)
+    public function beforeAction($action, $params)
     {
-        $path=Yii::getPathOfAlias($this->migrationPath);
-        if($path===false || !is_dir($path))
-        {
-            echo 'Error: The migration directory does not exist: '.$this->migrationPath."\n";
+        $path = Yii::getPathOfAlias($this->migrationPath);
+        if ($path === false || !is_dir($path)) {
+            echo 'Error: The migration directory does not exist: ' . $this->migrationPath . "\n";
             exit(1);
         }
-        $this->migrationPath=$path;
+        $this->migrationPath = $path;
 
-        return parent::beforeAction($action,$params);
+        return parent::beforeAction($action, $params);
     }
 
     public function getHelp()
@@ -110,7 +109,7 @@ EOS;
 
     public function actionDump($args)
     {
-        echo "Connecting to '".Yii::app()->{$this->dbConnection}->connectionString."'\n";
+        echo "Connecting to '" . Yii::app()->{$this->dbConnection}->connectionString . "'\n";
 
         $schema = Yii::app()->{$this->dbConnection}->schema;
         $tables = Yii::app()->{$this->dbConnection}->schema->tables;
@@ -145,11 +144,11 @@ EOS;
             if ($this->ignoreMigrationTable && $table->name == "migration") {
                 continue;
             }
-            if (in_array($table->name, explode(",",$this->excludeTables))) {
+            if (in_array($table->name, explode(",", $this->excludeTables))) {
                 continue;
             }
 
-            foreach ($prefixes AS $prefix) {
+            foreach ($prefixes as $prefix) {
                 if (substr($table->name, 0, strlen($prefix)) == $prefix) {
                     $found = true;
                     break;
@@ -159,7 +158,7 @@ EOS;
                 continue;
             }
 
-            echo " -> ".$table->name."\n";
+            echo " -> " . $table->name . "\n";
 
             if ($this->truncateTable == true) {
                 $codeTruncate .= $this->generateTruncate($table, $schema);
@@ -175,7 +174,7 @@ EOS;
             }
         }
 
-        $code .= $codeTruncate."\n".$codeSchema."\n".$codeForeignKeys."\n".$codeForeignKeys."\n".$codeInserts;
+        $code .= $codeTruncate . "\n" . $codeSchema . "\n" . $codeForeignKeys . "\n" . $codeForeignKeys . "\n" . $codeInserts;
 
         if ($this->foreignKeyChecks == false) {
             $code .= $this->indent(2) . "if (\$this->dbConnection->schema instanceof CMysqlSchema)\n";
@@ -183,8 +182,13 @@ EOS;
         }
 
         $migrationClassCode = $this->renderFile(
-            dirname(__FILE__) . '/views/migration.php', array('migrationClassName' => $migrationClassName,
-                                                              'functionUp' => $code), true);
+            dirname(__FILE__) . '/views/migration.php',
+            array(
+                'migrationClassName' => $migrationClassName,
+                'functionUp' => $code
+            ),
+            true
+        );
 
         file_put_contents($filename, $migrationClassCode);
 
@@ -258,11 +262,11 @@ EOS;
             ->query();
 
         $code = "\n\n\n" . $this->indent(2) . "// Data for table '" . $table->name . "'\n";
-        foreach ($data AS $row) {
+        foreach ($data as $row) {
             $code .= $this->indent(2) . '$this->insert("' . $table->name . '", array(' . "\n";
-            foreach ($row AS $column => $value) {
-                if($this->insertAutoIncrementValues == false && $table->columns[$column]->autoIncrement === true) {
-                  $value = null;
+            foreach ($row as $column => $value) {
+                if ($this->insertAutoIncrementValues == false && $table->columns[$column]->autoIncrement === true) {
+                    $value = null;
                 }
                 $code .= $this->indent(3) . '"' . $column . '"=>' . (($value === null) ? 'null' :
                     '"' . addcslashes($value, '"\\$') . '"') . ',' . "\n";
@@ -298,8 +302,4 @@ EOS;
 
         return $result;
     }
-
-
 }
-
-?>

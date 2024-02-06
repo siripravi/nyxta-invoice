@@ -22,7 +22,6 @@ class getItems extends CAction
             Yii::log('Editable Items: ' . var_export(CJSON::encode($stmt->relModel->attributes), true), CLogger::LEVEL_WARNING, __METHOD__);
             $stmt->relModel->uuser_id = Yii::app()->user->id;
             $stmt->relModel->update();
-
         }
 
 
@@ -89,5 +88,4 @@ class getItems extends CAction
             throw new CHttpException(404, 'The requested page does not bexist.');
         return $model;
     }
-
 }

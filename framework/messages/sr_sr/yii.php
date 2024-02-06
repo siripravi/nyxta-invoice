@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -13,7 +14,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   'CHttpRequest is unable to determine the path info of the request.' => 'CHttpRequest не можа да установи информације о путањи (path info) за теккући захтев (request).',
   'CHttpRequest is unable to determine the request URI.' => 'CHttpRequest не може да установи URI за текући захтев (zahtev).',
   'CXCache requires PHP XCache extension to be loaded.' => 'CXCache захтева да екстензија PHP XCache буде учитана.',
@@ -141,7 +142,7 @@ return array (
   'The pattern for week in year must be "w".' => 'Шаблон за седмицу у години мора бити "w".',
   'The queue is empty.' => 'Ред (queue) је празан.',
   'The relation "{relation}" in active record class "{class}" is not specified correctly: the join table "{joinTable}" given in the foreign key cannot be found in the database.' => 'Релација "{relation}" у active record класи "{class}" није специфицирана исправно: придружена табела (join table) "{joinTable}" задата у спољном кључу (foreign key) не може бити пронађена у бази.',
-  'The relation "{relation}" in active record class "{class}" is specified with an incomplete foreign key. The foreign key must consist of columns referencing both joining tables.' => 'Релација "{relation}" у active record класи "{class}" је специфицирана са некомплетним спољним кључем (foreign key). Спољни кључ (foreign key) мора се састојати од колона које референцирају обе табеле за спајање (joining tables).', 
+  'The relation "{relation}" in active record class "{class}" is specified with an incomplete foreign key. The foreign key must consist of columns referencing both joining tables.' => 'Релација "{relation}" у active record класи "{class}" је специфицирана са некомплетним спољним кључем (foreign key). Спољни кључ (foreign key) мора се састојати од колона које референцирају обе табеле за спајање (joining tables).',
   'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key "{key}". The foreign key does not point to either joining table.' => 'Релација "{relation}" u active record класи "{class}" је специфицирана погрешним спољним кључем (foreign key) "{key}". Спољни кључ (foreign key) не показује ни на једну табелу за спајање (joining tables).',
   'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key. The format of the foreign key must be "joinTable(fk1,fk2,...)".' => 'Релација "{relation}" u active record класи "{class}" је специфицирана погрешним спољним кључем (foreign key). Формат спољног кључа (foreign key) мора бити "joinTable(fk1,fk2,...)',
   'The requested controller "{controller}" does not exist.' => 'Захтевани контролер "{controller}" не постоји.',

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'br_FR'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => ' ',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤ #,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -52,10 +53,10 @@ return array (
     'XOF' => 'CFA',
     'XPF' => 'CFPF',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Genver',
       2 => 'Cʼhwevrer',
       3 => 'Meurzh',
@@ -69,8 +70,8 @@ return array (
       11 => 'Du',
       12 => 'Kerzu',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Gen',
       2 => 'Cʼhwe',
       3 => 'Meur',
@@ -85,10 +86,10 @@ return array (
       12 => 'Ker',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -102,8 +103,8 @@ return array (
       11 => '11',
       12 => '12',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Gen',
       2 => 'Cʼhwe',
       3 => 'Meur',
@@ -117,8 +118,8 @@ return array (
       11 => 'Du',
       12 => 'Ker',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       1 => 'Genver',
       2 => 'Cʼhwevrer',
       3 => 'Meurzh',
@@ -133,10 +134,10 @@ return array (
       12 => 'Kerzu',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Sul',
       1 => 'Lun',
       2 => 'Meurzh',
@@ -145,8 +146,8 @@ return array (
       5 => 'Gwener',
       6 => 'Sadorn',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'sul',
       1 => 'lun',
       2 => 'meu.',
@@ -155,8 +156,8 @@ return array (
       5 => 'gwe.',
       6 => 'sad.',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'su',
       1 => 'lu',
       2 => 'mz',
@@ -166,10 +167,10 @@ return array (
       6 => 'sa',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'su',
       1 => 'lu',
       2 => 'mz',
@@ -178,8 +179,8 @@ return array (
       5 => 'gw',
       6 => 'sa',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'sul',
       1 => 'lun',
       2 => 'meu.',
@@ -188,8 +189,8 @@ return array (
       5 => 'gwe.',
       6 => 'sad.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Sul',
       1 => 'Lun',
       2 => 'Meurzh',
@@ -199,33 +200,33 @@ return array (
       6 => 'Sadorn',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'BCE',
       1 => 'CE',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'BCE',
       1 => 'CE',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'BCE',
       1 => 'CE',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'y MMMM d, EEEE',
     'long' => 'y MMMM d',
     'medium' => 'y MMM d',
     'short' => 'y-MM-dd',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -235,8 +236,8 @@ return array (
   'amName' => 'AM',
   'pmName' => 'PM',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'afar',
     'ab' => 'abkhazeg',
     'ach' => 'acoli',
@@ -657,8 +658,8 @@ return array (
     'zun' => 'zuni',
     'zxx' => 'diyezh',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'arabek',
     'armi' => 'arameek impalaerel',
     'armn' => 'armenianek',
@@ -719,8 +720,8 @@ return array (
     'zyyy' => 'boutin',
     'zzzz' => 'skritur dianav',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'Bed',
     '002' => 'Afrika',
     '003' => 'Norzhamerika',
@@ -1011,8 +1012,8 @@ return array (
     'zw' => 'Zimbabwe',
     'zz' => 'Rannved dianav',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'fmod(n,10)==1&&fmod(n,100) not in 11,71,91',
     1 => 'fmod(n,10)==2&&fmod(n,100) not in 12,72,92',
     2 => '(fmod(n,10)>=3&&fmod(n,10)<=4&&fmod(fmod(n,10),1)==0),9&&(fmod(n,100)<10||fmod(n,100)>19),70..79,90..99',

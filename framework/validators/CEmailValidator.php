@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CEmailValidator class file.
  *
@@ -21,49 +22,49 @@ class CEmailValidator extends CValidator
 	 * @var string the regular expression used to validate the attribute value.
 	 * @see http://www.regular-expressions.info/email.html
 	 */
-	public $pattern='/^[a-zA-Z0-9!#$%&\'*+\\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&\'*+\\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$/';
+	public $pattern = '/^[a-zA-Z0-9!#$%&\'*+\\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&\'*+\\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$/';
 	/**
 	 * @var string the regular expression used to validate email addresses with the name part.
 	 * This property is used only when {@link allowName} is true.
 	 * @see allowName
 	 */
-	public $fullPattern='/^[^@]*<[a-zA-Z0-9!#$%&\'*+\\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&\'*+\\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?>$/';
+	public $fullPattern = '/^[^@]*<[a-zA-Z0-9!#$%&\'*+\\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&\'*+\\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?>$/';
 	/**
 	 * @var boolean whether to allow name in the email address (e.g. "Qiang Xue <qiang.xue@gmail.com>"). Defaults to false.
 	 * @see fullPattern
 	 */
-	public $allowName=false;
+	public $allowName = false;
 	/**
 	 * @var boolean whether to check the MX record for the email address.
 	 * Defaults to false. To enable it, you need to make sure the PHP function 'checkdnsrr'
 	 * exists in your PHP installation.
 	 * Please note that this check may fail due to temporary problems even if email is deliverable.
 	 */
-	public $checkMX=false;
+	public $checkMX = false;
 	/**
 	 * @var boolean whether to check port 25 for the email address.
 	 * Defaults to false. To enable it, ensure that the PHP functions 'dns_get_record' and
 	 * 'fsockopen' are available in your PHP installation.
 	 * Please note that this check may fail due to temporary problems even if email is deliverable.
 	 */
-	public $checkPort=false;
+	public $checkPort = false;
 	/**
 	 * @var null|int timeout to use when attempting to open connection to port in checkMxPorts. If null (default)
 	 * use default_socket_timeout value from php.ini. If not null the timeout is set in seconds.
 	 * @since 1.1.19
 	 */
-	public $timeout=null;
+	public $timeout = null;
 	/**
 	 * @var boolean whether the attribute value can be null or empty. Defaults to true,
 	 * meaning that if the attribute is empty, it is considered valid.
 	 */
-	public $allowEmpty=true;
+	public $allowEmpty = true;
 	/**
 	 * @var boolean whether validation process should care about IDN (internationalized domain names). Default
 	 * value is false which means that validation of emails containing IDN will always fail.
 	 * @since 1.1.13
 	 */
-	public $validateIDN=false;
+	public $validateIDN = false;
 
 	/**
 	 * Validates the attribute of the object.
@@ -71,16 +72,15 @@ class CEmailValidator extends CValidator
 	 * @param CModel $object the object being validated
 	 * @param string $attribute the attribute being validated
 	 */
-	protected function validateAttribute($object,$attribute)
+	protected function validateAttribute($object, $attribute)
 	{
-		$value=$object->$attribute;
-		if($this->allowEmpty && $this->isEmpty($value))
+		$value = $object->$attribute;
+		if ($this->allowEmpty && $this->isEmpty($value))
 			return;
 
-		if(!$this->validateValue($value))
-		{
-			$message=$this->message!==null?$this->message:Yii::t('yii','{attribute} is not a valid email address.');
-			$this->addError($object,$attribute,$message);
+		if (!$this->validateValue($value)) {
+			$message = $this->message !== null ? $this->message : Yii::t('yii', '{attribute} is not a valid email address.');
+			$this->addError($object, $attribute, $message);
 		}
 	}
 
@@ -97,16 +97,16 @@ class CEmailValidator extends CValidator
 	 */
 	public function validateValue($value)
 	{
-		if(is_string($value) && $this->validateIDN)
-			$value=$this->encodeIDN($value);
+		if (is_string($value) && $this->validateIDN)
+			$value = $this->encodeIDN($value);
 		// make sure string length is limited to avoid DOS attacks
-		$valid=is_string($value) && strlen($value)<=254 && (preg_match($this->pattern,$value) || $this->allowName && preg_match($this->fullPattern,$value));
-		if($valid)
-			$domain=rtrim(substr($value,strpos($value,'@')+1),'>');
-		if($valid && $this->checkMX && function_exists('checkdnsrr'))
-			$valid=checkdnsrr($domain,'MX');
-		if($valid && $this->checkPort && function_exists('fsockopen') && function_exists('dns_get_record'))
-			$valid=$this->checkMxPorts($domain);
+		$valid = is_string($value) && strlen($value) <= 254 && (preg_match($this->pattern, $value) || $this->allowName && preg_match($this->fullPattern, $value));
+		if ($valid)
+			$domain = rtrim(substr($value, strpos($value, '@') + 1), '>');
+		if ($valid && $this->checkMX && function_exists('checkdnsrr'))
+			$valid = checkdnsrr($domain, 'MX');
+		if ($valid && $this->checkPort && function_exists('fsockopen') && function_exists('dns_get_record'))
+			$valid = $this->checkMxPorts($domain);
 		return $valid;
 	}
 
@@ -118,34 +118,32 @@ class CEmailValidator extends CValidator
 	 * @see CActiveForm::enableClientValidation
 	 * @since 1.1.7
 	 */
-	public function clientValidateAttribute($object,$attribute)
+	public function clientValidateAttribute($object, $attribute)
 	{
-		if($this->validateIDN)
-		{
+		if ($this->validateIDN) {
 			Yii::app()->getClientScript()->registerCoreScript('punycode');
 			// punycode.js works only with the domains - so we have to extract it before punycoding
-			$validateIDN='
+			$validateIDN = '
 var info = value.match(/^(.[^@]+)@(.+)$/);
 if (info)
 	value = info[1] + "@" + punycode.toASCII(info[2]);
 ';
-		}
-		else
-			$validateIDN='';
+		} else
+			$validateIDN = '';
 
-		$message=$this->message!==null ? $this->message : Yii::t('yii','{attribute} is not a valid email address.');
-		$message=strtr($message, array(
-			'{attribute}'=>$object->getAttributeLabel($attribute),
+		$message = $this->message !== null ? $this->message : Yii::t('yii', '{attribute} is not a valid email address.');
+		$message = strtr($message, array(
+			'{attribute}' => $object->getAttributeLabel($attribute),
 		));
 
-		$condition="!value.match({$this->pattern})";
-		if($this->allowName)
-			$condition.=" && !value.match({$this->fullPattern})";
+		$condition = "!value.match({$this->pattern})";
+		if ($this->allowName)
+			$condition .= " && !value.match({$this->fullPattern})";
 
 		return "
 $validateIDN
-if(".($this->allowEmpty ? "jQuery.trim(value)!='' && " : '').$condition.") {
-	messages.push(".CJSON::encode($message).");
+if(" . ($this->allowEmpty ? "jQuery.trim(value)!='' && " : '') . $condition . ") {
+	messages.push(" . CJSON::encode($message) . ");
 }
 ";
 	}
@@ -159,16 +157,14 @@ if(".($this->allowEmpty ? "jQuery.trim(value)!='' && " : '').$condition.") {
 	 */
 	protected function checkMxPorts($domain)
 	{
-		$records=dns_get_record($domain, DNS_MX);
-		if($records===false || empty($records))
+		$records = dns_get_record($domain, DNS_MX);
+		if ($records === false || empty($records))
 			return false;
-		$timeout=is_int($this->timeout)?$this->timeout:((int)ini_get('default_socket_timeout'));
-		usort($records,array($this,'mxSort'));
-		foreach($records as $record)
-		{
-			$handle=@fsockopen($record['target'],25,$errno,$errstr,$timeout);
-			if($handle!==false)
-			{
+		$timeout = is_int($this->timeout) ? $this->timeout : ((int)ini_get('default_socket_timeout'));
+		usort($records, array($this, 'mxSort'));
+		foreach ($records as $record) {
+			$handle = @fsockopen($record['target'], 25, $errno, $errstr, $timeout);
+			if ($handle !== false) {
 				fclose($handle);
 				return true;
 			}
@@ -186,7 +182,7 @@ if(".($this->allowEmpty ? "jQuery.trim(value)!='' && " : '').$condition.") {
 	 */
 	protected function mxSort($a, $b)
 	{
-		return $a['pri']-$b['pri'];
+		return $a['pri'] - $b['pri'];
 	}
 
 	/**
@@ -197,25 +193,18 @@ if(".($this->allowEmpty ? "jQuery.trim(value)!='' && " : '').$condition.") {
 	 */
 	private function encodeIDN($value)
 	{
-		if(preg_match_all('/^(.*)@(.*)$/',$value,$matches))
-		{
-			if(function_exists('idn_to_ascii'))
-			{
-				$value=$matches[1][0].'@';
-				if (defined('IDNA_NONTRANSITIONAL_TO_ASCII') && defined('INTL_IDNA_VARIANT_UTS46'))
-				{
-					$value.=idn_to_ascii($matches[2][0],IDNA_NONTRANSITIONAL_TO_ASCII, INTL_IDNA_VARIANT_UTS46);
+		if (preg_match_all('/^(.*)@(.*)$/', $value, $matches)) {
+			if (function_exists('idn_to_ascii')) {
+				$value = $matches[1][0] . '@';
+				if (defined('IDNA_NONTRANSITIONAL_TO_ASCII') && defined('INTL_IDNA_VARIANT_UTS46')) {
+					$value .= idn_to_ascii($matches[2][0], IDNA_NONTRANSITIONAL_TO_ASCII, INTL_IDNA_VARIANT_UTS46);
+				} else {
+					$value .= idn_to_ascii($matches[2][0]);
 				}
-				else
-				{
-					$value.=idn_to_ascii($matches[2][0]);
-				}
-			}
-			else
-			{
-				require_once(Yii::getPathOfAlias('system.vendors.Net_IDNA2.Net').DIRECTORY_SEPARATOR.'IDNA2.php');
-				$idna=new Net_IDNA2();
-				$value=$matches[1][0].'@'.@$idna->encode($matches[2][0]);
+			} else {
+				require_once(Yii::getPathOfAlias('system.vendors.Net_IDNA2.Net') . DIRECTORY_SEPARATOR . 'IDNA2.php');
+				$idna = new Net_IDNA2();
+				$value = $matches[1][0] . '@' . @$idna->encode($matches[2][0]);
 			}
 		}
 		return $value;

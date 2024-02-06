@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CListPager class file.
  *
@@ -38,21 +39,21 @@ class CListPager extends CBasePager
 	/**
 	 * @var array HTML attributes for the enclosing 'div' tag.
 	 */
-	public $htmlOptions=array();
+	public $htmlOptions = array();
 
 	/**
 	 * Initializes the pager by setting some default property values.
 	 */
 	public function init()
 	{
-		if($this->header===null)
-			$this->header=Yii::t('yii','Go to page: ');
-		if(!isset($this->htmlOptions['id']))
-			$this->htmlOptions['id']=$this->getId();
-		if($this->promptText!==null)
-			$this->htmlOptions['prompt']=$this->promptText;
-		if(!isset($this->htmlOptions['onchange']))
-			$this->htmlOptions['onchange']="if(this.value!='') {window.location=this.value;};";
+		if ($this->header === null)
+			$this->header = Yii::t('yii', 'Go to page: ');
+		if (!isset($this->htmlOptions['id']))
+			$this->htmlOptions['id'] = $this->getId();
+		if ($this->promptText !== null)
+			$this->htmlOptions['prompt'] = $this->promptText;
+		if (!isset($this->htmlOptions['onchange']))
+			$this->htmlOptions['onchange'] = "if(this.value!='') {window.location=this.value;};";
 	}
 
 	/**
@@ -61,14 +62,14 @@ class CListPager extends CBasePager
 	 */
 	public function run()
 	{
-		if(($pageCount=$this->getPageCount())<=1)
+		if (($pageCount = $this->getPageCount()) <= 1)
 			return;
-		$pages=array();
-		for($i=0;$i<$pageCount;++$i)
-			$pages[$this->createPageUrl($i)]=$this->generatePageText($i);
-		$selection=$this->createPageUrl($this->getCurrentPage());
+		$pages = array();
+		for ($i = 0; $i < $pageCount; ++$i)
+			$pages[$this->createPageUrl($i)] = $this->generatePageText($i);
+		$selection = $this->createPageUrl($this->getCurrentPage());
 		echo $this->header;
-		echo CHtml::dropDownList($this->getId(),$selection,$pages,$this->htmlOptions);
+		echo CHtml::dropDownList($this->getId(), $selection, $pages, $this->htmlOptions);
 		echo $this->footer;
 	}
 
@@ -80,9 +81,9 @@ class CListPager extends CBasePager
 	 */
 	protected function generatePageText($page)
 	{
-		if($this->pageTextFormat!==null)
-			return sprintf($this->pageTextFormat,$page+1);
+		if ($this->pageTextFormat !== null)
+			return sprintf($this->pageTextFormat, $page + 1);
 		else
-			return $page+1;
+			return $page + 1;
 	}
 }

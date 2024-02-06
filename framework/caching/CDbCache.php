@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CDbCache class file
  *
@@ -49,19 +50,19 @@ class CDbCache extends CCache
 	 * binary data type (e.g. LONGBLOB in MySQL, BYTEA in PostgreSQL.)
 	 * @see autoCreateCacheTable
 	 */
-	public $cacheTableName='YiiCache';
+	public $cacheTableName = 'YiiCache';
 	/**
 	 * @var boolean whether the cache DB table should be created automatically if it does not exist. Defaults to true.
 	 * If you already have the table created, it is recommended you set this property to be false to improve performance.
 	 * @see cacheTableName
 	 */
-	public $autoCreateCacheTable=true;
+	public $autoCreateCacheTable = true;
 	/**
 	 * @var CDbConnection the DB connection instance
 	 */
 	private $_db;
-	private $_gcProbability=100;
-	private $_gced=false;
+	private $_gcProbability = 100;
+	private $_gced = false;
 
 	/**
 	 * Initializes this application component.
@@ -74,18 +75,14 @@ class CDbCache extends CCache
 	{
 		parent::init();
 
-		$db=$this->getDbConnection();
+		$db = $this->getDbConnection();
 		$db->setActive(true);
-		if($this->autoCreateCacheTable)
-		{
-			$sql="DELETE FROM {$this->cacheTableName} WHERE expire>0 AND expire<".time();
-			try
-			{
+		if ($this->autoCreateCacheTable) {
+			$sql = "DELETE FROM {$this->cacheTableName} WHERE expire>0 AND expire<" . time();
+			try {
 				$db->createCommand($sql)->execute();
-			}
-			catch(Exception $e)
-			{
-				$this->createCacheTable($db,$this->cacheTableName);
+			} catch (Exception $e) {
+				$this->createCacheTable($db, $this->cacheTableName);
 			}
 		}
 	}
@@ -106,12 +103,12 @@ class CDbCache extends CCache
 	 */
 	public function setGCProbability($value)
 	{
-		$value=(int)$value;
-		if($value<0)
-			$value=0;
-		if($value>1000000)
-			$value=1000000;
-		$this->_gcProbability=$value;
+		$value = (int)$value;
+		if ($value < 0)
+			$value = 0;
+		if ($value > 1000000)
+			$value = 1000000;
+		$this->_gcProbability = $value;
 	}
 
 	/**
@@ -119,16 +116,16 @@ class CDbCache extends CCache
 	 * @param CDbConnection $db the database connection
 	 * @param string $tableName the name of the table to be created
 	 */
-	protected function createCacheTable($db,$tableName)
+	protected function createCacheTable($db, $tableName)
 	{
-		$driver=$db->getDriverName();
-		if($driver==='mysql')
-			$blob='LONGBLOB';
-		elseif($driver==='pgsql')
-			$blob='BYTEA';
+		$driver = $db->getDriverName();
+		if ($driver === 'mysql')
+			$blob = 'LONGBLOB';
+		elseif ($driver === 'pgsql')
+			$blob = 'BYTEA';
 		else
-			$blob='BLOB';
-		$sql=<<<EOD
+			$blob = 'BLOB';
+		$sql = <<<EOD
 CREATE TABLE $tableName
 (
 	id CHAR(128) PRIMARY KEY,
@@ -145,20 +142,20 @@ EOD;
 	 */
 	public function getDbConnection()
 	{
-		if($this->_db!==null)
+		if ($this->_db !== null)
 			return $this->_db;
-		elseif(($id=$this->connectionID)!==null)
-		{
-			if(($this->_db=Yii::app()->getComponent($id)) instanceof CDbConnection)
+		elseif (($id = $this->connectionID) !== null) {
+			if (($this->_db = Yii::app()->getComponent($id)) instanceof CDbConnection)
 				return $this->_db;
 			else
-				throw new CException(Yii::t('yii','CDbCache.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.',
-					array('{id}'=>$id)));
-		}
-		else
-		{
-			$dbFile=Yii::app()->getRuntimePath().DIRECTORY_SEPARATOR.'cache-'.Yii::getVersion().'.db';
-			return $this->_db=new CDbConnection('sqlite:'.$dbFile);
+				throw new CException(Yii::t(
+					'yii',
+					'CDbCache.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.',
+					array('{id}' => $id)
+				));
+		} else {
+			$dbFile = Yii::app()->getRuntimePath() . DIRECTORY_SEPARATOR . 'cache-' . Yii::getVersion() . '.db';
+			return $this->_db = new CDbConnection('sqlite:' . $dbFile);
 		}
 	}
 
@@ -169,7 +166,7 @@ EOD;
 	 */
 	public function setDbConnection($value)
 	{
-		$this->_db=$value;
+		$this->_db = $value;
 	}
 
 	/**
@@ -180,18 +177,16 @@ EOD;
 	 */
 	protected function getValue($key)
 	{
-		$time=time();
-		$sql="SELECT value FROM {$this->cacheTableName} WHERE id='$key' AND (expire=0 OR expire>$time)";
-		$db=$this->getDbConnection();
-		if($db->queryCachingDuration>0)
-		{
-			$duration=$db->queryCachingDuration;
-			$db->queryCachingDuration=0;
-			$result=$db->createCommand($sql)->queryScalar();
-			$db->queryCachingDuration=$duration;
+		$time = time();
+		$sql = "SELECT value FROM {$this->cacheTableName} WHERE id='$key' AND (expire=0 OR expire>$time)";
+		$db = $this->getDbConnection();
+		if ($db->queryCachingDuration > 0) {
+			$duration = $db->queryCachingDuration;
+			$db->queryCachingDuration = 0;
+			$result = $db->createCommand($sql)->queryScalar();
+			$db->queryCachingDuration = $duration;
 			return $result;
-		}
-		else
+		} else
 			return $db->createCommand($sql)->queryScalar();
 	}
 
@@ -202,29 +197,27 @@ EOD;
 	 */
 	protected function getValues($keys)
 	{
-		if(empty($keys))
+		if (empty($keys))
 			return array();
 
-		$ids=implode("','",$keys);
-		$time=time();
-		$sql="SELECT id, value FROM {$this->cacheTableName} WHERE id IN ('$ids') AND (expire=0 OR expire>$time)";
+		$ids = implode("','", $keys);
+		$time = time();
+		$sql = "SELECT id, value FROM {$this->cacheTableName} WHERE id IN ('$ids') AND (expire=0 OR expire>$time)";
 
-		$db=$this->getDbConnection();
-		if($db->queryCachingDuration>0)
-		{
-			$duration=$db->queryCachingDuration;
-			$db->queryCachingDuration=0;
-			$rows=$db->createCommand($sql)->queryAll();
-			$db->queryCachingDuration=$duration;
-		}
-		else
-			$rows=$db->createCommand($sql)->queryAll();
+		$db = $this->getDbConnection();
+		if ($db->queryCachingDuration > 0) {
+			$duration = $db->queryCachingDuration;
+			$db->queryCachingDuration = 0;
+			$rows = $db->createCommand($sql)->queryAll();
+			$db->queryCachingDuration = $duration;
+		} else
+			$rows = $db->createCommand($sql)->queryAll();
 
-		$results=array();
-		foreach($keys as $key)
-			$results[$key]=false;
-		foreach($rows as $row)
-			$results[$row['id']]=$row['value'];
+		$results = array();
+		foreach ($keys as $key)
+			$results[$key] = false;
+		foreach ($rows as $row)
+			$results[$row['id']] = $row['value'];
 		return $results;
 	}
 
@@ -237,10 +230,10 @@ EOD;
 	 * @param integer $expire the number of seconds in which the cached value will expire. 0 means never expire.
 	 * @return boolean true if the value is successfully stored into cache, false otherwise
 	 */
-	protected function setValue($key,$value,$expire)
+	protected function setValue($key, $value, $expire)
 	{
 		$this->deleteValue($key);
-		return $this->addValue($key,$value,$expire);
+		return $this->addValue($key, $value, $expire);
 	}
 
 	/**
@@ -252,28 +245,24 @@ EOD;
 	 * @param integer $expire the number of seconds in which the cached value will expire. 0 means never expire.
 	 * @return boolean true if the value is successfully stored into cache, false otherwise
 	 */
-	protected function addValue($key,$value,$expire)
+	protected function addValue($key, $value, $expire)
 	{
-		if(!$this->_gced && mt_rand(0,1000000)<$this->_gcProbability)
-		{
+		if (!$this->_gced && mt_rand(0, 1000000) < $this->_gcProbability) {
 			$this->gc();
-			$this->_gced=true;
+			$this->_gced = true;
 		}
 
-		if($expire>0)
-			$expire+=time();
+		if ($expire > 0)
+			$expire += time();
 		else
-			$expire=0;
-		$sql="INSERT INTO {$this->cacheTableName} (id,expire,value) VALUES ('$key',$expire,:value)";
-		try
-		{
-			$command=$this->getDbConnection()->createCommand($sql);
-			$command->bindValue(':value',$value,PDO::PARAM_LOB);
+			$expire = 0;
+		$sql = "INSERT INTO {$this->cacheTableName} (id,expire,value) VALUES ('$key',$expire,:value)";
+		try {
+			$command = $this->getDbConnection()->createCommand($sql);
+			$command->bindValue(':value', $value, PDO::PARAM_LOB);
 			$command->execute();
 			return true;
-		}
-		catch(Exception $e)
-		{
+		} catch (Exception $e) {
 			return false;
 		}
 	}
@@ -286,7 +275,7 @@ EOD;
 	 */
 	protected function deleteValue($key)
 	{
-		$sql="DELETE FROM {$this->cacheTableName} WHERE id='$key'";
+		$sql = "DELETE FROM {$this->cacheTableName} WHERE id='$key'";
 		$this->getDbConnection()->createCommand($sql)->execute();
 		return true;
 	}
@@ -296,7 +285,7 @@ EOD;
 	 */
 	protected function gc()
 	{
-		$this->getDbConnection()->createCommand("DELETE FROM {$this->cacheTableName} WHERE expire>0 AND expire<".time())->execute();
+		$this->getDbConnection()->createCommand("DELETE FROM {$this->cacheTableName} WHERE expire>0 AND expire<" . time())->execute();
 	}
 
 	/**

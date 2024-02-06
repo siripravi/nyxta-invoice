@@ -1,9 +1,11 @@
 <div id="ven-details-adrs">
     <p class="category"><span class="label white label-warning" id="lbl-evdt" style="color:white;">
-            <?php //echo Yii::app()->dateFormatter->formatDateTime($stmt->ship_date, "medium", null);  ?>
+            <?php //echo Yii::app()->dateFormatter->formatDateTime($stmt->ship_date, "medium", null);  
+            ?>
             <?= date("F jS, Y", strtotime($stmt->statement->ship_date)); ?>
 
-            <?php //echo date("F jS, Y", strtotime($stmt->ship_date)); ?>
+            <?php //echo date("F jS, Y", strtotime($stmt->ship_date)); 
+            ?>
         </span>
     </p>
 

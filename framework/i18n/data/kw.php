@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'kw'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -52,10 +53,10 @@ return array (
     'XOF' => 'CFA',
     'XPF' => 'CFPF',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Mys Genver',
       2 => 'Mys Whevrel',
       3 => 'Mys Merth',
@@ -69,8 +70,8 @@ return array (
       11 => 'Mys Du',
       12 => 'Mys Kevardhu',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Gen',
       2 => 'Whe',
       3 => 'Mer',
@@ -85,10 +86,10 @@ return array (
       12 => 'Kev',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -103,10 +104,10 @@ return array (
       12 => '12',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'De Sul',
       1 => 'De Lun',
       2 => 'De Merth',
@@ -115,8 +116,8 @@ return array (
       5 => 'De Gwener',
       6 => 'De Sadorn',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Sul',
       1 => 'Lun',
       2 => 'Mth',
@@ -126,10 +127,10 @@ return array (
       6 => 'Sad',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'S',
       1 => 'M',
       2 => 'T',
@@ -139,33 +140,33 @@ return array (
       6 => 'S',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'RC',
       1 => 'AD',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'RC',
       1 => 'AD',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'RC',
       1 => 'AD',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE d MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'd MMM y',
     'short' => 'dd/MM/y',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -175,8 +176,8 @@ return array (
   'amName' => 'a.m.',
   'pmName' => 'p.m.',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ar' => 'Arabek',
     'cy' => 'Kembrek',
     'da' => 'Danek',
@@ -198,12 +199,12 @@ return array (
     'zh_hans' => 'Chinek sempel',
     'zh_hant' => 'Chînek Tradycyonal',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'Arabek',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     'br' => 'Brasil',
     'cn' => 'China',
     'de' => 'Almayn',
@@ -215,8 +216,8 @@ return array (
     'ru' => 'Russi',
     'us' => 'Statys Unys',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'n==2',
     2 => 'true',

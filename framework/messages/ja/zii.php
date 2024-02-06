@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -16,7 +17,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   'Are you sure you want to delete this item?' => 'この項目を削除してもよろしいですか?',
   'Delete' => '削除',
   'Displaying {start}-{end} of 1 result.|Displaying {start}-{end} of {count} results.' => '{count}個の結果を{start}から{end}まで表示します。',

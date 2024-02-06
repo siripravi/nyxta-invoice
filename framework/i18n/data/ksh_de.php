@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'ksh_DE'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0 %',
   'currencyFormat' => '#,##0.00 ¤',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -52,10 +53,10 @@ return array (
     'XOF' => 'CFA',
     'XPF' => 'CFPF',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Jannewa',
       2 => 'Fäbrowa',
       3 => 'Määz',
@@ -69,8 +70,8 @@ return array (
       11 => 'Novämber',
       12 => 'Dezämber',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Jan',
       2 => 'Fäb',
       3 => 'Mäz',
@@ -85,10 +86,10 @@ return array (
       12 => 'Dez',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'J',
       2 => 'F',
       3 => 'M',
@@ -102,8 +103,8 @@ return array (
       11 => 'N',
       12 => 'D',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Jan.',
       2 => 'Fäb.',
       3 => 'Mäz.',
@@ -118,10 +119,10 @@ return array (
       12 => 'Dez.',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Sunndaach',
       1 => 'Moondaach',
       2 => 'Dinnsdaach',
@@ -130,8 +131,8 @@ return array (
       5 => 'Friidaach',
       6 => 'Samsdaach',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Su.',
       1 => 'Mo.',
       2 => 'Di.',
@@ -140,8 +141,8 @@ return array (
       5 => 'Fr.',
       6 => 'Sa.',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'Su',
       1 => 'Mo',
       2 => 'Di',
@@ -151,10 +152,10 @@ return array (
       6 => 'Sa',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'S',
       1 => 'M',
       2 => 'D',
@@ -163,8 +164,8 @@ return array (
       5 => 'F',
       6 => 'S',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'Su',
       1 => 'Mo',
       2 => 'Di',
@@ -174,32 +175,32 @@ return array (
       6 => 'Sa',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'v.Ch.',
       1 => 'n.Ch.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'vür Chrestus',
       1 => 'noh Chrestus',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       1 => 'n.Ch.',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, \'dä\' d. MMMM y',
     'long' => 'd. MMMM y',
     'medium' => 'd. MMM. y',
     'short' => 'd. M. y',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -209,8 +210,8 @@ return array (
   'amName' => 'Uhr vörmiddaachs',
   'pmName' => 'Uhr nommendaachs',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ab' => 'Abchaasesch',
     'af' => 'Afrikaans',
     'am' => 'Amhaaresch',
@@ -384,8 +385,8 @@ return array (
     'zu' => 'Suulu',
     'zxx' => '-kein Schprooch-',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'arraabesche Schreff',
     'armn' => 'armeenesche Schreff',
     'beng' => 'bängjaalesche Schreff',
@@ -426,8 +427,8 @@ return array (
     'zyyy' => '-öhnß en Schreff-',
     'zzzz' => '-onbikannte Schreff-',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'de Ääd',
     '002' => 'Affrika',
     '003' => 'Nood-Amärrika',
@@ -718,8 +719,8 @@ return array (
     'zw' => 'Simbabwe',
     'zz' => '- Jääjend onbikannt -',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==0',
     1 => 'n==1',
     2 => 'true',

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CMssqlSchema class file.
  *
@@ -18,13 +19,13 @@
  */
 class CMssqlSchema extends CDbSchema
 {
-	const DEFAULT_SCHEMA='dbo';
+	const DEFAULT_SCHEMA = 'dbo';
 
 	/**
 	 * @var array the abstract column types mapped to physical column types.
 	 * @since 1.1.6
 	 */
-	public $columnTypes=array(
+	public $columnTypes = array(
 		'pk' => 'int IDENTITY PRIMARY KEY',
 		'bigpk' => 'bigint IDENTITY PRIMARY KEY',
 		'string' => 'varchar(255)',
@@ -50,7 +51,7 @@ class CMssqlSchema extends CDbSchema
 	 */
 	public function quoteSimpleTableName($name)
 	{
-		return '['.$name.']';
+		return '[' . $name . ']';
 	}
 
 	/**
@@ -62,7 +63,7 @@ class CMssqlSchema extends CDbSchema
 	 */
 	public function quoteSimpleColumnName($name)
 	{
-		return '['.$name.']';
+		return '[' . $name . ']';
 	}
 
 	/**
@@ -73,11 +74,11 @@ class CMssqlSchema extends CDbSchema
 	 * @param string $name2 table name 2
 	 * @return boolean whether the two table names refer to the same table.
 	 */
-	public function compareTableNames($name1,$name2)
+	public function compareTableNames($name1, $name2)
 	{
-		$name1=str_replace(array('[',']'),'',$name1);
-		$name2=str_replace(array('[',']'),'',$name2);
-		return parent::compareTableNames(strtolower($name1),strtolower($name2));
+		$name1 = str_replace(array('[', ']'), '', $name1);
+		$name2 = str_replace(array('[', ']'), '', $name2);
+		return parent::compareTableNames(strtolower($name1), strtolower($name2));
 	}
 
 	/**
@@ -90,38 +91,37 @@ class CMssqlSchema extends CDbSchema
 	 * key plus one (i.e. sequence trimming).
 	 * @since 1.1.6
 	 */
-	public function resetSequence($table,$value=null)
+	public function resetSequence($table, $value = null)
 	{
-		if($table->sequenceName===null)
+		if ($table->sequenceName === null)
 			return;
-		if($value!==null)
-			$value=(int)($value)-1;
+		if ($value !== null)
+			$value = (int)($value) - 1;
 		else
-			$value=(int)$this->getDbConnection()
+			$value = (int)$this->getDbConnection()
 				->createCommand("SELECT MAX([{$table->primaryKey}]) FROM {$table->rawName}")
 				->queryScalar();
-		$name=strtr($table->rawName,array('['=>'',']'=>''));
+		$name = strtr($table->rawName, array('[' => '', ']' => ''));
 		$this->getDbConnection()
 			->createCommand("DBCC CHECKIDENT ('$name',RESEED,$value)")
 			->execute();
 	}
 
-	private $_normalTables=array();  // non-view tables
+	private $_normalTables = array();  // non-view tables
 	/**
 	 * Enables or disables integrity check.
 	 * @param boolean $check whether to turn on or off the integrity check.
 	 * @param string $schema the schema of the tables. Defaults to empty string, meaning the current or default schema.
 	 * @since 1.1.6
 	 */
-	public function checkIntegrity($check=true,$schema='')
+	public function checkIntegrity($check = true, $schema = '')
 	{
-		$enable=$check ? 'CHECK' : 'NOCHECK';
-		if(!isset($this->_normalTables[$schema]))
-			$this->_normalTables[$schema]=$this->findTableNames($schema,false);
-		$db=$this->getDbConnection();
-		foreach($this->_normalTables[$schema] as $tableName)
-		{
-			$tableName=$this->quoteTableName($tableName);
+		$enable = $check ? 'CHECK' : 'NOCHECK';
+		if (!isset($this->_normalTables[$schema]))
+			$this->_normalTables[$schema] = $this->findTableNames($schema, false);
+		$db = $this->getDbConnection();
+		foreach ($this->_normalTables[$schema] as $tableName) {
+			$tableName = $this->quoteTableName($tableName);
 			$db->createCommand("ALTER TABLE $tableName $enable CONSTRAINT ALL")->execute();
 		}
 	}
@@ -133,16 +133,14 @@ class CMssqlSchema extends CDbSchema
 	 */
 	protected function loadTable($name)
 	{
-		$table=new CMssqlTableSchema;
-		$this->resolveTableNames($table,$name);
+		$table = new CMssqlTableSchema;
+		$this->resolveTableNames($table, $name);
 		//if (!in_array($table->name, $this->tableNames)) return null;
-		$table->primaryKey=$this->findPrimaryKey($table);
-		$table->foreignKeys=$this->findForeignKeys($table);
-		if($this->findColumns($table))
-		{
+		$table->primaryKey = $this->findPrimaryKey($table);
+		$table->foreignKeys = $this->findForeignKeys($table);
+		if ($this->findColumns($table)) {
 			return $table;
-		}
-		else
+		} else
 			return null;
 	}
 
@@ -151,31 +149,26 @@ class CMssqlSchema extends CDbSchema
 	 * @param CMssqlTableSchema $table the table instance
 	 * @param string $name the unquoted table name
 	 */
-	protected function resolveTableNames($table,$name)
+	protected function resolveTableNames($table, $name)
 	{
-		$parts=explode('.',str_replace(array('[',']'),'',$name));
-		if(($c=count($parts))==3)
-		{
+		$parts = explode('.', str_replace(array('[', ']'), '', $name));
+		if (($c = count($parts)) == 3) {
 			// Catalog name, schema name and table name provided
-			$table->catalogName=$parts[0];
-			$table->schemaName=$parts[1];
-			$table->name=$parts[2];
-			$table->rawName=$this->quoteTableName($table->catalogName).'.'.$this->quoteTableName($table->schemaName).'.'.$this->quoteTableName($table->name);
-		}
-		elseif ($c==2)
-		{
+			$table->catalogName = $parts[0];
+			$table->schemaName = $parts[1];
+			$table->name = $parts[2];
+			$table->rawName = $this->quoteTableName($table->catalogName) . '.' . $this->quoteTableName($table->schemaName) . '.' . $this->quoteTableName($table->name);
+		} elseif ($c == 2) {
 			// Only schema name and table name provided
-			$table->name=$parts[1];
-			$table->schemaName=$parts[0];
-			$table->rawName=$this->quoteTableName($table->schemaName).'.'.$this->quoteTableName($table->name);
-		}
-		else
-		{
+			$table->name = $parts[1];
+			$table->schemaName = $parts[0];
+			$table->rawName = $this->quoteTableName($table->schemaName) . '.' . $this->quoteTableName($table->name);
+		} else {
 			// Only the name given, we need to get at least the schema name
 			//if (empty($this->_schemaNames)) $this->findTableNames();
-			$table->name=$parts[0];
-			$table->schemaName=self::DEFAULT_SCHEMA;
-			$table->rawName=$this->quoteTableName($table->schemaName).'.'.$this->quoteTableName($table->name);
+			$table->name = $parts[0];
+			$table->schemaName = self::DEFAULT_SCHEMA;
+			$table->rawName = $this->quoteTableName($table->schemaName) . '.' . $this->quoteTableName($table->name);
 		}
 	}
 
@@ -186,12 +179,11 @@ class CMssqlSchema extends CDbSchema
 	 */
 	protected function findPrimaryKey($table)
 	{
-		$kcu='INFORMATION_SCHEMA.KEY_COLUMN_USAGE';
-		$tc='INFORMATION_SCHEMA.TABLE_CONSTRAINTS';
-		if (isset($table->catalogName))
-		{
-			$kcu=$table->catalogName.'.'.$kcu;
-			$tc=$table->catalogName.'.'.$tc;
+		$kcu = 'INFORMATION_SCHEMA.KEY_COLUMN_USAGE';
+		$tc = 'INFORMATION_SCHEMA.TABLE_CONSTRAINTS';
+		if (isset($table->catalogName)) {
+			$kcu = $table->catalogName . '.' . $kcu;
+			$tc = $table->catalogName . '.' . $tc;
 		}
 
 		$sql = <<<EOD
@@ -207,14 +199,13 @@ EOD;
 		$command = $this->getDbConnection()->createCommand($sql);
 		$command->bindValue(':table', $table->name);
 		$command->bindValue(':schema', $table->schemaName);
-		$primary=$command->queryColumn();
-		switch (count($primary))
-		{
+		$primary = $command->queryColumn();
+		switch (count($primary)) {
 			case 0: // No primary key on table
-				$primary=null;
+				$primary = null;
 				break;
 			case 1: // Only 1 primary key
-				$primary=$primary[0];
+				$primary = $primary[0];
 				break;
 		}
 		return $primary;
@@ -227,12 +218,11 @@ EOD;
 	 */
 	protected function findForeignKeys($table)
 	{
-		$rc='INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS';
-		$kcu='INFORMATION_SCHEMA.KEY_COLUMN_USAGE';
-		if (isset($table->catalogName))
-		{
-			$kcu=$table->catalogName.'.'.$kcu;
-			$rc=$table->catalogName.'.'.$rc;
+		$rc = 'INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS';
+		$kcu = 'INFORMATION_SCHEMA.KEY_COLUMN_USAGE';
+		if (isset($table->catalogName)) {
+			$kcu = $table->catalogName . '.' . $kcu;
+			$rc = $table->catalogName . '.' . $rc;
 		}
 
 		//From https://msdn2.microsoft.com/en-us/library/aa175805(SQL.80).aspx
@@ -263,11 +253,9 @@ EOD;
 EOD;
 		$command = $this->getDbConnection()->createCommand($sql);
 		$command->bindValue(':table', $table->name);
-		$fkeys=array();
-		foreach($command->queryAll() as $info)
-		{
-			$fkeys[$info['FK_COLUMN_NAME']]=array($info['UQ_TABLE_NAME'],$info['UQ_COLUMN_NAME'],);
-
+		$fkeys = array();
+		foreach ($command->queryAll() as $info) {
+			$fkeys[$info['FK_COLUMN_NAME']] = array($info['UQ_TABLE_NAME'], $info['UQ_COLUMN_NAME'],);
 		}
 		return $fkeys;
 	}
@@ -280,45 +268,40 @@ EOD;
 	 */
 	protected function findColumns($table)
 	{
-		$columnsTable="INFORMATION_SCHEMA.COLUMNS";
-		$where=array();
-		$where[]="t1.TABLE_NAME='".$table->name."'";
-		if (isset($table->catalogName))
-		{
-			$where[]="t1.TABLE_CATALOG='".$table->catalogName."'";
-			$columnsTable = $table->catalogName.'.'.$columnsTable;
+		$columnsTable = "INFORMATION_SCHEMA.COLUMNS";
+		$where = array();
+		$where[] = "t1.TABLE_NAME='" . $table->name . "'";
+		if (isset($table->catalogName)) {
+			$where[] = "t1.TABLE_CATALOG='" . $table->catalogName . "'";
+			$columnsTable = $table->catalogName . '.' . $columnsTable;
 		}
 		if (isset($table->schemaName))
-			$where[]="t1.TABLE_SCHEMA='".$table->schemaName."'";
+			$where[] = "t1.TABLE_SCHEMA='" . $table->schemaName . "'";
 
-		$sql="SELECT t1.*, columnproperty(object_id(t1.table_schema+'.'+t1.table_name), t1.column_name, 'IsIdentity') AS IsIdentity, ".
-			 "CONVERT(VARCHAR, t2.value) AS Comment FROM ".$this->quoteTableName($columnsTable)." AS t1 ".
-			 "LEFT OUTER JOIN sys.extended_properties AS t2 ON t1.ORDINAL_POSITION = t2.minor_id AND ".
-			 "object_name(t2.major_id) = t1.TABLE_NAME AND t2.class=1 AND t2.class_desc='OBJECT_OR_COLUMN' AND t2.name='MS_Description' ".
-			 "WHERE ".join(' AND ',$where);
-		try
-		{
-			$columns=$this->getDbConnection()->createCommand($sql)->queryAll();
-			if(empty($columns))
+		$sql = "SELECT t1.*, columnproperty(object_id(t1.table_schema+'.'+t1.table_name), t1.column_name, 'IsIdentity') AS IsIdentity, " .
+			"CONVERT(VARCHAR, t2.value) AS Comment FROM " . $this->quoteTableName($columnsTable) . " AS t1 " .
+			"LEFT OUTER JOIN sys.extended_properties AS t2 ON t1.ORDINAL_POSITION = t2.minor_id AND " .
+			"object_name(t2.major_id) = t1.TABLE_NAME AND t2.class=1 AND t2.class_desc='OBJECT_OR_COLUMN' AND t2.name='MS_Description' " .
+			"WHERE " . join(' AND ', $where);
+		try {
+			$columns = $this->getDbConnection()->createCommand($sql)->queryAll();
+			if (empty($columns))
 				return false;
-		}
-		catch(Exception $e)
-		{
+		} catch (Exception $e) {
 			return false;
 		}
 
-		foreach($columns as $column)
-		{
-			$c=$this->createColumn($column);
+		foreach ($columns as $column) {
+			$c = $this->createColumn($column);
 			if (is_array($table->primaryKey))
-				$c->isPrimaryKey=in_array($c->name, $table->primaryKey);
+				$c->isPrimaryKey = in_array($c->name, $table->primaryKey);
 			else
-				$c->isPrimaryKey=strcasecmp($c->name,$table->primaryKey)===0;
+				$c->isPrimaryKey = strcasecmp($c->name, $table->primaryKey) === 0;
 
-			$c->isForeignKey=isset($table->foreignKeys[$c->name]);
-			$table->columns[$c->name]=$c;
-			if ($c->autoIncrement && $table->sequenceName===null)
-				$table->sequenceName=$table->name;
+			$c->isForeignKey = isset($table->foreignKeys[$c->name]);
+			$table->columns[$c->name] = $c;
+			if ($c->autoIncrement && $table->sequenceName === null)
+				$table->sequenceName = $table->name;
 		}
 		return true;
 	}
@@ -330,24 +313,22 @@ EOD;
 	 */
 	protected function createColumn($column)
 	{
-		$c=new CMssqlColumnSchema;
-		$c->name=$column['COLUMN_NAME'];
-		$c->rawName=$this->quoteColumnName($c->name);
-		$c->allowNull=$column['IS_NULLABLE']=='YES';
-		if ($column['NUMERIC_PRECISION_RADIX']!==null)
-		{
+		$c = new CMssqlColumnSchema;
+		$c->name = $column['COLUMN_NAME'];
+		$c->rawName = $this->quoteColumnName($c->name);
+		$c->allowNull = $column['IS_NULLABLE'] == 'YES';
+		if ($column['NUMERIC_PRECISION_RADIX'] !== null) {
 			// We have a numeric datatype
-			$c->size=$c->precision=$column['NUMERIC_PRECISION']!==null?(int)$column['NUMERIC_PRECISION']:null;
-			$c->scale=$column['NUMERIC_SCALE']!==null?(int)$column['NUMERIC_SCALE']:null;
-		}
-		elseif ($column['DATA_TYPE']=='image' || $column['DATA_TYPE']=='text')
-			$c->size=$c->precision=null;
+			$c->size = $c->precision = $column['NUMERIC_PRECISION'] !== null ? (int)$column['NUMERIC_PRECISION'] : null;
+			$c->scale = $column['NUMERIC_SCALE'] !== null ? (int)$column['NUMERIC_SCALE'] : null;
+		} elseif ($column['DATA_TYPE'] == 'image' || $column['DATA_TYPE'] == 'text')
+			$c->size = $c->precision = null;
 		else
-			$c->size=$c->precision=($column['CHARACTER_MAXIMUM_LENGTH']!== null)?(int)$column['CHARACTER_MAXIMUM_LENGTH']:null;
-		$c->autoIncrement=$column['IsIdentity']==1;
-		$c->comment=$column['Comment']===null ? '' : $column['Comment'];
+			$c->size = $c->precision = ($column['CHARACTER_MAXIMUM_LENGTH'] !== null) ? (int)$column['CHARACTER_MAXIMUM_LENGTH'] : null;
+		$c->autoIncrement = $column['IsIdentity'] == 1;
+		$c->comment = $column['Comment'] === null ? '' : $column['Comment'];
 
-		$c->init($column['DATA_TYPE'],$column['COLUMN_DEFAULT']);
+		$c->init($column['DATA_TYPE'], $column['COLUMN_DEFAULT']);
 		return $c;
 	}
 
@@ -358,28 +339,27 @@ EOD;
 	 * @param boolean $includeViews whether to include views in the result. Defaults to true.
 	 * @return array all table names in the database.
 	 */
-	protected function findTableNames($schema='',$includeViews=true)
+	protected function findTableNames($schema = '', $includeViews = true)
 	{
-		if($schema==='')
-			$schema=self::DEFAULT_SCHEMA;
-		if($includeViews)
-			$condition="TABLE_TYPE in ('BASE TABLE','VIEW')";
+		if ($schema === '')
+			$schema = self::DEFAULT_SCHEMA;
+		if ($includeViews)
+			$condition = "TABLE_TYPE in ('BASE TABLE','VIEW')";
 		else
-			$condition="TABLE_TYPE='BASE TABLE'";
-		$sql=<<<EOD
+			$condition = "TABLE_TYPE='BASE TABLE'";
+		$sql = <<<EOD
 SELECT TABLE_NAME FROM [INFORMATION_SCHEMA].[TABLES]
 WHERE TABLE_SCHEMA=:schema AND $condition
 EOD;
-		$command=$this->getDbConnection()->createCommand($sql);
+		$command = $this->getDbConnection()->createCommand($sql);
 		$command->bindParam(":schema", $schema);
-		$rows=$command->queryAll();
-		$names=array();
-		foreach ($rows as $row)
-		{
+		$rows = $command->queryAll();
+		$names = array();
+		foreach ($rows as $row) {
 			if ($schema == self::DEFAULT_SCHEMA)
-				$names[]=$row['TABLE_NAME'];
+				$names[] = $row['TABLE_NAME'];
 			else
-				$names[]=$schema.'.'.$row['TABLE_NAME'];
+				$names[] = $schema . '.' . $row['TABLE_NAME'];
 		}
 
 		return $names;
@@ -432,8 +412,8 @@ EOD;
 	 */
 	public function alterColumn($table, $column, $type)
 	{
-		$type=$this->getColumnType($type);
-		$sql='ALTER TABLE ' . $this->quoteTableName($table) . ' ALTER COLUMN '
+		$type = $this->getColumnType($type);
+		$sql = 'ALTER TABLE ' . $this->quoteTableName($table) . ' ALTER COLUMN '
 			. $this->quoteColumnName($column) . ' '
 			. $this->getColumnType($type);
 		return $sql;

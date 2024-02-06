@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CAction class file.
  *
@@ -38,10 +39,10 @@ abstract class CAction extends CComponent implements IAction
 	 * @param CController $controller the controller who owns this action.
 	 * @param string $id id of the action.
 	 */
-	public function __construct($controller,$id)
+	public function __construct($controller, $id)
 	{
-		$this->_controller=$controller;
-		$this->_id=$id;
+		$this->_controller = $controller;
+		$this->_id = $id;
 	}
 
 	/**
@@ -69,8 +70,8 @@ abstract class CAction extends CComponent implements IAction
 	 */
 	public function runWithParams($params)
 	{
-		$method=new ReflectionMethod($this, 'run');
-		if($method->getNumberOfParameters()>0)
+		$method = new ReflectionMethod($this, 'run');
+		if ($method->getNumberOfParameters() > 0)
 			return $this->runWithParamsInternal($this, $method, $params);
 
 		$this->run();
@@ -88,31 +89,28 @@ abstract class CAction extends CComponent implements IAction
 	 */
 	protected function runWithParamsInternal($object, $method, $params)
 	{
-		$ps=array();
-		foreach($method->getParameters() as $i=>$param)
-		{
-			$name=$param->getName();
-			if(isset($params[$name]))
-			{
-				if(version_compare(PHP_VERSION,'8.0','>=')) {
-					$isArray=$param->getType() && $param->getType()->getName()==='array';
+		$ps = array();
+		foreach ($method->getParameters() as $i => $param) {
+			$name = $param->getName();
+			if (isset($params[$name])) {
+				if (version_compare(PHP_VERSION, '8.0', '>=')) {
+					$isArray = $param->getType() && $param->getType()->getName() === 'array';
 				} else {
-					$isArray=$param->isArray();
-                }
+					$isArray = $param->isArray();
+				}
 
-				if($isArray)
-					$ps[]=is_array($params[$name]) ? $params[$name] : array($params[$name]);
-				elseif(!is_array($params[$name]))
-					$ps[]=$params[$name];
+				if ($isArray)
+					$ps[] = is_array($params[$name]) ? $params[$name] : array($params[$name]);
+				elseif (!is_array($params[$name]))
+					$ps[] = $params[$name];
 				else
 					return false;
-			}
-			elseif($param->isDefaultValueAvailable())
-				$ps[]=$param->getDefaultValue();
+			} elseif ($param->isDefaultValueAvailable())
+				$ps[] = $param->getDefaultValue();
 			else
 				return false;
 		}
-		$method->invokeArgs($object,$ps);
+		$method->invokeArgs($object, $ps);
 		return true;
 	}
 }

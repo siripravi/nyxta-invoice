@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CCodeForm class file.
  *
@@ -43,13 +44,13 @@ EOD;
 	 */
 	public function run()
 	{
-		$templates=array();
-		foreach($this->model->getTemplates() as $i=>$template)
-			$templates[$i]=basename($template).' ('.$template.')';
+		$templates = array();
+		foreach ($this->model->getTemplates() as $i => $template)
+			$templates[$i] = basename($template) . ' (' . $template . ')';
 
-		$this->renderFile(Yii::getPathOfAlias('gii.views.common.generator').'.php',array(
-			'model'=>$this->model,
-			'templates'=>$templates,
+		$this->renderFile(Yii::getPathOfAlias('gii.views.common.generator') . '.php', array(
+			'model' => $this->model,
+			'templates' => $templates,
 		));
 
 		parent::run();

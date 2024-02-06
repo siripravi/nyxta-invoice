@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'ps_AF'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => '.',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '#,##0.00 ¤',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'AFN' => '؋',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'جنوري',
       2 => 'فبروري',
       3 => 'مارچ',
@@ -70,8 +71,8 @@ return array (
       11 => 'نومبر',
       12 => 'دسمبر',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Month1',
       2 => 'Month2',
       3 => 'Month3',
@@ -86,10 +87,10 @@ return array (
       12 => 'Month12',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -104,10 +105,10 @@ return array (
       12 => '12',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'یکشنبه',
       1 => 'دوشنبه',
       2 => 'سه‌شنبه',
@@ -116,8 +117,8 @@ return array (
       5 => 'جمعه',
       6 => 'شنبه',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Sun',
       1 => 'Mon',
       2 => 'Tue',
@@ -127,10 +128,10 @@ return array (
       6 => 'Sat',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'S',
       1 => 'M',
       2 => 'T',
@@ -140,33 +141,33 @@ return array (
       6 => 'S',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'ق.م.',
       1 => 'م.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'ق.م.',
       1 => 'م.',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'ق.م.',
       1 => 'م.',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE د y د MMMM d',
     'long' => 'د y د MMMM d',
     'medium' => 'd MMM y',
     'short' => 'y/M/d',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'H:mm:ss (zzzz)',
     'long' => 'H:mm:ss (z)',
     'medium' => 'H:mm:ss',
@@ -176,8 +177,8 @@ return array (
   'amName' => 'غ.م.',
   'pmName' => 'غ.و.',
   'orientation' => 'rtl',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'af' => 'افريکاني',
     'am' => 'امهاري',
     'ar' => 'عربي',
@@ -289,12 +290,12 @@ return array (
     'zh' => 'چیني',
     'zu' => 'زولو',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'عربي',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     'af' => 'افغانستان',
     'al' => 'البانیه',
     'ao' => 'انګولا',
@@ -359,8 +360,8 @@ return array (
     'uy' => 'یوروګوای',
     'ye' => 'یمن',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

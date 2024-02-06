@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'af_NA'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => ' ',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤ #,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -54,10 +55,10 @@ return array (
     'ZAR' => 'R',
     'NAD' => '$',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Januarie',
       2 => 'Februarie',
       3 => 'Maart',
@@ -71,8 +72,8 @@ return array (
       11 => 'November',
       12 => 'Desember',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Jan',
       2 => 'Feb',
       3 => 'Mar',
@@ -87,10 +88,10 @@ return array (
       12 => 'Des',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'J',
       2 => 'F',
       3 => 'M',
@@ -104,8 +105,8 @@ return array (
       11 => 'N',
       12 => 'D',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       1 => 'Januarie',
       2 => 'Februarie',
       3 => 'Maart',
@@ -120,10 +121,10 @@ return array (
       12 => 'Desember',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Sondag',
       1 => 'Maandag',
       2 => 'Dinsdag',
@@ -132,8 +133,8 @@ return array (
       5 => 'Vrydag',
       6 => 'Saterdag',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'So',
       1 => 'Ma',
       2 => 'Di',
@@ -142,8 +143,8 @@ return array (
       5 => 'Vr',
       6 => 'Sa',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'So.',
       1 => 'Ma.',
       2 => 'Di.',
@@ -153,10 +154,10 @@ return array (
       6 => 'Sa.',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'S',
       1 => 'M',
       2 => 'D',
@@ -165,8 +166,8 @@ return array (
       5 => 'V',
       6 => 'S',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'So.',
       1 => 'Ma.',
       2 => 'Di.',
@@ -176,33 +177,33 @@ return array (
       6 => 'Sa.',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'v.C.',
       1 => 'n.C.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'voor Christus',
       1 => 'na Christus',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'v.C.',
       1 => 'n.C.',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE d MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'd MMM y',
     'short' => 'y-MM-dd',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -212,8 +213,8 @@ return array (
   'amName' => 'vm.',
   'pmName' => 'nm.',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ab' => 'Abkasies',
     'ach' => 'Akoli',
     'af' => 'Afrikaans',
@@ -425,8 +426,8 @@ return array (
     'zu' => 'Zoeloe',
     'zxx' => 'Geen linguistiese inhoud',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'Perso-Arabies',
     'armn' => 'Armeens',
     'beng' => 'Bengaals',
@@ -474,8 +475,8 @@ return array (
     'zyyy' => 'Algemeen',
     'zzzz' => 'Onbekende skryfstelsel',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'Wêreld',
     '002' => 'Afrika',
     '003' => 'Noord-Amerika',
@@ -767,8 +768,8 @@ return array (
     'zw' => 'Zimbabwe',
     'zz' => 'Onbekend gebied',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

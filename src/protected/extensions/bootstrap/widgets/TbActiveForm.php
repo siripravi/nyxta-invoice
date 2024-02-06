@@ -1,4 +1,5 @@
 <?php
+
 /**
  * TbActiveForm class file.
  * @author Christoffer Niska <ChristofferNiska@gmail.com>
@@ -324,11 +325,13 @@ class TbActiveForm extends CActiveForm
 			$htmlOptions['id'] = $baseID . '_' . $id++;
 			$option = CHtml::$method($name, $checked, $htmlOptions);
 			$label = CHtml::label($label, $htmlOptions['id'], $labelOptions);
-			$items[] = strtr($template, array(
-				'{labelCssClass}' => $labelCssClass,
-				'{input}' => $option,
-				'{label}' => $label,
-			)
+			$items[] = strtr(
+				$template,
+				array(
+					'{labelCssClass}' => $labelCssClass,
+					'{input}' => $option,
+					'{label}' => $label,
+				)
 			);
 		}
 
@@ -478,14 +481,16 @@ class TbActiveForm extends CActiveForm
 	public function inputRow($type, $model, $attribute, $data = null, $htmlOptions = array())
 	{
 		ob_start();
-		$this->getOwner()->widget($this->getInputClassName(), array(
-			'form' => $this,
-			'type' => $type,
-			'model' => $model,
-			'attribute' => $attribute,
-			'data' => $data,
-			'htmlOptions' => $htmlOptions,
-		)
+		$this->getOwner()->widget(
+			$this->getInputClassName(),
+			array(
+				'form' => $this,
+				'type' => $type,
+				'model' => $model,
+				'attribute' => $attribute,
+				'data' => $data,
+				'htmlOptions' => $htmlOptions,
+			)
 		);
 		return ob_get_clean();
 	}

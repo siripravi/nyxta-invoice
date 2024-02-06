@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'gl'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8671',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => '.',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00;(¤#,##0.00)',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'ESP' => '₧',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Xaneiro',
       2 => 'Febreiro',
       3 => 'Marzo',
@@ -70,8 +71,8 @@ return array (
       11 => 'Novembro',
       12 => 'Decembro',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Xan',
       2 => 'Feb',
       3 => 'Mar',
@@ -86,10 +87,10 @@ return array (
       12 => 'Dec',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'X',
       2 => 'F',
       3 => 'M',
@@ -104,10 +105,10 @@ return array (
       12 => 'D',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Domingo',
       1 => 'Luns',
       2 => 'Martes',
@@ -116,8 +117,8 @@ return array (
       5 => 'Venres',
       6 => 'Sábado',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Dom',
       1 => 'Lun',
       2 => 'Mar',
@@ -126,8 +127,8 @@ return array (
       5 => 'Ven',
       6 => 'Sáb',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'Dom',
       1 => 'Luns',
       2 => 'Mt',
@@ -137,10 +138,10 @@ return array (
       6 => 'Sáb',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'D',
       1 => 'L',
       2 => 'M',
@@ -149,8 +150,8 @@ return array (
       5 => 'V',
       6 => 'S',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'Dom',
       1 => 'Luns',
       2 => 'Mt',
@@ -160,33 +161,33 @@ return array (
       6 => 'Sáb',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'a.C.',
       1 => 'd.C.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'antes de Cristo',
       1 => 'despois de Cristo',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'a.C.',
       1 => 'd.C.',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE dd MMMM y',
     'long' => 'dd MMMM y',
     'medium' => 'd MMM, y',
     'short' => 'dd/MM/yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -196,8 +197,8 @@ return array (
   'amName' => 'a.m.',
   'pmName' => 'p.m.',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ab' => 'abkhazo',
     'ach' => 'Acoli',
     'af' => 'afrikaans',
@@ -410,8 +411,8 @@ return array (
     'zu' => 'zulú',
     'zxx' => 'sen contido lingüístico',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'Perso-Árabe',
     'armn' => 'Armenio',
     'beng' => 'Bengalí',
@@ -453,8 +454,8 @@ return array (
     'zyyy' => 'Común',
     'zzzz' => 'Escritura descoñecida',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'Mundo',
     '002' => 'África',
     '003' => 'Norteamérica',
@@ -746,8 +747,8 @@ return array (
     'zw' => 'Cimbabue',
     'zz' => 'Rexión descoñecida',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

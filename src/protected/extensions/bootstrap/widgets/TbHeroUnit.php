@@ -1,4 +1,5 @@
 <?php
+
 /**
  * TbHeroUnit class file.
  * @author Christoffer Niska <ChristofferNiska@gmail.com>

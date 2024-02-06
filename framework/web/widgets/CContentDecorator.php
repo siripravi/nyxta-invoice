@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CContentDecorator class file.
  *
@@ -42,7 +43,7 @@ class CContentDecorator extends COutputProcessor
 	/**
 	 * @var array the variables (name=>value) to be extracted and made available in the decorative view.
 	 */
-	public $data=array();
+	public $data = array();
 
 	/**
 	 * Processes the captured output.
@@ -51,7 +52,7 @@ class CContentDecorator extends COutputProcessor
 	 */
 	public function processOutput($output)
 	{
-		$output=$this->decorate($output);
+		$output = $this->decorate($output);
 		parent::processOutput($output);
 	}
 
@@ -64,18 +65,16 @@ class CContentDecorator extends COutputProcessor
 	 */
 	protected function decorate($content)
 	{
-		$owner=$this->getOwner();
-		if($this->view===null)
-			$viewFile=Yii::app()->getController()->getLayoutFile(null);
+		$owner = $this->getOwner();
+		if ($this->view === null)
+			$viewFile = Yii::app()->getController()->getLayoutFile(null);
 		else
-			$viewFile=$owner->getViewFile($this->view);
-		if($viewFile!==false)
-		{
-			$data=$this->data;
-			$data['content']=$content;
-			return $owner->renderFile($viewFile,$data,true);
-		}
-		else
+			$viewFile = $owner->getViewFile($this->view);
+		if ($viewFile !== false) {
+			$data = $this->data;
+			$data['content'] = $content;
+			return $owner->renderFile($viewFile, $data, true);
+		} else
 			return $content;
 	}
 }

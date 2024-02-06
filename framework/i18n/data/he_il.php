@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'he_IL'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '#,##0.00 ¤',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'ILP' => 'ל״י',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'ינואר',
       2 => 'פברואר',
       3 => 'מרץ',
@@ -70,8 +71,8 @@ return array (
       11 => 'נובמבר',
       12 => 'דצמבר',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'ינו',
       2 => 'פבר',
       3 => 'מרץ',
@@ -85,8 +86,8 @@ return array (
       11 => 'נוב',
       12 => 'דצמ',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -101,10 +102,10 @@ return array (
       12 => '12',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -118,8 +119,8 @@ return array (
       11 => '11',
       12 => '12',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'ינו׳',
       2 => 'פבר׳',
       3 => 'מרץ',
@@ -134,10 +135,10 @@ return array (
       12 => 'דצמ׳',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'יום ראשון',
       1 => 'יום שני',
       2 => 'יום שלישי',
@@ -146,8 +147,8 @@ return array (
       5 => 'יום שישי',
       6 => 'יום שבת',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'יום א׳',
       1 => 'יום ב׳',
       2 => 'יום ג׳',
@@ -156,8 +157,8 @@ return array (
       5 => 'יום ו׳',
       6 => 'שבת',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'א\'',
       1 => 'ב\'',
       2 => 'ג\'',
@@ -166,8 +167,8 @@ return array (
       5 => 'ו׳',
       6 => 'ש׳',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'א\'',
       1 => 'ב\'',
       2 => 'ג\'',
@@ -177,10 +178,10 @@ return array (
       6 => 'ש\'',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'א׳',
       1 => 'ב׳',
       2 => 'ג׳',
@@ -189,8 +190,8 @@ return array (
       5 => 'ו',
       6 => 'ש',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'א\'',
       1 => 'ב\'',
       2 => 'ג\'',
@@ -200,33 +201,33 @@ return array (
       6 => 'ש\'',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'לפנה״ס',
       1 => 'לסה״נ',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'לפני הספירה',
       1 => 'לספירה',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'לפנה״ס',
       1 => 'לסה״נ',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, d בMMMM y',
     'long' => 'd בMMMM y',
     'medium' => 'd בMMM y',
     'short' => 'dd/MM/yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -236,8 +237,8 @@ return array (
   'amName' => 'לפנה״צ',
   'pmName' => 'אחה״צ',
   'orientation' => 'rtl',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'אפארית',
     'ab' => 'אבחזית',
     'ace' => 'אכינזית',
@@ -812,8 +813,8 @@ return array (
     'zxx' => 'ללא תוכן לשוני',
     'zza' => 'זאזא',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'כתב פרסי-ערבי',
     'armn' => 'ארמני',
     'bali' => 'באלינזי',
@@ -878,8 +879,8 @@ return array (
     'zyyy' => 'רגיל',
     'zzzz' => 'כתב לא ידוע או לא תקף',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'העולם',
     '002' => 'אפריקה',
     '003' => 'צפון אמריקה',
@@ -1171,8 +1172,8 @@ return array (
     'zw' => 'זימבאבווה',
     'zz' => 'אזור לא ידוע',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'n==2',
     2 => 'n!=0&&fmod(n,10)==0',

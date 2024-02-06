@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CActiveForm class file.
  *
@@ -150,16 +151,16 @@ class CActiveForm extends CWidget
 	 * @var mixed the form action URL (see {@link CHtml::normalizeUrl} for details about this parameter).
 	 * If not set, the current page URL is used.
 	 */
-	public $action='';
+	public $action = '';
 	/**
 	 * @var string the form submission method. This should be either 'post' or 'get'.
 	 * Defaults to 'post'.
 	 */
-	public $method='post';
+	public $method = 'post';
 	/**
 	 * @var boolean whether to generate a stateful form (See {@link CHtml::statefulForm}). Defaults to false.
 	 */
-	public $stateful=false;
+	public $stateful = false;
 	/**
 	 * @var string the CSS class name for error messages.
 	 * Since 1.1.14 this defaults to 'errorMessage' defined in {@link CHtml::$errorMessageCss}.
@@ -169,7 +170,7 @@ class CActiveForm extends CWidget
 	/**
 	 * @var array additional HTML attributes that should be rendered for the form tag.
 	 */
-	public $htmlOptions=array();
+	public $htmlOptions = array();
 	/**
 	 * @var array the options to be passed to the javascript validation plugin.
 	 * The following options are supported:
@@ -214,7 +215,7 @@ class CActiveForm extends CWidget
 	 * The expected function signature should be <code>beforeValidate(form) {...}</code>, where 'form' is
 	 * the jquery representation of the form object. If the return value of this function is NOT true, the validation
 	 * will be cancelled.
-     * <li>errorCallback: function, the function to be invoked if the ajax request fails.
+	 * <li>errorCallback: function, the function to be invoked if the ajax request fails.
 	 *
 	 * Note that because this option refers to a js function, you should wrap the value with {@link CJavaScriptExpression} to prevent it
 	 * from being encoded as a string. This option has been available since version 1.1.3.</li>
@@ -250,7 +251,7 @@ class CActiveForm extends CWidget
 	 * They include: validationDelay, validateOnChange, validateOnType, hideErrorMessage,
 	 * inputContainer, errorCssClass, successCssClass, validatingCssClass, beforeValidateAttribute, afterValidateAttribute.
 	 */
-	public $clientOptions=array();
+	public $clientOptions = array();
 	/**
 	 * @var boolean whether to enable data validation via AJAX. Defaults to false.
 	 * When this property is set true, you should respond to the AJAX validation request on the server side as shown below:
@@ -267,7 +268,7 @@ class CActiveForm extends CWidget
 	 * }
 	 * </pre>
 	 */
-	public $enableAjaxValidation=false;
+	public $enableAjaxValidation = false;
 	/**
 	 * @var boolean whether to enable client-side data validation. Defaults to false.
 	 *
@@ -277,7 +278,7 @@ class CActiveForm extends CWidget
 	 * @see error
 	 * @since 1.1.7
 	 */
-	public $enableClientValidation=false;
+	public $enableClientValidation = false;
 
 	/**
 	 * @var mixed form element to get initial input focus on page load.
@@ -304,7 +305,7 @@ class CActiveForm extends CWidget
 	 * @see error
 	 * @since 1.1.7
 	 */
-	protected $attributes=array();
+	protected $attributes = array();
 	/**
 	 * @var string the ID of the container element for error summary
 	 * @see errorSummary
@@ -315,7 +316,7 @@ class CActiveForm extends CWidget
 	 * @var string[] attribute IDs to be used to display error summary.
 	 * @since 1.1.14
 	 */
-	private $_summaryAttributes=array();
+	private $_summaryAttributes = array();
 
 	/**
 	 * Initializes the widget.
@@ -323,18 +324,18 @@ class CActiveForm extends CWidget
 	 */
 	public function init()
 	{
-		if(!isset($this->htmlOptions['id']))
-			$this->htmlOptions['id']=$this->id;
+		if (!isset($this->htmlOptions['id']))
+			$this->htmlOptions['id'] = $this->id;
 		else
-			$this->id=$this->htmlOptions['id'];
+			$this->id = $this->htmlOptions['id'];
 
-		if($this->stateful)
+		if ($this->stateful)
 			echo CHtml::statefulForm($this->action, $this->method, $this->htmlOptions);
 		else
 			echo CHtml::beginForm($this->action, $this->method, $this->htmlOptions);
 
-		if($this->errorMessageCssClass===null)
-			$this->errorMessageCssClass=CHtml::$errorMessageCss;
+		if ($this->errorMessageCssClass === null)
+			$this->errorMessageCssClass = CHtml::$errorMessageCss;
 	}
 
 	/**
@@ -343,45 +344,43 @@ class CActiveForm extends CWidget
 	 */
 	public function run()
 	{
-		if(is_array($this->focus))
-			$this->focus="#".CHtml::activeId($this->focus[0],$this->focus[1]);
+		if (is_array($this->focus))
+			$this->focus = "#" . CHtml::activeId($this->focus[0], $this->focus[1]);
 
 		echo CHtml::endForm();
-		$cs=Yii::app()->clientScript;
-		if(!$this->enableAjaxValidation && !$this->enableClientValidation || empty($this->attributes))
-		{
-			if($this->focus!==null)
-			{
+		$cs = Yii::app()->clientScript;
+		if (!$this->enableAjaxValidation && !$this->enableClientValidation || empty($this->attributes)) {
+			if ($this->focus !== null) {
 				$cs->registerCoreScript('jquery');
-				$cs->registerScript('CActiveForm#focus',"
+				$cs->registerScript('CActiveForm#focus', "
 					if(!window.location.hash)
-						jQuery('".$this->focus."').focus();
+						jQuery('" . $this->focus . "').focus();
 				");
 			}
 			return;
 		}
 
-		$options=$this->clientOptions;
-		if(isset($this->clientOptions['validationUrl']) && is_array($this->clientOptions['validationUrl']))
-			$options['validationUrl']=CHtml::normalizeUrl($this->clientOptions['validationUrl']);
+		$options = $this->clientOptions;
+		if (isset($this->clientOptions['validationUrl']) && is_array($this->clientOptions['validationUrl']))
+			$options['validationUrl'] = CHtml::normalizeUrl($this->clientOptions['validationUrl']);
 
-		foreach($this->_summaryAttributes as $attribute)
-			$this->attributes[$attribute]['summary']=true;
-		$options['attributes']=array_values($this->attributes);
+		foreach ($this->_summaryAttributes as $attribute)
+			$this->attributes[$attribute]['summary'] = true;
+		$options['attributes'] = array_values($this->attributes);
 
-		if($this->summaryID!==null)
-			$options['summaryID']=$this->summaryID;
+		if ($this->summaryID !== null)
+			$options['summaryID'] = $this->summaryID;
 
-		if($this->focus!==null)
-			$options['focus']=$this->focus;
+		if ($this->focus !== null)
+			$options['focus'] = $this->focus;
 
-		if(!empty(CHtml::$errorCss))
-			$options['errorCss']=CHtml::$errorCss;
+		if (!empty(CHtml::$errorCss))
+			$options['errorCss'] = CHtml::$errorCss;
 
-		$options=CJavaScript::encode($options);
+		$options = CJavaScript::encode($options);
 		$cs->registerCoreScript('yiiactiveform');
-		$id=$this->id;
-		$cs->registerScript(__CLASS__.'#'.$id,"jQuery('#$id').yiiactiveform($options);");
+		$id = $this->id;
+		$cs->registerScript(__CLASS__ . '#' . $id, "jQuery('#$id').yiiactiveform($options);");
 	}
 
 	/**
@@ -442,35 +441,35 @@ class CActiveForm extends CWidget
 	 * @return string the validation result (error display or success message).
 	 * @see CHtml::error
 	 */
-	public function error($model,$attribute,$htmlOptions=array(),$enableAjaxValidation=true,$enableClientValidation=true)
+	public function error($model, $attribute, $htmlOptions = array(), $enableAjaxValidation = true, $enableClientValidation = true)
 	{
-		if(!$this->enableAjaxValidation)
-			$enableAjaxValidation=false;
-		if(!$this->enableClientValidation)
-			$enableClientValidation=false;
+		if (!$this->enableAjaxValidation)
+			$enableAjaxValidation = false;
+		if (!$this->enableClientValidation)
+			$enableClientValidation = false;
 
-		if(!isset($htmlOptions['class']))
-			$htmlOptions['class']=$this->errorMessageCssClass;
+		if (!isset($htmlOptions['class']))
+			$htmlOptions['class'] = $this->errorMessageCssClass;
 
-		if(!$enableAjaxValidation && !$enableClientValidation)
-			return CHtml::error($model,$attribute,$htmlOptions);
+		if (!$enableAjaxValidation && !$enableClientValidation)
+			return CHtml::error($model, $attribute, $htmlOptions);
 
-		$id=CHtml::activeId($model,$attribute);
-		$inputID=isset($htmlOptions['inputID']) ? $htmlOptions['inputID'] : $id;
+		$id = CHtml::activeId($model, $attribute);
+		$inputID = isset($htmlOptions['inputID']) ? $htmlOptions['inputID'] : $id;
 		unset($htmlOptions['inputID']);
-		if(!isset($htmlOptions['id']))
-			$htmlOptions['id']=$inputID.'_em_';
+		if (!isset($htmlOptions['id']))
+			$htmlOptions['id'] = $inputID . '_em_';
 
-		$option=array(
-			'id'=>$id,
-			'inputID'=>$inputID,
-			'errorID'=>$htmlOptions['id'],
-			'model'=>get_class($model),
-			'name'=>$attribute,
-			'enableAjaxValidation'=>$enableAjaxValidation,
+		$option = array(
+			'id' => $id,
+			'inputID' => $inputID,
+			'errorID' => $htmlOptions['id'],
+			'model' => get_class($model),
+			'name' => $attribute,
+			'enableAjaxValidation' => $enableAjaxValidation,
 		);
 
-		$optionNames=array(
+		$optionNames = array(
 			'validationDelay',
 			'validateOnChange',
 			'validateOnType',
@@ -482,54 +481,48 @@ class CActiveForm extends CWidget
 			'beforeValidateAttribute',
 			'afterValidateAttribute',
 		);
-		foreach($optionNames as $name)
-		{
-			if(isset($htmlOptions[$name]))
-			{
-				$option[$name]=$htmlOptions[$name];
+		foreach ($optionNames as $name) {
+			if (isset($htmlOptions[$name])) {
+				$option[$name] = $htmlOptions[$name];
 				unset($htmlOptions[$name]);
 			}
 		}
-		if($model instanceof CActiveRecord && !$model->isNewRecord)
-			$option['status']=1;
+		if ($model instanceof CActiveRecord && !$model->isNewRecord)
+			$option['status'] = 1;
 
-		if($enableClientValidation)
-		{
-			$validators=isset($htmlOptions['clientValidation']) ? array($htmlOptions['clientValidation']) : array();
+		if ($enableClientValidation) {
+			$validators = isset($htmlOptions['clientValidation']) ? array($htmlOptions['clientValidation']) : array();
 			unset($htmlOptions['clientValidation']);
 
 			$attributeName = $attribute;
-			if(($pos=strrpos($attribute,']'))!==false && $pos!==strlen($attribute)-1) // e.g. [a]name
+			if (($pos = strrpos($attribute, ']')) !== false && $pos !== strlen($attribute) - 1) // e.g. [a]name
 			{
-				$attributeName=substr($attribute,$pos+1);
+				$attributeName = substr($attribute, $pos + 1);
 			}
 
-			foreach($model->getValidators($attributeName) as $validator)
-			{
-				if($validator->enableClientValidation)
-				{
-					if(($js=$validator->clientValidateAttribute($model,$attributeName))!='')
-						$validators[]=$js;
+			foreach ($model->getValidators($attributeName) as $validator) {
+				if ($validator->enableClientValidation) {
+					if (($js = $validator->clientValidateAttribute($model, $attributeName)) != '')
+						$validators[] = $js;
 				}
 			}
-			if($validators!==array())
-				$option['clientValidation']=new CJavaScriptExpression("function(value, messages, attribute) {\n".implode("\n",$validators)."\n}");
+			if ($validators !== array())
+				$option['clientValidation'] = new CJavaScriptExpression("function(value, messages, attribute) {\n" . implode("\n", $validators) . "\n}");
 		}
 
-		if(empty($option['hideErrorMessage']) && empty($this->clientOptions['hideErrorMessage']))
-			$html=CHtml::error($model,$attribute,$htmlOptions);
+		if (empty($option['hideErrorMessage']) && empty($this->clientOptions['hideErrorMessage']))
+			$html = CHtml::error($model, $attribute, $htmlOptions);
 		else
-			$html='';
-		if($html==='')
-		{
-			if(isset($htmlOptions['style']))
-				$htmlOptions['style']=rtrim($htmlOptions['style'],';').';display:none';
+			$html = '';
+		if ($html === '') {
+			if (isset($htmlOptions['style']))
+				$htmlOptions['style'] = rtrim($htmlOptions['style'], ';') . ';display:none';
 			else
-				$htmlOptions['style']='display:none';
-			$html=CHtml::tag(CHtml::$errorContainerTag,$htmlOptions,'');
+				$htmlOptions['style'] = 'display:none';
+			$html = CHtml::tag(CHtml::$errorContainerTag, $htmlOptions, '');
 		}
 
-		$this->attributes[$inputID]=$option;
+		$this->attributes[$inputID] = $option;
 		return $html;
 	}
 
@@ -545,28 +538,27 @@ class CActiveForm extends CWidget
 	 * @return string the error summary. Empty if no errors are found.
 	 * @see CHtml::errorSummary
 	 */
-	public function errorSummary($models,$header=null,$footer=null,$htmlOptions=array())
+	public function errorSummary($models, $header = null, $footer = null, $htmlOptions = array())
 	{
-		if(!$this->enableAjaxValidation && !$this->enableClientValidation)
-			return CHtml::errorSummary($models,$header,$footer,$htmlOptions);
+		if (!$this->enableAjaxValidation && !$this->enableClientValidation)
+			return CHtml::errorSummary($models, $header, $footer, $htmlOptions);
 
-		if(!isset($htmlOptions['id']))
-			$htmlOptions['id']=$this->id.'_es_';
-		$html=CHtml::errorSummary($models,$header,$footer,$htmlOptions);
-		if($html==='')
-		{
-			if($header===null)
-				$header='<p>'.Yii::t('yii','Please fix the following input errors:').'</p>';
-			if(!isset($htmlOptions['class']))
-				$htmlOptions['class']=CHtml::$errorSummaryCss;
-			$htmlOptions['style']=isset($htmlOptions['style']) ? rtrim($htmlOptions['style'],';').';display:none' : 'display:none';
-			$html=CHtml::tag('div',$htmlOptions,$header."\n<ul><li>dummy</li></ul>".$footer);
+		if (!isset($htmlOptions['id']))
+			$htmlOptions['id'] = $this->id . '_es_';
+		$html = CHtml::errorSummary($models, $header, $footer, $htmlOptions);
+		if ($html === '') {
+			if ($header === null)
+				$header = '<p>' . Yii::t('yii', 'Please fix the following input errors:') . '</p>';
+			if (!isset($htmlOptions['class']))
+				$htmlOptions['class'] = CHtml::$errorSummaryCss;
+			$htmlOptions['style'] = isset($htmlOptions['style']) ? rtrim($htmlOptions['style'], ';') . ';display:none' : 'display:none';
+			$html = CHtml::tag('div', $htmlOptions, $header . "\n<ul><li>dummy</li></ul>" . $footer);
 		}
 
-		$this->summaryID=$htmlOptions['id'];
-		foreach(is_array($models) ? $models : array($models) as $model)
-			foreach($model->getSafeAttributeNames() as $attribute)
-				$this->_summaryAttributes[]=CHtml::activeId($model,$attribute);
+		$this->summaryID = $htmlOptions['id'];
+		foreach (is_array($models) ? $models : array($models) as $model)
+			foreach ($model->getSafeAttributeNames() as $attribute)
+				$this->_summaryAttributes[] = CHtml::activeId($model, $attribute);
 
 		return $html;
 	}
@@ -581,9 +573,9 @@ class CActiveForm extends CWidget
 	 * @param array $htmlOptions additional HTML attributes.
 	 * @return string the generated label tag
 	 */
-	public function label($model,$attribute,$htmlOptions=array())
+	public function label($model, $attribute, $htmlOptions = array())
 	{
-		return CHtml::activeLabel($model,$attribute,$htmlOptions);
+		return CHtml::activeLabel($model, $attribute, $htmlOptions);
 	}
 
 	/**
@@ -596,9 +588,9 @@ class CActiveForm extends CWidget
 	 * @param array $htmlOptions additional HTML attributes.
 	 * @return string the generated label tag
 	 */
-	public function labelEx($model,$attribute,$htmlOptions=array())
+	public function labelEx($model, $attribute, $htmlOptions = array())
 	{
-		return CHtml::activeLabelEx($model,$attribute,$htmlOptions);
+		return CHtml::activeLabelEx($model, $attribute, $htmlOptions);
 	}
 
 	/**
@@ -612,9 +604,9 @@ class CActiveForm extends CWidget
 	 * @return string the generated input field
 	 * @since 1.1.11
 	 */
-	public function urlField($model,$attribute,$htmlOptions=array())
+	public function urlField($model, $attribute, $htmlOptions = array())
 	{
-		return CHtml::activeUrlField($model,$attribute,$htmlOptions);
+		return CHtml::activeUrlField($model, $attribute, $htmlOptions);
 	}
 
 	/**
@@ -628,9 +620,9 @@ class CActiveForm extends CWidget
 	 * @return string the generated input field
 	 * @since 1.1.11
 	 */
-	public function emailField($model,$attribute,$htmlOptions=array())
+	public function emailField($model, $attribute, $htmlOptions = array())
 	{
-		return CHtml::activeEmailField($model,$attribute,$htmlOptions);
+		return CHtml::activeEmailField($model, $attribute, $htmlOptions);
 	}
 
 	/**
@@ -644,9 +636,9 @@ class CActiveForm extends CWidget
 	 * @return string the generated input field
 	 * @since 1.1.11
 	 */
-	public function numberField($model,$attribute,$htmlOptions=array())
+	public function numberField($model, $attribute, $htmlOptions = array())
 	{
-		return CHtml::activeNumberField($model,$attribute,$htmlOptions);
+		return CHtml::activeNumberField($model, $attribute, $htmlOptions);
 	}
 
 	/**
@@ -660,9 +652,9 @@ class CActiveForm extends CWidget
 	 * @return string the generated input field
 	 * @since 1.1.11
 	 */
-	public function rangeField($model,$attribute,$htmlOptions=array())
+	public function rangeField($model, $attribute, $htmlOptions = array())
 	{
-		return CHtml::activeRangeField($model,$attribute,$htmlOptions);
+		return CHtml::activeRangeField($model, $attribute, $htmlOptions);
 	}
 
 	/**
@@ -676,9 +668,9 @@ class CActiveForm extends CWidget
 	 * @return string the generated input field
 	 * @since 1.1.11
 	 */
-	public function dateField($model,$attribute,$htmlOptions=array())
+	public function dateField($model, $attribute, $htmlOptions = array())
 	{
-		return CHtml::activeDateField($model,$attribute,$htmlOptions);
+		return CHtml::activeDateField($model, $attribute, $htmlOptions);
 	}
 
 
@@ -693,9 +685,9 @@ class CActiveForm extends CWidget
 	 * @return string the generated input field
 	 * @since 1.1.14
 	 */
-	public function timeField($model,$attribute,$htmlOptions=array())
+	public function timeField($model, $attribute, $htmlOptions = array())
 	{
-		return CHtml::activeTimeField($model,$attribute,$htmlOptions);
+		return CHtml::activeTimeField($model, $attribute, $htmlOptions);
 	}
 
 	/**
@@ -709,9 +701,9 @@ class CActiveForm extends CWidget
 	 * @return string the generated input field
 	 * @since 1.1.16
 	 */
-	public function dateTimeField($model,$attribute,$htmlOptions=array())
+	public function dateTimeField($model, $attribute, $htmlOptions = array())
 	{
-		return CHtml::activeDateTimeField($model,$attribute,$htmlOptions);
+		return CHtml::activeDateTimeField($model, $attribute, $htmlOptions);
 	}
 
 	/**
@@ -725,9 +717,9 @@ class CActiveForm extends CWidget
 	 * @return string the generated input field
 	 * @since 1.1.16
 	 */
-	public function dateTimeLocalField($model,$attribute,$htmlOptions=array())
+	public function dateTimeLocalField($model, $attribute, $htmlOptions = array())
 	{
-		return CHtml::activeDateTimeLocalField($model,$attribute,$htmlOptions);
+		return CHtml::activeDateTimeLocalField($model, $attribute, $htmlOptions);
 	}
 
 	/**
@@ -741,9 +733,9 @@ class CActiveForm extends CWidget
 	 * @return string the generated input field
 	 * @since 1.1.16
 	 */
-	public function weekField($model,$attribute,$htmlOptions=array())
+	public function weekField($model, $attribute, $htmlOptions = array())
 	{
-		return CHtml::activeWeekField($model,$attribute,$htmlOptions);
+		return CHtml::activeWeekField($model, $attribute, $htmlOptions);
 	}
 
 	/**
@@ -757,9 +749,9 @@ class CActiveForm extends CWidget
 	 * @return string the generated input field
 	 * @since 1.1.16
 	 */
-	public function colorField($model,$attribute,$htmlOptions=array())
+	public function colorField($model, $attribute, $htmlOptions = array())
 	{
-		return CHtml::activeColorField($model,$attribute,$htmlOptions);
+		return CHtml::activeColorField($model, $attribute, $htmlOptions);
 	}
 
 	/**
@@ -773,9 +765,9 @@ class CActiveForm extends CWidget
 	 * @return string the generated input field
 	 * @since 1.1.14
 	 */
-	public function telField($model,$attribute,$htmlOptions=array())
+	public function telField($model, $attribute, $htmlOptions = array())
 	{
-		return CHtml::activeTelField($model,$attribute,$htmlOptions);
+		return CHtml::activeTelField($model, $attribute, $htmlOptions);
 	}
 
 	/**
@@ -788,9 +780,9 @@ class CActiveForm extends CWidget
 	 * @param array $htmlOptions additional HTML attributes.
 	 * @return string the generated input field
 	 */
-	public function textField($model,$attribute,$htmlOptions=array())
+	public function textField($model, $attribute, $htmlOptions = array())
 	{
-		return CHtml::activeTextField($model,$attribute,$htmlOptions);
+		return CHtml::activeTextField($model, $attribute, $htmlOptions);
 	}
 
 	/**
@@ -804,9 +796,9 @@ class CActiveForm extends CWidget
 	 * @return string the generated input field
 	 * @since 1.1.14
 	 */
-	public function searchField($model,$attribute,$htmlOptions=array())
+	public function searchField($model, $attribute, $htmlOptions = array())
 	{
-		return CHtml::activeSearchField($model,$attribute,$htmlOptions);
+		return CHtml::activeSearchField($model, $attribute, $htmlOptions);
 	}
 
 	/**
@@ -819,9 +811,9 @@ class CActiveForm extends CWidget
 	 * @param array $htmlOptions additional HTML attributes.
 	 * @return string the generated input field
 	 */
-	public function hiddenField($model,$attribute,$htmlOptions=array())
+	public function hiddenField($model, $attribute, $htmlOptions = array())
 	{
-		return CHtml::activeHiddenField($model,$attribute,$htmlOptions);
+		return CHtml::activeHiddenField($model, $attribute, $htmlOptions);
 	}
 
 	/**
@@ -834,9 +826,9 @@ class CActiveForm extends CWidget
 	 * @param array $htmlOptions additional HTML attributes.
 	 * @return string the generated input field
 	 */
-	public function passwordField($model,$attribute,$htmlOptions=array())
+	public function passwordField($model, $attribute, $htmlOptions = array())
 	{
-		return CHtml::activePasswordField($model,$attribute,$htmlOptions);
+		return CHtml::activePasswordField($model, $attribute, $htmlOptions);
 	}
 
 	/**
@@ -849,9 +841,9 @@ class CActiveForm extends CWidget
 	 * @param array $htmlOptions additional HTML attributes.
 	 * @return string the generated text area
 	 */
-	public function textArea($model,$attribute,$htmlOptions=array())
+	public function textArea($model, $attribute, $htmlOptions = array())
 	{
-		return CHtml::activeTextArea($model,$attribute,$htmlOptions);
+		return CHtml::activeTextArea($model, $attribute, $htmlOptions);
 	}
 
 	/**
@@ -864,9 +856,9 @@ class CActiveForm extends CWidget
 	 * @param array $htmlOptions additional HTML attributes
 	 * @return string the generated input field
 	 */
-	public function fileField($model,$attribute,$htmlOptions=array())
+	public function fileField($model, $attribute, $htmlOptions = array())
 	{
-		return CHtml::activeFileField($model,$attribute,$htmlOptions);
+		return CHtml::activeFileField($model, $attribute, $htmlOptions);
 	}
 
 	/**
@@ -879,9 +871,9 @@ class CActiveForm extends CWidget
 	 * @param array $htmlOptions additional HTML attributes.
 	 * @return string the generated radio button
 	 */
-	public function radioButton($model,$attribute,$htmlOptions=array())
+	public function radioButton($model, $attribute, $htmlOptions = array())
 	{
-		return CHtml::activeRadioButton($model,$attribute,$htmlOptions);
+		return CHtml::activeRadioButton($model, $attribute, $htmlOptions);
 	}
 
 	/**
@@ -894,9 +886,9 @@ class CActiveForm extends CWidget
 	 * @param array $htmlOptions additional HTML attributes.
 	 * @return string the generated check box
 	 */
-	public function checkBox($model,$attribute,$htmlOptions=array())
+	public function checkBox($model, $attribute, $htmlOptions = array())
 	{
-		return CHtml::activeCheckBox($model,$attribute,$htmlOptions);
+		return CHtml::activeCheckBox($model, $attribute, $htmlOptions);
 	}
 
 	/**
@@ -910,9 +902,9 @@ class CActiveForm extends CWidget
 	 * @param array $htmlOptions additional HTML attributes.
 	 * @return string the generated drop down list
 	 */
-	public function dropDownList($model,$attribute,$data,$htmlOptions=array())
+	public function dropDownList($model, $attribute, $data, $htmlOptions = array())
 	{
-		return CHtml::activeDropDownList($model,$attribute,$data,$htmlOptions);
+		return CHtml::activeDropDownList($model, $attribute, $data, $htmlOptions);
 	}
 
 	/**
@@ -926,9 +918,9 @@ class CActiveForm extends CWidget
 	 * @param array $htmlOptions additional HTML attributes.
 	 * @return string the generated list box
 	 */
-	public function listBox($model,$attribute,$data,$htmlOptions=array())
+	public function listBox($model, $attribute, $data, $htmlOptions = array())
 	{
-		return CHtml::activeListBox($model,$attribute,$data,$htmlOptions);
+		return CHtml::activeListBox($model, $attribute, $data, $htmlOptions);
 	}
 
 	/**
@@ -942,9 +934,9 @@ class CActiveForm extends CWidget
 	 * @param array $htmlOptions addtional HTML options.
 	 * @return string the generated check box list
 	 */
-	public function checkBoxList($model,$attribute,$data,$htmlOptions=array())
+	public function checkBoxList($model, $attribute, $data, $htmlOptions = array())
 	{
-		return CHtml::activeCheckBoxList($model,$attribute,$data,$htmlOptions);
+		return CHtml::activeCheckBoxList($model, $attribute, $data, $htmlOptions);
 	}
 
 	/**
@@ -958,9 +950,9 @@ class CActiveForm extends CWidget
 	 * @param array $htmlOptions addtional HTML options.
 	 * @return string the generated radio button list
 	 */
-	public function radioButtonList($model,$attribute,$data,$htmlOptions=array())
+	public function radioButtonList($model, $attribute, $data, $htmlOptions = array())
 	{
-		return CHtml::activeRadioButtonList($model,$attribute,$data,$htmlOptions);
+		return CHtml::activeRadioButtonList($model, $attribute, $data, $htmlOptions);
 	}
 
 	/**
@@ -975,19 +967,18 @@ class CActiveForm extends CWidget
 	 * If this is true, the model will be populated from <code>$_POST[ModelClass]</code>.
 	 * @return string the JSON representation of the validation error messages.
 	 */
-	public static function validate($models, $attributes=null, $loadInput=true)
+	public static function validate($models, $attributes = null, $loadInput = true)
 	{
-		$result=array();
-		if(!is_array($models))
-			$models=array($models);
-		foreach($models as $model)
-		{
-			$modelName=CHtml::modelName($model);
-			if($loadInput && isset($_POST[$modelName]))
-				$model->attributes=$_POST[$modelName];
+		$result = array();
+		if (!is_array($models))
+			$models = array($models);
+		foreach ($models as $model) {
+			$modelName = CHtml::modelName($model);
+			if ($loadInput && isset($_POST[$modelName]))
+				$model->attributes = $_POST[$modelName];
 			$model->validate($attributes);
-			foreach($model->getErrors() as $attribute=>$errors)
-				$result[CHtml::activeId($model,$attribute)]=$errors;
+			foreach ($model->getErrors() as $attribute => $errors)
+				$result[CHtml::activeId($model, $attribute)] = $errors;
 		}
 		return function_exists('json_encode') ? json_encode($result) : CJSON::encode($result);
 	}
@@ -1004,19 +995,18 @@ class CActiveForm extends CWidget
 	 * If this is true, the model will be populated from <code>$_POST[ModelClass][$i]</code>.
 	 * @return string the JSON representation of the validation error messages.
 	 */
-	public static function validateTabular($models, $attributes=null, $loadInput=true)
+	public static function validateTabular($models, $attributes = null, $loadInput = true)
 	{
-		$result=array();
-		if(!is_array($models))
-			$models=array($models);
-		foreach($models as $i=>$model)
-		{
-			$modelName=CHtml::modelName($model);
-			if($loadInput && isset($_POST[$modelName][$i]))
-				$model->attributes=$_POST[$modelName][$i];
+		$result = array();
+		if (!is_array($models))
+			$models = array($models);
+		foreach ($models as $i => $model) {
+			$modelName = CHtml::modelName($model);
+			if ($loadInput && isset($_POST[$modelName][$i]))
+				$model->attributes = $_POST[$modelName][$i];
 			$model->validate($attributes);
-			foreach($model->getErrors() as $attribute=>$errors)
-				$result[CHtml::activeId($model,'['.$i.']'.$attribute)]=$errors;
+			foreach ($model->getErrors() as $attribute => $errors)
+				$result[CHtml::activeId($model, '[' . $i . ']' . $attribute)] = $errors;
 		}
 		return function_exists('json_encode') ? json_encode($result) : CJSON::encode($result);
 	}

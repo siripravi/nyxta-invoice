@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'zu_ZA'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00;(¤#,##0.00)',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'ZAR' => 'R',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Januwari',
       2 => 'Februwari',
       3 => 'Mashi',
@@ -70,8 +71,8 @@ return array (
       11 => 'Novemba',
       12 => 'Disemba',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Jan',
       2 => 'Feb',
       3 => 'Mas',
@@ -86,10 +87,10 @@ return array (
       12 => 'Dis',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'J',
       2 => 'F',
       3 => 'M',
@@ -103,8 +104,8 @@ return array (
       11 => 'N',
       12 => 'D',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       1 => 'uJanuwari',
       2 => 'uFebruwari',
       3 => 'uMashi',
@@ -119,10 +120,10 @@ return array (
       12 => 'uDisemba',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Sonto',
       1 => 'Msombuluko',
       2 => 'Lwesibili',
@@ -131,8 +132,8 @@ return array (
       5 => 'Lwesihlanu',
       6 => 'Mgqibelo',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Son',
       1 => 'Mso',
       2 => 'Bil',
@@ -141,8 +142,8 @@ return array (
       5 => 'Hla',
       6 => 'Mgq',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'Isonto',
       1 => 'Umsombuluko',
       2 => 'Ulwesibili',
@@ -152,10 +153,10 @@ return array (
       6 => 'Umgqibelo',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'S',
       1 => 'M',
       2 => 'B',
@@ -164,8 +165,8 @@ return array (
       5 => 'H',
       6 => 'M',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'Isonto',
       1 => 'Umsombuluko',
       2 => 'Ulwesibili',
@@ -175,33 +176,33 @@ return array (
       6 => 'Umgqibelo',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'BC',
       1 => 'AD',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'BC',
       1 => 'AD',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'BC',
       1 => 'AD',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE dd MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'd MMM y',
     'short' => 'y-MM-dd',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'h:mm:ss a zzzz',
     'long' => 'h:mm:ss a z',
     'medium' => 'h:mm:ss a',
@@ -211,8 +212,8 @@ return array (
   'amName' => 'Ekuseni',
   'pmName' => 'Ntambama',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ab' => 'isi-Abkhazian',
     'ach' => 'Isi-Acoli',
     'af' => 'isiBhunu',
@@ -394,8 +395,8 @@ return array (
     'zu' => 'isiZulu',
     'zxx' => 'Akukho okuqukethwe kolimi',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'i-Perso-Arabic',
     'armn' => 'isi-Armenian',
     'beng' => 'isi-Bengali',
@@ -436,8 +437,8 @@ return array (
     'zyyy' => 'i-Common',
     'zzzz' => 'Iskripthi esingaziwa',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'Umhlaba',
     '002' => 'i-Africa',
     '003' => 'e-North America',
@@ -729,8 +730,8 @@ return array (
     'zw' => 'i-Zimbabwe',
     'zz' => 'Isifunda esingaziwa',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CCubridTableSchema class file.
  *

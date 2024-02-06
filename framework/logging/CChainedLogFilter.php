@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CChainedLogFilter class file
  *
@@ -25,7 +26,7 @@ class CChainedLogFilter extends CComponent implements ILogFilter
 	 * In general, the log filter classes should implement {@link ILogFilter} interface.
 	 * Filters will be applied in the order they are defined.
 	 */
-	public $filters=array();
+	public $filters = array();
 
 	/**
 	 * Filters the given log messages by applying all filters configured by {@link filters}.
@@ -33,7 +34,7 @@ class CChainedLogFilter extends CComponent implements ILogFilter
 	 */
 	public function filter(&$logs)
 	{
-		foreach($this->filters as $filter)
+		foreach ($this->filters as $filter)
 			Yii::createComponent($filter)->filter($logs);
 	}
 }

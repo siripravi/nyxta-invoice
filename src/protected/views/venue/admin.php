@@ -27,7 +27,8 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<?php //echo BsHtml::pageHeader('Manage','Venues') ?>
+<?php //echo BsHtml::pageHeader('Manage','Venues') 
+?>
 <div class="panel panel-default">
     <div class="panel-heading">
         <h3>Manage Venues </h3>
@@ -35,11 +36,13 @@ $('.search-form form').submit(function(){
     </div>
     <div class="panel-body">
         <?php
-        $this->widget('zii.widgets.jui.CJuiButton', array(
-            'buttonType' => 'link',
-            'name' => 'btnNewVenue2',
-            'caption' => '<i class="fa fa-plus"></i> New Venue',
-            'onclick' => new CJavaScriptExpression('function(){
+        $this->widget(
+            'zii.widgets.jui.CJuiButton',
+            array(
+                'buttonType' => 'link',
+                'name' => 'btnNewVenue2',
+                'caption' => '<i class="fa fa-plus"></i> New Venue',
+                'onclick' => new CJavaScriptExpression('function(){
                                                  BootstrapDialog.show({
                                                   title: "Create New Venue",
                                                   type: BootstrapDialog.TYPE_SUCCESS,
@@ -57,8 +60,8 @@ $('.search-form form').submit(function(){
                                             });
                                                 this.blur(); 
                                                 return false;}'),
-            'htmlOptions' => array('id' => 'btn-new-venue2', 'class' => 'btn btn-flat btn-success')
-        )
+                'htmlOptions' => array('id' => 'btn-new-venue2', 'class' => 'btn btn-flat btn-success')
+            )
         );
         ?>
 
@@ -66,68 +69,75 @@ $('.search-form form').submit(function(){
         <div class="search-form" style="display:none">
             <?php /*$this->renderPartial('_search',array(
            'model'=>$model,
-       )); */?>
+       )); */ ?>
         </div>
         <!-- search-form -->
 
-        <?php $this->widget('zii.widgets.grid.CGridView', array(
-            'id' => 'venue-grid',
-            'dataProvider' => $model->search(),
-            'itemsCssClass' => 'table table-bordered table-condensed table-hover table-striped dataTable',
-            'filter' => $model,
-            'columns' => array(
-                array(
-                    'name' => 'venue_id',
-                    'header' => 'ID#',
-                    'headerHtmlOptions' => array('style' => 'width:36px;font-weight:300;text-align:center',
-                    )
-                    //'filter' => CHtml::dropDownList('EmpTsFinal[username]', $model->username, $model->userList(),array('empty'=>'--select a user---'))
-                ),
+        <?php $this->widget(
+            'zii.widgets.grid.CGridView',
+            array(
+                'id' => 'venue-grid',
+                'dataProvider' => $model->search(),
+                'itemsCssClass' => 'table table-bordered table-condensed table-hover table-striped dataTable',
+                'filter' => $model,
+                'columns' => array(
+                    array(
+                        'name' => 'venue_id',
+                        'header' => 'ID#',
+                        'headerHtmlOptions' => array(
+                            'style' => 'width:36px;font-weight:300;text-align:center',
+                        )
+                        //'filter' => CHtml::dropDownList('EmpTsFinal[username]', $model->username, $model->userList(),array('empty'=>'--select a user---'))
+                    ),
 
-                array(
-                    'name' => 'ship_name',
-                    'header' => 'Title',
-                    'headerHtmlOptions' => array('style' => 'width:146px;font-weight:300;text-align:center',
-                    )
-                    //'filter' => CHtml::dropDownList('EmpTsFinal[username]', $model->username, $model->userList(),array('empty'=>'--select a user---'))
-                ),
-                array(
-                    'name' => 'ship_adrs',
-                    'header' => 'Address',
-                    'type' => 'raw',
-                    'filter' => false,
-                    'value' => 'CHtml::link($data->ship_add1.",\n".$data->ship_add2, "")',
+                    array(
+                        'name' => 'ship_name',
+                        'header' => 'Title',
+                        'headerHtmlOptions' => array(
+                            'style' => 'width:146px;font-weight:300;text-align:center',
+                        )
+                        //'filter' => CHtml::dropDownList('EmpTsFinal[username]', $model->username, $model->userList(),array('empty'=>'--select a user---'))
+                    ),
+                    array(
+                        'name' => 'ship_adrs',
+                        'header' => 'Address',
+                        'type' => 'raw',
+                        'filter' => false,
+                        'value' => 'CHtml::link($data->ship_add1.",\n".$data->ship_add2, "")',
 
-                    'headerHtmlOptions' => array('style' => 'width:86px;font-weight:300;text-align:center',
-                    )
-                    //'filter' => CHtml::dropDownList('EmpTsFinal[username]', $model->username, $model->userList(),array('empty'=>'--select a user---'))
-                ),
-                array(
-                    'name' => 'ship_city',
-                    'header' => 'city',
-                    'headerHtmlOptions' => array('style' => 'width:86px;font-weight:300;text-align:center',
-                    )
-                    //'filter' => CHtml::dropDownList('EmpTsFinal[username]', $model->username, $model->userList(),array('empty'=>'--select a user---'))
-                ),
-                array(
-                    'name' => 'ship_state',
-                    'header' => 'state',
-                    'headerHtmlOptions' => array('style' => 'width:46px;font-weight:300;text-align:center',
-                    )
-                    //'filter' => CHtml::dropDownList('EmpTsFinal[username]', $model->username, $model->userList(),array('empty'=>'--select a user---'))
-                ),
-                /*
+                        'headerHtmlOptions' => array(
+                            'style' => 'width:86px;font-weight:300;text-align:center',
+                        )
+                        //'filter' => CHtml::dropDownList('EmpTsFinal[username]', $model->username, $model->userList(),array('empty'=>'--select a user---'))
+                    ),
+                    array(
+                        'name' => 'ship_city',
+                        'header' => 'city',
+                        'headerHtmlOptions' => array(
+                            'style' => 'width:86px;font-weight:300;text-align:center',
+                        )
+                        //'filter' => CHtml::dropDownList('EmpTsFinal[username]', $model->username, $model->userList(),array('empty'=>'--select a user---'))
+                    ),
+                    array(
+                        'name' => 'ship_state',
+                        'header' => 'state',
+                        'headerHtmlOptions' => array(
+                            'style' => 'width:46px;font-weight:300;text-align:center',
+                        )
+                        //'filter' => CHtml::dropDownList('EmpTsFinal[username]', $model->username, $model->userList(),array('empty'=>'--select a user---'))
+                    ),
+                    /*
                       'SHIP_zip',
                       'SHIP_phone1',
                       'SHIP_phone2',
                       'SHIP_email1',
                       'SHIP_DETAILS',
                       */
-                array(
-                    'class' => 'CButtonColumn',
+                    array(
+                        'class' => 'CButtonColumn',
+                    ),
                 ),
-            ),
-        )
+            )
         ); ?>
     </div>
 </div>

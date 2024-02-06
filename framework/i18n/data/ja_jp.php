@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'ja_JP'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'AU$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -52,10 +53,10 @@ return array (
     'XOF' => 'CFA',
     'XPF' => 'CFPF',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => '1月',
       2 => '2月',
       3 => '3月',
@@ -69,8 +70,8 @@ return array (
       11 => '11月',
       12 => '12月',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Month1',
       2 => 'Month2',
       3 => 'Month3',
@@ -85,10 +86,10 @@ return array (
       12 => 'Month12',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -103,10 +104,10 @@ return array (
       12 => '12',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => '日曜日',
       1 => '月曜日',
       2 => '火曜日',
@@ -115,8 +116,8 @@ return array (
       5 => '金曜日',
       6 => '土曜日',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => '日',
       1 => '月',
       2 => '火',
@@ -125,31 +126,8 @@ return array (
       5 => '金',
       6 => '土',
     ),
-    'short' => 
-    array (
-      0 => '日',
-      1 => '月',
-      2 => '火',
-      3 => '水',
-      4 => '木',
-      5 => '金',
-      6 => '土',
-    ),
-  ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
-      0 => '日',
-      1 => '月',
-      2 => '火',
-      3 => '水',
-      4 => '木',
-      5 => '金',
-      6 => '土',
-    ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => '日',
       1 => '月',
       2 => '火',
@@ -159,33 +137,56 @@ return array (
       6 => '土',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
+      0 => '日',
+      1 => '月',
+      2 => '火',
+      3 => '水',
+      4 => '木',
+      5 => '金',
+      6 => '土',
+    ),
+    'short' =>
+    array(
+      0 => '日',
+      1 => '月',
+      2 => '火',
+      3 => '水',
+      4 => '木',
+      5 => '金',
+      6 => '土',
+    ),
+  ),
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => '紀元前',
       1 => '西暦',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => '紀元前',
       1 => '西暦',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'BC',
       1 => 'AD',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'y年M月d日EEEE',
     'long' => 'y年M月d日',
     'medium' => 'y/MM/dd',
     'short' => 'y/MM/dd',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'H時mm分ss秒 zzzz',
     'long' => 'H:mm:ss z',
     'medium' => 'H:mm:ss',
@@ -195,8 +196,8 @@ return array (
   'amName' => '午前',
   'pmName' => '午後',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'アファル語',
     'ab' => 'アブハズ語',
     'ace' => 'アチェ語',
@@ -771,8 +772,8 @@ return array (
     'zxx' => '言語的内容なし',
     'zza' => 'ザザ語',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'afak' => 'アファカ文字',
     'arab' => 'ペルソ・アラビア文字',
     'armi' => '帝国アラム文字',
@@ -932,8 +933,8 @@ return array (
     'zyyy' => '未解読文字',
     'zzzz' => '未定義文字',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => '世界',
     '002' => 'アフリカ',
     '003' => '北アメリカ大陸',

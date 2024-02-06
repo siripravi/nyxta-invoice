@@ -1,4 +1,5 @@
 <?php
+
 /**
  * EditableField class file.
  *

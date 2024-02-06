@@ -15,14 +15,13 @@ switch($row->st_type){
  
 }*/
 //print_r($results->criteria);
-$this->widget('zii.widgets.CListView', array(
-    'dataProvider' => $results,
-    'template' => '{items}',
-    'itemView' => '_list',
-    // refers to the partial view named '_post'
-    'sortableAttributes' => array(
-
-    ),
-)
+$this->widget(
+    'zii.widgets.CListView',
+    array(
+        'dataProvider' => $results,
+        'template' => '{items}',
+        'itemView' => '_list',
+        // refers to the partial view named '_post'
+        'sortableAttributes' => array(),
+    )
 );
-?>

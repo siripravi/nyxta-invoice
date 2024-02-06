@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -13,7 +14,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   'The button type "{type}" is not supported.' => 'O botão do tipo "{type} não é suportado"',
   'Are you sure you want to delete this item?' => 'Deseja realmente excluir este item?',
   'Delete' => 'Excluir',

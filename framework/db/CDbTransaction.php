@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CDbTransaction class file
  *
@@ -38,7 +39,7 @@
  */
 class CDbTransaction extends CComponent
 {
-	private $_connection=null;
+	private $_connection = null;
 	private $_active;
 
 	/**
@@ -48,8 +49,8 @@ class CDbTransaction extends CComponent
 	 */
 	public function __construct(CDbConnection $connection)
 	{
-		$this->_connection=$connection;
-		$this->_active=true;
+		$this->_connection = $connection;
+		$this->_active = true;
 	}
 
 	/**
@@ -58,15 +59,13 @@ class CDbTransaction extends CComponent
 	 */
 	public function commit()
 	{
-		if($this->_active && $this->_connection->getActive())
-		{
-			Yii::trace('Committing transaction','system.db.CDbTransaction');
-			if($this->_connection->getPdoInstance()->inTransaction())
+		if ($this->_active && $this->_connection->getActive()) {
+			Yii::trace('Committing transaction', 'system.db.CDbTransaction');
+			if ($this->_connection->getPdoInstance()->inTransaction())
 				$this->_connection->getPdoInstance()->commit();
-			$this->_active=false;
-		}
-		else
-			throw new CDbException(Yii::t('yii','CDbTransaction is inactive and cannot perform commit or roll back operations.'));
+			$this->_active = false;
+		} else
+			throw new CDbException(Yii::t('yii', 'CDbTransaction is inactive and cannot perform commit or roll back operations.'));
 	}
 
 	/**
@@ -75,15 +74,13 @@ class CDbTransaction extends CComponent
 	 */
 	public function rollback()
 	{
-		if($this->_active && $this->_connection->getActive())
-		{
-			Yii::trace('Rolling back transaction','system.db.CDbTransaction');
-			if($this->_connection->getPdoInstance()->inTransaction())
+		if ($this->_active && $this->_connection->getActive()) {
+			Yii::trace('Rolling back transaction', 'system.db.CDbTransaction');
+			if ($this->_connection->getPdoInstance()->inTransaction())
 				$this->_connection->getPdoInstance()->rollBack();
-			$this->_active=false;
-		}
-		else
-			throw new CDbException(Yii::t('yii','CDbTransaction is inactive and cannot perform commit or roll back operations.'));
+			$this->_active = false;
+		} else
+			throw new CDbException(Yii::t('yii', 'CDbTransaction is inactive and cannot perform commit or roll back operations.'));
 	}
 
 	/**
@@ -107,6 +104,6 @@ class CDbTransaction extends CComponent
 	 */
 	protected function setActive($value)
 	{
-		$this->_active=$value;
+		$this->_active = $value;
 	}
 }

@@ -14,8 +14,10 @@ $this->menu = array(
 
 <h1>Employees</h1>
 
-<?php $this->widget('zii.widgets.CListView', array(
-	'dataProvider' => $dataProvider,
-	'itemView' => '_view',
-)
+<?php $this->widget(
+	'zii.widgets.CListView',
+	array(
+		'dataProvider' => $dataProvider,
+		'itemView' => '_view',
+	)
 ); ?>

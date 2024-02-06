@@ -9,15 +9,17 @@
 </div>
 <div class="well" style="background:#fff;border:none;">
     <div id="emp-err-div"></div>
-    <?php $form = $this->beginWidget('CActiveForm', array(
-        'id' => 'employee-form',
-        // Please note: When you enable ajax validation, make sure the corresponding
-        // controller action is handling ajax validation correctly.
-        // There is a call to performAjaxValidation() commented in generated controller code.
-        // See class documentation of CActiveForm for details on this.
-        'enableAjaxValidation' => false,
-        'htmlOptions' => array('class' => 'form-horizontal')
-    )
+    <?php $form = $this->beginWidget(
+        'CActiveForm',
+        array(
+            'id' => 'employee-form',
+            // Please note: When you enable ajax validation, make sure the corresponding
+            // controller action is handling ajax validation correctly.
+            // There is a call to performAjaxValidation() commented in generated controller code.
+            // See class documentation of CActiveForm for details on this.
+            'enableAjaxValidation' => false,
+            'htmlOptions' => array('class' => 'form-horizontal')
+        )
     ); ?>
 
     <?php echo $form->errorSummary($model); ?>
@@ -47,8 +49,8 @@
                 $model,
                 'emp_type_id',
                 CHtml::listData(Designation::model()->findAll(), 'emp_type_id', function ($post) {
-                return CHtml::encode($post->designation . ' ' . $post->design_abbr);
-            }),
+                    return CHtml::encode($post->designation . ' ' . $post->design_abbr);
+                }),
                 array('maxlength' => 225, 'placeholder' => 'Designation', 'class' => 'form-control')
             ); ?>
         </div>

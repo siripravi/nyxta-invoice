@@ -14,13 +14,10 @@
     <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
     <li class="active">Here</li>
 </ol>
-<?php if (($this->model->st_type == statement::TYPE_INVOICE) && ($this->model->itemsTotal) <= ($this->model->paymentsTotal) && (Yii::app()->user->admin))
-: ?>
+<?php if (($this->model->st_type == statement::TYPE_INVOICE) && ($this->model->itemsTotal) <= ($this->model->paymentsTotal) && (Yii::app()->user->admin)) : ?>
     <div class="btn-group btn-toggle pull-left">
-        <button class="btn btn <?php echo ($this->model->paid == 0) ? 'btn-default ' : 'btn-success  active'; ?>"
-            id="btn-status-paid">PAID</button>
-        <button class="btn btn <?php echo ($this->model->paid == 0) ? 'btn-info active' : 'btn-default '; ?>"
-            id="btn-status-unpaid">UNPAID</button>
+        <button class="btn btn <?php echo ($this->model->paid == 0) ? 'btn-default ' : 'btn-success  active'; ?>" id="btn-status-paid">PAID</button>
+        <button class="btn btn <?php echo ($this->model->paid == 0) ? 'btn-info active' : 'btn-default '; ?>" id="btn-status-unpaid">UNPAID</button>
     </div>
 <?php endif; ?>
 
@@ -33,31 +30,22 @@
                 <?php
                 if ($this->model->st_type == statement::TYPE_QUOTATION)
                     DialogBox::createDialogBox(
-                        $this
-                        ,
-                        "myDialog1"
-                        ,
-                        "Make Invoice"
-                        , '/statement/makeInv/id/' . $this->model->id
-                        ,
-                        "testinput"
-                        ,
-                        "btn btn-info btn-flat"
-                        ,
-                        "Make Invoice"
-                        ,
+                        $this,
+                        "myDialog1",
+                        "Make Invoice",
+                        '/statement/makeInv/id/' . $this->model->id,
+                        "testinput",
+                        "btn btn-info btn-flat",
+                        "Make Invoice",
                         320,
-                        300
-                        ,
+                        300,
                         '200px'
                     );
                 ?>
             </span>
 
-            <a id="pdf-gen-btn" class="btn btn-info btn" ng-disabled="invForm.$dirty"><i
-                    class="fa fa-print"></i>&nbsp;PDF</a>
-            <button class="btn btn-info btn dropdown-toggle" data-toggle="dropdown" name="yt11" type="button"
-                ng-disabled="invForm.$dirty">
+            <a id="pdf-gen-btn" class="btn btn-info btn" ng-disabled="invForm.$dirty"><i class="fa fa-print"></i>&nbsp;PDF</a>
+            <button class="btn btn-info btn dropdown-toggle" data-toggle="dropdown" name="yt11" type="button" ng-disabled="invForm.$dirty">
                 <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" role="menu">
@@ -69,20 +57,21 @@
         </div>
 
         <div class="btn-group">
-            <button type="button" class="btn btn-info btn-flat dropdown-toggle" data-toggle="dropdown"
-                aria-expanded="true" ng-disabled="invForm.$dirty">
+            <button type="button" class="btn btn-info btn-flat dropdown-toggle" data-toggle="dropdown" aria-expanded="true" ng-disabled="invForm.$dirty">
                 Other <span class="caret"></span>
             </button>
-            <?php if ($this->model->st_type == statement::TYPE_INVOICE): ?>
+            <?php if ($this->model->st_type == statement::TYPE_INVOICE) : ?>
                 <ul class="dropdown-menu" role="menu">
                     <li>
                         <!--<a href="javascript:void(0)" id="btn-enter-payment" class="enter-payment" data-invoice-id="5" data-invoice-balance="795.60" data-redirect-to="http://demo.fusioninvoice.com/invoices/5/edit"><i class="fa fa-credit-card"></i> Enter Payment</a> -->
                         <?php
-                        $this->widget('zii.widgets.jui.CJuiButton', array(
-                            'buttonType' => 'link',
-                            'name' => 'btnPay',
-                            'caption' => '<i class="fa fa-credit-card"></i> Add Payment',
-                            'onclick' => new CJavaScriptExpression('function(){
+                        $this->widget(
+                            'zii.widgets.jui.CJuiButton',
+                            array(
+                                'buttonType' => 'link',
+                                'name' => 'btnPay',
+                                'caption' => '<i class="fa fa-credit-card"></i> Add Payment',
+                                'onclick' => new CJavaScriptExpression('function(){
                                                 $(\'[data-toggle="dropdown"]\').parent().removeClass("open");
                                                  BootstrapDialog.show({
                                                   title: "Add Payment",
@@ -101,15 +90,15 @@
                                             });
                                                 this.blur(); 
                                                 return false;}'),
-                            'htmlOptions' => array('id' => 'btn-add-payment', 'class' => 'enter-payment')
-                        )
+                                'htmlOptions' => array('id' => 'btn-add-payment', 'class' => 'enter-payment')
+                            )
                         );
 
                         ?>
 
                     </li>
                     <li>
-                        <?php if ($this->sLink !== "#"): ?>
+                        <?php if ($this->sLink !== "#") : ?>
                             <a href="<?php echo $sLink; ?>.html" class="" target="_blank">
                                 <i class="fa fa-location-arrow"></i> Packing Slip
                             </a>
@@ -126,7 +115,7 @@
                 -->
                 </ul>
             <?php endif; ?>
-            <?php if ($this->model->st_type == statement::TYPE_QUOTATION): ?>
+            <?php if ($this->model->st_type == statement::TYPE_QUOTATION) : ?>
                 <ul class="dropdown-menu" role="menu">
                     <li>
 
@@ -161,7 +150,8 @@
                                         'primary' => 'ui-icon-disk input-prepend',
                                     )
                                 ),
-                                'htmlOptions' => array("class" => "btn btn-success btn-save-invoice", "id" => "submit_item_button", "ng-click" => "load($event)",
+                                'htmlOptions' => array(
+                                    "class" => "btn btn-success btn-save-invoice", "id" => "submit_item_button", "ng-click" => "load($event)",
                                 ),
                                 'onclick' => 'js:function(){
 						    	$(this).attr("value","Saving...");
@@ -214,7 +204,7 @@
                                           return false;}'),
                                   'htmlOptions' => array('id'=>'btn-chg-hdr','class'=>'btn btn-default btn-sm')
                               ));
-                 */?>
+                 */ ?>
         </span>
     </h1>
     <span class="label label-info" ng-show="invForm.$dirty">
@@ -228,24 +218,30 @@
 </div>
 <div class="clearfix"></div>
 <script>
-    $(function () {
+    $(function() {
 
 
-        $('#btn-status-paid').on('click', function (e) {
+        $('#btn-status-paid').on('click', function(e) {
             e.preventDefault();
             var that = this;
             $.ajax({
                 url: "<?php echo Yii::app()->createAbsoluteUrl('/statement/setPaid', array('id' => $this->model->id)); ?>",
                 type: "POST",
-                beforeSend: function () { $(that).text("Working.."); $(that).prop('disabled', true); },
+                beforeSend: function() {
+                    $(that).text("Working..");
+                    $(that).prop('disabled', true);
+                },
                 data: {
                     paid: "1"
                 },
-                success: function (result) {
+                success: function(result) {
                     //$(that).text("PDF"); //$(that).prop('disabled', false);
                     BootstrapDialog.alert({
-                        title: "success!", message: "Invoice set as paid!",
-                        callback: function (result) { location.reload(); }
+                        title: "success!",
+                        message: "Invoice set as paid!",
+                        callback: function(result) {
+                            location.reload();
+                        }
                     });
 
                 }
@@ -253,21 +249,27 @@
 
 
         });
-        $('#btn-status-unpaid').on('click', function (e) {
+        $('#btn-status-unpaid').on('click', function(e) {
             e.preventDefault();
             var that = this;
             $.ajax({
                 url: "<?php echo Yii::app()->createAbsoluteUrl('/statement/setPaid', array('id' => $this->model->id)); ?>",
                 type: "POST",
-                beforeSend: function () { $(that).text("Working.."); $(that).prop('disabled', true); },
+                beforeSend: function() {
+                    $(that).text("Working..");
+                    $(that).prop('disabled', true);
+                },
                 data: {
                     paid: "0"
                 },
-                success: function (result) {
+                success: function(result) {
                     //$(that).text("PDF"); //$(that).prop('disabled', false);
                     BootstrapDialog.alert({
-                        title: "success!", message: "Invoice set as Unpaid!",
-                        callback: function (result) { location.reload(); }
+                        title: "success!",
+                        message: "Invoice set as Unpaid!",
+                        callback: function(result) {
+                            location.reload();
+                        }
                     });
 
                 }
@@ -275,21 +277,27 @@
 
 
         });
-        $('#pdf-gen-btn').on('click', function (e) {
+        $('#pdf-gen-btn').on('click', function(e) {
 
             e.preventDefault();
             var that = this;
             $.ajax({
                 url: "<?php echo $link; ?>",
                 type: "POST",
-                beforeSend: function () { $(that).text("Working.."); $(that).prop('disabled', true); },
+                beforeSend: function() {
+                    $(that).text("Working..");
+                    $(that).prop('disabled', true);
+                },
                 data: {
                     event_type: $(that).data("ev")
                 },
-                success: function (result) {
+                success: function(result) {
                     $(that).data("ev", "10");
                     $(that).text("PDF"); //$(that).prop('disabled', false);
-                    BootstrapDialog.alert({ title: "success!", message: "PDF successfully generated!" });
+                    BootstrapDialog.alert({
+                        title: "success!",
+                        message: "PDF successfully generated!"
+                    });
 
                 }
             });

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CAssetManager class file.
  *
@@ -36,7 +37,7 @@ class CAssetManager extends CApplicationComponent
 	/**
 	 * Default web accessible base path for storing private files
 	 */
-	const DEFAULT_BASEPATH='assets';
+	const DEFAULT_BASEPATH = 'assets';
 	/**
 	 * @var boolean whether to use symbolic link to publish asset files. Defaults to false, meaning
 	 * asset files are copied to public folders. Using symbolic links has the benefit that the published
@@ -60,27 +61,27 @@ class CAssetManager extends CApplicationComponent
 	 *
 	 * @since 1.1.5
 	 */
-	public $linkAssets=false;
+	public $linkAssets = false;
 	/**
 	 * @var array list of directories and files which should be excluded from the publishing process.
 	 * Defaults to exclude '.svn' and '.gitignore' files only. This option has no effect if {@link linkAssets} is enabled.
 	 * @since 1.1.6
 	 **/
-	public $excludeFiles=array('.svn','.gitignore');
+	public $excludeFiles = array('.svn', '.gitignore');
 	/**
 	 * @var integer the permission to be set for newly generated asset files.
 	 * This value will be used by PHP chmod function.
 	 * Defaults to 0666, meaning the file is read-writable by all users.
 	 * @since 1.1.8
 	 */
-	public $newFileMode=0666;
+	public $newFileMode = 0666;
 	/**
 	 * @var integer the permission to be set for newly generated asset directories.
 	 * This value will be used by PHP chmod function.
 	 * Defaults to 0777, meaning the directory can be read, written and executed by all users.
 	 * @since 1.1.8
 	 */
-	public $newDirMode=0777;
+	public $newDirMode = 0777;
 	/**
 	 * @var boolean whether we should copy the asset files and directories even if they already published before.
 	 * This property is used only during development stage. The main use case of this property is when you need
@@ -98,7 +99,7 @@ class CAssetManager extends CApplicationComponent
 	 *
 	 * @since 1.1.11
 	 */
-	public $forceCopy=false;
+	public $forceCopy = false;
 	/**
 	 * @var string base web accessible path for storing private files
 	 */
@@ -110,17 +111,16 @@ class CAssetManager extends CApplicationComponent
 	/**
 	 * @var array published assets
 	 */
-	private $_published=array();
+	private $_published = array();
 
 	/**
 	 * @return string the root directory storing the published asset files. Defaults to 'WebRoot/assets'.
 	 */
 	public function getBasePath()
 	{
-		if($this->_basePath===null)
-		{
-			$request=Yii::app()->getRequest();
-			$this->setBasePath(dirname($request->getScriptFile()).DIRECTORY_SEPARATOR.self::DEFAULT_BASEPATH);
+		if ($this->_basePath === null) {
+			$request = Yii::app()->getRequest();
+			$this->setBasePath(dirname($request->getScriptFile()) . DIRECTORY_SEPARATOR . self::DEFAULT_BASEPATH);
 		}
 		return $this->_basePath;
 	}
@@ -132,11 +132,14 @@ class CAssetManager extends CApplicationComponent
 	 */
 	public function setBasePath($value)
 	{
-		if(($basePath=realpath($value))!==false && is_dir($basePath) && is_writable($basePath))
-			$this->_basePath=$basePath;
+		if (($basePath = realpath($value)) !== false && is_dir($basePath) && is_writable($basePath))
+			$this->_basePath = $basePath;
 		else
-			throw new CException(Yii::t('yii','CAssetManager.basePath "{path}" is invalid. Please make sure the directory exists and is writable by the Web server process.',
-				array('{path}'=>$value)));
+			throw new CException(Yii::t(
+				'yii',
+				'CAssetManager.basePath "{path}" is invalid. Please make sure the directory exists and is writable by the Web server process.',
+				array('{path}' => $value)
+			));
 	}
 
 	/**
@@ -145,10 +148,9 @@ class CAssetManager extends CApplicationComponent
 	 */
 	public function getBaseUrl()
 	{
-		if($this->_baseUrl===null)
-		{
-			$request=Yii::app()->getRequest();
-			$this->setBaseUrl($request->getBaseUrl().'/'.self::DEFAULT_BASEPATH);
+		if ($this->_baseUrl === null) {
+			$request = Yii::app()->getRequest();
+			$this->setBaseUrl($request->getBaseUrl() . '/' . self::DEFAULT_BASEPATH);
 		}
 		return $this->_baseUrl;
 	}
@@ -158,7 +160,7 @@ class CAssetManager extends CApplicationComponent
 	 */
 	public function setBaseUrl($value)
 	{
-		$this->_baseUrl=rtrim($value,'/');
+		$this->_baseUrl = rtrim($value, '/');
 	}
 
 	/**
@@ -203,59 +205,53 @@ class CAssetManager extends CApplicationComponent
 	 * @return string an absolute URL to the published asset
 	 * @throws CException if the asset to be published does not exist.
 	 */
-	public function publish($path,$hashByName=false,$level=-1,$forceCopy=null)
+	public function publish($path, $hashByName = false, $level = -1, $forceCopy = null)
 	{
-		if($forceCopy===null)
-			$forceCopy=$this->forceCopy;
-		if($forceCopy && $this->linkAssets)
-			throw new CException(Yii::t('yii','The "forceCopy" and "linkAssets" cannot be both true.'));
-		if(isset($this->_published[$path]))
+		if ($forceCopy === null)
+			$forceCopy = $this->forceCopy;
+		if ($forceCopy && $this->linkAssets)
+			throw new CException(Yii::t('yii', 'The "forceCopy" and "linkAssets" cannot be both true.'));
+		if (isset($this->_published[$path]))
 			return $this->_published[$path];
-		elseif(is_string($path) && ($src=realpath($path))!==false)
-		{
-			$dir=$this->generatePath($src,$hashByName);
-			$dstDir=$this->getBasePath().DIRECTORY_SEPARATOR.$dir;
-			if(is_file($src))
-			{
-				$fileName=basename($src);
-				$dstFile=$dstDir.DIRECTORY_SEPARATOR.$fileName;
+		elseif (is_string($path) && ($src = realpath($path)) !== false) {
+			$dir = $this->generatePath($src, $hashByName);
+			$dstDir = $this->getBasePath() . DIRECTORY_SEPARATOR . $dir;
+			if (is_file($src)) {
+				$fileName = basename($src);
+				$dstFile = $dstDir . DIRECTORY_SEPARATOR . $fileName;
 
-				if(!is_dir($dstDir))
-				{
-					mkdir($dstDir,$this->newDirMode,true);
-					@chmod($dstDir,$this->newDirMode);
+				if (!is_dir($dstDir)) {
+					mkdir($dstDir, $this->newDirMode, true);
+					@chmod($dstDir, $this->newDirMode);
 				}
 
-				if($this->linkAssets && !is_file($dstFile)) symlink($src,$dstFile);
-				elseif(@filemtime($dstFile)<@filemtime($src))
-				{
-					copy($src,$dstFile);
-					@chmod($dstFile,$this->newFileMode);
+				if ($this->linkAssets && !is_file($dstFile)) symlink($src, $dstFile);
+				elseif (@filemtime($dstFile) < @filemtime($src)) {
+					copy($src, $dstFile);
+					@chmod($dstFile, $this->newFileMode);
 				}
 
-				return $this->_published[$path]=$this->getBaseUrl()."/$dir/$fileName";
-			}
-			elseif(is_dir($src))
-			{
-				if($this->linkAssets && !is_dir($dstDir))
-				{
-					symlink($src,$dstDir);
-				}
-				elseif(!is_dir($dstDir) || $forceCopy)
-				{
-					CFileHelper::copyDirectory($src,$dstDir,array(
-						'exclude'=>$this->excludeFiles,
-						'level'=>$level,
-						'newDirMode'=>$this->newDirMode,
-						'newFileMode'=>$this->newFileMode,
+				return $this->_published[$path] = $this->getBaseUrl() . "/$dir/$fileName";
+			} elseif (is_dir($src)) {
+				if ($this->linkAssets && !is_dir($dstDir)) {
+					symlink($src, $dstDir);
+				} elseif (!is_dir($dstDir) || $forceCopy) {
+					CFileHelper::copyDirectory($src, $dstDir, array(
+						'exclude' => $this->excludeFiles,
+						'level' => $level,
+						'newDirMode' => $this->newDirMode,
+						'newFileMode' => $this->newFileMode,
 					));
 				}
 
-				return $this->_published[$path]=$this->getBaseUrl().'/'.$dir;
+				return $this->_published[$path] = $this->getBaseUrl() . '/' . $dir;
 			}
 		}
-		throw new CException(Yii::t('yii','The asset "{asset}" to be published does not exist.',
-			array('{asset}'=>$path)));
+		throw new CException(Yii::t(
+			'yii',
+			'The asset "{asset}" to be published does not exist.',
+			array('{asset}' => $path)
+		));
 	}
 
 	/**
@@ -269,14 +265,12 @@ class CAssetManager extends CApplicationComponent
 	 * different extensions.
 	 * @return string the published file path. False if the file or directory does not exist
 	 */
-	public function getPublishedPath($path,$hashByName=false)
+	public function getPublishedPath($path, $hashByName = false)
 	{
-		if(is_string($path) && ($path=realpath($path))!==false)
-		{
-			$base=$this->getBasePath().DIRECTORY_SEPARATOR.$this->generatePath($path,$hashByName);
-			return is_file($path) ? $base.DIRECTORY_SEPARATOR.basename($path) : $base ;
-		}
-		else
+		if (is_string($path) && ($path = realpath($path)) !== false) {
+			$base = $this->getBasePath() . DIRECTORY_SEPARATOR . $this->generatePath($path, $hashByName);
+			return is_file($path) ? $base . DIRECTORY_SEPARATOR . basename($path) : $base;
+		} else
 			return false;
 	}
 
@@ -291,16 +285,14 @@ class CAssetManager extends CApplicationComponent
 	 * different extensions.
 	 * @return string the published URL for the file or directory. False if the file or directory does not exist.
 	 */
-	public function getPublishedUrl($path,$hashByName=false)
+	public function getPublishedUrl($path, $hashByName = false)
 	{
-		if(isset($this->_published[$path]))
+		if (isset($this->_published[$path]))
 			return $this->_published[$path];
-		if(is_string($path) && ($path=realpath($path))!==false)
-		{
-			$base=$this->getBaseUrl().'/'.$this->generatePath($path,$hashByName);
-			return is_file($path) ? $base.'/'.basename($path) : $base;
-		}
-		else
+		if (is_string($path) && ($path = realpath($path)) !== false) {
+			$base = $this->getBaseUrl() . '/' . $this->generatePath($path, $hashByName);
+			return is_file($path) ? $base . '/' . basename($path) : $base;
+		} else
 			return false;
 	}
 
@@ -312,7 +304,7 @@ class CAssetManager extends CApplicationComponent
 	 */
 	protected function hash($path)
 	{
-		return sprintf('%x',crc32($path.Yii::getVersion()));
+		return sprintf('%x', crc32($path . Yii::getVersion()));
 	}
 
 	/**
@@ -322,12 +314,12 @@ class CAssetManager extends CApplicationComponent
 	 * @return string path segments without basePath.
 	 * @since 1.1.13
 	 */
-	protected function generatePath($file,$hashByName=false)
+	protected function generatePath($file, $hashByName = false)
 	{
 		if (is_file($file))
-			$pathForHashing=$hashByName ? dirname($file) : dirname($file).filemtime($file);
+			$pathForHashing = $hashByName ? dirname($file) : dirname($file) . filemtime($file);
 		else
-			$pathForHashing=$hashByName ? $file : $file.filemtime($file);
+			$pathForHashing = $hashByName ? $file : $file . filemtime($file);
 
 		return $this->hash($pathForHashing);
 	}

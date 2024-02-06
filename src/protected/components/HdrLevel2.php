@@ -20,6 +20,4 @@ class HdrLevel2 extends CPortlet
 		$this->render('hdrLevel2'); //, array('stmt' => $stmt));
 
 	}
-
-
 }

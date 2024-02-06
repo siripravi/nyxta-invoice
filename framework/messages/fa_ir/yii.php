@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Persian (Farsi) Translation
  * By : Bamdad Dashtban (bamdadd@gmail.com)
@@ -15,7 +16,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   'Active record class "{class}" does not have a scope named "{scope}".' => 'اکتیو رکورد با نام کلاس {class} اسکوپی با نام  {scope} ندارد.',
   'Active record "{class}" has an invalid configuration for relation "{relation}". It must specify the relation type, the related active record class and the foreign key.' => 'اکتیو رکورد "{class}" پیکربندی معتبر برای رابطه "{relation}" دارد.باید نوع رابطه ، کلاس اکتیو رکورد مرتبط و کلید خارجی را مشخص کند.',
   'Active record "{class}" is trying to select an invalid column "{column}". Note, the column must exist in the table or be an expression with alias.' => 'اکتیو رکورد "{class}" سعی می کند ستون نامعتبر "{column}" را انتخاب کند.',

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -16,7 +17,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   '"{path}" is not a valid directory.' => '"{path}" no es un directorio válido.',
   '&lt; Previous' => '&lt; Anterior',
   '&lt;&lt; First' => '&lt;&lt; Primero',

@@ -80,9 +80,11 @@ class Mode extends CActiveRecord
 		$criteria->compare('mode_id', $this->mode_id);
 		$criteria->compare('mode_description', $this->mode_description, true);
 
-		return new CActiveDataProvider($this, array(
-			'criteria' => $criteria,
-		)
+		return new CActiveDataProvider(
+			$this,
+			array(
+				'criteria' => $criteria,
+			)
 		);
 	}
 

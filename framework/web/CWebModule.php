@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CWebModule class file.
  *
@@ -34,7 +35,7 @@ class CWebModule extends CModule
 	/**
 	 * @var string the ID of the default controller for this module. Defaults to 'default'.
 	 */
-	public $defaultController='default';
+	public $defaultController = 'default';
 	/**
 	 * @var mixed the layout that is shared by the controllers inside this module.
 	 * If a controller has explicitly declared its own {@link CController::layout layout},
@@ -53,7 +54,7 @@ class CWebModule extends CModule
 	 * @var array mapping from controller ID to controller configurations.
 	 * Pleaser refer to {@link CWebApplication::controllerMap} for more details.
 	 */
-	public $controllerMap=array();
+	public $controllerMap = array();
 
 	private $_controllerPath;
 	private $_viewPath;
@@ -99,10 +100,10 @@ class CWebModule extends CModule
 	 */
 	public function getControllerPath()
 	{
-		if($this->_controllerPath!==null)
+		if ($this->_controllerPath !== null)
 			return $this->_controllerPath;
 		else
-			return $this->_controllerPath=$this->getBasePath().DIRECTORY_SEPARATOR.'controllers';
+			return $this->_controllerPath = $this->getBasePath() . DIRECTORY_SEPARATOR . 'controllers';
 	}
 
 	/**
@@ -111,9 +112,12 @@ class CWebModule extends CModule
 	 */
 	public function setControllerPath($value)
 	{
-		if(($this->_controllerPath=realpath($value))===false || !is_dir($this->_controllerPath))
-			throw new CException(Yii::t('yii','The controller path "{path}" is not a valid directory.',
-				array('{path}'=>$value)));
+		if (($this->_controllerPath = realpath($value)) === false || !is_dir($this->_controllerPath))
+			throw new CException(Yii::t(
+				'yii',
+				'The controller path "{path}" is not a valid directory.',
+				array('{path}' => $value)
+			));
 	}
 
 	/**
@@ -122,10 +126,10 @@ class CWebModule extends CModule
 	 */
 	public function getViewPath()
 	{
-		if($this->_viewPath!==null)
+		if ($this->_viewPath !== null)
 			return $this->_viewPath;
 		else
-			return $this->_viewPath=$this->getBasePath().DIRECTORY_SEPARATOR.'views';
+			return $this->_viewPath = $this->getBasePath() . DIRECTORY_SEPARATOR . 'views';
 	}
 
 	/**
@@ -134,9 +138,12 @@ class CWebModule extends CModule
 	 */
 	public function setViewPath($path)
 	{
-		if(($this->_viewPath=realpath($path))===false || !is_dir($this->_viewPath))
-			throw new CException(Yii::t('yii','The view path "{path}" is not a valid directory.',
-				array('{path}'=>$path)));
+		if (($this->_viewPath = realpath($path)) === false || !is_dir($this->_viewPath))
+			throw new CException(Yii::t(
+				'yii',
+				'The view path "{path}" is not a valid directory.',
+				array('{path}' => $path)
+			));
 	}
 
 	/**
@@ -145,10 +152,10 @@ class CWebModule extends CModule
 	 */
 	public function getLayoutPath()
 	{
-		if($this->_layoutPath!==null)
+		if ($this->_layoutPath !== null)
 			return $this->_layoutPath;
 		else
-			return $this->_layoutPath=$this->getViewPath().DIRECTORY_SEPARATOR.'layouts';
+			return $this->_layoutPath = $this->getViewPath() . DIRECTORY_SEPARATOR . 'layouts';
 	}
 
 	/**
@@ -157,9 +164,12 @@ class CWebModule extends CModule
 	 */
 	public function setLayoutPath($path)
 	{
-		if(($this->_layoutPath=realpath($path))===false || !is_dir($this->_layoutPath))
-			throw new CException(Yii::t('yii','The layout path "{path}" is not a valid directory.',
-				array('{path}'=>$path)));
+		if (($this->_layoutPath = realpath($path)) === false || !is_dir($this->_layoutPath))
+			throw new CException(Yii::t(
+				'yii',
+				'The layout path "{path}" is not a valid directory.',
+				array('{path}' => $path)
+			));
 	}
 
 	/**
@@ -179,11 +189,11 @@ class CWebModule extends CModule
 	 * @param CAction $action the action
 	 * @return boolean whether the action should be executed.
 	 */
-	public function beforeControllerAction($controller,$action)
+	public function beforeControllerAction($controller, $action)
 	{
-		if(($parent=$this->getParentModule())===null)
-			$parent=Yii::app();
-		return $parent->beforeControllerAction($controller,$action);
+		if (($parent = $this->getParentModule()) === null)
+			$parent = Yii::app();
+		return $parent->beforeControllerAction($controller, $action);
 	}
 
 	/**
@@ -193,10 +203,10 @@ class CWebModule extends CModule
 	 * @param CController $controller the controller
 	 * @param CAction $action the action
 	 */
-	public function afterControllerAction($controller,$action)
+	public function afterControllerAction($controller, $action)
 	{
-		if(($parent=$this->getParentModule())===null)
-			$parent=Yii::app();
-		$parent->afterControllerAction($controller,$action);
+		if (($parent = $this->getParentModule()) === null)
+			$parent = Yii::app();
+		$parent->afterControllerAction($controller, $action);
 	}
 }

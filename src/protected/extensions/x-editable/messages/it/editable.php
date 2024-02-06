@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Italian translation for X-editable.
  * 

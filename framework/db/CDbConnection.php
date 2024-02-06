@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CDbConnection class file
  *
@@ -132,29 +133,29 @@ class CDbConnection extends CApplicationComponent
 	/**
 	 * @var string the username for establishing DB connection. Defaults to empty string.
 	 */
-	public $username='';
+	public $username = '';
 	/**
 	 * @var string the password for establishing DB connection. Defaults to empty string.
 	 */
-	public $password='';
+	public $password = '';
 	/**
 	 * @var integer number of seconds that table metadata can remain valid in cache.
 	 * Use 0 or negative value to indicate not caching schema.
 	 * If greater than 0 and the primary cache is enabled, the table metadata will be cached.
 	 * @see schemaCachingExclude
 	 */
-	public $schemaCachingDuration=0;
+	public $schemaCachingDuration = 0;
 	/**
 	 * @var array list of tables whose metadata should NOT be cached. Defaults to empty array.
 	 * @see schemaCachingDuration
 	 */
-	public $schemaCachingExclude=array();
+	public $schemaCachingExclude = array();
 	/**
 	 * @var string the ID of the cache application component that is used to cache the table metadata.
 	 * Defaults to 'cache' which refers to the primary cache application component.
 	 * Set this property to false if you want to disable caching table metadata.
 	 */
-	public $schemaCacheID='cache';
+	public $schemaCacheID = 'cache';
 	/**
 	 * @var integer number of seconds that query results can remain valid in cache.
 	 * Use 0 or negative value to indicate not caching query results (the default behavior).
@@ -170,7 +171,7 @@ class CDbConnection extends CApplicationComponent
 	 * @see queryCacheID
 	 * @since 1.1.7
 	 */
-	public $queryCachingDuration=0;
+	public $queryCachingDuration = 0;
 	/**
 	 * @var CCacheDependency|ICacheDependency the dependency that will be used when saving query results into cache.
 	 * @see queryCachingDuration
@@ -184,20 +185,20 @@ class CDbConnection extends CApplicationComponent
 	 * query cache), this property will be reduced by 1 until 0.
 	 * @since 1.1.7
 	 */
-	public $queryCachingCount=0;
+	public $queryCachingCount = 0;
 	/**
 	 * @var string the ID of the cache application component that is used for query caching.
 	 * Defaults to 'cache' which refers to the primary cache application component.
 	 * Set this property to false if you want to disable query caching.
 	 * @since 1.1.7
 	 */
-	public $queryCacheID='cache';
+	public $queryCacheID = 'cache';
 	/**
 	 * @var boolean whether the database connection should be automatically established
 	 * the component is being initialized. Defaults to true. Note, this property is only
 	 * effective when the CDbConnection object is used as an application component.
 	 */
-	public $autoConnect=true;
+	public $autoConnect = true;
 	/**
 	 * @var string the charset used for database connection. The property is only used
 	 * for MySQL, MariaDB and PostgreSQL databases. Defaults to null, meaning using default charset
@@ -223,13 +224,13 @@ class CDbConnection extends CApplicationComponent
 	 * You should be aware that logging parameter values could be expensive and have significant
 	 * impact on the performance of your application.
 	 */
-	public $enableParamLogging=false;
+	public $enableParamLogging = false;
 	/**
 	 * @var boolean whether to enable profiling the SQL statements being executed.
 	 * Defaults to false. This should be mainly enabled and used during development
 	 * to find out the bottleneck of SQL executions.
 	 */
-	public $enableProfiling=false;
+	public $enableProfiling = false;
 	/**
 	 * @var string the default prefix for table names. Defaults to null, meaning no table prefix.
 	 * By setting this property, any token like '{{tableName}}' in {@link CDbCommand::text} will
@@ -247,17 +248,17 @@ class CDbConnection extends CApplicationComponent
 	 * A schema class can be specified using path alias.
 	 * @since 1.1.6
 	 */
-	public $driverMap=array(
-		'cubrid'=>'CCubridSchema',  // CUBRID
-		'pgsql'=>'CPgsqlSchema',    // PostgreSQL
-		'mysqli'=>'CMysqlSchema',   // MySQL
-		'mysql'=>'CMysqlSchema',    // MySQL,MariaDB
-		'sqlite'=>'CSqliteSchema',  // sqlite 3
-		'sqlite2'=>'CSqliteSchema', // sqlite 2
-		'mssql'=>'CMssqlSchema',    // Mssql driver on windows hosts
-		'dblib'=>'CMssqlSchema',    // dblib drivers on linux (and maybe others os) hosts
-		'sqlsrv'=>'CMssqlSchema',   // Mssql
-		'oci'=>'COciSchema',        // Oracle driver
+	public $driverMap = array(
+		'cubrid' => 'CCubridSchema',  // CUBRID
+		'pgsql' => 'CPgsqlSchema',    // PostgreSQL
+		'mysqli' => 'CMysqlSchema',   // MySQL
+		'mysql' => 'CMysqlSchema',    // MySQL,MariaDB
+		'sqlite' => 'CSqliteSchema',  // sqlite 3
+		'sqlite2' => 'CSqliteSchema', // sqlite 2
+		'mssql' => 'CMssqlSchema',    // Mssql driver on windows hosts
+		'dblib' => 'CMssqlSchema',    // dblib drivers on linux (and maybe others os) hosts
+		'sqlsrv' => 'CMssqlSchema',   // Mssql
+		'oci' => 'COciSchema',        // Oracle driver
 	);
 
 	/**
@@ -267,8 +268,8 @@ class CDbConnection extends CApplicationComponent
 	public $pdoClass = 'PDO';
 
 	private $_driverName;
-	private $_attributes=array();
-	private $_active=false;
+	private $_attributes = array();
+	private $_active = false;
 	private $_pdo;
 	private $_transaction;
 	private $_schema;
@@ -284,11 +285,11 @@ class CDbConnection extends CApplicationComponent
 	 * @param string $password The password for the DSN string.
 	 * @see https://www.php.net/manual/en/function.PDO-construct.php
 	 */
-	public function __construct($dsn='',$username='',$password='')
+	public function __construct($dsn = '', $username = '', $password = '')
 	{
-		$this->connectionString=$dsn;
-		$this->username=$username;
-		$this->password=$password;
+		$this->connectionString = $dsn;
+		$this->username = $username;
+		$this->password = $password;
 	}
 
 	/**
@@ -321,7 +322,7 @@ class CDbConnection extends CApplicationComponent
 	public function init()
 	{
 		parent::init();
-		if($this->autoConnect)
+		if ($this->autoConnect)
 			$this->setActive(true);
 	}
 
@@ -341,9 +342,8 @@ class CDbConnection extends CApplicationComponent
 	 */
 	public function setActive($value)
 	{
-		if($value!=$this->_active)
-		{
-			if($value)
+		if ($value != $this->_active) {
+			if ($value)
 				$this->open();
 			else
 				$this->close();
@@ -367,11 +367,11 @@ class CDbConnection extends CApplicationComponent
 	 * @return static the connection instance itself.
 	 * @since 1.1.7
 	 */
-	public function cache($duration, $dependency=null, $queryCount=1)
+	public function cache($duration, $dependency = null, $queryCount = 1)
 	{
-		$this->queryCachingDuration=$duration;
-		$this->queryCachingDependency=$dependency;
-		$this->queryCachingCount=$queryCount;
+		$this->queryCachingDuration = $duration;
+		$this->queryCachingDependency = $dependency;
+		$this->queryCachingCount = $queryCount;
 		return $this;
 	}
 
@@ -381,28 +381,21 @@ class CDbConnection extends CApplicationComponent
 	 */
 	protected function open()
 	{
-		if($this->_pdo===null)
-		{
-			if(empty($this->connectionString))
+		if ($this->_pdo === null) {
+			if (empty($this->connectionString))
 				throw new CDbException('CDbConnection.connectionString cannot be empty.');
-			try
-			{
-				Yii::trace('Opening DB connection','system.db.CDbConnection');
-				$this->_pdo=$this->createPdoInstance();
+			try {
+				Yii::trace('Opening DB connection', 'system.db.CDbConnection');
+				$this->_pdo = $this->createPdoInstance();
 				$this->initConnection($this->_pdo);
-				$this->_active=true;
-			}
-			catch(PDOException $e)
-			{
-				if(YII_DEBUG)
-				{
-					throw new CDbException('CDbConnection failed to open the DB connection: '.
-						$e->getMessage(),(int)$e->getCode(),$e->errorInfo);
-				}
-				else
-				{
-					Yii::log($e->getMessage(),CLogger::LEVEL_ERROR,'exception.CDbException');
-					throw new CDbException('CDbConnection failed to open the DB connection.',(int)$e->getCode(),$e->errorInfo);
+				$this->_active = true;
+			} catch (PDOException $e) {
+				if (YII_DEBUG) {
+					throw new CDbException('CDbConnection failed to open the DB connection: ' .
+						$e->getMessage(), (int)$e->getCode(), $e->errorInfo);
+				} else {
+					Yii::log($e->getMessage(), CLogger::LEVEL_ERROR, 'exception.CDbException');
+					throw new CDbException('CDbConnection failed to open the DB connection.', (int)$e->getCode(), $e->errorInfo);
 				}
 			}
 		}
@@ -414,10 +407,10 @@ class CDbConnection extends CApplicationComponent
 	 */
 	protected function close()
 	{
-		Yii::trace('Closing DB connection','system.db.CDbConnection');
-		$this->_pdo=null;
-		$this->_active=false;
-		$this->_schema=null;
+		Yii::trace('Closing DB connection', 'system.db.CDbConnection');
+		$this->_pdo = null;
+		$this->_active = false;
+		$this->_schema = null;
 	}
 
 	/**
@@ -429,23 +422,25 @@ class CDbConnection extends CApplicationComponent
 	 */
 	protected function createPdoInstance()
 	{
-		$pdoClass=$this->pdoClass;
-		if(($driver=$this->getDriverName())!==null)
-		{
-			if($driver==='mssql' || $driver==='dblib')
-				$pdoClass='CMssqlPdoAdapter';
-			elseif($driver==='sqlsrv')
-				$pdoClass='CMssqlSqlsrvPdoAdapter';
+		$pdoClass = $this->pdoClass;
+		if (($driver = $this->getDriverName()) !== null) {
+			if ($driver === 'mssql' || $driver === 'dblib')
+				$pdoClass = 'CMssqlPdoAdapter';
+			elseif ($driver === 'sqlsrv')
+				$pdoClass = 'CMssqlSqlsrvPdoAdapter';
 		}
 
-		if(!class_exists($pdoClass))
-			throw new CDbException(Yii::t('yii','CDbConnection is unable to find PDO class "{className}". Make sure PDO is installed correctly.',
-				array('{className}'=>$pdoClass)));
+		if (!class_exists($pdoClass))
+			throw new CDbException(Yii::t(
+				'yii',
+				'CDbConnection is unable to find PDO class "{className}". Make sure PDO is installed correctly.',
+				array('{className}' => $pdoClass)
+			));
 
-		@$instance=new $pdoClass($this->connectionString,$this->username,$this->password,$this->_attributes);
+		@$instance = new $pdoClass($this->connectionString, $this->username, $this->password, $this->_attributes);
 
-		if(!$instance)
-			throw new CDbException(Yii::t('yii','CDbConnection failed to open the DB connection.'));
+		if (!$instance)
+			throw new CDbException(Yii::t('yii', 'CDbConnection failed to open the DB connection.'));
 
 		return $instance;
 	}
@@ -459,19 +454,17 @@ class CDbConnection extends CApplicationComponent
 	protected function initConnection($pdo)
 	{
 		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		if($this->emulatePrepare!==null && constant('PDO::ATTR_EMULATE_PREPARES'))
-			$pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES,$this->emulatePrepare);
-		if(PHP_VERSION_ID >= 80100 && strncasecmp($this->getDriverName(),'sqlite',6)===0)
+		if ($this->emulatePrepare !== null && constant('PDO::ATTR_EMULATE_PREPARES'))
+			$pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, $this->emulatePrepare);
+		if (PHP_VERSION_ID >= 80100 && strncasecmp($this->getDriverName(), 'sqlite', 6) === 0)
 			$pdo->setAttribute(PDO::ATTR_STRINGIFY_FETCHES, true);
-		if($this->charset!==null)
-		{
-			$driver=strtolower($pdo->getAttribute(PDO::ATTR_DRIVER_NAME));
-			if(in_array($driver,array('pgsql','mysql','mysqli')))
-				$pdo->exec('SET NAMES '.$pdo->quote($this->charset));
+		if ($this->charset !== null) {
+			$driver = strtolower($pdo->getAttribute(PDO::ATTR_DRIVER_NAME));
+			if (in_array($driver, array('pgsql', 'mysql', 'mysqli')))
+				$pdo->exec('SET NAMES ' . $pdo->quote($this->charset));
 		}
-		if($this->initSQLs!==null)
-		{
-			foreach($this->initSQLs as $sql)
+		if ($this->initSQLs !== null) {
+			foreach ($this->initSQLs as $sql)
 				$pdo->exec($sql);
 		}
 	}
@@ -493,10 +486,10 @@ class CDbConnection extends CApplicationComponent
 	 * you will have to call query builder methods of {@link CDbCommand} to build the DB query.
 	 * @return CDbCommand the DB command
 	 */
-	public function createCommand($query=null)
+	public function createCommand($query = null)
 	{
 		$this->setActive(true);
-		return new CDbCommand($this,$query);
+		return new CDbCommand($this, $query);
 	}
 
 	/**
@@ -505,9 +498,8 @@ class CDbConnection extends CApplicationComponent
 	 */
 	public function getCurrentTransaction()
 	{
-		if($this->_transaction!==null)
-		{
-			if($this->_transaction->getActive())
+		if ($this->_transaction !== null) {
+			if ($this->_transaction->getActive())
 				return $this->_transaction;
 		}
 		return null;
@@ -519,10 +511,10 @@ class CDbConnection extends CApplicationComponent
 	 */
 	public function beginTransaction()
 	{
-		Yii::trace('Starting transaction','system.db.CDbConnection');
+		Yii::trace('Starting transaction', 'system.db.CDbConnection');
 		$this->setActive(true);
 		$this->_pdo->beginTransaction();
-		return $this->_transaction=new CDbTransaction($this);
+		return $this->_transaction = new CDbTransaction($this);
 	}
 
 	/**
@@ -532,16 +524,18 @@ class CDbConnection extends CApplicationComponent
 	 */
 	public function getSchema()
 	{
-		if($this->_schema!==null)
+		if ($this->_schema !== null)
 			return $this->_schema;
-		else
-		{
-			$driver=$this->getDriverName();
-			if(isset($this->driverMap[$driver]))
-				return $this->_schema=Yii::createComponent($this->driverMap[$driver], $this);
+		else {
+			$driver = $this->getDriverName();
+			if (isset($this->driverMap[$driver]))
+				return $this->_schema = Yii::createComponent($this->driverMap[$driver], $this);
 			else
-				throw new CDbException(Yii::t('yii','CDbConnection does not support reading schema for {driver} database.',
-					array('{driver}'=>$driver)));
+				throw new CDbException(Yii::t(
+					'yii',
+					'CDbConnection does not support reading schema for {driver} database.',
+					array('{driver}' => $driver)
+				));
 		}
 	}
 
@@ -560,7 +554,7 @@ class CDbConnection extends CApplicationComponent
 	 * @return string the row ID of the last row inserted, or the last value retrieved from the sequence object
 	 * @see https://www.php.net/manual/en/function.PDO-lastInsertId.php
 	 */
-	public function getLastInsertID($sequenceName='')
+	public function getLastInsertID($sequenceName = '')
 	{
 		$this->setActive(true);
 		return $this->_pdo->lastInsertId($sequenceName);
@@ -574,7 +568,7 @@ class CDbConnection extends CApplicationComponent
 	 */
 	public function quoteValue($str)
 	{
-		if(is_int($str) || is_float($str))
+		if (is_int($str) || is_float($str))
 			return $str;
 
 		$this->setActive(true);
@@ -606,9 +600,8 @@ class CDbConnection extends CApplicationComponent
 	 */
 	private function quoteValueInternal($value, $type)
 	{
-		if(mb_stripos($this->connectionString, 'odbc:')===false)
-		{
-			if(($quoted=$this->_pdo->quote($value, $type))!==false)
+		if (mb_stripos($this->connectionString, 'odbc:') === false) {
+			if (($quoted = $this->_pdo->quote($value, $type)) !== false)
 				return $quoted;
 		}
 
@@ -645,13 +638,12 @@ class CDbConnection extends CApplicationComponent
 	 */
 	public function getPdoType($type)
 	{
-		static $map=array
-		(
-			'boolean'=>PDO::PARAM_BOOL,
-			'integer'=>PDO::PARAM_INT,
-			'string'=>PDO::PARAM_STR,
-			'resource'=>PDO::PARAM_LOB,
-			'NULL'=>PDO::PARAM_NULL,
+		static $map = array(
+			'boolean' => PDO::PARAM_BOOL,
+			'integer' => PDO::PARAM_INT,
+			'string' => PDO::PARAM_STR,
+			'resource' => PDO::PARAM_LOB,
+			'NULL' => PDO::PARAM_NULL,
 		);
 		return isset($map[$type]) ? $map[$type] : PDO::PARAM_STR;
 	}
@@ -673,7 +665,7 @@ class CDbConnection extends CApplicationComponent
 	 */
 	public function setColumnCase($value)
 	{
-		$this->setAttribute(PDO::ATTR_CASE,$value);
+		$this->setAttribute(PDO::ATTR_CASE, $value);
 	}
 
 	/**
@@ -693,7 +685,7 @@ class CDbConnection extends CApplicationComponent
 	 */
 	public function setNullConversion($value)
 	{
-		$this->setAttribute(PDO::ATTR_ORACLE_NULLS,$value);
+		$this->setAttribute(PDO::ATTR_ORACLE_NULLS, $value);
 	}
 
 	/**
@@ -713,7 +705,7 @@ class CDbConnection extends CApplicationComponent
 	 */
 	public function setAutoCommit($value)
 	{
-		$this->setAttribute(PDO::ATTR_AUTOCOMMIT,$value);
+		$this->setAttribute(PDO::ATTR_AUTOCOMMIT, $value);
 	}
 
 	/**
@@ -733,7 +725,7 @@ class CDbConnection extends CApplicationComponent
 	 */
 	public function setPersistent($value)
 	{
-		return $this->setAttribute(PDO::ATTR_PERSISTENT,$value);
+		return $this->setAttribute(PDO::ATTR_PERSISTENT, $value);
 	}
 
 	/**
@@ -742,10 +734,10 @@ class CDbConnection extends CApplicationComponent
 	 */
 	public function getDriverName()
 	{
-		if($this->_driverName!==null)
+		if ($this->_driverName !== null)
 			return $this->_driverName;
-		elseif(($pos=strpos($this->connectionString,':'))!==false)
-			return $this->_driverName=strtolower(substr($this->connectionString,0,$pos));
+		elseif (($pos = strpos($this->connectionString, ':')) !== false)
+			return $this->_driverName = strtolower(substr($this->connectionString, 0, $pos));
 		//return $this->getAttribute(PDO::ATTR_DRIVER_NAME);
 	}
 
@@ -759,7 +751,7 @@ class CDbConnection extends CApplicationComponent
 	 */
 	public function setDriverName($driverName)
 	{
-		$this->_driverName=strtolower($driverName);
+		$this->_driverName = strtolower($driverName);
 	}
 
 	/**
@@ -835,12 +827,12 @@ class CDbConnection extends CApplicationComponent
 	 * @param mixed $value the attribute value
 	 * @see https://www.php.net/manual/en/function.PDO-setAttribute.php
 	 */
-	public function setAttribute($name,$value)
+	public function setAttribute($name, $value)
 	{
-		if($this->_pdo instanceof PDO)
-			$this->_pdo->setAttribute($name,$value);
+		if ($this->_pdo instanceof PDO)
+			$this->_pdo->setAttribute($name, $value);
 		else
-			$this->_attributes[$name]=$value;
+			$this->_attributes[$name] = $value;
 	}
 
 	/**
@@ -862,8 +854,8 @@ class CDbConnection extends CApplicationComponent
 	 */
 	public function setAttributes($values)
 	{
-		foreach($values as $name=>$value)
-			$this->_attributes[$name]=$value;
+		foreach ($values as $name => $value)
+			$this->_attributes[$name] = $value;
 	}
 
 	/**
@@ -876,13 +868,13 @@ class CDbConnection extends CApplicationComponent
 	 */
 	public function getStats()
 	{
-		$logger=Yii::getLogger();
-		$timings=$logger->getProfilingResults(null,'system.db.CDbCommand.query');
-		$count=count($timings);
-		$time=array_sum($timings);
-		$timings=$logger->getProfilingResults(null,'system.db.CDbCommand.execute');
-		$count+=count($timings);
-		$time+=array_sum($timings);
-		return array($count,$time);
+		$logger = Yii::getLogger();
+		$timings = $logger->getProfilingResults(null, 'system.db.CDbCommand.query');
+		$count = count($timings);
+		$time = array_sum($timings);
+		$timings = $logger->getProfilingResults(null, 'system.db.CDbCommand.execute');
+		$count += count($timings);
+		$time += array_sum($timings);
+		return array($count, $time);
 	}
 }

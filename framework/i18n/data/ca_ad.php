@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'ca_AD'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => '.',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00;(¤#,##0.00)',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'AU$',
     'BRL' => 'BRL',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'XPF',
     'ESP' => '₧',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'de gener',
       2 => 'de febrer',
       3 => 'de març',
@@ -70,8 +71,8 @@ return array (
       11 => 'de novembre',
       12 => 'de desembre',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'de gen.',
       2 => 'de febr.',
       3 => 'de març',
@@ -85,8 +86,8 @@ return array (
       11 => 'de nov.',
       12 => 'de des.',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       1 => 'G',
       2 => 'F',
       3 => 'M',
@@ -101,10 +102,10 @@ return array (
       12 => 'D',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'g',
       2 => 'f',
       3 => 'm',
@@ -118,8 +119,8 @@ return array (
       11 => 'n',
       12 => 'd',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'gen.',
       2 => 'febr.',
       3 => 'març',
@@ -133,8 +134,8 @@ return array (
       11 => 'nov.',
       12 => 'des.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       1 => 'gener',
       2 => 'febrer',
       3 => 'març',
@@ -149,10 +150,10 @@ return array (
       12 => 'desembre',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'diumenge',
       1 => 'dilluns',
       2 => 'dimarts',
@@ -161,8 +162,8 @@ return array (
       5 => 'divendres',
       6 => 'dissabte',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'dg.',
       1 => 'dl.',
       2 => 'dt.',
@@ -171,8 +172,8 @@ return array (
       5 => 'dv.',
       6 => 'ds.',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'dg',
       1 => 'dl',
       2 => 'dt',
@@ -181,8 +182,8 @@ return array (
       5 => 'dv',
       6 => 'ds',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'dg.',
       1 => 'dl.',
       2 => 'dt.',
@@ -192,10 +193,10 @@ return array (
       6 => 'ds.',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'dg',
       1 => 'dl',
       2 => 'dt',
@@ -204,8 +205,8 @@ return array (
       5 => 'dv',
       6 => 'ds',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'dg',
       1 => 'dl',
       2 => 'dt',
@@ -214,8 +215,8 @@ return array (
       5 => 'dv',
       6 => 'ds',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'dg.',
       1 => 'dl.',
       2 => 'dm.',
@@ -224,8 +225,8 @@ return array (
       5 => 'dv.',
       6 => 'ds.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Diumenge',
       1 => 'Dilluns',
       2 => 'Dimarts',
@@ -235,33 +236,33 @@ return array (
       6 => 'Dissabte',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'aC',
       1 => 'dC',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'abans de Crist',
       1 => 'després de Crist',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'aC',
       1 => 'dC',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE d MMMM \'de\' y',
     'long' => 'd MMMM \'de\' y',
     'medium' => 'dd/MM/y',
     'short' => 'dd/MM/yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'H.mm.ss zzzz',
     'long' => 'H.mm.ss z',
     'medium' => 'H.mm.ss',
@@ -271,8 +272,8 @@ return array (
   'amName' => 'a.m.',
   'pmName' => 'p.m.',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'àfar',
     'ab' => 'abkhaz',
     'ace' => 'atjeh',
@@ -847,8 +848,8 @@ return array (
     'zxx' => 'sense contingut lingüístic',
     'zza' => 'zaza',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'afak' => 'afaka',
     'arab' => 'perso-àrabic',
     'armi' => 'arameu imperial',
@@ -1008,8 +1009,8 @@ return array (
     'zyyy' => 'comú',
     'zzzz' => 'escriptura desconeguda',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'Món',
     '002' => 'Àfrica',
     '003' => 'Amèrica del Nord',
@@ -1301,8 +1302,8 @@ return array (
     'zw' => 'Zimbabwe',
     'zz' => 'Regió desconeguda',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

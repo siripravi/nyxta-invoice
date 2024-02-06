@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CUrlValidator class file.
  *
@@ -22,13 +23,13 @@ class CUrlValidator extends CValidator
 	 * Since version 1.1.7 the pattern may contain a {schemes} token that will be replaced
 	 * by a regular expression which represents the {@see validSchemes}.
 	 */
-	public $pattern='/^{schemes}:\/\/(([A-Z0-9][A-Z0-9_-]*)(\.[A-Z0-9][A-Z0-9_-]*)+)/i';
+	public $pattern = '/^{schemes}:\/\/(([A-Z0-9][A-Z0-9_-]*)(\.[A-Z0-9][A-Z0-9_-]*)+)/i';
 	/**
 	 * @var array list of URI schemes which should be considered valid. By default, http and https
 	 * are considered to be valid schemes.
 	 * @since 1.1.7
 	 **/
-	public $validSchemes=array('http','https');
+	public $validSchemes = array('http', 'https');
 	/**
 	 * @var string the default URI scheme. If the input doesn't contain the scheme part, the default
 	 * scheme will be prepended to it (thus changing the input). Defaults to null, meaning a URL must
@@ -40,13 +41,13 @@ class CUrlValidator extends CValidator
 	 * @var boolean whether the attribute value can be null or empty. Defaults to true,
 	 * meaning that if the attribute is empty, it is considered valid.
 	 */
-	public $allowEmpty=true;
+	public $allowEmpty = true;
 	/**
 	 * @var boolean whether validation process should care about IDN (internationalized domain names). Default
 	 * value is false which means that validation of URLs containing IDN will always fail.
 	 * @since 1.1.13
 	 */
-	public $validateIDN=false;
+	public $validateIDN = false;
 
 	/**
 	 * Validates the attribute of the object.
@@ -54,17 +55,16 @@ class CUrlValidator extends CValidator
 	 * @param CModel $object the object being validated
 	 * @param string $attribute the attribute being validated
 	 */
-	protected function validateAttribute($object,$attribute)
+	protected function validateAttribute($object, $attribute)
 	{
-		$value=$object->$attribute;
-		if($this->allowEmpty && $this->isEmpty($value))
+		$value = $object->$attribute;
+		if ($this->allowEmpty && $this->isEmpty($value))
 			return;
-		if(($value=$this->validateValue($value))!==false)
-			$object->$attribute=$value;
-		else
-		{
-			$message=$this->message!==null?$this->message:Yii::t('yii','{attribute} is not a valid URL.');
-			$this->addError($object,$attribute,$message);
+		if (($value = $this->validateValue($value)) !== false)
+			$object->$attribute = $value;
+		else {
+			$message = $this->message !== null ? $this->message : Yii::t('yii', '{attribute} is not a valid URL.');
+			$this->addError($object, $attribute, $message);
 		}
 	}
 
@@ -78,20 +78,20 @@ class CUrlValidator extends CValidator
 	 */
 	public function validateValue($value)
 	{
-		if(is_string($value) && strlen($value)<2000)  // make sure the length is limited to avoid DOS attacks
+		if (is_string($value) && strlen($value) < 2000)  // make sure the length is limited to avoid DOS attacks
 		{
-			if($this->defaultScheme!==null && strpos($value,'://')===false)
-				$value=$this->defaultScheme.'://'.$value;
+			if ($this->defaultScheme !== null && strpos($value, '://') === false)
+				$value = $this->defaultScheme . '://' . $value;
 
-			if($this->validateIDN)
-				$value=$this->encodeIDN($value);
+			if ($this->validateIDN)
+				$value = $this->encodeIDN($value);
 
-			if(strpos($this->pattern,'{schemes}')!==false)
-				$pattern=str_replace('{schemes}','('.implode('|',$this->validSchemes).')',$this->pattern);
+			if (strpos($this->pattern, '{schemes}') !== false)
+				$pattern = str_replace('{schemes}', '(' . implode('|', $this->validSchemes) . ')', $this->pattern);
 			else
-				$pattern=$this->pattern;
+				$pattern = $this->pattern;
 
-			if(preg_match($pattern,$value))
+			if (preg_match($pattern, $value))
 				return $this->validateIDN ? $this->decodeIDN($value) : $value;
 		}
 		return false;
@@ -105,50 +105,46 @@ class CUrlValidator extends CValidator
 	 * @see CActiveForm::enableClientValidation
 	 * @since 1.1.7
 	 */
-	public function clientValidateAttribute($object,$attribute)
+	public function clientValidateAttribute($object, $attribute)
 	{
-		if($this->validateIDN)
-		{
+		if ($this->validateIDN) {
 			Yii::app()->getClientScript()->registerCoreScript('punycode');
 			// punycode.js works only with the domains - so we have to extract it before punycoding
-			$validateIDN='
+			$validateIDN = '
 var info = value.match(/^(.+:\/\/|)([^/]+)/);
 if (info)
 	value = info[1] + punycode.toASCII(info[2]);
 ';
-		}
-		else
-			$validateIDN='';
+		} else
+			$validateIDN = '';
 
-		$message=$this->message!==null ? $this->message : Yii::t('yii','{attribute} is not a valid URL.');
-		$message=strtr($message, array(
-			'{attribute}'=>$object->getAttributeLabel($attribute),
+		$message = $this->message !== null ? $this->message : Yii::t('yii', '{attribute} is not a valid URL.');
+		$message = strtr($message, array(
+			'{attribute}' => $object->getAttributeLabel($attribute),
 		));
 
-		if(strpos($this->pattern,'{schemes}')!==false)
-			$pattern=str_replace('{schemes}','('.implode('|',$this->validSchemes).')',$this->pattern);
+		if (strpos($this->pattern, '{schemes}') !== false)
+			$pattern = str_replace('{schemes}', '(' . implode('|', $this->validSchemes) . ')', $this->pattern);
 		else
-			$pattern=$this->pattern;
+			$pattern = $this->pattern;
 
-		$js="
+		$js = "
 $validateIDN
 if(!value.match($pattern)) {
-	messages.push(".CJSON::encode($message).");
+	messages.push(" . CJSON::encode($message) . ");
 }
 ";
-		if($this->defaultScheme!==null)
-		{
-			$js="
+		if ($this->defaultScheme !== null) {
+			$js = "
 if(!value.match(/:\\/\\//)) {
-	value=".CJSON::encode($this->defaultScheme)."+'://'+value;
+	value=" . CJSON::encode($this->defaultScheme) . "+'://'+value;
 }
 $js
 ";
 		}
 
-		if($this->allowEmpty)
-		{
-			$js="
+		if ($this->allowEmpty) {
+			$js = "
 if(jQuery.trim(value)!='') {
 	$js
 }
@@ -166,26 +162,19 @@ if(jQuery.trim(value)!='') {
 	 */
 	private function encodeIDN($value)
 	{
-		if(preg_match_all('/^(.*):\/\/([^\/]+)(.*)$/',$value,$matches))
-		{
-			if(function_exists('idn_to_ascii'))
-			{
-				$value=$matches[1][0].'://';
-				if (defined('IDNA_NONTRANSITIONAL_TO_ASCII') && defined('INTL_IDNA_VARIANT_UTS46'))
-				{
-					$value.=idn_to_ascii($matches[2][0],IDNA_NONTRANSITIONAL_TO_ASCII, INTL_IDNA_VARIANT_UTS46);
+		if (preg_match_all('/^(.*):\/\/([^\/]+)(.*)$/', $value, $matches)) {
+			if (function_exists('idn_to_ascii')) {
+				$value = $matches[1][0] . '://';
+				if (defined('IDNA_NONTRANSITIONAL_TO_ASCII') && defined('INTL_IDNA_VARIANT_UTS46')) {
+					$value .= idn_to_ascii($matches[2][0], IDNA_NONTRANSITIONAL_TO_ASCII, INTL_IDNA_VARIANT_UTS46);
+				} else {
+					$value .= idn_to_ascii($matches[2][0]);
 				}
-				else
-				{
-					$value.=idn_to_ascii($matches[2][0]);
-				}
-				$value.=$matches[3][0];
-			}
-			else
-			{
-				require_once(Yii::getPathOfAlias('system.vendors.Net_IDNA2.Net').DIRECTORY_SEPARATOR.'IDNA2.php');
-				$idna=new Net_IDNA2();
-				$value=$matches[1][0].'://'.@$idna->encode($matches[2][0]).$matches[3][0];
+				$value .= $matches[3][0];
+			} else {
+				require_once(Yii::getPathOfAlias('system.vendors.Net_IDNA2.Net') . DIRECTORY_SEPARATOR . 'IDNA2.php');
+				$idna = new Net_IDNA2();
+				$value = $matches[1][0] . '://' . @$idna->encode($matches[2][0]) . $matches[3][0];
 			}
 		}
 		return $value;
@@ -199,26 +188,19 @@ if(jQuery.trim(value)!='') {
 	 */
 	private function decodeIDN($value)
 	{
-		if(preg_match_all('/^(.*):\/\/([^\/]+)(.*)$/',$value,$matches))
-		{
-			if(function_exists('idn_to_utf8'))
-			{
-				$value=$matches[1][0].'://';
-				if (defined('IDNA_NONTRANSITIONAL_TO_ASCII') && defined('INTL_IDNA_VARIANT_UTS46'))
-				{
-					$value.=idn_to_utf8($matches[2][0],IDNA_NONTRANSITIONAL_TO_ASCII, INTL_IDNA_VARIANT_UTS46);
+		if (preg_match_all('/^(.*):\/\/([^\/]+)(.*)$/', $value, $matches)) {
+			if (function_exists('idn_to_utf8')) {
+				$value = $matches[1][0] . '://';
+				if (defined('IDNA_NONTRANSITIONAL_TO_ASCII') && defined('INTL_IDNA_VARIANT_UTS46')) {
+					$value .= idn_to_utf8($matches[2][0], IDNA_NONTRANSITIONAL_TO_ASCII, INTL_IDNA_VARIANT_UTS46);
+				} else {
+					$value .= idn_to_utf8($matches[2][0]);
 				}
-				else
-				{
-					$value.=idn_to_utf8($matches[2][0]);
-				}
-				$value.=$matches[3][0];
-			}
-			else
-			{
-				require_once(Yii::getPathOfAlias('system.vendors.Net_IDNA2.Net').DIRECTORY_SEPARATOR.'IDNA2.php');
-				$idna=new Net_IDNA2();
-				$value=$matches[1][0].'://'.@$idna->decode($matches[2][0]).$matches[3][0];
+				$value .= $matches[3][0];
+			} else {
+				require_once(Yii::getPathOfAlias('system.vendors.Net_IDNA2.Net') . DIRECTORY_SEPARATOR . 'IDNA2.php');
+				$idna = new Net_IDNA2();
+				$value = $matches[1][0] . '://' . @$idna->decode($matches[2][0]) . $matches[3][0];
 			}
 		}
 		return $value;

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -16,7 +17,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   '\'{db}\' component doesn\'t exist.' => 'Δεν υπάρχει το δομικό στοιχείο \'{db}\'.',
   '\'{db}\' component is not a valid CDbConnection instance.' => 'Το δομικό στοιχείο \'{db}\' δεν είναι έγκυρο στιγμιότυπο CDbConnection.',
   'A PHP extension stopped the file upload.' => 'Μια επέκταση της PHP διέκοψε την αποστολή του αρχείου.',

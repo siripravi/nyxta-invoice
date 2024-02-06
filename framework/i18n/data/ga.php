@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'ga'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'ANG' => 'AÍ f.',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Eanáir',
       2 => 'Feabhra',
       3 => 'Márta',
@@ -70,8 +71,8 @@ return array (
       11 => 'Samhain',
       12 => 'Nollaig',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Ean',
       2 => 'Feabh',
       3 => 'Márta',
@@ -86,10 +87,10 @@ return array (
       12 => 'Noll',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'E',
       2 => 'F',
       3 => 'M',
@@ -104,10 +105,10 @@ return array (
       12 => 'N',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Dé Domhnaigh',
       1 => 'Dé Luain',
       2 => 'Dé Máirt',
@@ -116,8 +117,8 @@ return array (
       5 => 'Dé hAoine',
       6 => 'Dé Sathairn',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Domh',
       1 => 'Luan',
       2 => 'Máirt',
@@ -127,10 +128,10 @@ return array (
       6 => 'Sath',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'D',
       1 => 'L',
       2 => 'M',
@@ -140,33 +141,33 @@ return array (
       6 => 'S',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'RC',
       1 => 'AD',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Roimh Chríost',
       1 => 'Anno Domini',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'RC',
       1 => 'AD',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE d MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'd MMM y',
     'short' => 'dd/MM/y',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -176,8 +177,8 @@ return array (
   'amName' => 'a.m.',
   'pmName' => 'p.m.',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'aa',
     'ab' => 'Abcáisis',
     'ae' => 'Aivéistis',
@@ -345,8 +346,8 @@ return array (
     'zu' => 'Súlúis',
     'zxx' => 'Gan ábhar teangeolaíoch',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'Arabach',
     'armn' => 'Airméanach',
     'beng' => 'Beangálach',
@@ -383,8 +384,8 @@ return array (
     'zxxx' => 'Gan Scríobh',
     'zzzz' => 'Script Anaithnid nó Neamhbhailí',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'An Domhan',
     '002' => 'An Afraic',
     '003' => 'Meiriceá Thuaidh',
@@ -663,8 +664,8 @@ return array (
     'zw' => 'An tSiombáib',
     'zz' => 'Réigiún Anaithnid nó Neamhbhailí',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'n==2',
     2 => '(n>=3&&n<=6&&fmod(n,1)==0)',

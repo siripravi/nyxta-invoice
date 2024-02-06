@@ -8,19 +8,21 @@ class m230328_070943_create_all_tables extends CDbMigration
 			'id' => 'pk',
 			'card_type' => 'varchar(255) NOT NULL',
 		), '');
-		$this->insertMultiple('card_type', array(
-			array('id' => 1, 'card_type' => 'American Express'),
-			array('id' => 2, 'card_type' => 'Discover'),
-			array('id' => 3, 'card_type' => 'MasterCard'),
-			array('id' => 4, 'card_type' => 'Visa'),
-			array('id' => 5, 'card_type' => 'Diners Club'),
-			array('id' => 6, 'card_type' => 'JCB'),
-			array('id' => 7, 'card_type' => 'Laser'),
-			array('id' => 8, 'card_type' => 'Maestro'),
-			array('id' => 9, 'card_type' => 'UnionPay'),
-			array('id' => 10, 'card_type' => 'Visa Electron'),
-			array('id' => 11, 'card_type' => 'Dankort')
-		)
+		$this->insertMultiple(
+			'card_type',
+			array(
+				array('id' => 1, 'card_type' => 'American Express'),
+				array('id' => 2, 'card_type' => 'Discover'),
+				array('id' => 3, 'card_type' => 'MasterCard'),
+				array('id' => 4, 'card_type' => 'Visa'),
+				array('id' => 5, 'card_type' => 'Diners Club'),
+				array('id' => 6, 'card_type' => 'JCB'),
+				array('id' => 7, 'card_type' => 'Laser'),
+				array('id' => 8, 'card_type' => 'Maestro'),
+				array('id' => 9, 'card_type' => 'UnionPay'),
+				array('id' => 10, 'card_type' => 'Visa Electron'),
+				array('id' => 11, 'card_type' => 'Dankort')
+			)
 		);
 
 
@@ -206,16 +208,18 @@ class m230328_070943_create_all_tables extends CDbMigration
 			'homeUrl' => 'varchar(100) NOT NULL',
 			'profile' => 'text DEFAULT NULL',
 		), '');
-		$this->insert('tbl_user', array(
-			'id' => 1,
-			'username' => 'admin',
-			'password' => 'cc03e747a6afbbcbf8be7668acfebee5',
-			'email' => 'admin@invoice.dev',
-			'status' => 1,
-			'level' => 10,
-			'homeUrl' => '',
-			'profile' => 'admin user',
-		)
+		$this->insert(
+			'tbl_user',
+			array(
+				'id' => 1,
+				'username' => 'admin',
+				'password' => 'cc03e747a6afbbcbf8be7668acfebee5',
+				'email' => 'admin@invoice.dev',
+				'status' => 1,
+				'level' => 10,
+				'homeUrl' => '',
+				'profile' => 'admin user',
+			)
 		);
 
 
@@ -242,7 +246,6 @@ class m230328_070943_create_all_tables extends CDbMigration
 		$this->addForeignKey('fk_mov_employee_movement_mov_id', 'mov_employee', 'mov_id', 'movement', 'id', 'NO ACTION', 'NO ACTION');
 
 		$this->addForeignKey('fk_movement_statement_st_id', 'movement', 'st_id', 'statement', 'id', 'NO ACTION', 'NO ACTION');
-
 	}
 
 	public function down()

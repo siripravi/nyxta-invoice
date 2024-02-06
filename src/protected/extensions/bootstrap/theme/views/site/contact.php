@@ -11,14 +11,16 @@ $this->breadcrumbs = array(
 
 <h1>Contact Us</h1>
 
-<?php if (Yii::app()->user->hasFlash('contact')): ?>
+<?php if (Yii::app()->user->hasFlash('contact')) : ?>
 
-    <?php $this->widget('bootstrap.widgets.TbAlert', array(
-        'alerts' => array('contact'),
-    )
+    <?php $this->widget(
+        'bootstrap.widgets.TbAlert',
+        array(
+            'alerts' => array('contact'),
+        )
     ); ?>
 
-<?php else: ?>
+<?php else : ?>
 
     <p>
         If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.
@@ -26,14 +28,16 @@ $this->breadcrumbs = array(
 
     <div class="form">
 
-        <?php $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
-            'id' => 'contact-form',
-            'type' => 'horizontal',
-            'enableClientValidation' => true,
-            'clientOptions' => array(
-                'validateOnSubmit' => true,
-            ),
-        )
+        <?php $form = $this->beginWidget(
+            'bootstrap.widgets.TbActiveForm',
+            array(
+                'id' => 'contact-form',
+                'type' => 'horizontal',
+                'enableClientValidation' => true,
+                'clientOptions' => array(
+                    'validateOnSubmit' => true,
+                ),
+            )
         ); ?>
 
         <p class="note">Fields with <span class="required">*</span> are required.</p>
@@ -48,19 +52,24 @@ $this->breadcrumbs = array(
 
         <?php echo $form->textAreaRow($model, 'body', array('rows' => 6, 'class' => 'span8')); ?>
 
-        <?php if (CCaptcha::checkRequirements()): ?>
-            <?php echo $form->captchaRow($model, 'verifyCode', array(
-                'hint' => 'Please enter the letters as they are shown in the image above.<br/>Letters are not case-sensitive.',
-            )
+        <?php if (CCaptcha::checkRequirements()) : ?>
+            <?php echo $form->captchaRow(
+                $model,
+                'verifyCode',
+                array(
+                    'hint' => 'Please enter the letters as they are shown in the image above.<br/>Letters are not case-sensitive.',
+                )
             ); ?>
         <?php endif; ?>
 
         <div class="form-actions">
-            <?php $this->widget('bootstrap.widgets.TbButton', array(
-                'buttonType' => 'submit',
-                'type' => 'primary',
-                'label' => 'Submit',
-            )
+            <?php $this->widget(
+                'bootstrap.widgets.TbButton',
+                array(
+                    'buttonType' => 'submit',
+                    'type' => 'primary',
+                    'label' => 'Submit',
+                )
             ); ?>
         </div>
 

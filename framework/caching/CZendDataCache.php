@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CZendDataCache class file
  *
@@ -30,8 +31,8 @@ class CZendDataCache extends CCache
 	public function init()
 	{
 		parent::init();
-		if(!function_exists('zend_shm_cache_store'))
-			throw new CException(Yii::t('yii','CZendDataCache requires PHP Zend Data Cache extension to be loaded.'));
+		if (!function_exists('zend_shm_cache_store'))
+			throw new CException(Yii::t('yii', 'CZendDataCache requires PHP Zend Data Cache extension to be loaded.'));
 	}
 
 	/**
@@ -55,9 +56,9 @@ class CZendDataCache extends CCache
 	 * @param integer $expire the number of seconds in which the cached value will expire. 0 means never expire.
 	 * @return boolean true if the value is successfully stored into cache, false otherwise
 	 */
-	protected function setValue($key,$value,$expire)
+	protected function setValue($key, $value, $expire)
 	{
-		return zend_shm_cache_store($key,$value,$expire);
+		return zend_shm_cache_store($key, $value, $expire);
 	}
 
 	/**
@@ -69,9 +70,9 @@ class CZendDataCache extends CCache
 	 * @param integer $expire the number of seconds in which the cached value will expire. 0 means never expire.
 	 * @return boolean true if the value is successfully stored into cache, false otherwise
 	 */
-	protected function addValue($key,$value,$expire)
+	protected function addValue($key, $value, $expire)
 	{
-		return (NULL === zend_shm_cache_fetch($key)) ? $this->setValue($key,$value,$expire) : false;
+		return (NULL === zend_shm_cache_fetch($key)) ? $this->setValue($key, $value, $expire) : false;
 	}
 
 	/**

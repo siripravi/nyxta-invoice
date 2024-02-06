@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CWidget class file.
  *
@@ -44,7 +45,7 @@ class CWidget extends CBaseController
 	 * @see CWidgetFactory
 	 * @since 1.1
 	 */
-	public $skin='default';
+	public $skin = 'default';
 
 	/**
 	 * @var array view paths for different types of widgets
@@ -53,7 +54,7 @@ class CWidget extends CBaseController
 	/**
 	 * @var integer the counter for generating implicit IDs.
 	 */
-	private static $_counter=0;
+	private static $_counter = 0;
 	/**
 	 * @var string id of the widget.
 	 */
@@ -89,9 +90,9 @@ class CWidget extends CBaseController
 	 * Constructor.
 	 * @param CBaseController $owner owner/creator of this widget. It could be either a widget or a controller.
 	 */
-	public function __construct($owner=null)
+	public function __construct($owner = null)
 	{
-		$this->_owner=$owner===null?Yii::app()->getController():$owner;
+		$this->_owner = $owner === null ? Yii::app()->getController() : $owner;
 	}
 
 	/**
@@ -108,12 +109,12 @@ class CWidget extends CBaseController
 	 * @param boolean $autoGenerate whether to generate an ID if it is not set previously
 	 * @return string id of the widget.
 	 */
-	public function getId($autoGenerate=true)
+	public function getId($autoGenerate = true)
 	{
-		if($this->_id!==null)
+		if ($this->_id !== null)
 			return $this->_id;
-		elseif($autoGenerate)
-			return $this->_id='yw'.self::$_counter++;
+		elseif ($autoGenerate)
+			return $this->_id = 'yw' . self::$_counter++;
 	}
 
 	/**
@@ -122,7 +123,7 @@ class CWidget extends CBaseController
 	 */
 	public function setId($value)
 	{
-		$this->_id=$value;
+		$this->_id = $value;
 	}
 
 	/**
@@ -131,7 +132,7 @@ class CWidget extends CBaseController
 	 */
 	public function getController()
 	{
-		if($this->_owner instanceof CController)
+		if ($this->_owner instanceof CController)
 			return $this->_owner;
 		else
 			return Yii::app()->getController();
@@ -162,27 +163,25 @@ class CWidget extends CBaseController
 	 * @param boolean $checkTheme whether to check if the theme contains a view path for the widget.
 	 * @return string the directory containing the view files for this widget.
 	 */
-	public function getViewPath($checkTheme=false)
+	public function getViewPath($checkTheme = false)
 	{
-		$className=get_class($this);
-		$scope=$checkTheme?'theme':'local';
-		if(isset(self::$_viewPaths[$className][$scope]))
+		$className = get_class($this);
+		$scope = $checkTheme ? 'theme' : 'local';
+		if (isset(self::$_viewPaths[$className][$scope]))
 			return self::$_viewPaths[$className][$scope];
-		else
-		{
-			if($checkTheme && ($theme=Yii::app()->getTheme())!==null)
-			{
-				$path=$theme->getViewPath().DIRECTORY_SEPARATOR;
-				if(strpos($className,'\\')!==false) // namespaced class
-					$path.=str_replace('\\','_',ltrim($className,'\\'));
+		else {
+			if ($checkTheme && ($theme = Yii::app()->getTheme()) !== null) {
+				$path = $theme->getViewPath() . DIRECTORY_SEPARATOR;
+				if (strpos($className, '\\') !== false) // namespaced class
+					$path .= str_replace('\\', '_', ltrim($className, '\\'));
 				else
-					$path.=$className;
-				if(is_dir($path))
-					return self::$_viewPaths[$className]['theme']=$path;
+					$path .= $className;
+				if (is_dir($path))
+					return self::$_viewPaths[$className]['theme'] = $path;
 			}
 
-			$class=new ReflectionClass($className);
-			return self::$_viewPaths[$className]['local']=dirname($class->getFileName()).DIRECTORY_SEPARATOR.'views';
+			$class = new ReflectionClass($className);
+			return self::$_viewPaths[$className]['local'] = dirname($class->getFileName()) . DIRECTORY_SEPARATOR . 'views';
 		}
 	}
 
@@ -199,26 +198,25 @@ class CWidget extends CBaseController
 	 */
 	public function getViewFile($viewName)
 	{
-		if(($renderer=Yii::app()->getViewRenderer())!==null)
-			$extension=$renderer->fileExtension;
+		if (($renderer = Yii::app()->getViewRenderer()) !== null)
+			$extension = $renderer->fileExtension;
 		else
-			$extension='.php';
-		if(strpos($viewName,'.')) // a path alias
-			$viewFile=Yii::getPathOfAlias($viewName);
-		else
-		{
-			$viewFile=$this->getViewPath(true).DIRECTORY_SEPARATOR.$viewName;
-			if(is_file($viewFile.$extension))
-				return Yii::app()->findLocalizedFile($viewFile.$extension);
-			elseif($extension!=='.php' && is_file($viewFile.'.php'))
-				return Yii::app()->findLocalizedFile($viewFile.'.php');
-			$viewFile=$this->getViewPath(false).DIRECTORY_SEPARATOR.$viewName;
+			$extension = '.php';
+		if (strpos($viewName, '.')) // a path alias
+			$viewFile = Yii::getPathOfAlias($viewName);
+		else {
+			$viewFile = $this->getViewPath(true) . DIRECTORY_SEPARATOR . $viewName;
+			if (is_file($viewFile . $extension))
+				return Yii::app()->findLocalizedFile($viewFile . $extension);
+			elseif ($extension !== '.php' && is_file($viewFile . '.php'))
+				return Yii::app()->findLocalizedFile($viewFile . '.php');
+			$viewFile = $this->getViewPath(false) . DIRECTORY_SEPARATOR . $viewName;
 		}
 
-		if(is_file($viewFile.$extension))
-			return Yii::app()->findLocalizedFile($viewFile.$extension);
-		elseif($extension!=='.php' && is_file($viewFile.'.php'))
-			return Yii::app()->findLocalizedFile($viewFile.'.php');
+		if (is_file($viewFile . $extension))
+			return Yii::app()->findLocalizedFile($viewFile . $extension);
+		elseif ($extension !== '.php' && is_file($viewFile . '.php'))
+			return Yii::app()->findLocalizedFile($viewFile . '.php');
 		else
 			return false;
 	}
@@ -238,12 +236,15 @@ class CWidget extends CBaseController
 	 * @throws CException if the view does not exist
 	 * @see getViewFile
 	 */
-	public function render($view,$data=null,$return=false)
+	public function render($view, $data = null, $return = false)
 	{
-		if(($viewFile=$this->getViewFile($view))!==false)
-			return $this->renderFile($viewFile,$data,$return);
+		if (($viewFile = $this->getViewFile($view)) !== false)
+			return $this->renderFile($viewFile, $data, $return);
 		else
-			throw new CException(Yii::t('yii','{widget} cannot find the view "{view}".',
-				array('{widget}'=>get_class($this), '{view}'=>$view)));
+			throw new CException(Yii::t(
+				'yii',
+				'{widget} cannot find the view "{view}".',
+				array('{widget}' => get_class($this), '{view}' => $view)
+			));
 	}
 }

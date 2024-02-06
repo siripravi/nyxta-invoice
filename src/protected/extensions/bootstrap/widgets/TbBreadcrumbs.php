@@ -1,4 +1,5 @@
 <?php
+
 /**
  * TbCrumb class file.
  * @author Christoffer Niska <ChristofferNiska@gmail.com>

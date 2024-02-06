@@ -42,8 +42,7 @@ class Designation extends CActiveRecord
 	{
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
-		return array(
-		);
+		return array();
 	}
 
 	/**
@@ -80,9 +79,11 @@ class Designation extends CActiveRecord
 		$criteria->compare('designation', $this->designation, true);
 		$criteria->compare('design_abbr', $this->design_abbr, true);
 
-		return new CActiveDataProvider($this, array(
-			'criteria' => $criteria,
-		)
+		return new CActiveDataProvider(
+			$this,
+			array(
+				'criteria' => $criteria,
+			)
 		);
 	}
 

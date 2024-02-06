@@ -1,4 +1,5 @@
 <?php
+
 /**
  * COciCommandBuilder class file.
  *
@@ -38,23 +39,23 @@ class COciCommandBuilder extends CDbCommandBuilder
 	 * @param integer $offset row offset, -1 to ignore offset.
 	 * @return string SQL with LIMIT and OFFSET
 	 */
-	public function applyLimit($sql,$limit,$offset)
+	public function applyLimit($sql, $limit, $offset)
 	{
 		if (($limit < 0) and ($offset < 0)) return $sql;
 
 		$filters = array();
-		if($offset>0){
-			$filters[] = 'rowNumId > '.(int)$offset;
+		if ($offset > 0) {
+			$filters[] = 'rowNumId > ' . (int)$offset;
 		}
 
-		if($limit>=0){
-			$filters[]= 'rownum <= '.(int)$limit;
+		if ($limit >= 0) {
+			$filters[] = 'rownum <= ' . (int)$limit;
 		}
 
-		if (count($filters) > 0){
+		if (count($filters) > 0) {
 			$filter = implode(' and ', $filters);
-			$filter= " WHERE ".$filter;
-		}else{
+			$filter = " WHERE " . $filter;
+		} else {
 			$filter = '';
 		}
 
@@ -76,47 +77,40 @@ EOD;
 	 * @param array $data data to be inserted (column name=>column value). If a key is not a valid column name, the corresponding value will be ignored.
 	 * @return CDbCommand insert command
 	 */
-	public function createInsertCommand($table,$data)
+	public function createInsertCommand($table, $data)
 	{
 		$this->ensureTable($table);
-		$fields=array();
-		$values=array();
-		$placeholders=array();
-		$i=0;
-		foreach($data as $name=>$value)
-		{
-			if(($column=$table->getColumn($name))!==null && ($value!==null || $column->allowNull))
-			{
-				$fields[]=$column->rawName;
-				if($value instanceof CDbExpression)
-				{
-					$placeholders[]=$value->expression;
-					foreach($value->params as $n=>$v)
-						$values[$n]=$v;
-				}
-				else
-				{
-					$placeholders[]=self::PARAM_PREFIX.$i;
-					$values[self::PARAM_PREFIX.$i]=$column->typecast($value);
+		$fields = array();
+		$values = array();
+		$placeholders = array();
+		$i = 0;
+		foreach ($data as $name => $value) {
+			if (($column = $table->getColumn($name)) !== null && ($value !== null || $column->allowNull)) {
+				$fields[] = $column->rawName;
+				if ($value instanceof CDbExpression) {
+					$placeholders[] = $value->expression;
+					foreach ($value->params as $n => $v)
+						$values[$n] = $v;
+				} else {
+					$placeholders[] = self::PARAM_PREFIX . $i;
+					$values[self::PARAM_PREFIX . $i] = $column->typecast($value);
 					$i++;
 				}
 			}
 		}
 
-		$sql="INSERT INTO {$table->rawName} (".implode(', ',$fields).') VALUES ('.implode(', ',$placeholders).')';
+		$sql = "INSERT INTO {$table->rawName} (" . implode(', ', $fields) . ') VALUES (' . implode(', ', $placeholders) . ')';
 
-		if(is_string($table->primaryKey) && ($column=$table->getColumn($table->primaryKey))!==null && $column->type!=='string')
-		{
-			$sql.=' RETURNING '.$column->rawName.' INTO :RETURN_ID';
-			$command=$this->getDbConnection()->createCommand($sql);
+		if (is_string($table->primaryKey) && ($column = $table->getColumn($table->primaryKey)) !== null && $column->type !== 'string') {
+			$sql .= ' RETURNING ' . $column->rawName . ' INTO :RETURN_ID';
+			$command = $this->getDbConnection()->createCommand($sql);
 			$command->bindParam(':RETURN_ID', $this->returnID, PDO::PARAM_INT, 12);
-			$table->sequenceName='RETURN_ID';
-		}
-		else
-			$command=$this->getDbConnection()->createCommand($sql);
+			$table->sequenceName = 'RETURN_ID';
+		} else
+			$command = $this->getDbConnection()->createCommand($sql);
 
-		foreach($values as $name=>$value)
-			$command->bindValue($name,$value);
+		foreach ($values as $name => $value)
+			$command->bindValue($name, $value);
 
 		return $command;
 	}
@@ -131,16 +125,16 @@ EOD;
 	 * @return CDbCommand multiple insert command
 	 * @since 1.1.14
 	 */
-	public function createMultipleInsertCommand($table,array $data)
+	public function createMultipleInsertCommand($table, array $data)
 	{
-		$templates=array(
-			'main'=>'INSERT ALL {{rowInsertValues}} SELECT * FROM dual',
-			'columnInsertValue'=>'{{value}}',
-			'columnInsertValueGlue'=>', ',
-			'rowInsertValue'=>'INTO {{tableName}} ({{columnInsertNames}}) VALUES ({{columnInsertValues}})',
-			'rowInsertValueGlue'=>' ',
-			'columnInsertNameGlue'=>', ',
+		$templates = array(
+			'main' => 'INSERT ALL {{rowInsertValues}} SELECT * FROM dual',
+			'columnInsertValue' => '{{value}}',
+			'columnInsertValueGlue' => ', ',
+			'rowInsertValue' => 'INTO {{tableName}} ({{columnInsertNames}}) VALUES ({{columnInsertValues}})',
+			'rowInsertValueGlue' => ' ',
+			'columnInsertNameGlue' => ', ',
 		);
-		return $this->composeMultipleInsertCommand($table,$data,$templates);
+		return $this->composeMultipleInsertCommand($table, $data, $templates);
 	}
 }

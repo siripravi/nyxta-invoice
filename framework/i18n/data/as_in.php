@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'as_IN'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##,##0%',
   'currencyFormat' => '¤ #,##,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -52,10 +53,10 @@ return array (
     'XOF' => 'CFA',
     'XPF' => 'CFPF',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'জানুৱাৰী',
       2 => 'ফেব্ৰুৱাৰী',
       3 => 'মাৰ্চ',
@@ -69,8 +70,8 @@ return array (
       11 => 'নৱেম্বৰ',
       12 => 'ডিচেম্বৰ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'জানু',
       2 => 'ফেব্ৰু',
       3 => 'মাৰ্চ',
@@ -85,10 +86,10 @@ return array (
       12 => 'ডিসে',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -103,10 +104,10 @@ return array (
       12 => '12',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'দেওবাৰ',
       1 => 'সোমবাৰ',
       2 => 'মঙ্গলবাৰ',
@@ -115,8 +116,8 @@ return array (
       5 => 'শুক্ৰবাৰ',
       6 => 'শনিবাৰ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'ৰবি',
       1 => 'সোম',
       2 => 'মঙ্গল',
@@ -126,10 +127,10 @@ return array (
       6 => 'শনি',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'S',
       1 => 'M',
       2 => 'T',
@@ -139,33 +140,33 @@ return array (
       6 => 'S',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'BCE',
       1 => 'CE',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'BCE',
       1 => 'CE',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'BCE',
       1 => 'CE',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, d MMMM, y',
     'long' => 'd MMMM, y',
     'medium' => 'dd-MM-y',
     'short' => 'd-M-y',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'h.mm.ss a zzzz',
     'long' => 'h.mm.ss a z',
     'medium' => 'h.mm.ss a',
@@ -175,18 +176,18 @@ return array (
   'amName' => 'পূৰ্বাহ্ণ',
   'pmName' => 'অপৰাহ্ণ',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'as' => 'অসমীয়া',
     'ie' => 'উপস্থাপন ভাষা',
     'km' => 'কম্বোডিয়ান',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'beng' => 'বঙালী',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     'aq' => 'এন্টাৰ্টিকা',
     'br' => 'ব্ৰাজিল',
     'bv' => 'বভেট দ্বীপ',

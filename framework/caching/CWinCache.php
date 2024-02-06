@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CWinCache class file
  *
@@ -19,7 +20,8 @@
  * @package system.caching
  * @since 1.1.2
  */
-class CWinCache extends CCache {
+class CWinCache extends CCache
+{
 	/**
 	 * Initializes this application component.
 	 * This method is required by the {@link IApplicationComponent} interface.
@@ -29,9 +31,9 @@ class CWinCache extends CCache {
 	public function init()
 	{
 		parent::init();
-		if(!extension_loaded('wincache'))
+		if (!extension_loaded('wincache'))
 			throw new CException(Yii::t('yii', 'CWinCache requires PHP wincache extension to be loaded.'));
-		if(!ini_get('wincache.ucenabled'))
+		if (!ini_get('wincache.ucenabled'))
 			throw new CException(Yii::t('yii', 'CWinCache user cache is disabled. Please set wincache.ucenabled to On in your php.ini.'));
 	}
 
@@ -65,9 +67,9 @@ class CWinCache extends CCache {
 	 * @param integer $expire the number of seconds in which the cached value will expire. 0 means never expire.
 	 * @return boolean true if the value is successfully stored into cache, false otherwise
 	 */
-	protected function setValue($key,$value,$expire)
+	protected function setValue($key, $value, $expire)
 	{
-		return wincache_ucache_set($key,$value,$expire);
+		return wincache_ucache_set($key, $value, $expire);
 	}
 
 	/**
@@ -79,9 +81,9 @@ class CWinCache extends CCache {
 	 * @param integer $expire the number of seconds in which the cached value will expire. 0 means never expire.
 	 * @return boolean true if the value is successfully stored into cache, false otherwise
 	 */
-	protected function addValue($key,$value,$expire)
+	protected function addValue($key, $value, $expire)
 	{
-		return wincache_ucache_add($key,$value,$expire);
+		return wincache_ucache_add($key, $value, $expire);
 	}
 
 	/**

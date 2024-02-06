@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Russian translation for X-editable.
  * 

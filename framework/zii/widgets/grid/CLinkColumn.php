@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CLinkColumn class file.
  *
@@ -28,7 +29,7 @@ class CLinkColumn extends CGridColumn
 	 * be HTML-encoded when rendering. This property is ignored if {@link labelExpression} is set.
 	 * @see labelExpression
 	 */
-	public $label='Link';
+	public $label = 'Link';
 	/**
 	 * @var string a PHP expression that will be evaluated for every data cell and whose result will be rendered
 	 * as the label of the hyperlink of the data cell.
@@ -59,7 +60,7 @@ class CLinkColumn extends CGridColumn
 	 * This property is ignored if {@link urlExpression} is set.
 	 * @see urlExpression
 	 */
-	public $url='javascript:void(0)';
+	public $url = 'javascript:void(0)';
 	/**
 	 * @var string a PHP expression that will be evaluated for every data cell and whose result will be rendered
 	 * as the URL of the hyperlink of the data cells.
@@ -84,19 +85,19 @@ class CLinkColumn extends CGridColumn
 	/**
 	 * @var array the HTML options for the data cell tags.
 	 */
-	public $htmlOptions=array('class'=>'link-column');
+	public $htmlOptions = array('class' => 'link-column');
 	/**
 	 * @var array the HTML options for the header cell tag.
 	 */
-	public $headerHtmlOptions=array('class'=>'link-column');
+	public $headerHtmlOptions = array('class' => 'link-column');
 	/**
 	 * @var array the HTML options for the footer cell tag.
 	 */
-	public $footerHtmlOptions=array('class'=>'link-column');
+	public $footerHtmlOptions = array('class' => 'link-column');
 	/**
 	 * @var array the HTML options for the hyperlinks
 	 */
-	public $linkHtmlOptions=array();
+	public $linkHtmlOptions = array();
 
 	/**
 	 * Returns the data cell content.
@@ -107,19 +108,19 @@ class CLinkColumn extends CGridColumn
 	 */
 	public function getDataCellContent($row)
 	{
-		$data=$this->grid->dataProvider->data[$row];
-		if($this->urlExpression!==null)
-			$url=$this->evaluateExpression($this->urlExpression,array('data'=>$data,'row'=>$row));
+		$data = $this->grid->dataProvider->data[$row];
+		if ($this->urlExpression !== null)
+			$url = $this->evaluateExpression($this->urlExpression, array('data' => $data, 'row' => $row));
 		else
-			$url=$this->url;
-		if($this->labelExpression!==null)
-			$label=$this->evaluateExpression($this->labelExpression,array('data'=>$data,'row'=>$row));
+			$url = $this->url;
+		if ($this->labelExpression !== null)
+			$label = $this->evaluateExpression($this->labelExpression, array('data' => $data, 'row' => $row));
 		else
-			$label=$this->label;
-		$options=$this->linkHtmlOptions;
-		if(is_string($this->imageUrl))
-			return CHtml::link(CHtml::image($this->imageUrl,$label),$url,$options);
+			$label = $this->label;
+		$options = $this->linkHtmlOptions;
+		if (is_string($this->imageUrl))
+			return CHtml::link(CHtml::image($this->imageUrl, $label), $url, $options);
 		else
-			return CHtml::link($label,$url,$options);
+			return CHtml::link($label, $url, $options);
 	}
 }

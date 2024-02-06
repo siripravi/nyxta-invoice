@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'bg'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8663',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => ' ',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '#,##0.00 ¤',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -54,10 +55,10 @@ return array (
     'BGN' => 'лв.',
     'RUB' => 'Руб.',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'януари',
       2 => 'февруари',
       3 => 'март',
@@ -71,8 +72,8 @@ return array (
       11 => 'ноември',
       12 => 'декември',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'ян.',
       2 => 'февр.',
       3 => 'март',
@@ -87,10 +88,10 @@ return array (
       12 => 'дек.',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'я',
       2 => 'ф',
       3 => 'м',
@@ -105,10 +106,10 @@ return array (
       12 => 'д',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'неделя',
       1 => 'понеделник',
       2 => 'вторник',
@@ -117,8 +118,8 @@ return array (
       5 => 'петък',
       6 => 'събота',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'нд',
       1 => 'пн',
       2 => 'вт',
@@ -127,8 +128,8 @@ return array (
       5 => 'пт',
       6 => 'сб',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'нд',
       1 => 'пн',
       2 => 'вт',
@@ -138,10 +139,10 @@ return array (
       6 => 'сб',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'н',
       1 => 'п',
       2 => 'в',
@@ -150,8 +151,8 @@ return array (
       5 => 'п',
       6 => 'с',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'нд',
       1 => 'пн',
       2 => 'вт',
@@ -161,32 +162,32 @@ return array (
       6 => 'сб',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'пр. н. е.',
       1 => 'от н. е.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'пр.Хр.',
       1 => 'сл.Хр.',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       1 => 'сл.н.е.',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'dd MMMM y, EEEE',
     'long' => 'dd MMMM y',
     'medium' => 'dd.MM.y',
     'short' => 'dd.MM.yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -196,8 +197,8 @@ return array (
   'amName' => 'пр. об.',
   'pmName' => 'сл. об.',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'афар',
     'ab' => 'абхазски',
     'ace' => 'ачински',
@@ -709,8 +710,8 @@ return array (
     'zxx' => 'без лингвистично съдържание',
     'zza' => 'заза',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'Персийско-арабски',
     'armi' => 'Арамейска',
     'armn' => 'Арменска',
@@ -832,8 +833,8 @@ return array (
     'zyyy' => 'Обща',
     'zzzz' => 'Непозната или недействителна писменост',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'Земята',
     '002' => 'Африка',
     '003' => 'Северноамерикански континент',
@@ -1124,8 +1125,8 @@ return array (
     'zw' => 'Зимбабве',
     'zz' => 'Непозната или несъществуваща област',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

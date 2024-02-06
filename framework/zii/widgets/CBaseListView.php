@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CBaseListView class file.
  *
@@ -26,11 +27,11 @@ abstract class CBaseListView extends CWidget
 	/**
 	 * @var string the tag name for the view container. Defaults to 'div'.
 	 */
-	public $tagName='div';
+	public $tagName = 'div';
 	/**
 	 * @var array the HTML options for the view container tag.
 	 */
-	public $htmlOptions=array();
+	public $htmlOptions = array();
 	/**
 	 * @var boolean whether to enable sorting. Note that if the {@link IDataProvider::sort} property
 	 * of {@link dataProvider} is false, this will be treated as false as well. When sorting is enabled,
@@ -38,14 +39,14 @@ abstract class CBaseListView extends CWidget
 	 * Defaults to true.
 	 * @see sortableAttributes
 	 */
-	public $enableSorting=true;
+	public $enableSorting = true;
 	/**
 	 * @var boolean whether to enable pagination. Note that if the {@link IDataProvider::pagination} property
 	 * of {@link dataProvider} is false, this will be treated as false as well. When pagination is enabled,
 	 * a pager will be displayed in the view so that it can trigger pagination of the data display.
 	 * Defaults to true.
 	 */
-	public $enablePagination=true;
+	public $enablePagination = true;
 	/**
 	 * @var array|string the configuration for the pager. Defaults to <code>array('class'=>'CLinkPager')</code>.
 	 * String value will be treated as the class name of the pager (<code>'ClassName'</code> value is similar
@@ -53,13 +54,13 @@ abstract class CBaseListView extends CWidget
 	 * for more details about pager configuration array values.
 	 * @see enablePagination
 	 */
-	public $pager=array('class'=>'CLinkPager');
+	public $pager = array('class' => 'CLinkPager');
 	/**
 	 * @var string the template to be used to control the layout of various sections in the view.
 	 * These tokens are recognized: {summary}, {items} and {pager}. They will be replaced with the
 	 * summary text, the items, and the pager.
 	 */
-	public $template="{summary}\n{items}\n{pager}";
+	public $template = "{summary}\n{items}\n{pager}";
 	/**
 	 * @var string the summary text template for the view. These tokens are recognized and will be replaced
 	 * with the corresponding values:
@@ -76,7 +77,7 @@ abstract class CBaseListView extends CWidget
 	 * @var string the HTML tag name for the container of the {@link summaryText} property.
 	 * @since 1.1.16
 	 */
-	public $summaryTagName='div';
+	public $summaryTagName = 'div';
 	/**
 	 * @var string the message to be displayed when {@link dataProvider} does not have any data.
 	 */
@@ -84,34 +85,34 @@ abstract class CBaseListView extends CWidget
 	/**
 	 * @var string the HTML tag name for the container of the {@link emptyText} property.
 	 */
-	public $emptyTagName='span';
+	public $emptyTagName = 'span';
 	/**
 	 * @var string the CSS class name for the container of the {@link emptyText} property. Defaults to 'empty'.
 	 * @since 1.1.16
 	 */
-	public $emptyCssClass='empty';
+	public $emptyCssClass = 'empty';
 	/**
 	 * @var string the CSS class name for the container of all data item display. Defaults to 'items'.
 	 * Note, this property must not contain false, null or empty string values. Otherwise such values may
 	 * cause undefined behavior.
 	 */
-	public $itemsCssClass='items';
+	public $itemsCssClass = 'items';
 	/**
 	 * @var string the CSS class name for the summary text container. Defaults to 'summary'.
 	 */
-	public $summaryCssClass='summary';
+	public $summaryCssClass = 'summary';
 	/**
 	 * @var string the CSS class name for the pager container. Defaults to 'pager'.
 	 * Note, this property must not contain false, null or empty string values. Otherwise such values may
 	 * cause undefined behavior.
 	 */
-	public $pagerCssClass='pager';
+	public $pagerCssClass = 'pager';
 	/**
 	 * @var string the CSS class name that will be assigned to the widget container element
 	 * when the widget is updating its content via AJAX. Defaults to 'loading'.
 	 * @since 1.1.1
 	 */
-	public $loadingCssClass='loading';
+	public $loadingCssClass = 'loading';
 
 	/**
 	 * Initializes the view.
@@ -119,20 +120,20 @@ abstract class CBaseListView extends CWidget
 	 */
 	public function init()
 	{
-		if($this->dataProvider===null)
-			throw new CException(Yii::t('zii','The "dataProvider" property cannot be empty.'));
+		if ($this->dataProvider === null)
+			throw new CException(Yii::t('zii', 'The "dataProvider" property cannot be empty.'));
 
 		$this->dataProvider->getData();
 
-		if(isset($this->htmlOptions['id']))
-			$this->id=$this->htmlOptions['id'];
+		if (isset($this->htmlOptions['id']))
+			$this->id = $this->htmlOptions['id'];
 		else
-			$this->htmlOptions['id']=$this->id;
+			$this->htmlOptions['id'] = $this->id;
 
-		if($this->enableSorting && $this->dataProvider->getSort()===false)
-			$this->enableSorting=false;
-		if($this->enablePagination && $this->dataProvider->getPagination()===false)
-			$this->enablePagination=false;
+		if ($this->enableSorting && $this->dataProvider->getSort() === false)
+			$this->enableSorting = false;
+		if ($this->enablePagination && $this->dataProvider->getPagination() === false)
+			$this->enablePagination = false;
 	}
 
 	/**
@@ -144,7 +145,7 @@ abstract class CBaseListView extends CWidget
 	{
 		$this->registerClientScript();
 
-		echo CHtml::openTag($this->tagName,$this->htmlOptions)."\n";
+		echo CHtml::openTag($this->tagName, $this->htmlOptions) . "\n";
 
 		$this->renderContent();
 		$this->renderKeys();
@@ -161,7 +162,7 @@ abstract class CBaseListView extends CWidget
 	public function renderContent()
 	{
 		ob_start();
-		echo preg_replace_callback("/{(\w+)}/",array($this,'renderSection'),$this->template);
+		echo preg_replace_callback("/{(\w+)}/", array($this, 'renderSection'), $this->template);
 		ob_end_flush();
 	}
 
@@ -175,15 +176,13 @@ abstract class CBaseListView extends CWidget
 	 */
 	protected function renderSection($matches)
 	{
-		$method='render'.$matches[1];
-		if(method_exists($this,$method))
-		{
+		$method = 'render' . $matches[1];
+		if (method_exists($this, $method)) {
 			$this->$method();
-			$html=ob_get_contents();
+			$html = ob_get_contents();
 			ob_clean();
 			return $html;
-		}
-		else
+		} else
 			return $matches[0];
 	}
 
@@ -192,8 +191,8 @@ abstract class CBaseListView extends CWidget
 	 */
 	public function renderEmptyText()
 	{
-		$emptyText=$this->emptyText===null ? Yii::t('zii','No results found.') : $this->emptyText;
-		echo CHtml::tag($this->emptyTagName, array('class'=>$this->emptyCssClass), $emptyText);
+		$emptyText = $this->emptyText === null ? Yii::t('zii', 'No results found.') : $this->emptyText;
+		echo CHtml::tag($this->emptyTagName, array('class' => $this->emptyCssClass), $emptyText);
 	}
 
 	/**
@@ -201,13 +200,13 @@ abstract class CBaseListView extends CWidget
 	 */
 	public function renderKeys()
 	{
-		echo CHtml::openTag('div',array(
-			'class'=>'keys',
-			'style'=>'display:none',
-			'title'=>Yii::app()->getRequest()->getUrl(),
+		echo CHtml::openTag('div', array(
+			'class' => 'keys',
+			'style' => 'display:none',
+			'title' => Yii::app()->getRequest()->getUrl(),
 		));
-		foreach($this->dataProvider->getKeys() as $key)
-			echo "<span>".CHtml::encode($key)."</span>";
+		foreach ($this->dataProvider->getKeys() as $key)
+			echo "<span>" . CHtml::encode($key) . "</span>";
 		echo "</div>\n";
 	}
 
@@ -216,41 +215,37 @@ abstract class CBaseListView extends CWidget
 	 */
 	public function renderSummary()
 	{
-		if(($count=$this->dataProvider->getItemCount())<=0)
+		if (($count = $this->dataProvider->getItemCount()) <= 0)
 			return;
 
-		echo CHtml::openTag($this->summaryTagName, array('class'=>$this->summaryCssClass));
-		if($this->enablePagination)
-		{
-			$pagination=$this->dataProvider->getPagination();
-			$total=$this->dataProvider->getTotalItemCount();
-			$start=$pagination->currentPage*$pagination->pageSize+1;
-			$end=$start+$count-1;
-			if($end>$total)
-			{
-				$end=$total;
-				$start=$end-$count+1;
+		echo CHtml::openTag($this->summaryTagName, array('class' => $this->summaryCssClass));
+		if ($this->enablePagination) {
+			$pagination = $this->dataProvider->getPagination();
+			$total = $this->dataProvider->getTotalItemCount();
+			$start = $pagination->currentPage * $pagination->pageSize + 1;
+			$end = $start + $count - 1;
+			if ($end > $total) {
+				$end = $total;
+				$start = $end - $count + 1;
 			}
-			if(($summaryText=$this->summaryText)===null)
-				$summaryText=Yii::t('zii','Displaying {start}-{end} of 1 result.|Displaying {start}-{end} of {count} results.',$total);
-			echo strtr($summaryText,array(
-				'{start}'=>$start,
-				'{end}'=>$end,
-				'{count}'=>$total,
-				'{page}'=>$pagination->currentPage+1,
-				'{pages}'=>$pagination->pageCount,
+			if (($summaryText = $this->summaryText) === null)
+				$summaryText = Yii::t('zii', 'Displaying {start}-{end} of 1 result.|Displaying {start}-{end} of {count} results.', $total);
+			echo strtr($summaryText, array(
+				'{start}' => $start,
+				'{end}' => $end,
+				'{count}' => $total,
+				'{page}' => $pagination->currentPage + 1,
+				'{pages}' => $pagination->pageCount,
 			));
-		}
-		else
-		{
-			if(($summaryText=$this->summaryText)===null)
-				$summaryText=Yii::t('zii','Total 1 result.|Total {count} results.',$count);
-			echo strtr($summaryText,array(
-				'{count}'=>$count,
-				'{start}'=>1,
-				'{end}'=>$count,
-				'{page}'=>1,
-				'{pages}'=>1,
+		} else {
+			if (($summaryText = $this->summaryText) === null)
+				$summaryText = Yii::t('zii', 'Total 1 result.|Total {count} results.', $count);
+			echo strtr($summaryText, array(
+				'{count}' => $count,
+				'{start}' => 1,
+				'{end}' => $count,
+				'{page}' => 1,
+				'{pages}' => 1,
 			));
 		}
 		echo CHtml::closeTag($this->summaryTagName);
@@ -261,32 +256,28 @@ abstract class CBaseListView extends CWidget
 	 */
 	public function renderPager()
 	{
-		if(!$this->enablePagination)
+		if (!$this->enablePagination)
 			return;
 
-		$pager=array();
-		$class='CLinkPager';
-		if(is_string($this->pager))
-			$class=$this->pager;
-		elseif(is_array($this->pager))
-		{
-			$pager=$this->pager;
-			if(isset($pager['class']))
-			{
-				$class=$pager['class'];
+		$pager = array();
+		$class = 'CLinkPager';
+		if (is_string($this->pager))
+			$class = $this->pager;
+		elseif (is_array($this->pager)) {
+			$pager = $this->pager;
+			if (isset($pager['class'])) {
+				$class = $pager['class'];
 				unset($pager['class']);
 			}
 		}
-		$pager['pages']=$this->dataProvider->getPagination();
+		$pager['pages'] = $this->dataProvider->getPagination();
 
-		if($pager['pages']->getPageCount()>1)
-		{
-			echo '<div class="'.$this->pagerCssClass.'">';
-			$this->widget($class,$pager);
+		if ($pager['pages']->getPageCount() > 1) {
+			echo '<div class="' . $this->pagerCssClass . '">';
+			$this->widget($class, $pager);
 			echo '</div>';
-		}
-		else
-			$this->widget($class,$pager);
+		} else
+			$this->widget($class, $pager);
 	}
 
 	/**

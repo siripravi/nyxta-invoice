@@ -183,10 +183,10 @@ if (Yii::app()->request->isAjaxRequest) {
           ),
           //  'deleteConfirmation'=>'Está seguro que desea terminar la sesión seleccionada?',
           //  'deleteButtonUrl'=>'$this->grid->owner->createUrl("productSession/delete", $data->primaryKey)'
-        
+
 
           //   'htmlOptions' => array('class' => "table table-hover")
-        
+
           'htmlOptions' => array('class' => 'table table-hover')
         ));
         ?>
@@ -196,7 +196,8 @@ if (Yii::app()->request->isAjaxRequest) {
 </div>
 <?php
 Yii::app()->clientScript->registerScript(
-  'pay-status', "$('.btn-paid').click( 
+  'pay-status',
+  "$('.btn-paid').click( 
         function(){
         if ($(this).is(':checked')) {
         alert( $(this).val());

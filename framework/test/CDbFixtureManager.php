@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file contains the CDbFixtureManager class.
  *
@@ -44,13 +45,13 @@ class CDbFixtureManager extends CApplicationComponent
 	 * @var string the name of the initialization script that would be executed before the whole test set runs.
 	 * Defaults to 'init.php'. If the script does not exist, every table with a fixture file will be reset.
 	 */
-	public $initScript='init.php';
+	public $initScript = 'init.php';
 	/**
 	 * @var string the suffix for fixture initialization scripts.
 	 * If a table is associated with such a script whose name is TableName suffixed this property value,
 	 * then the script will be executed each time before the table is reset.
 	 */
-	public $initScriptSuffix='.init.php';
+	public $initScriptSuffix = '.init.php';
 	/**
 	 * @var string the base path containing all fixtures. Defaults to null, meaning
 	 * the path 'protected/tests/fixtures'.
@@ -61,14 +62,14 @@ class CDbFixtureManager extends CApplicationComponent
 	 * Note, data in this database may be deleted or modified during testing.
 	 * Make sure you have a backup database.
 	 */
-	public $connectionID='db';
+	public $connectionID = 'db';
 	/**
 	 * @var array list of database schemas that the test tables may reside in. Defaults to
 	 * array(''), meaning using the default schema (an empty string refers to the
 	 * default schema). This property is mainly used when turning on and off integrity checks
 	 * so that fixture data can be populated into the database without causing problem.
 	 */
-	public $schemas=array('');
+	public $schemas = array('');
 
 	private $_db;
 	private $_fixtures;
@@ -82,8 +83,8 @@ class CDbFixtureManager extends CApplicationComponent
 	public function init()
 	{
 		parent::init();
-		if($this->basePath===null)
-			$this->basePath=Yii::getPathOfAlias('application.tests.fixtures');
+		if ($this->basePath === null)
+			$this->basePath = Yii::getPathOfAlias('application.tests.fixtures');
 		$this->prepare();
 	}
 
@@ -94,12 +95,14 @@ class CDbFixtureManager extends CApplicationComponent
 	 */
 	public function getDbConnection()
 	{
-		if($this->_db===null)
-		{
-			$this->_db=Yii::app()->getComponent($this->connectionID);
-			if(!$this->_db instanceof CDbConnection)
-				throw new CException(Yii::t('yii','CDbTestFixture.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.',
-					array('{id}'=>$this->connectionID)));
+		if ($this->_db === null) {
+			$this->_db = Yii::app()->getComponent($this->connectionID);
+			if (!$this->_db instanceof CDbConnection)
+				throw new CException(Yii::t(
+					'yii',
+					'CDbTestFixture.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.',
+					array('{id}' => $this->connectionID)
+				));
 		}
 		return $this->_db;
 	}
@@ -111,16 +114,14 @@ class CDbFixtureManager extends CApplicationComponent
 	 */
 	public function prepare()
 	{
-		$initFile=$this->basePath . DIRECTORY_SEPARATOR . $this->initScript;
+		$initFile = $this->basePath . DIRECTORY_SEPARATOR . $this->initScript;
 
 		$this->checkIntegrity(false);
 
-		if(is_file($initFile))
+		if (is_file($initFile))
 			require($initFile);
-		else
-		{
-			foreach($this->getFixtures() as $tableName=>$fixturePath)
-			{
+		else {
+			foreach ($this->getFixtures() as $tableName => $fixturePath) {
 				$this->resetTable($tableName);
 				$this->loadFixture($tableName);
 			}
@@ -138,8 +139,8 @@ class CDbFixtureManager extends CApplicationComponent
 	 */
 	public function resetTable($tableName)
 	{
-		$initFile=$this->basePath . DIRECTORY_SEPARATOR . $tableName . $this->initScriptSuffix;
-		if(is_file($initFile))
+		$initFile = $this->basePath . DIRECTORY_SEPARATOR . $tableName . $this->initScriptSuffix;
+		if (is_file($initFile))
 			require($initFile);
 		else
 			$this->truncateTable($tableName);
@@ -159,40 +160,35 @@ class CDbFixtureManager extends CApplicationComponent
 	 */
 	public function loadFixture($tableName)
 	{
-		$fileName=$this->basePath.DIRECTORY_SEPARATOR.$tableName.'.php';
-		if(!is_file($fileName))
+		$fileName = $this->basePath . DIRECTORY_SEPARATOR . $tableName . '.php';
+		if (!is_file($fileName))
 			throw new CException('Could not load fixture file ' . $fileName);
 
-		$rows=array();
-		$schema=$this->getDbConnection()->getSchema();
-		$builder=$schema->getCommandBuilder();
-		$table=$schema->getTable($tableName);
+		$rows = array();
+		$schema = $this->getDbConnection()->getSchema();
+		$builder = $schema->getCommandBuilder();
+		$table = $schema->getTable($tableName);
 
-		foreach(require($fileName) as $alias=>$row)
-		{
+		foreach (require($fileName) as $alias => $row) {
 			try {
-				$builder->createInsertCommand($table,$row)->execute();
+				$builder->createInsertCommand($table, $row)->execute();
 			} catch (CException $e) {
 				throw new CException('Exception loading row ' . $alias . ' in fixture ' . $fileName, $e->getCode(), $e);
 			}
-			$primaryKey=$table->primaryKey;
-			if($table->sequenceName!==null)
-			{
-				if(is_string($primaryKey) && !isset($row[$primaryKey]))
-					$row[$primaryKey]=$builder->getLastInsertID($table);
-				elseif(is_array($primaryKey))
-				{
-					foreach($primaryKey as $pk)
-					{
-						if(!isset($row[$pk]))
-						{
-							$row[$pk]=$builder->getLastInsertID($table);
+			$primaryKey = $table->primaryKey;
+			if ($table->sequenceName !== null) {
+				if (is_string($primaryKey) && !isset($row[$primaryKey]))
+					$row[$primaryKey] = $builder->getLastInsertID($table);
+				elseif (is_array($primaryKey)) {
+					foreach ($primaryKey as $pk) {
+						if (!isset($row[$pk])) {
+							$row[$pk] = $builder->getLastInsertID($table);
 							break;
 						}
 					}
 				}
 			}
-			$rows[$alias]=$row;
+			$rows[$alias] = $row;
 		}
 		return $rows;
 	}
@@ -205,22 +201,19 @@ class CDbFixtureManager extends CApplicationComponent
 	 */
 	public function getFixtures()
 	{
-		if($this->_fixtures===null)
-		{
-			$this->_fixtures=array();
-			$schema=$this->getDbConnection()->getSchema();
-			$folder=opendir($this->basePath);
-			$suffixLen=strlen($this->initScriptSuffix);
-			while($file=readdir($folder))
-			{
-				if($file==='.' || $file==='..' || $file===$this->initScript)
+		if ($this->_fixtures === null) {
+			$this->_fixtures = array();
+			$schema = $this->getDbConnection()->getSchema();
+			$folder = opendir($this->basePath);
+			$suffixLen = strlen($this->initScriptSuffix);
+			while ($file = readdir($folder)) {
+				if ($file === '.' || $file === '..' || $file === $this->initScript)
 					continue;
-				$path=$this->basePath.DIRECTORY_SEPARATOR.$file;
-				if(substr($file,-4)==='.php' && is_file($path) && substr($file,-$suffixLen)!==$this->initScriptSuffix)
-				{
-					$tableName=substr($file,0,-4);
-					if($schema->getTable($tableName)!==null)
-						$this->_fixtures[$tableName]=$path;
+				$path = $this->basePath . DIRECTORY_SEPARATOR . $file;
+				if (substr($file, -4) === '.php' && is_file($path) && substr($file, -$suffixLen) !== $this->initScriptSuffix) {
+					$tableName = substr($file, 0, -4);
+					if ($schema->getTable($tableName) !== null)
+						$this->_fixtures[$tableName] = $path;
 				}
 			}
 			closedir($folder);
@@ -235,8 +228,8 @@ class CDbFixtureManager extends CApplicationComponent
 	 */
 	public function checkIntegrity($check)
 	{
-		foreach($this->schemas as $schema)
-			$this->getDbConnection()->getSchema()->checkIntegrity($check,$schema);
+		foreach ($this->schemas as $schema)
+			$this->getDbConnection()->getSchema()->checkIntegrity($check, $schema);
 	}
 
 	/**
@@ -248,14 +241,12 @@ class CDbFixtureManager extends CApplicationComponent
 	 */
 	public function truncateTable($tableName)
 	{
-		$db=$this->getDbConnection();
-		$schema=$db->getSchema();
-		if(($table=$schema->getTable($tableName))!==null)
-		{
-			$db->createCommand('DELETE FROM '.$table->rawName)->execute();
-			$schema->resetSequence($table,1);
-		}
-		else
+		$db = $this->getDbConnection();
+		$schema = $db->getSchema();
+		if (($table = $schema->getTable($tableName)) !== null) {
+			$db->createCommand('DELETE FROM ' . $table->rawName)->execute();
+			$schema->resetSequence($table, 1);
+		} else
 			throw new CException("Table '$tableName' does not exist.");
 	}
 
@@ -266,10 +257,10 @@ class CDbFixtureManager extends CApplicationComponent
 	 * @param string $schema the schema name. Defaults to empty string, meaning the default database schema.
 	 * @see truncateTable
 	 */
-	public function truncateTables($schema='')
+	public function truncateTables($schema = '')
 	{
-		$tableNames=$this->getDbConnection()->getSchema()->getTableNames($schema);
-		foreach($tableNames as $tableName)
+		$tableNames = $this->getDbConnection()->getSchema()->getTableNames($schema);
+		foreach ($tableNames as $tableName)
 			$this->truncateTable($tableName);
 	}
 
@@ -288,34 +279,28 @@ class CDbFixtureManager extends CApplicationComponent
 	 */
 	public function load($fixtures)
 	{
-		$schema=$this->getDbConnection()->getSchema();
+		$schema = $this->getDbConnection()->getSchema();
 		$schema->checkIntegrity(false);
 
-		$this->_rows=array();
-		$this->_records=array();
-		foreach($fixtures as $fixtureName=>$tableName)
-		{
-			if($tableName[0]===':')
-			{
-				$tableName=substr($tableName,1);
+		$this->_rows = array();
+		$this->_records = array();
+		foreach ($fixtures as $fixtureName => $tableName) {
+			if ($tableName[0] === ':') {
+				$tableName = substr($tableName, 1);
 				unset($modelClass);
+			} else {
+				$modelClass = Yii::import($tableName, true);
+				$tableName = CActiveRecord::model($modelClass)->tableName();
 			}
-			else
-			{
-				$modelClass=Yii::import($tableName,true);
-				$tableName=CActiveRecord::model($modelClass)->tableName();
-			}
-			if(($prefix=$this->getDbConnection()->tablePrefix)!==null)
-				$tableName=preg_replace('/{{(.*?)}}/',$prefix.'\1',$tableName);
+			if (($prefix = $this->getDbConnection()->tablePrefix) !== null)
+				$tableName = preg_replace('/{{(.*?)}}/', $prefix . '\1', $tableName);
 			$this->resetTable($tableName);
-			$rows=$this->loadFixture($tableName);
-			if(is_array($rows) && is_string($fixtureName))
-			{
-				$this->_rows[$fixtureName]=$rows;
-				if(isset($modelClass))
-				{
-					foreach(array_keys($rows) as $alias)
-						$this->_records[$fixtureName][$alias]=$modelClass;
+			$rows = $this->loadFixture($tableName);
+			if (is_array($rows) && is_string($fixtureName)) {
+				$this->_rows[$fixtureName] = $rows;
+				if (isset($modelClass)) {
+					foreach (array_keys($rows) as $alias)
+						$this->_records[$fixtureName][$alias] = $modelClass;
 				}
 			}
 		}
@@ -331,7 +316,7 @@ class CDbFixtureManager extends CApplicationComponent
 	 */
 	public function getRows($name)
 	{
-		if(isset($this->_rows[$name]))
+		if (isset($this->_rows[$name]))
 			return $this->_rows[$name];
 		else
 			return false;
@@ -343,27 +328,23 @@ class CDbFixtureManager extends CApplicationComponent
 	 * @param string $alias the alias for the fixture data row
 	 * @return CActiveRecord the ActiveRecord instance. False is returned if there is no such fixture row.
 	 */
-	public function getRecord($name,$alias)
+	public function getRecord($name, $alias)
 	{
-		if(isset($this->_records[$name][$alias]))
-		{
-			if(is_string($this->_records[$name][$alias]))
-			{
-				$row=$this->_rows[$name][$alias];
-				$model=CActiveRecord::model($this->_records[$name][$alias]);
-				$key=$model->getTableSchema()->primaryKey;
-				if(is_string($key))
-					$pk=$row[$key];
-				else
-				{
-					foreach($key as $k)
-						$pk[$k]=$row[$k];
+		if (isset($this->_records[$name][$alias])) {
+			if (is_string($this->_records[$name][$alias])) {
+				$row = $this->_rows[$name][$alias];
+				$model = CActiveRecord::model($this->_records[$name][$alias]);
+				$key = $model->getTableSchema()->primaryKey;
+				if (is_string($key))
+					$pk = $row[$key];
+				else {
+					foreach ($key as $k)
+						$pk[$k] = $row[$k];
 				}
-				$this->_records[$name][$alias]=$model->findByPk($pk);
+				$this->_records[$name][$alias] = $model->findByPk($pk);
 			}
 			return $this->_records[$name][$alias];
-		}
-		else
+		} else
 			return false;
 	}
 }

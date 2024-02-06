@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CMapIterator class file.
  *
@@ -38,9 +39,9 @@ class CMapIterator implements Iterator
 	 */
 	public function __construct(&$data)
 	{
-		$this->_d=&$data;
-		$this->_keys=array_keys($data);
-		$this->_key=reset($this->_keys);
+		$this->_d = &$data;
+		$this->_keys = array_keys($data);
+		$this->_key = reset($this->_keys);
 	}
 
 	/**
@@ -50,7 +51,7 @@ class CMapIterator implements Iterator
 	#[ReturnTypeWillChange]
 	public function rewind()
 	{
-		$this->_key=reset($this->_keys);
+		$this->_key = reset($this->_keys);
 	}
 
 	/**
@@ -82,7 +83,7 @@ class CMapIterator implements Iterator
 	#[ReturnTypeWillChange]
 	public function next()
 	{
-		$this->_key=next($this->_keys);
+		$this->_key = next($this->_keys);
 	}
 
 	/**
@@ -93,6 +94,6 @@ class CMapIterator implements Iterator
 	#[ReturnTypeWillChange]
 	public function valid()
 	{
-		return $this->_key!==false;
+		return $this->_key !== false;
 	}
 }

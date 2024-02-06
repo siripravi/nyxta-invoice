@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'ka'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8671',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => ' ',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0 %',
   'currencyFormat' => '#,##0.00 ¤',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'AUD',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'ZMW' => 'ZMW',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'იანვარი',
       2 => 'თებერვალი',
       3 => 'მარტი',
@@ -70,8 +71,8 @@ return array (
       11 => 'ნოემბერი',
       12 => 'დეკემბერი',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'იან',
       2 => 'თებ',
       3 => 'მარ',
@@ -85,8 +86,8 @@ return array (
       11 => 'ნოე',
       12 => 'დეკ',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       1 => 'ი',
       2 => 'თ',
       3 => 'მ',
@@ -101,10 +102,10 @@ return array (
       12 => 'დ',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'ი',
       2 => 'თ',
       3 => 'მ',
@@ -118,8 +119,8 @@ return array (
       11 => 'ნ',
       12 => 'დ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'იან',
       2 => 'თებ',
       3 => 'მარ',
@@ -133,8 +134,8 @@ return array (
       11 => 'ნოე',
       12 => 'დეკ',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       1 => 'იანვარი',
       2 => 'თებერვალი',
       3 => 'მარტი',
@@ -149,10 +150,10 @@ return array (
       12 => 'დეკემბერი',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'კვირა',
       1 => 'ორშაბათი',
       2 => 'სამშაბათი',
@@ -161,8 +162,8 @@ return array (
       5 => 'პარასკევი',
       6 => 'შაბათი',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'კვი',
       1 => 'ორშ',
       2 => 'სამ',
@@ -171,8 +172,8 @@ return array (
       5 => 'პარ',
       6 => 'შაბ',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'კ',
       1 => 'ო',
       2 => 'ს',
@@ -181,8 +182,8 @@ return array (
       5 => 'პ',
       6 => 'შ',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'კვ',
       1 => 'ორ',
       2 => 'სმ',
@@ -192,10 +193,10 @@ return array (
       6 => 'შბ',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'კ',
       1 => 'ო',
       2 => 'ს',
@@ -204,8 +205,8 @@ return array (
       5 => 'პ',
       6 => 'შ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'კვი',
       1 => 'ორშ',
       2 => 'სამ',
@@ -214,8 +215,8 @@ return array (
       5 => 'პარ',
       6 => 'შაბ',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'კვ',
       1 => 'ორ',
       2 => 'სმ',
@@ -224,8 +225,8 @@ return array (
       5 => 'პრ',
       6 => 'შბ',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'კვირა',
       1 => 'ორშაბათი',
       2 => 'სამშაბათი',
@@ -235,33 +236,33 @@ return array (
       6 => 'შაბათი',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'ძვ. წ.',
       1 => 'ახ. წ.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'ძველი წელთაღრიცხვით',
       1 => 'ახალი წელთაღრიცხვით',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'ჩვენს წელთაღრიცხვამდე',
       1 => 'ჩვენი წელთაღრიცხვით',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, dd MMMM, y',
     'long' => 'd MMMM, y',
     'medium' => 'd MMM, y',
     'short' => 'dd.MM.yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -271,8 +272,8 @@ return array (
   'amName' => 'AM',
   'pmName' => 'PM',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'აფარი',
     'ab' => 'აფხაზური',
     'ace' => 'აჩეხური',
@@ -663,8 +664,8 @@ return array (
     'zxx' => 'ლინგვისტური შიგთავსი არ არის',
     'zza' => 'ზაზაკი',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'afak' => 'აფაკა',
     'arab' => 'არაბული',
     'armi' => 'იმპერიული არამეული',
@@ -824,8 +825,8 @@ return array (
     'zyyy' => 'ზოგადი',
     'zzzz' => 'უცნობი დამწერლობა',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'მსოფლიო',
     '002' => 'აფრიკა',
     '003' => 'ჩრდილოეთ ამერიკა',

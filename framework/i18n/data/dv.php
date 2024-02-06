@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'dv'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2013 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '5030',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -30,8 +31,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##,##0%',
   'currencyFormat' => '¤ #,##,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AFN' => 'Af',
     'ANG' => 'NAf.',
     'AOA' => 'Kz',
@@ -196,10 +197,10 @@ return array (
     'ZWD' => 'Z$',
     'MVR' => 'ރ.',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -213,26 +214,8 @@ return array (
       11 => '11',
       12 => '12',
     ),
-    'abbreviated' => 
-    array (
-      1 => '1',
-      2 => '2',
-      3 => '3',
-      4 => '4',
-      5 => '5',
-      6 => '6',
-      7 => '7',
-      8 => '8',
-      9 => '9',
-      10 => '10',
-      11 => '11',
-      12 => '12',
-    ),
-  ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -247,10 +230,28 @@ return array (
       12 => '12',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
+      1 => '1',
+      2 => '2',
+      3 => '3',
+      4 => '4',
+      5 => '5',
+      6 => '6',
+      7 => '7',
+      8 => '8',
+      9 => '9',
+      10 => '10',
+      11 => '11',
+      12 => '12',
+    ),
+  ),
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => '1',
       1 => '2',
       2 => '3',
@@ -259,8 +260,8 @@ return array (
       5 => '6',
       6 => '7',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => '1',
       1 => '2',
       2 => '3',
@@ -270,10 +271,10 @@ return array (
       6 => '7',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => '1',
       1 => '2',
       2 => '3',
@@ -283,33 +284,33 @@ return array (
       6 => '7',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'BCE',
       1 => 'CE',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'BCE',
       1 => 'CE',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'BCE',
       1 => 'CE',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE d MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'dd-MM-yyyy',
     'short' => 'd-M-yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'hh:mm:ss a zzzz',
     'long' => 'hh:mm:ss a z',
     'medium' => 'hh:mm:ss a',

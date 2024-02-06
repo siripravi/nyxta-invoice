@@ -26,9 +26,9 @@
             <?php echo Yii::app()->dateFormatter->formatDateTime($relmod->ship_date, 'long', null); ?>
         </span><br />
 
-        <?php if ($relmod->paid === '1'): ?>
+        <?php if ($relmod->paid === '1') : ?>
             <span class="rtb">INVOICE IS PAID</span>
-        <?php else: ?>
+        <?php else : ?>
             <span class="rtb">Final Payment Due:</span>&nbsp;<span>
                 <?php echo $dueDate; ?>
             </span>
@@ -65,7 +65,7 @@
 
 
         <h3 class="name">Event/Delivery Place</h3>
-        <?php if ($relmod->venue->venue_id == 0): ?>
+        <?php if ($relmod->venue->venue_id == 0) : ?>
             <div id="hcard"><strong>
                     <?php echo $relmod->customer->first_name . ' ' . $relmod->customer->last_name; ?>
                 </strong>
@@ -86,7 +86,7 @@
                 </div>
             </div><!-- e: vcard -->
 
-        <?php else: ?>
+        <?php else : ?>
 
             <div class="vcard">
                 <div class="org"><strong>
@@ -110,18 +110,19 @@
 
                 </div>
             <?php endif; ?>
-        </div><!-- e: vcard -->
+            </div><!-- e: vcard -->
 
     </div>
 
 </section>
 
 
-<!--  <div class="title"><?php if (!$slip): ?>Invoice<?php else: ?>Packing Slip<?php endif; ?></div> -->
+<!--  <div class="title"><?php if (!$slip) : ?>Invoice<?php else : ?>Packing Slip<?php endif; ?></div> -->
 
 <main>
 
-    <?php //echo date('Y-m-d', strtotime($invoice->statement->CREATE_DATE ));?>
+    <?php //echo date('Y-m-d', strtotime($invoice->statement->CREATE_DATE ));
+    ?>
 
     <table autosize="1">
         <thead>
@@ -130,18 +131,18 @@
                 <th class="desc">description</th>
                 <th class="price">QTY</th>
                 <th class="qty">
-                    <?php if (!$slip): ?>price
-                    <?php endif; ?>
+                    <?php if (!$slip) : ?>price
+                <?php endif; ?>
                 </th>
                 <th class="total">
-                    <?php if (!$slip): ?>TOTAL
-                    <?php endif; ?>
+                    <?php if (!$slip) : ?>TOTAL
+                <?php endif; ?>
                 </th>
             </tr>
 
         </thead>
         <tbody>
-            <?php foreach ($items as $i => $item): ?>
+            <?php foreach ($items as $i => $item) : ?>
                 <tr>
                     <td class="srno">
                         <?php echo $start; ?>
@@ -154,7 +155,8 @@
                     <td class="desc">
                         <?php echo $lines; ?>
                     </td>
-                    <?php //endforeach;  ?>
+                    <?php //endforeach;  
+                    ?>
                     <td class="qty">
                         <?php echo (int) $item->quantity; ?>
                     </td>
@@ -168,13 +170,13 @@
                     </td>
                 </tr>
                 <tr>
-                    <?php $start += 1;
+                <?php $start += 1;
             endforeach; ?>
         <tfoot>
             <?php echo $page++; ?>{PAGENO}
-            <?php if (!$slip): ?>
+            <?php if (!$slip) : ?>
 
-                <?php if ($grandtotal): ?>
+                <?php if ($grandtotal) : ?>
                     <tr>
                         <td colspan="4" class="subtotal">GRAND TOTAL</td>
                         <td class="total">
@@ -195,7 +197,7 @@
                         </td>
                     </tr>
 
-                <?php else: ?>
+                <?php else : ?>
                     <tr>
                         <td colspan="4" class="grand total">SUB TOTAL</td>
                         <td class="grand">

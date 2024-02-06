@@ -6,6 +6,7 @@
  * The followings are the available columns in table 'card_type':
  * @property integer $id
  * @property string $card_type
+ * 
  */
 class CardType extends CActiveRecord
 {
@@ -40,8 +41,7 @@ class CardType extends CActiveRecord
 	{
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
-		return array(
-		);
+		return array();
 	}
 
 	/**
@@ -76,9 +76,11 @@ class CardType extends CActiveRecord
 		$criteria->compare('id', $this->id);
 		$criteria->compare('card_type', $this->card_type, true);
 
-		return new CActiveDataProvider($this, array(
-			'criteria' => $criteria,
-		)
+		return new CActiveDataProvider(
+			$this,
+			array(
+				'criteria' => $criteria,
+			)
 		);
 	}
 

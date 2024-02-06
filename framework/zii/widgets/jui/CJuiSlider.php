@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CJuiSlider class file.
  *
@@ -47,7 +48,7 @@ class CJuiSlider extends CJuiWidget
 	/**
 	 * @var string the name of the container element that contains the slider. Defaults to 'div'.
 	 */
-	public $tagName='div';
+	public $tagName = 'div';
 	/**
 	 * @var integer determines the value of the slider, if there's only one handle. If there is more than one handle, determines the value of the first handle.
 	 */
@@ -59,18 +60,18 @@ class CJuiSlider extends CJuiWidget
 	 */
 	public function run()
 	{
-		$id=$this->getId();
-		if(isset($this->htmlOptions['id']))
-			$id=$this->htmlOptions['id'];
+		$id = $this->getId();
+		if (isset($this->htmlOptions['id']))
+			$id = $this->htmlOptions['id'];
 		else
-			$this->htmlOptions['id']=$id;
+			$this->htmlOptions['id'] = $id;
 
-		echo CHtml::tag($this->tagName,$this->htmlOptions,'');
+		echo CHtml::tag($this->tagName, $this->htmlOptions, '');
 
-		if($this->value!==null)
-			$this->options['value']=$this->value;
+		if ($this->value !== null)
+			$this->options['value'] = $this->value;
 
-		$options=CJavaScript::encode($this->options);
-		Yii::app()->getClientScript()->registerScript(__CLASS__.'#'.$id,"jQuery('#{$id}').slider($options);");
+		$options = CJavaScript::encode($this->options);
+		Yii::app()->getClientScript()->registerScript(__CLASS__ . '#' . $id, "jQuery('#{$id}').slider($options);");
 	}
 }

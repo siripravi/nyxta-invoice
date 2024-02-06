@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CDbColumnSchema class file.
  *
@@ -65,14 +66,14 @@ class CDbColumnSchema extends CComponent
 	 * @var boolean whether this column is auto-incremental
 	 * @since 1.1.7
 	 */
-	public $autoIncrement=false;
+	public $autoIncrement = false;
 	/**
 	 * @var string comment of this column. Default value is empty string which means that no comment
 	 * has been set for the column. Null value means that RDBMS does not support column comments
 	 * at all (SQLite) or comment retrieval for the active RDBMS is not yet supported by the framework.
 	 * @since 1.1.13
 	 */
-	public $comment='';
+	public $comment = '';
 
 	/**
 	 * Initializes the column with its DB type and default value.
@@ -82,10 +83,10 @@ class CDbColumnSchema extends CComponent
 	 */
 	public function init($dbType, $defaultValue)
 	{
-		$this->dbType=$dbType;
+		$this->dbType = $dbType;
 		$this->extractType($dbType);
 		$this->extractLimit($dbType);
-		if($defaultValue!==null)
+		if ($defaultValue !== null)
 			$this->extractDefault($defaultValue);
 	}
 
@@ -95,14 +96,14 @@ class CDbColumnSchema extends CComponent
 	 */
 	protected function extractType($dbType)
 	{
-		if(stripos($dbType,'int')!==false && stripos($dbType,'unsigned int')===false)
-			$this->type='integer';
-		elseif(stripos($dbType,'bool')!==false)
-			$this->type='boolean';
-		elseif(preg_match('/(real|floa|doub)/i',$dbType))
-			$this->type='double';
+		if (stripos($dbType, 'int') !== false && stripos($dbType, 'unsigned int') === false)
+			$this->type = 'integer';
+		elseif (stripos($dbType, 'bool') !== false)
+			$this->type = 'boolean';
+		elseif (preg_match('/(real|floa|doub)/i', $dbType))
+			$this->type = 'double';
 		else
-			$this->type='string';
+			$this->type = 'string';
 	}
 
 	/**
@@ -111,12 +112,11 @@ class CDbColumnSchema extends CComponent
 	 */
 	protected function extractLimit($dbType)
 	{
-		if(strpos($dbType,'(') && preg_match('/\((.*)\)/',$dbType,$matches))
-		{
-			$values=explode(',',$matches[1]);
-			$this->size=$this->precision=(int)$values[0];
-			if(isset($values[1]))
-				$this->scale=(int)$values[1];
+		if (strpos($dbType, '(') && preg_match('/\((.*)\)/', $dbType, $matches)) {
+			$values = explode(',', $matches[1]);
+			$this->size = $this->precision = (int)$values[0];
+			if (isset($values[1]))
+				$this->scale = (int)$values[1];
 		}
 	}
 
@@ -127,7 +127,7 @@ class CDbColumnSchema extends CComponent
 	 */
 	protected function extractDefault($defaultValue)
 	{
-		$this->defaultValue=$this->typecast($defaultValue);
+		$this->defaultValue = $this->typecast($defaultValue);
 	}
 
 	/**
@@ -137,17 +137,20 @@ class CDbColumnSchema extends CComponent
 	 */
 	public function typecast($value)
 	{
-		if(gettype($value)===$this->type || $value===null || $value instanceof CDbExpression)
+		if (gettype($value) === $this->type || $value === null || $value instanceof CDbExpression)
 			return $value;
-		if($value==='' && $this->allowNull)
-			return $this->type==='string' ? '' : null;
-		switch($this->type)
-		{
-			case 'string': return (string)$value;
-			case 'integer': return (integer)$value;
-			case 'boolean': return (boolean)$value;
+		if ($value === '' && $this->allowNull)
+			return $this->type === 'string' ? '' : null;
+		switch ($this->type) {
+			case 'string':
+				return (string)$value;
+			case 'integer':
+				return (int)$value;
+			case 'boolean':
+				return (bool)$value;
 			case 'double':
-			default: return $value;
+			default:
+				return $value;
 		}
 	}
 }

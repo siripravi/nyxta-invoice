@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'gsw'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => '’',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0 %',
   'currencyFormat' => '#,##0.00 ¤',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -54,10 +55,10 @@ return array (
     'ATS' => 'öS',
     'CHF' => 'CHF',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Januar',
       2 => 'Februar',
       3 => 'März',
@@ -71,8 +72,8 @@ return array (
       11 => 'Novämber',
       12 => 'Dezämber',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Jan',
       2 => 'Feb',
       3 => 'Mär',
@@ -87,10 +88,10 @@ return array (
       12 => 'Dez',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'J',
       2 => 'F',
       3 => 'M',
@@ -105,10 +106,10 @@ return array (
       12 => 'D',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Sunntig',
       1 => 'Määntig',
       2 => 'Ziischtig',
@@ -117,8 +118,8 @@ return array (
       5 => 'Friitig',
       6 => 'Samschtig',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Su.',
       1 => 'Mä.',
       2 => 'Zi.',
@@ -128,10 +129,10 @@ return array (
       6 => 'Sa.',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'S',
       1 => 'M',
       2 => 'D',
@@ -141,33 +142,33 @@ return array (
       6 => 'S',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'v. Chr.',
       1 => 'n. Chr.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'v. Chr.',
       1 => 'n. Chr.',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'v. Chr.',
       1 => 'n. Chr.',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, d. MMMM y',
     'long' => 'd. MMMM y',
     'medium' => 'dd.MM.y',
     'short' => 'dd.MM.yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -177,8 +178,8 @@ return array (
   'amName' => 'vorm.',
   'pmName' => 'nam.',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'Afar',
     'ab' => 'Abchasisch',
     'ace' => 'Aceh',
@@ -692,8 +693,8 @@ return array (
     'zxx' => 'Kän schpraachliche Inhalt',
     'zza' => 'Zaza',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'Arabisch',
     'armi' => 'Armi',
     'armn' => 'Armenisch',
@@ -817,8 +818,8 @@ return array (
     'zyyy' => 'Unbeschtimmt',
     'zzzz' => 'Uncodiirti Schrift',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'Wält',
     '002' => 'Afrika',
     '003' => 'Nordameerika',
@@ -1105,8 +1106,8 @@ return array (
     'zw' => 'Simbabwe',
     'zz' => 'Unbekannti oder ungültigi Regioon',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

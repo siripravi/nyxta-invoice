@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CStarRating class file.
  *
@@ -32,19 +33,19 @@ class CStarRating extends CInputWidget
 	/**
 	 * @var integer the number of stars. Defaults to 5.
 	 */
-	public $starCount=5;
+	public $starCount = 5;
 	/**
 	 * @var mixed the minimum rating allowed. This can be either an integer or a float value. Defaults to 1.
 	 */
-	public $minRating=1;
+	public $minRating = 1;
 	/**
 	 * @var mixed the maximum rating allowed. This can be either an integer or a float value. Defaults to 10.
 	 */
-	public $maxRating=10;
+	public $maxRating = 10;
 	/**
 	 * @var mixed the step size of rating. This is the minimum difference between two rating values. Defaults to 1.
 	 */
-	public $ratingStepSize=1;
+	public $ratingStepSize = 1;
 	/**
 	 * @var mixed the CSS file used for the widget. Defaults to null, meaning
 	 * using the default CSS file included together with the widget.
@@ -100,18 +101,18 @@ class CStarRating extends CInputWidget
 	 */
 	public function run()
 	{
-		list($name,$id)=$this->resolveNameID();
-		if(isset($this->htmlOptions['id']))
-			$id=$this->htmlOptions['id'];
+		list($name, $id) = $this->resolveNameID();
+		if (isset($this->htmlOptions['id']))
+			$id = $this->htmlOptions['id'];
 		else
-			$this->htmlOptions['id']=$id;
-		if(isset($this->htmlOptions['name']))
-			$name=$this->htmlOptions['name'];
+			$this->htmlOptions['id'] = $id;
+		if (isset($this->htmlOptions['name']))
+			$name = $this->htmlOptions['name'];
 
 		$this->registerClientScript($id);
 
-		echo CHtml::openTag('span',$this->htmlOptions)."\n";
-		$this->renderStars($id,$name);
+		echo CHtml::openTag('span', $this->htmlOptions) . "\n";
+		$this->renderStars($id, $name);
 		echo "</span>";
 	}
 
@@ -121,14 +122,14 @@ class CStarRating extends CInputWidget
 	 */
 	public function registerClientScript($id)
 	{
-		$jsOptions=$this->getClientOptions();
-		$jsOptions=empty($jsOptions) ? '' : CJavaScript::encode($jsOptions);
-		$js="jQuery('#{$id} > input').rating({$jsOptions});";
-		$cs=Yii::app()->getClientScript();
+		$jsOptions = $this->getClientOptions();
+		$jsOptions = empty($jsOptions) ? '' : CJavaScript::encode($jsOptions);
+		$js = "jQuery('#{$id} > input').rating({$jsOptions});";
+		$cs = Yii::app()->getClientScript();
 		$cs->registerCoreScript('rating');
-		$cs->registerScript('Yii.CStarRating#'.$id,$js);
+		$cs->registerScript('Yii.CStarRating#' . $id, $js);
 
-		if($this->cssFile!==false)
+		if ($this->cssFile !== false)
 			self::registerCssFile($this->cssFile);
 	}
 
@@ -136,11 +137,11 @@ class CStarRating extends CInputWidget
 	 * Registers the needed CSS file.
 	 * @param string $url the CSS URL. If null, a default CSS URL will be used.
 	 */
-	public static function registerCssFile($url=null)
+	public static function registerCssFile($url = null)
 	{
-		$cs=Yii::app()->getClientScript();
-		if($url===null)
-			$url=$cs->getCoreScriptUrl().'/rating/jquery.rating.css';
+		$cs = Yii::app()->getClientScript();
+		if ($url === null)
+			$url = $cs->getCoreScriptUrl() . '/rating/jquery.rating.css';
 		$cs->registerCssFile($url);
 	}
 
@@ -149,28 +150,25 @@ class CStarRating extends CInputWidget
 	 * @param string $id the ID of the container
 	 * @param string $name the name of the input
 	 */
-	protected function renderStars($id,$name)
+	protected function renderStars($id, $name)
 	{
-		$inputCount=(int)(($this->maxRating-$this->minRating)/$this->ratingStepSize+1);
-		$starSplit=(int)($inputCount/$this->starCount);
-		if($this->hasModel())
-		{
-			$attr=$this->attribute;
-			CHtml::resolveName($this->model,$attr);
-			$selection=$this->model->$attr;
-		}
-		else
-			$selection=$this->value;
-		$options=$starSplit>1 ? array('class'=>"{split:{$starSplit}}") : array();
-		for($value=$this->minRating, $i=0;$i<$inputCount; ++$i, $value+=$this->ratingStepSize)
-		{
-			$options['id']=$id.'_'.$i;
-			$options['value']=$value;
-			if(isset($this->titles[$value]))
-				$options['title']=$this->titles[$value];
+		$inputCount = (int)(($this->maxRating - $this->minRating) / $this->ratingStepSize + 1);
+		$starSplit = (int)($inputCount / $this->starCount);
+		if ($this->hasModel()) {
+			$attr = $this->attribute;
+			CHtml::resolveName($this->model, $attr);
+			$selection = $this->model->$attr;
+		} else
+			$selection = $this->value;
+		$options = $starSplit > 1 ? array('class' => "{split:{$starSplit}}") : array();
+		for ($value = $this->minRating, $i = 0; $i < $inputCount; ++$i, $value += $this->ratingStepSize) {
+			$options['id'] = $id . '_' . $i;
+			$options['value'] = $value;
+			if (isset($this->titles[$value]))
+				$options['title'] = $this->titles[$value];
 			else
 				unset($options['title']);
-			echo CHtml::radioButton($name,!strcmp($value,(string)$selection),$options) . "\n";
+			echo CHtml::radioButton($name, !strcmp($value, (string)$selection), $options) . "\n";
 		}
 	}
 
@@ -179,25 +177,23 @@ class CStarRating extends CInputWidget
 	 */
 	protected function getClientOptions()
 	{
-		$options=array();
-		if($this->resetText!==null)
-			$options['cancel']=$this->resetText;
-		if($this->resetValue!==null)
-			$options['cancelValue']=$this->resetValue;
-		if($this->allowEmpty===false)
-			$options['required']=true;
-		if($this->starWidth!==null)
-			$options['starWidth']=$this->starWidth;
-		if($this->readOnly===true)
-			$options['readOnly']=true;
-		foreach(array('focus', 'blur', 'callback') as $event)
-		{
-			if($this->$event!==null)
-			{
-				if($this->$event instanceof CJavaScriptExpression)
-					$options[$event]=$this->$event;
+		$options = array();
+		if ($this->resetText !== null)
+			$options['cancel'] = $this->resetText;
+		if ($this->resetValue !== null)
+			$options['cancelValue'] = $this->resetValue;
+		if ($this->allowEmpty === false)
+			$options['required'] = true;
+		if ($this->starWidth !== null)
+			$options['starWidth'] = $this->starWidth;
+		if ($this->readOnly === true)
+			$options['readOnly'] = true;
+		foreach (array('focus', 'blur', 'callback') as $event) {
+			if ($this->$event !== null) {
+				if ($this->$event instanceof CJavaScriptExpression)
+					$options[$event] = $this->$event;
 				else
-					$options[$event]=new CJavaScriptExpression($this->$event);
+					$options[$event] = new CJavaScriptExpression($this->$event);
 			}
 		}
 		return $options;

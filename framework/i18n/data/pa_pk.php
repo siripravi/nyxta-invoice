@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'pa_PK'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2013 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '4123',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -30,8 +31,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##,##0%',
   'currencyFormat' => '¤ #,##,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AFN' => 'Af',
     'ANG' => 'NAf.',
     'AOA' => 'Kz',
@@ -195,10 +196,10 @@ return array (
     'ZRZ' => 'ZRZ',
     'ZWD' => 'Z$',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'ਜਨਵਰੀ',
       2 => 'ਫ਼ਰਵਰੀ',
       3 => 'ਮਾਰਚ',
@@ -212,8 +213,8 @@ return array (
       11 => 'ਨਵੰਬਰ',
       12 => 'ਦਸੰਬਰ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -228,10 +229,10 @@ return array (
       12 => '12',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'ਜ',
       2 => 'ਫ',
       3 => 'ਮਾ',
@@ -246,10 +247,10 @@ return array (
       12 => 'ਦ',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'ਐਤਵਾਰ',
       1 => 'ਸੋਮਵਾਰ',
       2 => 'ਮੰਗਲਵਾਰ',
@@ -258,8 +259,8 @@ return array (
       5 => 'ਸ਼ੁੱਕਰਵਾਰ',
       6 => 'ਸ਼ਨੀਚਰਵਾਰ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'ਐਤ.',
       1 => 'ਸੋਮ.',
       2 => 'ਮੰਗਲ.',
@@ -269,10 +270,10 @@ return array (
       6 => 'ਸ਼ਨੀ.',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'ਐ',
       1 => 'ਸੋ',
       2 => 'ਮੰ',
@@ -282,33 +283,33 @@ return array (
       6 => 'ਸ਼',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'ਈਸਾਪੂਰਵ',
       1 => 'ਸੰਨ',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'ਈਸਾਪੂਰਵ',
       1 => 'ਸੰਨ',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'ਈਸਾਪੂਰਵ',
       1 => 'ਸੰਨ',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, dd MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'd MMM y',
     'short' => 'dd/MM/yyyy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'h:mm:ss a zzzz',
     'long' => 'h:mm:ss a z',
     'medium' => 'h:mm:ss a',
@@ -318,8 +319,8 @@ return array (
   'amName' => 'ਸਵੇਰੇ',
   'pmName' => 'ਸ਼ਾਮ',
   'orientation' => 'ltr',
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

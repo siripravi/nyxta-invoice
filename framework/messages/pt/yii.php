@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -16,7 +17,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   'Action class {class} must implement the "run" method.' => 'A classe Action {class} deve implementar o método "run".',
   'CDbCommand::execute() failed: {error}. The SQL statement executed was: {sql}.' => 'Falha ao executar CDbCommand::execute(): {error}. A declaração SQL executada foi: {sql}.',
   'CDbCommand::{method}() failed: {error}. The SQL statement executed was: {sql}.' => 'Falha ao executar CDbCommand::{method}(): {error}. A declaração SQL executada foi: {sql}.',

@@ -6,7 +6,7 @@ $kFld = $data->relModel->{$data->getKeyField()};
 $active = ((!empty($_GET['query'])) && ($_GET['query'] == $kFld)) ? " active" : "";
 $docUrl = Yii::app()->createAbsoluteUrl("support/index", array("query" => $kFld, "doc_type" => $data->relModel->st_type));
 ?>
-<?php if (!empty($kFld)): ?>
+<?php if (!empty($kFld)) : ?>
 
     <div class="list-group">
         <a class="list-group-item <?php echo $active; ?>" href="<?php echo $docUrl; ?>">

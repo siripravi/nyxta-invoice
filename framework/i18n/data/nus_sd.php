@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'nus_SD'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00;(¤#,##0.00)',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -52,10 +53,10 @@ return array (
     'XOF' => 'CFA',
     'XPF' => 'CFPF',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Tiop thar pɛt',
       2 => 'Pɛt',
       3 => 'Duɔ̱ɔ̱ŋ',
@@ -69,8 +70,8 @@ return array (
       11 => 'Kur',
       12 => 'Tio̱p in di̱i̱t',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Tiop',
       2 => 'Pɛt',
       3 => 'Duɔ̱ɔ̱',
@@ -85,10 +86,10 @@ return array (
       12 => 'Tid',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'T',
       2 => 'P',
       3 => 'D',
@@ -103,10 +104,10 @@ return array (
       12 => 'T',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Cäŋ kuɔth',
       1 => 'Jiec la̱t',
       2 => 'Rɛw lätni',
@@ -115,8 +116,8 @@ return array (
       5 => 'Dhieec lätni',
       6 => 'Bäkɛl lätni',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Cäŋ',
       1 => 'Jiec',
       2 => 'Rɛw',
@@ -126,10 +127,10 @@ return array (
       6 => 'Bäkɛl',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'C',
       1 => 'J',
       2 => 'R',
@@ -139,33 +140,33 @@ return array (
       6 => 'B',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'AY',
       1 => 'ƐY',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'A ka̱n Yecu ni dap',
       1 => 'Ɛ ca Yecu dap',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'AY',
       1 => 'ƐY',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE d MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'd MMM y',
     'short' => 'd/MM/y',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'zzzz h:mm:ss a',
     'long' => 'z h:mm:ss a',
     'medium' => 'h:mm:ss a',
@@ -175,8 +176,8 @@ return array (
   'amName' => 'RW',
   'pmName' => 'TŊ',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ak' => 'Thok aka̱ni',
     'am' => 'Thok bunyni',
     'ar' => 'Thok Jalabni',
@@ -223,8 +224,8 @@ return array (
     'zh' => 'Thok cayna',
     'zu' => 'Thok dhuluni',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     'ad' => 'Andora',
     'af' => 'Abganithtan',
     'ag' => 'Antiguaa kɛnɛ Barbuda',

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'ff_SN'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => ' ',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '#,##0.00 ¤',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -52,10 +53,10 @@ return array (
     'XOF' => 'CFA',
     'XPF' => 'CFPF',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'siilo',
       2 => 'colte',
       3 => 'mbooy',
@@ -69,8 +70,8 @@ return array (
       11 => 'jolal',
       12 => 'bowte',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'sii',
       2 => 'col',
       3 => 'mbo',
@@ -85,10 +86,10 @@ return array (
       12 => 'bow',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 's',
       2 => 'c',
       3 => 'm',
@@ -103,10 +104,10 @@ return array (
       12 => 'b',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'dewo',
       1 => 'aaɓnde',
       2 => 'mawbaare',
@@ -115,8 +116,8 @@ return array (
       5 => 'mawnde',
       6 => 'hoore-biir',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'dew',
       1 => 'aaɓ',
       2 => 'maw',
@@ -126,10 +127,10 @@ return array (
       6 => 'hbi',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'd',
       1 => 'a',
       2 => 'm',
@@ -139,33 +140,33 @@ return array (
       6 => 'h',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'H-I',
       1 => 'C-I',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Hade Iisa',
       1 => 'Caggal Iisa',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'H-I',
       1 => 'C-I',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE d MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'd MMM, y',
     'short' => 'd/M/y',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -175,8 +176,8 @@ return array (
   'amName' => 'subaka',
   'pmName' => 'kikiiɗe',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ak' => 'Akaan',
     'am' => 'Amarik',
     'ar' => 'Aarabeere',
@@ -223,8 +224,8 @@ return array (
     'zh' => 'Sinuwaare',
     'zu' => 'Suluŋkoore',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     'ad' => 'Anndoora',
     'ae' => 'Emiraat Araab Denntuɗe',
     'af' => 'Afganistaan',
@@ -451,8 +452,8 @@ return array (
     'zm' => 'Sammbi',
     'zw' => 'Simbaabuwe',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => '(n>=0&&n<=2)&&n!=2',
     1 => 'true',
   ),

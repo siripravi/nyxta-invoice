@@ -120,18 +120,20 @@ class SearchForm extends CFormModel
             //  
         }
 
-        return new CActiveDataProvider(new Invoice(), array(
-            'criteria' => $criteria,
-            'sort' => array(
-                'defaultOrder' => 'ship_date ASC',
-                // 'multisort'=>true, //maybe your solution!
-// 'attributes'=>array(
-//    'field_1','field_2', 'field_3','field_4','field_5'
-            ),
-            'pagination' => array(
-                'pageSize' => 50,
+        return new CActiveDataProvider(
+            new Invoice(),
+            array(
+                'criteria' => $criteria,
+                'sort' => array(
+                    'defaultOrder' => 'ship_date ASC',
+                    // 'multisort'=>true, //maybe your solution!
+                    // 'attributes'=>array(
+                    //    'field_1','field_2', 'field_3','field_4','field_5'
+                ),
+                'pagination' => array(
+                    'pageSize' => 50,
+                )
             )
-        )
         );
     }
 
@@ -158,5 +160,4 @@ class SearchForm extends CFormModel
 
         return $cond;
     }
-
 }

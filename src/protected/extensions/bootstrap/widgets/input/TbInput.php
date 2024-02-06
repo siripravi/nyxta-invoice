@@ -1,4 +1,5 @@
 <?php
+
 /**
  * TbInput class file.
  * @author Christoffer Niska <ChristofferNiska@gmail.com>
@@ -152,7 +153,6 @@ abstract class TbInput extends CInputWidget
 		if (isset($this->htmlOptions['hintOptions'])) {
 			$this->hintOptions = $this->htmlOptions['hintOptions'];
 			unset($this->htmlOptions['hintOptions']);
-
 		}
 
 		if (isset($this->htmlOptions['errorOptions'])) {

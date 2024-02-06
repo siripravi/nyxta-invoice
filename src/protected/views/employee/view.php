@@ -19,25 +19,27 @@ $this->menu = array(
 </h1>
 <?php
 
-$this->widget('zii.widgets.CDetailView', array(
-    'data' => $model,
-    'attributes' => array(
-        'id',
-        'empType.designation',
-        'title',
-        'first_name',
-        'last_name',
-        'address1',
-        'address2',
-        'city',
-        'state',
-        'postal_code',
-        'country',
-        'phone1',
-        'phone2',
-        'email',
-        'date_created',
-        'notes',
-    ),
-)
+$this->widget(
+    'zii.widgets.CDetailView',
+    array(
+        'data' => $model,
+        'attributes' => array(
+            'id',
+            'empType.designation',
+            'title',
+            'first_name',
+            'last_name',
+            'address1',
+            'address2',
+            'city',
+            'state',
+            'postal_code',
+            'country',
+            'phone1',
+            'phone2',
+            'email',
+            'date_created',
+            'notes',
+        ),
+    )
 );

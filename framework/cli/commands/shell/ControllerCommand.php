@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ControllerCommand class file.
  *
@@ -79,74 +80,68 @@ EOD;
 	 */
 	public function run($args)
 	{
-		if(!isset($args[0]))
-		{
+		if (!isset($args[0])) {
 			echo "Error: controller name is required.\n";
 			echo $this->getHelp();
 			return 1;
 		}
 
-		$module=Yii::app();
-		$controllerID=$args[0];
-		if(($pos=strrpos($controllerID,'/'))===false)
-		{
-			$controllerClass=ucfirst($controllerID).'Controller';
-			$controllerFile=$module->controllerPath.DIRECTORY_SEPARATOR.$controllerClass.'.php';
-			$controllerID[0]=strtolower($controllerID[0]);
-		}
-		else
-		{
-			$last=substr($controllerID,$pos+1);
-			$last[0]=strtolower($last[0]);
-			$pos2=strpos($controllerID,'/');
-			$first=substr($controllerID,0,$pos2);
-			$middle=$pos===$pos2?'':substr($controllerID,$pos2+1,$pos-$pos2);
+		$module = Yii::app();
+		$controllerID = $args[0];
+		if (($pos = strrpos($controllerID, '/')) === false) {
+			$controllerClass = ucfirst($controllerID) . 'Controller';
+			$controllerFile = $module->controllerPath . DIRECTORY_SEPARATOR . $controllerClass . '.php';
+			$controllerID[0] = strtolower($controllerID[0]);
+		} else {
+			$last = substr($controllerID, $pos + 1);
+			$last[0] = strtolower($last[0]);
+			$pos2 = strpos($controllerID, '/');
+			$first = substr($controllerID, 0, $pos2);
+			$middle = $pos === $pos2 ? '' : substr($controllerID, $pos2 + 1, $pos - $pos2);
 
-			$controllerClass=ucfirst($last).'Controller';
-			$controllerFile=($middle===''?'':$middle.'/').$controllerClass.'.php';
-			$controllerID=$middle===''?$last:$middle.'/'.$last;
-			if(($m=Yii::app()->getModule($first))!==null)
-				$module=$m;
-			else
-			{
-				$controllerFile=$first.'/'.$controllerClass.'.php';
-				$controllerID=$first.'/'.$controllerID;
+			$controllerClass = ucfirst($last) . 'Controller';
+			$controllerFile = ($middle === '' ? '' : $middle . '/') . $controllerClass . '.php';
+			$controllerID = $middle === '' ? $last : $middle . '/' . $last;
+			if (($m = Yii::app()->getModule($first)) !== null)
+				$module = $m;
+			else {
+				$controllerFile = $first . '/' . $controllerClass . '.php';
+				$controllerID = $first . '/' . $controllerID;
 			}
 
-			$controllerFile=$module->controllerPath.DIRECTORY_SEPARATOR.str_replace('/',DIRECTORY_SEPARATOR,$controllerFile);
+			$controllerFile = $module->controllerPath . DIRECTORY_SEPARATOR . str_replace('/', DIRECTORY_SEPARATOR, $controllerFile);
 		}
 
-		$args[]='index';
-		$actions=array_unique(array_splice($args,1));
+		$args[] = 'index';
+		$actions = array_unique(array_splice($args, 1));
 
-		$templatePath=$this->templatePath===null?YII_PATH.'/cli/views/shell/controller':$this->templatePath;
+		$templatePath = $this->templatePath === null ? YII_PATH . '/cli/views/shell/controller' : $this->templatePath;
 
-		$list=array(
-			basename($controllerFile)=>array(
-				'source'=>$templatePath.DIRECTORY_SEPARATOR.'controller.php',
-				'target'=>$controllerFile,
-				'callback'=>array($this,'generateController'),
-				'params'=>array($controllerClass, $actions),
+		$list = array(
+			basename($controllerFile) => array(
+				'source' => $templatePath . DIRECTORY_SEPARATOR . 'controller.php',
+				'target' => $controllerFile,
+				'callback' => array($this, 'generateController'),
+				'params' => array($controllerClass, $actions),
 			),
 		);
 
-		$viewPath=$module->viewPath.DIRECTORY_SEPARATOR.str_replace('/',DIRECTORY_SEPARATOR,$controllerID);
-		foreach($actions as $name)
-		{
-			$list[$name.'.php']=array(
-				'source'=>$templatePath.DIRECTORY_SEPARATOR.'view.php',
-				'target'=>$viewPath.DIRECTORY_SEPARATOR.$name.'.php',
-				'callback'=>array($this,'generateAction'),
-				'params'=>array('controller'=>$controllerClass, 'action'=>$name),
+		$viewPath = $module->viewPath . DIRECTORY_SEPARATOR . str_replace('/', DIRECTORY_SEPARATOR, $controllerID);
+		foreach ($actions as $name) {
+			$list[$name . '.php'] = array(
+				'source' => $templatePath . DIRECTORY_SEPARATOR . 'view.php',
+				'target' => $viewPath . DIRECTORY_SEPARATOR . $name . '.php',
+				'callback' => array($this, 'generateAction'),
+				'params' => array('controller' => $controllerClass, 'action' => $name),
 			);
 		}
 
 		$this->copyFiles($list);
 
-		if($module instanceof CWebModule)
-			$moduleID=$module->id.'/';
+		if ($module instanceof CWebModule)
+			$moduleID = $module->id . '/';
 		else
-			$moduleID='';
+			$moduleID = '';
 
 		echo <<<EOD
 
@@ -159,17 +154,17 @@ You may access it in the browser using the following URL:
 EOD;
 	}
 
-	public function generateController($source,$params)
+	public function generateController($source, $params)
 	{
-		if(!is_file($source))  // fall back to default ones
-			$source=YII_PATH.'/cli/views/shell/controller/'.basename($source);
-		return $this->renderFile($source,array('className'=>$params[0],'actions'=>$params[1]),true);
+		if (!is_file($source))  // fall back to default ones
+			$source = YII_PATH . '/cli/views/shell/controller/' . basename($source);
+		return $this->renderFile($source, array('className' => $params[0], 'actions' => $params[1]), true);
 	}
 
-	public function generateAction($source,$params)
+	public function generateAction($source, $params)
 	{
-		if(!is_file($source))  // fall back to default ones
-			$source=YII_PATH.'/cli/views/shell/controller/'.basename($source);
-		return $this->renderFile($source,$params,true);
+		if (!is_file($source))  // fall back to default ones
+			$source = YII_PATH . '/cli/views/shell/controller/' . basename($source);
+		return $this->renderFile($source, $params, true);
 	}
 }

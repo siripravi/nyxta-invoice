@@ -1,1 +1,1 @@
-<?php $this->renderPartial('_form', array('statement' => $statement, 'invoice' => $invoice)); ?>
+<?php $this->renderPartial('_form', array('statement' => $statement, 'invoice' => $invoice));

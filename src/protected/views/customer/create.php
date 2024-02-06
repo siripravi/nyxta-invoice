@@ -15,6 +15,7 @@ $this->menu = array(
 );
 ?>
 
-<?php //echo BsHtml::pageHeader('Create','Customer') ?>
+<?php //echo BsHtml::pageHeader('Create','Customer') 
+?>
 
 <?php $this->renderPartial('_form', array('model' => $model)); ?>

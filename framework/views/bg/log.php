@@ -6,19 +6,18 @@
 		</th>
 	</tr>
 	<tr style="background-color: #ccc;">
-	  <th style="width:120px">Време</th>
+		<th style="width:120px">Време</th>
 		<th>Ниво</th>
 		<th>Категория</th>
 		<th>Съобщение</th>
 	</tr>
-<?php
-foreach($data as $index=>$log)
-{
-	$color=($index%2)?'#F5F5F5':'#EBF8FE';
-	$message='<pre>'.CHtml::encode(wordwrap($log[0])).'</pre>';
-	$time=date('H:i:s.',(int)$log[3]).(int)(($log[3]-(int)$log[3])*1000000);
+	<?php
+	foreach ($data as $index => $log) {
+		$color = ($index % 2) ? '#F5F5F5' : '#EBF8FE';
+		$message = '<pre>' . CHtml::encode(wordwrap($log[0])) . '</pre>';
+		$time = date('H:i:s.', (int)$log[3]) . (int)(($log[3] - (int)$log[3]) * 1000000);
 
-	echo <<<EOD
+		echo <<<EOD
 	<tr style="background:{$color}">
 		<td align="center">{$time}</td>
 		<td>{$log[1]}</td>
@@ -26,7 +25,7 @@ foreach($data as $index=>$log)
 		<td>{$message}</td>
 	</tr>
 EOD;
-}
-?>
+	}
+	?>
 </table>
 <!-- end of log messages -->

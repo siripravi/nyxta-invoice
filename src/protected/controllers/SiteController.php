@@ -242,10 +242,11 @@ class SiteController extends Controller
         $model = new statement();
         $model->unsetAttributes(); // clear any default values
         $results = $model->freeSearch($keyword);
-        $this->renderPartial('_ajax_search', array(
-            'results' => $results,
-        )
+        $this->renderPartial(
+            '_ajax_search',
+            array(
+                'results' => $results,
+            )
         );
     }
-
 }

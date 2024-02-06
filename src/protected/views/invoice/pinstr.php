@@ -67,7 +67,7 @@
     </div>
     <div id="venue">
         <h3 class="name">Event/Delivery Place</h3>
-        <?php if ($model->statement->venue->venue_id == 0): ?>
+        <?php if ($model->statement->venue->venue_id == 0) : ?>
             <div id="xcustomer-title"><strong>
                     <?php echo $model->statement->customer->first_name . ' ' . $model->statement->customer->last_name; ?>
                 </strong>
@@ -88,7 +88,7 @@
                 </div>
             </div><!-- e: vcard -->
 
-        <?php else: ?>
+        <?php else : ?>
 
             <div class="vcard">
                 <div class="xcustomer-title"><strong>
@@ -131,9 +131,9 @@
             ?>
 
             <?php
-            foreach ($items as $i => $item):
+            foreach ($items as $i => $item) :
                 $class = ($i % 2 == 0) ? "even" : "odd";
-                ?>
+            ?>
 
                 <tr class="<?php echo $class; ?>">
                     <td class="item-name">

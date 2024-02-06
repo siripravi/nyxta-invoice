@@ -23,7 +23,6 @@ class m120506_211503_add_us_cities_list extends CDbMigration
 		foreach ($inserts as $insert) {
 			$this->execute(trim($insert));
 		}
-
 	}
 
 	public function down()

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -13,7 +14,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   0 => '0',
   'Virtual attribute {name} must specify "asc" and "desc" options.' => 'Virtualni atribut {name} mora specificirati "asc"- i "desc" opcije.',
   '"{path}" is not a valid directory.' => '"{path}" nije važeći direktorij.',

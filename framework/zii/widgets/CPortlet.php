@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CPortlet class file.
  *
@@ -36,11 +37,11 @@ class CPortlet extends CWidget
 	/**
 	 * @var string the tag name for the portlet container tag. Defaults to 'div'.
 	 */
-	public $tagName='div';
+	public $tagName = 'div';
 	/**
 	 * @var array the HTML attributes for the portlet container tag.
 	 */
-	public $htmlOptions=array('class'=>'portlet');
+	public $htmlOptions = array('class' => 'portlet');
 	/**
 	 * @var string the title of the portlet. Defaults to null.
 	 * When this is not set, Decoration will not be displayed.
@@ -50,20 +51,20 @@ class CPortlet extends CWidget
 	/**
 	 * @var string the CSS class for the decoration container tag. Defaults to 'portlet-decoration'.
 	 */
-	public $decorationCssClass='portlet-decoration';
+	public $decorationCssClass = 'portlet-decoration';
 	/**
 	 * @var string the CSS class for the portlet title tag. Defaults to 'portlet-title'.
 	 */
-	public $titleCssClass='portlet-title';
+	public $titleCssClass = 'portlet-title';
 	/**
 	 * @var string the CSS class for the content container tag. Defaults to 'portlet-content'.
 	 */
-	public $contentCssClass='portlet-content';
+	public $contentCssClass = 'portlet-content';
 	/**
 	 * @var boolean whether to hide the portlet when the body content is empty. Defaults to true.
 	 * @since 1.1.4
 	 */
-	public $hideOnEmpty=true;
+	public $hideOnEmpty = true;
 
 	private $_openTag;
 
@@ -77,15 +78,15 @@ class CPortlet extends CWidget
 		ob_start();
 		ob_implicit_flush(false);
 
-		if(isset($this->htmlOptions['id']))
-			$this->id=$this->htmlOptions['id'];
+		if (isset($this->htmlOptions['id']))
+			$this->id = $this->htmlOptions['id'];
 		else
-			$this->htmlOptions['id']=$this->id;
-		echo CHtml::openTag($this->tagName,$this->htmlOptions)."\n";
+			$this->htmlOptions['id'] = $this->id;
+		echo CHtml::openTag($this->tagName, $this->htmlOptions) . "\n";
 		$this->renderDecoration();
 		echo "<div class=\"{$this->contentCssClass}\">\n";
 
-		$this->_openTag=ob_get_contents();
+		$this->_openTag = ob_get_contents();
 		ob_clean();
 	}
 
@@ -95,8 +96,8 @@ class CPortlet extends CWidget
 	public function run()
 	{
 		$this->renderContent();
-		$content=ob_get_clean();
-		if($this->hideOnEmpty && trim($content)==='')
+		$content = ob_get_clean();
+		if ($this->hideOnEmpty && trim($content) === '')
 			return;
 		echo $this->_openTag;
 		echo $content;
@@ -110,8 +111,7 @@ class CPortlet extends CWidget
 	 */
 	protected function renderDecoration()
 	{
-		if($this->title!==null)
-		{
+		if ($this->title !== null) {
 			echo "<div class=\"{$this->decorationCssClass}\">\n";
 			echo "<div class=\"{$this->titleCssClass}\">{$this->title}</div>\n";
 			echo "</div>\n";

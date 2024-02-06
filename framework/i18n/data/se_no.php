@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'se_NO'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0 %',
   'currencyFormat' => '#,##0.00 ¤',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -55,10 +56,10 @@ return array (
     'NOK' => 'kr',
     'SEK' => 'Skr',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'ođđajagemánnu',
       2 => 'guovvamánnu',
       3 => 'njukčamánnu',
@@ -72,8 +73,8 @@ return array (
       11 => 'skábmamánnu',
       12 => 'juovlamánnu',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'ođđj',
       2 => 'guov',
       3 => 'njuk',
@@ -88,10 +89,10 @@ return array (
       12 => 'juov',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'O',
       2 => 'G',
       3 => 'N',
@@ -106,10 +107,10 @@ return array (
       12 => 'J',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'sotnabeaivi',
       1 => 'vuossárga',
       2 => 'maŋŋebárga',
@@ -118,8 +119,8 @@ return array (
       5 => 'bearjadat',
       6 => 'lávvardat',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'sotn',
       1 => 'vuos',
       2 => 'maŋ',
@@ -129,10 +130,10 @@ return array (
       6 => 'láv',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'S',
       1 => 'V',
       2 => 'M',
@@ -142,33 +143,33 @@ return array (
       6 => 'L',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'o.Kr.',
       1 => 'm.Kr.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'ovdal Kristtusa',
       1 => 'maŋŋel Kristtusa',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'o.Kr.',
       1 => 'm.Kr.',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'y MMMM d, EEEE',
     'long' => 'y MMMM d',
     'medium' => 'y MMM d',
     'short' => 'y-MM-dd',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -178,8 +179,8 @@ return array (
   'amName' => 'iđitbeaivet',
   'pmName' => 'eahketbeaivet',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ace' => 'acehgiella',
     'af' => 'afrikánsagiella',
     'an' => 'aragoniagiella',
@@ -296,8 +297,8 @@ return array (
     'zh_hans' => 'álki kiinágiella',
     'zh_hant' => 'árbevirolaš kiinnágiella',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'arába',
     'cyrl' => 'kyrillalaš',
     'grek' => 'greikkalaš',
@@ -311,8 +312,8 @@ return array (
     'zxxx' => 'orrut chállojuvvot',
     'zzzz' => 'dovdameahttun chállin',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'máilbmi',
     '002' => 'Afrihkká',
     '003' => 'dávvi-Amerihkká ja gaska-Amerihkká',
@@ -597,8 +598,8 @@ return array (
     'zw' => 'Zimbabwe',
     'zz' => 'dovdameahttun guovlu',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'n==2',
     2 => 'true',

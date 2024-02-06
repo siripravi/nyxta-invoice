@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CHttpSession class file.
  *
@@ -69,12 +70,12 @@
  * @package system.web
  * @since 1.0
  */
-class CHttpSession extends CApplicationComponent implements IteratorAggregate,ArrayAccess,Countable
+class CHttpSession extends CApplicationComponent implements IteratorAggregate, ArrayAccess, Countable
 {
 	/**
 	 * @var boolean whether the session should be automatically started when the session application component is initialized, defaults to true.
 	 */
-	public $autoStart=true;
+	public $autoStart = true;
 
 	/**
 	 * @var array Frozen session data
@@ -90,9 +91,9 @@ class CHttpSession extends CApplicationComponent implements IteratorAggregate,Ar
 	{
 		parent::init();
 
-		if($this->autoStart)
+		if ($this->autoStart)
 			$this->open();
-		register_shutdown_function(array($this,'close'));
+		register_shutdown_function(array($this, 'close'));
 	}
 
 	/**
@@ -114,18 +115,16 @@ class CHttpSession extends CApplicationComponent implements IteratorAggregate,Ar
 	 */
 	public function open()
 	{
-		if($this->getUseCustomStorage())
-			@session_set_save_handler(array($this,'openSession'),array($this,'closeSession'),array($this,'readSession'),array($this,'writeSession'),array($this,'destroySession'),array($this,'gcSession'));
+		if ($this->getUseCustomStorage())
+			@session_set_save_handler(array($this, 'openSession'), array($this, 'closeSession'), array($this, 'readSession'), array($this, 'writeSession'), array($this, 'destroySession'), array($this, 'gcSession'));
 
 		@session_start();
-		if(YII_DEBUG && session_id()=='')
-		{
-			$message=Yii::t('yii','Failed to start session.');
-			if(function_exists('error_get_last'))
-			{
-				$error=error_get_last();
-				if(isset($error['message']))
-					$message=$error['message'];
+		if (YII_DEBUG && session_id() == '') {
+			$message = Yii::t('yii', 'Failed to start session.');
+			if (function_exists('error_get_last')) {
+				$error = error_get_last();
+				if (isset($error['message']))
+					$message = $error['message'];
 			}
 			Yii::log($message, CLogger::LEVEL_WARNING, 'system.web.CHttpSession');
 		}
@@ -136,7 +135,7 @@ class CHttpSession extends CApplicationComponent implements IteratorAggregate,Ar
 	 */
 	public function close()
 	{
-		if(session_id()!=='')
+		if (session_id() !== '')
 			@session_write_close();
 	}
 
@@ -145,8 +144,7 @@ class CHttpSession extends CApplicationComponent implements IteratorAggregate,Ar
 	 */
 	public function destroy()
 	{
-		if(session_id()!=='')
-		{
+		if (session_id() !== '') {
 			@session_unset();
 			@session_destroy();
 		}
@@ -157,9 +155,9 @@ class CHttpSession extends CApplicationComponent implements IteratorAggregate,Ar
 	 */
 	public function getIsStarted()
 	{
-		if(function_exists('session_status'))
-			return session_status()===PHP_SESSION_ACTIVE;
-		return session_id()!=='';
+		if (function_exists('session_status'))
+			return session_status() === PHP_SESSION_ACTIVE;
+		return session_id() !== '';
 	}
 
 	/**
@@ -184,9 +182,9 @@ class CHttpSession extends CApplicationComponent implements IteratorAggregate,Ar
 	 * @param boolean $deleteOldSession Whether to delete the old associated session file or not.
 	 * @since 1.1.8
 	 */
-	public function regenerateID($deleteOldSession=false)
+	public function regenerateID($deleteOldSession = false)
 	{
-		if($this->getIsStarted())
+		if ($this->getIsStarted())
 			session_regenerate_id($deleteOldSession);
 	}
 
@@ -220,11 +218,14 @@ class CHttpSession extends CApplicationComponent implements IteratorAggregate,Ar
 	 */
 	public function setSavePath($value)
 	{
-		if(is_dir($value))
+		if (is_dir($value))
 			session_save_path($value);
 		else
-			throw new CException(Yii::t('yii','CHttpSession.savePath "{path}" is not a valid directory.',
-				array('{path}'=>$value)));
+			throw new CException(Yii::t(
+				'yii',
+				'CHttpSession.savePath "{path}" is not a valid directory.',
+				array('{path}' => $value)
+			));
 	}
 
 	/**
@@ -246,26 +247,23 @@ class CHttpSession extends CApplicationComponent implements IteratorAggregate,Ar
 	 */
 	public function setCookieParams($value)
 	{
-		$data=session_get_cookie_params();
+		$data = session_get_cookie_params();
 		extract($data);
 		extract($value);
 		$this->freeze();
-		if(isset($httponly) && isset($samesite))
-		{
-			if(version_compare(PHP_VERSION,'7.3.0','>='))
-				session_set_cookie_params(array('lifetime'=>$lifetime,'path'=>$path,'domain'=>$domain,'secure'=>$secure,'httponly'=>$httponly,'samesite'=>$samesite));
-			else
-			{
+		if (isset($httponly) && isset($samesite)) {
+			if (version_compare(PHP_VERSION, '7.3.0', '>='))
+				session_set_cookie_params(array('lifetime' => $lifetime, 'path' => $path, 'domain' => $domain, 'secure' => $secure, 'httponly' => $httponly, 'samesite' => $samesite));
+			else {
 				// Work around for setting sameSite cookie prior PHP 7.3
 				// https://stackoverflow.com/questions/39750906/php-setcookie-samesite-strict/46971326#46971326
 				$path .= '; samesite=' . $samesite;
-				session_set_cookie_params($lifetime,$path,$domain,$secure,$httponly);
+				session_set_cookie_params($lifetime, $path, $domain, $secure, $httponly);
 			}
-		}
-		else if(isset($httponly))
-			session_set_cookie_params($lifetime,$path,$domain,$secure,$httponly);
+		} else if (isset($httponly))
+			session_set_cookie_params($lifetime, $path, $domain, $secure, $httponly);
 		else
-			session_set_cookie_params($lifetime,$path,$domain,$secure);
+			session_set_cookie_params($lifetime, $path, $domain, $secure);
 		$this->unfreeze();
 	}
 
@@ -274,9 +272,9 @@ class CHttpSession extends CApplicationComponent implements IteratorAggregate,Ar
 	 */
 	public function getCookieMode()
 	{
-		if(ini_get('session.use_cookies')==='0')
+		if (ini_get('session.use_cookies') === '0')
 			return 'none';
-		elseif(ini_get('session.use_only_cookies')==='0')
+		elseif (ini_get('session.use_only_cookies') === '0')
 			return 'allow';
 		else
 			return 'only';
@@ -288,29 +286,23 @@ class CHttpSession extends CApplicationComponent implements IteratorAggregate,Ar
 	 */
 	public function setCookieMode($value)
 	{
-		if($value==='none')
-		{
+		if ($value === 'none') {
 			$this->freeze();
-			ini_set('session.use_cookies','0');
-			ini_set('session.use_only_cookies','0');
+			ini_set('session.use_cookies', '0');
+			ini_set('session.use_only_cookies', '0');
 			$this->unfreeze();
-		}
-		elseif($value==='allow')
-		{
+		} elseif ($value === 'allow') {
 			$this->freeze();
-			ini_set('session.use_cookies','1');
-			ini_set('session.use_only_cookies','0');
+			ini_set('session.use_cookies', '1');
+			ini_set('session.use_only_cookies', '0');
 			$this->unfreeze();
-		}
-		elseif($value==='only')
-		{
+		} elseif ($value === 'only') {
 			$this->freeze();
-			ini_set('session.use_cookies','1');
-			ini_set('session.use_only_cookies','1');
+			ini_set('session.use_cookies', '1');
+			ini_set('session.use_only_cookies', '1');
 			$this->unfreeze();
-		}
-		else
-			throw new CException(Yii::t('yii','CHttpSession.cookieMode can only be "none", "allow" or "only".'));
+		} else
+			throw new CException(Yii::t('yii', 'CHttpSession.cookieMode can only be "none", "allow" or "only".'));
 	}
 
 	/**
@@ -318,7 +310,7 @@ class CHttpSession extends CApplicationComponent implements IteratorAggregate,Ar
 	 */
 	public function getGCProbability()
 	{
-		return (float)(ini_get('session.gc_probability')/ini_get('session.gc_divisor')*100);
+		return (float)(ini_get('session.gc_probability') / ini_get('session.gc_divisor') * 100);
 	}
 
 	/**
@@ -327,17 +319,18 @@ class CHttpSession extends CApplicationComponent implements IteratorAggregate,Ar
 	 */
 	public function setGCProbability($value)
 	{
-		if($value>=0 && $value<=100)
-		{
+		if ($value >= 0 && $value <= 100) {
 			$this->freeze();
 			// percent * 21474837 / 2147483647 ≈ percent * 0.01
-			ini_set('session.gc_probability',floor($value*21474836.47));
-			ini_set('session.gc_divisor',2147483647);
+			ini_set('session.gc_probability', floor($value * 21474836.47));
+			ini_set('session.gc_divisor', 2147483647);
 			$this->unfreeze();
-		}
-		else
-			throw new CException(Yii::t('yii','CHttpSession.gcProbability "{value}" is invalid. It must be a float between 0 and 100.',
-				array('{value}'=>$value)));
+		} else
+			throw new CException(Yii::t(
+				'yii',
+				'CHttpSession.gcProbability "{value}" is invalid. It must be a float between 0 and 100.',
+				array('{value}' => $value)
+			));
 	}
 
 	/**
@@ -345,7 +338,7 @@ class CHttpSession extends CApplicationComponent implements IteratorAggregate,Ar
 	 */
 	public function getUseTransparentSessionID()
 	{
-		return ini_get('session.use_trans_sid')==1;
+		return ini_get('session.use_trans_sid') == 1;
 	}
 
 	/**
@@ -354,7 +347,7 @@ class CHttpSession extends CApplicationComponent implements IteratorAggregate,Ar
 	public function setUseTransparentSessionID($value)
 	{
 		$this->freeze();
-		ini_set('session.use_trans_sid',$value?'1':'0');
+		ini_set('session.use_trans_sid', $value ? '1' : '0');
 		$this->unfreeze();
 	}
 
@@ -372,7 +365,7 @@ class CHttpSession extends CApplicationComponent implements IteratorAggregate,Ar
 	public function setTimeout($value)
 	{
 		$this->freeze();
-		ini_set('session.gc_maxlifetime',$value);
+		ini_set('session.gc_maxlifetime', $value);
 		$this->unfreeze();
 	}
 
@@ -384,7 +377,7 @@ class CHttpSession extends CApplicationComponent implements IteratorAggregate,Ar
 	 * @param string $sessionName session name
 	 * @return boolean whether session is opened successfully
 	 */
-	public function openSession($savePath,$sessionName)
+	public function openSession($savePath, $sessionName)
 	{
 		return true;
 	}
@@ -420,7 +413,7 @@ class CHttpSession extends CApplicationComponent implements IteratorAggregate,Ar
 	 * @param string $data session data
 	 * @return boolean whether session write is successful
 	 */
-	public function writeSession($id,$data)
+	public function writeSession($id, $data)
 	{
 		return true;
 	}
@@ -499,7 +492,7 @@ class CHttpSession extends CApplicationComponent implements IteratorAggregate,Ar
 	 * @return mixed the session variable value, or $defaultValue if the session variable does not exist.
 	 * @since 1.1.2
 	 */
-	public function get($key,$defaultValue=null)
+	public function get($key, $defaultValue = null)
 	{
 		return isset($_SESSION[$key]) ? $_SESSION[$key] : $defaultValue;
 	}
@@ -521,9 +514,9 @@ class CHttpSession extends CApplicationComponent implements IteratorAggregate,Ar
 	 * @param mixed $key session variable name
 	 * @param mixed $value session variable value
 	 */
-	public function add($key,$value)
+	public function add($key, $value)
 	{
-		$_SESSION[$key]=$value;
+		$_SESSION[$key] = $value;
 	}
 
 	/**
@@ -533,13 +526,11 @@ class CHttpSession extends CApplicationComponent implements IteratorAggregate,Ar
 	 */
 	public function remove($key)
 	{
-		if(isset($_SESSION[$key]))
-		{
-			$value=$_SESSION[$key];
+		if (isset($_SESSION[$key])) {
+			$value = $_SESSION[$key];
 			unset($_SESSION[$key]);
 			return $value;
-		}
-		else
+		} else
 			return null;
 	}
 
@@ -548,7 +539,7 @@ class CHttpSession extends CApplicationComponent implements IteratorAggregate,Ar
 	 */
 	public function clear()
 	{
-		foreach(array_keys($_SESSION) as $key)
+		foreach (array_keys($_SESSION) as $key)
 			unset($_SESSION[$key]);
 	}
 
@@ -597,9 +588,9 @@ class CHttpSession extends CApplicationComponent implements IteratorAggregate,Ar
 	 * @param mixed $item the element value
 	 */
 	#[ReturnTypeWillChange]
-	public function offsetSet($offset,$item)
+	public function offsetSet($offset, $item)
 	{
-		$_SESSION[$offset]=$item;
+		$_SESSION[$offset] = $item;
 	}
 
 	/**
@@ -621,8 +612,7 @@ class CHttpSession extends CApplicationComponent implements IteratorAggregate,Ar
 	 */
 	protected function freeze()
 	{
-		if (isset($_SESSION) && $this->getIsStarted())
-		{
+		if (isset($_SESSION) && $this->getIsStarted()) {
 			$this->_frozenData = $_SESSION;
 			$this->close();
 		}
@@ -636,8 +626,7 @@ class CHttpSession extends CApplicationComponent implements IteratorAggregate,Ar
 	 */
 	protected function unfreeze()
 	{
-		if ($this->_frozenData !== null)
-		{
+		if ($this->_frozenData !== null) {
 			@session_start();
 			$_SESSION = $this->_frozenData;
 			$this->_frozenData = null;

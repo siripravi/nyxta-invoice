@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CLogRouter class file.
  *
@@ -51,7 +52,7 @@
  */
 class CLogRouter extends CApplicationComponent
 {
-	private $_routes=array();
+	private $_routes = array();
 
 	/**
 	 * Initializes this application component.
@@ -60,14 +61,13 @@ class CLogRouter extends CApplicationComponent
 	public function init()
 	{
 		parent::init();
-		foreach($this->_routes as $name=>$route)
-		{
-			$route=Yii::createComponent($route);
+		foreach ($this->_routes as $name => $route) {
+			$route = Yii::createComponent($route);
 			$route->init();
-			$this->_routes[$name]=$route;
+			$this->_routes[$name] = $route;
 		}
-		Yii::getLogger()->attachEventHandler('onFlush',array($this,'collectLogs'));
-		Yii::app()->attachEventHandler('onEndRequest',array($this,'processLogs'));
+		Yii::getLogger()->attachEventHandler('onFlush', array($this, 'collectLogs'));
+		Yii::app()->attachEventHandler('onEndRequest', array($this, 'processLogs'));
 	}
 
 	/**
@@ -88,8 +88,8 @@ class CLogRouter extends CApplicationComponent
 	 */
 	public function setRoutes($config)
 	{
-		foreach($config as $name=>$route)
-			$this->_routes[$name]=$route;
+		foreach ($config as $name => $route)
+			$this->_routes[$name] = $route;
 	}
 
 	/**
@@ -99,13 +99,12 @@ class CLogRouter extends CApplicationComponent
 	 */
 	public function collectLogs($event)
 	{
-		$logger=Yii::getLogger();
-		$dumpLogs=isset($event->params['dumpLogs']) && $event->params['dumpLogs'];
-		foreach($this->_routes as $route)
-		{
+		$logger = Yii::getLogger();
+		$dumpLogs = isset($event->params['dumpLogs']) && $event->params['dumpLogs'];
+		foreach ($this->_routes as $route) {
 			/* @var $route CLogRoute */
-			if($route->enabled)
-				$route->collectLogs($logger,$dumpLogs);
+			if ($route->enabled)
+				$route->collectLogs($logger, $dumpLogs);
 		}
 	}
 
@@ -116,7 +115,7 @@ class CLogRouter extends CApplicationComponent
 	 */
 	public function processLogs()
 	{
-		$logger=Yii::getLogger();
+		$logger = Yii::getLogger();
 		$logger->flush(true);
 	}
 }

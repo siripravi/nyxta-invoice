@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CListIterator class file.
  *
@@ -34,8 +35,8 @@ class CListIterator implements Iterator
 	 */
 	public function __construct(&$data)
 	{
-		$this->_d=&$data;
-		$this->_i=0;
+		$this->_d = &$data;
+		$this->_i = 0;
 	}
 
 	/**
@@ -45,7 +46,7 @@ class CListIterator implements Iterator
 	#[ReturnTypeWillChange]
 	public function rewind()
 	{
-		$this->_i=0;
+		$this->_i = 0;
 	}
 
 	/**
@@ -88,6 +89,6 @@ class CListIterator implements Iterator
 	#[ReturnTypeWillChange]
 	public function valid()
 	{
-		return $this->_i<count($this->_d);
+		return $this->_i < count($this->_d);
 	}
 }

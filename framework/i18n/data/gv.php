@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'gv'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -52,10 +53,10 @@ return array (
     'XOF' => 'CFA',
     'XPF' => 'CFPF',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Jerrey-geuree',
       2 => 'Toshiaght-arree',
       3 => 'Mayrnt',
@@ -69,8 +70,8 @@ return array (
       11 => 'Mee Houney',
       12 => 'Mee ny Nollick',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'J-guer',
       2 => 'T-arree',
       3 => 'Mayrnt',
@@ -85,10 +86,10 @@ return array (
       12 => 'M.Nollick',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -103,10 +104,10 @@ return array (
       12 => '12',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Jedoonee',
       1 => 'Jelhein',
       2 => 'Jemayrt',
@@ -115,8 +116,8 @@ return array (
       5 => 'Jeheiney',
       6 => 'Jesarn',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Jed',
       1 => 'Jel',
       2 => 'Jem',
@@ -126,10 +127,10 @@ return array (
       6 => 'Jes',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'S',
       1 => 'M',
       2 => 'T',
@@ -139,33 +140,33 @@ return array (
       6 => 'S',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'RC',
       1 => 'AD',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'RC',
       1 => 'AD',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'RC',
       1 => 'AD',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE dd MMMM y',
     'long' => 'dd MMMM y',
     'medium' => 'MMM dd, y',
     'short' => 'dd/MM/yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -175,16 +176,16 @@ return array (
   'amName' => 'a.m.',
   'pmName' => 'p.m.',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'gv' => 'Gaelg',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     'gb' => 'Rywvaneth Unys',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => '(fmod(n,10)>=1&&fmod(n,10)<=2&&fmod(fmod(n,10),1)==0)||fmod(n,20)==0',
     1 => 'true',
   ),

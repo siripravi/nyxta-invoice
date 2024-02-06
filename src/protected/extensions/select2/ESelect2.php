@@ -96,7 +96,5 @@ class ESelect2 extends CInputWidget
             echo ".on('{$event}', " . CJavaScript::encode($handler) . ")";
 
         $cs->registerScript(__CLASS__ . '#' . $this->id, ob_get_clean() . ';');
-
     }
-
 }

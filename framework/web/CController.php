@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CController class file.
  *
@@ -78,7 +79,7 @@ class CController extends CBaseController
 	/**
 	 * Name of the hidden field storing persistent page states.
 	 */
-	const STATE_INPUT_NAME='YII_PAGE_STATE';
+	const STATE_INPUT_NAME = 'YII_PAGE_STATE';
 
 	/**
 	 * @var mixed the name of the layout to be applied to this controller's views.
@@ -91,7 +92,7 @@ class CController extends CBaseController
 	/**
 	 * @var string the name of the default action. Defaults to 'index'.
 	 */
-	public $defaultAction='index';
+	public $defaultAction = 'index';
 
 	private $_id;
 	private $_action;
@@ -107,10 +108,10 @@ class CController extends CBaseController
 	 * @param string $id id of this controller
 	 * @param CWebModule $module the module that this controller belongs to.
 	 */
-	public function __construct($id,$module=null)
+	public function __construct($id, $module = null)
 	{
-		$this->_id=$id;
-		$this->_module=$module;
+		$this->_id = $id;
+		$this->_module = $module;
 		$this->attachBehaviors($this->behaviors());
 	}
 
@@ -256,17 +257,14 @@ class CController extends CBaseController
 	 */
 	public function run($actionID)
 	{
-		if(($action=$this->createAction($actionID))!==null)
-		{
-			if(($parent=$this->getModule())===null)
-				$parent=Yii::app();
-			if($parent->beforeControllerAction($this,$action))
-			{
-				$this->runActionWithFilters($action,$this->filters());
-				$parent->afterControllerAction($this,$action);
+		if (($action = $this->createAction($actionID)) !== null) {
+			if (($parent = $this->getModule()) === null)
+				$parent = Yii::app();
+			if ($parent->beforeControllerAction($this, $action)) {
+				$this->runActionWithFilters($action, $this->filters());
+				$parent->afterControllerAction($this, $action);
 			}
-		}
-		else
+		} else
 			$this->missingAction($actionID);
 	}
 
@@ -280,16 +278,15 @@ class CController extends CBaseController
 	 * @see createAction
 	 * @see runAction
 	 */
-	public function runActionWithFilters($action,$filters)
+	public function runActionWithFilters($action, $filters)
 	{
-		if(empty($filters))
+		if (empty($filters))
 			$this->runAction($action);
-		else
-		{
-			$priorAction=$this->_action;
-			$this->_action=$action;
-			CFilterChain::create($this,$action,$filters)->run();
-			$this->_action=$priorAction;
+		else {
+			$priorAction = $this->_action;
+			$this->_action = $action;
+			CFilterChain::create($this, $action, $filters)->run();
+			$this->_action = $priorAction;
 		}
 	}
 
@@ -301,16 +298,15 @@ class CController extends CBaseController
 	 */
 	public function runAction($action)
 	{
-		$priorAction=$this->_action;
-		$this->_action=$action;
-		if($this->beforeAction($action))
-		{
-			if($action->runWithParams($this->getActionParams())===false)
+		$priorAction = $this->_action;
+		$this->_action = $action;
+		if ($this->beforeAction($action)) {
+			if ($action->runWithParams($this->getActionParams()) === false)
 				$this->invalidActionParams($action);
 			else
 				$this->afterAction($action);
 		}
-		$this->_action=$priorAction;
+		$this->_action = $priorAction;
 	}
 
 	/**
@@ -334,7 +330,7 @@ class CController extends CBaseController
 	 */
 	public function invalidActionParams($action)
 	{
-		throw new CHttpException(400,Yii::t('yii','Your request is invalid.'));
+		throw new CHttpException(400, Yii::t('yii', 'Your request is invalid.'));
 	}
 
 	/**
@@ -352,16 +348,15 @@ class CController extends CBaseController
 		Yii::app()->getClientScript()->render($output);
 
 		// if using page caching, we should delay dynamic output replacement
-		if($this->_dynamicOutput!==null && $this->isCachingStackEmpty())
-		{
-			$output=$this->processDynamicOutput($output);
-			$this->_dynamicOutput=null;
+		if ($this->_dynamicOutput !== null && $this->isCachingStackEmpty()) {
+			$output = $this->processDynamicOutput($output);
+			$this->_dynamicOutput = null;
 		}
 
-		if($this->_pageStates===null)
-			$this->_pageStates=$this->loadPageStates();
-		if(!empty($this->_pageStates))
-			$this->savePageStates($this->_pageStates,$output);
+		if ($this->_pageStates === null)
+			$this->_pageStates = $this->loadPageStates();
+		if (!empty($this->_pageStates))
+			$this->savePageStates($this->_pageStates, $output);
 
 		return $output;
 	}
@@ -374,9 +369,8 @@ class CController extends CBaseController
 	 */
 	public function processDynamicOutput($output)
 	{
-		if($this->_dynamicOutput)
-		{
-			$output=preg_replace_callback('/<###dynamic-(\d+)###>/',array($this,'replaceDynamicOutput'),$output);
+		if ($this->_dynamicOutput) {
+			$output = preg_replace_callback('/<###dynamic-(\d+)###>/', array($this, 'replaceDynamicOutput'), $output);
 		}
 		return $output;
 	}
@@ -390,11 +384,10 @@ class CController extends CBaseController
 	 */
 	protected function replaceDynamicOutput($matches)
 	{
-		$content=$matches[0];
-		if(isset($this->_dynamicOutput[$matches[1]]))
-		{
-			$content=$this->_dynamicOutput[$matches[1]];
-			$this->_dynamicOutput[$matches[1]]=null;
+		$content = $matches[0];
+		if (isset($this->_dynamicOutput[$matches[1]])) {
+			$content = $this->_dynamicOutput[$matches[1]];
+			$this->_dynamicOutput[$matches[1]] = null;
 		}
 		return $content;
 	}
@@ -410,15 +403,14 @@ class CController extends CBaseController
 	 */
 	public function createAction($actionID)
 	{
-		if($actionID==='')
-			$actionID=$this->defaultAction;
-		if(method_exists($this,'action'.$actionID) && strcasecmp($actionID,'s')) // we have actions method
-			return new CInlineAction($this,$actionID);
-		else
-		{
-			$action=$this->createActionFromMap($this->actions(),$actionID,$actionID);
-			if($action!==null && !method_exists($action,'run'))
-				throw new CException(Yii::t('yii', 'Action class {class} must implement the "run" method.', array('{class}'=>get_class($action))));
+		if ($actionID === '')
+			$actionID = $this->defaultAction;
+		if (method_exists($this, 'action' . $actionID) && strcasecmp($actionID, 's')) // we have actions method
+			return new CInlineAction($this, $actionID);
+		else {
+			$action = $this->createActionFromMap($this->actions(), $actionID, $actionID);
+			if ($action !== null && !method_exists($action, 'run'))
+				throw new CException(Yii::t('yii', 'Action class {class} must implement the "run" method.', array('{class}' => get_class($action))));
 			return $action;
 		}
 	}
@@ -435,43 +427,38 @@ class CController extends CBaseController
 	 * @return CAction the action instance, null if the action does not exist.
 	 * @throws CException
 	 */
-	protected function createActionFromMap($actionMap,$actionID,$requestActionID,$config=array())
+	protected function createActionFromMap($actionMap, $actionID, $requestActionID, $config = array())
 	{
-		if(($pos=strpos($actionID,'.'))===false && isset($actionMap[$actionID]))
-		{
-			$baseConfig=is_array($actionMap[$actionID]) ? $actionMap[$actionID] : array('class'=>$actionMap[$actionID]);
-			return Yii::createComponent(empty($config)?$baseConfig:array_merge($baseConfig,$config),$this,$requestActionID);
-		}
-		elseif($pos===false)
+		if (($pos = strpos($actionID, '.')) === false && isset($actionMap[$actionID])) {
+			$baseConfig = is_array($actionMap[$actionID]) ? $actionMap[$actionID] : array('class' => $actionMap[$actionID]);
+			return Yii::createComponent(empty($config) ? $baseConfig : array_merge($baseConfig, $config), $this, $requestActionID);
+		} elseif ($pos === false)
 			return null;
 
 		// the action is defined in a provider
-		$prefix=substr($actionID,0,$pos+1);
-		if(!isset($actionMap[$prefix]))
+		$prefix = substr($actionID, 0, $pos + 1);
+		if (!isset($actionMap[$prefix]))
 			return null;
-		$actionID=(string)substr($actionID,$pos+1);
+		$actionID = (string)substr($actionID, $pos + 1);
 
-		$provider=$actionMap[$prefix];
-		if(is_string($provider))
-			$providerType=$provider;
-		elseif(is_array($provider) && isset($provider['class']))
-		{
-			$providerType=$provider['class'];
-			if(isset($provider[$actionID]))
-			{
-				if(is_string($provider[$actionID]))
-					$config=array_merge(array('class'=>$provider[$actionID]),$config);
+		$provider = $actionMap[$prefix];
+		if (is_string($provider))
+			$providerType = $provider;
+		elseif (is_array($provider) && isset($provider['class'])) {
+			$providerType = $provider['class'];
+			if (isset($provider[$actionID])) {
+				if (is_string($provider[$actionID]))
+					$config = array_merge(array('class' => $provider[$actionID]), $config);
 				else
-					$config=array_merge($provider[$actionID],$config);
+					$config = array_merge($provider[$actionID], $config);
 			}
-		}
-		else
-			throw new CException(Yii::t('yii','Object configuration must be an array containing a "class" element.'));
+		} else
+			throw new CException(Yii::t('yii', 'Object configuration must be an array containing a "class" element.'));
 
-		$class=Yii::import($providerType,true);
-		$map=call_user_func(array($class,'actions'));
+		$class = Yii::import($providerType, true);
+		$map = call_user_func(array($class, 'actions'));
 
-		return $this->createActionFromMap($map,$actionID,$requestActionID,$config);
+		return $this->createActionFromMap($map, $actionID, $requestActionID, $config);
 	}
 
 	/**
@@ -483,8 +470,11 @@ class CController extends CBaseController
 	 */
 	public function missingAction($actionID)
 	{
-		throw new CHttpException(404,Yii::t('yii','The system is unable to find the requested action "{action}".',
-			array('{action}'=>$actionID==''?$this->defaultAction:$actionID)));
+		throw new CHttpException(404, Yii::t(
+			'yii',
+			'The system is unable to find the requested action "{action}".',
+			array('{action}' => $actionID == '' ? $this->defaultAction : $actionID)
+		));
 	}
 
 	/**
@@ -500,7 +490,7 @@ class CController extends CBaseController
 	 */
 	public function setAction($value)
 	{
-		$this->_action=$value;
+		$this->_action = $value;
 	}
 
 	/**
@@ -516,7 +506,7 @@ class CController extends CBaseController
 	 */
 	public function getUniqueId()
 	{
-		return $this->_module ? $this->_module->getId().'/'.$this->_id : $this->_id;
+		return $this->_module ? $this->_module->getId() . '/' . $this->_id : $this->_id;
 	}
 
 	/**
@@ -525,8 +515,8 @@ class CController extends CBaseController
 	 */
 	public function getRoute()
 	{
-		if(($action=$this->getAction())!==null)
-			return $this->getUniqueId().'/'.$action->getId();
+		if (($action = $this->getAction()) !== null)
+			return $this->getUniqueId() . '/' . $action->getId();
 		else
 			return $this->getUniqueId();
 	}
@@ -550,9 +540,9 @@ class CController extends CBaseController
 	 */
 	public function getViewPath()
 	{
-		if(($module=$this->getModule())===null)
-			$module=Yii::app();
-		return $module->getViewPath().DIRECTORY_SEPARATOR.$this->getId();
+		if (($module = $this->getModule()) === null)
+			$module = Yii::app();
+		return $module->getViewPath() . DIRECTORY_SEPARATOR . $this->getId();
 	}
 
 	/**
@@ -586,12 +576,12 @@ class CController extends CBaseController
 	 */
 	public function getViewFile($viewName)
 	{
-		if(($theme=Yii::app()->getTheme())!==null && ($viewFile=$theme->getViewFile($this,$viewName))!==false)
+		if (($theme = Yii::app()->getTheme()) !== null && ($viewFile = $theme->getViewFile($this, $viewName)) !== false)
 			return $viewFile;
-		$moduleViewPath=$basePath=Yii::app()->getViewPath();
-		if(($module=$this->getModule())!==null)
-			$moduleViewPath=$module->getViewPath();
-		return $this->resolveViewFile($viewName,$this->getViewPath(),$basePath,$moduleViewPath);
+		$moduleViewPath = $basePath = Yii::app()->getViewPath();
+		if (($module = $this->getModule()) !== null)
+			$moduleViewPath = $module->getViewPath();
+		return $this->resolveViewFile($viewName, $this->getViewPath(), $basePath, $moduleViewPath);
 	}
 
 	/**
@@ -635,30 +625,27 @@ class CController extends CBaseController
 	 */
 	public function getLayoutFile($layoutName)
 	{
-		if($layoutName===false)
+		if ($layoutName === false)
 			return false;
-		if(($theme=Yii::app()->getTheme())!==null && ($layoutFile=$theme->getLayoutFile($this,$layoutName))!==false)
+		if (($theme = Yii::app()->getTheme()) !== null && ($layoutFile = $theme->getLayoutFile($this, $layoutName)) !== false)
 			return $layoutFile;
 
-		if(empty($layoutName))
-		{
-			$module=$this->getModule();
-			while($module!==null)
-			{
-				if($module->layout===false)
+		if (empty($layoutName)) {
+			$module = $this->getModule();
+			while ($module !== null) {
+				if ($module->layout === false)
 					return false;
-				if(!empty($module->layout))
+				if (!empty($module->layout))
 					break;
-				$module=$module->getParentModule();
+				$module = $module->getParentModule();
 			}
-			if($module===null)
-				$module=Yii::app();
-			$layoutName=$module->layout;
-		}
-		elseif(($module=$this->getModule())===null)
-			$module=Yii::app();
+			if ($module === null)
+				$module = Yii::app();
+			$layoutName = $module->layout;
+		} elseif (($module = $this->getModule()) === null)
+			$module = Yii::app();
 
-		return $this->resolveViewFile($layoutName,$module->getLayoutPath(),Yii::app()->getViewPath(),$module->getViewPath());
+		return $this->resolveViewFile($layoutName, $module->getLayoutPath(), Yii::app()->getViewPath(), $module->getViewPath());
 	}
 
 	/**
@@ -687,34 +674,32 @@ class CController extends CBaseController
 	 * If this is not set, the application base view path will be used.
 	 * @return mixed the view file path. False if the view file does not exist.
 	 */
-	public function resolveViewFile($viewName,$viewPath,$basePath,$moduleViewPath=null)
+	public function resolveViewFile($viewName, $viewPath, $basePath, $moduleViewPath = null)
 	{
-		if(empty($viewName))
+		if (empty($viewName))
 			return false;
 
-		if($moduleViewPath===null)
-			$moduleViewPath=$basePath;
+		if ($moduleViewPath === null)
+			$moduleViewPath = $basePath;
 
-		if(($renderer=Yii::app()->getViewRenderer())!==null)
-			$extension=$renderer->fileExtension;
+		if (($renderer = Yii::app()->getViewRenderer()) !== null)
+			$extension = $renderer->fileExtension;
 		else
-			$extension='.php';
-		if($viewName[0]==='/')
-		{
-			if(strncmp($viewName,'//',2)===0)
-				$viewFile=$basePath.$viewName;
+			$extension = '.php';
+		if ($viewName[0] === '/') {
+			if (strncmp($viewName, '//', 2) === 0)
+				$viewFile = $basePath . $viewName;
 			else
-				$viewFile=$moduleViewPath.$viewName;
-		}
-		elseif(strpos($viewName,'.'))
-			$viewFile=Yii::getPathOfAlias($viewName);
+				$viewFile = $moduleViewPath . $viewName;
+		} elseif (strpos($viewName, '.'))
+			$viewFile = Yii::getPathOfAlias($viewName);
 		else
-			$viewFile=$viewPath.DIRECTORY_SEPARATOR.$viewName;
+			$viewFile = $viewPath . DIRECTORY_SEPARATOR . $viewName;
 
-		if(is_file($viewFile.$extension))
-			return Yii::app()->findLocalizedFile($viewFile.$extension);
-		elseif($extension!=='.php' && is_file($viewFile.'.php'))
-			return Yii::app()->findLocalizedFile($viewFile.'.php');
+		if (is_file($viewFile . $extension))
+			return Yii::app()->findLocalizedFile($viewFile . $extension);
+		elseif ($extension !== '.php' && is_file($viewFile . '.php'))
+			return Yii::app()->findLocalizedFile($viewFile . '.php');
 		else
 			return false;
 	}
@@ -728,10 +713,10 @@ class CController extends CBaseController
 	 */
 	public function getClips()
 	{
-		if($this->_clips!==null)
+		if ($this->_clips !== null)
 			return $this->_clips;
 		else
-			return $this->_clips=new CMap;
+			return $this->_clips = new CMap;
 	}
 
 	/**
@@ -744,17 +729,16 @@ class CController extends CBaseController
 	 * @param boolean $exit whether to end the application after this call. Defaults to true.
 	 * @since 1.1.0
 	 */
-	public function forward($route,$exit=true)
+	public function forward($route, $exit = true)
 	{
-		if(strpos($route,'/')===false)
+		if (strpos($route, '/') === false)
 			$this->run($route);
-		else
-		{
-			if($route[0]!=='/' && ($module=$this->getModule())!==null)
-				$route=$module->getId().'/'.$route;
+		else {
+			if ($route[0] !== '/' && ($module = $this->getModule()) !== null)
+				$route = $module->getId() . '/' . $route;
 			Yii::app()->runController($route);
 		}
-		if($exit)
+		if ($exit)
 			Yii::app()->end();
 	}
 
@@ -778,19 +762,18 @@ class CController extends CBaseController
 	 * @see renderPartial
 	 * @see getLayoutFile
 	 */
-	public function render($view,$data=null,$return=false)
+	public function render($view, $data = null, $return = false)
 	{
-		if($this->beforeRender($view))
-		{
-			$output=$this->renderPartial($view,$data,true);
-			if(($layoutFile=$this->getLayoutFile($this->layout))!==false)
-				$output=$this->renderFile($layoutFile,array('content'=>$output),true);
+		if ($this->beforeRender($view)) {
+			$output = $this->renderPartial($view, $data, true);
+			if (($layoutFile = $this->getLayoutFile($this->layout)) !== false)
+				$output = $this->renderFile($layoutFile, array('content' => $output), true);
 
-			$this->afterRender($view,$output);
+			$this->afterRender($view, $output);
 
-			$output=$this->processOutput($output);
+			$output = $this->processOutput($output);
 
-			if($return)
+			if ($return)
 				return $output;
 			else
 				echo $output;
@@ -830,14 +813,14 @@ class CController extends CBaseController
 	 * @return string the rendering result. Null if the rendering result is not required.
 	 * @see getLayoutFile
 	 */
-	public function renderText($text,$return=false)
+	public function renderText($text, $return = false)
 	{
-		if(($layoutFile=$this->getLayoutFile($this->layout))!==false)
-			$text=$this->renderFile($layoutFile,array('content'=>$text),true);
+		if (($layoutFile = $this->getLayoutFile($this->layout)) !== false)
+			$text = $this->renderFile($layoutFile, array('content' => $text), true);
 
-		$text=$this->processOutput($text);
+		$text = $this->processOutput($text);
 
-		if($return)
+		if ($return)
 			return $text;
 		else
 			echo $text;
@@ -865,21 +848,22 @@ class CController extends CBaseController
 	 * @see processOutput
 	 * @see render
 	 */
-	public function renderPartial($view,$data=null,$return=false,$processOutput=false)
+	public function renderPartial($view, $data = null, $return = false, $processOutput = false)
 	{
-		if(($viewFile=$this->getViewFile($view))!==false)
-		{
-			$output=$this->renderFile($viewFile,$data,true);
-			if($processOutput)
-				$output=$this->processOutput($output);
-			if($return)
+		if (($viewFile = $this->getViewFile($view)) !== false) {
+			$output = $this->renderFile($viewFile, $data, true);
+			if ($processOutput)
+				$output = $this->processOutput($output);
+			if ($return)
 				return $output;
 			else
 				echo $output;
-		}
-		else
-			throw new CException(Yii::t('yii','{controller} cannot find the requested view "{view}".',
-				array('{controller}'=>get_class($this), '{view}'=>$view)));
+		} else
+			throw new CException(Yii::t(
+				'yii',
+				'{controller} cannot find the requested view "{view}".',
+				array('{controller}' => get_class($this), '{view}' => $view)
+			));
 	}
 
 	/**
@@ -894,11 +878,11 @@ class CController extends CBaseController
 	 * @return mixed either the clip content or null
 	 * @since 1.1.8
 	 */
-	public function renderClip($name,$params=array(),$return=false)
+	public function renderClip($name, $params = array(), $return = false)
 	{
-		$text=isset($this->clips[$name]) ? strtr($this->clips[$name], $params) : '';
+		$text = isset($this->clips[$name]) ? strtr($this->clips[$name], $params) : '';
 
-		if($return)
+		if ($return)
 			return $text;
 		else
 			echo $text;
@@ -925,11 +909,11 @@ class CController extends CBaseController
 	 */
 	public function renderDynamic($callback)
 	{
-		$n=($this->_dynamicOutput === null ? 0 : count($this->_dynamicOutput));
+		$n = ($this->_dynamicOutput === null ? 0 : count($this->_dynamicOutput));
 		echo "<###dynamic-$n###>";
-		$params=func_get_args();
+		$params = func_get_args();
 		array_shift($params);
-		$this->renderDynamicInternal($callback,$params);
+		$this->renderDynamicInternal($callback, $params);
 	}
 
 	/**
@@ -938,12 +922,12 @@ class CController extends CBaseController
 	 * @param array $params parameters passed to the PHP callback
 	 * @see renderDynamic
 	 */
-	public function renderDynamicInternal($callback,$params)
+	public function renderDynamicInternal($callback, $params)
 	{
-		$this->recordCachingAction('','renderDynamicInternal',array($callback,$params));
-		if(is_string($callback) && method_exists($this,$callback))
-			$callback=array($this,$callback);
-		$this->_dynamicOutput[]=call_user_func_array($callback,$params);
+		$this->recordCachingAction('', 'renderDynamicInternal', array($callback, $params));
+		if (is_string($callback) && method_exists($this, $callback))
+			$callback = array($this, $callback);
+		$this->_dynamicOutput[] = call_user_func_array($callback, $params);
 	}
 
 	/**
@@ -959,15 +943,15 @@ class CController extends CBaseController
 	 * @param string $ampersand the token separating name-value pairs in the URL.
 	 * @return string the constructed URL
 	 */
-	public function createUrl($route,$params=array(),$ampersand='&')
+	public function createUrl($route, $params = array(), $ampersand = '&')
 	{
-		if($route==='')
-			$route=$this->getId().'/'.$this->getAction()->getId();
-		elseif(strpos($route,'/')===false)
-			$route=$this->getId().'/'.$route;
-		if($route[0]!=='/' && ($module=$this->getModule())!==null)
-			$route=$module->getId().'/'.$route;
-		return Yii::app()->createUrl(trim($route,'/'),$params,$ampersand);
+		if ($route === '')
+			$route = $this->getId() . '/' . $this->getAction()->getId();
+		elseif (strpos($route, '/') === false)
+			$route = $this->getId() . '/' . $route;
+		if ($route[0] !== '/' && ($module = $this->getModule()) !== null)
+			$route = $module->getId() . '/' . $route;
+		return Yii::app()->createUrl(trim($route, '/'), $params, $ampersand);
 	}
 
 	/**
@@ -980,13 +964,13 @@ class CController extends CBaseController
 	 * @param string $ampersand the token separating name-value pairs in the URL.
 	 * @return string the constructed URL
 	 */
-	public function createAbsoluteUrl($route,$params=array(),$schema='',$ampersand='&')
+	public function createAbsoluteUrl($route, $params = array(), $schema = '', $ampersand = '&')
 	{
-		$url=$this->createUrl($route,$params,$ampersand);
-		if(strpos($url,'http')===0)
+		$url = $this->createUrl($route, $params, $ampersand);
+		if (strpos($url, 'http') === 0)
 			return $url;
 		else
-			return Yii::app()->getRequest()->getHostInfo($schema).$url;
+			return Yii::app()->getRequest()->getHostInfo($schema) . $url;
 	}
 
 	/**
@@ -994,15 +978,14 @@ class CController extends CBaseController
 	 */
 	public function getPageTitle()
 	{
-		if($this->_pageTitle!==null)
+		if ($this->_pageTitle !== null)
 			return $this->_pageTitle;
-		else
-		{
-			$name=ucfirst(basename($this->getId()));
-			if($this->getAction()!==null && strcasecmp($this->getAction()->getId(),$this->defaultAction))
-				return $this->_pageTitle=Yii::app()->name.' - '.ucfirst($this->getAction()->getId()).' '.$name;
+		else {
+			$name = ucfirst(basename($this->getId()));
+			if ($this->getAction() !== null && strcasecmp($this->getAction()->getId(), $this->defaultAction))
+				return $this->_pageTitle = Yii::app()->name . ' - ' . ucfirst($this->getAction()->getId()) . ' ' . $name;
 			else
-				return $this->_pageTitle=Yii::app()->name.' - '.$name;
+				return $this->_pageTitle = Yii::app()->name . ' - ' . $name;
 		}
 	}
 
@@ -1011,7 +994,7 @@ class CController extends CBaseController
 	 */
 	public function setPageTitle($value)
 	{
-		$this->_pageTitle=$value;
+		$this->_pageTitle = $value;
 	}
 
 	/**
@@ -1023,14 +1006,13 @@ class CController extends CBaseController
 	 * @param integer $statusCode the HTTP status code. Defaults to 302. See {@link https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html}
 	 * for details about HTTP status code.
 	 */
-	public function redirect($url,$terminate=true,$statusCode=302)
+	public function redirect($url, $terminate = true, $statusCode = 302)
 	{
-		if(is_array($url))
-		{
-			$route=isset($url[0]) ? $url[0] : '';
-			$url=$this->createUrl($route,array_splice($url,1));
+		if (is_array($url)) {
+			$route = isset($url[0]) ? $url[0] : '';
+			$url = $this->createUrl($route, array_splice($url, 1));
 		}
-		Yii::app()->getRequest()->redirect($url,$terminate,$statusCode);
+		Yii::app()->getRequest()->redirect($url, $terminate, $statusCode);
 	}
 
 	/**
@@ -1041,9 +1023,9 @@ class CController extends CBaseController
 	 * @param string $anchor the anchor that should be appended to the redirection URL.
 	 * Defaults to empty. Make sure the anchor starts with '#' if you want to specify it.
 	 */
-	public function refresh($terminate=true,$anchor='')
+	public function refresh($terminate = true, $anchor = '')
 	{
-		$this->redirect(Yii::app()->getRequest()->getUrl().$anchor,$terminate);
+		$this->redirect(Yii::app()->getRequest()->getUrl() . $anchor, $terminate);
 	}
 
 	/**
@@ -1056,12 +1038,12 @@ class CController extends CBaseController
 	 * @param array $params parameters passed to the method
 	 * @see COutputCache
 	 */
-	public function recordCachingAction($context,$method,$params)
+	public function recordCachingAction($context, $method, $params)
 	{
-		if($this->_cachingStack) // record only when there is an active output cache
+		if ($this->_cachingStack) // record only when there is an active output cache
 		{
-			foreach($this->_cachingStack as $cache)
-				$cache->recordAction($context,$method,$params);
+			foreach ($this->_cachingStack as $cache)
+				$cache->recordAction($context, $method, $params);
 		}
 	}
 
@@ -1069,10 +1051,10 @@ class CController extends CBaseController
 	 * @param boolean $createIfNull whether to create a stack if it does not exist yet. Defaults to true.
 	 * @return CStack stack of {@link COutputCache} objects
 	 */
-	public function getCachingStack($createIfNull=true)
+	public function getCachingStack($createIfNull = true)
 	{
-		if(!$this->_cachingStack)
-			$this->_cachingStack=new CStack;
+		if (!$this->_cachingStack)
+			$this->_cachingStack = new CStack;
 		return $this->_cachingStack;
 	}
 
@@ -1084,7 +1066,7 @@ class CController extends CBaseController
 	 */
 	public function isCachingStackEmpty()
 	{
-		return $this->_cachingStack===null || !$this->_cachingStack->getCount();
+		return $this->_cachingStack === null || !$this->_cachingStack->getCount();
 	}
 
 	/**
@@ -1115,10 +1097,10 @@ class CController extends CBaseController
 	 */
 	public function filterPostOnly($filterChain)
 	{
-		if(Yii::app()->getRequest()->getIsPostRequest())
+		if (Yii::app()->getRequest()->getIsPostRequest())
 			$filterChain->run();
 		else
-			throw new CHttpException(400,Yii::t('yii','Your request is invalid.'));
+			throw new CHttpException(400, Yii::t('yii', 'Your request is invalid.'));
 	}
 
 	/**
@@ -1129,10 +1111,10 @@ class CController extends CBaseController
 	 */
 	public function filterAjaxOnly($filterChain)
 	{
-		if(Yii::app()->getRequest()->getIsAjaxRequest())
+		if (Yii::app()->getRequest()->getIsAjaxRequest())
 			$filterChain->run();
 		else
-			throw new CHttpException(400,Yii::t('yii','Your request is invalid.'));
+			throw new CHttpException(400, Yii::t('yii', 'Your request is invalid.'));
 	}
 
 	/**
@@ -1143,7 +1125,7 @@ class CController extends CBaseController
 	 */
 	public function filterAccessControl($filterChain)
 	{
-		$filter=new CAccessControlFilter;
+		$filter = new CAccessControlFilter;
 		$filter->setRules($this->accessRules());
 		$filter->filter($filterChain);
 	}
@@ -1159,11 +1141,11 @@ class CController extends CBaseController
 	 * @see setPageState
 	 * @see CHtml::statefulForm
 	 */
-	public function getPageState($name,$defaultValue=null)
+	public function getPageState($name, $defaultValue = null)
 	{
-		if($this->_pageStates===null)
-			$this->_pageStates=$this->loadPageStates();
-		return isset($this->_pageStates[$name])?$this->_pageStates[$name]:$defaultValue;
+		if ($this->_pageStates === null)
+			$this->_pageStates = $this->loadPageStates();
+		return isset($this->_pageStates[$name]) ? $this->_pageStates[$name] : $defaultValue;
 	}
 
 	/**
@@ -1178,17 +1160,17 @@ class CController extends CBaseController
 	 * @see getPageState
 	 * @see CHtml::statefulForm
 	 */
-	public function setPageState($name,$value,$defaultValue=null)
+	public function setPageState($name, $value, $defaultValue = null)
 	{
-		if($this->_pageStates===null)
-			$this->_pageStates=$this->loadPageStates();
-		if($value===$defaultValue)
+		if ($this->_pageStates === null)
+			$this->_pageStates = $this->loadPageStates();
+		if ($value === $defaultValue)
 			unset($this->_pageStates[$name]);
 		else
-			$this->_pageStates[$name]=$value;
+			$this->_pageStates[$name] = $value;
 
-		$params=func_get_args();
-		$this->recordCachingAction('','setPageState',$params);
+		$params = func_get_args();
+		$this->recordCachingAction('', 'setPageState', $params);
 	}
 
 	/**
@@ -1196,7 +1178,7 @@ class CController extends CBaseController
 	 */
 	public function clearPageStates()
 	{
-		$this->_pageStates=array();
+		$this->_pageStates = array();
 	}
 
 	/**
@@ -1205,13 +1187,11 @@ class CController extends CBaseController
 	 */
 	protected function loadPageStates()
 	{
-		if(!empty($_POST[self::STATE_INPUT_NAME]))
-		{
-			if(($data=base64_decode($_POST[self::STATE_INPUT_NAME]))!==false)
-			{
-				if(extension_loaded('zlib'))
-					$data=@gzuncompress($data);
-				if(($data=Yii::app()->getSecurityManager()->validateData($data))!==false)
+		if (!empty($_POST[self::STATE_INPUT_NAME])) {
+			if (($data = base64_decode($_POST[self::STATE_INPUT_NAME])) !== false) {
+				if (extension_loaded('zlib'))
+					$data = @gzuncompress($data);
+				if (($data = Yii::app()->getSecurityManager()->validateData($data)) !== false)
 					return unserialize($data);
 			}
 		}
@@ -1223,12 +1203,12 @@ class CController extends CBaseController
 	 * @param array $states the states to be saved.
 	 * @param string $output the output to be modified. Note, this is passed by reference.
 	 */
-	protected function savePageStates($states,&$output)
+	protected function savePageStates($states, &$output)
 	{
-		$data=Yii::app()->getSecurityManager()->hashData(serialize($states));
-		if(extension_loaded('zlib'))
-			$data=gzcompress($data);
-		$value=base64_encode($data);
-		$output=str_replace(CHtml::pageStateField(''),CHtml::pageStateField($value),$output);
+		$data = Yii::app()->getSecurityManager()->hashData(serialize($states));
+		if (extension_loaded('zlib'))
+			$data = gzcompress($data);
+		$value = base64_encode($data);
+		$output = str_replace(CHtml::pageStateField(''), CHtml::pageStateField($value), $output);
 	}
 }

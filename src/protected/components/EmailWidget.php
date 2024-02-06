@@ -102,11 +102,10 @@ class EmailWidget extends CWidget
                     //return $this->refresh();
                     //Yii::app()->end();//$this->redirect(array('view','id'=>$id));
                 } else {
-                    return $this->renderPartial('message', array('model' => $model, ), false, true);
+                    return $this->renderPartial('message', array('model' => $model,), false, true);
                 }
             }
         }
         $this->render('message', array('model' => $model), false, true);
     }
-
 }

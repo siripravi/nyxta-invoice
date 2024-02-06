@@ -1,4 +1,5 @@
 <?php
+
 /**
  * XTabularInputAction action
  *
@@ -54,10 +55,12 @@ class XTabularInputAction extends CAction
 	public function run()
 	{
 		if (Yii::app()->request->isAjaxRequest && isset($_GET['index'])) {
-			$this->getController()->renderPartial($this->viewName, array(
-				'model' => $this->getModel(),
-				'index' => $_GET['index']
-			)
+			$this->getController()->renderPartial(
+				$this->viewName,
+				array(
+					'model' => $this->getModel(),
+					'index' => $_GET['index']
+				)
 			);
 		} else
 			throw new CHttpException(400, 'Invalid request. Please do not repeat this request again.');

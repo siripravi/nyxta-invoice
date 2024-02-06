@@ -89,13 +89,14 @@ class EmailTemplate extends EmailActiveRecord
         $criteria->compare('t.heading', $this->heading, true);
         $criteria->compare('t.message', $this->message, true);
 
-        return new CActiveDataProvider($this, array(
-            'criteria' => $criteria,
-            'sort' => array(
-                'defaultOrder' => 'id DESC',
-            ),
-        )
+        return new CActiveDataProvider(
+            $this,
+            array(
+                'criteria' => $criteria,
+                'sort' => array(
+                    'defaultOrder' => 'id DESC',
+                ),
+            )
         );
     }
-
 }

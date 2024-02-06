@@ -38,7 +38,6 @@ class m120610_194029_add_language_tables extends CDbMigration
 			         REFERENCES source_message (id) ON DELETE CASCADE ON UPDATE RESTRICT
 			) ENGINE = InnoDB;
 		");
-
 	}
 
 	public function down()

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CViewAction class file.
  *
@@ -34,14 +35,14 @@ class CViewAction extends CAction
 	/**
 	 * @var string the name of the GET parameter that contains the requested view name. Defaults to 'view'.
 	 */
-	public $viewParam='view';
+	public $viewParam = 'view';
 	/**
 	 * @var string the name of the default view when {@link viewParam} GET parameter is not provided by user. Defaults to 'index'.
 	 * This should be in the format of 'path.to.view', similar to that given in
 	 * the GET parameter.
 	 * @see basePath
 	 */
-	public $defaultView='index';
+	public $defaultView = 'index';
 	/**
 	 * @var string the name of the view to be rendered. This property will be set
 	 * once the user requested view is resolved.
@@ -55,7 +56,7 @@ class CViewAction extends CAction
 	 * The actual view file is determined by {@link CController::getViewFile}.
 	 * @see CController::getViewFile
 	 */
-	public $basePath='pages';
+	public $basePath = 'pages';
 	/**
 	 * @var mixed the name of the layout to be applied to the views.
 	 * This will be assigned to {@link CController::layout} before the view is rendered.
@@ -66,7 +67,7 @@ class CViewAction extends CAction
 	/**
 	 * @var boolean whether the view should be rendered as PHP script or static text. Defaults to false.
 	 */
-	public $renderAsText=false;
+	public $renderAsText = false;
 
 	private $_viewPath;
 
@@ -79,12 +80,11 @@ class CViewAction extends CAction
 	 */
 	public function getRequestedView()
 	{
-		if($this->_viewPath===null)
-		{
-			if(!empty($_GET[$this->viewParam]) && is_string($_GET[$this->viewParam]))
-				$this->_viewPath=$_GET[$this->viewParam];
+		if ($this->_viewPath === null) {
+			if (!empty($_GET[$this->viewParam]) && is_string($_GET[$this->viewParam]))
+				$this->_viewPath = $_GET[$this->viewParam];
 			else
-				$this->_viewPath=$this->defaultView;
+				$this->_viewPath = $this->defaultView;
 		}
 		return $this->_viewPath;
 	}
@@ -98,19 +98,20 @@ class CViewAction extends CAction
 	protected function resolveView($viewPath)
 	{
 		// start with a word char and have word chars, dots and dashes only
-		if(preg_match('/^\w[\w\.\-]*$/',$viewPath))
-		{
-			$view=strtr($viewPath,'.','/');
-			if(!empty($this->basePath))
-				$view=$this->basePath.'/'.$view;
-			if($this->getController()->getViewFile($view)!==false)
-			{
-				$this->view=$view;
+		if (preg_match('/^\w[\w\.\-]*$/', $viewPath)) {
+			$view = strtr($viewPath, '.', '/');
+			if (!empty($this->basePath))
+				$view = $this->basePath . '/' . $view;
+			if ($this->getController()->getViewFile($view) !== false) {
+				$this->view = $view;
 				return;
 			}
 		}
-		throw new CHttpException(404,Yii::t('yii','The requested view "{name}" was not found.',
-			array('{name}'=>$viewPath)));
+		throw new CHttpException(404, Yii::t(
+			'yii',
+			'The requested view "{name}" was not found.',
+			array('{name}' => $viewPath)
+		));
 	}
 
 	/**
@@ -121,28 +122,24 @@ class CViewAction extends CAction
 	public function run()
 	{
 		$this->resolveView($this->getRequestedView());
-		$controller=$this->getController();
-		if($this->layout!==null)
-		{
-			$layout=$controller->layout;
-			$controller->layout=$this->layout;
+		$controller = $this->getController();
+		if ($this->layout !== null) {
+			$layout = $controller->layout;
+			$controller->layout = $this->layout;
 		}
 
-		$this->onBeforeRender($event=new CEvent($this));
-		if(!$event->handled)
-		{
-			if($this->renderAsText)
-			{
-				$text=file_get_contents($controller->getViewFile($this->view));
+		$this->onBeforeRender($event = new CEvent($this));
+		if (!$event->handled) {
+			if ($this->renderAsText) {
+				$text = file_get_contents($controller->getViewFile($this->view));
 				$controller->renderText($text);
-			}
-			else
+			} else
 				$controller->render($this->view);
 			$this->onAfterRender(new CEvent($this));
 		}
 
-		if($this->layout!==null)
-			$controller->layout=$layout;
+		if ($this->layout !== null)
+			$controller->layout = $layout;
 	}
 
 	/**
@@ -153,7 +150,7 @@ class CViewAction extends CAction
 	 */
 	public function onBeforeRender($event)
 	{
-		$this->raiseEvent('onBeforeRender',$event);
+		$this->raiseEvent('onBeforeRender', $event);
 	}
 
 	/**
@@ -162,6 +159,6 @@ class CViewAction extends CAction
 	 */
 	public function onAfterRender($event)
 	{
-		$this->raiseEvent('onAfterRender',$event);
+		$this->raiseEvent('onAfterRender', $event);
 	}
 }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CConsoleCommandEvent class file.
  *
@@ -29,7 +30,7 @@ class CConsoleCommandEvent extends CEvent
 	 * If false, which is the default, the normal execution cycles will continue, including performing the action and calling
 	 * {@link CConsoleCommand::afterAction}.
 	 */
-	public $stopCommand=false;
+	public $stopCommand = false;
 	/**
 	 * @var integer exit code of application.
 	 * This property is available in {@link CConsoleCommand::onAfterAction} event and will be set to the exit code
@@ -44,9 +45,10 @@ class CConsoleCommandEvent extends CEvent
 	 * @param string $action the action name
 	 * @param integer $exitCode the application exit code
 	 */
-	public function __construct($sender=null,$params=null,$action=null,$exitCode=0){
-		parent::__construct($sender,$params);
-		$this->action=$action;
-		$this->exitCode=$exitCode;
+	public function __construct($sender = null, $params = null, $action = null, $exitCode = 0)
+	{
+		parent::__construct($sender, $params);
+		$this->action = $action;
+		$this->exitCode = $exitCode;
 	}
 }

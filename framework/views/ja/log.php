@@ -6,27 +6,26 @@
 		</th>
 	</tr>
 	<tr style="background-color: #ccc;">
-	    <th style="width:120px">タイムスタンプ</th>
+		<th style="width:120px">タイムスタンプ</th>
 		<th>レベル</th>
 		<th>カテゴリ</th>
 		<th>メッセージ</th>
 	</tr>
-<?php
-$colors=array(
-	CLogger::LEVEL_PROFILE=>'#DFFFE0',
-	CLogger::LEVEL_INFO=>'#FFFFDF',
-	CLogger::LEVEL_WARNING=>'#FFDFE5',
-	CLogger::LEVEL_ERROR=>'#FFC0CB',
-);
-foreach($data as $index=>$log)
-{
-	$color=($index%2)?'#F5F5F5':'#FFFFFF';
-	if(isset($colors[$log[1]]))
-		$color=$colors[$log[1]];
-	$message='<pre>'.CHtml::encode(wordwrap($log[0])).'</pre>';
-	$time=date('H:i:s.',(int)$log[3]).(int)(($log[3]-(int)$log[3])*1000000);
+	<?php
+	$colors = array(
+		CLogger::LEVEL_PROFILE => '#DFFFE0',
+		CLogger::LEVEL_INFO => '#FFFFDF',
+		CLogger::LEVEL_WARNING => '#FFDFE5',
+		CLogger::LEVEL_ERROR => '#FFC0CB',
+	);
+	foreach ($data as $index => $log) {
+		$color = ($index % 2) ? '#F5F5F5' : '#FFFFFF';
+		if (isset($colors[$log[1]]))
+			$color = $colors[$log[1]];
+		$message = '<pre>' . CHtml::encode(wordwrap($log[0])) . '</pre>';
+		$time = date('H:i:s.', (int)$log[3]) . (int)(($log[3] - (int)$log[3]) * 1000000);
 
-	echo <<<EOD
+		echo <<<EOD
 	<tr style="background:{$color}">
 		<td align="center">{$time}</td>
 		<td>{$log[1]}</td>
@@ -34,7 +33,7 @@ foreach($data as $index=>$log)
 		<td>{$message}</td>
 	</tr>
 EOD;
-}
-?>
+	}
+	?>
 </table>
 <!-- end of log messages -->

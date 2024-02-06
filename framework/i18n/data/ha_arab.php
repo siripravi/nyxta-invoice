@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'ha_Arab'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2013 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '4599',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -30,8 +31,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤ #,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AFN' => 'Af',
     'ANG' => 'NAf.',
     'AOA' => 'Kz',
@@ -195,10 +196,10 @@ return array (
     'ZRZ' => 'ZRZ',
     'ZWD' => 'Z$',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'جَنَيْرُ',
       2 => 'ڢَبْرَيْرُ',
       3 => 'مَرِسْ',
@@ -212,8 +213,8 @@ return array (
       11 => 'نُوَمْبَ',
       12 => 'دِسَمْبَ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'جَن',
       2 => 'ڢَب',
       3 => 'مَر',
@@ -228,10 +229,10 @@ return array (
       12 => 'دِس',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'J',
       2 => 'F',
       3 => 'M',
@@ -246,10 +247,10 @@ return array (
       12 => 'D',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'لَحَدِ',
       1 => 'لِتِنِنْ',
       2 => 'تَلَتَ',
@@ -258,8 +259,8 @@ return array (
       5 => 'جُمَعَ',
       6 => 'أَسَبَرْ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'لَح',
       1 => 'لِت',
       2 => 'تَل',
@@ -269,10 +270,10 @@ return array (
       6 => 'أَسَ',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'L',
       1 => 'L',
       2 => 'T',
@@ -282,33 +283,33 @@ return array (
       6 => 'A',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'غَبَنِنْ مِلَدِ',
       1 => 'مِلَدِ',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'غَبَنِنْ مِلَدِ',
       1 => 'مِلَدِ',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'KHAI',
       1 => 'BHAI',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, d MMMM, y',
     'long' => 'd MMMM, y',
     'medium' => 'd MMM, y',
     'short' => 'd/M/yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -318,8 +319,8 @@ return array (
   'amName' => 'A.M.',
   'pmName' => 'P.M.',
   'orientation' => 'rtl',
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

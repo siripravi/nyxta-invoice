@@ -1,23 +1,30 @@
 <?php
-$this->beginWidget('zii.widgets.CPortlet', array(
-	'title' => "Create New user",
-	'htmlOptions' => array('style' => "border:none;")
-)
+$this->beginWidget(
+	'zii.widgets.CPortlet',
+	array(
+		'title' => "Create New user",
+		'htmlOptions' => array('style' => "border:none;")
+	)
 );
 
 ?>
 <div class="span6 clearfix" style="min-height:220px">
 
 
-	<?php //echo $form->errorSummary($pmt); ?>
-	<?php //echo $form->hiddenField($stmt,'id');?>
-	<?php //echo $form->textFieldControlGroup($model,'INVOICE_ID'); ?>
+	<?php //echo $form->errorSummary($pmt); 
+	?>
+	<?php //echo $form->hiddenField($stmt,'id');
+	?>
+	<?php //echo $form->textFieldControlGroup($model,'INVOICE_ID'); 
+	?>
 
 	<div class="row-fluid" style="margin-bottom:6px;">
-		<?php $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
-			'action' => Yii::app()->createUrl($this->route),
-			'method' => 'get',
-		)
+		<?php $form = $this->beginWidget(
+			'bootstrap.widgets.TbActiveForm',
+			array(
+				'action' => Yii::app()->createUrl($this->route),
+				'method' => 'get',
+			)
 		); ?>
 
 		<div class="span5">
@@ -60,10 +67,12 @@ $this->beginWidget('zii.widgets.CPortlet', array(
 
 <div class=" wide form">
 
-		<?php $form = $this->beginWidget('CActiveForm', array(
-			'action' => Yii::app()->createUrl($this->route),
-			'method' => 'get',
-		)
+		<?php $form = $this->beginWidget(
+			'CActiveForm',
+			array(
+				'action' => Yii::app()->createUrl($this->route),
+				'method' => 'get',
+			)
 		); ?>
 
 		<div class="row">

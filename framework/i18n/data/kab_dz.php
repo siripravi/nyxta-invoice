@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'kab_DZ'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => ' ',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '#,##0.00¤',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'DZD' => 'DA',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Yennayer',
       2 => 'Fuṛar',
       3 => 'Meɣres',
@@ -70,8 +71,8 @@ return array (
       11 => 'Nunembeṛ',
       12 => 'Duǧembeṛ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Yen',
       2 => 'Fur',
       3 => 'Meɣ',
@@ -86,10 +87,10 @@ return array (
       12 => 'Duǧ',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'Y',
       2 => 'F',
       3 => 'M',
@@ -104,10 +105,10 @@ return array (
       12 => 'D',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Yanass',
       1 => 'Sanass',
       2 => 'Kraḍass',
@@ -116,8 +117,8 @@ return array (
       5 => 'Sḍisass',
       6 => 'Sayass',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Yan',
       1 => 'San',
       2 => 'Kraḍ',
@@ -127,10 +128,10 @@ return array (
       6 => 'Say',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'Y',
       1 => 'S',
       2 => 'K',
@@ -140,33 +141,33 @@ return array (
       6 => 'S',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'snd. T.Ɛ',
       1 => 'sld. T.Ɛ',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'send talalit n Ɛisa',
       1 => 'seld talalit n Ɛisa',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'snd. T.Ɛ',
       1 => 'sld. T.Ɛ',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE d MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'd MMM, y',
     'short' => 'd/M/y',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -176,8 +177,8 @@ return array (
   'amName' => 'n tufat',
   'pmName' => 'n tmeddit',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ak' => 'Takanit',
     'am' => 'Tamahrict',
     'ar' => 'Taɛrabt',
@@ -224,8 +225,8 @@ return array (
     'zh' => 'Tacinwat, Tamundarint',
     'zu' => 'Tazulut',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     'ad' => 'Undura',
     'ae' => 'Tigeldunin Yedduklen Taɛrabin',
     'af' => 'Afɣanistan',
@@ -452,8 +453,8 @@ return array (
     'zm' => 'Zambya',
     'zw' => 'Zimbabwi',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => '(n>=0&&n<=2)&&n!=2',
     1 => 'true',
   ),

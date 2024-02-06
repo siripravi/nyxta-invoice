@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CButtonColumn class file.
  *
@@ -28,22 +29,22 @@ class CButtonColumn extends CGridColumn
 	/**
 	 * @var array the HTML options for the data cell tags.
 	 */
-	public $htmlOptions=array('class'=>'button-column');
+	public $htmlOptions = array('class' => 'button-column');
 	/**
 	 * @var array the HTML options for the header cell tag.
 	 */
-	public $headerHtmlOptions=array('class'=>'button-column');
+	public $headerHtmlOptions = array('class' => 'button-column');
 	/**
 	 * @var array the HTML options for the footer cell tag.
 	 */
-	public $footerHtmlOptions=array('class'=>'button-column');
+	public $footerHtmlOptions = array('class' => 'button-column');
 	/**
 	 * @var string the template that is used to render the content in each data cell.
 	 * These default tokens are recognized: {view}, {update} and {delete}. If the {@link buttons} property
 	 * defines additional buttons, their IDs are also recognized here. For example, if a button named 'preview'
 	 * is declared in {@link buttons}, we can use the token '{preview}' here to specify where to display the button.
 	 */
-	public $template='{view} {update} {delete}';
+	public $template = '{view} {update} {delete}';
 	/**
 	 * @var string the label for the view button. Defaults to "View".
 	 * Note that the label will not be HTML-encoded when rendering.
@@ -73,11 +74,11 @@ class CButtonColumn extends CGridColumn
 	 * A PHP expression can be any PHP code that has a value. To learn more about what an expression is,
 	 * please refer to the {@link https://www.php.net/manual/en/language.expressions.php php manual}.
 	 */
-	public $viewButtonUrl='Yii::app()->controller->createUrl("view",array("id"=>$data->primaryKey))';
+	public $viewButtonUrl = 'Yii::app()->controller->createUrl("view",array("id"=>$data->primaryKey))';
 	/**
 	 * @var array the HTML options for the view button tag.
 	 */
-	public $viewButtonOptions=array('class'=>'view');
+	public $viewButtonOptions = array('class' => 'view');
 
 	/**
 	 * @var string the label for the update button. Defaults to "Update".
@@ -108,11 +109,11 @@ class CButtonColumn extends CGridColumn
 	 * A PHP expression can be any PHP code that has a value. To learn more about what an expression is,
 	 * please refer to the {@link https://www.php.net/manual/en/language.expressions.php php manual}.
 	 */
-	public $updateButtonUrl='Yii::app()->controller->createUrl("update",array("id"=>$data->primaryKey))';
+	public $updateButtonUrl = 'Yii::app()->controller->createUrl("update",array("id"=>$data->primaryKey))';
 	/**
 	 * @var array the HTML options for the update button tag.
 	 */
-	public $updateButtonOptions=array('class'=>'update');
+	public $updateButtonOptions = array('class' => 'update');
 
 	/**
 	 * @var string the label for the delete button. Defaults to "Delete".
@@ -143,11 +144,11 @@ class CButtonColumn extends CGridColumn
 	 * A PHP expression can be any PHP code that has a value. To learn more about what an expression is,
 	 * please refer to the {@link https://www.php.net/manual/en/language.expressions.php php manual}.
 	 */
-	public $deleteButtonUrl='Yii::app()->controller->createUrl("delete",array("id"=>$data->primaryKey))';
+	public $deleteButtonUrl = 'Yii::app()->controller->createUrl("delete",array("id"=>$data->primaryKey))';
 	/**
 	 * @var array the HTML options for the delete button tag.
 	 */
-	public $deleteButtonOptions=array('class'=>'delete');
+	public $deleteButtonOptions = array('class' => 'delete');
 	/**
 	 * @var string the confirmation message to be displayed when delete button is clicked.
 	 * By setting this property to be false, no confirmation message will be displayed.
@@ -201,7 +202,7 @@ class CButtonColumn extends CGridColumn
 	 * Note that in order to display non-default buttons, the {@link template} property needs to
 	 * be configured so that the corresponding button IDs appear as tokens in the template.
 	 */
-	public $buttons=array();
+	public $buttons = array();
 
 	/**
 	 * Initializes the column.
@@ -211,16 +212,14 @@ class CButtonColumn extends CGridColumn
 	{
 		$this->initDefaultButtons();
 
-		foreach($this->buttons as $id=>$button)
-		{
-			if(strpos($this->template,'{'.$id.'}')===false)
+		foreach ($this->buttons as $id => $button) {
+			if (strpos($this->template, '{' . $id . '}') === false)
 				unset($this->buttons[$id]);
-			elseif(isset($button['click']))
-			{
-				if(!isset($button['options']['class']))
-					$this->buttons[$id]['options']['class']=$id;
-				if(!($button['click'] instanceof CJavaScriptExpression))
-					$this->buttons[$id]['click']=new CJavaScriptExpression($button['click']);
+			elseif (isset($button['click'])) {
+				if (!isset($button['options']['class']))
+					$this->buttons[$id]['options']['class'] = $id;
+				if (!($button['click'] instanceof CJavaScriptExpression))
+					$this->buttons[$id]['click'] = new CJavaScriptExpression($button['click']);
 			}
 		}
 
@@ -232,55 +231,51 @@ class CButtonColumn extends CGridColumn
 	 */
 	protected function initDefaultButtons()
 	{
-		if($this->viewButtonLabel===null)
-			$this->viewButtonLabel=Yii::t('zii','View');
-		if($this->updateButtonLabel===null)
-			$this->updateButtonLabel=Yii::t('zii','Update');
-		if($this->deleteButtonLabel===null)
-			$this->deleteButtonLabel=Yii::t('zii','Delete');
-		if($this->viewButtonImageUrl===null)
-			$this->viewButtonImageUrl=$this->grid->baseScriptUrl.'/view.png';
-		if($this->updateButtonImageUrl===null)
-			$this->updateButtonImageUrl=$this->grid->baseScriptUrl.'/update.png';
-		if($this->deleteButtonImageUrl===null)
-			$this->deleteButtonImageUrl=$this->grid->baseScriptUrl.'/delete.png';
-		if($this->deleteConfirmation===null)
-			$this->deleteConfirmation=Yii::t('zii','Are you sure you want to delete this item?');
+		if ($this->viewButtonLabel === null)
+			$this->viewButtonLabel = Yii::t('zii', 'View');
+		if ($this->updateButtonLabel === null)
+			$this->updateButtonLabel = Yii::t('zii', 'Update');
+		if ($this->deleteButtonLabel === null)
+			$this->deleteButtonLabel = Yii::t('zii', 'Delete');
+		if ($this->viewButtonImageUrl === null)
+			$this->viewButtonImageUrl = $this->grid->baseScriptUrl . '/view.png';
+		if ($this->updateButtonImageUrl === null)
+			$this->updateButtonImageUrl = $this->grid->baseScriptUrl . '/update.png';
+		if ($this->deleteButtonImageUrl === null)
+			$this->deleteButtonImageUrl = $this->grid->baseScriptUrl . '/delete.png';
+		if ($this->deleteConfirmation === null)
+			$this->deleteConfirmation = Yii::t('zii', 'Are you sure you want to delete this item?');
 
-		foreach(array('view','update','delete') as $id)
-		{
-			$button=array(
-				'label'=>$this->{$id.'ButtonLabel'},
-				'url'=>$this->{$id.'ButtonUrl'},
-				'imageUrl'=>$this->{$id.'ButtonImageUrl'},
-				'options'=>$this->{$id.'ButtonOptions'},
+		foreach (array('view', 'update', 'delete') as $id) {
+			$button = array(
+				'label' => $this->{$id . 'ButtonLabel'},
+				'url' => $this->{$id . 'ButtonUrl'},
+				'imageUrl' => $this->{$id . 'ButtonImageUrl'},
+				'options' => $this->{$id . 'ButtonOptions'},
 			);
-			if(isset($this->buttons[$id]))
-				$this->buttons[$id]=array_merge($button,$this->buttons[$id]);
+			if (isset($this->buttons[$id]))
+				$this->buttons[$id] = array_merge($button, $this->buttons[$id]);
 			else
-				$this->buttons[$id]=$button;
+				$this->buttons[$id] = $button;
 		}
 
-		if(!isset($this->buttons['delete']['click']))
-		{
-			if(is_string($this->deleteConfirmation))
-				$confirmation="if(!confirm(".CJavaScript::encode($this->deleteConfirmation).")) return false;";
+		if (!isset($this->buttons['delete']['click'])) {
+			if (is_string($this->deleteConfirmation))
+				$confirmation = "if(!confirm(" . CJavaScript::encode($this->deleteConfirmation) . ")) return false;";
 			else
-				$confirmation='';
+				$confirmation = '';
 
-			if(Yii::app()->request->enableCsrfValidation)
-			{
+			if (Yii::app()->request->enableCsrfValidation) {
 				$csrfTokenName = Yii::app()->request->csrfTokenName;
 				$csrfToken = Yii::app()->request->csrfToken;
 				$csrf = "\n\t\tdata:{ '$csrfTokenName':'$csrfToken' },";
-			}
-			else
+			} else
 				$csrf = '';
 
-			if($this->afterDelete===null)
-				$this->afterDelete='function(){}';
+			if ($this->afterDelete === null)
+				$this->afterDelete = 'function(){}';
 
-			$this->buttons['delete']['click']=<<<EOD
+			$this->buttons['delete']['click'] = <<<EOD
 function() {
 	$confirmation
 	var th = this,
@@ -307,19 +302,17 @@ EOD;
 	 */
 	protected function registerClientScript()
 	{
-		$js=array();
-		foreach($this->buttons as $id=>$button)
-		{
-			if(isset($button['click']))
-			{
-				$function=CJavaScript::encode($button['click']);
-				$class=preg_replace('/\s+/','.',$button['options']['class']);
-				$js[]="jQuery(document).on('click','#{$this->grid->id} a.{$class}',$function);";
+		$js = array();
+		foreach ($this->buttons as $id => $button) {
+			if (isset($button['click'])) {
+				$function = CJavaScript::encode($button['click']);
+				$class = preg_replace('/\s+/', '.', $button['options']['class']);
+				$js[] = "jQuery(document).on('click','#{$this->grid->id} a.{$class}',$function);";
 			}
 		}
 
-		if($js!==array())
-			Yii::app()->getClientScript()->registerScript(__CLASS__.'#'.$this->id, implode("\n",$js));
+		if ($js !== array())
+			Yii::app()->getClientScript()->registerScript(__CLASS__ . '#' . $this->id, implode("\n", $js));
 	}
 
 	/**
@@ -331,17 +324,16 @@ EOD;
 	 */
 	public function getDataCellContent($row)
 	{
-		$data=$this->grid->dataProvider->data[$row];
-		$tr=array();
+		$data = $this->grid->dataProvider->data[$row];
+		$tr = array();
 		ob_start();
-		foreach($this->buttons as $id=>$button)
-		{
-			$this->renderButton($id,$button,$row,$data);
-			$tr['{'.$id.'}']=ob_get_contents();
+		foreach ($this->buttons as $id => $button) {
+			$this->renderButton($id, $button, $row, $data);
+			$tr['{' . $id . '}'] = ob_get_contents();
 			ob_clean();
 		}
 		ob_end_clean();
-		return strtr($this->template,$tr);
+		return strtr($this->template, $tr);
 	}
 
 	/**
@@ -352,18 +344,18 @@ EOD;
 	 * @param integer $row the row number (zero-based)
 	 * @param mixed $data the data object associated with the row
 	 */
-	protected function renderButton($id,$button,$row,$data)
+	protected function renderButton($id, $button, $row, $data)
 	{
-		if (isset($button['visible']) && !$this->evaluateExpression($button['visible'],array('row'=>$row,'data'=>$data)))
-  			return;
-		$label=isset($button['label']) ? $button['label'] : $id;
-		$url=isset($button['url']) ? $this->evaluateExpression($button['url'],array('data'=>$data,'row'=>$row)) : '#';
-		$options=isset($button['options']) ? $button['options'] : array();
-		if(!isset($options['title']))
-			$options['title']=$label;
-		if(isset($button['imageUrl']) && is_string($button['imageUrl']))
-			echo CHtml::link(CHtml::image($button['imageUrl'],$label),$url,$options);
+		if (isset($button['visible']) && !$this->evaluateExpression($button['visible'], array('row' => $row, 'data' => $data)))
+			return;
+		$label = isset($button['label']) ? $button['label'] : $id;
+		$url = isset($button['url']) ? $this->evaluateExpression($button['url'], array('data' => $data, 'row' => $row)) : '#';
+		$options = isset($button['options']) ? $button['options'] : array();
+		if (!isset($options['title']))
+			$options['title'] = $label;
+		if (isset($button['imageUrl']) && is_string($button['imageUrl']))
+			echo CHtml::link(CHtml::image($button['imageUrl'], $label), $url, $options);
 		else
-			echo CHtml::link($label,$url,$options);
+			echo CHtml::link($label, $url, $options);
 	}
 }

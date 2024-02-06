@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'lu_CD'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => '.',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '#,##0.00¤',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'CDF' => 'FC',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Ciongo',
       2 => 'Lùishi',
       3 => 'Lusòlo',
@@ -70,8 +71,8 @@ return array (
       11 => 'Kaswèkèsè',
       12 => 'Ciswà',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Cio',
       2 => 'Lui',
       3 => 'Lus',
@@ -86,10 +87,10 @@ return array (
       12 => 'Cis',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'C',
       2 => 'L',
       3 => 'L',
@@ -104,10 +105,10 @@ return array (
       12 => 'C',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Lumingu',
       1 => 'Nkodya',
       2 => 'Ndàayà',
@@ -116,8 +117,8 @@ return array (
       5 => 'Ngòvya',
       6 => 'Lubingu',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Lum',
       1 => 'Nko',
       2 => 'Ndy',
@@ -127,10 +128,10 @@ return array (
       6 => 'Lub',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'L',
       1 => 'N',
       2 => 'N',
@@ -140,33 +141,33 @@ return array (
       6 => 'L',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'kmp. Y.K.',
       1 => 'kny. Y. K.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Kumpala kwa Yezu Kli',
       1 => 'Kunyima kwa Yezu Kli',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'kmp. Y.K.',
       1 => 'kny. Y. K.',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE d MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'd MMM y',
     'short' => 'd/M/y',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -176,8 +177,8 @@ return array (
   'amName' => 'Dinda',
   'pmName' => 'Dilolo',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ak' => 'Liakan',
     'am' => 'Liamhariki',
     'ar' => 'Arabi',
@@ -222,8 +223,8 @@ return array (
     'zh' => 'shinɛ',
     'zu' => 'Nzulu',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     'ad' => 'Andore',
     'ae' => 'Lemila alabu',
     'af' => 'Afuganisita',

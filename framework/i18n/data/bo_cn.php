@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'bo_CN'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤ #,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -52,10 +53,10 @@ return array (
     'XOF' => 'CFA',
     'XPF' => 'CFPF',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'ཟླ་བ་དང་པོ་',
       2 => 'ཟླ་བ་གཉིས་པ་',
       3 => 'ཟླ་བ་སུམ་པ་',
@@ -69,8 +70,8 @@ return array (
       11 => 'ཟླ་བ་བཅུ་གཅིག་པ་',
       12 => 'ཟླ་བ་བཅུ་གཉིས་པ་',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'ཟླ་༡',
       2 => 'ཟླ་༢',
       3 => 'ཟླ་༣',
@@ -85,10 +86,10 @@ return array (
       12 => 'ཟླ་༡༢',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -103,10 +104,10 @@ return array (
       12 => '12',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'གཟའ་ཉི་མ་',
       1 => 'གཟའ་ཟླ་བ་',
       2 => 'གཟའ་མིག་དམར་',
@@ -115,8 +116,8 @@ return array (
       5 => 'གཟའ་སངས་',
       6 => 'གཟའ་སྤེན་པ་',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'ཉི་མ་',
       1 => 'ཟླ་བ་',
       2 => 'མིག་དམར་',
@@ -125,8 +126,8 @@ return array (
       5 => 'སངས་',
       6 => 'སྤེན་པ་',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'ཉི',
       1 => 'ཟླ',
       2 => 'མི',
@@ -136,10 +137,10 @@ return array (
       6 => 'སྤེ',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'ཉི',
       1 => 'ཟླ',
       2 => 'མི',
@@ -148,8 +149,8 @@ return array (
       5 => 'ས',
       6 => 'སྤེ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'ཉི་མ་',
       1 => 'ཟླ་བ་',
       2 => 'མིག་དམར་',
@@ -158,8 +159,8 @@ return array (
       5 => 'སངས་',
       6 => 'སྤེན་པ་',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'གཟའ་ཉི་མ་',
       1 => 'གཟའ་ཟླ་བ་',
       2 => 'གཟའ་མིག་དམར་',
@@ -169,33 +170,33 @@ return array (
       6 => 'གཟའ་སྤེན་པ་',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'སྤྱི་ལོ་སྔོན།',
       1 => 'སྤྱི་ལོ།',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'སྤྱི་ལོ་སྔོན།',
       1 => 'སྤྱི་ལོ།',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'སྤྱི་ལོ་སྔོན།',
       1 => 'སྤྱི་ལོ།',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'y MMMM d, EEEE',
     'long' => 'སྦྱི་ལོ་y MMMMའི་ཙེས་dད',
     'medium' => 'y ལོ་འི་MMMཙེས་d',
     'short' => 'y-MM-dd',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -205,8 +206,8 @@ return array (
   'amName' => 'སྔ་དྲོ་',
   'pmName' => 'ཕྱི་དྲོ་',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'bn' => 'བྷང་ག་ལའི་སྐད།',
     'bo' => 'པོད་སྐད་',
     'da' => 'ཏེན་མག་གི་སྐད།',
@@ -259,8 +260,8 @@ return array (
     'zun' => 'ཟུ་ནི་སྐད།',
     'zza' => 'ཟ་ཟཱ་སྐད།',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'འ་ལ་པོའི་སྐད་ཡིག་།',
     'cyrl' => 'གོ་སའི་ལ་ཧྥུ་སྐད་ཡིག་།',
     'deva' => 'དེ་བ་ནཱ་ག་རཱི་སྐད་ཡིག',
@@ -273,8 +274,8 @@ return array (
     'zxxx' => 'སྙན་བརྒྱུད། ཡིག་རིགས་སུ་མ་བཀོད་པའི་ཟིན་ཐོ།་',
     'zzzz' => 'མིའི་ཤེས་རྟོགས་མ་བྱུང་བ། ཡང་ན་ཆད་ལྷག་ཅན་གྱི་ཟིན་བྲིས།',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'འཛམ་གླིང་།',
     '002' => 'ཨཕྲི་ཀ།',
     '019' => 'ཨ་མེ་རི་ཀ།',

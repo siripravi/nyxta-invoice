@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CDbMessageSource class file.
  *
@@ -43,30 +44,30 @@
  */
 class CDbMessageSource extends CMessageSource
 {
-	const CACHE_KEY_PREFIX='Yii.CDbMessageSource.';
+	const CACHE_KEY_PREFIX = 'Yii.CDbMessageSource.';
 	/**
 	 * @var string the ID of the database connection application component. Defaults to 'db'.
 	 */
-	public $connectionID='db';
+	public $connectionID = 'db';
 	/**
 	 * @var string the name of the source message table. Defaults to 'SourceMessage'.
 	 */
-	public $sourceMessageTable='SourceMessage';
+	public $sourceMessageTable = 'SourceMessage';
 	/**
 	 * @var string the name of the translated message table. Defaults to 'Message'.
 	 */
-	public $translatedMessageTable='Message';
+	public $translatedMessageTable = 'Message';
 	/**
 	 * @var integer the time in seconds that the messages can remain valid in cache.
 	 * Defaults to 0, meaning the caching is disabled.
 	 */
-	public $cachingDuration=0;
+	public $cachingDuration = 0;
 	/**
 	 * @var string the ID of the cache application component that is used to cache the messages.
 	 * Defaults to 'cache' which refers to the primary cache application component.
 	 * Set this property to false if you want to disable caching the messages.
 	 */
-	public $cacheID='cache';
+	public $cacheID = 'cache';
 
 	/**
 	 * Loads the message translation for the specified language and category.
@@ -74,19 +75,18 @@ class CDbMessageSource extends CMessageSource
 	 * @param string $language the target language
 	 * @return array the loaded messages
 	 */
-	protected function loadMessages($category,$language)
+	protected function loadMessages($category, $language)
 	{
-		if($this->cachingDuration>0 && $this->cacheID!==false && ($cache=Yii::app()->getComponent($this->cacheID))!==null)
-		{
-			$key=self::CACHE_KEY_PREFIX.'.messages.'.$category.'.'.$language;
-			if(($data=$cache->get($key))!==false)
+		if ($this->cachingDuration > 0 && $this->cacheID !== false && ($cache = Yii::app()->getComponent($this->cacheID)) !== null) {
+			$key = self::CACHE_KEY_PREFIX . '.messages.' . $category . '.' . $language;
+			if (($data = $cache->get($key)) !== false)
 				return unserialize($data);
 		}
 
-		$messages=$this->loadMessagesFromDb($category,$language);
+		$messages = $this->loadMessagesFromDb($category, $language);
 
-		if(isset($cache))
-			$cache->set($key,serialize($messages),$this->cachingDuration);
+		if (isset($cache))
+			$cache->set($key, serialize($messages), $this->cachingDuration);
 
 		return $messages;
 	}
@@ -101,12 +101,14 @@ class CDbMessageSource extends CMessageSource
 	 */
 	public function getDbConnection()
 	{
-		if($this->_db===null)
-		{
-			$this->_db=Yii::app()->getComponent($this->connectionID);
-			if(!$this->_db instanceof CDbConnection)
-				throw new CException(Yii::t('yii','CDbMessageSource.connectionID is invalid. Please make sure "{id}" refers to a valid database application component.',
-					array('{id}'=>$this->connectionID)));
+		if ($this->_db === null) {
+			$this->_db = Yii::app()->getComponent($this->connectionID);
+			if (!$this->_db instanceof CDbConnection)
+				throw new CException(Yii::t(
+					'yii',
+					'CDbMessageSource.connectionID is invalid. Please make sure "{id}" refers to a valid database application component.',
+					array('{id}' => $this->connectionID)
+				));
 		}
 		return $this->_db;
 	}
@@ -119,16 +121,15 @@ class CDbMessageSource extends CMessageSource
 	 * @return array the messages loaded from database
 	 * @since 1.1.5
 	 */
-	protected function loadMessagesFromDb($category,$language)
+	protected function loadMessagesFromDb($category, $language)
 	{
-		$command=$this->getDbConnection()->createCommand()
+		$command = $this->getDbConnection()->createCommand()
 			->select("t1.message AS message, t2.translation AS translation")
-			->from(array("{$this->sourceMessageTable} t1","{$this->translatedMessageTable} t2"))
-			->where('t1.id=t2.id AND t1.category=:category AND t2.language=:language',array(':category'=>$category,':language'=>$language))
-		;
-		$messages=array();
-		foreach($command->queryAll() as $row)
-			$messages[$row['message']]=$row['translation'];
+			->from(array("{$this->sourceMessageTable} t1", "{$this->translatedMessageTable} t2"))
+			->where('t1.id=t2.id AND t1.category=:category AND t2.language=:language', array(':category' => $category, ':language' => $language));
+		$messages = array();
+		foreach ($command->queryAll() as $row)
+			$messages[$row['message']] = $row['translation'];
 
 		return $messages;
 	}

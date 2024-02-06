@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'gu_IN'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00;(¤#,##0.00)',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -52,10 +53,10 @@ return array (
     'XOF' => 'CFA',
     'XPF' => 'CFPF',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'જાન્યુઆરી',
       2 => 'ફેબ્રુઆરી',
       3 => 'માર્ચ',
@@ -69,8 +70,8 @@ return array (
       11 => 'નવેમ્બર',
       12 => 'ડિસેમ્બર',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'જાન્યુ',
       2 => 'ફેબ્રુ',
       3 => 'માર્ચ',
@@ -84,8 +85,8 @@ return array (
       11 => 'નવે',
       12 => 'ડિસે',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       1 => 'જા',
       2 => 'ફે',
       3 => 'મા',
@@ -100,10 +101,10 @@ return array (
       12 => 'ડિ',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'જા',
       2 => 'ફે',
       3 => 'મા',
@@ -117,8 +118,8 @@ return array (
       11 => 'ન',
       12 => 'ડિ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'જાન્યુ',
       2 => 'ફેબ્રુ',
       3 => 'માર્ચ',
@@ -132,8 +133,8 @@ return array (
       11 => 'નવે',
       12 => 'ડિસે',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       1 => 'જાન્યુઆરી',
       2 => 'ફેબ્રુઆરી',
       3 => 'માર્ચ',
@@ -148,10 +149,10 @@ return array (
       12 => 'ડિસેમ્બર',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'રવિવાર',
       1 => 'સોમવાર',
       2 => 'મંગળવાર',
@@ -160,8 +161,8 @@ return array (
       5 => 'શુક્રવાર',
       6 => 'શનિવાર',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'રવિ',
       1 => 'સોમ',
       2 => 'મંગળ',
@@ -170,8 +171,8 @@ return array (
       5 => 'શુક્ર',
       6 => 'શનિ',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'ર',
       1 => 'સો',
       2 => 'મં',
@@ -180,8 +181,8 @@ return array (
       5 => 'શુ',
       6 => 'શ',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'ર',
       1 => 'સો',
       2 => 'મં',
@@ -191,10 +192,10 @@ return array (
       6 => 'શ',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'ર',
       1 => 'સો',
       2 => 'મં',
@@ -203,8 +204,8 @@ return array (
       5 => 'શુ',
       6 => 'શ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'રવિ',
       1 => 'સોમ',
       2 => 'મંગળ',
@@ -213,8 +214,8 @@ return array (
       5 => 'શુક્ર',
       6 => 'શનિ',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'ર',
       1 => 'સો',
       2 => 'મં',
@@ -223,8 +224,8 @@ return array (
       5 => 'શુ',
       6 => 'શ',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'રવિવાર',
       1 => 'સોમવાર',
       2 => 'મંગળવાર',
@@ -234,33 +235,33 @@ return array (
       6 => 'શનિવાર',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'ઈલુના જન્મ પહેસાં',
       1 => 'ઇસવીસન',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'ઈસવીસન પૂર્વે',
       1 => 'ઇસવીસન',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'ઇ સ પુ',
       1 => 'ઇસ',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, d MMMM, y',
     'long' => 'd MMMM, y',
     'medium' => 'd MMM, y',
     'short' => 'd-MM-yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'hh:mm:ss a zzzz',
     'long' => 'hh:mm:ss a z',
     'medium' => 'hh:mm:ss a',
@@ -270,8 +271,8 @@ return array (
   'amName' => 'AM',
   'pmName' => 'PM',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'અફાર',
     'ab' => 'અબખાજિયન',
     'ace' => 'અચીની',
@@ -783,8 +784,8 @@ return array (
     'zxx' => 'કોઇ ભાષાશાસ્ત્રીય સામગ્રી નથી',
     'zza' => 'ઝાઝા',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'પર્સો-અરેબીક',
     'armi' => 'ઇમ્પિરિયલ આર્મનિક',
     'armn' => 'અર્મેનિયન',
@@ -915,8 +916,8 @@ return array (
     'zyyy' => 'સામાન્ય',
     'zzzz' => 'અજ્ઞાત લિપિ',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'વિશ્વ',
     '002' => 'આફ્રિકા',
     '003' => 'ઉતર અમેરિકા',
@@ -1208,8 +1209,8 @@ return array (
     'zw' => 'ઝિમ્બાબ્વે',
     'zz' => 'અજ્ઞાત અથવા અમાન્ય પ્રદેશ',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

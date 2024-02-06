@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -16,7 +17,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   '{class} must specify "model" and "{attribute}" or "{name}" property values.' => '{class} muss die Eigenschaften "model" und "{attribute}" oder "{name}" spezifizieren.',
   'Are you sure you want to delete this item?' => 'Wollen Sie diesen Eintrag wirklich löschen?',
   'Delete' => 'Löschen',

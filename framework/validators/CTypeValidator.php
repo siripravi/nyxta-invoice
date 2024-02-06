@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CTypeValidator class file.
  *
@@ -47,30 +48,30 @@ class CTypeValidator extends CValidator
 	 * @var string the data type that the attribute should be. Defaults to 'string'.
 	 * Valid values include 'string', 'integer', 'float', 'array', 'date', 'time' and 'datetime'.
 	 */
-	public $type='string';
+	public $type = 'string';
 	/**
 	 * @var string the format pattern that the date value should follow. Defaults to 'MM/dd/yyyy'.
 	 * Please see {@link CDateTimeParser} for details about how to specify a date format.
 	 * This property is effective only when {@link type} is 'date'.
 	 */
-	public $dateFormat='MM/dd/yyyy';
+	public $dateFormat = 'MM/dd/yyyy';
 	/**
 	 * @var string the format pattern that the time value should follow. Defaults to 'hh:mm'.
 	 * Please see {@link CDateTimeParser} for details about how to specify a time format.
 	 * This property is effective only when {@link type} is 'time'.
 	 */
-	public $timeFormat='hh:mm';
+	public $timeFormat = 'hh:mm';
 	/**
 	 * @var string the format pattern that the datetime value should follow. Defaults to 'MM/dd/yyyy hh:mm'.
 	 * Please see {@link CDateTimeParser} for details about how to specify a datetime format.
 	 * This property is effective only when {@link type} is 'datetime'.
 	 */
-	public $datetimeFormat='MM/dd/yyyy hh:mm';
+	public $datetimeFormat = 'MM/dd/yyyy hh:mm';
 	/**
 	 * @var boolean whether the attribute value can be null or empty. Defaults to true,
 	 * meaning that if the attribute is empty, it is considered valid.
 	 */
-	public $allowEmpty=true;
+	public $allowEmpty = true;
 
 	/**
 	 * @var boolean whether the actual PHP type of attribute value should be checked.
@@ -79,7 +80,7 @@ class CTypeValidator extends CValidator
 	 *
 	 * @since 1.1.13
 	 */
-	public $strict=false;
+	public $strict = false;
 
 	/**
 	 * Validates the attribute of the object.
@@ -87,16 +88,15 @@ class CTypeValidator extends CValidator
 	 * @param CModel $object the object being validated
 	 * @param string $attribute the attribute being validated
 	 */
-	protected function validateAttribute($object,$attribute)
+	protected function validateAttribute($object, $attribute)
 	{
-		$value=$object->$attribute;
-		if($this->allowEmpty && $this->isEmpty($value))
+		$value = $object->$attribute;
+		if ($this->allowEmpty && $this->isEmpty($value))
 			return;
 
-		if(!$this->validateValue($value))
-		{
-			$message=$this->message!==null?$this->message : Yii::t('yii','{attribute} must be {type}.');
-			$this->addError($object,$attribute,$message,array('{type}'=>$this->type));
+		if (!$this->validateValue($value)) {
+			$message = $this->message !== null ? $this->message : Yii::t('yii', '{attribute} must be {type}.');
+			$this->addError($object, $attribute, $message, array('{type}' => $this->type));
 		}
 	}
 
@@ -110,22 +110,22 @@ class CTypeValidator extends CValidator
 	 */
 	public function validateValue($value)
 	{
-		$type=$this->type==='float' ? 'double' : $this->type;
-		if($type===gettype($value))
+		$type = $this->type === 'float' ? 'double' : $this->type;
+		if ($type === gettype($value))
 			return true;
-		elseif($this->strict || is_array($value) || is_object($value) || is_resource($value) || is_bool($value))
+		elseif ($this->strict || is_array($value) || is_object($value) || is_resource($value) || is_bool($value))
 			return false;
 
-		if($type==='integer')
-			return (boolean)preg_match('/^[-+]?[0-9]+$/',trim($value));
-		elseif($type==='double')
-			return (boolean)preg_match('/^[-+]?([0-9]*\.)?[0-9]+([eE][-+]?[0-9]+)?$/',trim($value));
-		elseif($type==='date')
-			return CDateTimeParser::parse($value,$this->dateFormat,array('month'=>1,'day'=>1,'hour'=>0,'minute'=>0,'second'=>0))!==false;
-		elseif($type==='time')
-			return CDateTimeParser::parse($value,$this->timeFormat)!==false;
-		elseif($type==='datetime')
-			return CDateTimeParser::parse($value,$this->datetimeFormat, array('month'=>1,'day'=>1,'hour'=>0,'minute'=>0,'second'=>0))!==false;
+		if ($type === 'integer')
+			return (bool)preg_match('/^[-+]?[0-9]+$/', trim($value));
+		elseif ($type === 'double')
+			return (bool)preg_match('/^[-+]?([0-9]*\.)?[0-9]+([eE][-+]?[0-9]+)?$/', trim($value));
+		elseif ($type === 'date')
+			return CDateTimeParser::parse($value, $this->dateFormat, array('month' => 1, 'day' => 1, 'hour' => 0, 'minute' => 0, 'second' => 0)) !== false;
+		elseif ($type === 'time')
+			return CDateTimeParser::parse($value, $this->timeFormat) !== false;
+		elseif ($type === 'datetime')
+			return CDateTimeParser::parse($value, $this->datetimeFormat, array('month' => 1, 'day' => 1, 'hour' => 0, 'minute' => 0, 'second' => 0)) !== false;
 
 		return false;
 	}

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CFormatter class file.
  *
@@ -58,33 +59,33 @@ class CFormatter extends CApplicationComponent
 	/**
 	 * @var string the format string to be used to format a date using PHP date() function. Defaults to 'Y/m/d'.
 	 */
-	public $dateFormat='Y/m/d';
+	public $dateFormat = 'Y/m/d';
 	/**
 	 * @var string the format string to be used to format a time using PHP date() function. Defaults to 'h:i:s A'.
 	 */
-	public $timeFormat='h:i:s A';
+	public $timeFormat = 'h:i:s A';
 	/**
 	 * @var string the format string to be used to format a date and time using PHP date() function. Defaults to 'Y/m/d h:i:s A'.
 	 */
-	public $datetimeFormat='Y/m/d h:i:s A';
+	public $datetimeFormat = 'Y/m/d h:i:s A';
 	/**
 	 * @var array the format used to format a number with PHP number_format() function.
 	 * Three elements may be specified: "decimals", "decimalSeparator" and "thousandSeparator".
 	 * They correspond to the number of digits after the decimal point, the character displayed as the decimal point
 	 * and the thousands separator character.
 	 */
-	public $numberFormat=array('decimals'=>0, 'decimalSeparator'=>null, 'thousandSeparator'=>null);
+	public $numberFormat = array('decimals' => 0, 'decimalSeparator' => null, 'thousandSeparator' => null);
 	/**
 	 * @var array the text to be displayed when formatting a boolean value. The first element corresponds
 	 * to the text display for false, the second element for true. Defaults to <code>array('No', 'Yes')</code>.
 	 */
-	public $booleanFormat=array('No','Yes');
+	public $booleanFormat = array('No', 'Yes');
 	/**
 	 * @var array the options to be passed to CHtmlPurifier instance used in this class. CHtmlPurifier is used
 	 * in {@link formatHtml} method, so this property could be useful to customize HTML filtering behavior.
 	 * @since 1.1.13
 	 */
-	public $htmlPurifierOptions=array();
+	public $htmlPurifierOptions = array();
 	/**
 	 * @var array the format used to format size (bytes). Three elements may be specified: "base", "decimals" and "decimalSeparator".
 	 * They correspond to the base at which a kilobyte is calculated (1000 or 1024 bytes per kilobyte, defaults to 1024),
@@ -92,10 +93,10 @@ class CFormatter extends CApplicationComponent
 	 * "decimalSeparator" is available since version 1.1.13
 	 * @since 1.1.11
 	 */
-	public $sizeFormat=array(
-		'base'=>1024,
-		'decimals'=>2,
-		'decimalSeparator'=>null,
+	public $sizeFormat = array(
+		'base' => 1024,
+		'decimals' => 2,
+		'decimalSeparator' => null,
 	);
 
 	/**
@@ -105,12 +106,12 @@ class CFormatter extends CApplicationComponent
 	 * @param array $parameters method parameters
 	 * @return mixed the method return value
 	 */
-	public function __call($name,$parameters)
+	public function __call($name, $parameters)
 	{
-		if(method_exists($this,'format'.$name))
-			return call_user_func_array(array($this,'format'.$name),$parameters);
+		if (method_exists($this, 'format' . $name))
+			return call_user_func_array(array($this, 'format' . $name), $parameters);
 		else
-			return parent::__call($name,$parameters);
+			return parent::__call($name, $parameters);
 	}
 
 	/**
@@ -121,13 +122,13 @@ class CFormatter extends CApplicationComponent
 	 * @throws CException if given type is unknown
 	 * @return string the formatted data
 	 */
-	public function format($value,$type)
+	public function format($value, $type)
 	{
-		$method='format'.$type;
-		if(method_exists($this,$method))
+		$method = 'format' . $type;
+		if (method_exists($this, $method))
 			return $this->$method($value);
 		else
-			throw new CException(Yii::t('yii','Unknown type "{type}".',array('{type}'=>$type)));
+			throw new CException(Yii::t('yii', 'Unknown type "{type}".', array('{type}' => $type)));
 	}
 
 	/**
@@ -161,18 +162,15 @@ class CFormatter extends CApplicationComponent
 	 * makes sense only when $paragraphs parameter is true
 	 * @return string the formatted result
 	 */
-	public function formatNtext($value,$paragraphs=false,$removeEmptyParagraphs=true)
+	public function formatNtext($value, $paragraphs = false, $removeEmptyParagraphs = true)
 	{
-		$value=CHtml::encode($value);
-		if($paragraphs)
-		{
-			$value='<p>'.str_replace(array("\r\n", "\n", "\r"), '</p><p>',$value).'</p>';
-			if($removeEmptyParagraphs)
-				$value=preg_replace('/(<\/p><p>){2,}/i','</p><p>',$value);
+		$value = CHtml::encode($value);
+		if ($paragraphs) {
+			$value = '<p>' . str_replace(array("\r\n", "\n", "\r"), '</p><p>', $value) . '</p>';
+			if ($removeEmptyParagraphs)
+				$value = preg_replace('/(<\/p><p>){2,}/i', '</p><p>', $value);
 			return $value;
-		}
-		else
-		{
+		} else {
 			return nl2br($value);
 		}
 	}
@@ -195,7 +193,7 @@ class CFormatter extends CApplicationComponent
 	 */
 	public function formatDate($value)
 	{
-		return date($this->dateFormat,$this->normalizeDateValue($value));
+		return date($this->dateFormat, $this->normalizeDateValue($value));
 	}
 
 	/**
@@ -206,7 +204,7 @@ class CFormatter extends CApplicationComponent
 	 */
 	public function formatTime($value)
 	{
-		return date($this->timeFormat,$this->normalizeDateValue($value));
+		return date($this->timeFormat, $this->normalizeDateValue($value));
 	}
 
 	/**
@@ -217,7 +215,7 @@ class CFormatter extends CApplicationComponent
 	 */
 	public function formatDatetime($value)
 	{
-		return date($this->datetimeFormat,$this->normalizeDateValue($value));
+		return date($this->datetimeFormat, $this->normalizeDateValue($value));
 	}
 
 	/**
@@ -227,14 +225,12 @@ class CFormatter extends CApplicationComponent
 	 */
 	protected function normalizeDateValue($time)
 	{
-		if(is_string($time))
-		{
-			if(ctype_digit($time) || ($time[0]=='-' && ctype_digit(substr($time, 1))))
+		if (is_string($time)) {
+			if (ctype_digit($time) || ($time[0] == '-' && ctype_digit(substr($time, 1))))
 				return (int)$time;
 			else
 				return strtotime($time);
-		}
-		elseif (class_exists('DateTime', false) && $time instanceof DateTime)
+		} elseif (class_exists('DateTime', false) && $time instanceof DateTime)
 			return $time->getTimestamp();
 		else
 			return (int)$time;
@@ -278,10 +274,10 @@ class CFormatter extends CApplicationComponent
 	 */
 	public function formatUrl($value)
 	{
-		$url=$value;
-		if(strpos($url,'http://')!==0 && strpos($url,'https://')!==0)
-			$url='http://'.$url;
-		return CHtml::link(CHtml::encode($value),$url);
+		$url = $value;
+		if (strpos($url, 'http://') !== 0 && strpos($url, 'https://') !== 0)
+			$url = 'http://' . $url;
+		return CHtml::link(CHtml::encode($value), $url);
 	}
 
 	/**
@@ -292,7 +288,7 @@ class CFormatter extends CApplicationComponent
 	 */
 	public function formatNumber($value)
 	{
-		return number_format($value,$this->numberFormat['decimals'],$this->numberFormat['decimalSeparator'],$this->numberFormat['thousandSeparator']);
+		return number_format($value, $this->numberFormat['decimals'], $this->numberFormat['decimalSeparator'], $this->numberFormat['thousandSeparator']);
 	}
 
 	/**
@@ -300,9 +296,9 @@ class CFormatter extends CApplicationComponent
 	 */
 	public function getHtmlPurifier()
 	{
-		if($this->_htmlPurifier===null)
-			$this->_htmlPurifier=new CHtmlPurifier;
-		$this->_htmlPurifier->options=$this->htmlPurifierOptions;
+		if ($this->_htmlPurifier === null)
+			$this->_htmlPurifier = new CHtmlPurifier;
+		$this->_htmlPurifier->options = $this->htmlPurifierOptions;
 		return $this->_htmlPurifier;
 	}
 
@@ -315,28 +311,27 @@ class CFormatter extends CApplicationComponent
 	 * @see sizeFormat
 	 * @since 1.1.11
 	 */
-	public function formatSize($value,$verbose=false)
+	public function formatSize($value, $verbose = false)
 	{
-		$base=$this->sizeFormat['base'];
-		for($i=0; $base<=$value && $i<5; $i++)
-			$value=$value/$base;
+		$base = $this->sizeFormat['base'];
+		for ($i = 0; $base <= $value && $i < 5; $i++)
+			$value = $value / $base;
 
-		$value=round($value, $this->sizeFormat['decimals']);
-		$formattedValue=isset($this->sizeFormat['decimalSeparator']) ? str_replace('.',$this->sizeFormat['decimalSeparator'],$value) : $value;
-		$params=array($value,'{n}'=>$formattedValue);
+		$value = round($value, $this->sizeFormat['decimals']);
+		$formattedValue = isset($this->sizeFormat['decimalSeparator']) ? str_replace('.', $this->sizeFormat['decimalSeparator'], $value) : $value;
+		$params = array($value, '{n}' => $formattedValue);
 
-		switch($i)
-		{
+		switch ($i) {
 			case 0:
-				return $verbose ? Yii::t('yii','{n} byte|{n} bytes',$params) : Yii::t('yii', '{n} B',$params);
+				return $verbose ? Yii::t('yii', '{n} byte|{n} bytes', $params) : Yii::t('yii', '{n} B', $params);
 			case 1:
-				return $verbose ? Yii::t('yii','{n} kilobyte|{n} kilobytes',$params) : Yii::t('yii','{n} KB',$params);
+				return $verbose ? Yii::t('yii', '{n} kilobyte|{n} kilobytes', $params) : Yii::t('yii', '{n} KB', $params);
 			case 2:
-				return $verbose ? Yii::t('yii','{n} megabyte|{n} megabytes',$params) : Yii::t('yii','{n} MB',$params);
+				return $verbose ? Yii::t('yii', '{n} megabyte|{n} megabytes', $params) : Yii::t('yii', '{n} MB', $params);
 			case 3:
-				return $verbose ? Yii::t('yii','{n} gigabyte|{n} gigabytes',$params) : Yii::t('yii','{n} GB',$params);
+				return $verbose ? Yii::t('yii', '{n} gigabyte|{n} gigabytes', $params) : Yii::t('yii', '{n} GB', $params);
 			default:
-				return $verbose ? Yii::t('yii','{n} terabyte|{n} terabytes',$params) : Yii::t('yii','{n} TB',$params);
+				return $verbose ? Yii::t('yii', '{n} terabyte|{n} terabytes', $params) : Yii::t('yii', '{n} TB', $params);
 		}
 	}
 }

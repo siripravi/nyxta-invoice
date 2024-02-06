@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CXCache class file
  *
@@ -30,8 +31,8 @@ class CXCache extends CCache
 	public function init()
 	{
 		parent::init();
-		if(!function_exists('xcache_isset'))
-			throw new CException(Yii::t('yii','CXCache requires PHP XCache extension to be loaded.'));
+		if (!function_exists('xcache_isset'))
+			throw new CException(Yii::t('yii', 'CXCache requires PHP XCache extension to be loaded.'));
 	}
 
 	/**
@@ -54,9 +55,9 @@ class CXCache extends CCache
 	 * @param integer $expire the number of seconds in which the cached value will expire. 0 means never expire.
 	 * @return boolean true if the value is successfully stored into cache, false otherwise
 	 */
-	protected function setValue($key,$value,$expire)
+	protected function setValue($key, $value, $expire)
 	{
-		return xcache_set($key,$value,$expire);
+		return xcache_set($key, $value, $expire);
 	}
 
 	/**
@@ -68,9 +69,9 @@ class CXCache extends CCache
 	 * @param integer $expire the number of seconds in which the cached value will expire. 0 means never expire.
 	 * @return boolean true if the value is successfully stored into cache, false otherwise
 	 */
-	protected function addValue($key,$value,$expire)
+	protected function addValue($key, $value, $expire)
 	{
-		return !xcache_isset($key) ? $this->setValue($key,$value,$expire) : false;
+		return !xcache_isset($key) ? $this->setValue($key, $value, $expire) : false;
 	}
 
 	/**
@@ -92,12 +93,10 @@ class CXCache extends CCache
 	 */
 	protected function flushValues()
 	{
-		for($i=0, $max=xcache_count(XC_TYPE_VAR); $i<$max; $i++)
-		{
-			if(xcache_clear_cache(XC_TYPE_VAR, $i)===false)
+		for ($i = 0, $max = xcache_count(XC_TYPE_VAR); $i < $max; $i++) {
+			if (xcache_clear_cache(XC_TYPE_VAR, $i) === false)
 				return false;
 		}
 		return true;
 	}
 }
-

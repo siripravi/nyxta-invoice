@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -13,7 +14,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   'Home' => 'Почетна',
   'The button type "{type}" is not supported.' => 'Дугме типа "{type}" није подржано.',
   'Are you sure you want to delete this item?' => 'Да ли сте сигурни да желите да обришете ову ставку?',

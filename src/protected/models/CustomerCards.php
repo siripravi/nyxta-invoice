@@ -129,9 +129,11 @@ class CustomerCards extends CActiveRecord
 		$criteria->compare('country', $this->country, true);
 		$criteria->compare('administrative_area_level_1', $this->administrative_area_level_1, true);
 
-		return new CActiveDataProvider($this, array(
-			'criteria' => $criteria,
-		)
+		return new CActiveDataProvider(
+			$this,
+			array(
+				'criteria' => $criteria,
+			)
 		);
 	}
 
@@ -148,15 +150,12 @@ class CustomerCards extends CActiveRecord
 
 			if ($this->isNewRecord) {
 				$this->card_number = $this->cc1 . " " . $this->cc2 . " " . $this->cc3 . " " . $this->cc4;
-
 			} else {
-
 			}
 
 			return true;
 		} else
 			return false;
-
 	}
 
 	/**

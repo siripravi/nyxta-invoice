@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -16,7 +17,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   'Are you sure you want to delete this item?' => 'Haluatko varmasti poistaa tämän?',
   'Delete' => 'Poista',
   'Displaying {start}-{end} of 1 result.|Displaying {start}-{end} of {count} results.' => 'Näytetään {start}-{end} kaikkiaan 1 tuloksesta.|Näytetään {start}-{end} kaikkiaan {count} tuloksesta.',

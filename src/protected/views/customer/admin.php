@@ -26,7 +26,8 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<?php //echo BsHtml::pageHeader('Manage','Customers') ?>
+<?php //echo BsHtml::pageHeader('Manage','Customers') 
+?>
 <div class="row-fluid">
 
     <div class="panel panel-default">
@@ -38,11 +39,13 @@ $('.search-form form').submit(function(){
         </div>
         <div class="panel-body">
             <?php
-            $this->widget('zii.widgets.jui.CJuiButton', array(
-                'buttonType' => 'link',
-                'name' => 'btnNewCustGd',
-                'caption' => '<i class="fa fa-plus"></i> New Customer',
-                'onclick' => new CJavaScriptExpression('function(){
+            $this->widget(
+                'zii.widgets.jui.CJuiButton',
+                array(
+                    'buttonType' => 'link',
+                    'name' => 'btnNewCustGd',
+                    'caption' => '<i class="fa fa-plus"></i> New Customer',
+                    'onclick' => new CJavaScriptExpression('function(){
                                                  BootstrapDialog.show({
                                                   title: "Create New Customer",
                                                   type: BootstrapDialog.TYPE_SUCCESS,
@@ -60,56 +63,58 @@ $('.search-form form').submit(function(){
                                             });
                                                 this.blur(); 
                                                 return false;}'),
-                'htmlOptions' => array('id' => 'btn-new-customer-grid', 'class' => 'btn btn-success')
-            )
+                    'htmlOptions' => array('id' => 'btn-new-customer-grid', 'class' => 'btn btn-success')
+                )
             );
             ?>
 
             <div class="search-form" style="display:none">
                 <?php /*$this->renderPartial('_search',array(
            'model'=>$model,
-       )); */?>
+       )); */ ?>
             </div>
             <!-- search-form -->
             <div class="panel-body table-responsive table-full-width">
-                <?php $this->widget('bootstrap.widgets.TbGridView', array(
-                    'id' => 'customer-grid',
-                    'dataProvider' => $model->search(),
-                    'itemsCssClass' => 'table table-hover',
-                    'pagerCssClass' => 'pagination pagination-sm no-margin pull-right',
-                    // 'itemsCssClass'=>'table table-bordered table-condensed table-hover table-striped dataTable',
-                    'filter' => $model,
-                    'columns' => array(
-                        //'customer_no',
-                        array(
-                            'name' => 'contact',
-                            'header' => 'Customer',
-                            'type' => 'raw',
-                            'filter' => CHtml::activeTextField(
-                                $model,
-                                'customer_name',
-                                array(
-                                    'placeholder' => 'customer name',
-                                    'style' => 'width:213px;'
-                                )
+                <?php $this->widget(
+                    'bootstrap.widgets.TbGridView',
+                    array(
+                        'id' => 'customer-grid',
+                        'dataProvider' => $model->search(),
+                        'itemsCssClass' => 'table table-hover',
+                        'pagerCssClass' => 'pagination pagination-sm no-margin pull-right',
+                        // 'itemsCssClass'=>'table table-bordered table-condensed table-hover table-striped dataTable',
+                        'filter' => $model,
+                        'columns' => array(
+                            //'customer_no',
+                            array(
+                                'name' => 'contact',
+                                'header' => 'Customer',
+                                'type' => 'raw',
+                                'filter' => CHtml::activeTextField(
+                                    $model,
+                                    'customer_name',
+                                    array(
+                                        'placeholder' => 'customer name',
+                                        'style' => 'width:213px;'
+                                    )
+                                ),
+                                //call the method 'renderAddress' from the model
+                                'value' => array($model, 'renderContact'),
                             ),
-                            //call the method 'renderAddress' from the model
-                            'value' => array($model, 'renderContact'),
-                        ),
-                        array(
-                            'name' => 'address',
-                            'type' => 'raw',
-                            'filter' => false,
-                            //call the method 'renderAddress' from the model
-                            'value' => array($model, 'renderAddress'),
-                        ),
+                            array(
+                                'name' => 'address',
+                                'type' => 'raw',
+                                'filter' => false,
+                                //call the method 'renderAddress' from the model
+                                'value' => array($model, 'renderAddress'),
+                            ),
 
-                        //	'first_name',
-                        //	'last_name',
-                        //	'address1',
-                        //	'address2',
-                        //	'city',
-                        /*
+                            //	'first_name',
+                            //	'last_name',
+                            //	'address1',
+                            //	'address2',
+                            //	'city',
+                            /*
                               'state',
                               'zip',
                               'phone1',
@@ -118,19 +123,19 @@ $('.search-form form').submit(function(){
                               'email2',
                               'notes',
                               */
-                        array(
-                            'class' => 'CButtonColumn',
-                            'template' => '<div class="btn-group"><div class="btn btn-sm">{view}</div><div class="btn btn-sm">{update}</div>&nbsp;&nbsp;{delete}</div>',
-                            //'template' => '{view}{update}{delete}',
-                            'buttons' => array(
-                                'delete' => array('visible' => "'" . Yii::app()->user->isAdmin . "'")
+                            array(
+                                'class' => 'CButtonColumn',
+                                'template' => '<div class="btn-group"><div class="btn btn-sm">{view}</div><div class="btn btn-sm">{update}</div>&nbsp;&nbsp;{delete}</div>',
+                                //'template' => '{view}{update}{delete}',
+                                'buttons' => array(
+                                    'delete' => array('visible' => "'" . Yii::app()->user->isAdmin . "'")
 
+                                ),
+                                'htmlOptions' => array('class' => '')
                             ),
-                            'htmlOptions' => array('class' => '')
                         ),
-                    ),
-                    'htmlOptions' => array('class' => "table table-hover")
-                )
+                        'htmlOptions' => array('class' => "table table-hover")
+                    )
                 ); ?>
             </div>
         </div>

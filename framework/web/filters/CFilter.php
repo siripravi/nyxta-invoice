@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CFilter class file.
  *
@@ -35,8 +36,7 @@ class CFilter extends CComponent implements IFilter
 	 */
 	public function filter($filterChain)
 	{
-		if($this->preFilter($filterChain))
-		{
+		if ($this->preFilter($filterChain)) {
 			$filterChain->run();
 			$this->postFilter($filterChain);
 		}

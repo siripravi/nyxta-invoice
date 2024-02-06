@@ -39,8 +39,8 @@
                         <?php
                         echo CHtml::activeDropDownList(
                             $model,
-                            "[$index]card_type", CHtml::listData(CardType::model()->findAll(), 'id', 'card_type')
-                            ,
+                            "[$index]card_type",
+                            CHtml::listData(CardType::model()->findAll(), 'id', 'card_type'),
                             array('empty' => 'Select Card Type', 'class' => 'input-block-level', "style" => "width:176px;")
                         );
                         ?>
@@ -54,8 +54,7 @@
                                     '2' => 'inactive',
                                     '03' => 'removed',
                                     '4' => 'invalid',
-                                )
-                                ,
+                                ),
                                 array('class' => 'input-block-level')
                             );
                             ?>
@@ -87,8 +86,7 @@
                                     '10' => '10',
                                     '11' => '11',
                                     '12' => '12',
-                                )
-                                ,
+                                ),
                                 array('empty' => 'MM', 'class' => 'input-block-level')
                             );
                             ?>
@@ -111,8 +109,7 @@
                                     '24' => '24',
                                     '25' => '25',
                                     '26' => '26',
-                                )
-                                ,
+                                ),
                                 array('empty' => 'YY', 'class' => 'input-block-level')
                             );
                             ?>
@@ -127,7 +124,7 @@
         </div>
         <div class="form-horizontal span4">
             <div id="locationField-<?php echo $index; ?>"> <?php
-               /* $this->widget('ext.gplacesautocomplete.GPlacesAutoComplete', array(
+                                                            /* $this->widget('ext.gplacesautocomplete.GPlacesAutoComplete', array(
                  'objectName' => 'autocomplete',
                  'name' => 'locationField-'.$index,
                  'options' => array(
@@ -141,7 +138,7 @@
                  'afterScript' =>'autocomplete.addListener("place_changed", fillInAddress);',
                  'htmlOptions' => array('class'=>'form-control','placeholder'=>'Enter the card address')
                  )); */
-               ?>
+                                                            ?>
             </div>
             <table id="address-<?php echo $index; ?>">
                 <tbody>

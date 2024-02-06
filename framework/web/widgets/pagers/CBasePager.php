@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CBasePager class file.
  *
@@ -33,8 +34,8 @@ abstract class CBasePager extends CWidget
 	 */
 	public function getPages()
 	{
-		if($this->_pages===null)
-			$this->_pages=$this->createPages();
+		if ($this->_pages === null)
+			$this->_pages = $this->createPages();
 		return $this->_pages;
 	}
 
@@ -44,7 +45,7 @@ abstract class CBasePager extends CWidget
 	 */
 	public function setPages($pages)
 	{
-		$this->_pages=$pages;
+		$this->_pages = $pages;
 	}
 
 	/**
@@ -107,7 +108,7 @@ abstract class CBasePager extends CWidget
 	 * @return integer the zero-based index of the current page. Defaults to 0.
 	 * @see CPagination::getCurrentPage
 	 */
-	public function getCurrentPage($recalculate=true)
+	public function getCurrentPage($recalculate = true)
 	{
 		return $this->getPages()->getCurrentPage($recalculate);
 	}
@@ -129,6 +130,6 @@ abstract class CBasePager extends CWidget
 	 */
 	protected function createPageUrl($page)
 	{
-		return $this->getPages()->createPageUrl($this->getController(),$page);
+		return $this->getPages()->createPageUrl($this->getController(), $page);
 	}
 }

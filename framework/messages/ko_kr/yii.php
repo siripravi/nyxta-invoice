@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -16,7 +17,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   '"{path}" is not a valid directory.' => '"{path}"는 올바른 디렉토리가 아닙니다.',
   '&lt; Previous' => '&lt; 이전',
   '&lt;&lt; First' => '&lt;&lt; 처음',
@@ -252,4 +253,3 @@ return array (
   '{controller} has an extra endWidget({id}) call in its view.' => '{controller}는 view를 위해 여분의 endWidget ({id})를 호출합니다.',
   '{widget} cannot find the view "{view}".' => '{widget}는 view "{view}"를 찾을 수 없습니다.',
 );
-

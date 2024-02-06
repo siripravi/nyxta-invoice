@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'nn_NO'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => ' ',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0 %',
   'currencyFormat' => '#,##0.00 ¤',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'NOK' => 'kr',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'januar',
       2 => 'februar',
       3 => 'mars',
@@ -70,8 +71,8 @@ return array (
       11 => 'november',
       12 => 'desember',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'jan.',
       2 => 'feb.',
       3 => 'mars',
@@ -86,10 +87,10 @@ return array (
       12 => 'des.',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'J',
       2 => 'F',
       3 => 'M',
@@ -103,8 +104,8 @@ return array (
       11 => 'N',
       12 => 'D',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'jan',
       2 => 'feb',
       3 => 'mar',
@@ -119,10 +120,10 @@ return array (
       12 => 'des',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'søndag',
       1 => 'måndag',
       2 => 'tysdag',
@@ -131,8 +132,8 @@ return array (
       5 => 'fredag',
       6 => 'laurdag',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'sø.',
       1 => 'må.',
       2 => 'ty.',
@@ -142,10 +143,10 @@ return array (
       6 => 'la.',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'S',
       1 => 'M',
       2 => 'T',
@@ -154,8 +155,8 @@ return array (
       5 => 'F',
       6 => 'L',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'søn',
       1 => 'mån',
       2 => 'tys',
@@ -165,33 +166,33 @@ return array (
       6 => 'lau',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'f.Kr.',
       1 => 'e.Kr.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'f.Kr.',
       1 => 'e.Kr.',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'f.Kr.',
       1 => 'e.Kr.',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE d. MMMM y',
     'long' => 'd. MMMM y',
     'medium' => 'd. MMM y',
     'short' => 'dd.MM.yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => '\'kl\'. HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -201,8 +202,8 @@ return array (
   'amName' => 'formiddag',
   'pmName' => 'ettermiddag',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'afar',
     'ab' => 'abkhasisk',
     'ace' => 'achinesisk',
@@ -734,8 +735,8 @@ return array (
     'zxx' => 'utan språkleg innhald',
     'zza' => 'zaza',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'arabisk',
     'armi' => 'armisk',
     'armn' => 'armensk',
@@ -872,8 +873,8 @@ return array (
     'zyyy' => 'felles',
     'zzzz' => 'ukjend skrift',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'verda',
     '002' => 'Afrika',
     '003' => 'Nord-Amerika',
@@ -1164,8 +1165,8 @@ return array (
     'zw' => 'Zimbabwe',
     'zz' => 'ukjent område',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

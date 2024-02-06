@@ -28,10 +28,9 @@ class sendMail extends CAction
 					return;
 					//return $this->refresh();
 				} else {
-					return $this->render('contact', array('model' => $model, ));
+					return $this->render('contact', array('model' => $model,));
 				}
 			}
-
 		}
 		$this->render('contact', array('model' => $model));
 	}

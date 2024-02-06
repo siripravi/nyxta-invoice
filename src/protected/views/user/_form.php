@@ -1,26 +1,30 @@
 <?php
-$this->beginWidget('zii.widgets.CPortlet', array(
-  'title' => "Create New user",
-  'htmlOptions' => array('style' => "border:none;")
-)
+$this->beginWidget(
+  'zii.widgets.CPortlet',
+  array(
+    'title' => "Create New user",
+    'htmlOptions' => array('style' => "border:none;")
+  )
 );
 
 ?>
 <div class="card">
-  <?php $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
-    'id' => 'user-form',
-    'type' => 'horizontal',
-    // Please note: When you enable ajax validation, make sure the corresponding
-    // controller action is handling ajax validation correctly.
-    // There is a call to performAjaxValidation() commented in generated controller code.
-    // See class documentation of CActiveForm for details on this.
-    'enableAjaxValidation' => false,
+  <?php $form = $this->beginWidget(
+    'bootstrap.widgets.TbActiveForm',
+    array(
+      'id' => 'user-form',
+      'type' => 'horizontal',
+      // Please note: When you enable ajax validation, make sure the corresponding
+      // controller action is handling ajax validation correctly.
+      // There is a call to performAjaxValidation() commented in generated controller code.
+      // See class documentation of CActiveForm for details on this.
+      'enableAjaxValidation' => false,
 
-    'htmlOptions' => array(
-      //    'onsubmit'=>"return false;",/* Disable normal form submit */
-      //    'onkeypress'=>" if(event.keyCode == 13){ send(); } " /* Do ajax call when user presses enter key */
-    ),
-  )
+      'htmlOptions' => array(
+        //    'onsubmit'=>"return false;",/* Disable normal form submit */
+        //    'onkeypress'=>" if(event.keyCode == 13){ send(); } " /* Do ajax call when user presses enter key */
+      ),
+    )
   ); ?>
 
   <div id="user-error-div"></div>
@@ -32,7 +36,7 @@ $this->beginWidget('zii.widgets.CPortlet', array(
   <?php echo $form->dropDownListRow($model, 'level', $model->levelList); ?>
   <?php echo $form->textArea($model, 'profile', array('class' => 'form-control', 'rows' => 6, 'cols' => 50)); ?>
 
-  <?php if ($model->isNewRecord): ?>
+  <?php if ($model->isNewRecord) : ?>
     <?php echo CHtml::ajaxSubmitButton(
       $model->isNewRecord ? 'Create' : 'Update',
       array('user/create'),
@@ -66,7 +70,7 @@ $this->beginWidget('zii.widgets.CPortlet', array(
         //'color' => CHtml::BUTTON_COLOR_PRIMARY
       )
     ); ?>
-  <?php else: ?>
+  <?php else : ?>
     <?php echo CHtml::submitButton('Update'); ?>
 
   <?php endif; ?>

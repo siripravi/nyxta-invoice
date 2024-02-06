@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -13,7 +14,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   '"{path}" is not a valid directory.' => '"{path}" 不是一個合法的目錄.',
   'Active Record requires a "db" CDbConnection application component.' => 'Active Record 需要一個名為 "db" 的 CDbConnection 應用程式元件.',
   'Active record "{class}" has an invalid configuration for relation "{relation}". It must specify the relation type, the related active record class and the foreign key.' => 'Active record "{class}" 對於關聯 "{relation}" 有一個無效的組態設定. 必須給定關聯種類, 相關的 active record class 以及 foreign key.',

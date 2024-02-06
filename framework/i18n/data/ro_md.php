@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'ro_MD'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => '.',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0 %',
   'currencyFormat' => '#,##0.00 ¤',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -52,10 +53,10 @@ return array (
     'XOF' => 'CFA',
     'XPF' => 'CFPF',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'ianuarie',
       2 => 'februarie',
       3 => 'martie',
@@ -69,8 +70,8 @@ return array (
       11 => 'noiembrie',
       12 => 'decembrie',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'ian.',
       2 => 'feb.',
       3 => 'mar.',
@@ -84,8 +85,8 @@ return array (
       11 => 'nov.',
       12 => 'dec.',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       1 => 'I',
       2 => 'F',
       3 => 'M',
@@ -100,10 +101,10 @@ return array (
       12 => 'D',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'I',
       2 => 'F',
       3 => 'M',
@@ -117,8 +118,8 @@ return array (
       11 => 'N',
       12 => 'D',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'ian.',
       2 => 'feb.',
       3 => 'mar.',
@@ -132,8 +133,8 @@ return array (
       11 => 'nov.',
       12 => 'dec.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       1 => 'ianuarie',
       2 => 'februarie',
       3 => 'martie',
@@ -148,10 +149,10 @@ return array (
       12 => 'decembrie',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'duminică',
       1 => 'luni',
       2 => 'marți',
@@ -160,8 +161,8 @@ return array (
       5 => 'vineri',
       6 => 'sâmbătă',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Du',
       1 => 'Lu',
       2 => 'Ma',
@@ -170,8 +171,8 @@ return array (
       5 => 'Vi',
       6 => 'Sâ',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'D',
       1 => 'L',
       2 => 'M',
@@ -180,8 +181,8 @@ return array (
       5 => 'V',
       6 => 'S',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'Du',
       1 => 'Lu',
       2 => 'Ma',
@@ -191,10 +192,10 @@ return array (
       6 => 'Sâ',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'D',
       1 => 'L',
       2 => 'M',
@@ -203,8 +204,8 @@ return array (
       5 => 'V',
       6 => 'S',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Du',
       1 => 'Lu',
       2 => 'Ma',
@@ -213,8 +214,8 @@ return array (
       5 => 'Vi',
       6 => 'Sâ',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'Du',
       1 => 'Lu',
       2 => 'Ma',
@@ -223,8 +224,8 @@ return array (
       5 => 'Vi',
       6 => 'Sâ',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'duminică',
       1 => 'luni',
       2 => 'marți',
@@ -234,33 +235,33 @@ return array (
       6 => 'sâmbătă',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'î.Hr.',
       1 => 'd.Hr.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'înainte de Hristos',
       1 => 'după Hristos',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'î.Hr.',
       1 => 'd.Hr.',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, d MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'dd.MM.y',
     'short' => 'dd.MM.y',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -270,8 +271,8 @@ return array (
   'amName' => 'AM',
   'pmName' => 'PM',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'afar',
     'ab' => 'abhază',
     'ace' => 'aceh',
@@ -846,8 +847,8 @@ return array (
     'zxx' => 'fară conținut lingvistic',
     'zza' => 'zaza',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'alfabet persano-arab',
     'armn' => 'armeană',
     'bali' => 'balineză',
@@ -920,8 +921,8 @@ return array (
     'zyyy' => 'comună',
     'zzzz' => 'scriere necunoscută sau nevalidă',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'Lume',
     '002' => 'Africa',
     '003' => 'America de Nord',
@@ -1213,8 +1214,8 @@ return array (
     'zw' => 'Zimbabwe',
     'zz' => 'Regiune necunoscută',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'n==0||n!=1&&(fmod(n,100)>=1&&fmod(n,100)<=19&&fmod(fmod(n,100),1)==0)',
     2 => 'true',

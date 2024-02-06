@@ -38,8 +38,5 @@ class ItemManager extends TabularInputManager
     public function setUnsafeAttribute($item, $model)
     {
         $item->st_id = $model->primaryKey;
-
     }
-
-
 }

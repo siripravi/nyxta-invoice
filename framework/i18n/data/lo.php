@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'lo'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8671',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => '.',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00;¤-#,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'LAK' => '₭',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'ມັງກອນ',
       2 => 'ກຸມພາ',
       3 => 'ມີນາ',
@@ -70,8 +71,8 @@ return array (
       11 => 'ພະຈິກ',
       12 => 'ທັນວາ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'ມ.ກ.',
       2 => 'ກ.ພ.',
       3 => 'ມ.ນ.',
@@ -85,8 +86,8 @@ return array (
       11 => 'ພ.ຈ.',
       12 => 'ທ.ວ.',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -101,10 +102,10 @@ return array (
       12 => '12',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -118,8 +119,8 @@ return array (
       11 => '11',
       12 => '12',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'ມ.ກ.',
       2 => 'ກ.ພ.',
       3 => 'ມີ.ນ.',
@@ -133,8 +134,8 @@ return array (
       11 => 'ພ.ຈ.',
       12 => 'ທ.ວ.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       1 => 'ມັງກອນ',
       2 => 'ກຸມພາ',
       3 => 'ມີນາ',
@@ -149,10 +150,10 @@ return array (
       12 => 'ທັນວາ',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'ວັນອາທິດ',
       1 => 'ວັນຈັນ',
       2 => 'ວັນອັງຄານ',
@@ -161,8 +162,8 @@ return array (
       5 => 'ວັນສຸກ',
       6 => 'ວັນເສົາ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'ອາ.',
       1 => 'ຈ.',
       2 => 'ອ.',
@@ -171,8 +172,8 @@ return array (
       5 => 'ສກ.',
       6 => 'ສ.',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => '1',
       1 => '2',
       2 => '3',
@@ -181,8 +182,8 @@ return array (
       5 => '6',
       6 => '7',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'ອທ.',
       1 => 'ຈ.',
       2 => 'ອ.',
@@ -192,10 +193,10 @@ return array (
       6 => 'ສ.',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'ທ',
       1 => 'ຈ',
       2 => 'ຄ',
@@ -204,8 +205,8 @@ return array (
       5 => '​ສຸ',
       6 => 'ສ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'ທ.',
       1 => 'ຈ.',
       2 => 'ອ.',
@@ -214,8 +215,8 @@ return array (
       5 => 'ສກ.',
       6 => 'ສ.',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'ອ.ທ.',
       1 => 'ຈັນ',
       2 => 'ຄ',
@@ -224,8 +225,8 @@ return array (
       5 => 'ສ',
       6 => 'ເສົາ',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'ວັນອາທິດ',
       1 => 'ວັນຈັນ',
       2 => 'ວັນອັງຄານ',
@@ -235,33 +236,33 @@ return array (
       6 => 'ວັນເສົາ',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'ບີຊີ',
       1 => 'ຄ.ສ.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'ບີຊີ',
       1 => 'ຄ.ສ.',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'ບີຊີ',
       1 => 'ຄ.ສ.',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEEທີ d MMMM G y',
     'long' => 'd MMMM y',
     'medium' => 'd MMM y',
     'short' => 'd/M/y',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'H ໂມງ m ນາທີ ss ວິນາທີ zzzz',
     'long' => 'H ໂມງ m ນາທີ ss ວິນາທີ z',
     'medium' => 'H:mm:ss',
@@ -271,8 +272,8 @@ return array (
   'amName' => 'ກ່ອນທ່ຽງ',
   'pmName' => 'ຫຼັງທ່ຽງ',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'ອະຟາ',
     'ab' => 'ແອບຄາເຊຍ',
     'ace' => 'ແອັກຊີເນັສ',
@@ -847,8 +848,8 @@ return array (
     'zxx' => 'ບໍ່ມີເນື້ອຫາພາສາ',
     'zza' => 'ຊາຊາ',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'afak' => 'ອັບຟາກາ',
     'arab' => 'ອາຣັບ',
     'armi' => 'ອິມພີຮຽນ ອາເມອິກ',
@@ -1008,8 +1009,8 @@ return array (
     'zyyy' => 'ສາມັນ',
     'zzzz' => 'ອັນໂນ ສະຄິບ',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'ໂລກ',
     '002' => 'ແອບຟຮິກາ',
     '003' => 'ອາເມລິກາເໜືອ',

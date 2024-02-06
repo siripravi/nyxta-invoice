@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'hu_HU'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => ' ',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '#,##0.00 ¤',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'AUD',
     'BRL' => 'BRL',
     'CAD' => 'CAD',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'HUF' => 'Ft',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'január',
       2 => 'február',
       3 => 'március',
@@ -70,8 +71,8 @@ return array (
       11 => 'november',
       12 => 'december',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'jan.',
       2 => 'febr.',
       3 => 'márc.',
@@ -85,8 +86,8 @@ return array (
       11 => 'nov.',
       12 => 'dec.',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       1 => 'J',
       2 => 'F',
       3 => 'M',
@@ -101,10 +102,10 @@ return array (
       12 => 'D',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'J',
       2 => 'F',
       3 => 'M',
@@ -118,8 +119,8 @@ return array (
       11 => 'N',
       12 => 'D',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'jan.',
       2 => 'febr.',
       3 => 'márc.',
@@ -133,8 +134,8 @@ return array (
       11 => 'nov.',
       12 => 'dec.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       1 => 'január',
       2 => 'február',
       3 => 'március',
@@ -149,10 +150,10 @@ return array (
       12 => 'december',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'vasárnap',
       1 => 'hétfő',
       2 => 'kedd',
@@ -161,8 +162,8 @@ return array (
       5 => 'péntek',
       6 => 'szombat',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'V',
       1 => 'H',
       2 => 'K',
@@ -171,8 +172,8 @@ return array (
       5 => 'P',
       6 => 'Szo',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'V',
       1 => 'H',
       2 => 'K',
@@ -181,8 +182,8 @@ return array (
       5 => 'P',
       6 => 'Sz',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'V',
       1 => 'H',
       2 => 'K',
@@ -192,10 +193,10 @@ return array (
       6 => 'Szo',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'V',
       1 => 'H',
       2 => 'K',
@@ -204,8 +205,8 @@ return array (
       5 => 'P',
       6 => 'Sz',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'V',
       1 => 'H',
       2 => 'K',
@@ -214,8 +215,8 @@ return array (
       5 => 'P',
       6 => 'Szo',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'V',
       1 => 'H',
       2 => 'K',
@@ -224,8 +225,8 @@ return array (
       5 => 'P',
       6 => 'Szo',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'vasárnap',
       1 => 'hétfő',
       2 => 'kedd',
@@ -235,33 +236,33 @@ return array (
       6 => 'szombat',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'i. e.',
       1 => 'i. sz.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'időszámításunk előtt',
       1 => 'időszámításunk szerint',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'ie.',
       1 => 'isz.',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'y. MMMM d., EEEE',
     'long' => 'y. MMMM d.',
     'medium' => 'y.MM.dd.',
     'short' => 'y.MM.dd.',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'H:mm:ss zzzz',
     'long' => 'H:mm:ss z',
     'medium' => 'H:mm:ss',
@@ -271,8 +272,8 @@ return array (
   'amName' => 'de.',
   'pmName' => 'du.',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'afar',
     'ab' => 'abház',
     'ace' => 'achinéz',
@@ -847,8 +848,8 @@ return array (
     'zxx' => 'nincs nyelvészeti tartalom',
     'zza' => 'zaza',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'Perzsa-arab',
     'armi' => 'Birodalmi arámi',
     'armn' => 'Örmény',
@@ -979,8 +980,8 @@ return array (
     'zyyy' => 'Meghatározatlan',
     'zzzz' => 'Ismeretlen vagy érvénytelen írásrendszer',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'Világ',
     '002' => 'Afrika',
     '003' => 'Észak-Amerika',

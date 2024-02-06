@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CUnsafeValidator class file.
  *
@@ -22,7 +23,7 @@ class CUnsafeValidator extends CValidator
 	 * Defaults to false.
 	 * @since 1.1.4
 	 */
-	public $safe=false;
+	public $safe = false;
 	/**
 	 * Validates the attribute of the object.
 	 * This validator does not do any validation as it is meant
@@ -30,8 +31,7 @@ class CUnsafeValidator extends CValidator
 	 * @param CModel $object the object being validated
 	 * @param string $attribute the attribute being validated
 	 */
-	protected function validateAttribute($object,$attribute)
+	protected function validateAttribute($object, $attribute)
 	{
 	}
 }
-

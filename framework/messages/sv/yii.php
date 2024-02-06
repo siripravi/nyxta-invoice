@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -16,7 +17,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   'Failed to set unsafe attribute "{attribute}" of "{class}".' => 'Misslyckades att tilldela det ej säkra attributet "{attribute}" i "{class}".',
   'Failed to start session.' => 'Misslyckades med start av session',
   'Powered by {yii}.' => 'Använder {yii}.',

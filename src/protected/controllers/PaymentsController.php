@@ -69,9 +69,11 @@ class PaymentsController extends Controller
             ), false, true);
             Yii::app()->end();
         } else
-            $this->render('view', array(
-                'model' => $this->loadModel($id),
-            )
+            $this->render(
+                'view',
+                array(
+                    'model' => $this->loadModel($id),
+                )
             );
     }
 
@@ -105,7 +107,8 @@ class PaymentsController extends Controller
                 echo CJSON::encode(array('id' => $model->primaryKey));
             } else {
                 $errors = array_map(function ($v) {
-                    return join(', ', $v); }, $model->getErrors());
+                    return join(', ', $v);
+                }, $model->getErrors());
                 echo CJSON::encode(array('errors' => $errors));
             }
         } else {
@@ -120,7 +123,6 @@ class PaymentsController extends Controller
             $event->sender->setAttribute('modified', date('Y-m-d H:i:s'));
         };
         $es->update();
-
     }
 
     /**
@@ -141,9 +143,11 @@ class PaymentsController extends Controller
                 $this->redirect(array('admin'));
         }
 
-        $this->render('update', array(
-            'model' => $model,
-        )
+        $this->render(
+            'update',
+            array(
+                'model' => $model,
+            )
         );
     }
 
@@ -177,15 +181,15 @@ class PaymentsController extends Controller
                     'defaultOrder' => 'pay_date DESC',
                     'multisort' => true,
                     //maybe your solution!
-                    'attributes' => array(
-
-                    ),
+                    'attributes' => array(),
                 )
             )
         );
-        $this->render('index', array(
-            'dataProvider' => $dataProvider,
-        )
+        $this->render(
+            'index',
+            array(
+                'dataProvider' => $dataProvider,
+            )
         );
     }
 
@@ -201,9 +205,11 @@ class PaymentsController extends Controller
         if (isset($_GET['Payments']))
             $model->attributes = $_GET['Payments'];
 
-        $this->render('admin2', array(
-            'model' => $model,
-        )
+        $this->render(
+            'admin2',
+            array(
+                'model' => $model,
+            )
         );
     }
 
@@ -233,8 +239,4 @@ class PaymentsController extends Controller
             Yii::app()->end();
         }
     }
-
-
-
-
 }

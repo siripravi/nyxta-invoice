@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'km'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8671',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => '.',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00;(¤#,##0.00)',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'AU$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'KHR' => '៛',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'មករា',
       2 => 'កុម្ភៈ',
       3 => 'មីនា',
@@ -70,8 +71,8 @@ return array (
       11 => 'វិច្ឆិកា',
       12 => 'ធ្នូ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'មករា',
       2 => 'កុម្ភៈ',
       3 => 'មីនា',
@@ -85,8 +86,8 @@ return array (
       11 => 'វិច្ឆិកា',
       12 => 'ធ្នូ',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -101,10 +102,10 @@ return array (
       12 => '12',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -118,8 +119,8 @@ return array (
       11 => '11',
       12 => '12',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'មករា',
       2 => 'កុម្ភៈ',
       3 => 'មីនា',
@@ -133,8 +134,8 @@ return array (
       11 => 'វិច្ឆិកា',
       12 => 'ធ្នូ',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       1 => 'មករា',
       2 => 'កុម្ភៈ',
       3 => 'មីនា',
@@ -149,10 +150,10 @@ return array (
       12 => 'ធ្នូ',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'អាទិត្យ',
       1 => 'ចន្ទ',
       2 => 'អង្គារ',
@@ -161,8 +162,8 @@ return array (
       5 => 'សុក្រ',
       6 => 'សៅរ៍',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'អាទិត្យ',
       1 => 'ចន្ទ',
       2 => 'អង្គារ',
@@ -171,8 +172,8 @@ return array (
       5 => 'សុក្រ',
       6 => 'សៅរ៍',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => '1',
       1 => '2',
       2 => '3',
@@ -181,8 +182,8 @@ return array (
       5 => '6',
       6 => '7',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'អាទិត្យ',
       1 => 'ចន្ទ',
       2 => 'អង្គារ',
@@ -192,10 +193,10 @@ return array (
       6 => 'សៅរ៍',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => '1',
       1 => '2',
       2 => '3',
@@ -204,8 +205,8 @@ return array (
       5 => '6',
       6 => '7',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'អាទិត្យ',
       1 => 'ចន្ទ',
       2 => 'អង្គារ',
@@ -214,8 +215,8 @@ return array (
       5 => 'សុក្រ',
       6 => 'សៅរ៍',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'អាទិត្យ',
       1 => 'ចន្ទ',
       2 => 'អង្គារ',
@@ -224,8 +225,8 @@ return array (
       5 => 'សុក្រ',
       6 => 'សៅរ៍',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'អាទិត្យ',
       1 => 'ចន្ទ',
       2 => 'អង្គារ',
@@ -235,33 +236,33 @@ return array (
       6 => 'សៅរ៍',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'មុន គ.ស.',
       1 => 'គ.ស.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'មុន​គ្រិស្តសករាជ',
       1 => 'គ្រិស្តសករាជ',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'មុន គ.ស.',
       1 => 'គ.ស.',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, d MMMM y',
     'long' => 'd MMMM, y',
     'medium' => 'd MMM y',
     'short' => 'd/M/y',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'h:mm:ss a zzzz',
     'long' => 'h:mm:ss a z',
     'medium' => 'h:mm:ss a',
@@ -271,8 +272,8 @@ return array (
   'amName' => 'ព្រឹក',
   'pmName' => 'ល្ងាច',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'ភាសាអាហ្វារ',
     'ab' => 'អាប់ខាហ៊្សាន',
     'ae' => 'ភាសាអាវែស្តង់',
@@ -426,8 +427,8 @@ return array (
     'zu' => 'សូលូ',
     'zxx' => 'គ្មាន​ទិន្នន័យ​ភាសា',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'អារ៉ាប់',
     'armn' => 'អារមេនី',
     'beng' => 'បង់ក្លាដែស',
@@ -468,8 +469,8 @@ return array (
     'zyyy' => 'ធម្មតា',
     'zzzz' => 'មិន​ស្គាល់​អក្សរ',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'ពិភពលោក',
     '002' => 'អាព្រិក',
     '003' => 'អាមេរិក​ខាង​ជើង',

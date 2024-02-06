@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -16,7 +17,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   'A PHP extension stopped the file upload.' => 'PHP расширение прервало загрузку файла.',
   'CSecurityManager::generateRandomString() cannot generate random string in the current environment.' => 'CSecurityManager::generateRandomString() не может сгенерировать случайную строку в текущем окружении.',
   'Unable to generate random string.' => 'Невозможно сгенерировать случайную строку.',

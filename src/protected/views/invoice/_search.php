@@ -6,19 +6,22 @@
 
         <div class="content">
             <?php
-            $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
-                'id' => 'search-form-search-form',
-                'type' => 'horizontal',
-                // Please note: When you enable ajax validation, make sure the corresponding
-                // controller action is handling ajax validation correctly.
-                // See class documentation of CActiveForm for details on this,
-                // you need to use the performAjaxValidation()-method described there.
-                // 'action' => array('/search/admin'),
-                'enableAjaxValidation' => false,
-            )
+            $form = $this->beginWidget(
+                'bootstrap.widgets.TbActiveForm',
+                array(
+                    'id' => 'search-form-search-form',
+                    'type' => 'horizontal',
+                    // Please note: When you enable ajax validation, make sure the corresponding
+                    // controller action is handling ajax validation correctly.
+                    // See class documentation of CActiveForm for details on this,
+                    // you need to use the performAjaxValidation()-method described there.
+                    // 'action' => array('/search/admin'),
+                    'enableAjaxValidation' => false,
+                )
             );
             ?>
-            <?php //echo CHtml::activeHiddenField($search, 'created'); ?>
+            <?php //echo CHtml::activeHiddenField($search, 'created'); 
+            ?>
             <!--   ////////////////////////////////////////////////////////////  -->
             <fieldset>
                 <div class="row-fluid">
@@ -94,41 +97,45 @@
                             <div class="input-group">
                                 <span class="input-group-addon" id="event-dt-range"><i class="pe-7s-date"></i></span>
                                 <?php
-                                $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-                                    'model' => $search,
-                                    'attribute' => 'from_date',
-                                    // name of post parameter
-                                    'value' => (isset(Yii::app()->request->cookies['from_date'])) ? Yii::app()->request->cookies['from_date']->value : '',
-                                    // value comes from cookie after submittion
-                                    'options' => array(
-                                        'showAnim' => 'fold',
-                                        // 'dateFormat'=>'mm-dd-yy',
-                                        'dateFormat' => 'yy-mm-dd',
-                                    ),
-                                    'htmlOptions' => array(
-                                        'class' => 'form-control',
-                                        'style' => 'width:202px;'
-                                    ),
-                                )
+                                $this->widget(
+                                    'zii.widgets.jui.CJuiDatePicker',
+                                    array(
+                                        'model' => $search,
+                                        'attribute' => 'from_date',
+                                        // name of post parameter
+                                        'value' => (isset(Yii::app()->request->cookies['from_date'])) ? Yii::app()->request->cookies['from_date']->value : '',
+                                        // value comes from cookie after submittion
+                                        'options' => array(
+                                            'showAnim' => 'fold',
+                                            // 'dateFormat'=>'mm-dd-yy',
+                                            'dateFormat' => 'yy-mm-dd',
+                                        ),
+                                        'htmlOptions' => array(
+                                            'class' => 'form-control',
+                                            'style' => 'width:202px;'
+                                        ),
+                                    )
                                 );
                                 ?>
                                 <?php
-                                $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-                                    'model' => $search,
-                                    'attribute' => 'to_date',
-                                    // name of post parameter
-                                    'value' => (isset(Yii::app()->request->cookies['from_date'])) ? Yii::app()->request->cookies['from_date']->value : '',
-                                    // value comes from cookie after submittion
-                                    'options' => array(
-                                        'showAnim' => 'fold',
-                                        // 'dateFormat'=>'mm-dd-yy',
-                                        'dateFormat' => 'yy-mm-dd',
-                                    ),
-                                    'htmlOptions' => array(
-                                        'class' => 'form-control',
-                                        'style' => 'width:202px'
-                                    ),
-                                )
+                                $this->widget(
+                                    'zii.widgets.jui.CJuiDatePicker',
+                                    array(
+                                        'model' => $search,
+                                        'attribute' => 'to_date',
+                                        // name of post parameter
+                                        'value' => (isset(Yii::app()->request->cookies['from_date'])) ? Yii::app()->request->cookies['from_date']->value : '',
+                                        // value comes from cookie after submittion
+                                        'options' => array(
+                                            'showAnim' => 'fold',
+                                            // 'dateFormat'=>'mm-dd-yy',
+                                            'dateFormat' => 'yy-mm-dd',
+                                        ),
+                                        'htmlOptions' => array(
+                                            'class' => 'form-control',
+                                            'style' => 'width:202px'
+                                        ),
+                                    )
                                 );
                                 ?>
                             </div>

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CDataProviderIterator class file.
  *
@@ -35,9 +36,9 @@
 class CDataProviderIterator extends CComponent implements Iterator, Countable
 {
 	private $_dataProvider;
-	private $_currentIndex=-1;
-	private $_currentPage=0;
-	private $_totalItemCount=-1;
+	private $_currentIndex = -1;
+	private $_currentPage = 0;
+	private $_totalItemCount = -1;
 	private $_items;
 
 	/**
@@ -45,15 +46,15 @@ class CDataProviderIterator extends CComponent implements Iterator, Countable
 	 * @param CDataProvider $dataProvider the data provider to iterate over
 	 * @param integer $pageSize pageSize to use for iteration. This is the number of objects loaded into memory at the same time.
 	 */
-	public function __construct(CDataProvider $dataProvider, $pageSize=null)
+	public function __construct(CDataProvider $dataProvider, $pageSize = null)
 	{
-		$this->_dataProvider=$dataProvider;
-		$this->_totalItemCount=$dataProvider->getTotalItemCount();
+		$this->_dataProvider = $dataProvider;
+		$this->_totalItemCount = $dataProvider->getTotalItemCount();
 
-		if(($pagination=$this->_dataProvider->getPagination())===false)
-			$this->_dataProvider->setPagination($pagination=new CPagination());
+		if (($pagination = $this->_dataProvider->getPagination()) === false)
+			$this->_dataProvider->setPagination($pagination = new CPagination());
 
-		if($pageSize!==null)
+		if ($pageSize !== null)
 			$pagination->setPageSize($pageSize);
 	}
 
@@ -82,7 +83,7 @@ class CDataProviderIterator extends CComponent implements Iterator, Countable
 	protected function loadPage()
 	{
 		$this->_dataProvider->getPagination()->setCurrentPage($this->_currentPage);
-		return $this->_items=$this->dataProvider->getData(true);
+		return $this->_items = $this->dataProvider->getData(true);
 	}
 
 	/**
@@ -104,8 +105,8 @@ class CDataProviderIterator extends CComponent implements Iterator, Countable
 	#[ReturnTypeWillChange]
 	public function key()
 	{
-		$pageSize=$this->_dataProvider->getPagination()->getPageSize();
-		return $this->_currentPage*$pageSize+$this->_currentIndex;
+		$pageSize = $this->_dataProvider->getPagination()->getPageSize();
+		return $this->_currentPage * $pageSize + $this->_currentIndex;
 	}
 
 	/**
@@ -115,12 +116,11 @@ class CDataProviderIterator extends CComponent implements Iterator, Countable
 	#[ReturnTypeWillChange]
 	public function next()
 	{
-		$pageSize=$this->_dataProvider->getPagination()->getPageSize();
+		$pageSize = $this->_dataProvider->getPagination()->getPageSize();
 		$this->_currentIndex++;
-		if($this->_currentIndex >= $pageSize)
-		{
+		if ($this->_currentIndex >= $pageSize) {
 			$this->_currentPage++;
-			$this->_currentIndex=0;
+			$this->_currentIndex = 0;
 			$this->loadPage();
 		}
 	}
@@ -132,8 +132,8 @@ class CDataProviderIterator extends CComponent implements Iterator, Countable
 	#[ReturnTypeWillChange]
 	public function rewind()
 	{
-		$this->_currentIndex=0;
-		$this->_currentPage=0;
+		$this->_currentIndex = 0;
+		$this->_currentPage = 0;
 		$this->loadPage();
 	}
 

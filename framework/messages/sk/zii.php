@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -16,7 +17,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   '{class} must specify "model" and "{attribute}" or "{name}" property values.' => '{class} musí špecifikovať "model" a hodnotu pre "{attribute}" alebo "{name}".',
   'Are you sure you want to delete this item?' => 'Odstrániť záznam?',
   'Delete' => 'Odstrániť',

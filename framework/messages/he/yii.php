@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -13,7 +14,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   0 => '',
   '&lt; Previous' => '&lt; הקודם',
   '&lt;&lt; First' => '&lt;&lt; הראשון',

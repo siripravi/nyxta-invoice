@@ -367,12 +367,12 @@ class Statement extends CActiveRecord
 
         /*To return active dataprovider uncomment the following code*/
 
-        return new CActiveDataProvider($this, array(
-            'criteria' => $criteria,
-        )
+        return new CActiveDataProvider(
+            $this,
+            array(
+                'criteria' => $criteria,
+            )
         );
-
-
     }
 
     public function dateValid($attribute, $params)
@@ -390,5 +390,4 @@ class Statement extends CActiveRecord
         if ($this->$attribute < $today)
             $this->addError($attribute, 'Wrong Entry. Try again!');
     }
-
 }

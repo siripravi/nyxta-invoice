@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'bas'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => ' ',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0 %',
   'currencyFormat' => '#,##0.00 ¤',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -52,10 +53,10 @@ return array (
     'XOF' => 'CFA',
     'XPF' => 'CFPF',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Kɔndɔŋ',
       2 => 'Màcɛ̂l',
       3 => 'Màtùmb',
@@ -69,8 +70,8 @@ return array (
       11 => 'Màyɛsèp',
       12 => 'Lìbuy li ńyèe',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'kɔn',
       2 => 'mac',
       3 => 'mat',
@@ -85,10 +86,10 @@ return array (
       12 => 'liɓ',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'k',
       2 => 'm',
       3 => 'm',
@@ -103,10 +104,10 @@ return array (
       12 => 'l',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'ŋgwà nɔ̂y',
       1 => 'ŋgwà njaŋgumba',
       2 => 'ŋgwà ûm',
@@ -115,8 +116,8 @@ return array (
       5 => 'ŋgwà kɔɔ',
       6 => 'ŋgwà jôn',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'nɔy',
       1 => 'nja',
       2 => 'uum',
@@ -126,10 +127,10 @@ return array (
       6 => 'jon',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'n',
       1 => 'n',
       2 => 'u',
@@ -139,33 +140,33 @@ return array (
       6 => 'j',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'b.Y.K',
       1 => 'm.Y.K',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'bisū bi Yesù Krǐstò',
       1 => 'i mbūs Yesù Krǐstò',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'b.Y.K',
       1 => 'm.Y.K',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE d MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'd MMM, y',
     'short' => 'd/M/y',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -175,8 +176,8 @@ return array (
   'amName' => 'I bikɛ̂glà',
   'pmName' => 'I ɓugajɔp',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ak' => 'Hɔp u akan',
     'am' => 'Hɔp u amhārìk',
     'ar' => 'Hɔp u arâb',
@@ -223,8 +224,8 @@ return array (
     'zh' => 'Hɔp u kinà',
     'zu' => 'Hɔp u zulù',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     'ad' => 'Àŋdɔ̂r',
     'ae' => 'Àdnà i Bilɔ̀ŋ bi Arābìà',
     'af' => 'Àfgànìstâŋ',

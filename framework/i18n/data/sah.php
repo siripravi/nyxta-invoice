@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'sah'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤ #,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'RUB' => 'руб.',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Тохсунньу',
       2 => 'Олунньу',
       3 => 'Кулун тутар',
@@ -70,8 +71,8 @@ return array (
       11 => 'Сэтинньи',
       12 => 'Ахсынньы',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Тохс',
       2 => 'Олун',
       3 => 'Клн_ттр',
@@ -86,10 +87,10 @@ return array (
       12 => 'Ахс',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'Т',
       2 => 'О',
       3 => 'К',
@@ -104,10 +105,10 @@ return array (
       12 => 'А',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Баскыһыанньа',
       1 => 'Бэнидиэлинньик',
       2 => 'Оптуорунньук',
@@ -116,8 +117,8 @@ return array (
       5 => 'Бээтиҥсэ',
       6 => 'Субуота',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Бс',
       1 => 'Бн',
       2 => 'Оп',
@@ -126,8 +127,8 @@ return array (
       5 => 'Бэ',
       6 => 'Сб',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'Б',
       1 => 'Б',
       2 => 'О',
@@ -137,10 +138,10 @@ return array (
       6 => 'С',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'Б',
       1 => 'Б',
       2 => 'О',
@@ -149,8 +150,8 @@ return array (
       5 => 'Б',
       6 => 'С',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Бс',
       1 => 'Бн',
       2 => 'Оп',
@@ -159,8 +160,8 @@ return array (
       5 => 'Бэ',
       6 => 'Сб',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Баскыһыанньа',
       1 => 'Бэнидиэлинньик',
       2 => 'Оптуорунньук',
@@ -170,33 +171,33 @@ return array (
       6 => 'Субуота',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'б. э. и.',
       1 => 'б. э',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'б. э. и.',
       1 => 'б. э',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'б. э. и.',
       1 => 'б. э',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'y \'сыл\' MMMM d \'күнэ\', EEEE',
     'long' => 'y, MMMM d',
     'medium' => 'y, MMM d',
     'short' => 'yy/M/d',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -206,8 +207,8 @@ return array (
   'amName' => 'ЭИ',
   'pmName' => 'ЭК',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ab' => 'Абхаастыы',
     'af' => 'Аппырыкааныстыы',
     'ar' => 'Араабтыы',
@@ -256,8 +257,8 @@ return array (
     'zh' => 'Кытайдыы',
     'zu' => 'Зуулулуу',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'Арааптыы',
     'armn' => 'Эрмээннии',
     'cyrl' => 'Нууччалыы',
@@ -269,8 +270,8 @@ return array (
     'zxxx' => 'Сурулла илик',
     'zzzz' => 'Биллибэт сурук',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'Аан дойду',
     '002' => 'Аапырыка',
     '003' => 'Хотугу Эмиэрикэ',

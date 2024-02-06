@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'nnh'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => '.',
     'list' => ',',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤ #,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -52,10 +53,10 @@ return array (
     'XOF' => 'CFA',
     'XPF' => 'CFPF',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'saŋ tsetsɛ̀ɛ lùm',
       2 => 'saŋ kàg ngwóŋ',
       3 => 'saŋ lepyè shúm',
@@ -69,8 +70,8 @@ return array (
       11 => 'saŋ mejwoŋó',
       12 => 'saŋ lùm',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'saŋ tsetsɛ̀ɛ lùm',
       2 => 'saŋ kàg ngwóŋ',
       3 => 'saŋ lepyè shúm',
@@ -85,10 +86,10 @@ return array (
       12 => 'saŋ lùm',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -102,8 +103,8 @@ return array (
       11 => '11',
       12 => '12',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'saŋ tsetsɛ̀ɛ lùm',
       2 => 'saŋ kàg ngwóŋ',
       3 => 'saŋ lepyè shúm',
@@ -117,8 +118,8 @@ return array (
       11 => 'saŋ mejwoŋó',
       12 => 'saŋ lùm',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       1 => 'saŋ tsetsɛ̀ɛ lùm',
       2 => 'saŋ kàg ngwóŋ',
       3 => 'saŋ lepyè shúm',
@@ -133,10 +134,10 @@ return array (
       12 => 'saŋ lùm',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'lyɛʼɛ́ sẅíŋtè',
       1 => 'mvfò lyɛ̌ʼ',
       2 => 'mbɔ́ɔntè mvfò lyɛ̌ʼ',
@@ -145,8 +146,8 @@ return array (
       5 => 'mvfò màga lyɛ̌ʼ',
       6 => 'màga lyɛ̌ʼ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'lyɛʼɛ́ sẅíŋtè',
       1 => 'mvfò lyɛ̌ʼ',
       2 => 'mbɔ́ɔntè mvfò lyɛ̌ʼ',
@@ -155,8 +156,8 @@ return array (
       5 => 'mvfò màga lyɛ̌ʼ',
       6 => 'màga lyɛ̌ʼ',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'lyɛʼɛ́ sẅíŋtè',
       1 => 'mvfò lyɛ̌ʼ',
       2 => 'mbɔ́ɔntè mvfò lyɛ̌ʼ',
@@ -166,10 +167,10 @@ return array (
       6 => 'màga lyɛ̌ʼ',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'S',
       1 => 'M',
       2 => 'T',
@@ -178,8 +179,8 @@ return array (
       5 => 'F',
       6 => 'S',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'lyɛʼɛ́ sẅíŋtè',
       1 => 'mvfò lyɛ̌ʼ',
       2 => 'mbɔ́ɔntè mvfò lyɛ̌ʼ',
@@ -188,8 +189,8 @@ return array (
       5 => 'mvfò màga lyɛ̌ʼ',
       6 => 'màga lyɛ̌ʼ',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'lyɛʼɛ́ sẅíŋtè',
       1 => 'mvfò lyɛ̌ʼ',
       2 => 'mbɔ́ɔntè mvfò lyɛ̌ʼ',
@@ -198,8 +199,8 @@ return array (
       5 => 'mvfò màga lyɛ̌ʼ',
       6 => 'màga lyɛ̌ʼ',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'lyɛʼɛ́ sẅíŋtè',
       1 => 'mvfò lyɛ̌ʼ',
       2 => 'mbɔ́ɔntè mvfò lyɛ̌ʼ',
@@ -209,33 +210,33 @@ return array (
       6 => 'màga lyɛ̌ʼ',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'm.z.Y.',
       1 => 'm.g.n.Y.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'mé zyé Yěsô',
       1 => 'mé gÿo ńzyé Yěsô',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'm.z.Y.',
       1 => 'm.g.n.Y.',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE , \'lyɛ\'̌ʼ d \'na\' MMMM, y',
     'long' => '\'lyɛ\'̌ʼ d \'na\' MMMM, y',
     'medium' => 'd MMM, y',
     'short' => 'dd/MM/yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss a',
@@ -245,8 +246,8 @@ return array (
   'amName' => 'mbaʼámbaʼ',
   'pmName' => 'ncwònzém',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'bas' => 'Shwóŋò pʉa mbasǎ',
     'bax' => 'Shwóŋò pamom',
     'bbj' => 'Shwóŋò pʉa nzsekàʼa',
@@ -265,12 +266,12 @@ return array (
     'yav' => 'Shwóŋò pʉa shÿó Mbafìa',
     'ybb' => 'Shwóŋò Tsaŋ',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     'cm' => 'Kàmalûm',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

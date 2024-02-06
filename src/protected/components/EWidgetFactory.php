@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Creates a new widget based on the given class name and initial properties.
  * Priority order:

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations for [cs]
  *
@@ -13,7 +14,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   'Alias "{alias}" is invalid. Make sure it points to an existing PHP file and the file is readable.' => 'Alias "{alias}" je neplatný. Ubezpečte se, že obsahuje cestu k platnému PHP souboru.',
   'GD and FreeType PHP extensions are required.' => 'Požadované jsou PHP rozšírení GD a FreeType.',
   'The "range" property must be specified with a list of values.' => 'Vlastnost "range" musí mít specifikovaný seznam hodnot.',

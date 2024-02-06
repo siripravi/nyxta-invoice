@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'bs_BA'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2013 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '4123',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'alias' => '',
     'decimal' => ',',
     'group' => '.',
@@ -29,8 +30,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤ #,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'AU$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -57,10 +58,10 @@ return array (
     'PLN' => 'zl',
     'RSD' => 'din.',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'januar',
       2 => 'februar',
       3 => 'mart',
@@ -74,8 +75,8 @@ return array (
       11 => 'novembar',
       12 => 'decembar',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'jan',
       2 => 'feb',
       3 => 'mar',
@@ -90,10 +91,10 @@ return array (
       12 => 'dec',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'j',
       2 => 'f',
       3 => 'm',
@@ -108,10 +109,10 @@ return array (
       12 => 'd',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'nedjelja',
       1 => 'ponedjeljak',
       2 => 'utorak',
@@ -120,8 +121,8 @@ return array (
       5 => 'petak',
       6 => 'subota',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'ned',
       1 => 'pon',
       2 => 'uto',
@@ -131,10 +132,10 @@ return array (
       6 => 'sub',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => '1',
       1 => '2',
       2 => '3',
@@ -144,33 +145,33 @@ return array (
       6 => '7',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'p. n. e.',
       1 => 'n. e',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Pre nove ere',
       1 => 'Nove ere',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'p. n. e.',
       1 => 'n. e',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, dd. MMMM y.',
     'long' => 'dd. MMMM y.',
     'medium' => 'dd.MM.y.',
     'short' => 'dd.MM.yy.',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -180,8 +181,8 @@ return array (
   'amName' => 'pre podne',
   'pmName' => 'popodne',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'afarski',
     'ab' => 'abkazijski',
     'ace' => 'ačineski',
@@ -678,8 +679,8 @@ return array (
     'zxx' => 'bez lingvističkog sadržaja',
     'zza' => 'zaza',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'arapsko pismo',
     'armi' => 'imperijsko aramejsko pismo',
     'armn' => 'jermensko pismo',
@@ -811,8 +812,8 @@ return array (
     'zyyy' => 'zajedničko pismo',
     'zzzz' => 'nepoznato ili nevažeće pismo',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'Svet',
     '002' => 'Afrika',
     '003' => 'Severnoamerički kontinent',
@@ -1100,8 +1101,8 @@ return array (
     'zw' => 'Zimbabve',
     'zz' => 'Nepoznata ili nevažeća oblast',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'fmod(n,10)==1&&fmod(n,100)!=11',
     1 => '(fmod(n,10)>=2&&fmod(n,10)<=4&&fmod(fmod(n,10),1)==0)&&(fmod(n,100)<12||fmod(n,100)>14)',
     2 => 'fmod(n,10)==0||(fmod(n,10)>=5&&fmod(n,10)<=9&&fmod(fmod(n,10),1)==0)||(fmod(n,100)>=11&&fmod(n,100)<=14&&fmod(fmod(n,100),1)==0)',

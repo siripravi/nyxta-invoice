@@ -1,4 +1,5 @@
 <?php
+
 /**
  * COciColumnSchema class file.
  *
@@ -21,23 +22,20 @@ class COciColumnSchema extends CDbColumnSchema
 	 * @param string $dbType DB type
 	 * @return string
 	 */
-	protected function extractOraType($dbType){
-		if(strpos($dbType,'FLOAT')!==false) return 'double';
+	protected function extractOraType($dbType)
+	{
+		if (strpos($dbType, 'FLOAT') !== false) return 'double';
 
-		if (strpos($dbType,'NUMBER')!==false || strpos($dbType,'INTEGER')!==false)
-		{
-			if(strpos($dbType,'(') && preg_match('/\((.*)\)/',$dbType,$matches))
-			{
-				$values=explode(',',$matches[1]);
-				if(isset($values[1]) and (((int)$values[1]) > 0))
+		if (strpos($dbType, 'NUMBER') !== false || strpos($dbType, 'INTEGER') !== false) {
+			if (strpos($dbType, '(') && preg_match('/\((.*)\)/', $dbType, $matches)) {
+				$values = explode(',', $matches[1]);
+				if (isset($values[1]) and (((int)$values[1]) > 0))
 					return 'double';
 				else
 					return 'integer';
-			}
-			else
+			} else
 				return 'double';
-		}
-		else
+		} else
 			return 'string';
 	}
 
@@ -47,7 +45,7 @@ class COciColumnSchema extends CDbColumnSchema
 	 */
 	protected function extractType($dbType)
 	{
-		$this->type=$this->extractOraType($dbType);
+		$this->type = $this->extractOraType($dbType);
 	}
 
 	/**
@@ -57,8 +55,8 @@ class COciColumnSchema extends CDbColumnSchema
 	 */
 	protected function extractDefault($defaultValue)
 	{
-		if(stripos($defaultValue,'timestamp')!==false)
-			$this->defaultValue=null;
+		if (stripos($defaultValue, 'timestamp') !== false)
+			$this->defaultValue = null;
 		else
 			parent::extractDefault($defaultValue);
 	}

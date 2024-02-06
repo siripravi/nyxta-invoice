@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'rn_BI'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => '.',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0 %',
   'currencyFormat' => '#,##0.00¤',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'BIF' => 'FBu',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Nzero',
       2 => 'Ruhuhuma',
       3 => 'Ntwarante',
@@ -70,8 +71,8 @@ return array (
       11 => 'Munyonyo',
       12 => 'Kigarama',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Mut.',
       2 => 'Gas.',
       3 => 'Wer.',
@@ -86,10 +87,10 @@ return array (
       12 => 'Uku.',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -104,10 +105,10 @@ return array (
       12 => '12',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Ku w\'indwi',
       1 => 'Ku wa mbere',
       2 => 'Ku wa kabiri',
@@ -116,8 +117,8 @@ return array (
       5 => 'Ku wa gatanu',
       6 => 'Ku wa gatandatu',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'cu.',
       1 => 'mbe.',
       2 => 'kab.',
@@ -127,10 +128,10 @@ return array (
       6 => 'gnd.',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'S',
       1 => 'M',
       2 => 'T',
@@ -140,33 +141,33 @@ return array (
       6 => 'S',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'Mb.Y.',
       1 => 'Ny.Y',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Mbere ya Yezu',
       1 => 'Nyuma ya Yezu',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'Mb.Y.',
       1 => 'Ny.Y',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE d MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'd MMM y',
     'short' => 'd/M/y',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -176,8 +177,8 @@ return array (
   'amName' => 'Z.MU.',
   'pmName' => 'Z.MW.',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ak' => 'Igikani',
     'am' => 'Ikimuhariki',
     'ar' => 'Icarabu',
@@ -224,8 +225,8 @@ return array (
     'zh' => 'Igishinwa',
     'zu' => 'Ikizulu',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     'ad' => 'Andora',
     'ae' => 'Leta Zunze Ubumwe z\'Abarabu',
     'af' => 'Afuganisitani',

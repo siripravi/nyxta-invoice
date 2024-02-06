@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CFilterChain class file.
  *
@@ -31,7 +32,7 @@ class CFilterChain extends CList
 	/**
 	 * @var integer the index of the filter that is to be executed when calling {@link run()}.
 	 */
-	public $filterIndex=0;
+	public $filterIndex = 0;
 
 
 	/**
@@ -39,10 +40,10 @@ class CFilterChain extends CList
 	 * @param CController $controller the controller who executes the action.
 	 * @param CAction $action the action being filtered by this chain.
 	 */
-	public function __construct($controller,$action)
+	public function __construct($controller, $action)
 	{
-		$this->controller=$controller;
-		$this->action=$action;
+		$this->controller = $controller;
+		$this->action = $action;
 	}
 
 	/**
@@ -54,44 +55,38 @@ class CFilterChain extends CList
 	 * @return CFilterChain
 	 * @throws CException
 	 */
-	public static function create($controller,$action,$filters)
+	public static function create($controller, $action, $filters)
 	{
-		$chain=new CFilterChain($controller,$action);
+		$chain = new CFilterChain($controller, $action);
 
-		$actionID=$action->getId();
-		foreach($filters as $filter)
-		{
-			if(is_string($filter))  // filterName [+|- action1 action2]
+		$actionID = $action->getId();
+		foreach ($filters as $filter) {
+			if (is_string($filter))  // filterName [+|- action1 action2]
 			{
-				if(($pos=strpos($filter,'+'))!==false || ($pos=strpos($filter,'-'))!==false)
-				{
-					$matched=preg_match("/\b{$actionID}\b/i",substr($filter,$pos+1))>0;
-					if(($filter[$pos]==='+')===$matched)
-						$filter=CInlineFilter::create($controller,trim(substr($filter,0,$pos)));
-				}
-				else
-					$filter=CInlineFilter::create($controller,$filter);
-			}
-			elseif(is_array($filter))  // array('path.to.class [+|- action1, action2]','param1'=>'value1',...)
+				if (($pos = strpos($filter, '+')) !== false || ($pos = strpos($filter, '-')) !== false) {
+					$matched = preg_match("/\b{$actionID}\b/i", substr($filter, $pos + 1)) > 0;
+					if (($filter[$pos] === '+') === $matched)
+						$filter = CInlineFilter::create($controller, trim(substr($filter, 0, $pos)));
+				} else
+					$filter = CInlineFilter::create($controller, $filter);
+			} elseif (is_array($filter))  // array('path.to.class [+|- action1, action2]','param1'=>'value1',...)
 			{
-				if(!isset($filter[0]))
-					throw new CException(Yii::t('yii','The first element in a filter configuration must be the filter class.'));
-				$filterClass=$filter[0];
+				if (!isset($filter[0]))
+					throw new CException(Yii::t('yii', 'The first element in a filter configuration must be the filter class.'));
+				$filterClass = $filter[0];
 				unset($filter[0]);
-				if(($pos=strpos($filterClass,'+'))!==false || ($pos=strpos($filterClass,'-'))!==false)
-				{
-					$matched=preg_match("/\b{$actionID}\b/i",substr($filterClass,$pos+1))>0;
-					if(($filterClass[$pos]==='+')===$matched)
-						$filterClass=trim(substr($filterClass,0,$pos));
+				if (($pos = strpos($filterClass, '+')) !== false || ($pos = strpos($filterClass, '-')) !== false) {
+					$matched = preg_match("/\b{$actionID}\b/i", substr($filterClass, $pos + 1)) > 0;
+					if (($filterClass[$pos] === '+') === $matched)
+						$filterClass = trim(substr($filterClass, 0, $pos));
 					else
 						continue;
 				}
-				$filter['class']=$filterClass;
-				$filter=Yii::createComponent($filter);
+				$filter['class'] = $filterClass;
+				$filter = Yii::createComponent($filter);
 			}
 
-			if(is_object($filter))
-			{
+			if (is_object($filter)) {
 				$filter->init();
 				$chain->add($filter);
 			}
@@ -108,12 +103,12 @@ class CFilterChain extends CList
 	 * @param mixed $item new item
 	 * @throws CException If the index specified exceeds the bound or the list is read-only, or the item is not an {@link IFilter} instance.
 	 */
-	public function insertAt($index,$item)
+	public function insertAt($index, $item)
 	{
-		if($item instanceof IFilter)
-			parent::insertAt($index,$item);
+		if ($item instanceof IFilter)
+			parent::insertAt($index, $item);
 		else
-			throw new CException(Yii::t('yii','CFilterChain can only take objects implementing the IFilter interface.'));
+			throw new CException(Yii::t('yii', 'CFilterChain can only take objects implementing the IFilter interface.'));
 	}
 
 	/**
@@ -124,13 +119,11 @@ class CFilterChain extends CList
 	 */
 	public function run()
 	{
-		if($this->offsetExists($this->filterIndex))
-		{
-			$filter=$this->itemAt($this->filterIndex++);
-			Yii::trace('Running filter '.($filter instanceof CInlineFilter ? get_class($this->controller).'.filter'.$filter->name.'()':get_class($filter).'.filter()'),'system.web.filters.CFilterChain');
+		if ($this->offsetExists($this->filterIndex)) {
+			$filter = $this->itemAt($this->filterIndex++);
+			Yii::trace('Running filter ' . ($filter instanceof CInlineFilter ? get_class($this->controller) . '.filter' . $filter->name . '()' : get_class($filter) . '.filter()'), 'system.web.filters.CFilterChain');
 			$filter->filter($this);
-		}
-		else
+		} else
 			$this->controller->runAction($this->action);
 	}
 }

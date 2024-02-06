@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CRequiredValidator class file.
  *
@@ -39,36 +40,35 @@ class CRequiredValidator extends CValidator
 	 * Defaults to false, meaning only the value needs to be matched.
 	 * This property is only used when {@link requiredValue} is not null.
 	 */
-	public $strict=false;
+	public $strict = false;
 	/**
 	 * @var boolean whether the value should be trimmed with php trim() function when comparing strings.
 	 * When set to false, the attribute value is not considered empty when it contains spaces.
 	 * Defaults to true, meaning the value will be trimmed.
 	 * @since 1.1.14
 	 */
-	public $trim=true;
+	public $trim = true;
 	/**
 	 * Validates the attribute of the object.
 	 * If there is any error, the error message is added to the object.
 	 * @param CModel $object the object being validated
 	 * @param string $attribute the attribute being validated
 	 */
-	protected function validateAttribute($object,$attribute)
+	protected function validateAttribute($object, $attribute)
 	{
-		$value=$object->$attribute;
-		if($this->requiredValue!==null)
-		{
-			if(!$this->strict && $value!=$this->requiredValue || $this->strict && $value!==$this->requiredValue)
-			{
-				$message=$this->message!==null?$this->message:Yii::t('yii','{attribute} must be {value}.',
-					array('{value}'=>$this->requiredValue));
-				$this->addError($object,$attribute,$message);
+		$value = $object->$attribute;
+		if ($this->requiredValue !== null) {
+			if (!$this->strict && $value != $this->requiredValue || $this->strict && $value !== $this->requiredValue) {
+				$message = $this->message !== null ? $this->message : Yii::t(
+					'yii',
+					'{attribute} must be {value}.',
+					array('{value}' => $this->requiredValue)
+				);
+				$this->addError($object, $attribute, $message);
 			}
-		}
-		elseif($this->isEmpty($value,$this->trim))
-		{
-			$message=$this->message!==null?$this->message:Yii::t('yii','{attribute} cannot be blank.');
-			$this->addError($object,$attribute,$message);
+		} elseif ($this->isEmpty($value, $this->trim)) {
+			$message = $this->message !== null ? $this->message : Yii::t('yii', '{attribute} cannot be blank.');
+			$this->addError($object, $attribute, $message);
 		}
 	}
 
@@ -80,37 +80,34 @@ class CRequiredValidator extends CValidator
 	 * @see CActiveForm::enableClientValidation
 	 * @since 1.1.7
 	 */
-	public function clientValidateAttribute($object,$attribute)
+	public function clientValidateAttribute($object, $attribute)
 	{
-		$message=$this->message;
-		if($this->requiredValue!==null)
-		{
-			if($message===null)
-				$message=Yii::t('yii','{attribute} must be {value}.');
-			$message=strtr($message, array(
-				'{value}'=>$this->requiredValue,
-				'{attribute}'=>$object->getAttributeLabel($attribute),
+		$message = $this->message;
+		if ($this->requiredValue !== null) {
+			if ($message === null)
+				$message = Yii::t('yii', '{attribute} must be {value}.');
+			$message = strtr($message, array(
+				'{value}' => $this->requiredValue,
+				'{attribute}' => $object->getAttributeLabel($attribute),
 			));
 			return "
 if(value!=" . CJSON::encode($this->requiredValue) . ") {
-	messages.push(".CJSON::encode($message).");
+	messages.push(" . CJSON::encode($message) . ");
 }
 ";
-		}
-		else
-		{
-			if($message===null)
-				$message=Yii::t('yii','{attribute} cannot be blank.');
-			$message=strtr($message, array(
-				'{attribute}'=>$object->getAttributeLabel($attribute),
+		} else {
+			if ($message === null)
+				$message = Yii::t('yii', '{attribute} cannot be blank.');
+			$message = strtr($message, array(
+				'{attribute}' => $object->getAttributeLabel($attribute),
 			));
-			if($this->trim)
+			if ($this->trim)
 				$emptyCondition = "jQuery.trim(value)==''";
 			else
 				$emptyCondition = "value==''";
 			return "
 if({$emptyCondition}) {
-	messages.push(".CJSON::encode($message).");
+	messages.push(" . CJSON::encode($message) . ");
 }
 ";
 		}

@@ -50,16 +50,17 @@ class MenuWidget extends CWidget
 	 */
 	public function run()
 	{
-		$this->render('myMenu', array(
-			'link' => $this->link,
-			'vlink' => $this->vlink,
-			'sLink' => $this->sLink,
-			'ulink' => $this->uLink,
-			'header' => $this->header,
-			'chdr' => $this->chdr,
-			'uhdr' => $this->uhdr
-		)
+		$this->render(
+			'myMenu',
+			array(
+				'link' => $this->link,
+				'vlink' => $this->vlink,
+				'sLink' => $this->sLink,
+				'ulink' => $this->uLink,
+				'header' => $this->header,
+				'chdr' => $this->chdr,
+				'uhdr' => $this->uhdr
+			)
 		);
 	}
-
 }

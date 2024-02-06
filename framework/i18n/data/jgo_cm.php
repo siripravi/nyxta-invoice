@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'jgo_CM'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => '.',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤ #,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -52,10 +53,10 @@ return array (
     'XOF' => 'CFA',
     'XPF' => 'CFPF',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Nduŋmbi Saŋ',
       2 => 'Pɛsaŋ Pɛ́pá',
       3 => 'Pɛsaŋ Pɛ́tát',
@@ -69,8 +70,8 @@ return array (
       11 => 'Pɛsaŋ Ntsɔ̌pmɔ́',
       12 => 'Pɛsaŋ Ntsɔ̌ppá',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Nduŋmbi Saŋ',
       2 => 'Pɛsaŋ Pɛ́pá',
       3 => 'Pɛsaŋ Pɛ́tát',
@@ -84,8 +85,8 @@ return array (
       11 => 'Pɛsaŋ Ntsɔ̌pmɔ́',
       12 => 'Pɛsaŋ Ntsɔ̌ppá',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -100,10 +101,10 @@ return array (
       12 => '12',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -117,8 +118,8 @@ return array (
       11 => '11',
       12 => '12',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Nduŋmbi Saŋ',
       2 => 'Pɛsaŋ Pɛ́pá',
       3 => 'Pɛsaŋ Pɛ́tát',
@@ -132,8 +133,8 @@ return array (
       11 => 'Pɛsaŋ Ntsɔ̌pmɔ́',
       12 => 'Pɛsaŋ Ntsɔ̌ppá',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       1 => 'Nduŋmbi Saŋ',
       2 => 'Pɛsaŋ Pɛ́pá',
       3 => 'Pɛsaŋ Pɛ́tát',
@@ -148,10 +149,10 @@ return array (
       12 => 'Pɛsaŋ Ntsɔ̌ppá',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Sɔ́ndi',
       1 => 'Mɔ́ndi',
       2 => 'Ápta Mɔ́ndi',
@@ -160,8 +161,8 @@ return array (
       5 => 'Fɛlâyɛdɛ',
       6 => 'Sásidɛ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Sɔ́ndi',
       1 => 'Mɔ́ndi',
       2 => 'Ápta Mɔ́ndi',
@@ -170,8 +171,8 @@ return array (
       5 => 'Fɛlâyɛdɛ',
       6 => 'Sásidɛ',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'Sɔ́',
       1 => 'Mɔ́',
       2 => 'ÁM',
@@ -181,10 +182,10 @@ return array (
       6 => 'Sá',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'Sɔ́',
       1 => 'Mɔ́',
       2 => 'ÁM',
@@ -193,8 +194,8 @@ return array (
       5 => 'Fɛ',
       6 => 'Sá',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Sɔ́ndi',
       1 => 'Mɔ́ndi',
       2 => 'Ápta Mɔ́ndi',
@@ -203,8 +204,8 @@ return array (
       5 => 'Fɛlâyɛdɛ',
       6 => 'Sásidɛ',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Sɔ́ndi',
       1 => 'Mɔ́ndi',
       2 => 'Ápta Mɔ́ndi',
@@ -214,33 +215,33 @@ return array (
       6 => 'Sásidɛ',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'tsɛttsɛt mɛŋgu’ mi ɛ́ lɛɛnɛ Kɛlísɛtɔ gɔ ńɔ́',
       1 => 'tsɛttsɛt mɛŋgu’ mi ɛ́ fúnɛ Kɛlísɛtɔ tɔ́ mɔ́',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'tsɛttsɛt mɛŋgu’ mi ɛ́ lɛɛnɛ Kɛlísɛtɔ gɔ ńɔ́',
       1 => 'tsɛttsɛt mɛŋgu’ mi ɛ́ fúnɛ Kɛlísɛtɔ tɔ́ mɔ́',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'tsɛttsɛt mɛŋgu’ mi ɛ́ lɛɛnɛ Kɛlísɛtɔ gɔ ńɔ́',
       1 => 'tsɛttsɛt mɛŋgu’ mi ɛ́ fúnɛ Kɛlísɛtɔ tɔ́ mɔ́',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, y MMMM dd',
     'long' => 'y MMMM d',
     'medium' => 'y MMM d',
     'short' => 'y-MM-dd',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -250,8 +251,8 @@ return array (
   'amName' => 'mba’mba’',
   'pmName' => 'ŋka mbɔ́t nji',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ar' => 'Alâbɛ',
     'de' => 'Njáman',
     'el' => 'Ŋɡɛlɛ̂k',
@@ -261,14 +262,14 @@ return array (
     'und' => 'cú-pʉɔ yi pɛ́ kɑ́ kɛ́ jí',
     'zh' => 'Shinwâ',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'latn' => 'mík -ŋwa’nɛ yi ɛ́ líŋɛ́nɛ Latɛ̂ŋ',
     'zxxx' => 'ntúu yi pɛ́ ká ŋwa’nε',
     'zzzz' => 'ntɛ-ŋwa’nɛ yí pɛ́ kɑ́ kɛ́ jí',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'Mbí',
     '002' => 'Afɛlîk',
     '019' => 'Amɛlîk',
@@ -352,8 +353,8 @@ return array (
     'zw' => 'Zimbɑ́mbwɛ',
     'zz' => 'ŋgɔŋ yi pɛ́ ká kɛ́ jʉɔ',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

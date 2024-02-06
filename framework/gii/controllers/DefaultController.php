@@ -2,14 +2,14 @@
 
 class DefaultController extends CController
 {
-	public $layout='/layouts/column1';
+	public $layout = '/layouts/column1';
 
 	public function getPageTitle()
 	{
-		if($this->action->id==='index')
+		if ($this->action->id === 'index')
 			return 'Gii: a Web-based code generator for Yii';
 		else
-			return 'Gii - '.ucfirst($this->action->id).' Generator';
+			return 'Gii - ' . ucfirst($this->action->id) . ' Generator';
 	}
 
 	public function actionIndex()
@@ -19,13 +19,12 @@ class DefaultController extends CController
 
 	public function actionError()
 	{
-	    if($error=Yii::app()->errorHandler->error)
-	    {
-	    	if(Yii::app()->request->isAjaxRequest)
-	    		echo $error['message'];
-	    	else
-	        	$this->render('error', $error);
-	    }
+		if ($error = Yii::app()->errorHandler->error) {
+			if (Yii::app()->request->isAjaxRequest)
+				echo $error['message'];
+			else
+				$this->render('error', $error);
+		}
 	}
 
 	/**
@@ -33,18 +32,17 @@ class DefaultController extends CController
 	 */
 	public function actionLogin()
 	{
-		$model=Yii::createComponent('gii.models.LoginForm');
+		$model = Yii::createComponent('gii.models.LoginForm');
 
 		// collect user input data
-		if(isset($_POST['LoginForm']))
-		{
-			$model->attributes=$_POST['LoginForm'];
+		if (isset($_POST['LoginForm'])) {
+			$model->attributes = $_POST['LoginForm'];
 			// validate user input and redirect to the previous page if valid
-			if($model->validate() && $model->login())
+			if ($model->validate() && $model->login())
 				$this->redirect(array('index'));
 		}
 		// display the login form
-		$this->render('login',array('model'=>$model));
+		$this->render('login', array('model' => $model));
 	}
 
 	/**

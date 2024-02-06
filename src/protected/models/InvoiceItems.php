@@ -95,9 +95,11 @@ class InvoiceItems extends CActiveRecord
 		$criteria->compare('price', $this->price, true);
 		$criteria->compare('status', $this->status);
 
-		return new CActiveDataProvider($this, array(
-			'criteria' => $criteria,
-		)
+		return new CActiveDataProvider(
+			$this,
+			array(
+				'criteria' => $criteria,
+			)
 		);
 	}
 

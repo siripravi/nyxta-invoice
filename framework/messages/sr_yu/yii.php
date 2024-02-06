@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -13,7 +14,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   'CHttpRequest is unable to determine the path info of the request.' => 'CHttpRequest ne može da ustanovi informacije o putanji (path info) za tekući zahtev (request).',
   'CHttpRequest is unable to determine the request URI.' => 'CHttpRequest ne može da ustanovi URI za tekući request (zahtev).',
   'CXCache requires PHP XCache extension to be loaded.' => 'CXCache zahteva da ekstenzija PHP XCache bude učitana.',

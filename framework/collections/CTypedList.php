@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file contains CTypedList class.
  *
@@ -28,7 +29,7 @@ class CTypedList extends CList
 	 */
 	public function __construct($type)
 	{
-		$this->_type=$type;
+		$this->_type = $type;
 	}
 
 	/**
@@ -40,12 +41,15 @@ class CTypedList extends CList
 	 * @throws CException If the index specified exceeds the bound,
 	 * the list is read-only or the element is not of the expected type.
 	 */
-	public function insertAt($index,$item)
+	public function insertAt($index, $item)
 	{
-		if($item instanceof $this->_type)
-			parent::insertAt($index,$item);
+		if ($item instanceof $this->_type)
+			parent::insertAt($index, $item);
 		else
-			throw new CException(Yii::t('yii','CTypedList<{type}> can only hold objects of {type} class.',
-				array('{type}'=>$this->_type)));
+			throw new CException(Yii::t(
+				'yii',
+				'CTypedList<{type}> can only hold objects of {type} class.',
+				array('{type}' => $this->_type)
+			));
 	}
 }

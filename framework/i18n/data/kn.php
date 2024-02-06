@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'kn'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8671',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00;(¤#,##0.00)',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -52,10 +53,10 @@ return array (
     'XOF' => 'CFA',
     'XPF' => 'CFPF',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'ಜನವರೀ',
       2 => 'ಫೆಬ್ರವರೀ',
       3 => 'ಮಾರ್ಚ್',
@@ -69,8 +70,8 @@ return array (
       11 => 'ನವೆಂಬರ್',
       12 => 'ಡಿಸೆಂಬರ್',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'ಜನವರಿ',
       2 => 'ಫೆಬ್ರುವರಿ',
       3 => 'ಮಾರ್ಚ್',
@@ -84,8 +85,8 @@ return array (
       11 => 'ನವೆಂಬರ್',
       12 => 'ಡಿಸೆಂಬರ್',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       1 => 'ಜ',
       2 => 'ಫೆ',
       3 => 'ಮಾ',
@@ -100,10 +101,10 @@ return array (
       12 => 'ಡಿ',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'ಜ',
       2 => 'ಫೆ',
       3 => 'ಮಾ',
@@ -118,10 +119,10 @@ return array (
       12 => 'ಡಿ',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'ರವಿವಾರ',
       1 => 'ಸೋಮವಾರ',
       2 => 'ಮಂಗಳವಾರ',
@@ -130,8 +131,8 @@ return array (
       5 => 'ಶುಕ್ರವಾರ',
       6 => 'ಶನಿವಾರ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'ರ.',
       1 => 'ಸೋ.',
       2 => 'ಮಂ.',
@@ -140,8 +141,8 @@ return array (
       5 => 'ಶು.',
       6 => 'ಶನಿ.',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'ಭಾನು',
       1 => 'ಸೋಮ',
       2 => 'ಮಂಗಳ',
@@ -151,10 +152,10 @@ return array (
       6 => 'ಶನಿ',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'ರ',
       1 => 'ಸೋ',
       2 => 'ಮಂ',
@@ -163,8 +164,8 @@ return array (
       5 => 'ಶು',
       6 => 'ಶ',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'ಭಾನು',
       1 => 'ಸೋಮ',
       2 => 'ಮಂಗಳ',
@@ -174,33 +175,33 @@ return array (
       6 => 'ಶನಿ',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'ಕ್ರಿ.ಪೂ',
       1 => 'ಜಾಹೀ',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'ಈಸಪೂವ೯.',
       1 => 'ಕ್ರಿಸ್ತ ಶಕ',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'ಕ್ರಿ.ಪೂ',
       1 => 'ಜಾಹೀ',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE d MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'd MMM y',
     'short' => 'd-M-yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'hh:mm:ss a zzzz',
     'long' => 'hh:mm:ss a z',
     'medium' => 'hh:mm:ss a',
@@ -210,8 +211,8 @@ return array (
   'amName' => 'AM',
   'pmName' => 'PM',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'ಅಫಾರ್',
     'ab' => 'ಅಬ್ಖಾಜಿಯನ್',
     'ace' => 'ಅಛಿನೀಸ್',
@@ -723,8 +724,8 @@ return array (
     'zxx' => 'ಯಾವುದೇ ಭಾಷಾಸಂಬಂಧಿ ವಿಷಯವಿಲ್ಲ',
     'zza' => 'ಜಾಝಾ',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'ಪರ್ಸೊ-ಅರೇಬಿಕ್',
     'armi' => 'ಇಂಪೀರಿಯಲ್ ಅರೆಮಾಯಿಕ್',
     'armn' => 'ಅರ್ಮೇನಿಯನ್',
@@ -856,8 +857,8 @@ return array (
     'zyyy' => 'ಸಾಮಾನ್ಯ',
     'zzzz' => 'ಅಜ್ಞಾತ ಅಥವ ಅಮಾನ್ಯವಾದ ಲಿಪಿ',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'ವಿಶ್ವ',
     '002' => 'ಆಫ್ರಿಕಾ',
     '003' => 'ಉತ್ತರ ಅಮೇರಿಕಾ',

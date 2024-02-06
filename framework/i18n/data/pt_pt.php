@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'pt_PT'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8663',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => ' ',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '#,##0.00 ¤',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'AU$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'PTE' => 'Esc.',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Janeiro',
       2 => 'Fevereiro',
       3 => 'Março',
@@ -70,8 +71,8 @@ return array (
       11 => 'Novembro',
       12 => 'Dezembro',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Jan',
       2 => 'Fev',
       3 => 'Mar',
@@ -85,8 +86,8 @@ return array (
       11 => 'Nov',
       12 => 'Dez',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       1 => 'J',
       2 => 'F',
       3 => 'M',
@@ -101,10 +102,10 @@ return array (
       12 => 'D',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'J',
       2 => 'F',
       3 => 'M',
@@ -118,8 +119,8 @@ return array (
       11 => 'N',
       12 => 'D',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Jan',
       2 => 'Fev',
       3 => 'Mar',
@@ -133,8 +134,8 @@ return array (
       11 => 'Nov',
       12 => 'Dez',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       1 => 'Janeiro',
       2 => 'Fevereiro',
       3 => 'Março',
@@ -149,10 +150,10 @@ return array (
       12 => 'Dezembro',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Domingo',
       1 => 'Segunda-feira',
       2 => 'Terça-feira',
@@ -161,8 +162,8 @@ return array (
       5 => 'Sexta-feira',
       6 => 'Sábado',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'dom',
       1 => 'seg',
       2 => 'ter',
@@ -171,8 +172,8 @@ return array (
       5 => 'sex',
       6 => 'sáb',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'D',
       1 => 'S',
       2 => 'T',
@@ -181,8 +182,8 @@ return array (
       5 => 'S',
       6 => 'S',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'Do',
       1 => 'Sg',
       2 => 'Te',
@@ -192,10 +193,10 @@ return array (
       6 => 'Sb',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'D',
       1 => 'S',
       2 => 'T',
@@ -204,8 +205,8 @@ return array (
       5 => 'S',
       6 => 'S',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'dom',
       1 => 'seg',
       2 => 'ter',
@@ -214,8 +215,8 @@ return array (
       5 => 'sex',
       6 => 'sáb',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'Do',
       1 => 'seg',
       2 => 'Te',
@@ -224,8 +225,8 @@ return array (
       5 => 'sex',
       6 => 'sáb',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Domingo',
       1 => 'Segunda-feira',
       2 => 'Terça-feira',
@@ -235,33 +236,33 @@ return array (
       6 => 'Sábado',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'a.C.',
       1 => 'd.C.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Antes de Cristo',
       1 => 'Ano do Senhor',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'a.C.',
       1 => 'd.C.',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, d \'de\' MMMM \'de\' y',
     'long' => 'd \'de\' MMMM \'de\' y',
     'medium' => 'dd/MM/y',
     'short' => 'dd/MM/yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -271,8 +272,8 @@ return array (
   'amName' => 'AM',
   'pmName' => 'PM',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'afar',
     'ab' => 'abcázio',
     'ace' => 'achém',
@@ -846,8 +847,8 @@ return array (
     'yav' => 'yangben',
     'ybb' => 'yemba',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'perso-árabe',
     'armi' => 'aramaico imperial',
     'armn' => 'arménio',
@@ -979,8 +980,8 @@ return array (
     'zyyy' => 'comum',
     'zzzz' => 'escrita desconhecida',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'Mundo',
     '002' => 'África',
     '003' => 'América do Norte',
@@ -1272,8 +1273,8 @@ return array (
     'zw' => 'Zimbabué',
     'zz' => 'Região desconhecida ou inválida',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

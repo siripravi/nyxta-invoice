@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CProfileLogRoute class file.
  *
@@ -34,11 +35,11 @@ class CProfileLogRoute extends CWebLogRoute
 	 * Defaults to true. Note that this property only affects the summary report
 	 * that is enabled when {@link report} is 'summary'.
 	 */
-	public $groupByToken=true;
+	public $groupByToken = true;
 	/**
 	 * @var string type of profiling report to display
 	 */
-	private $_report='summary';
+	private $_report = 'summary';
 
 	/**
 	 * Initializes the route.
@@ -46,7 +47,7 @@ class CProfileLogRoute extends CWebLogRoute
 	 */
 	public function init()
 	{
-		$this->levels=CLogger::LEVEL_PROFILE;
+		$this->levels = CLogger::LEVEL_PROFILE;
 	}
 
 	/**
@@ -63,11 +64,14 @@ class CProfileLogRoute extends CWebLogRoute
 	 */
 	public function setReport($value)
 	{
-		if($value==='summary' || $value==='callstack')
-			$this->_report=$value;
+		if ($value === 'summary' || $value === 'callstack')
+			$this->_report = $value;
 		else
-			throw new CException(Yii::t('yii','CProfileLogRoute.report "{report}" is invalid. Valid values include "summary" and "callstack".',
-				array('{report}'=>$value)));
+			throw new CException(Yii::t(
+				'yii',
+				'CProfileLogRoute.report "{report}" is invalid. Valid values include "summary" and "callstack".',
+				array('{report}' => $value)
+			));
 	}
 
 	/**
@@ -76,11 +80,11 @@ class CProfileLogRoute extends CWebLogRoute
 	 */
 	public function processLogs($logs)
 	{
-		$app=Yii::app();
-		if(!($app instanceof CWebApplication) || $app->getRequest()->getIsAjaxRequest())
+		$app = Yii::app();
+		if (!($app instanceof CWebApplication) || $app->getRequest()->getIsAjaxRequest())
 			return;
 
-		if($this->getReport()==='summary')
+		if ($this->getReport() === 'summary')
 			$this->displaySummary($logs);
 		else
 			$this->displayCallstack($logs);
@@ -93,40 +97,37 @@ class CProfileLogRoute extends CWebLogRoute
 	 */
 	protected function displayCallstack($logs)
 	{
-		$stack=array();
-		$results=array();
-		$n=0;
-		foreach($logs as $log)
-		{
-			if($log[1]!==CLogger::LEVEL_PROFILE)
+		$stack = array();
+		$results = array();
+		$n = 0;
+		foreach ($logs as $log) {
+			if ($log[1] !== CLogger::LEVEL_PROFILE)
 				continue;
-			$message=$log[0];
-			if(!strncasecmp($message,'begin:',6))
-			{
-				$log[0]=substr($message,6);
-				$log[4]=$n;
-				$stack[]=$log;
+			$message = $log[0];
+			if (!strncasecmp($message, 'begin:', 6)) {
+				$log[0] = substr($message, 6);
+				$log[4] = $n;
+				$stack[] = $log;
 				$n++;
-			}
-			elseif(!strncasecmp($message,'end:',4))
-			{
-				$token=substr($message,4);
-				if(($last=array_pop($stack))!==null && $last[0]===$token)
-				{
-					$delta=$log[3]-$last[3];
-					$results[$last[4]]=array($token,$delta,count($stack));
-				}
-				else
-					throw new CException(Yii::t('yii','CProfileLogRoute found a mismatching code block "{token}". Make sure the calls to Yii::beginProfile() and Yii::endProfile() be properly nested.',
-						array('{token}'=>$token)));
+			} elseif (!strncasecmp($message, 'end:', 4)) {
+				$token = substr($message, 4);
+				if (($last = array_pop($stack)) !== null && $last[0] === $token) {
+					$delta = $log[3] - $last[3];
+					$results[$last[4]] = array($token, $delta, count($stack));
+				} else
+					throw new CException(Yii::t(
+						'yii',
+						'CProfileLogRoute found a mismatching code block "{token}". Make sure the calls to Yii::beginProfile() and Yii::endProfile() be properly nested.',
+						array('{token}' => $token)
+					));
 			}
 		}
 		// remaining entries should be closed here
-		$now=microtime(true);
-		while(($last=array_pop($stack))!==null)
-			$results[$last[4]]=array($last[0],$now-$last[3],count($stack));
+		$now = microtime(true);
+		while (($last = array_pop($stack)) !== null)
+			$results[$last[4]] = array($last[0], $now - $last[3], count($stack));
 		ksort($results);
-		$this->render('profile-callstack',$results);
+		$this->render('profile-callstack', $results);
 	}
 
 	/**
@@ -136,52 +137,48 @@ class CProfileLogRoute extends CWebLogRoute
 	 */
 	protected function displaySummary($logs)
 	{
-		$stack=array();
-		$results=array();
-		foreach($logs as $log)
-		{
-			if($log[1]!==CLogger::LEVEL_PROFILE)
+		$stack = array();
+		$results = array();
+		foreach ($logs as $log) {
+			if ($log[1] !== CLogger::LEVEL_PROFILE)
 				continue;
-			$message=$log[0];
-			if(!strncasecmp($message,'begin:',6))
-			{
-				$log[0]=substr($message,6);
-				$stack[]=$log;
-			}
-			elseif(!strncasecmp($message,'end:',4))
-			{
-				$token=substr($message,4);
-				if(($last=array_pop($stack))!==null && $last[0]===$token)
-				{
-					$delta=$log[3]-$last[3];
-					if(!$this->groupByToken)
-						$token=$log[2];
-					if(isset($results[$token]))
-						$results[$token]=$this->aggregateResult($results[$token],$delta);
+			$message = $log[0];
+			if (!strncasecmp($message, 'begin:', 6)) {
+				$log[0] = substr($message, 6);
+				$stack[] = $log;
+			} elseif (!strncasecmp($message, 'end:', 4)) {
+				$token = substr($message, 4);
+				if (($last = array_pop($stack)) !== null && $last[0] === $token) {
+					$delta = $log[3] - $last[3];
+					if (!$this->groupByToken)
+						$token = $log[2];
+					if (isset($results[$token]))
+						$results[$token] = $this->aggregateResult($results[$token], $delta);
 					else
-						$results[$token]=array($token,1,$delta,$delta,$delta);
-				}
-				else
-					throw new CException(Yii::t('yii','CProfileLogRoute found a mismatching code block "{token}". Make sure the calls to Yii::beginProfile() and Yii::endProfile() be properly nested.',
-						array('{token}'=>$token)));
+						$results[$token] = array($token, 1, $delta, $delta, $delta);
+				} else
+					throw new CException(Yii::t(
+						'yii',
+						'CProfileLogRoute found a mismatching code block "{token}". Make sure the calls to Yii::beginProfile() and Yii::endProfile() be properly nested.',
+						array('{token}' => $token)
+					));
 			}
 		}
 
-		$now=microtime(true);
-		while(($last=array_pop($stack))!==null)
-		{
-			$delta=$now-$last[3];
-			$token=$this->groupByToken ? $last[0] : $last[2];
-			if(isset($results[$token]))
-				$results[$token]=$this->aggregateResult($results[$token],$delta);
+		$now = microtime(true);
+		while (($last = array_pop($stack)) !== null) {
+			$delta = $now - $last[3];
+			$token = $this->groupByToken ? $last[0] : $last[2];
+			if (isset($results[$token]))
+				$results[$token] = $this->aggregateResult($results[$token], $delta);
 			else
-				$results[$token]=array($token,1,$delta,$delta,$delta);
+				$results[$token] = array($token, 1, $delta, $delta, $delta);
 		}
 
-		$entries=array_values($results);
+		$entries = array_values($results);
 		usort($entries, array($this, 'resultEntryCompare'));
 
-		$this->render('profile-summary',$entries);
+		$this->render('profile-summary', $entries);
 	}
 
 	/**
@@ -202,15 +199,15 @@ class CProfileLogRoute extends CWebLogRoute
 	 * @param float $delta time spent for this code block
 	 * @return array
 	 */
-	protected function aggregateResult($result,$delta)
+	protected function aggregateResult($result, $delta)
 	{
-		list($token,$calls,$min,$max,$total)=$result;
-		if($delta<$min)
-			$min=$delta;
-		elseif($delta>$max)
-			$max=$delta;
+		list($token, $calls, $min, $max, $total) = $result;
+		if ($delta < $min)
+			$min = $delta;
+		elseif ($delta > $max)
+			$max = $delta;
 		$calls++;
-		$total+=$delta;
-		return array($token,$calls,$min,$max,$total);
+		$total += $delta;
+		return array($token, $calls, $min, $max, $total);
 	}
 }

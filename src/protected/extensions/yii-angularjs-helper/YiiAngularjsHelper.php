@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Class YiiAngularjsHelper
  *
@@ -248,7 +249,6 @@ class YiiAngularjsHelper extends CWidget
                 $this->_clientScript->registerCssFile($this->_appAssetsUrl . '/' . $cssFile);
             }
         }
-
     }
 
     /**
@@ -381,5 +381,4 @@ class YiiAngularjsHelper extends CWidget
     {
         return $this->_appAssetsPath;
     }
-
 }

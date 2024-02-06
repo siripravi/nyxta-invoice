@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CMssqlSqlsrvPdoAdapter class file.
  *
@@ -31,12 +32,12 @@ class CMssqlSqlsrvPdoAdapter extends PDO
 	 * @return integer last inserted ID value.
 	 */
 	#[ReturnTypeWillChange]
-	public function lastInsertId($sequence=null)
+	public function lastInsertId($sequence = null)
 	{
 		$parts = explode('.', phpversion('pdo_sqlsrv'));
 		$sqlsrvVer = phpversion('pdo_sqlsrv') ? intval(array_shift($parts)) : 0;
 
-		if(!$sequence || $sqlsrvVer >= 5)
+		if (!$sequence || $sqlsrvVer >= 5)
 			return parent::lastInsertId();
 		return parent::lastInsertId($sequence);
 	}

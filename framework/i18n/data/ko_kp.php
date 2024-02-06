@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'ko_KP'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00;(¤#,##0.00)',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'AU$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -52,10 +53,10 @@ return array (
     'XOF' => 'CFA',
     'XPF' => 'CFPF',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => '1월',
       2 => '2월',
       3 => '3월',
@@ -69,8 +70,8 @@ return array (
       11 => '11월',
       12 => '12월',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Month1',
       2 => 'Month2',
       3 => 'Month3',
@@ -85,10 +86,10 @@ return array (
       12 => 'Month12',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => '1월',
       2 => '2월',
       3 => '3월',
@@ -103,10 +104,10 @@ return array (
       12 => '12월',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => '일요일',
       1 => '월요일',
       2 => '화요일',
@@ -115,8 +116,8 @@ return array (
       5 => '금요일',
       6 => '토요일',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => '일',
       1 => '월',
       2 => '화',
@@ -125,31 +126,8 @@ return array (
       5 => '금',
       6 => '토',
     ),
-    'short' => 
-    array (
-      0 => '일',
-      1 => '월',
-      2 => '화',
-      3 => '수',
-      4 => '목',
-      5 => '금',
-      6 => '토',
-    ),
-  ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
-      0 => '일',
-      1 => '월',
-      2 => '화',
-      3 => '수',
-      4 => '목',
-      5 => '금',
-      6 => '토',
-    ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => '일',
       1 => '월',
       2 => '화',
@@ -159,33 +137,56 @@ return array (
       6 => '토',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
+      0 => '일',
+      1 => '월',
+      2 => '화',
+      3 => '수',
+      4 => '목',
+      5 => '금',
+      6 => '토',
+    ),
+    'short' =>
+    array(
+      0 => '일',
+      1 => '월',
+      2 => '화',
+      3 => '수',
+      4 => '목',
+      5 => '금',
+      6 => '토',
+    ),
+  ),
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => '기원전',
       1 => '서기',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => '서력기원전',
       1 => '서력기원',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => '기원전',
       1 => '서기',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'y년 M월 d일 EEEE',
     'long' => 'y년 M월 d일',
     'medium' => 'y. M. d.',
     'short' => 'yy. M. d.',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'a h시 m분 s초 zzzz',
     'long' => 'a h시 m분 s초 z',
     'medium' => 'a h:mm:ss',
@@ -195,8 +196,8 @@ return array (
   'amName' => '오전',
   'pmName' => '오후',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => '아파르어',
     'ab' => '압카즈어',
     'ace' => '아체어',
@@ -771,8 +772,8 @@ return array (
     'zxx' => '언어 관련 내용 없음',
     'zza' => '자자어',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'afak' => '아파카 문자',
     'arab' => '페르소-아라비아어',
     'armi' => '아랍제국 문자',
@@ -932,8 +933,8 @@ return array (
     'zyyy' => '일반 문자',
     'zzzz' => '기록되지 않은 문자(구전)',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => '세계',
     '002' => '아프리카',
     '003' => '북아메리카',

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'am_ET'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00;(¤#,##0.00)',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'AU$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'ETB' => 'ብር',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'ጃንዩወሪ',
       2 => 'ፌብሩወሪ',
       3 => 'ማርች',
@@ -70,8 +71,8 @@ return array (
       11 => 'ኖቬምበር',
       12 => 'ዲሴምበር',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'ጃንዩ',
       2 => 'ፌብሩ',
       3 => 'ማርች',
@@ -85,8 +86,8 @@ return array (
       11 => 'ኖቬም',
       12 => 'ዲሴም',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       1 => 'ጃ',
       2 => 'ፌ',
       3 => 'ማ',
@@ -101,10 +102,10 @@ return array (
       12 => 'ዲ',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'ጃ',
       2 => 'ፌ',
       3 => 'ማ',
@@ -118,8 +119,8 @@ return array (
       11 => 'ኖ',
       12 => 'ዲ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'ጃንዩ',
       2 => 'ፌብሩ',
       3 => 'ማርች',
@@ -133,8 +134,8 @@ return array (
       11 => 'ኖቬም',
       12 => 'ዲሴም',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       1 => 'ጃንዩወሪ',
       2 => 'ፌብሩወሪ',
       3 => 'ማርች',
@@ -149,10 +150,10 @@ return array (
       12 => 'ዲሴምበር',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'እሑድ',
       1 => 'ሰኞ',
       2 => 'ማክሰኞ',
@@ -161,8 +162,8 @@ return array (
       5 => 'ዓርብ',
       6 => 'ቅዳሜ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'እሑድ',
       1 => 'ሰኞ',
       2 => 'ማክሰ',
@@ -171,8 +172,8 @@ return array (
       5 => 'ዓርብ',
       6 => 'ቅዳሜ',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'እ',
       1 => 'ሰ',
       2 => 'ማ',
@@ -181,8 +182,8 @@ return array (
       5 => 'ዓ',
       6 => 'ቅ',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'እ',
       1 => 'ሰ',
       2 => 'ማ',
@@ -192,10 +193,10 @@ return array (
       6 => 'ቅ',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'እ',
       1 => 'ሰ',
       2 => 'ማ',
@@ -204,8 +205,8 @@ return array (
       5 => 'ዓ',
       6 => 'ቅ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'እሑድ',
       1 => 'ሰኞ',
       2 => 'ማክሰ',
@@ -214,8 +215,8 @@ return array (
       5 => 'ዓርብ',
       6 => 'ቅዳሜ',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'እ',
       1 => 'ሰ',
       2 => 'ማ',
@@ -224,8 +225,8 @@ return array (
       5 => 'ዓ',
       6 => 'ቅ',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'እሑድ',
       1 => 'ሰኞ',
       2 => 'ማክሰኞ',
@@ -235,33 +236,33 @@ return array (
       6 => 'ቅዳሜ',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'ዓ/ዓ',
       1 => 'ዓ/ም',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'ዓመተ ዓለም',
       1 => 'ዓመተ ምሕረት',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'ዓ/ዓ',
       1 => 'ዓ/ም',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, d MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'd MMM y',
     'short' => 'dd/MM/y',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'h:mm:ss a zzzz',
     'long' => 'h:mm:ss a z',
     'medium' => 'h:mm:ss a',
@@ -271,8 +272,8 @@ return array (
   'amName' => 'ጥዋት',
   'pmName' => 'ከሰዓት',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'አፋርኛ',
     'ab' => 'አብሐዚኛ',
     'ach' => 'አኮሊኛ',
@@ -469,8 +470,8 @@ return array (
     'zu' => 'ዙሉኛ',
     'zxx' => 'ቋንቋዊ ይዘት አይደለም',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'ፔርሶ - አረቢክ',
     'armn' => 'አርሜንያዊ',
     'beng' => 'ቤንጋሊ',
@@ -536,8 +537,8 @@ return array (
     'zyyy' => 'የጋራ',
     'zzzz' => 'ያልታወቀ ስክሪፕት',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'ዓለም',
     '002' => 'አፍሪካ',
     '003' => 'ሰሜን አሜሪካ',
@@ -829,8 +830,8 @@ return array (
     'zw' => 'ዚምቧቤ',
     'zz' => 'ያልታወቀ ክልል',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => '(n>=0&&n<=1&&fmod(n,1)==0)',
     1 => 'true',
   ),

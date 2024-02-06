@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'sk_SK'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => ' ',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0 %',
   'currencyFormat' => '#,##0.00 ¤',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'AUD',
     'BRL' => 'BRL',
     'CAD' => 'CAD',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'PLN' => 'zl',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'januára',
       2 => 'februára',
       3 => 'marca',
@@ -70,8 +71,8 @@ return array (
       11 => 'novembra',
       12 => 'decembra',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'jan',
       2 => 'feb',
       3 => 'mar',
@@ -86,10 +87,10 @@ return array (
       12 => 'dec',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'j',
       2 => 'f',
       3 => 'm',
@@ -103,8 +104,8 @@ return array (
       11 => 'n',
       12 => 'd',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       1 => 'január',
       2 => 'február',
       3 => 'marec',
@@ -119,10 +120,10 @@ return array (
       12 => 'december',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'nedeľa',
       1 => 'pondelok',
       2 => 'utorok',
@@ -131,8 +132,8 @@ return array (
       5 => 'piatok',
       6 => 'sobota',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'ne',
       1 => 'po',
       2 => 'ut',
@@ -141,8 +142,8 @@ return array (
       5 => 'pi',
       6 => 'so',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'N',
       1 => 'P',
       2 => 'U',
@@ -151,8 +152,8 @@ return array (
       5 => 'P',
       6 => 'S',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'Ne',
       1 => 'Po',
       2 => 'Ut',
@@ -162,10 +163,10 @@ return array (
       6 => 'So',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'N',
       1 => 'P',
       2 => 'U',
@@ -174,8 +175,8 @@ return array (
       5 => 'P',
       6 => 'S',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'ne',
       1 => 'po',
       2 => 'ut',
@@ -184,8 +185,8 @@ return array (
       5 => 'pi',
       6 => 'so',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'Ne',
       1 => 'Po',
       2 => 'Ut',
@@ -194,8 +195,8 @@ return array (
       5 => 'Pi',
       6 => 'So',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'nedeľa',
       1 => 'pondelok',
       2 => 'utorok',
@@ -205,33 +206,33 @@ return array (
       6 => 'sobota',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'pred n.l.',
       1 => 'n.l.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'pred n.l.',
       1 => 'n.l.',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'pred n.l.',
       1 => 'n.l.',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, d. MMMM y',
     'long' => 'd. MMMM y',
     'medium' => 'd.M.y',
     'short' => 'd.M.y',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'H:mm:ss zzzz',
     'long' => 'H:mm:ss z',
     'medium' => 'H:mm:ss',
@@ -241,8 +242,8 @@ return array (
   'amName' => 'dopoludnia',
   'pmName' => 'popoludní',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'afarčina',
     'ab' => 'abcházština',
     'ace' => 'acehčina',
@@ -817,8 +818,8 @@ return array (
     'zxx' => 'bez jazykového obsahu',
     'zza' => 'zázá',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'Perzsko-arabské znaky',
     'armn' => 'Arménsky',
     'bali' => 'balijský',
@@ -868,8 +869,8 @@ return array (
     'zyyy' => 'Obecný',
     'zzzz' => 'Neznáme písmo',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'Svet',
     '002' => 'Afrika',
     '003' => 'Severná Amerika',
@@ -1161,8 +1162,8 @@ return array (
     'zw' => 'Zimbabwe',
     'zz' => 'Neznámy región',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => '(n>=2&&n<=4&&fmod(n,1)==0)',
     2 => 'true',

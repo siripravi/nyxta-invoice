@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CUploadedFile class file.
  *
@@ -80,10 +81,10 @@ class CUploadedFile extends CComponent
 	 */
 	public static function getInstanceByName($name)
 	{
-		if(null===self::$_files)
+		if (null === self::$_files)
 			self::prefetchFiles();
 
-		return isset(self::$_files[$name]) && self::$_files[$name]->getError()!=UPLOAD_ERR_NO_FILE ? self::$_files[$name] : null;
+		return isset(self::$_files[$name]) && self::$_files[$name]->getError() != UPLOAD_ERR_NO_FILE ? self::$_files[$name] : null;
 	}
 
 	/**
@@ -98,13 +99,13 @@ class CUploadedFile extends CComponent
 	 */
 	public static function getInstancesByName($name)
 	{
-		if(null===self::$_files)
+		if (null === self::$_files)
 			self::prefetchFiles();
 
-		$len=strlen($name);
-		$results=array();
-		foreach(array_keys(self::$_files) as $key)
-			if(0===strncmp($key, $name.'[', $len+1) && self::$_files[$key]->getError()!=UPLOAD_ERR_NO_FILE)
+		$len = strlen($name);
+		$results = array();
+		foreach (array_keys(self::$_files) as $key)
+			if (0 === strncmp($key, $name . '[', $len + 1) && self::$_files[$key]->getError() != UPLOAD_ERR_NO_FILE)
 				$results[] = self::$_files[$key];
 		return $results;
 	}
@@ -116,7 +117,7 @@ class CUploadedFile extends CComponent
 	 */
 	public static function reset()
 	{
-		self::$_files=null;
+		self::$_files = null;
 	}
 
 	/**
@@ -126,10 +127,10 @@ class CUploadedFile extends CComponent
 	protected static function prefetchFiles()
 	{
 		self::$_files = array();
-		if(!isset($_FILES) || !is_array($_FILES))
+		if (!isset($_FILES) || !is_array($_FILES))
 			return;
 
-		foreach($_FILES as $class=>$info)
+		foreach ($_FILES as $class => $info)
 			self::collectFilesRecursive($class, $info['name'], $info['tmp_name'], $info['type'], $info['size'], $info['error']);
 	}
 	/**
@@ -143,12 +144,10 @@ class CUploadedFile extends CComponent
 	 */
 	protected static function collectFilesRecursive($key, $names, $tmp_names, $types, $sizes, $errors)
 	{
-		if(is_array($names))
-		{
-			foreach($names as $item=>$name)
-				self::collectFilesRecursive($key.'['.$item.']', $names[$item], $tmp_names[$item], $types[$item], $sizes[$item], $errors[$item]);
-		}
-		else
+		if (is_array($names)) {
+			foreach ($names as $item => $name)
+				self::collectFilesRecursive($key . '[' . $item . ']', $names[$item], $tmp_names[$item], $types[$item], $sizes[$item], $errors[$item]);
+		} else
 			self::$_files[$key] = new CUploadedFile($names, $tmp_names, $types, $sizes, $errors);
 	}
 
@@ -161,13 +160,13 @@ class CUploadedFile extends CComponent
 	 * @param integer $size the actual size of the uploaded file in bytes
 	 * @param integer $error the error code
 	 */
-	public function __construct($name,$tempName,$type,$size,$error)
+	public function __construct($name, $tempName, $type, $size, $error)
 	{
-		$this->_name=$name;
-		$this->_tempName=$tempName;
-		$this->_type=$type;
-		$this->_size=$size;
-		$this->_error=$error;
+		$this->_name = $name;
+		$this->_tempName = $tempName;
+		$this->_type = $type;
+		$this->_size = $size;
+		$this->_error = $error;
 	}
 
 	/**
@@ -193,18 +192,16 @@ class CUploadedFile extends CComponent
 	 * In some exceptional cases such as not enough permissions to write to the path specified
 	 * PHP warning is triggered.
 	 */
-	public function saveAs($file,$deleteTempFile=true)
+	public function saveAs($file, $deleteTempFile = true)
 	{
-		if($this->_error==UPLOAD_ERR_OK)
-		{
-			if($deleteTempFile)
-				return move_uploaded_file($this->_tempName,$file);
-			elseif(is_uploaded_file($this->_tempName))
+		if ($this->_error == UPLOAD_ERR_OK) {
+			if ($deleteTempFile)
+				return move_uploaded_file($this->_tempName, $file);
+			elseif (is_uploaded_file($this->_tempName))
 				return copy($this->_tempName, $file);
 			else
 				return false;
-		}
-		else
+		} else
 			return false;
 	}
 
@@ -260,7 +257,7 @@ class CUploadedFile extends CComponent
 	 */
 	public function getHasError()
 	{
-		return $this->_error!=UPLOAD_ERR_OK;
+		return $this->_error != UPLOAD_ERR_OK;
 	}
 
 	/**

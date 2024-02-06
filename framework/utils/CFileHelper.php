@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CFileHelper class file.
  *
@@ -26,7 +27,7 @@ class CFileHelper
 	 */
 	public static function getExtension($path)
 	{
-		return pathinfo($path,PATHINFO_EXTENSION);
+		return pathinfo($path, PATHINFO_EXTENSION);
 	}
 
 	/**
@@ -46,21 +47,21 @@ class CFileHelper
 	 * Level -1 means copying all directories and files under the directory;
 	 * Level 0 means copying only the files DIRECTLY under the directory;
 	 * level N means copying those directories that are within N levels.
- 	 * </li>
+	 * </li>
 	 * <li>newDirMode - the permission to be set for newly copied directories (defaults to 0777);</li>
 	 * <li>newFileMode - the permission to be set for newly copied files (defaults to the current environment setting).</li>
 	 * </ul>
 	 */
-	public static function copyDirectory($src,$dst,$options=array())
+	public static function copyDirectory($src, $dst, $options = array())
 	{
-		$fileTypes=array();
-		$exclude=array();
-		$level=-1;
+		$fileTypes = array();
+		$exclude = array();
+		$level = -1;
 		extract($options);
-		if(!is_dir($dst))
-			self::createDirectory($dst,isset($options['newDirMode'])?$options['newDirMode']:null,true);
+		if (!is_dir($dst))
+			self::createDirectory($dst, isset($options['newDirMode']) ? $options['newDirMode'] : null, true);
 
-		self::copyDirectoryRecursive($src,$dst,'',$fileTypes,$exclude,$level,$options);
+		self::copyDirectoryRecursive($src, $dst, '', $fileTypes, $exclude, $level, $options);
 	}
 
 	/**
@@ -75,31 +76,27 @@ class CFileHelper
 	 * Note, options parameter is available since 1.1.16
 	 * @since 1.1.14
 	 */
-	public static function removeDirectory($directory,$options=array())
+	public static function removeDirectory($directory, $options = array())
 	{
-		if(!isset($options['traverseSymlinks']))
-			$options['traverseSymlinks']=false;
-		$items=array_merge(
-			glob($directory.DIRECTORY_SEPARATOR.'*',GLOB_MARK),
-			glob($directory.DIRECTORY_SEPARATOR.'.*',GLOB_MARK)
+		if (!isset($options['traverseSymlinks']))
+			$options['traverseSymlinks'] = false;
+		$items = array_merge(
+			glob($directory . DIRECTORY_SEPARATOR . '*', GLOB_MARK),
+			glob($directory . DIRECTORY_SEPARATOR . '.*', GLOB_MARK)
 		);
-		foreach($items as $item)
-		{
-			if(basename($item)=='.' || basename($item)=='..')
+		foreach ($items as $item) {
+			if (basename($item) == '.' || basename($item) == '..')
 				continue;
-			if(substr($item,-1)==DIRECTORY_SEPARATOR)
-			{
-				if(!$options['traverseSymlinks'] && is_link(rtrim($item,DIRECTORY_SEPARATOR)))
-					unlink(rtrim($item,DIRECTORY_SEPARATOR));
+			if (substr($item, -1) == DIRECTORY_SEPARATOR) {
+				if (!$options['traverseSymlinks'] && is_link(rtrim($item, DIRECTORY_SEPARATOR)))
+					unlink(rtrim($item, DIRECTORY_SEPARATOR));
 				else
-					self::removeDirectory($item,$options);
-			}
-			else
+					self::removeDirectory($item, $options);
+			} else
 				unlink($item);
 		}
-		if(is_dir($directory=rtrim($directory,'\\/')))
-		{
-			if(is_link($directory))
+		if (is_dir($directory = rtrim($directory, '\\/'))) {
+			if (is_link($directory))
 				unlink($directory);
 			else
 				rmdir($directory);
@@ -121,19 +118,19 @@ class CFileHelper
 	 * Level -1 means searching for all directories and files under the directory;
 	 * Level 0 means searching for only the files DIRECTLY under the directory;
 	 * level N means searching for those directories that are within N levels.
- 	 * </li>
- 	 * <li>absolutePaths: boolean, whether to return absolute paths or relative ones, defaults to true.</li>
+	 * </li>
+	 * <li>absolutePaths: boolean, whether to return absolute paths or relative ones, defaults to true.</li>
 	 * </ul>
 	 * @return array files found under the directory. The file list is sorted.
 	 */
-	public static function findFiles($dir,$options=array())
+	public static function findFiles($dir, $options = array())
 	{
-		$fileTypes=array();
-		$exclude=array();
-		$level=-1;
-		$absolutePaths=true;
+		$fileTypes = array();
+		$exclude = array();
+		$level = -1;
+		$absolutePaths = true;
 		extract($options);
-		$list=self::findFilesRecursive($dir,'',$fileTypes,$exclude,$level,$absolutePaths);
+		$list = self::findFilesRecursive($dir, '', $fileTypes, $exclude, $level, $absolutePaths);
 		sort($list);
 		return $list;
 	}
@@ -158,30 +155,26 @@ class CFileHelper
 	 * newFileMode - the permission to be set for newly copied files (defaults to the current environment setting).
 	 * @throws Exception
 	 */
-	protected static function copyDirectoryRecursive($src,$dst,$base,$fileTypes,$exclude,$level,$options)
+	protected static function copyDirectoryRecursive($src, $dst, $base, $fileTypes, $exclude, $level, $options)
 	{
-		if(!is_dir($dst))
-			self::createDirectory($dst,isset($options['newDirMode'])?$options['newDirMode']:null,false);
+		if (!is_dir($dst))
+			self::createDirectory($dst, isset($options['newDirMode']) ? $options['newDirMode'] : null, false);
 
-		$folder=opendir($src);
-		if($folder===false)
+		$folder = opendir($src);
+		if ($folder === false)
 			throw new Exception('Unable to open directory: ' . $src);
-		while(($file=readdir($folder))!==false)
-		{
-			if($file==='.' || $file==='..')
+		while (($file = readdir($folder)) !== false) {
+			if ($file === '.' || $file === '..')
 				continue;
-			$path=$src.DIRECTORY_SEPARATOR.$file;
-			$isFile=is_file($path);
-			if(self::validatePath($base,$file,$isFile,$fileTypes,$exclude))
-			{
-				if($isFile)
-				{
-					copy($path,$dst.DIRECTORY_SEPARATOR.$file);
-					if(isset($options['newFileMode']))
-						@chmod($dst.DIRECTORY_SEPARATOR.$file,$options['newFileMode']);
-				}
-				elseif($level)
-					self::copyDirectoryRecursive($path,$dst.DIRECTORY_SEPARATOR.$file,$base.'/'.$file,$fileTypes,$exclude,$level-1,$options);
+			$path = $src . DIRECTORY_SEPARATOR . $file;
+			$isFile = is_file($path);
+			if (self::validatePath($base, $file, $isFile, $fileTypes, $exclude)) {
+				if ($isFile) {
+					copy($path, $dst . DIRECTORY_SEPARATOR . $file);
+					if (isset($options['newFileMode']))
+						@chmod($dst . DIRECTORY_SEPARATOR . $file, $options['newFileMode']);
+				} elseif ($level)
+					self::copyDirectoryRecursive($path, $dst . DIRECTORY_SEPARATOR . $file, $base . '/' . $file, $fileTypes, $exclude, $level - 1, $options);
 			}
 		}
 		closedir($folder);
@@ -205,25 +198,23 @@ class CFileHelper
 	 * @return array files found under the directory.
 	 * @throws Exception
 	 */
-	protected static function findFilesRecursive($dir,$base,$fileTypes,$exclude,$level,$absolutePaths)
+	protected static function findFilesRecursive($dir, $base, $fileTypes, $exclude, $level, $absolutePaths)
 	{
-		$list=array();
-		$handle=opendir($dir.$base);
-		if($handle===false)
+		$list = array();
+		$handle = opendir($dir . $base);
+		if ($handle === false)
 			throw new Exception('Unable to open directory: ' . $dir);
-		while(($file=readdir($handle))!==false)
-		{
-			if($file==='.' || $file==='..')
+		while (($file = readdir($handle)) !== false) {
+			if ($file === '.' || $file === '..')
 				continue;
-			$path=substr($base.DIRECTORY_SEPARATOR.$file,1);
-			$fullPath=$dir.DIRECTORY_SEPARATOR.$path;
-			$isFile=is_file($fullPath);
-			if(self::validatePath($base,$file,$isFile,$fileTypes,$exclude))
-			{
-				if($isFile)
-					$list[]=$absolutePaths?$fullPath:$path;
-				elseif($level)
-					$list=array_merge($list,self::findFilesRecursive($dir,$base.DIRECTORY_SEPARATOR.$file,$fileTypes,$exclude,$level-1,$absolutePaths));
+			$path = substr($base . DIRECTORY_SEPARATOR . $file, 1);
+			$fullPath = $dir . DIRECTORY_SEPARATOR . $path;
+			$isFile = is_file($fullPath);
+			if (self::validatePath($base, $file, $isFile, $fileTypes, $exclude)) {
+				if ($isFile)
+					$list[] = $absolutePaths ? $fullPath : $path;
+				elseif ($level)
+					$list = array_merge($list, self::findFilesRecursive($dir, $base . DIRECTORY_SEPARATOR . $file, $fileTypes, $exclude, $level - 1, $absolutePaths));
 			}
 		}
 		closedir($handle);
@@ -242,17 +233,16 @@ class CFileHelper
 	 * file or directory '$src/a/b'. Note, that '/' should be used as separator regardless of the value of the DIRECTORY_SEPARATOR constant.
 	 * @return boolean whether the file or directory is valid
 	 */
-	protected static function validatePath($base,$file,$isFile,$fileTypes,$exclude)
+	protected static function validatePath($base, $file, $isFile, $fileTypes, $exclude)
 	{
-		foreach($exclude as $e)
-		{
-			if($file===$e || strpos($base.'/'.$file,$e)===0)
+		foreach ($exclude as $e) {
+			if ($file === $e || strpos($base . '/' . $file, $e) === 0)
 				return false;
 		}
-		if(!$isFile || empty($fileTypes))
+		if (!$isFile || empty($fileTypes))
 			return true;
-		if(($type=self::getExtension($file))!=='')
-			return in_array($type,$fileTypes);
+		if (($type = self::getExtension($file)) !== '')
+			return in_array($type, $fileTypes);
 		else
 			return false;
 	}
@@ -275,18 +265,17 @@ class CFileHelper
 	 * based on finfo and mime_content_type. Defaults to true. This parameter has been available since version 1.1.4.
 	 * @return string the MIME type. Null is returned if the MIME type cannot be determined.
 	 */
-	public static function getMimeType($file,$magicFile=null,$checkExtension=true)
+	public static function getMimeType($file, $magicFile = null, $checkExtension = true)
 	{
-		if(function_exists('finfo_open'))
-		{
-			$options=defined('FILEINFO_MIME_TYPE') ? FILEINFO_MIME_TYPE : FILEINFO_MIME;
-			$info=$magicFile===null ? finfo_open($options) : finfo_open($options,$magicFile);
+		if (function_exists('finfo_open')) {
+			$options = defined('FILEINFO_MIME_TYPE') ? FILEINFO_MIME_TYPE : FILEINFO_MIME;
+			$info = $magicFile === null ? finfo_open($options) : finfo_open($options, $magicFile);
 
-			if($info && ($result=finfo_file($info,$file))!==false)
+			if ($info && ($result = finfo_file($info, $file)) !== false)
 				return $result;
 		}
 
-		if(function_exists('mime_content_type') && ($result=mime_content_type($file))!==false)
+		if (function_exists('mime_content_type') && ($result = mime_content_type($file)) !== false)
 			return $result;
 
 		return $checkExtension ? self::getMimeTypeByExtension($file) : null;
@@ -301,19 +290,18 @@ class CFileHelper
 	 * This parameter has been available since version 1.1.3.
 	 * @return string the MIME type. Null is returned if the MIME type cannot be determined.
 	 */
-	public static function getMimeTypeByExtension($file,$magicFile=null)
+	public static function getMimeTypeByExtension($file, $magicFile = null)
 	{
-		static $extensions,$customExtensions=array();
-		if($magicFile===null && $extensions===null)
-			$extensions=require(Yii::getPathOfAlias('system.utils.mimeTypes').'.php');
-		elseif($magicFile!==null && !isset($customExtensions[$magicFile]))
-			$customExtensions[$magicFile]=require($magicFile);
-		if(($ext=self::getExtension($file))!=='')
-		{
-			$ext=strtolower($ext);
-			if($magicFile===null && isset($extensions[$ext]))
+		static $extensions, $customExtensions = array();
+		if ($magicFile === null && $extensions === null)
+			$extensions = require(Yii::getPathOfAlias('system.utils.mimeTypes') . '.php');
+		elseif ($magicFile !== null && !isset($customExtensions[$magicFile]))
+			$customExtensions[$magicFile] = require($magicFile);
+		if (($ext = self::getExtension($file)) !== '') {
+			$ext = strtolower($ext);
+			if ($magicFile === null && isset($extensions[$ext]))
 				return $extensions[$ext];
-			elseif($magicFile!==null && isset($customExtensions[$magicFile][$ext]))
+			elseif ($magicFile !== null && isset($customExtensions[$magicFile][$ext]))
 				return $customExtensions[$magicFile][$ext];
 		}
 		return null;
@@ -328,19 +316,18 @@ class CFileHelper
 	 * This parameter has been available since version 1.1.16.
 	 * @return string extension name. Null is returned if the extension cannot be determined.
 	 */
-	public static function getExtensionByMimeType($file,$magicFile=null)
+	public static function getExtensionByMimeType($file, $magicFile = null)
 	{
-		static $mimeTypes,$customMimeTypes=array();
-		if($magicFile===null && $mimeTypes===null)
-			$mimeTypes=require(Yii::getPathOfAlias('system.utils.fileExtensions').'.php');
-		elseif($magicFile!==null && !isset($customMimeTypes[$magicFile]))
-			$customMimeTypes[$magicFile]=require($magicFile);
-		if(($mime=self::getMimeType($file))!==null)
-		{
-			$mime=strtolower($mime);
-			if($magicFile===null && isset($mimeTypes[$mime]))
+		static $mimeTypes, $customMimeTypes = array();
+		if ($magicFile === null && $mimeTypes === null)
+			$mimeTypes = require(Yii::getPathOfAlias('system.utils.fileExtensions') . '.php');
+		elseif ($magicFile !== null && !isset($customMimeTypes[$magicFile]))
+			$customMimeTypes[$magicFile] = require($magicFile);
+		if (($mime = self::getMimeType($file)) !== null) {
+			$mime = strtolower($mime);
+			if ($magicFile === null && isset($mimeTypes[$mime]))
 				return $mimeTypes[$mime];
-			elseif($magicFile!==null && isset($customMimeTypes[$magicFile][$mime]))
+			elseif ($magicFile !== null && isset($customMimeTypes[$magicFile][$mime]))
 				return $customMimeTypes[$magicFile][$mime];
 		}
 		return null;
@@ -356,15 +343,15 @@ class CFileHelper
 	 * @return boolean result of mkdir
 	 * @see mkdir
 	 */
-	public static function createDirectory($dst,$mode=null,$recursive=false)
+	public static function createDirectory($dst, $mode = null, $recursive = false)
 	{
-		if($mode===null)
-			$mode=0777;
-		$prevDir=dirname($dst);
-		if($recursive && !is_dir($dst) && !is_dir($prevDir))
-			self::createDirectory(dirname($dst),$mode,true);
-		$res=mkdir($dst, $mode);
-		@chmod($dst,$mode);
+		if ($mode === null)
+			$mode = 0777;
+		$prevDir = dirname($dst);
+		if ($recursive && !is_dir($dst) && !is_dir($prevDir))
+			self::createDirectory(dirname($dst), $mode, true);
+		$res = mkdir($dst, $mode);
+		@chmod($dst, $mode);
 		return $res;
 	}
 }

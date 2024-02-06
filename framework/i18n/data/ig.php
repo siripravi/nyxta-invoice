@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'ig'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00;(¤#,##0.00)',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'NGN' => '₦',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Jenụwarị',
       2 => 'Febrụwarị',
       3 => 'Maachị',
@@ -70,8 +71,8 @@ return array (
       11 => 'Novemba',
       12 => 'Disemba',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Jen',
       2 => 'Feb',
       3 => 'Maa',
@@ -86,10 +87,10 @@ return array (
       12 => 'Dis',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -104,10 +105,10 @@ return array (
       12 => '12',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Mbọsị Ụka',
       1 => 'Mọnde',
       2 => 'Tiuzdee',
@@ -116,8 +117,8 @@ return array (
       5 => 'Fraịdee',
       6 => 'Satọdee',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Ụka',
       1 => 'Mọn',
       2 => 'Tiu',
@@ -127,10 +128,10 @@ return array (
       6 => 'Sat',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'S',
       1 => 'M',
       2 => 'T',
@@ -140,33 +141,33 @@ return array (
       6 => 'S',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'T.K.',
       1 => 'A.K.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Tupu Kristi',
       1 => 'Afọ Kristi',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'T.K.',
       1 => 'A.K.',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, d MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'd MMM y',
     'short' => 'dd/MM/y',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'h:mm:ss a zzzz',
     'long' => 'h:mm:ss a z',
     'medium' => 'h:mm:ss a',
@@ -176,8 +177,8 @@ return array (
   'amName' => 'A.M.',
   'pmName' => 'P.M.',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ak' => 'Akan',
     'am' => 'Amariikị',
     'ar' => 'Arabiikị',
@@ -223,8 +224,8 @@ return array (
     'zh' => 'Mandarịịnị',
     'zu' => 'Zulu',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     'bj' => 'Binin',
     'bm' => 'Bemuda',
     'cn' => 'Chaina',

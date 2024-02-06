@@ -18,5 +18,6 @@ $this->menu = array(
 );
 ?>
 
-<?php //echo BsHtml::pageHeader('Update','Payments '.$model->ID) ?>
+<?php //echo BsHtml::pageHeader('Update','Payments '.$model->ID) 
+?>
 <?php $this->renderPartial('_form', array('model' => $model)); ?>

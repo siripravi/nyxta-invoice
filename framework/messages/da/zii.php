@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -16,7 +17,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   'Are you sure you want to delete this item?' => 'Er du sikker på at du vil slette dette element?',
   'Delete' => 'Slet',
   'Displaying {start}-{end} of 1 result.|Displaying {start}-{end} of {count} results.' => 'Viser {start}-{end} af 1 resultat.|Viser {start}-{end} af {count} resultater.',
@@ -37,5 +38,5 @@ return array (
   'Total 1 result.|Total {count} results.' => 'Total 1 resultat.|Total {count} resultater.',
   'Update' => 'Opdater',
   'View' => 'Vis',
-  '{class} must specify "model" and "{attribute}" or "{name}" property values.' => '{class} skal specificere værdier for egenskaberne "model" og "{attribute}" eller "{name}".' ,
+  '{class} must specify "model" and "{attribute}" or "{name}" property values.' => '{class} skal specificere værdier for egenskaberne "model" og "{attribute}" eller "{name}".',
 );

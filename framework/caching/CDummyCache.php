@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CDummyCache class file.
  *
@@ -34,8 +35,8 @@ class CDummyCache extends CApplicationComponent implements ICache, ArrayAccess
 	public function init()
 	{
 		parent::init();
-		if($this->keyPrefix===null)
-			$this->keyPrefix=Yii::app()->getId();
+		if ($this->keyPrefix === null)
+			$this->keyPrefix = Yii::app()->getId();
 	}
 
 	/**
@@ -60,9 +61,9 @@ class CDummyCache extends CApplicationComponent implements ICache, ArrayAccess
 	 */
 	public function mget($ids)
 	{
-		$results=array();
-		foreach($ids as $id)
-			$results[$id]=false;
+		$results = array();
+		foreach ($ids as $id)
+			$results[$id] = false;
 		return $results;
 	}
 
@@ -77,7 +78,7 @@ class CDummyCache extends CApplicationComponent implements ICache, ArrayAccess
 	 * @param ICacheDependency $dependency dependency of the cached item. If the dependency changes, the item is labeled invalid.
 	 * @return boolean true if the value is successfully stored into cache, false otherwise
 	 */
-	public function set($id,$value,$expire=0,$dependency=null)
+	public function set($id, $value, $expire = 0, $dependency = null)
 	{
 		return true;
 	}
@@ -91,7 +92,7 @@ class CDummyCache extends CApplicationComponent implements ICache, ArrayAccess
 	 * @param ICacheDependency $dependency dependency of the cached item. If the dependency changes, the item is labeled invalid.
 	 * @return boolean true if the value is successfully stored into cache, false otherwise
 	 */
-	public function add($id,$value,$expire=0,$dependency=null)
+	public function add($id, $value, $expire = 0, $dependency = null)
 	{
 		return true;
 	}

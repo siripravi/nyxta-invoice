@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'cy'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8671',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'ZMW' => 'ZMW',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Ionawr',
       2 => 'Chwefror',
       3 => 'Mawrth',
@@ -70,8 +71,8 @@ return array (
       11 => 'Tachwedd',
       12 => 'Rhagfyr',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Ion',
       2 => 'Chwef',
       3 => 'Mawrth',
@@ -85,8 +86,8 @@ return array (
       11 => 'Tach',
       12 => 'Rhag',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       1 => 'I',
       2 => 'Ch',
       3 => 'M',
@@ -101,10 +102,10 @@ return array (
       12 => 'Rh',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'I',
       2 => 'Ch',
       3 => 'M',
@@ -118,8 +119,8 @@ return array (
       11 => 'T',
       12 => 'Rh',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Ion',
       2 => 'Chw',
       3 => 'Maw',
@@ -133,8 +134,8 @@ return array (
       11 => 'Tach',
       12 => 'Rhag',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       1 => 'Ionawr',
       2 => 'Chwefror',
       3 => 'Mawrth',
@@ -149,10 +150,10 @@ return array (
       12 => 'Rhagfyr',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Dydd Sul',
       1 => 'Dydd Llun',
       2 => 'Dydd Mawrth',
@@ -161,8 +162,8 @@ return array (
       5 => 'Dydd Gwener',
       6 => 'Dydd Sadwrn',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Sul',
       1 => 'Llun',
       2 => 'Maw',
@@ -171,8 +172,8 @@ return array (
       5 => 'Gwen',
       6 => 'Sad',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'S',
       1 => 'Ll',
       2 => 'M',
@@ -181,8 +182,8 @@ return array (
       5 => 'G',
       6 => 'S',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'Su',
       1 => 'Ll',
       2 => 'Ma',
@@ -192,10 +193,10 @@ return array (
       6 => 'Sa',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'S',
       1 => 'Ll',
       2 => 'M',
@@ -204,8 +205,8 @@ return array (
       5 => 'G',
       6 => 'S',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Sul',
       1 => 'Llun',
       2 => 'Maw',
@@ -214,8 +215,8 @@ return array (
       5 => 'Gwe',
       6 => 'Sad',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'Su',
       1 => 'Ll',
       2 => 'Ma',
@@ -224,8 +225,8 @@ return array (
       5 => 'Gw',
       6 => 'Sa',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Dydd Sul',
       1 => 'Dydd Llun',
       2 => 'Dydd Mawrth',
@@ -235,33 +236,33 @@ return array (
       6 => 'Dydd Sadwrn',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'CC',
       1 => 'OC',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Cyn Crist',
       1 => 'Oed Crist',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'C',
       1 => 'O',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, d MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'd MMM y',
     'short' => 'dd/MM/y',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -271,8 +272,8 @@ return array (
   'amName' => 'AM',
   'pmName' => 'PM',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'Affareg',
     'ab' => 'Abchaseg',
     'ace' => 'Acehneg',
@@ -681,8 +682,8 @@ return array (
     'zxx' => 'Dim cynnwys ieithyddol',
     'zza' => 'Zazäeg',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'Arabaidd',
     'armn' => 'Armenaidd',
     'beng' => 'Bengalaidd',
@@ -724,8 +725,8 @@ return array (
     'zyyy' => 'Cyffredin',
     'zzzz' => 'Ysgriflythyren anhysbys',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'y Byd',
     '002' => 'Affrica',
     '003' => 'Gogledd America',
@@ -1017,8 +1018,8 @@ return array (
     'zw' => 'Zimbabwe',
     'zz' => 'Rhanbarth Anhysbys',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==0',
     1 => 'n==1',
     2 => 'n==2',

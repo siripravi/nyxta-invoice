@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CLogFilter class file
  *
@@ -27,21 +28,21 @@ class CLogFilter extends CComponent implements ILogFilter
 	 * @var boolean whether to prefix each log message with the current user session ID.
 	 * Defaults to false.
 	 */
-	public $prefixSession=false;
+	public $prefixSession = false;
 	/**
 	 * @var boolean whether to prefix each log message with the current user
 	 * {@link CWebUser::name name} and {@link CWebUser::id ID}. Defaults to false.
 	 */
-	public $prefixUser=false;
+	public $prefixUser = false;
 	/**
 	 * @var boolean whether to log the current user name and ID. Defaults to true.
 	 */
-	public $logUser=true;
+	public $logUser = true;
 	/**
 	 * @var array list of the PHP predefined variables that should be logged.
 	 * Note that a variable must be accessible via $GLOBALS. Otherwise it won't be logged.
 	 */
-	public $logVars=array('_GET','_POST','_FILES','_COOKIE','_SESSION','_SERVER');
+	public $logVars = array('_GET', '_POST', '_FILES', '_COOKIE', '_SESSION', '_SERVER');
 	/**
 	 * @var callable or function which will be used to dump context information.
 	 * Defaults to `var_export`. If you're experiencing issues with circular references
@@ -49,7 +50,7 @@ class CLogFilter extends CComponent implements ILogFilter
 	 * functions, lambdas, etc.) could also be used.
 	 * @since 1.1.14
 	 */
-	public $dumper='var_export';
+	public $dumper = 'var_export';
 
 
 	/**
@@ -61,10 +62,9 @@ class CLogFilter extends CComponent implements ILogFilter
 	 */
 	public function filter(&$logs)
 	{
-		if (!empty($logs))
-		{
-			if(($message=$this->getContext())!=='')
-				array_unshift($logs,array($message,CLogger::LEVEL_INFO,'application',YII_BEGIN_TIME));
+		if (!empty($logs)) {
+			if (($message = $this->getContext()) !== '')
+				array_unshift($logs, array($message, CLogger::LEVEL_INFO, 'application', YII_BEGIN_TIME));
 			$this->format($logs);
 		}
 		return $logs;
@@ -79,15 +79,14 @@ class CLogFilter extends CComponent implements ILogFilter
 	 */
 	protected function format(&$logs)
 	{
-		$prefix='';
-		if($this->prefixSession && ($id=session_id())!=='')
-			$prefix.="[$id]";
-		if($this->prefixUser && ($user=Yii::app()->getComponent('user',false))!==null)
-			$prefix.='['.$user->getName().']['.$user->getId().']';
-		if($prefix!=='')
-		{
-			foreach($logs as &$log)
-				$log[0]=$prefix.' '.$log[0];
+		$prefix = '';
+		if ($this->prefixSession && ($id = session_id()) !== '')
+			$prefix .= "[$id]";
+		if ($this->prefixUser && ($user = Yii::app()->getComponent('user', false)) !== null)
+			$prefix .= '[' . $user->getName() . '][' . $user->getId() . ']';
+		if ($prefix !== '') {
+			foreach ($logs as &$log)
+				$log[0] = $prefix . ' ' . $log[0];
 		}
 	}
 
@@ -98,24 +97,21 @@ class CLogFilter extends CComponent implements ILogFilter
 	 */
 	protected function getContext()
 	{
-		$context=array();
-		if($this->logUser && ($user=Yii::app()->getComponent('user',false))!==null)
-			$context[]='User: '.$user->getName().' (ID: '.$user->getId().')';
+		$context = array();
+		if ($this->logUser && ($user = Yii::app()->getComponent('user', false)) !== null)
+			$context[] = 'User: ' . $user->getName() . ' (ID: ' . $user->getId() . ')';
 
-		if($this->dumper==='var_export' || $this->dumper==='print_r')
-		{
-			foreach($this->logVars as $name)
-				if(($value=$this->getGlobalsValue($name))!==null)
-					$context[]="\${$name}=".call_user_func($this->dumper,$value,true);
-		}
-		else
-		{
-			foreach($this->logVars as $name)
-				if(($value=$this->getGlobalsValue($name))!==null)
-					$context[]="\${$name}=".call_user_func($this->dumper,$value);
+		if ($this->dumper === 'var_export' || $this->dumper === 'print_r') {
+			foreach ($this->logVars as $name)
+				if (($value = $this->getGlobalsValue($name)) !== null)
+					$context[] = "\${$name}=" . call_user_func($this->dumper, $value, true);
+		} else {
+			foreach ($this->logVars as $name)
+				if (($value = $this->getGlobalsValue($name)) !== null)
+					$context[] = "\${$name}=" . call_user_func($this->dumper, $value);
 		}
 
-		return implode("\n\n",$context);
+		return implode("\n\n", $context);
 	}
 
 	/**
@@ -124,17 +120,15 @@ class CLogFilter extends CComponent implements ILogFilter
 	 */
 	private function getGlobalsValue(&$path)
 	{
-		if(is_scalar($path))
+		if (is_scalar($path))
 			return !empty($GLOBALS[$path]) ? $GLOBALS[$path] : null;
-		$pathAux=$path;
-		$parts=array();
-		$value=$GLOBALS;
-		do
-		{
-			$value=$value[$parts[]=array_shift($pathAux)];
-		}
-		while(!empty($value) && !empty($pathAux) && !is_string($value));
-		$path=implode('.',$parts);
+		$pathAux = $path;
+		$parts = array();
+		$value = $GLOBALS;
+		do {
+			$value = $value[$parts[] = array_shift($pathAux)];
+		} while (!empty($value) && !empty($pathAux) && !is_string($value));
+		$path = implode('.', $parts);
 		return $value;
 	}
 }

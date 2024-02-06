@@ -18,6 +18,4 @@ class HdrLevel2Inv extends CPortlet
 		// $stmt = $this->loadDoc($this->docId);
 		//	$this->render('hdrLevel2Inv');//, array('stmt' => $stmt));
 	}
-
-
 }

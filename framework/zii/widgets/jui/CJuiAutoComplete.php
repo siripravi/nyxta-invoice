@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CJuiAutoComplete class file.
  *
@@ -58,7 +59,7 @@ class CJuiAutoComplete extends CJuiInputWidget
 	 * {@link CJavaScriptExpression} in this case.</li>
 	 * </ul>
 	 */
-	public $source=array();
+	public $source = array();
 	/**
 	 * @var mixed the URL that will return JSON data as the autocomplete items.
 	 * CHtml::normalizeUrl() will be applied to this property to convert the property
@@ -72,26 +73,26 @@ class CJuiAutoComplete extends CJuiInputWidget
 	 */
 	public function run()
 	{
-		list($name,$id)=$this->resolveNameID();
+		list($name, $id) = $this->resolveNameID();
 
-		if(isset($this->htmlOptions['id']))
-			$id=$this->htmlOptions['id'];
+		if (isset($this->htmlOptions['id']))
+			$id = $this->htmlOptions['id'];
 		else
-			$this->htmlOptions['id']=$id;
-		if(isset($this->htmlOptions['name']))
-			$name=$this->htmlOptions['name'];
+			$this->htmlOptions['id'] = $id;
+		if (isset($this->htmlOptions['name']))
+			$name = $this->htmlOptions['name'];
 
-		if($this->hasModel())
-			echo CHtml::activeTextField($this->model,$this->attribute,$this->htmlOptions);
+		if ($this->hasModel())
+			echo CHtml::activeTextField($this->model, $this->attribute, $this->htmlOptions);
 		else
-			echo CHtml::textField($name,$this->value,$this->htmlOptions);
+			echo CHtml::textField($name, $this->value, $this->htmlOptions);
 
-		if($this->sourceUrl!==null)
-			$this->options['source']=CHtml::normalizeUrl($this->sourceUrl);
+		if ($this->sourceUrl !== null)
+			$this->options['source'] = CHtml::normalizeUrl($this->sourceUrl);
 		else
-			$this->options['source']=$this->source;
+			$this->options['source'] = $this->source;
 
-		$options=CJavaScript::encode($this->options);
-		Yii::app()->getClientScript()->registerScript(__CLASS__.'#'.$id,"jQuery('#{$id}').autocomplete($options);");
+		$options = CJavaScript::encode($this->options);
+		Yii::app()->getClientScript()->registerScript(__CLASS__ . '#' . $id, "jQuery('#{$id}').autocomplete($options);");
 	}
 }

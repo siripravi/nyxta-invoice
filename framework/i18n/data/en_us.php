@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'en_US'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00;(¤#,##0.00)',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -52,10 +53,10 @@ return array (
     'XOF' => 'CFA',
     'XPF' => 'CFPF',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'January',
       2 => 'February',
       3 => 'March',
@@ -69,8 +70,8 @@ return array (
       11 => 'November',
       12 => 'December',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Jan',
       2 => 'Feb',
       3 => 'Mar',
@@ -85,10 +86,10 @@ return array (
       12 => 'Dec',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'J',
       2 => 'F',
       3 => 'M',
@@ -103,10 +104,10 @@ return array (
       12 => 'D',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Sunday',
       1 => 'Monday',
       2 => 'Tuesday',
@@ -115,8 +116,8 @@ return array (
       5 => 'Friday',
       6 => 'Saturday',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Sun',
       1 => 'Mon',
       2 => 'Tue',
@@ -125,8 +126,8 @@ return array (
       5 => 'Fri',
       6 => 'Sat',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'Su',
       1 => 'Mo',
       2 => 'Tu',
@@ -136,10 +137,10 @@ return array (
       6 => 'Sa',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'S',
       1 => 'M',
       2 => 'T',
@@ -149,33 +150,33 @@ return array (
       6 => 'S',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'BC',
       1 => 'AD',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Before Christ',
       1 => 'Anno Domini',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'B',
       1 => 'A',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, MMMM d, y',
     'long' => 'MMMM d, y',
     'medium' => 'MMM d, y',
     'short' => 'M/d/yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'h:mm:ss a zzzz',
     'long' => 'h:mm:ss a z',
     'medium' => 'h:mm:ss a',
@@ -185,8 +186,8 @@ return array (
   'amName' => 'AM',
   'pmName' => 'PM',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'Afar',
     'ab' => 'Abkhazian',
     'ace' => 'Achinese',
@@ -765,8 +766,8 @@ return array (
     'zxx' => 'No linguistic content',
     'zza' => 'Zaza',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'afak' => 'Afaka',
     'arab' => 'Perso-Arabic',
     'armi' => 'Imperial Aramaic',
@@ -926,8 +927,8 @@ return array (
     'zyyy' => 'Common',
     'zzzz' => 'Unknown Script',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'World',
     '002' => 'Africa',
     '003' => 'North America',
@@ -1219,8 +1220,8 @@ return array (
     'zw' => 'Zimbabwe',
     'zz' => 'Unknown Region',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CHttpSessionIterator class file.
  *
@@ -34,7 +35,7 @@ class CHttpSessionIterator implements Iterator
 	 */
 	public function __construct()
 	{
-		$this->_keys=array_keys($_SESSION);
+		$this->_keys = array_keys($_SESSION);
 	}
 
 	/**
@@ -44,7 +45,7 @@ class CHttpSessionIterator implements Iterator
 	#[ReturnTypeWillChange]
 	public function rewind()
 	{
-		$this->_key=reset($this->_keys);
+		$this->_key = reset($this->_keys);
 	}
 
 	/**
@@ -66,7 +67,7 @@ class CHttpSessionIterator implements Iterator
 	#[ReturnTypeWillChange]
 	public function current()
 	{
-		return isset($_SESSION[$this->_key])?$_SESSION[$this->_key]:null;
+		return isset($_SESSION[$this->_key]) ? $_SESSION[$this->_key] : null;
 	}
 
 	/**
@@ -76,11 +77,9 @@ class CHttpSessionIterator implements Iterator
 	#[ReturnTypeWillChange]
 	public function next()
 	{
-		do
-		{
-			$this->_key=next($this->_keys);
-		}
-		while(!isset($_SESSION[$this->_key]) && $this->_key!==false);
+		do {
+			$this->_key = next($this->_keys);
+		} while (!isset($_SESSION[$this->_key]) && $this->_key !== false);
 	}
 
 	/**
@@ -91,6 +90,6 @@ class CHttpSessionIterator implements Iterator
 	#[ReturnTypeWillChange]
 	public function valid()
 	{
-		return $this->_key!==false;
+		return $this->_key !== false;
 	}
 }

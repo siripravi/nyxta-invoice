@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CMysqlCommandBuilder class file.
  *
@@ -25,20 +26,18 @@ class CMysqlCommandBuilder extends CDbCommandBuilder
 	 * @param string $join the JOIN clause (starting with join type, such as INNER JOIN)
 	 * @return string the altered SQL statement
 	 */
-	public function applyJoin($sql,$join)
+	public function applyJoin($sql, $join)
 	{
-		if($join=='')
+		if ($join == '')
 			return $sql;
 
-		if(strpos($sql,'UPDATE')===0 && ($pos=strpos($sql,'SET'))!==false)
-			return substr($sql,0,$pos).$join.' '.substr($sql,$pos);
-		elseif(strpos($sql,'DELETE FROM ')===0)
-		{
-			$tableName=substr($sql,12);
-			return "DELETE {$tableName} FROM {$tableName} ".$join;
-		}
-		else
-			return $sql.' '.$join;
+		if (strpos($sql, 'UPDATE') === 0 && ($pos = strpos($sql, 'SET')) !== false)
+			return substr($sql, 0, $pos) . $join . ' ' . substr($sql, $pos);
+		elseif (strpos($sql, 'DELETE FROM ') === 0) {
+			$tableName = substr($sql, 12);
+			return "DELETE {$tableName} FROM {$tableName} " . $join;
+		} else
+			return $sql . ' ' . $join;
 	}
 
 	/**
@@ -48,11 +47,11 @@ class CMysqlCommandBuilder extends CDbCommandBuilder
 	 * @param integer $offset row offset, -1 to ignore offset.
 	 * @return string SQL with LIMIT and OFFSET
 	 */
-	public function applyLimit($sql,$limit,$offset)
+	public function applyLimit($sql, $limit, $offset)
 	{
 		// Ugly, but this is how MySQL recommends doing it: https://dev.mysql.com/doc/refman/5.0/en/select.html
-		if($limit<=0 && $offset>0)
-			$limit=PHP_INT_MAX;
-		return parent::applyLimit($sql,$limit,$offset);
+		if ($limit <= 0 && $offset > 0)
+			$limit = PHP_INT_MAX;
+		return parent::applyLimit($sql, $limit, $offset);
 	}
 }

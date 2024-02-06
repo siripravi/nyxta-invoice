@@ -1,4 +1,5 @@
 <?php
+
 /**
  * TbNavbar class file.
  * @author Christoffer Niska <ChristofferNiska@gmail.com>
@@ -128,12 +129,14 @@ class TbNavbar extends CWidget
 		}
 
 		if ($this->collapse !== false) {
-			$this->controller->beginWidget('bootstrap.widgets.TbCollapse', array(
-				'id' => $collapseId,
-				'toggle' => false,
-				// navbars should be collapsed by default
-				'htmlOptions' => array('class' => 'nav-collapse'),
-			)
+			$this->controller->beginWidget(
+				'bootstrap.widgets.TbCollapse',
+				array(
+					'id' => $collapseId,
+					'toggle' => false,
+					// navbars should be collapsed by default
+					'htmlOptions' => array('class' => 'nav-collapse'),
+				)
 			);
 		}
 

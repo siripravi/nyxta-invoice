@@ -1,4 +1,5 @@
 <?php
+
 /** simplifica el uso de DialogBoxes en la aplicacion Yii.
  * 
  * uso:
@@ -33,24 +34,15 @@ class DialogBox
 
 
 	public static function createDialogBox(
-		$this_
-		,
-		$dialogName
-		,
-		$dialogTitle
-		,
-		$dialogInitAction
-		,
-		$idInputElement
-		,
-		$iconClass
-		,
-		$btnTxt
-		,
-		$w = 300
-		,
-		$h = 380
-		,
+		$this_,
+		$dialogName,
+		$dialogTitle,
+		$dialogInitAction,
+		$idInputElement,
+		$iconClass,
+		$btnTxt,
+		$w = 300,
+		$h = 380,
 		$ih
 	) {
 		$timer = "timer" . $dialogName;
@@ -62,26 +54,18 @@ class DialogBox
 
 
 		self::putDialog(
-			$this_
-			,
-			$dialogName
-			,
-			$dialogTitle
-			,
-			$dialogInitAction
-			,
-			true
-			,
-			$w
-			,
-			$h
-			,
+			$this_,
+			$dialogName,
+			$dialogTitle,
+			$dialogInitAction,
+			true,
+			$w,
+			$h,
 			$ih
 		);
 
 
 		self::defineTimerParaCierreDeDialogo($dialogName, $idInputElement);
-
 	}
 
 
@@ -107,10 +91,8 @@ class DialogBox
 	private static function putDialog(
 		$this_,
 		$dialogName,
-		$title
-		,
-		$iframeActionSource
-		,
+		$title,
+		$iframeActionSource,
 		$modal = true,
 		$w = 400,
 		$h = 300,
@@ -121,19 +103,21 @@ class DialogBox
 		$iframeId = 'iframe' . $dialogName;
 		$divForForm = "divForForm-$dialogName";
 
-		$this_->beginWidget('zii.widgets.jui.CJuiDialog', array(
-			'id' => $dialog,
-			'options' => array(
-				'title' => $title,
-				'autoOpen' => false,
-				'modal' => $modal,
-				'width' => $w,
-				'height' => $h,
-				'closeOnEscape' => false,
-				'resizable' => false,
+		$this_->beginWidget(
+			'zii.widgets.jui.CJuiDialog',
+			array(
+				'id' => $dialog,
+				'options' => array(
+					'title' => $title,
+					'autoOpen' => false,
+					'modal' => $modal,
+					'width' => $w,
+					'height' => $h,
+					'closeOnEscape' => false,
+					'resizable' => false,
 
-			),
-		)
+				),
+			)
 		);
 
 		$src = Yii::app()->request->hostInfo . $iframeActionSource;
@@ -182,5 +166,4 @@ class DialogBox
 					setTimeout($timer,100);
 				}</script>\n\n";
 	}
-
 }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -16,7 +17,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   'Are you sure you want to delete this item?' => 'Bạn có chắc là muốn xóa?',
   'Either "name" or "value" must be specified for CDataColumn.' => '"name" hoặc "value" phải được quy định cho CDataColumn.',
   'Home' => 'Trang Chủ',

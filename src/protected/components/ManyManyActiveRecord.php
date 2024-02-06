@@ -152,4 +152,3 @@ class ManyManyActiveRecord extends CActiveRecord
         $command->execute();
     }
 }
-?>

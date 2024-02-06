@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CMessageSource class file.
  *
@@ -31,10 +32,10 @@ abstract class CMessageSource extends CApplicationComponent
 	 * Defaults to false, meaning translation is only performed when source and target languages are different.
 	 * @since 1.1.4
 	 */
-	public $forceTranslation=false;
+	public $forceTranslation = false;
 
 	private $_language;
-	private $_messages=array();
+	private $_messages = array();
 
 	/**
 	 * Loads the message translation for the specified language and category.
@@ -42,7 +43,7 @@ abstract class CMessageSource extends CApplicationComponent
 	 * @param string $language the target language
 	 * @return array the loaded messages
 	 */
-	abstract protected function loadMessages($category,$language);
+	abstract protected function loadMessages($category, $language);
 
 	/**
 	 * @return string the language that the source messages are written in.
@@ -50,7 +51,7 @@ abstract class CMessageSource extends CApplicationComponent
 	 */
 	public function getLanguage()
 	{
-		return $this->_language===null ? Yii::app()->sourceLanguage : $this->_language;
+		return $this->_language === null ? Yii::app()->sourceLanguage : $this->_language;
 	}
 
 	/**
@@ -58,7 +59,7 @@ abstract class CMessageSource extends CApplicationComponent
 	 */
 	public function setLanguage($language)
 	{
-		$this->_language=CLocale::getCanonicalID($language);
+		$this->_language = CLocale::getCanonicalID($language);
 	}
 
 	/**
@@ -77,12 +78,12 @@ abstract class CMessageSource extends CApplicationComponent
 	 * @param string $language the target language. If null (default), the {@link CApplication::getLanguage application language} will be used.
 	 * @return string the translated message (or the original message if translation is not needed)
 	 */
-	public function translate($category,$message,$language=null)
+	public function translate($category, $message, $language = null)
 	{
-		if($language===null)
-			$language=Yii::app()->getLanguage();
-		if($this->forceTranslation || $language!==$this->getLanguage())
-			return $this->translateMessage($category,$message,$language);
+		if ($language === null)
+			$language = Yii::app()->getLanguage();
+		if ($this->forceTranslation || $language !== $this->getLanguage())
+			return $this->translateMessage($category, $message, $language);
 		else
 			return $message;
 	}
@@ -96,20 +97,18 @@ abstract class CMessageSource extends CApplicationComponent
 	 * @param string $language the target language
 	 * @return string the translated message
 	 */
-	protected function translateMessage($category,$message,$language)
+	protected function translateMessage($category, $message, $language)
 	{
-		$key=$language.'.'.$category;
-		if(!isset($this->_messages[$key]))
-			$this->_messages[$key]=$this->loadMessages($category,$language);
-		if(isset($this->_messages[$key][$message]) && $this->_messages[$key][$message]!=='')
+		$key = $language . '.' . $category;
+		if (!isset($this->_messages[$key]))
+			$this->_messages[$key] = $this->loadMessages($category, $language);
+		if (isset($this->_messages[$key][$message]) && $this->_messages[$key][$message] !== '')
 			return $this->_messages[$key][$message];
-		elseif($this->hasEventHandler('onMissingTranslation'))
-		{
-			$event=new CMissingTranslationEvent($this,$category,$message,$language);
+		elseif ($this->hasEventHandler('onMissingTranslation')) {
+			$event = new CMissingTranslationEvent($this, $category, $message, $language);
 			$this->onMissingTranslation($event);
 			return $event->message;
-		}
-		else
+		} else
 			return $message;
 	}
 
@@ -122,7 +121,7 @@ abstract class CMessageSource extends CApplicationComponent
 	 */
 	public function onMissingTranslation($event)
 	{
-		$this->raiseEvent('onMissingTranslation',$event);
+		$this->raiseEvent('onMissingTranslation', $event);
 	}
 }
 
@@ -156,11 +155,11 @@ class CMissingTranslationEvent extends CEvent
 	 * @param string $message the message to be translated
 	 * @param string $language the ID of the language that the message is to be translated to
 	 */
-	public function __construct($sender,$category,$message,$language)
+	public function __construct($sender, $category, $message, $language)
 	{
 		parent::__construct($sender);
-		$this->message=$message;
-		$this->category=$category;
-		$this->language=$language;
+		$this->message = $message;
+		$this->category = $category;
+		$this->language = $language;
 	}
 }

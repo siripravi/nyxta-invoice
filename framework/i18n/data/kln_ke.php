@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'kln_KE'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00;(¤#,##0.00)',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'KES' => 'Ksh',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Mulgul',
       2 => 'Ng\'atyato',
       3 => 'Kiptamo',
@@ -70,8 +71,8 @@ return array (
       11 => 'Kipsunde netai',
       12 => 'Kipsunde nebo aeng',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Mul',
       2 => 'Nga',
       3 => 'Kip',
@@ -86,10 +87,10 @@ return array (
       12 => 'Aen',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'M',
       2 => 'N',
       3 => 'K',
@@ -104,10 +105,10 @@ return array (
       12 => 'K',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Betutab tisap',
       1 => 'Betut netai',
       2 => 'Betutab aeng\'',
@@ -116,8 +117,8 @@ return array (
       5 => 'Betutab mut',
       6 => 'Betutab lo',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Tis',
       1 => 'Tai',
       2 => 'Aen',
@@ -127,10 +128,10 @@ return array (
       6 => 'Loh',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'T',
       1 => 'T',
       2 => 'A',
@@ -140,33 +141,33 @@ return array (
       6 => 'L',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'AM',
       1 => 'KO',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Amait kesich Jesu',
       1 => 'Kokakesich Jesu',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'AM',
       1 => 'KO',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, d MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'd MMM y',
     'short' => 'dd/MM/y',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'h:mm:ss a zzzz',
     'long' => 'h:mm:ss a z',
     'medium' => 'h:mm:ss a',
@@ -176,8 +177,8 @@ return array (
   'amName' => 'Beet',
   'pmName' => 'Kemo',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ak' => 'kutitab Aka',
     'am' => 'kutitab Amariek',
     'ar' => 'kutitab Arabuk',
@@ -224,8 +225,8 @@ return array (
     'zh' => 'kutitab China',
     'zu' => 'kutitab Zulu',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     'ad' => 'Emetab Andorra',
     'ae' => 'Emetab kibagenge nebo arabuk',
     'af' => 'Emetab Afghanistan',

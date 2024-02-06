@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CDbLogRoute class file.
  *
@@ -47,12 +48,12 @@ class CDbLogRoute extends CLogRoute
 	 * In PostgreSQL, it is <code>id SERIAL PRIMARY KEY</code>.
 	 * @see autoCreateLogTable
 	 */
-	public $logTableName='YiiLog';
+	public $logTableName = 'YiiLog';
 	/**
 	 * @var boolean whether the log DB table should be automatically created if not exists. Defaults to true.
 	 * @see logTableName
 	 */
-	public $autoCreateLogTable=true;
+	public $autoCreateLogTable = true;
 	/**
 	 * @var CDbConnection the DB connection instance
 	 */
@@ -66,16 +67,12 @@ class CDbLogRoute extends CLogRoute
 	{
 		parent::init();
 
-		if($this->autoCreateLogTable)
-		{
-			$db=$this->getDbConnection();
-			try
-			{
-				$db->createCommand()->delete($this->logTableName,'0=1');
-			}
-			catch(Exception $e)
-			{
-				$this->createLogTable($db,$this->logTableName);
+		if ($this->autoCreateLogTable) {
+			$db = $this->getDbConnection();
+			try {
+				$db->createCommand()->delete($this->logTableName, '0=1');
+			} catch (Exception $e) {
+				$this->createLogTable($db, $this->logTableName);
 			}
 		}
 	}
@@ -85,14 +82,14 @@ class CDbLogRoute extends CLogRoute
 	 * @param CDbConnection $db the database connection
 	 * @param string $tableName the name of the table to be created
 	 */
-	protected function createLogTable($db,$tableName)
+	protected function createLogTable($db, $tableName)
 	{
 		$db->createCommand()->createTable($tableName, array(
-			'id'=>'pk',
-			'level'=>'varchar(128)',
-			'category'=>'varchar(128)',
-			'logtime'=>'integer',
-			'message'=>'text',
+			'id' => 'pk',
+			'level' => 'varchar(128)',
+			'category' => 'varchar(128)',
+			'logtime' => 'integer',
+			'message' => 'text',
 		));
 	}
 
@@ -102,20 +99,20 @@ class CDbLogRoute extends CLogRoute
 	 */
 	protected function getDbConnection()
 	{
-		if($this->_db!==null)
+		if ($this->_db !== null)
 			return $this->_db;
-		elseif(($id=$this->connectionID)!==null)
-		{
-			if(($this->_db=Yii::app()->getComponent($id)) instanceof CDbConnection)
+		elseif (($id = $this->connectionID) !== null) {
+			if (($this->_db = Yii::app()->getComponent($id)) instanceof CDbConnection)
 				return $this->_db;
 			else
-				throw new CException(Yii::t('yii','CDbLogRoute.connectionID "{id}" does not point to a valid CDbConnection application component.',
-					array('{id}'=>$id)));
-		}
-		else
-		{
-			$dbFile=Yii::app()->getRuntimePath().DIRECTORY_SEPARATOR.'log-'.Yii::getVersion().'.db';
-			return $this->_db=new CDbConnection('sqlite:'.$dbFile);
+				throw new CException(Yii::t(
+					'yii',
+					'CDbLogRoute.connectionID "{id}" does not point to a valid CDbConnection application component.',
+					array('{id}' => $id)
+				));
+		} else {
+			$dbFile = Yii::app()->getRuntimePath() . DIRECTORY_SEPARATOR . 'log-' . Yii::getVersion() . '.db';
+			return $this->_db = new CDbConnection('sqlite:' . $dbFile);
 		}
 	}
 
@@ -125,14 +122,13 @@ class CDbLogRoute extends CLogRoute
 	 */
 	protected function processLogs($logs)
 	{
-		$command=$this->getDbConnection()->createCommand();
-		foreach($logs as $log)
-		{
-			$command->insert($this->logTableName,array(
-				'level'=>$log[1],
-				'category'=>$log[2],
-				'logtime'=>(int)$log[3],
-				'message'=>$log[0],
+		$command = $this->getDbConnection()->createCommand();
+		foreach ($logs as $log) {
+			$command->insert($this->logTableName, array(
+				'level' => $log[1],
+				'category' => $log[2],
+				'logtime' => (int)$log[3],
+				'message' => $log[0],
 			));
 		}
 	}

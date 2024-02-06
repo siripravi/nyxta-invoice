@@ -48,7 +48,6 @@ class m120518_224241_add_pm_table extends CDbMigration
 				UNIQUE (user_id, topic_id)
 			) ENGINE = InnoDB;
 		");
-
 	}
 
 	public function down()

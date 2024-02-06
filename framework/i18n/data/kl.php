@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'kl'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => '.',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0 %',
   'currencyFormat' => '¤#,##0.00;¤-#,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -55,10 +56,10 @@ return array (
     'NOK' => 'Nkr',
     'SEK' => 'Skr',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'januari',
       2 => 'februari',
       3 => 'martsi',
@@ -72,8 +73,8 @@ return array (
       11 => 'novemberi',
       12 => 'decemberi',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'jan',
       2 => 'feb',
       3 => 'mar',
@@ -87,8 +88,8 @@ return array (
       11 => 'nov',
       12 => 'dec',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       1 => 'J',
       2 => 'F',
       3 => 'M',
@@ -103,10 +104,10 @@ return array (
       12 => 'D',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'J',
       2 => 'F',
       3 => 'M',
@@ -120,8 +121,8 @@ return array (
       11 => 'N',
       12 => 'D',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'jan',
       2 => 'feb',
       3 => 'mar',
@@ -135,8 +136,8 @@ return array (
       11 => 'nov',
       12 => 'dec',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       1 => 'januari',
       2 => 'februari',
       3 => 'martsi',
@@ -151,10 +152,10 @@ return array (
       12 => 'decemberi',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'sabaat',
       1 => 'ataasinngorneq',
       2 => 'marlunngorneq',
@@ -163,8 +164,8 @@ return array (
       5 => 'tallimanngorneq',
       6 => 'arfininngorneq',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'sab',
       1 => 'ata',
       2 => 'mar',
@@ -174,10 +175,10 @@ return array (
       6 => 'arf',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'S',
       1 => 'A',
       2 => 'M',
@@ -187,33 +188,33 @@ return array (
       6 => 'A',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'Kr.in.si.',
       1 => 'Kr.in.king.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Kristusip inunngornerata siornagut',
       1 => 'Kristusip inunngornerata kingornagut',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'Kr.s.',
       1 => 'Kr.k.',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE dd MMMM y',
     'long' => 'dd MMMM y',
     'medium' => 'MMM dd, y',
     'short' => 'y-MM-dd',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'h:mm:ss a zzzz',
     'long' => 'h:mm:ss a z',
     'medium' => 'h:mm:ss a',
@@ -223,8 +224,8 @@ return array (
   'amName' => 'ulloqeqqata-tungaa',
   'pmName' => 'ulloqeqqata-kingorna',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ar' => 'arabiamiusut',
     'az' => 'aserbajdsjaniskisut',
     'bn' => 'bengalimiutut',
@@ -271,15 +272,15 @@ return array (
     'vi' => 'vietnamimiusut',
     'zh' => 'kineserisut',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'latn' => 'latin allakkat',
     'zsym' => 'assersuut',
     'zyyy' => 'peqatigiipput',
     'zzzz' => 'atorsinnaanngitsoq allakkat',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'silarsuaq',
     '002' => 'Afrika',
     '003' => 'Amerika Avannarleq',
@@ -526,8 +527,8 @@ return array (
     'zw' => 'Zimbabwe',
     'zz' => '(atorsinnaanngitsoq nunap imartaa nunataalu)',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

@@ -62,9 +62,11 @@ class statementItemsController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->render('view', array(
-			'model' => $this->loadModel($id),
-		)
+		$this->render(
+			'view',
+			array(
+				'model' => $this->loadModel($id),
+			)
 		);
 	}
 
@@ -85,9 +87,11 @@ class statementItemsController extends Controller
 				$this->redirect(array('view', 'id' => $model->ID));
 		}
 
-		$this->render('create', array(
-			'model' => $model,
-		)
+		$this->render(
+			'create',
+			array(
+				'model' => $model,
+			)
 		);
 	}
 
@@ -109,9 +113,11 @@ class statementItemsController extends Controller
 				$this->redirect(array('view', 'id' => $model->ID));
 		}
 
-		$this->render('update', array(
-			'model' => $model,
-		)
+		$this->render(
+			'update',
+			array(
+				'model' => $model,
+			)
 		);
 	}
 	public function actionUpdate($id)
@@ -185,9 +191,11 @@ class statementItemsController extends Controller
 	public function actionIndex()
 	{
 		$dataProvider = new CActiveDataProvider('statementItems');
-		$this->render('index', array(
-			'dataProvider' => $dataProvider,
-		)
+		$this->render(
+			'index',
+			array(
+				'dataProvider' => $dataProvider,
+			)
 		);
 	}
 
@@ -201,9 +209,11 @@ class statementItemsController extends Controller
 		if (isset($_GET['statementItems']))
 			$model->attributes = $_GET['statementItems'];
 
-		$this->render('admin', array(
-			'model' => $model,
-		)
+		$this->render(
+			'admin',
+			array(
+				'model' => $model,
+			)
 		);
 	}
 

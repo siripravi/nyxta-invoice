@@ -270,13 +270,10 @@ class Invoice extends CActiveRecord
         if (($attribute == "delv_from") && (!empty($delvFrom))) {
             if (($delvFromTime < $minDelTime) || ($delvFromTime > $maxDelTime))
                 $this->addError($attribute, "Error in Delivery Start time");
-
         } else if (($attribute == "delv_to") && (!empty($delvTo))) {
             if (($delvToTime < $delvFromTime) || ($delvToTime < $minDelTime) || ($delvToTime > $maxDelTime))
                 $this->addError($attribute, "Error in Delivery End time");
-
         }
-
     }
 
     public function checkPicTimes($attribute, $params)
@@ -303,8 +300,6 @@ class Invoice extends CActiveRecord
         } else if (($attribute == "pick_to") && (!empty($picTo))) {
             if (($picToTime < $picFromTime) || ($picToTime < $minPicTime) || ($picToTime > $maxPicTime))
                 $this->addError($attribute, "Error in Pickup End time");
-
         }
-
     }
 }

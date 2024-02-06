@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CExistValidator class file.
  *
@@ -31,7 +32,7 @@ class CExistValidator extends CValidator
 	 * @var boolean whether the comparison is case sensitive. Defaults to true.
 	 * Note, by setting it to false, you are assuming the attribute type is string.
 	 */
-	public $caseSensitive=true;
+	public $caseSensitive = true;
 	/**
 	 * @var string the ActiveRecord class name that should be used to
 	 * look for the attribute value being validated. Defaults to null,
@@ -53,12 +54,12 @@ class CExistValidator extends CValidator
 	 * value exists in the corresponding table column.
 	 * This array will be used to instantiate a {@link CDbCriteria} object.
 	 */
-	public $criteria=array();
+	public $criteria = array();
 	/**
 	 * @var boolean whether the attribute value can be null or empty. Defaults to true,
 	 * meaning that if the attribute is empty, it is considered valid.
 	 */
-	public $allowEmpty=true;
+	public $allowEmpty = true;
 
 	/**
 	 * Validates the attribute of the object.
@@ -67,40 +68,41 @@ class CExistValidator extends CValidator
 	 * @param string $attribute the attribute being validated
 	 * @throws CException if given table does not have specified column name
 	 */
-	protected function validateAttribute($object,$attribute)
+	protected function validateAttribute($object, $attribute)
 	{
-		$value=$object->$attribute;
-		if($this->allowEmpty && $this->isEmpty($value))
+		$value = $object->$attribute;
+		if ($this->allowEmpty && $this->isEmpty($value))
 			return;
 
-		if(is_array($value))
-		{
+		if (is_array($value)) {
 			// https://github.com/yiisoft/yii/issues/1955
-			$this->addError($object,$attribute,Yii::t('yii','{attribute} is invalid.'));
+			$this->addError($object, $attribute, Yii::t('yii', '{attribute} is invalid.'));
 			return;
 		}
 
-		$className=$this->className===null?get_class($object):Yii::import($this->className);
-		$attributeName=$this->attributeName===null?$attribute:$this->attributeName;
-		$finder=$this->getModel($className);
-		$table=$finder->getTableSchema();
-		if(($column=$table->getColumn($attributeName))===null)
-			throw new CException(Yii::t('yii','Table "{table}" does not have a column named "{column}".',
-				array('{column}'=>$attributeName,'{table}'=>$table->name)));
+		$className = $this->className === null ? get_class($object) : Yii::import($this->className);
+		$attributeName = $this->attributeName === null ? $attribute : $this->attributeName;
+		$finder = $this->getModel($className);
+		$table = $finder->getTableSchema();
+		if (($column = $table->getColumn($attributeName)) === null)
+			throw new CException(Yii::t(
+				'yii',
+				'Table "{table}" does not have a column named "{column}".',
+				array('{column}' => $attributeName, '{table}' => $table->name)
+			));
 
-		$columnName=$column->rawName;
-		$criteria=new CDbCriteria();
-		if($this->criteria!==array())
+		$columnName = $column->rawName;
+		$criteria = new CDbCriteria();
+		if ($this->criteria !== array())
 			$criteria->mergeWith($this->criteria);
 		$tableAlias = empty($criteria->alias) ? $finder->getTableAlias(true) : $criteria->alias;
-		$valueParamName = CDbCriteria::PARAM_PREFIX.CDbCriteria::$paramCount++;
+		$valueParamName = CDbCriteria::PARAM_PREFIX . CDbCriteria::$paramCount++;
 		$criteria->addCondition($this->caseSensitive ? "{$tableAlias}.{$columnName}={$valueParamName}" : "LOWER({$tableAlias}.{$columnName})=LOWER({$valueParamName})");
 		$criteria->params[$valueParamName] = $value;
 
-		if(!$finder->exists($criteria))
-		{
-			$message=$this->message!==null?$this->message:Yii::t('yii','{attribute} "{value}" is invalid.');
-			$this->addError($object,$attribute,$message,array('{value}'=>$value));
+		if (!$finder->exists($criteria)) {
+			$message = $this->message !== null ? $this->message : Yii::t('yii', '{attribute} "{value}" is invalid.');
+			$this->addError($object, $attribute, $message, array('{value}' => $value));
 		}
 	}
 

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'th_TH'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00;(¤#,##0.00)',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'AU$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -52,10 +53,10 @@ return array (
     'XOF' => 'CFA',
     'XPF' => 'CFPF',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'มกราคม',
       2 => 'กุมภาพันธ์',
       3 => 'มีนาคม',
@@ -69,8 +70,8 @@ return array (
       11 => 'พฤศจิกายน',
       12 => 'ธันวาคม',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'ม.ค.',
       2 => 'ก.พ.',
       3 => 'มี.ค.',
@@ -84,8 +85,8 @@ return array (
       11 => 'พ.ย.',
       12 => 'ธ.ค.',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       1 => 'ม.ค.',
       2 => 'ก.พ.',
       3 => 'มี.ค.',
@@ -100,10 +101,10 @@ return array (
       12 => 'ธ.ค.',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'ม.ค.',
       2 => 'ก.พ.',
       3 => 'มี.ค.',
@@ -117,8 +118,8 @@ return array (
       11 => 'พ.ย.',
       12 => 'ธ.ค.',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'ม.ค.',
       2 => 'ก.พ.',
       3 => 'มี.ค.',
@@ -132,8 +133,8 @@ return array (
       11 => 'พ.ย.',
       12 => 'ธ.ค.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       1 => 'มกราคม',
       2 => 'กุมภาพันธ์',
       3 => 'มีนาคม',
@@ -148,10 +149,10 @@ return array (
       12 => 'ธันวาคม',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'วันอาทิตย์',
       1 => 'วันจันทร์',
       2 => 'วันอังคาร',
@@ -160,8 +161,8 @@ return array (
       5 => 'วันศุกร์',
       6 => 'วันเสาร์',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'อา.',
       1 => 'จ.',
       2 => 'อ.',
@@ -170,8 +171,8 @@ return array (
       5 => 'ศ.',
       6 => 'ส.',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'อา.',
       1 => 'จ.',
       2 => 'อ.',
@@ -180,8 +181,8 @@ return array (
       5 => 'ศ.',
       6 => 'ส.',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'อา.',
       1 => 'จ.',
       2 => 'อ.',
@@ -191,10 +192,10 @@ return array (
       6 => 'ส.',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'อา.',
       1 => 'จ.',
       2 => 'อ.',
@@ -203,8 +204,8 @@ return array (
       5 => 'ศ.',
       6 => 'ส.',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'อา.',
       1 => 'จ.',
       2 => 'อ.',
@@ -213,8 +214,8 @@ return array (
       5 => 'ศ.',
       6 => 'ส.',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'อา.',
       1 => 'จ.',
       2 => 'อ.',
@@ -223,8 +224,8 @@ return array (
       5 => 'ศ.',
       6 => 'ส.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'วันอาทิตย์',
       1 => 'วันจันทร์',
       2 => 'วันอังคาร',
@@ -234,33 +235,33 @@ return array (
       6 => 'วันเสาร์',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'ปีก่อน ค.ศ.',
       1 => 'ค.ศ.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'ปีก่อนคริสต์ศักราช',
       1 => 'คริสต์ศักราช',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'ก่อน ค.ศ.',
       1 => 'ค.ศ.',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEEที่ d MMMM G y',
     'long' => 'd MMMM y',
     'medium' => 'd MMM y',
     'short' => 'd/M/yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'H นาฬิกา mm นาที ss วินาที zzzz',
     'long' => 'H นาฬิกา mm นาที ss วินาที z',
     'medium' => 'HH:mm:ss',
@@ -270,8 +271,8 @@ return array (
   'amName' => 'ก่อนเที่ยง',
   'pmName' => 'หลังเที่ยง',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'อะฟาร์',
     'ab' => 'อับคาซ',
     'ace' => 'อาเจะห์',
@@ -845,8 +846,8 @@ return array (
     'zxx' => 'ไม่มีข้อมูลภาษา',
     'zza' => 'ซาซา',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'afak' => 'อะฟาคา',
     'arab' => 'เปอร์เซีย-อาหรับ',
     'armi' => 'อิมพีเรียล อราเมอิก',
@@ -1006,8 +1007,8 @@ return array (
     'zyyy' => 'สามัญ',
     'zzzz' => 'ไม่ทราบสคริปต์',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'โลก',
     '002' => 'แอฟริกา',
     '003' => 'อเมริกาเหนือ',

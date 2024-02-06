@@ -60,9 +60,11 @@ class CustomerController extends Controller
      */
     public function actionView($id)
     {
-        $this->render('view', array(
-            'model' => $this->loadModel($id),
-        )
+        $this->render(
+            'view',
+            array(
+                'model' => $this->loadModel($id),
+            )
         );
     }
 
@@ -188,10 +190,12 @@ class CustomerController extends Controller
         /* $this->renderPartial('update',array(
           'model'=>$model,
           ),false,true); */
-        $this->render('update', array(
-            'model' => $model,
-            'cards' => $cards
-        )
+        $this->render(
+            'update',
+            array(
+                'model' => $model,
+                'cards' => $cards
+            )
         );
     }
 
@@ -224,9 +228,11 @@ class CustomerController extends Controller
     public function actionIndex()
     {
         $dataProvider = new CActiveDataProvider('Customer');
-        $this->render('index', array(
-            'dataProvider' => $dataProvider,
-        )
+        $this->render(
+            'index',
+            array(
+                'dataProvider' => $dataProvider,
+            )
         );
     }
 
@@ -240,9 +246,11 @@ class CustomerController extends Controller
         if (isset($_GET['Customer']))
             $model->attributes = $_GET['Customer'];
 
-        $this->render('admin', array(
-            'model' => $model,
-        )
+        $this->render(
+            'admin',
+            array(
+                'model' => $model,
+            )
         );
     }
 
@@ -272,5 +280,4 @@ class CustomerController extends Controller
             Yii::app()->end();
         }
     }
-
 }

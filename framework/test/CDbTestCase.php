@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file contains the CDbTestCase class.
  *
@@ -45,7 +46,7 @@ abstract class CDbTestCase extends CTestCase
 	 * means an AR class, while ':post' means a table name).
 	 * Defaults to false, meaning fixtures will not be used at all.
 	 */
-	protected $fixtures=false;
+	protected $fixtures = false;
 
 	/**
 	 * PHP magic method.
@@ -56,10 +57,10 @@ abstract class CDbTestCase extends CTestCase
 	 */
 	public function __get($name)
 	{
-		if(is_array($this->fixtures) && ($rows=$this->getFixtureManager()->getRows($name))!==false)
+		if (is_array($this->fixtures) && ($rows = $this->getFixtureManager()->getRows($name)) !== false)
 			return $rows;
 		else
-			throw new Exception("Unknown property '$name' for class '".get_class($this)."'.");
+			throw new Exception("Unknown property '$name' for class '" . get_class($this) . "'.");
 	}
 
 	/**
@@ -70,12 +71,12 @@ abstract class CDbTestCase extends CTestCase
 	 * @throws Exception if unknown method is used
 	 * @return mixed the property value
 	 */
-	public function __call($name,$params)
+	public function __call($name, $params)
 	{
-		if(is_array($this->fixtures) && isset($params[0]) && ($record=$this->getFixtureManager()->getRecord($name,$params[0]))!==false)
+		if (is_array($this->fixtures) && isset($params[0]) && ($record = $this->getFixtureManager()->getRecord($name, $params[0])) !== false)
 			return $record;
 		else
-			throw new Exception("Unknown method '$name' for class '".get_class($this)."'.");
+			throw new Exception("Unknown method '$name' for class '" . get_class($this) . "'.");
 	}
 
 	/**
@@ -101,9 +102,9 @@ abstract class CDbTestCase extends CTestCase
 	 * @return CActiveRecord the ActiveRecord instance corresponding to the specified alias in the named fixture.
 	 * False is returned if there is no such fixture or the record cannot be found.
 	 */
-	public function getFixtureRecord($name,$alias)
+	public function getFixtureRecord($name, $alias)
 	{
-		return $this->getFixtureManager()->getRecord($name,$alias);
+		return $this->getFixtureManager()->getRecord($name, $alias);
 	}
 
 	/**
@@ -114,7 +115,7 @@ abstract class CDbTestCase extends CTestCase
 	protected function setUp()
 	{
 		parent::setUp();
-		if(is_array($this->fixtures))
+		if (is_array($this->fixtures))
 			$this->getFixtureManager()->load($this->fixtures);
 	}
 }

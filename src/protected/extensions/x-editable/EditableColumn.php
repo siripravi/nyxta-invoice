@@ -1,4 +1,5 @@
 <?php
+
 /**
  * EditableColumn class file.
  *

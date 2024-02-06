@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -16,7 +17,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   'Can not generate multiple insert command with empty data set.' => 'Tyhjällä tietojoukolla ei voida luoda useita insert-komentoja.',
   'Encryption key length can be {keyLengths}.' => 'Salausavaimen pituus voi olla {keyLengths}.',
   'Encryption key length must be between {minLength} and {maxLength}.' => 'Salausavaimen pituus täytyy olla {minLength} ja {maxLength} väliltä.',

@@ -1,1 +1,1 @@
-<?php $this->renderPartial('_form', array('statement' => $statement, 'quotation' => $quotation)); ?>
+<?php $this->renderPartial('_form', array('statement' => $statement, 'quotation' => $quotation));

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CJuiWidget class file.
  *
@@ -41,7 +42,7 @@ abstract class CJuiWidget extends CWidget
 	 * @var string the JUI theme name. Defaults to 'smoothness'. Make sure that under {@link themeUrl} there
 	 * is a directory whose name is the same as this property value (case-sensitive).
 	 */
-	public $theme='smoothness';
+	public $theme = 'smoothness';
 	/**
 	 * @var mixed the main JUI JavaScript file. Defaults to 'jquery-ui.min.js'.
 	 * Note the file must exist under the URL specified by {@link scriptUrl}.
@@ -51,7 +52,7 @@ abstract class CJuiWidget extends CWidget
 	 * This property can also be set as false, which means the widget will not include any script file,
 	 * and it is your responsibility to explicitly include it somewhere else.
 	 */
-	public $scriptFile='jquery-ui.min.js';
+	public $scriptFile = 'jquery-ui.min.js';
 	/**
 	 * @var mixed the theme CSS file name. Defaults to 'jquery-ui.css'.
 	 * Note the file must exist under the URL specified by {@link themeUrl}/{@link theme}.
@@ -60,15 +61,15 @@ abstract class CJuiWidget extends CWidget
 	 * This property can also be set as false, which means the widget will not include any theme CSS file,
 	 * and it is your responsibility to explicitly include it somewhere else.
 	 */
-	public $cssFile='jquery-ui.css';
+	public $cssFile = 'jquery-ui.css';
 	/**
 	 * @var array the initial JavaScript options that should be passed to the JUI plugin.
 	 */
-	public $options=array();
+	public $options = array();
 	/**
 	 * @var array the HTML attributes that should be rendered in the HTML tag representing the JUI widget.
 	 */
-	public $htmlOptions=array();
+	public $htmlOptions = array();
 
 	/**
 	 * Initializes the widget.
@@ -91,13 +92,12 @@ abstract class CJuiWidget extends CWidget
 	 */
 	protected function resolvePackagePath()
 	{
-		if($this->scriptUrl===null || $this->themeUrl===null)
-		{
-			$cs=Yii::app()->getClientScript();
-			if($this->scriptUrl===null)
-				$this->scriptUrl=$cs->getCoreScriptUrl().'/jui/js';
-			if($this->themeUrl===null)
-				$this->themeUrl=$cs->getCoreScriptUrl().'/jui/css';
+		if ($this->scriptUrl === null || $this->themeUrl === null) {
+			$cs = Yii::app()->getClientScript();
+			if ($this->scriptUrl === null)
+				$this->scriptUrl = $cs->getCoreScriptUrl() . '/jui/js';
+			if ($this->themeUrl === null)
+				$this->themeUrl = $cs->getCoreScriptUrl() . '/jui/css';
 		}
 	}
 
@@ -107,21 +107,19 @@ abstract class CJuiWidget extends CWidget
 	 */
 	protected function registerCoreScripts()
 	{
-		$cs=Yii::app()->getClientScript();
-		if(is_string($this->cssFile))
-			$cs->registerCssFile($this->themeUrl.'/'.$this->theme.'/'.$this->cssFile);
-		elseif(is_array($this->cssFile))
-		{
-			foreach($this->cssFile as $cssFile)
-				$cs->registerCssFile($this->themeUrl.'/'.$this->theme.'/'.$cssFile);
+		$cs = Yii::app()->getClientScript();
+		if (is_string($this->cssFile))
+			$cs->registerCssFile($this->themeUrl . '/' . $this->theme . '/' . $this->cssFile);
+		elseif (is_array($this->cssFile)) {
+			foreach ($this->cssFile as $cssFile)
+				$cs->registerCssFile($this->themeUrl . '/' . $this->theme . '/' . $cssFile);
 		}
 
 		$cs->registerCoreScript('jquery');
-		if(is_string($this->scriptFile))
+		if (is_string($this->scriptFile))
 			$this->registerScriptFile($this->scriptFile);
-		elseif(is_array($this->scriptFile))
-		{
-			foreach($this->scriptFile as $scriptFile)
+		elseif (is_array($this->scriptFile)) {
+			foreach ($this->scriptFile as $scriptFile)
 				$this->registerScriptFile($scriptFile);
 		}
 	}
@@ -137,8 +135,8 @@ abstract class CJuiWidget extends CWidget
 	 * <li>CClientScript::POS_END : the script is inserted at the end of the body section.</li>
 	 * </ul>
 	 */
-	protected function registerScriptFile($fileName,$position=CClientScript::POS_END)
+	protected function registerScriptFile($fileName, $position = CClientScript::POS_END)
 	{
-		Yii::app()->getClientScript()->registerScriptFile($this->scriptUrl.'/'.$fileName,$position);
+		Yii::app()->getClientScript()->registerScriptFile($this->scriptUrl . '/' . $fileName, $position);
 	}
 }

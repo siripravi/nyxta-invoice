@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CCheckBoxColumn class file.
  *
@@ -104,19 +105,19 @@ class CCheckBoxColumn extends CGridColumn
 	/**
 	 * @var array the HTML options for the data cell tags.
 	 */
-	public $htmlOptions=array('class'=>'checkbox-column');
+	public $htmlOptions = array('class' => 'checkbox-column');
 	/**
 	 * @var array the HTML options for the header cell tag.
 	 */
-	public $headerHtmlOptions=array('class'=>'checkbox-column');
+	public $headerHtmlOptions = array('class' => 'checkbox-column');
 	/**
 	 * @var array the HTML options for the footer cell tag.
 	 */
-	public $footerHtmlOptions=array('class'=>'checkbox-column');
+	public $footerHtmlOptions = array('class' => 'checkbox-column');
 	/**
 	 * @var array the HTML options for the checkboxes.
 	 */
-	public $checkBoxHtmlOptions=array();
+	public $checkBoxHtmlOptions = array();
 	/**
 	 * @var integer the number of rows that can be checked.
 	 * Possible values:
@@ -131,7 +132,7 @@ class CCheckBoxColumn extends CGridColumn
 	 * to retrieve the key values of the checked rows.
 	 * @since 1.1.6
 	 */
-	public $selectableRows=null;
+	public $selectableRows = null;
 	/**
 	 * @var string the template to be used to control the layout of the header cell.
 	 * The token "{item}" is recognized and it will be replaced with a "check all" checkbox.
@@ -140,7 +141,7 @@ class CCheckBoxColumn extends CGridColumn
 	 * See {@link selectableRows} for more details.
 	 * @since 1.1.11
 	 */
-	public $headerTemplate='{item}';
+	public $headerTemplate = '{item}';
 
 	/**
 	 * Initializes the column.
@@ -148,59 +149,51 @@ class CCheckBoxColumn extends CGridColumn
 	 */
 	public function init()
 	{
-		if(isset($this->checkBoxHtmlOptions['name']))
-			$name=$this->checkBoxHtmlOptions['name'];
-		else
-		{
-			$name=$this->id;
-			if(substr($name,-2)!=='[]')
-				$name.='[]';
-			$this->checkBoxHtmlOptions['name']=$name;
+		if (isset($this->checkBoxHtmlOptions['name']))
+			$name = $this->checkBoxHtmlOptions['name'];
+		else {
+			$name = $this->id;
+			if (substr($name, -2) !== '[]')
+				$name .= '[]';
+			$this->checkBoxHtmlOptions['name'] = $name;
 		}
-		$name=strtr($name,array('['=>"\\[",']'=>"\\]"));
+		$name = strtr($name, array('[' => "\\[", ']' => "\\]"));
 
-		if($this->selectableRows===null)
-		{
-			if(isset($this->checkBoxHtmlOptions['class']))
-				$this->checkBoxHtmlOptions['class'].=' select-on-check';
+		if ($this->selectableRows === null) {
+			if (isset($this->checkBoxHtmlOptions['class']))
+				$this->checkBoxHtmlOptions['class'] .= ' select-on-check';
 			else
-				$this->checkBoxHtmlOptions['class']='select-on-check';
+				$this->checkBoxHtmlOptions['class'] = 'select-on-check';
 			return;
 		}
 
-		$cball=$cbcode='';
-		if($this->selectableRows==0)
-		{
+		$cball = $cbcode = '';
+		if ($this->selectableRows == 0) {
 			//.. read only
-			$cbcode="return false;";
-		}
-		elseif($this->selectableRows==1)
-		{
+			$cbcode = "return false;";
+		} elseif ($this->selectableRows == 1) {
 			//.. only one can be checked, uncheck all other
-			$cbcode="jQuery(\"input:not(#\"+this.id+\")[name='$name']\").prop('checked',false);";
-		}
-		elseif(strpos($this->headerTemplate,'{item}')!==false)
-		{
+			$cbcode = "jQuery(\"input:not(#\"+this.id+\")[name='$name']\").prop('checked',false);";
+		} elseif (strpos($this->headerTemplate, '{item}') !== false) {
 			//.. process check/uncheck all
-			$cball=<<<CBALL
+			$cball = <<<CBALL
 jQuery(document).on('click','#{$this->id}_all',function() {
 	var checked=this.checked;
 	jQuery("input[name='$name']:enabled").each(function() {this.checked=checked;});
 });
 
 CBALL;
-			$cbcode="jQuery('#{$this->id}_all').prop('checked', jQuery(\"input[name='$name']\").length==jQuery(\"input[name='$name']:checked\").length);";
+			$cbcode = "jQuery('#{$this->id}_all').prop('checked', jQuery(\"input[name='$name']\").length==jQuery(\"input[name='$name']:checked\").length);";
 		}
 
-		if($cbcode!=='')
-		{
-			$js=$cball;
-			$js.=<<<EOD
+		if ($cbcode !== '') {
+			$js = $cball;
+			$js .= <<<EOD
 jQuery(document).on('click', "input[name='$name']", function() {
 	$cbcode
 });
 EOD;
-			Yii::app()->getClientScript()->registerScript(__CLASS__.'#'.$this->id,$js);
+			Yii::app()->getClientScript()->registerScript(__CLASS__ . '#' . $this->id, $js);
 		}
 	}
 
@@ -213,18 +206,18 @@ EOD;
 	 */
 	public function getHeaderCellContent()
 	{
-		if(trim($this->headerTemplate)==='')
+		if (trim($this->headerTemplate) === '')
 			return $this->grid->blankDisplay;
 
-		if($this->selectableRows===null && $this->grid->selectableRows>1)
-			$item=CHtml::checkBox($this->id.'_all',false,array('class'=>'select-on-check-all'));
-		elseif($this->selectableRows>1)
-			$item=CHtml::checkBox($this->id.'_all',false);
+		if ($this->selectableRows === null && $this->grid->selectableRows > 1)
+			$item = CHtml::checkBox($this->id . '_all', false, array('class' => 'select-on-check-all'));
+		elseif ($this->selectableRows > 1)
+			$item = CHtml::checkBox($this->id . '_all', false);
 		else
-			$item=parent::getHeaderCellContent();
+			$item = parent::getHeaderCellContent();
 
-		return strtr($this->headerTemplate,array(
-			'{item}'=>$item,
+		return strtr($this->headerTemplate, array(
+			'{item}' => $item,
 		));
 	}
 
@@ -237,26 +230,26 @@ EOD;
 	 */
 	public function getDataCellContent($row)
 	{
-		$data=$this->grid->dataProvider->data[$row];
-		if($this->value!==null)
-			$value=$this->evaluateExpression($this->value,array('data'=>$data,'row'=>$row));
-		elseif($this->name!==null)
-			$value=CHtml::value($data,$this->name);
+		$data = $this->grid->dataProvider->data[$row];
+		if ($this->value !== null)
+			$value = $this->evaluateExpression($this->value, array('data' => $data, 'row' => $row));
+		elseif ($this->name !== null)
+			$value = CHtml::value($data, $this->name);
 		else
-			$value=$this->grid->dataProvider->keys[$row];
+			$value = $this->grid->dataProvider->keys[$row];
 
 		$checked = false;
-		if($this->checked!==null)
-			$checked=$this->evaluateExpression($this->checked,array('data'=>$data,'row'=>$row));
+		if ($this->checked !== null)
+			$checked = $this->evaluateExpression($this->checked, array('data' => $data, 'row' => $row));
 
-		$options=$this->checkBoxHtmlOptions;
-		if($this->disabled!==null)
-			$options['disabled']=$this->evaluateExpression($this->disabled,array('data'=>$data,'row'=>$row));
+		$options = $this->checkBoxHtmlOptions;
+		if ($this->disabled !== null)
+			$options['disabled'] = $this->evaluateExpression($this->disabled, array('data' => $data, 'row' => $row));
 
-		$name=$options['name'];
+		$name = $options['name'];
 		unset($options['name']);
-		$options['value']=$value;
-		$options['id']=$this->id.'_'.$row;
-		return CHtml::checkBox($name,$checked,$options);
+		$options['value'] = $value;
+		$options['id'] = $this->id . '_' . $row;
+		return CHtml::checkBox($name, $checked, $options);
 	}
 }

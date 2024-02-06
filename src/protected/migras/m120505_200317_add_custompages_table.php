@@ -26,7 +26,6 @@ class m120505_200317_add_custompages_table extends CDbMigration
 				UNIQUE (alias)
 			) ENGINE = InnoDB;
 		");
-
 	}
 
 	public function down()

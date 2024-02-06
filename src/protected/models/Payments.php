@@ -113,18 +113,19 @@ class Payments extends CActiveRecord
         $criteria->compare('details', $this->details, true);
         $criteria->compare('deposited_by', $this->deposited_by, true);
 
-        return new CActiveDataProvider($this, array(
-            'criteria' => $criteria,
-            'pagination' => array(
-                'pageSize' => 50
-            ),
-            'sort' => array(
-                'defaultOrder' => 'pay_date DESC',
-                // 'multisort'=>true, //maybe your solution!
-                'attributes' => array(
+        return new CActiveDataProvider(
+            $this,
+            array(
+                'criteria' => $criteria,
+                'pagination' => array(
+                    'pageSize' => 50
                 ),
+                'sort' => array(
+                    'defaultOrder' => 'pay_date DESC',
+                    // 'multisort'=>true, //maybe your solution!
+                    'attributes' => array(),
+                )
             )
-        )
         );
     }
 
@@ -188,5 +189,4 @@ class Payments extends CActiveRecord
                 $this->addError($attribute, "Error in Payment Date");
         }
     }
-
 }

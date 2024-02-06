@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CMssqlTableSchema class file.
  *

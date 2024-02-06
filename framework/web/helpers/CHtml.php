@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CHtml class file.
  *
@@ -23,44 +24,44 @@
  */
 class CHtml
 {
-	const ID_PREFIX='yt';
+	const ID_PREFIX = 'yt';
 	/**
 	 * @var string the CSS class for displaying error summaries (see {@link errorSummary}).
 	 */
-	public static $errorSummaryCss='errorSummary';
+	public static $errorSummaryCss = 'errorSummary';
 	/**
 	 * @var string the CSS class for displaying error messages (see {@link error}).
 	 */
-	public static $errorMessageCss='errorMessage';
+	public static $errorMessageCss = 'errorMessage';
 	/**
 	 * @var string the CSS class for highlighting error inputs. Form inputs will be appended
 	 * with this CSS class if they have input errors.
 	 */
-	public static $errorCss='error';
+	public static $errorCss = 'error';
 	/**
 	 * @var string the tag name for the error container tag. Defaults to 'div'.
 	 * @since 1.1.13
 	 */
-	public static $errorContainerTag='div';
+	public static $errorContainerTag = 'div';
 	/**
 	 * @var string the CSS class for required labels. Defaults to 'required'.
 	 * @see label
 	 */
-	public static $requiredCss='required';
+	public static $requiredCss = 'required';
 	/**
 	 * @var string the HTML code to be prepended to the required label.
 	 * @see label
 	 */
-	public static $beforeRequiredLabel='';
+	public static $beforeRequiredLabel = '';
 	/**
 	 * @var string the HTML code to be appended to the required label.
 	 * @see label
 	 */
-	public static $afterRequiredLabel=' <span class="required">*</span>';
+	public static $afterRequiredLabel = ' <span class="required">*</span>';
 	/**
 	 * @var integer the counter for generating automatic input field names.
 	 */
-	public static $count=0;
+	public static $count = 0;
 	/**
 	 * Sets the default style for attaching jQuery event handlers.
 	 *
@@ -79,27 +80,27 @@ class CHtml
 	 * @since 1.1.9
 	 * @see clientChange
 	 */
-	public static $liveEvents=true;
+	public static $liveEvents = true;
 	/**
 	 * @var boolean whether to close single tags. Defaults to true. Can be set to false for HTML5.
 	 * @since 1.1.13
 	 */
-	public static $closeSingleTags=true;
+	public static $closeSingleTags = true;
 	/**
 	 * @var boolean whether to add <code>type="javascript"</code> to <code>&lt;script&gt;</code> tags. Defaults to true. Can be set to false for HTML5.
 	 * @since 1.1.24
 	 */
-	public static $setScriptType=true;
+	public static $setScriptType = true;
 	/**
 	 * @var boolean whether to add a CDATA wrapper around <code>&lt;script&gt;</code> and <code>&lt;style&gt;</code> contents. Defaults to true. Can be set to false for HTML5.
 	 * @since 1.1.24
 	 */
-	public static $cdataScriptAndStyleContents=true;
+	public static $cdataScriptAndStyleContents = true;
 	/**
 	 * @var boolean whether to render special attributes value. Defaults to true. Can be set to false for HTML5.
 	 * @since 1.1.13
 	 */
-	public static $renderSpecialAttributesValue=true;
+	public static $renderSpecialAttributesValue = true;
 	/**
 	 * @var callable the generator used in the {@link CHtml::modelName()} method.
 	 * @since 1.1.14
@@ -115,7 +116,7 @@ class CHtml
 	 */
 	public static function encode($text)
 	{
-		return htmlspecialchars((string)$text,ENT_QUOTES,Yii::app()->charset);
+		return htmlspecialchars((string)$text, ENT_QUOTES, Yii::app()->charset);
 	}
 
 	/**
@@ -128,7 +129,7 @@ class CHtml
 	 */
 	public static function decode($text)
 	{
-		return htmlspecialchars_decode($text,ENT_QUOTES);
+		return htmlspecialchars_decode($text, ENT_QUOTES);
 	}
 
 	/**
@@ -142,16 +143,15 @@ class CHtml
 	 */
 	public static function encodeArray($data)
 	{
-		$d=array();
-		foreach($data as $key=>$value)
-		{
-			if(is_string($key))
-				$key=htmlspecialchars($key,ENT_QUOTES,Yii::app()->charset);
-			if(is_string($value))
-				$value=htmlspecialchars($value,ENT_QUOTES,Yii::app()->charset);
-			elseif(is_array($value))
-				$value=self::encodeArray($value);
-			$d[$key]=$value;
+		$d = array();
+		foreach ($data as $key => $value) {
+			if (is_string($key))
+				$key = htmlspecialchars($key, ENT_QUOTES, Yii::app()->charset);
+			if (is_string($value))
+				$value = htmlspecialchars($value, ENT_QUOTES, Yii::app()->charset);
+			elseif (is_array($value))
+				$value = self::encodeArray($value);
+			$d[$key] = $value;
 		}
 		return $d;
 	}
@@ -168,13 +168,13 @@ class CHtml
 	 * @param boolean $closeTag whether to generate the close tag.
 	 * @return string the generated HTML element tag
 	 */
-	public static function tag($tag,$htmlOptions=array(),$content=false,$closeTag=true)
+	public static function tag($tag, $htmlOptions = array(), $content = false, $closeTag = true)
 	{
-		$html='<' . $tag . self::renderAttributes($htmlOptions);
-		if($content===false)
-			return $closeTag && self::$closeSingleTags ? $html.' />' : $html.'>';
+		$html = '<' . $tag . self::renderAttributes($htmlOptions);
+		if ($content === false)
+			return $closeTag && self::$closeSingleTags ? $html . ' />' : $html . '>';
 		else
-			return $closeTag ? $html.'>'.$content.'</'.$tag.'>' : $html.'>'.$content;
+			return $closeTag ? $html . '>' . $content . '</' . $tag . '>' : $html . '>' . $content;
 	}
 
 	/**
@@ -186,7 +186,7 @@ class CHtml
 	 * Since version 1.1.5, attributes whose value is null will not be rendered.
 	 * @return string the generated HTML element tag
 	 */
-	public static function openTag($tag,$htmlOptions=array())
+	public static function openTag($tag, $htmlOptions = array())
 	{
 		return '<' . $tag . self::renderAttributes($htmlOptions) . '>';
 	}
@@ -198,7 +198,7 @@ class CHtml
 	 */
 	public static function closeTag($tag)
 	{
-		return '</'.$tag.'>';
+		return '</' . $tag . '>';
 	}
 
 	/**
@@ -219,14 +219,14 @@ class CHtml
 	 * @param array $options other options in name-value pairs (e.g. 'scheme', 'lang')
 	 * @return string the generated meta tag
 	 */
-	public static function metaTag($content,$name=null,$httpEquiv=null,$options=array())
+	public static function metaTag($content, $name = null, $httpEquiv = null, $options = array())
 	{
-		if($name!==null)
-			$options['name']=$name;
-		if($httpEquiv!==null)
-			$options['http-equiv']=$httpEquiv;
-		$options['content']=$content;
-		return self::tag('meta',$options);
+		if ($name !== null)
+			$options['name'] = $name;
+		if ($httpEquiv !== null)
+			$options['http-equiv'] = $httpEquiv;
+		$options['content'] = $content;
+		return self::tag('meta', $options);
 	}
 
 	/**
@@ -239,17 +239,17 @@ class CHtml
 	 * @param array $options other options in name-value pairs
 	 * @return string the generated link tag
 	 */
-	public static function linkTag($relation=null,$type=null,$href=null,$media=null,$options=array())
+	public static function linkTag($relation = null, $type = null, $href = null, $media = null, $options = array())
 	{
-		if($relation!==null)
-			$options['rel']=$relation;
-		if($type!==null)
-			$options['type']=$type;
-		if($href!==null)
-			$options['href']=$href;
-		if($media!==null)
-			$options['media']=$media;
-		return self::tag('link',$options);
+		if ($relation !== null)
+			$options['rel'] = $relation;
+		if ($type !== null)
+			$options['type'] = $type;
+		if ($href !== null)
+			$options['href'] = $href;
+		if ($media !== null)
+			$options['media'] = $media;
+		return self::tag('link', $options);
 	}
 
 	/**
@@ -258,12 +258,12 @@ class CHtml
 	 * @param string $media the media that this CSS should apply to.
 	 * @return string the CSS properly enclosed
 	 */
-	public static function css($text,$media='')
+	public static function css($text, $media = '')
 	{
-		if($media!=='')
-			$media=' media="'.$media.'"';
-		if(self::$cdataScriptAndStyleContents)
-			$text="/*<![CDATA[*/\n{$text}\n/*]]>*/";
+		if ($media !== '')
+			$media = ' media="' . $media . '"';
+		if (self::$cdataScriptAndStyleContents)
+			$text = "/*<![CDATA[*/\n{$text}\n/*]]>*/";
 		return "<style type=\"text/css\"{$media}>\n{$text}\n</style>";
 	}
 
@@ -276,12 +276,12 @@ class CHtml
 	 * @param string $url the URL to which the page should be redirected to. If empty, it means the current page.
 	 * @since 1.1.1
 	 */
-	public static function refresh($seconds,$url='')
+	public static function refresh($seconds, $url = '')
 	{
-		$content="$seconds";
-		if($url!=='')
-			$content.=';url='.self::normalizeUrl($url);
-		Yii::app()->clientScript->registerMetaTag($content,null,'refresh');
+		$content = "$seconds";
+		if ($url !== '')
+			$content .= ';url=' . self::normalizeUrl($url);
+		Yii::app()->clientScript->registerMetaTag($content, null, 'refresh');
 	}
 
 	/**
@@ -290,9 +290,9 @@ class CHtml
 	 * @param string $media the media that this CSS should apply to.
 	 * @return string the CSS link.
 	 */
-	public static function cssFile($url,$media='')
+	public static function cssFile($url, $media = '')
 	{
-		return CHtml::linkTag('stylesheet','text/css',$url,$media!=='' ? $media : null);
+		return CHtml::linkTag('stylesheet', 'text/css', $url, $media !== '' ? $media : null);
 	}
 
 	/**
@@ -301,15 +301,15 @@ class CHtml
 	 * @param array $htmlOptions additional HTML attributes (see {@link tag})
 	 * @return string the enclosed JavaScript
 	 */
-	public static function script($text,array $htmlOptions=array())
+	public static function script($text, array $htmlOptions = array())
 	{
-		$defaultHtmlOptions=array();
-		if(self::$setScriptType)
-			$defaultHtmlOptions['type']='text/javascript';
-		$htmlOptions=array_merge($defaultHtmlOptions,$htmlOptions);
-		if(self::$cdataScriptAndStyleContents)
-			$text="/*<![CDATA[*/\n{$text}\n/*]]>*/";
-		return self::tag('script',$htmlOptions,"\n{$text}\n");
+		$defaultHtmlOptions = array();
+		if (self::$setScriptType)
+			$defaultHtmlOptions['type'] = 'text/javascript';
+		$htmlOptions = array_merge($defaultHtmlOptions, $htmlOptions);
+		if (self::$cdataScriptAndStyleContents)
+			$text = "/*<![CDATA[*/\n{$text}\n/*]]>*/";
+		return self::tag('script', $htmlOptions, "\n{$text}\n");
 	}
 
 	/**
@@ -318,14 +318,14 @@ class CHtml
 	 * @param array $htmlOptions additional HTML attributes (see {@link tag})
 	 * @return string the JavaScript file tag
 	 */
-	public static function scriptFile($url,array $htmlOptions=array())
+	public static function scriptFile($url, array $htmlOptions = array())
 	{
-		$defaultHtmlOptions=array();
-		if(self::$setScriptType)
-			$defaultHtmlOptions['type']='text/javascript';
-		$defaultHtmlOptions['src']=$url;
-		$htmlOptions=array_merge($defaultHtmlOptions,$htmlOptions);
-		return self::tag('script',$htmlOptions,'');
+		$defaultHtmlOptions = array();
+		if (self::$setScriptType)
+			$defaultHtmlOptions['type'] = 'text/javascript';
+		$defaultHtmlOptions['src'] = $url;
+		$htmlOptions = array_merge($defaultHtmlOptions, $htmlOptions);
+		return self::tag('script', $htmlOptions, '');
 	}
 
 	/**
@@ -336,9 +336,9 @@ class CHtml
 	 * @param array $htmlOptions additional HTML attributes (see {@link tag}).
 	 * @return string the generated form tag.
 	 */
-	public static function form($action='',$method='post',$htmlOptions=array())
+	public static function form($action = '', $method = 'post', $htmlOptions = array())
 	{
-		return self::beginForm($action,$method,$htmlOptions);
+		return self::beginForm($action, $method, $htmlOptions);
 	}
 
 	/**
@@ -351,37 +351,33 @@ class CHtml
 	 * @return string the generated form tag.
 	 * @see endForm
 	 */
-	public static function beginForm($action='',$method='post',$htmlOptions=array())
+	public static function beginForm($action = '', $method = 'post', $htmlOptions = array())
 	{
-		$htmlOptions['action']=$url=self::normalizeUrl($action);
-		if(strcasecmp($method,'get')!==0 && strcasecmp($method,'post')!==0)
-		{
-			$customMethod=$method;
-			$method='post';
-		}
-		else
-			$customMethod=false;
+		$htmlOptions['action'] = $url = self::normalizeUrl($action);
+		if (strcasecmp($method, 'get') !== 0 && strcasecmp($method, 'post') !== 0) {
+			$customMethod = $method;
+			$method = 'post';
+		} else
+			$customMethod = false;
 
-		$htmlOptions['method']=$method;
-		$form=self::tag('form',$htmlOptions,false,false);
-		$hiddens=array();
-		if(!strcasecmp($method,'get') && ($pos=strpos($url,'?'))!==false)
-		{
-			foreach(explode('&',substr(preg_replace('/#.+$/','',$url),$pos+1)) as $pair)
-			{
-				if(($pos=strpos($pair,'='))!==false)
-					$hiddens[]=self::hiddenField(urldecode(substr($pair,0,$pos)),urldecode(substr($pair,$pos+1)),array('id'=>false));
+		$htmlOptions['method'] = $method;
+		$form = self::tag('form', $htmlOptions, false, false);
+		$hiddens = array();
+		if (!strcasecmp($method, 'get') && ($pos = strpos($url, '?')) !== false) {
+			foreach (explode('&', substr(preg_replace('/#.+$/', '', $url), $pos + 1)) as $pair) {
+				if (($pos = strpos($pair, '=')) !== false)
+					$hiddens[] = self::hiddenField(urldecode(substr($pair, 0, $pos)), urldecode(substr($pair, $pos + 1)), array('id' => false));
 				else
-					$hiddens[]=self::hiddenField(urldecode($pair),'',array('id'=>false));
+					$hiddens[] = self::hiddenField(urldecode($pair), '', array('id' => false));
 			}
 		}
-		$request=Yii::app()->request;
-		if($request->enableCsrfValidation && !strcasecmp($method,'post'))
-			$hiddens[]=self::hiddenField($request->csrfTokenName,$request->getCsrfToken(),array('id'=>false));
-		if($customMethod!==false)
-			$hiddens[]=self::hiddenField('_method',$customMethod);
-		if($hiddens!==array())
-			$form.="\n".implode("\n",$hiddens);
+		$request = Yii::app()->request;
+		if ($request->enableCsrfValidation && !strcasecmp($method, 'post'))
+			$hiddens[] = self::hiddenField($request->csrfTokenName, $request->getCsrfToken(), array('id' => false));
+		if ($customMethod !== false)
+			$hiddens[] = self::hiddenField('_method', $customMethod);
+		if ($hiddens !== array())
+			$form .= "\n" . implode("\n", $hiddens);
 		return $form;
 	}
 
@@ -405,10 +401,10 @@ class CHtml
 	 * @param array $htmlOptions additional HTML attributes (see {@link tag}).
 	 * @return string the generated form tag.
 	 */
-	public static function statefulForm($action='',$method='post',$htmlOptions=array())
+	public static function statefulForm($action = '', $method = 'post', $htmlOptions = array())
 	{
-		return self::form($action,$method,$htmlOptions)."\n".
-			self::tag('div',array('style'=>'display:none'),self::pageStateField(''));
+		return self::form($action, $method, $htmlOptions) . "\n" .
+			self::tag('div', array('style' => 'display:none'), self::pageStateField(''));
 	}
 
 	/**
@@ -419,7 +415,7 @@ class CHtml
 	 */
 	public static function pageStateField($value)
 	{
-		return '<input type="hidden" name="'.CController::STATE_INPUT_NAME.'" value="'.$value.'" />';
+		return '<input type="hidden" name="' . CController::STATE_INPUT_NAME . '" value="' . $value . '" />';
 	}
 
 	/**
@@ -433,12 +429,12 @@ class CHtml
 	 * @see normalizeUrl
 	 * @see clientChange
 	 */
-	public static function link($text,$url='#',$htmlOptions=array())
+	public static function link($text, $url = '#', $htmlOptions = array())
 	{
-		if($url!=='')
-			$htmlOptions['href']=self::normalizeUrl($url);
-		self::clientChange('click',$htmlOptions);
-		return self::tag('a',$htmlOptions,$text);
+		if ($url !== '')
+			$htmlOptions['href'] = self::normalizeUrl($url);
+		self::clientChange('click', $htmlOptions);
+		return self::tag('a', $htmlOptions, $text);
 	}
 
 	/**
@@ -450,11 +446,11 @@ class CHtml
 	 * @return string the generated mailto link
 	 * @see clientChange
 	 */
-	public static function mailto($text,$email='',$htmlOptions=array())
+	public static function mailto($text, $email = '', $htmlOptions = array())
 	{
-		if($email==='')
-			$email=$text;
-		return self::link($text,'mailto:'.$email,$htmlOptions);
+		if ($email === '')
+			$email = $text;
+		return self::link($text, 'mailto:' . $email, $htmlOptions);
 	}
 
 	/**
@@ -464,11 +460,11 @@ class CHtml
 	 * @param array $htmlOptions additional HTML attributes (see {@link tag}).
 	 * @return string the generated image tag
 	 */
-	public static function image($src,$alt='',$htmlOptions=array())
+	public static function image($src, $alt = '', $htmlOptions = array())
 	{
-		$htmlOptions['src']=$src;
-		$htmlOptions['alt']=$alt;
-		return self::tag('img',$htmlOptions);
+		$htmlOptions['src'] = $src;
+		$htmlOptions['alt'] = $alt;
+		return self::tag('img', $htmlOptions);
 	}
 
 	/**
@@ -479,19 +475,18 @@ class CHtml
 	 * @return string the generated button tag
 	 * @see clientChange
 	 */
-	public static function button($label='button',$htmlOptions=array())
+	public static function button($label = 'button', $htmlOptions = array())
 	{
-		if(!isset($htmlOptions['name']))
-		{
-			if(!array_key_exists('name',$htmlOptions))
-				$htmlOptions['name']=self::ID_PREFIX.self::$count++;
+		if (!isset($htmlOptions['name'])) {
+			if (!array_key_exists('name', $htmlOptions))
+				$htmlOptions['name'] = self::ID_PREFIX . self::$count++;
 		}
-		if(!isset($htmlOptions['type']))
-			$htmlOptions['type']='button';
-		if(!isset($htmlOptions['value']) && $htmlOptions['type']!='image')
-			$htmlOptions['value']=$label;
-		self::clientChange('click',$htmlOptions);
-		return self::tag('input',$htmlOptions);
+		if (!isset($htmlOptions['type']))
+			$htmlOptions['type'] = 'button';
+		if (!isset($htmlOptions['value']) && $htmlOptions['type'] != 'image')
+			$htmlOptions['value'] = $label;
+		self::clientChange('click', $htmlOptions);
+		return self::tag('input', $htmlOptions);
 	}
 
 	/**
@@ -505,14 +500,14 @@ class CHtml
 	 * @return string the generated button tag
 	 * @see clientChange
 	 */
-	public static function htmlButton($label='button',$htmlOptions=array())
+	public static function htmlButton($label = 'button', $htmlOptions = array())
 	{
-		if(!isset($htmlOptions['name']))
-			$htmlOptions['name']=self::ID_PREFIX.self::$count++;
-		if(!isset($htmlOptions['type']))
-			$htmlOptions['type']='button';
-		self::clientChange('click',$htmlOptions);
-		return self::tag('button',$htmlOptions,$label);
+		if (!isset($htmlOptions['name']))
+			$htmlOptions['name'] = self::ID_PREFIX . self::$count++;
+		if (!isset($htmlOptions['type']))
+			$htmlOptions['type'] = 'button';
+		self::clientChange('click', $htmlOptions);
+		return self::tag('button', $htmlOptions, $label);
 	}
 
 	/**
@@ -523,10 +518,10 @@ class CHtml
 	 * @return string the generated button tag
 	 * @see clientChange
 	 */
-	public static function submitButton($label='submit',$htmlOptions=array())
+	public static function submitButton($label = 'submit', $htmlOptions = array())
 	{
-		$htmlOptions['type']='submit';
-		return self::button($label,$htmlOptions);
+		$htmlOptions['type'] = 'submit';
+		return self::button($label, $htmlOptions);
 	}
 
 	/**
@@ -537,10 +532,10 @@ class CHtml
 	 * @return string the generated button tag
 	 * @see clientChange
 	 */
-	public static function resetButton($label='reset',$htmlOptions=array())
+	public static function resetButton($label = 'reset', $htmlOptions = array())
 	{
-		$htmlOptions['type']='reset';
-		return self::button($label,$htmlOptions);
+		$htmlOptions['type'] = 'reset';
+		return self::button($label, $htmlOptions);
 	}
 
 	/**
@@ -551,11 +546,11 @@ class CHtml
 	 * @return string the generated button tag
 	 * @see clientChange
 	 */
-	public static function imageButton($src,$htmlOptions=array())
+	public static function imageButton($src, $htmlOptions = array())
 	{
-		$htmlOptions['src']=$src;
-		$htmlOptions['type']='image';
-		return self::button('submit',$htmlOptions);
+		$htmlOptions['src'] = $src;
+		$htmlOptions['type'] = 'image';
+		return self::button('submit', $htmlOptions);
 	}
 
 	/**
@@ -566,11 +561,11 @@ class CHtml
 	 * @return string the generated button tag
 	 * @see clientChange
 	 */
-	public static function linkButton($label='submit',$htmlOptions=array())
+	public static function linkButton($label = 'submit', $htmlOptions = array())
 	{
-		if(!isset($htmlOptions['submit']))
-			$htmlOptions['submit']=isset($htmlOptions['href']) ? $htmlOptions['href'] : '';
-		return self::link($label,'#',$htmlOptions);
+		if (!isset($htmlOptions['submit']))
+			$htmlOptions['submit'] = isset($htmlOptions['href']) ? $htmlOptions['href'] : '';
+		return self::link($label, '#', $htmlOptions);
 	}
 
 	/**
@@ -588,25 +583,23 @@ class CHtml
 	 * </ul>
 	 * @return string the generated label tag
 	 */
-	public static function label($label,$for,$htmlOptions=array())
+	public static function label($label, $for, $htmlOptions = array())
 	{
-		if($for===false)
+		if ($for === false)
 			unset($htmlOptions['for']);
 		else
-			$htmlOptions['for']=$for;
-		if(isset($htmlOptions['required']))
-		{
-			if($htmlOptions['required'])
-			{
-				if(isset($htmlOptions['class']))
-					$htmlOptions['class'].=' '.self::$requiredCss;
+			$htmlOptions['for'] = $for;
+		if (isset($htmlOptions['required'])) {
+			if ($htmlOptions['required']) {
+				if (isset($htmlOptions['class']))
+					$htmlOptions['class'] .= ' ' . self::$requiredCss;
 				else
-					$htmlOptions['class']=self::$requiredCss;
-				$label=self::$beforeRequiredLabel.$label.self::$afterRequiredLabel;
+					$htmlOptions['class'] = self::$requiredCss;
+				$label = self::$beforeRequiredLabel . $label . self::$afterRequiredLabel;
 			}
 			unset($htmlOptions['required']);
 		}
-		return self::tag('label',$htmlOptions,$label);
+		return self::tag('label', $htmlOptions, $label);
 	}
 
 	/**
@@ -620,10 +613,10 @@ class CHtml
 	 * @see inputField
 	 * @since 1.1.16
 	 */
-	public static function colorField($name,$value='',$htmlOptions=array())
+	public static function colorField($name, $value = '', $htmlOptions = array())
 	{
-		self::clientChange('change',$htmlOptions);
-		return self::inputField('color',$name,$value,$htmlOptions);
+		self::clientChange('change', $htmlOptions);
+		return self::inputField('color', $name, $value, $htmlOptions);
 	}
 
 	/**
@@ -636,10 +629,10 @@ class CHtml
 	 * @see clientChange
 	 * @see inputField
 	 */
-	public static function textField($name,$value='',$htmlOptions=array())
+	public static function textField($name, $value = '', $htmlOptions = array())
 	{
-		self::clientChange('change',$htmlOptions);
-		return self::inputField('text',$name,$value,$htmlOptions);
+		self::clientChange('change', $htmlOptions);
+		return self::inputField('text', $name, $value, $htmlOptions);
 	}
 
 	/**
@@ -653,10 +646,10 @@ class CHtml
 	 * @see inputField
 	 * @since 1.1.16
 	 */
-	public static function searchField($name,$value='',$htmlOptions=array())
+	public static function searchField($name, $value = '', $htmlOptions = array())
 	{
-		self::clientChange('change',$htmlOptions);
-		return self::inputField('search',$name,$value,$htmlOptions);
+		self::clientChange('change', $htmlOptions);
+		return self::inputField('search', $name, $value, $htmlOptions);
 	}
 	/**
 	 * Generates a number field input.
@@ -669,10 +662,10 @@ class CHtml
 	 * @see inputField
 	 * @since 1.1.14
 	 */
-	public static function numberField($name,$value='',$htmlOptions=array())
+	public static function numberField($name, $value = '', $htmlOptions = array())
 	{
-		self::clientChange('change',$htmlOptions);
-		return self::inputField('number',$name,$value,$htmlOptions);
+		self::clientChange('change', $htmlOptions);
+		return self::inputField('number', $name, $value, $htmlOptions);
 	}
 
 	/**
@@ -686,10 +679,10 @@ class CHtml
 	 * @see inputField
 	 * @since 1.1.14
 	 */
-	public static function rangeField($name,$value='',$htmlOptions=array())
+	public static function rangeField($name, $value = '', $htmlOptions = array())
 	{
-		self::clientChange('change',$htmlOptions);
-		return self::inputField('range',$name,$value,$htmlOptions);
+		self::clientChange('change', $htmlOptions);
+		return self::inputField('range', $name, $value, $htmlOptions);
 	}
 
 	/**
@@ -703,10 +696,10 @@ class CHtml
 	 * @see inputField
 	 * @since 1.1.14
 	 */
-	public static function dateField($name,$value='',$htmlOptions=array())
+	public static function dateField($name, $value = '', $htmlOptions = array())
 	{
-		self::clientChange('change',$htmlOptions);
-		return self::inputField('date',$name,$value,$htmlOptions);
+		self::clientChange('change', $htmlOptions);
+		return self::inputField('date', $name, $value, $htmlOptions);
 	}
 
 	/**
@@ -720,10 +713,10 @@ class CHtml
 	 * @see inputField
 	 * @since 1.1.14
 	 */
-	public static function timeField($name,$value='',$htmlOptions=array())
+	public static function timeField($name, $value = '', $htmlOptions = array())
 	{
-		self::clientChange('change',$htmlOptions);
-		return self::inputField('time',$name,$value,$htmlOptions);
+		self::clientChange('change', $htmlOptions);
+		return self::inputField('time', $name, $value, $htmlOptions);
 	}
 
 	/**
@@ -737,10 +730,10 @@ class CHtml
 	 * @see inputField
 	 * @since 1.1.16
 	 */
-	public static function dateTimeField($name,$value='',$htmlOptions=array())
+	public static function dateTimeField($name, $value = '', $htmlOptions = array())
 	{
-		self::clientChange('change',$htmlOptions);
-		return self::inputField('datetime',$name,$value,$htmlOptions);
+		self::clientChange('change', $htmlOptions);
+		return self::inputField('datetime', $name, $value, $htmlOptions);
 	}
 
 	/**
@@ -754,10 +747,10 @@ class CHtml
 	 * @see inputField
 	 * @since 1.1.16
 	 */
-	public static function dateTimeLocalField($name,$value='',$htmlOptions=array())
+	public static function dateTimeLocalField($name, $value = '', $htmlOptions = array())
 	{
-		self::clientChange('change',$htmlOptions);
-		return self::inputField('datetime-local',$name,$value,$htmlOptions);
+		self::clientChange('change', $htmlOptions);
+		return self::inputField('datetime-local', $name, $value, $htmlOptions);
 	}
 
 	/**
@@ -771,10 +764,10 @@ class CHtml
 	 * @see inputField
 	 * @since 1.1.16
 	 */
-	public static function weekField($name,$value='',$htmlOptions=array())
+	public static function weekField($name, $value = '', $htmlOptions = array())
 	{
-		self::clientChange('change',$htmlOptions);
-		return self::inputField('week',$name,$value,$htmlOptions);
+		self::clientChange('change', $htmlOptions);
+		return self::inputField('week', $name, $value, $htmlOptions);
 	}
 
 	/**
@@ -788,10 +781,10 @@ class CHtml
 	 * @see inputField
 	 * @since 1.1.14
 	 */
-	public static function emailField($name,$value='',$htmlOptions=array())
+	public static function emailField($name, $value = '', $htmlOptions = array())
 	{
-		self::clientChange('change',$htmlOptions);
-		return self::inputField('email',$name,$value,$htmlOptions);
+		self::clientChange('change', $htmlOptions);
+		return self::inputField('email', $name, $value, $htmlOptions);
 	}
 
 	/**
@@ -805,10 +798,10 @@ class CHtml
 	 * @see inputField
 	 * @since 1.1.14
 	 */
-	public static function telField($name,$value='',$htmlOptions=array())
+	public static function telField($name, $value = '', $htmlOptions = array())
 	{
-		self::clientChange('change',$htmlOptions);
-		return self::inputField('tel',$name,$value,$htmlOptions);
+		self::clientChange('change', $htmlOptions);
+		return self::inputField('tel', $name, $value, $htmlOptions);
 	}
 
 	/**
@@ -822,10 +815,10 @@ class CHtml
 	 * @see inputField
 	 * @since 1.1.14
 	 */
-	public static function urlField($name,$value='',$htmlOptions=array())
+	public static function urlField($name, $value = '', $htmlOptions = array())
 	{
-		self::clientChange('change',$htmlOptions);
-		return self::inputField('url',$name,$value,$htmlOptions);
+		self::clientChange('change', $htmlOptions);
+		return self::inputField('url', $name, $value, $htmlOptions);
 	}
 
 	/**
@@ -836,9 +829,9 @@ class CHtml
 	 * @return string the generated input field
 	 * @see inputField
 	 */
-	public static function hiddenField($name,$value='',$htmlOptions=array())
+	public static function hiddenField($name, $value = '', $htmlOptions = array())
 	{
-		return self::inputField('hidden',$name,$value,$htmlOptions);
+		return self::inputField('hidden', $name, $value, $htmlOptions);
 	}
 
 	/**
@@ -851,10 +844,10 @@ class CHtml
 	 * @see clientChange
 	 * @see inputField
 	 */
-	public static function passwordField($name,$value='',$htmlOptions=array())
+	public static function passwordField($name, $value = '', $htmlOptions = array())
 	{
-		self::clientChange('change',$htmlOptions);
-		return self::inputField('password',$name,$value,$htmlOptions);
+		self::clientChange('change', $htmlOptions);
+		return self::inputField('password', $name, $value, $htmlOptions);
 	}
 
 	/**
@@ -868,9 +861,9 @@ class CHtml
 	 * @return string the generated input field
 	 * @see inputField
 	 */
-	public static function fileField($name,$value='',$htmlOptions=array())
+	public static function fileField($name, $value = '', $htmlOptions = array())
 	{
-		return self::inputField('file',$name,$value,$htmlOptions);
+		return self::inputField('file', $name, $value, $htmlOptions);
 	}
 
 	/**
@@ -883,15 +876,15 @@ class CHtml
 	 * @see clientChange
 	 * @see inputField
 	 */
-	public static function textArea($name,$value='',$htmlOptions=array())
+	public static function textArea($name, $value = '', $htmlOptions = array())
 	{
-		$htmlOptions['name']=$name;
-		if(!isset($htmlOptions['id']))
-			$htmlOptions['id']=self::getIdByName($name);
-		elseif($htmlOptions['id']===false)
+		$htmlOptions['name'] = $name;
+		if (!isset($htmlOptions['id']))
+			$htmlOptions['id'] = self::getIdByName($name);
+		elseif ($htmlOptions['id'] === false)
 			unset($htmlOptions['id']);
-		self::clientChange('change',$htmlOptions);
-		return self::tag('textarea',$htmlOptions,isset($htmlOptions['encode']) && !$htmlOptions['encode'] ? $value : self::encode($value));
+		self::clientChange('change', $htmlOptions);
+		return self::tag('textarea', $htmlOptions, isset($htmlOptions['encode']) && !$htmlOptions['encode'] ? $value : self::encode($value));
 	}
 
 	/**
@@ -908,39 +901,35 @@ class CHtml
 	 * @see clientChange
 	 * @see inputField
 	 */
-	public static function radioButton($name,$checked=false,$htmlOptions=array())
+	public static function radioButton($name, $checked = false, $htmlOptions = array())
 	{
-		if($checked)
-			$htmlOptions['checked']='checked';
+		if ($checked)
+			$htmlOptions['checked'] = 'checked';
 		else
 			unset($htmlOptions['checked']);
-		$value=isset($htmlOptions['value']) ? $htmlOptions['value'] : 1;
-		self::clientChange('click',$htmlOptions);
+		$value = isset($htmlOptions['value']) ? $htmlOptions['value'] : 1;
+		self::clientChange('click', $htmlOptions);
 
-		if(array_key_exists('uncheckValue',$htmlOptions))
-		{
-			$uncheck=$htmlOptions['uncheckValue'];
+		if (array_key_exists('uncheckValue', $htmlOptions)) {
+			$uncheck = $htmlOptions['uncheckValue'];
 			unset($htmlOptions['uncheckValue']);
-		}
-		else
-			$uncheck=null;
+		} else
+			$uncheck = null;
 
-		if($uncheck!==null)
-		{
+		if ($uncheck !== null) {
 			// add a hidden field so that if the radio button is not selected, it still submits a value
-			if(isset($htmlOptions['id']) && $htmlOptions['id']!==false)
-				$uncheckOptions=array('id'=>self::ID_PREFIX.$htmlOptions['id']);
+			if (isset($htmlOptions['id']) && $htmlOptions['id'] !== false)
+				$uncheckOptions = array('id' => self::ID_PREFIX . $htmlOptions['id']);
 			else
-				$uncheckOptions=array('id'=>false);
-			if(!empty($htmlOptions['disabled']))
-				$uncheckOptions['disabled']=$htmlOptions['disabled'];
-			$hidden=self::hiddenField($name,$uncheck,$uncheckOptions);
-		}
-		else
-			$hidden='';
+				$uncheckOptions = array('id' => false);
+			if (!empty($htmlOptions['disabled']))
+				$uncheckOptions['disabled'] = $htmlOptions['disabled'];
+			$hidden = self::hiddenField($name, $uncheck, $uncheckOptions);
+		} else
+			$hidden = '';
 
 		// add a hidden field so that if the radio button is not selected, it still submits a value
-		return $hidden . self::inputField('radio',$name,$value,$htmlOptions);
+		return $hidden . self::inputField('radio', $name, $value, $htmlOptions);
 	}
 
 	/**
@@ -957,39 +946,35 @@ class CHtml
 	 * @see clientChange
 	 * @see inputField
 	 */
-	public static function checkBox($name,$checked=false,$htmlOptions=array())
+	public static function checkBox($name, $checked = false, $htmlOptions = array())
 	{
-		if($checked)
-			$htmlOptions['checked']='checked';
+		if ($checked)
+			$htmlOptions['checked'] = 'checked';
 		else
 			unset($htmlOptions['checked']);
-		$value=isset($htmlOptions['value']) ? $htmlOptions['value'] : 1;
-		self::clientChange('click',$htmlOptions);
+		$value = isset($htmlOptions['value']) ? $htmlOptions['value'] : 1;
+		self::clientChange('click', $htmlOptions);
 
-		if(array_key_exists('uncheckValue',$htmlOptions))
-		{
-			$uncheck=$htmlOptions['uncheckValue'];
+		if (array_key_exists('uncheckValue', $htmlOptions)) {
+			$uncheck = $htmlOptions['uncheckValue'];
 			unset($htmlOptions['uncheckValue']);
-		}
-		else
-			$uncheck=null;
+		} else
+			$uncheck = null;
 
-		if($uncheck!==null)
-		{
+		if ($uncheck !== null) {
 			// add a hidden field so that if the check box is not checked, it still submits a value
-			if(isset($htmlOptions['id']) && $htmlOptions['id']!==false)
-				$uncheckOptions=array('id'=>self::ID_PREFIX.$htmlOptions['id']);
+			if (isset($htmlOptions['id']) && $htmlOptions['id'] !== false)
+				$uncheckOptions = array('id' => self::ID_PREFIX . $htmlOptions['id']);
 			else
-				$uncheckOptions=array('id'=>false);
-			if(!empty($htmlOptions['disabled']))
-				$uncheckOptions['disabled']=$htmlOptions['disabled'];
-			$hidden=self::hiddenField($name,$uncheck,$uncheckOptions);
-		}
-		else
-			$hidden='';
+				$uncheckOptions = array('id' => false);
+			if (!empty($htmlOptions['disabled']))
+				$uncheckOptions['disabled'] = $htmlOptions['disabled'];
+			$hidden = self::hiddenField($name, $uncheck, $uncheckOptions);
+		} else
+			$hidden = '';
 
 		// add a hidden field so that if the check box is not checked, it still submits a value
-		return $hidden . self::inputField('checkbox',$name,$value,$htmlOptions);
+		return $hidden . self::inputField('checkbox', $name, $value, $htmlOptions);
 	}
 
 	/**
@@ -1029,35 +1014,33 @@ class CHtml
 	 * @see inputField
 	 * @see listData
 	 */
-	public static function dropDownList($name,$select,$data,$htmlOptions=array())
+	public static function dropDownList($name, $select, $data, $htmlOptions = array())
 	{
-		$htmlOptions['name']=$name;
+		$htmlOptions['name'] = $name;
 
-		if(!isset($htmlOptions['id']))
-			$htmlOptions['id']=self::getIdByName($name);
-		elseif($htmlOptions['id']===false)
+		if (!isset($htmlOptions['id']))
+			$htmlOptions['id'] = self::getIdByName($name);
+		elseif ($htmlOptions['id'] === false)
 			unset($htmlOptions['id']);
 
-		self::clientChange('change',$htmlOptions);
-		$options="\n".self::listOptions($select,$data,$htmlOptions);
-		$hidden='';
+		self::clientChange('change', $htmlOptions);
+		$options = "\n" . self::listOptions($select, $data, $htmlOptions);
+		$hidden = '';
 
-		if(!empty($htmlOptions['multiple']))
-		{
-			if(substr($htmlOptions['name'],-2)!=='[]')
-				$htmlOptions['name'].='[]';
+		if (!empty($htmlOptions['multiple'])) {
+			if (substr($htmlOptions['name'], -2) !== '[]')
+				$htmlOptions['name'] .= '[]';
 
-			if(isset($htmlOptions['unselectValue']))
-			{
-				$hiddenOptions=isset($htmlOptions['id']) ? array('id'=>self::ID_PREFIX.$htmlOptions['id']) : array('id'=>false);
-				if(!empty($htmlOptions['disabled']))
-					$hiddenOptions['disabled']=$htmlOptions['disabled'];
-				$hidden=self::hiddenField(substr($htmlOptions['name'],0,-2),$htmlOptions['unselectValue'],$hiddenOptions);
+			if (isset($htmlOptions['unselectValue'])) {
+				$hiddenOptions = isset($htmlOptions['id']) ? array('id' => self::ID_PREFIX . $htmlOptions['id']) : array('id' => false);
+				if (!empty($htmlOptions['disabled']))
+					$hiddenOptions['disabled'] = $htmlOptions['disabled'];
+				$hidden = self::hiddenField(substr($htmlOptions['name'], 0, -2), $htmlOptions['unselectValue'], $hiddenOptions);
 				unset($htmlOptions['unselectValue']);
 			}
 		}
 		// add a hidden field so that if the option is not selected, it still submits a value
-		return $hidden . self::tag('select',$htmlOptions,$options);
+		return $hidden . self::tag('select', $htmlOptions, $options);
 	}
 
 	/**
@@ -1093,16 +1076,15 @@ class CHtml
 	 * @see inputField
 	 * @see listData
 	 */
-	public static function listBox($name,$select,$data,$htmlOptions=array())
+	public static function listBox($name, $select, $data, $htmlOptions = array())
 	{
-		if(!isset($htmlOptions['size']))
-			$htmlOptions['size']=4;
-		if(!empty($htmlOptions['multiple']))
-		{
-			if(substr($name,-2)!=='[]')
-				$name.='[]';
+		if (!isset($htmlOptions['size']))
+			$htmlOptions['size'] = 4;
+		if (!empty($htmlOptions['multiple'])) {
+			if (substr($name, -2) !== '[]')
+				$name .= '[]';
 		}
-		return self::dropDownList($name,$select,$data,$htmlOptions);
+		return self::dropDownList($name, $select, $data, $htmlOptions);
 	}
 
 	/**
@@ -1140,72 +1122,69 @@ class CHtml
 	 * </ul>
 	 * @return string the generated check box list
 	 */
-	public static function checkBoxList($name,$select,$data,$htmlOptions=array())
+	public static function checkBoxList($name, $select, $data, $htmlOptions = array())
 	{
-		$template=isset($htmlOptions['template'])?$htmlOptions['template']:'{input} {label}';
-		$separator=isset($htmlOptions['separator'])?$htmlOptions['separator']:self::tag('br');
-		$container=isset($htmlOptions['container'])?$htmlOptions['container']:'span';
-		unset($htmlOptions['template'],$htmlOptions['separator'],$htmlOptions['container']);
+		$template = isset($htmlOptions['template']) ? $htmlOptions['template'] : '{input} {label}';
+		$separator = isset($htmlOptions['separator']) ? $htmlOptions['separator'] : self::tag('br');
+		$container = isset($htmlOptions['container']) ? $htmlOptions['container'] : 'span';
+		unset($htmlOptions['template'], $htmlOptions['separator'], $htmlOptions['container']);
 
-		if(substr($name,-2)!=='[]')
-			$name.='[]';
+		if (substr($name, -2) !== '[]')
+			$name .= '[]';
 
-		if(isset($htmlOptions['checkAll']))
-		{
-			$checkAllLabel=$htmlOptions['checkAll'];
-			$checkAllLast=isset($htmlOptions['checkAllLast']) && $htmlOptions['checkAllLast'];
+		if (isset($htmlOptions['checkAll'])) {
+			$checkAllLabel = $htmlOptions['checkAll'];
+			$checkAllLast = isset($htmlOptions['checkAllLast']) && $htmlOptions['checkAllLast'];
 		}
-		unset($htmlOptions['checkAll'],$htmlOptions['checkAllLast']);
+		unset($htmlOptions['checkAll'], $htmlOptions['checkAllLast']);
 
-		$labelOptions=isset($htmlOptions['labelOptions'])?$htmlOptions['labelOptions']:array();
+		$labelOptions = isset($htmlOptions['labelOptions']) ? $htmlOptions['labelOptions'] : array();
 		unset($htmlOptions['labelOptions']);
 
-		$items=array();
-		$baseID=isset($htmlOptions['baseID']) ? $htmlOptions['baseID'] : self::getIdByName($name);
+		$items = array();
+		$baseID = isset($htmlOptions['baseID']) ? $htmlOptions['baseID'] : self::getIdByName($name);
 		unset($htmlOptions['baseID']);
-		$id=0;
-		$checkAll=true;
+		$id = 0;
+		$checkAll = true;
 
-		foreach($data as $value=>$labelTitle)
-		{
-			$checked=!is_array($select) && !strcmp($value,(string)$select) || is_array($select) && in_array($value,$select);
-			$checkAll=$checkAll && $checked;
-			$htmlOptions['value']=$value;
-			$htmlOptions['id']=$baseID.'_'.$id++;
-			$option=self::checkBox($name,$checked,$htmlOptions);
-			$beginLabel=self::openTag('label',$labelOptions);
-			$label=self::label($labelTitle,$htmlOptions['id'],$labelOptions);
-			$endLabel=self::closeTag('label');
-			$items[]=strtr($template,array(
-				'{input}'=>$option,
-				'{beginLabel}'=>$beginLabel,
-				'{label}'=>$label,
-				'{labelTitle}'=>$labelTitle,
-				'{endLabel}'=>$endLabel,
+		foreach ($data as $value => $labelTitle) {
+			$checked = !is_array($select) && !strcmp($value, (string)$select) || is_array($select) && in_array($value, $select);
+			$checkAll = $checkAll && $checked;
+			$htmlOptions['value'] = $value;
+			$htmlOptions['id'] = $baseID . '_' . $id++;
+			$option = self::checkBox($name, $checked, $htmlOptions);
+			$beginLabel = self::openTag('label', $labelOptions);
+			$label = self::label($labelTitle, $htmlOptions['id'], $labelOptions);
+			$endLabel = self::closeTag('label');
+			$items[] = strtr($template, array(
+				'{input}' => $option,
+				'{beginLabel}' => $beginLabel,
+				'{label}' => $label,
+				'{labelTitle}' => $labelTitle,
+				'{endLabel}' => $endLabel,
 			));
 		}
 
-		if(isset($checkAllLabel))
-		{
-			$htmlOptions['value']=1;
-			$htmlOptions['id']=$id=$baseID.'_all';
-			$option=self::checkBox($id,$checkAll,$htmlOptions);
-			$beginLabel=self::openTag('label',$labelOptions);
-			$label=self::label($checkAllLabel,$id,$labelOptions);
-			$endLabel=self::closeTag('label');
-			$item=strtr($template,array(
-				'{input}'=>$option,
-				'{beginLabel}'=>$beginLabel,
-				'{label}'=>$label,
-				'{labelTitle}'=>$checkAllLabel,
-				'{endLabel}'=>$endLabel,
+		if (isset($checkAllLabel)) {
+			$htmlOptions['value'] = 1;
+			$htmlOptions['id'] = $id = $baseID . '_all';
+			$option = self::checkBox($id, $checkAll, $htmlOptions);
+			$beginLabel = self::openTag('label', $labelOptions);
+			$label = self::label($checkAllLabel, $id, $labelOptions);
+			$endLabel = self::closeTag('label');
+			$item = strtr($template, array(
+				'{input}' => $option,
+				'{beginLabel}' => $beginLabel,
+				'{label}' => $label,
+				'{labelTitle}' => $checkAllLabel,
+				'{endLabel}' => $endLabel,
 			));
-			if($checkAllLast)
-				$items[]=$item;
+			if ($checkAllLast)
+				$items[] = $item;
 			else
-				array_unshift($items,$item);
-			$name=strtr($name,array('['=>'\\[',']'=>'\\]'));
-			$js=<<<EOD
+				array_unshift($items, $item);
+			$name = strtr($name, array('[' => '\\[', ']' => '\\]'));
+			$js = <<<EOD
 jQuery('#$id').click(function() {
 	jQuery("input[name='$name']").prop('checked', this.checked);
 });
@@ -1214,15 +1193,15 @@ jQuery("input[name='$name']").click(function() {
 });
 jQuery('#$id').prop('checked', !jQuery("input[name='$name']:not(:checked)").length);
 EOD;
-			$cs=Yii::app()->getClientScript();
+			$cs = Yii::app()->getClientScript();
 			$cs->registerCoreScript('jquery');
-			$cs->registerScript($id,$js);
+			$cs->registerScript($id, $js);
 		}
 
-		if(empty($container))
-			return implode($separator,$items);
+		if (empty($container))
+			return implode($separator, $items);
 		else
-			return self::tag($container,array('id'=>$baseID),implode($separator,$items));
+			return self::tag($container, array('id' => $baseID), implode($separator, $items));
 	}
 
 	/**
@@ -1256,49 +1235,47 @@ EOD;
 	 * </ul>
 	 * @return string the generated radio button list
 	 */
-	public static function radioButtonList($name,$select,$data,$htmlOptions=array())
+	public static function radioButtonList($name, $select, $data, $htmlOptions = array())
 	{
-		$template=isset($htmlOptions['template'])?$htmlOptions['template']:'{input} {label}';
-		$separator=isset($htmlOptions['separator'])?$htmlOptions['separator']:self::tag('br');
-		$container=isset($htmlOptions['container'])?$htmlOptions['container']:'span';
-		unset($htmlOptions['template'],$htmlOptions['separator'],$htmlOptions['container']);
+		$template = isset($htmlOptions['template']) ? $htmlOptions['template'] : '{input} {label}';
+		$separator = isset($htmlOptions['separator']) ? $htmlOptions['separator'] : self::tag('br');
+		$container = isset($htmlOptions['container']) ? $htmlOptions['container'] : 'span';
+		unset($htmlOptions['template'], $htmlOptions['separator'], $htmlOptions['container']);
 
-		$labelOptions=isset($htmlOptions['labelOptions'])?$htmlOptions['labelOptions']:array();
+		$labelOptions = isset($htmlOptions['labelOptions']) ? $htmlOptions['labelOptions'] : array();
 		unset($htmlOptions['labelOptions']);
 
-		if(isset($htmlOptions['empty']))
-		{
-			if(!is_array($htmlOptions['empty']))
-				$htmlOptions['empty']=array(''=>$htmlOptions['empty']);
-			$data=CMap::mergeArray($htmlOptions['empty'],$data);
+		if (isset($htmlOptions['empty'])) {
+			if (!is_array($htmlOptions['empty']))
+				$htmlOptions['empty'] = array('' => $htmlOptions['empty']);
+			$data = CMap::mergeArray($htmlOptions['empty'], $data);
 			unset($htmlOptions['empty']);
 		}
 
-		$items=array();
-		$baseID=isset($htmlOptions['baseID']) ? $htmlOptions['baseID'] : self::getIdByName($name);
+		$items = array();
+		$baseID = isset($htmlOptions['baseID']) ? $htmlOptions['baseID'] : self::getIdByName($name);
 		unset($htmlOptions['baseID']);
-		$id=0;
-		foreach($data as $value=>$labelTitle)
-		{
-			$checked=!strcmp($value,(string)$select);
-			$htmlOptions['value']=$value;
-			$htmlOptions['id']=$baseID.'_'.$id++;
-			$option=self::radioButton($name,$checked,$htmlOptions);
-			$beginLabel=self::openTag('label',$labelOptions);
-			$label=self::label($labelTitle,$htmlOptions['id'],$labelOptions);
-			$endLabel=self::closeTag('label');
-			$items[]=strtr($template,array(
-				'{input}'=>$option,
-				'{beginLabel}'=>$beginLabel,
-				'{label}'=>$label,
-				'{labelTitle}'=>$labelTitle,
-				'{endLabel}'=>$endLabel,
+		$id = 0;
+		foreach ($data as $value => $labelTitle) {
+			$checked = !strcmp($value, (string)$select);
+			$htmlOptions['value'] = $value;
+			$htmlOptions['id'] = $baseID . '_' . $id++;
+			$option = self::radioButton($name, $checked, $htmlOptions);
+			$beginLabel = self::openTag('label', $labelOptions);
+			$label = self::label($labelTitle, $htmlOptions['id'], $labelOptions);
+			$endLabel = self::closeTag('label');
+			$items[] = strtr($template, array(
+				'{input}' => $option,
+				'{beginLabel}' => $beginLabel,
+				'{label}' => $label,
+				'{labelTitle}' => $labelTitle,
+				'{endLabel}' => $endLabel,
 			));
 		}
-		if(empty($container))
-			return implode($separator,$items);
+		if (empty($container))
+			return implode($separator, $items);
 		else
-			return self::tag($container,array('id'=>$baseID),implode($separator,$items));
+			return self::tag($container, array('id' => $baseID), implode($separator, $items));
 	}
 
 	/**
@@ -1312,14 +1289,14 @@ EOD;
 	 * @see normalizeUrl
 	 * @see ajax
 	 */
-	public static function ajaxLink($text,$url,$ajaxOptions=array(),$htmlOptions=array())
+	public static function ajaxLink($text, $url, $ajaxOptions = array(), $htmlOptions = array())
 	{
-		if(!isset($htmlOptions['href']))
-			$htmlOptions['href']='#';
-		$ajaxOptions['url']=$url;
-		$htmlOptions['ajax']=$ajaxOptions;
-		self::clientChange('click',$htmlOptions);
-		return self::tag('a',$htmlOptions,$text);
+		if (!isset($htmlOptions['href']))
+			$htmlOptions['href'] = '#';
+		$ajaxOptions['url'] = $url;
+		$htmlOptions['ajax'] = $ajaxOptions;
+		self::clientChange('click', $htmlOptions);
+		return self::tag('a', $htmlOptions, $text);
 	}
 
 	/**
@@ -1331,11 +1308,11 @@ EOD;
 	 * attributes are also recognized (see {@link clientChange} and {@link tag} for more details.)
 	 * @return string the generated button
 	 */
-	public static function ajaxButton($label,$url,$ajaxOptions=array(),$htmlOptions=array())
+	public static function ajaxButton($label, $url, $ajaxOptions = array(), $htmlOptions = array())
 	{
-		$ajaxOptions['url']=$url;
-		$htmlOptions['ajax']=$ajaxOptions;
-		return self::button($label,$htmlOptions);
+		$ajaxOptions['url'] = $url;
+		$htmlOptions['ajax'] = $ajaxOptions;
+		return self::button($label, $htmlOptions);
 	}
 
 	/**
@@ -1347,11 +1324,11 @@ EOD;
 	 * attributes are also recognized (see {@link clientChange} and {@link tag} for more details.)
 	 * @return string the generated button
 	 */
-	public static function ajaxSubmitButton($label,$url,$ajaxOptions=array(),$htmlOptions=array())
+	public static function ajaxSubmitButton($label, $url, $ajaxOptions = array(), $htmlOptions = array())
 	{
-		$ajaxOptions['type']='POST';
-		$htmlOptions['type']='submit';
-		return self::ajaxButton($label,$url,$ajaxOptions,$htmlOptions);
+		$ajaxOptions['type'] = 'POST';
+		$htmlOptions['type'] = 'submit';
+		return self::ajaxButton($label, $url, $ajaxOptions, $htmlOptions);
 	}
 
 	/**
@@ -1372,32 +1349,29 @@ EOD;
 	public static function ajax($options)
 	{
 		Yii::app()->getClientScript()->registerCoreScript('jquery');
-		if(!isset($options['url']))
-			$options['url']=new CJavaScriptExpression('location.href');
+		if (!isset($options['url']))
+			$options['url'] = new CJavaScriptExpression('location.href');
 		else
-			$options['url']=self::normalizeUrl($options['url']);
-		if(!isset($options['cache']))
-			$options['cache']=false;
-		if(!isset($options['data']) && isset($options['type']))
-			$options['data']=new CJavaScriptExpression('jQuery(this).parents("form").serialize()');
-		foreach(array('beforeSend','complete','error','success') as $name)
-		{
-			if(isset($options[$name]) && !($options[$name] instanceof CJavaScriptExpression))
-				$options[$name]=new CJavaScriptExpression($options[$name]);
+			$options['url'] = self::normalizeUrl($options['url']);
+		if (!isset($options['cache']))
+			$options['cache'] = false;
+		if (!isset($options['data']) && isset($options['type']))
+			$options['data'] = new CJavaScriptExpression('jQuery(this).parents("form").serialize()');
+		foreach (array('beforeSend', 'complete', 'error', 'success') as $name) {
+			if (isset($options[$name]) && !($options[$name] instanceof CJavaScriptExpression))
+				$options[$name] = new CJavaScriptExpression($options[$name]);
 		}
-		if(isset($options['update']))
-		{
-			if(!isset($options['success']))
-				$options['success']=new CJavaScriptExpression('function(html){jQuery("'.$options['update'].'").html(html)}');
+		if (isset($options['update'])) {
+			if (!isset($options['success']))
+				$options['success'] = new CJavaScriptExpression('function(html){jQuery("' . $options['update'] . '").html(html)}');
 			unset($options['update']);
 		}
-		if(isset($options['replace']))
-		{
-			if(!isset($options['success']))
-				$options['success']=new CJavaScriptExpression('function(html){jQuery("'.$options['replace'].'").replaceWith(html)}');
+		if (isset($options['replace'])) {
+			if (!isset($options['success']))
+				$options['success'] = new CJavaScriptExpression('function(html){jQuery("' . $options['replace'] . '").replaceWith(html)}');
 			unset($options['replace']);
 		}
-		return 'jQuery.ajax('.CJavaScript::encode($options).');';
+		return 'jQuery.ajax(' . CJavaScript::encode($options) . ');';
 	}
 
 	/**
@@ -1409,9 +1383,9 @@ EOD;
 	 * different extensions.
 	 * @return string the asset URL
 	 */
-	public static function asset($path,$hashByName=false)
+	public static function asset($path, $hashByName = false)
 	{
-		return Yii::app()->getAssetManager()->publish($path,$hashByName);
+		return Yii::app()->getAssetManager()->publish($path, $hashByName);
 	}
 
 	/**
@@ -1434,19 +1408,16 @@ EOD;
 	 */
 	public static function normalizeUrl($url)
 	{
-		if(is_array($url))
-		{
-			if(isset($url[0]))
-			{
-				if(($c=Yii::app()->getController())!==null)
-					$url=$c->createUrl($url[0],array_splice($url,1));
+		if (is_array($url)) {
+			if (isset($url[0])) {
+				if (($c = Yii::app()->getController()) !== null)
+					$url = $c->createUrl($url[0], array_splice($url, 1));
 				else
-					$url=Yii::app()->createUrl($url[0],array_splice($url,1));
-			}
-			else
-				$url='';
+					$url = Yii::app()->createUrl($url[0], array_splice($url, 1));
+			} else
+				$url = '';
 		}
-		return $url==='' ? Yii::app()->getRequest()->getUrl() : $url;
+		return $url === '' ? Yii::app()->getRequest()->getUrl() : $url;
 	}
 
 	/**
@@ -1458,16 +1429,16 @@ EOD;
 	 * @param array $htmlOptions additional HTML attributes for the HTML tag (see {@link tag}).
 	 * @return string the generated input tag
 	 */
-	protected static function inputField($type,$name,$value,$htmlOptions)
+	protected static function inputField($type, $name, $value, $htmlOptions)
 	{
-		$htmlOptions['type']=$type;
-		$htmlOptions['value']=$value;
-		$htmlOptions['name']=$name;
-		if(!isset($htmlOptions['id']))
-			$htmlOptions['id']=self::getIdByName($name);
-		elseif($htmlOptions['id']===false)
+		$htmlOptions['type'] = $type;
+		$htmlOptions['value'] = $value;
+		$htmlOptions['name'] = $name;
+		if (!isset($htmlOptions['id']))
+			$htmlOptions['id'] = self::getIdByName($name);
+		elseif ($htmlOptions['id'] === false)
 			unset($htmlOptions['id']);
-		return self::tag('input',$htmlOptions);
+		return self::tag('input', $htmlOptions);
 	}
 
 	/**
@@ -1489,27 +1460,23 @@ EOD;
 	 * </ul>
 	 * @return string the generated label tag
 	 */
-	public static function activeLabel($model,$attribute,$htmlOptions=array())
+	public static function activeLabel($model, $attribute, $htmlOptions = array())
 	{
-		$inputName=self::resolveName($model,$attribute);
-		if(isset($htmlOptions['for']))
-		{
-			$for=$htmlOptions['for'];
+		$inputName = self::resolveName($model, $attribute);
+		if (isset($htmlOptions['for'])) {
+			$for = $htmlOptions['for'];
 			unset($htmlOptions['for']);
-		}
-		else
-			$for=self::getIdByName($inputName);
-		if(isset($htmlOptions['label']))
-		{
-			if(($label=$htmlOptions['label'])===false)
+		} else
+			$for = self::getIdByName($inputName);
+		if (isset($htmlOptions['label'])) {
+			if (($label = $htmlOptions['label']) === false)
 				return '';
 			unset($htmlOptions['label']);
-		}
-		else
-			$label=$model->getAttributeLabel($attribute);
-		if($model->hasErrors($attribute))
+		} else
+			$label = $model->getAttributeLabel($attribute);
+		if ($model->hasErrors($attribute))
 			self::addErrorCss($htmlOptions);
-		return self::label($label,$for,$htmlOptions);
+		return self::label($label, $for, $htmlOptions);
 	}
 
 	/**
@@ -1526,13 +1493,13 @@ EOD;
 	 * @param array $htmlOptions additional HTML attributes.
 	 * @return string the generated label tag
 	 */
-	public static function activeLabelEx($model,$attribute,$htmlOptions=array())
+	public static function activeLabelEx($model, $attribute, $htmlOptions = array())
 	{
-		$realAttribute=$attribute;
-		self::resolveName($model,$attribute); // strip off square brackets if any
+		$realAttribute = $attribute;
+		self::resolveName($model, $attribute); // strip off square brackets if any
 		if (!isset($htmlOptions['required']))
-			$htmlOptions['required']=$model->isAttributeRequired($attribute);
-		return self::activeLabel($model,$realAttribute,$htmlOptions);
+			$htmlOptions['required'] = $model->isAttributeRequired($attribute);
+		return self::activeLabel($model, $realAttribute, $htmlOptions);
 	}
 
 	/**
@@ -1547,11 +1514,11 @@ EOD;
 	 * @see clientChange
 	 * @see activeInputField
 	 */
-	public static function activeTextField($model,$attribute,$htmlOptions=array())
+	public static function activeTextField($model, $attribute, $htmlOptions = array())
 	{
-		self::resolveNameID($model,$attribute,$htmlOptions);
-		self::clientChange('change',$htmlOptions);
-		return self::activeInputField('text',$model,$attribute,$htmlOptions);
+		self::resolveNameID($model, $attribute, $htmlOptions);
+		self::clientChange('change', $htmlOptions);
+		return self::activeInputField('text', $model, $attribute, $htmlOptions);
 	}
 
 	/**
@@ -1567,11 +1534,11 @@ EOD;
 	 * @see activeInputField
 	 * @since 1.1.14
 	 */
-	public static function activeSearchField($model,$attribute,$htmlOptions=array())
+	public static function activeSearchField($model, $attribute, $htmlOptions = array())
 	{
-		self::resolveNameID($model,$attribute,$htmlOptions);
-		self::clientChange('change',$htmlOptions);
-		return self::activeInputField('search',$model,$attribute,$htmlOptions);
+		self::resolveNameID($model, $attribute, $htmlOptions);
+		self::clientChange('change', $htmlOptions);
+		return self::activeInputField('search', $model, $attribute, $htmlOptions);
 	}
 
 	/**
@@ -1587,11 +1554,11 @@ EOD;
 	 * @see activeInputField
 	 * @since 1.1.11
 	 */
-	public static function activeUrlField($model,$attribute,$htmlOptions=array())
+	public static function activeUrlField($model, $attribute, $htmlOptions = array())
 	{
-		self::resolveNameID($model,$attribute,$htmlOptions);
-		self::clientChange('change',$htmlOptions);
-		return self::activeInputField('url',$model,$attribute,$htmlOptions);
+		self::resolveNameID($model, $attribute, $htmlOptions);
+		self::clientChange('change', $htmlOptions);
+		return self::activeInputField('url', $model, $attribute, $htmlOptions);
 	}
 
 	/**
@@ -1607,11 +1574,11 @@ EOD;
 	 * @see activeInputField
 	 * @since 1.1.11
 	 */
-	public static function activeEmailField($model,$attribute,$htmlOptions=array())
+	public static function activeEmailField($model, $attribute, $htmlOptions = array())
 	{
-		self::resolveNameID($model,$attribute,$htmlOptions);
-		self::clientChange('change',$htmlOptions);
-		return self::activeInputField('email',$model,$attribute,$htmlOptions);
+		self::resolveNameID($model, $attribute, $htmlOptions);
+		self::clientChange('change', $htmlOptions);
+		return self::activeInputField('email', $model, $attribute, $htmlOptions);
 	}
 
 	/**
@@ -1627,11 +1594,11 @@ EOD;
 	 * @see activeInputField
 	 * @since 1.1.11
 	 */
-	public static function activeNumberField($model,$attribute,$htmlOptions=array())
+	public static function activeNumberField($model, $attribute, $htmlOptions = array())
 	{
-		self::resolveNameID($model,$attribute,$htmlOptions);
-		self::clientChange('change',$htmlOptions);
-		return self::activeInputField('number',$model,$attribute,$htmlOptions);
+		self::resolveNameID($model, $attribute, $htmlOptions);
+		self::clientChange('change', $htmlOptions);
+		return self::activeInputField('number', $model, $attribute, $htmlOptions);
 	}
 
 	/**
@@ -1647,11 +1614,11 @@ EOD;
 	 * @see activeInputField
 	 * @since 1.1.11
 	 */
-	public static function activeRangeField($model,$attribute,$htmlOptions=array())
+	public static function activeRangeField($model, $attribute, $htmlOptions = array())
 	{
-		self::resolveNameID($model,$attribute,$htmlOptions);
-		self::clientChange('change',$htmlOptions);
-		return self::activeInputField('range',$model,$attribute,$htmlOptions);
+		self::resolveNameID($model, $attribute, $htmlOptions);
+		self::clientChange('change', $htmlOptions);
+		return self::activeInputField('range', $model, $attribute, $htmlOptions);
 	}
 
 	/**
@@ -1667,11 +1634,11 @@ EOD;
 	 * @see activeInputField
 	 * @since 1.1.11
 	 */
-	public static function activeDateField($model,$attribute,$htmlOptions=array())
+	public static function activeDateField($model, $attribute, $htmlOptions = array())
 	{
-		self::resolveNameID($model,$attribute,$htmlOptions);
-		self::clientChange('change',$htmlOptions);
-		return self::activeInputField('date',$model,$attribute,$htmlOptions);
+		self::resolveNameID($model, $attribute, $htmlOptions);
+		self::clientChange('change', $htmlOptions);
+		return self::activeInputField('date', $model, $attribute, $htmlOptions);
 	}
 
 	/**
@@ -1687,11 +1654,11 @@ EOD;
 	 * @see activeInputField
 	 * @since 1.1.14
 	 */
-	public static function activeTimeField($model,$attribute,$htmlOptions=array())
+	public static function activeTimeField($model, $attribute, $htmlOptions = array())
 	{
-		self::resolveNameID($model,$attribute,$htmlOptions);
-		self::clientChange('change',$htmlOptions);
-		return self::activeInputField('time',$model,$attribute,$htmlOptions);
+		self::resolveNameID($model, $attribute, $htmlOptions);
+		self::clientChange('change', $htmlOptions);
+		return self::activeInputField('time', $model, $attribute, $htmlOptions);
 	}
 
 	/**
@@ -1707,11 +1674,11 @@ EOD;
 	 * @see activeInputField
 	 * @since 1.1.16
 	 */
-	public static function activeDateTimeField($model,$attribute,$htmlOptions=array())
+	public static function activeDateTimeField($model, $attribute, $htmlOptions = array())
 	{
-		self::resolveNameID($model,$attribute,$htmlOptions);
-		self::clientChange('change',$htmlOptions);
-		return self::activeInputField('datetime',$model,$attribute,$htmlOptions);
+		self::resolveNameID($model, $attribute, $htmlOptions);
+		self::clientChange('change', $htmlOptions);
+		return self::activeInputField('datetime', $model, $attribute, $htmlOptions);
 	}
 
 	/**
@@ -1727,11 +1694,11 @@ EOD;
 	 * @see activeInputField
 	 * @since 1.1.16
 	 */
-	public static function activeDateTimeLocalField($model,$attribute,$htmlOptions=array())
+	public static function activeDateTimeLocalField($model, $attribute, $htmlOptions = array())
 	{
-		self::resolveNameID($model,$attribute,$htmlOptions);
-		self::clientChange('change',$htmlOptions);
-		return self::activeInputField('datetime-local',$model,$attribute,$htmlOptions);
+		self::resolveNameID($model, $attribute, $htmlOptions);
+		self::clientChange('change', $htmlOptions);
+		return self::activeInputField('datetime-local', $model, $attribute, $htmlOptions);
 	}
 
 	/**
@@ -1747,11 +1714,11 @@ EOD;
 	 * @see activeInputField
 	 * @since 1.1.16
 	 */
-	public static function activeWeekField($model,$attribute,$htmlOptions=array())
+	public static function activeWeekField($model, $attribute, $htmlOptions = array())
 	{
-		self::resolveNameID($model,$attribute,$htmlOptions);
-		self::clientChange('change',$htmlOptions);
-		return self::activeInputField('week',$model,$attribute,$htmlOptions);
+		self::resolveNameID($model, $attribute, $htmlOptions);
+		self::clientChange('change', $htmlOptions);
+		return self::activeInputField('week', $model, $attribute, $htmlOptions);
 	}
 
 	/**
@@ -1767,11 +1734,11 @@ EOD;
 	 * @see activeInputField
 	 * @since 1.1.16
 	 */
-	public static function activeColorField($model,$attribute,$htmlOptions=array())
+	public static function activeColorField($model, $attribute, $htmlOptions = array())
 	{
-		self::resolveNameID($model,$attribute,$htmlOptions);
-		self::clientChange('change',$htmlOptions);
-		return self::activeInputField('color',$model,$attribute,$htmlOptions);
+		self::resolveNameID($model, $attribute, $htmlOptions);
+		self::clientChange('change', $htmlOptions);
+		return self::activeInputField('color', $model, $attribute, $htmlOptions);
 	}
 
 	/**
@@ -1787,11 +1754,11 @@ EOD;
 	 * @see activeInputField
 	 * @since 1.1.14
 	 */
-	public static function activeTelField($model,$attribute,$htmlOptions=array())
+	public static function activeTelField($model, $attribute, $htmlOptions = array())
 	{
-		self::resolveNameID($model,$attribute,$htmlOptions);
-		self::clientChange('change',$htmlOptions);
-		return self::activeInputField('tel',$model,$attribute,$htmlOptions);
+		self::resolveNameID($model, $attribute, $htmlOptions);
+		self::clientChange('change', $htmlOptions);
+		return self::activeInputField('tel', $model, $attribute, $htmlOptions);
 	}
 
 
@@ -1803,10 +1770,10 @@ EOD;
 	 * @return string the generated input field
 	 * @see activeInputField
 	 */
-	public static function activeHiddenField($model,$attribute,$htmlOptions=array())
+	public static function activeHiddenField($model, $attribute, $htmlOptions = array())
 	{
-		self::resolveNameID($model,$attribute,$htmlOptions);
-		return self::activeInputField('hidden',$model,$attribute,$htmlOptions);
+		self::resolveNameID($model, $attribute, $htmlOptions);
+		return self::activeInputField('hidden', $model, $attribute, $htmlOptions);
 	}
 
 	/**
@@ -1821,11 +1788,11 @@ EOD;
 	 * @see clientChange
 	 * @see activeInputField
 	 */
-	public static function activePasswordField($model,$attribute,$htmlOptions=array())
+	public static function activePasswordField($model, $attribute, $htmlOptions = array())
 	{
-		self::resolveNameID($model,$attribute,$htmlOptions);
-		self::clientChange('change',$htmlOptions);
-		return self::activeInputField('password',$model,$attribute,$htmlOptions);
+		self::resolveNameID($model, $attribute, $htmlOptions);
+		self::clientChange('change', $htmlOptions);
+		return self::activeInputField('password', $model, $attribute, $htmlOptions);
 	}
 
 	/**
@@ -1839,20 +1806,18 @@ EOD;
 	 * @return string the generated text area
 	 * @see clientChange
 	 */
-	public static function activeTextArea($model,$attribute,$htmlOptions=array())
+	public static function activeTextArea($model, $attribute, $htmlOptions = array())
 	{
-		self::resolveNameID($model,$attribute,$htmlOptions);
-		self::clientChange('change',$htmlOptions);
-		if($model->hasErrors($attribute))
+		self::resolveNameID($model, $attribute, $htmlOptions);
+		self::clientChange('change', $htmlOptions);
+		if ($model->hasErrors($attribute))
 			self::addErrorCss($htmlOptions);
-		if(isset($htmlOptions['value']))
-		{
-			$text=$htmlOptions['value'];
+		if (isset($htmlOptions['value'])) {
+			$text = $htmlOptions['value'];
 			unset($htmlOptions['value']);
-		}
-		else
-			$text=self::resolveValue($model,$attribute);
-		return self::tag('textarea',$htmlOptions,isset($htmlOptions['encode']) && !$htmlOptions['encode'] ? $text : self::encode($text));
+		} else
+			$text = self::resolveValue($model, $attribute);
+		return self::tag('textarea', $htmlOptions, isset($htmlOptions['encode']) && !$htmlOptions['encode'] ? $text : self::encode($text));
 	}
 
 	/**
@@ -1866,16 +1831,16 @@ EOD;
 	 * @return string the generated input field
 	 * @see activeInputField
 	 */
-	public static function activeFileField($model,$attribute,$htmlOptions=array())
+	public static function activeFileField($model, $attribute, $htmlOptions = array())
 	{
-		self::resolveNameID($model,$attribute,$htmlOptions);
+		self::resolveNameID($model, $attribute, $htmlOptions);
 		// add a hidden field so that if a model only has a file field, we can
 		// still use isset($_POST[$modelClass]) to detect if the input is submitted
-		$hiddenOptions=isset($htmlOptions['id']) ? array('id'=>self::ID_PREFIX.$htmlOptions['id']) : array('id'=>false);
-		if(!empty($htmlOptions['disabled']))
-			$hiddenOptions['disabled']=$htmlOptions['disabled'];
-		return self::hiddenField($htmlOptions['name'],'',$hiddenOptions)
-			. self::activeInputField('file',$model,$attribute,$htmlOptions);
+		$hiddenOptions = isset($htmlOptions['id']) ? array('id' => self::ID_PREFIX . $htmlOptions['id']) : array('id' => false);
+		if (!empty($htmlOptions['disabled']))
+			$hiddenOptions['disabled'] = $htmlOptions['disabled'];
+		return self::hiddenField($htmlOptions['name'], '', $hiddenOptions)
+			. self::activeInputField('file', $model, $attribute, $htmlOptions);
 	}
 
 	/**
@@ -1895,30 +1860,28 @@ EOD;
 	 * @see clientChange
 	 * @see activeInputField
 	 */
-	public static function activeRadioButton($model,$attribute,$htmlOptions=array())
+	public static function activeRadioButton($model, $attribute, $htmlOptions = array())
 	{
-		self::resolveNameID($model,$attribute,$htmlOptions);
-		if(!isset($htmlOptions['value']))
-			$htmlOptions['value']=1;
-		if(!isset($htmlOptions['checked']) && self::resolveValue($model,$attribute)==$htmlOptions['value'])
-			$htmlOptions['checked']='checked';
-		self::clientChange('click',$htmlOptions);
+		self::resolveNameID($model, $attribute, $htmlOptions);
+		if (!isset($htmlOptions['value']))
+			$htmlOptions['value'] = 1;
+		if (!isset($htmlOptions['checked']) && self::resolveValue($model, $attribute) == $htmlOptions['value'])
+			$htmlOptions['checked'] = 'checked';
+		self::clientChange('click', $htmlOptions);
 
-		if(array_key_exists('uncheckValue',$htmlOptions))
-		{
-			$uncheck=$htmlOptions['uncheckValue'];
+		if (array_key_exists('uncheckValue', $htmlOptions)) {
+			$uncheck = $htmlOptions['uncheckValue'];
 			unset($htmlOptions['uncheckValue']);
-		}
-		else
-			$uncheck='0';
+		} else
+			$uncheck = '0';
 
-		$hiddenOptions=isset($htmlOptions['id']) ? array('id'=>self::ID_PREFIX.$htmlOptions['id']) : array('id'=>false);
-		if(!empty($htmlOptions['disabled']))
-			$hiddenOptions['disabled']=$htmlOptions['disabled'];
-		$hidden=$uncheck!==null ? self::hiddenField($htmlOptions['name'],$uncheck,$hiddenOptions) : '';
+		$hiddenOptions = isset($htmlOptions['id']) ? array('id' => self::ID_PREFIX . $htmlOptions['id']) : array('id' => false);
+		if (!empty($htmlOptions['disabled']))
+			$hiddenOptions['disabled'] = $htmlOptions['disabled'];
+		$hidden = $uncheck !== null ? self::hiddenField($htmlOptions['name'], $uncheck, $hiddenOptions) : '';
 
 		// add a hidden field so that if the radio button is not selected, it still submits a value
-		return $hidden . self::activeInputField('radio',$model,$attribute,$htmlOptions);
+		return $hidden . self::activeInputField('radio', $model, $attribute, $htmlOptions);
 	}
 
 	/**
@@ -1939,29 +1902,27 @@ EOD;
 	 * @see clientChange
 	 * @see activeInputField
 	 */
-	public static function activeCheckBox($model,$attribute,$htmlOptions=array())
+	public static function activeCheckBox($model, $attribute, $htmlOptions = array())
 	{
-		self::resolveNameID($model,$attribute,$htmlOptions);
-		if(!isset($htmlOptions['value']))
-			$htmlOptions['value']=1;
-		if(!isset($htmlOptions['checked']) && self::resolveValue($model,$attribute)==$htmlOptions['value'])
-			$htmlOptions['checked']='checked';
-		self::clientChange('click',$htmlOptions);
+		self::resolveNameID($model, $attribute, $htmlOptions);
+		if (!isset($htmlOptions['value']))
+			$htmlOptions['value'] = 1;
+		if (!isset($htmlOptions['checked']) && self::resolveValue($model, $attribute) == $htmlOptions['value'])
+			$htmlOptions['checked'] = 'checked';
+		self::clientChange('click', $htmlOptions);
 
-		if(array_key_exists('uncheckValue',$htmlOptions))
-		{
-			$uncheck=$htmlOptions['uncheckValue'];
+		if (array_key_exists('uncheckValue', $htmlOptions)) {
+			$uncheck = $htmlOptions['uncheckValue'];
 			unset($htmlOptions['uncheckValue']);
-		}
-		else
-			$uncheck='0';
+		} else
+			$uncheck = '0';
 
-		$hiddenOptions=isset($htmlOptions['id']) ? array('id'=>self::ID_PREFIX.$htmlOptions['id']) : array('id'=>false);
-		if(!empty($htmlOptions['disabled']))
-			$hiddenOptions['disabled']=$htmlOptions['disabled'];
-		$hidden=$uncheck!==null ? self::hiddenField($htmlOptions['name'],$uncheck,$hiddenOptions) : '';
+		$hiddenOptions = isset($htmlOptions['id']) ? array('id' => self::ID_PREFIX . $htmlOptions['id']) : array('id' => false);
+		if (!empty($htmlOptions['disabled']))
+			$hiddenOptions['disabled'] = $htmlOptions['disabled'];
+		$hidden = $uncheck !== null ? self::hiddenField($htmlOptions['name'], $uncheck, $hiddenOptions) : '';
 
-		return $hidden . self::activeInputField('checkbox',$model,$attribute,$htmlOptions);
+		return $hidden . self::activeInputField('checkbox', $model, $attribute, $htmlOptions);
 	}
 
 	/**
@@ -2002,32 +1963,30 @@ EOD;
 	 * @see clientChange
 	 * @see listData
 	 */
-	public static function activeDropDownList($model,$attribute,$data,$htmlOptions=array())
+	public static function activeDropDownList($model, $attribute, $data, $htmlOptions = array())
 	{
-		self::resolveNameID($model,$attribute,$htmlOptions);
-		$selection=self::resolveValue($model,$attribute);
-		$options="\n".self::listOptions($selection,$data,$htmlOptions);
-		self::clientChange('change',$htmlOptions);
+		self::resolveNameID($model, $attribute, $htmlOptions);
+		$selection = self::resolveValue($model, $attribute);
+		$options = "\n" . self::listOptions($selection, $data, $htmlOptions);
+		self::clientChange('change', $htmlOptions);
 
-		if($model->hasErrors($attribute))
+		if ($model->hasErrors($attribute))
 			self::addErrorCss($htmlOptions);
 
-		$hidden='';
-		if(!empty($htmlOptions['multiple']))
-		{
-			if(substr($htmlOptions['name'],-2)!=='[]')
-				$htmlOptions['name'].='[]';
+		$hidden = '';
+		if (!empty($htmlOptions['multiple'])) {
+			if (substr($htmlOptions['name'], -2) !== '[]')
+				$htmlOptions['name'] .= '[]';
 
-			if(isset($htmlOptions['unselectValue']))
-			{
-				$hiddenOptions=isset($htmlOptions['id']) ? array('id'=>self::ID_PREFIX.$htmlOptions['id']) : array('id'=>false);
-				if(!empty($htmlOptions['disabled']))
-					$hiddenOptions['disabled']=$htmlOptions['disabled'];
-				$hidden=self::hiddenField(substr($htmlOptions['name'],0,-2),$htmlOptions['unselectValue'],$hiddenOptions);
+			if (isset($htmlOptions['unselectValue'])) {
+				$hiddenOptions = isset($htmlOptions['id']) ? array('id' => self::ID_PREFIX . $htmlOptions['id']) : array('id' => false);
+				if (!empty($htmlOptions['disabled']))
+					$hiddenOptions['disabled'] = $htmlOptions['disabled'];
+				$hidden = self::hiddenField(substr($htmlOptions['name'], 0, -2), $htmlOptions['unselectValue'], $hiddenOptions);
 				unset($htmlOptions['unselectValue']);
 			}
 		}
-		return $hidden . self::tag('select',$htmlOptions,$options);
+		return $hidden . self::tag('select', $htmlOptions, $options);
 	}
 
 	/**
@@ -2065,11 +2024,11 @@ EOD;
 	 * @see clientChange
 	 * @see listData
 	 */
-	public static function activeListBox($model,$attribute,$data,$htmlOptions=array())
+	public static function activeListBox($model, $attribute, $data, $htmlOptions = array())
 	{
-		if(!isset($htmlOptions['size']))
-			$htmlOptions['size']=4;
-		return self::activeDropDownList($model,$attribute,$data,$htmlOptions);
+		if (!isset($htmlOptions['size']))
+			$htmlOptions['size'] = 4;
+		return self::activeDropDownList($model, $attribute, $data, $htmlOptions);
 	}
 
 	/**
@@ -2113,29 +2072,27 @@ EOD;
 	 * @return string the generated check box list
 	 * @see checkBoxList
 	 */
-	public static function activeCheckBoxList($model,$attribute,$data,$htmlOptions=array())
+	public static function activeCheckBoxList($model, $attribute, $data, $htmlOptions = array())
 	{
-		self::resolveNameID($model,$attribute,$htmlOptions);
-		$selection=self::resolveValue($model,$attribute);
-		if($model->hasErrors($attribute))
+		self::resolveNameID($model, $attribute, $htmlOptions);
+		$selection = self::resolveValue($model, $attribute);
+		if ($model->hasErrors($attribute))
 			self::addErrorCss($htmlOptions);
-		$name=$htmlOptions['name'];
+		$name = $htmlOptions['name'];
 		unset($htmlOptions['name']);
 
-		if(array_key_exists('uncheckValue',$htmlOptions))
-		{
-			$uncheck=$htmlOptions['uncheckValue'];
+		if (array_key_exists('uncheckValue', $htmlOptions)) {
+			$uncheck = $htmlOptions['uncheckValue'];
 			unset($htmlOptions['uncheckValue']);
-		}
-		else
-			$uncheck='';
+		} else
+			$uncheck = '';
 
-		$hiddenOptions=isset($htmlOptions['id']) ? array('id'=>self::ID_PREFIX.$htmlOptions['id']) : array('id'=>false);
-		if(!empty($htmlOptions['disabled']))
-			$hiddenOptions['disabled']=$htmlOptions['disabled'];
-		$hidden=$uncheck!==null ? self::hiddenField($name,$uncheck,$hiddenOptions) : '';
+		$hiddenOptions = isset($htmlOptions['id']) ? array('id' => self::ID_PREFIX . $htmlOptions['id']) : array('id' => false);
+		if (!empty($htmlOptions['disabled']))
+			$hiddenOptions['disabled'] = $htmlOptions['disabled'];
+		$hidden = $uncheck !== null ? self::hiddenField($name, $uncheck, $hiddenOptions) : '';
 
-		return $hidden . self::checkBoxList($name,$selection,$data,$htmlOptions);
+		return $hidden . self::checkBoxList($name, $selection, $data, $htmlOptions);
 	}
 
 	/**
@@ -2175,29 +2132,27 @@ EOD;
 	 * @return string the generated radio button list
 	 * @see radioButtonList
 	 */
-	public static function activeRadioButtonList($model,$attribute,$data,$htmlOptions=array())
+	public static function activeRadioButtonList($model, $attribute, $data, $htmlOptions = array())
 	{
-		self::resolveNameID($model,$attribute,$htmlOptions);
-		$selection=self::resolveValue($model,$attribute);
-		if($model->hasErrors($attribute))
+		self::resolveNameID($model, $attribute, $htmlOptions);
+		$selection = self::resolveValue($model, $attribute);
+		if ($model->hasErrors($attribute))
 			self::addErrorCss($htmlOptions);
-		$name=$htmlOptions['name'];
+		$name = $htmlOptions['name'];
 		unset($htmlOptions['name']);
 
-		if(array_key_exists('uncheckValue',$htmlOptions))
-		{
-			$uncheck=$htmlOptions['uncheckValue'];
+		if (array_key_exists('uncheckValue', $htmlOptions)) {
+			$uncheck = $htmlOptions['uncheckValue'];
 			unset($htmlOptions['uncheckValue']);
-		}
-		else
-			$uncheck='';
+		} else
+			$uncheck = '';
 
-		$hiddenOptions=isset($htmlOptions['id']) ? array('id'=>self::ID_PREFIX.$htmlOptions['id']) : array('id'=>false);
-		if(!empty($htmlOptions['disabled']))
-			$hiddenOptions['disabled']=$htmlOptions['disabled'];
-		$hidden=$uncheck!==null ? self::hiddenField($name,$uncheck,$hiddenOptions) : '';
+		$hiddenOptions = isset($htmlOptions['id']) ? array('id' => self::ID_PREFIX . $htmlOptions['id']) : array('id' => false);
+		if (!empty($htmlOptions['disabled']))
+			$hiddenOptions['disabled'] = $htmlOptions['disabled'];
+		$hidden = $uncheck !== null ? self::hiddenField($name, $uncheck, $hiddenOptions) : '';
 
-		return $hidden . self::radioButtonList($name,$selection,$data,$htmlOptions);
+		return $hidden . self::radioButtonList($name, $selection, $data, $htmlOptions);
 	}
 
 	/**
@@ -2219,44 +2174,36 @@ EOD;
 	 * @see CModel::getErrors
 	 * @see errorSummaryCss
 	 */
-	public static function errorSummary($model,$header=null,$footer=null,$htmlOptions=array())
+	public static function errorSummary($model, $header = null, $footer = null, $htmlOptions = array())
 	{
-		$content='';
-		if(!is_array($model))
-			$model=array($model);
-		if(isset($htmlOptions['firstError']))
-		{
-			$firstError=$htmlOptions['firstError'];
+		$content = '';
+		if (!is_array($model))
+			$model = array($model);
+		if (isset($htmlOptions['firstError'])) {
+			$firstError = $htmlOptions['firstError'];
 			unset($htmlOptions['firstError']);
-		}
-		else
-			$firstError=false;
-		foreach($model as $m)
-		{
-			foreach($m->getErrors() as $errors)
-			{
-				foreach($errors as $error)
-				{
-					if($error!='')
-					{
+		} else
+			$firstError = false;
+		foreach ($model as $m) {
+			foreach ($m->getErrors() as $errors) {
+				foreach ($errors as $error) {
+					if ($error != '') {
 						if (!isset($htmlOptions['encode']) || $htmlOptions['encode'])
-							$error=self::encode($error);
-						$content.= '<li>'.$error."</li>\n";
+							$error = self::encode($error);
+						$content .= '<li>' . $error . "</li>\n";
 					}
-					if($firstError)
+					if ($firstError)
 						break;
 				}
 			}
 		}
-		if($content!=='')
-		{
-			if($header===null)
-				$header='<p>'.Yii::t('yii','Please fix the following input errors:').'</p>';
-			if(!isset($htmlOptions['class']))
-				$htmlOptions['class']=self::$errorSummaryCss;
-			return self::tag('div',$htmlOptions,$header."\n<ul>\n$content</ul>".$footer);
-		}
-		else
+		if ($content !== '') {
+			if ($header === null)
+				$header = '<p>' . Yii::t('yii', 'Please fix the following input errors:') . '</p>';
+			if (!isset($htmlOptions['class']))
+				$htmlOptions['class'] = self::$errorSummaryCss;
+			return self::tag('div', $htmlOptions, $header . "\n<ul>\n$content</ul>" . $footer);
+		} else
 			return '';
 	}
 
@@ -2270,19 +2217,17 @@ EOD;
 	 * @see errorMessageCss
 	 * @see $errorContainerTag
 	 */
-	public static function error($model,$attribute,$htmlOptions=array())
+	public static function error($model, $attribute, $htmlOptions = array())
 	{
-		self::resolveName($model,$attribute); // turn [a][b]attr into attr
-		$error=$model->getError($attribute);
+		self::resolveName($model, $attribute); // turn [a][b]attr into attr
+		$error = $model->getError($attribute);
 		if (!isset($htmlOptions['encode']) || $htmlOptions['encode'])
-			$error=self::encode($error);
-		if($error!='')
-		{
-			if(!isset($htmlOptions['class']))
-				$htmlOptions['class']=self::$errorMessageCss;
-			return self::tag(self::$errorContainerTag,$htmlOptions,$error);
-		}
-		else
+			$error = self::encode($error);
+		if ($error != '') {
+			if (!isset($htmlOptions['class']))
+				$htmlOptions['class'] = self::$errorMessageCss;
+			return self::tag(self::$errorContainerTag, $htmlOptions, $error);
+		} else
 			return '';
 	}
 
@@ -2310,29 +2255,24 @@ EOD;
 	 * @param mixed $groupField the attribute name or anonymous function (PHP 5.3+) for list option group names. If empty, no group will be generated.
 	 * @return array the list data that can be used in {@link dropDownList}, {@link listBox}, etc.
 	 */
-	public static function listData($models,$valueField,$textField,$groupField='')
+	public static function listData($models, $valueField, $textField, $groupField = '')
 	{
-		$listData=array();
-		if($groupField==='')
-		{
-			foreach($models as $model)
-			{
-				$value=self::value($model,$valueField);
-				$text=self::value($model,$textField);
-				$listData[$value]=$text;
+		$listData = array();
+		if ($groupField === '') {
+			foreach ($models as $model) {
+				$value = self::value($model, $valueField);
+				$text = self::value($model, $textField);
+				$listData[$value] = $text;
 			}
-		}
-		else
-		{
-			foreach($models as $model)
-			{
-				$group=self::value($model,$groupField);
-				$value=self::value($model,$valueField);
-				$text=self::value($model,$textField);
-				if($group===null)
-					$listData[$value]=$text;
+		} else {
+			foreach ($models as $model) {
+				$group = self::value($model, $groupField);
+				$value = self::value($model, $valueField);
+				$text = self::value($model, $textField);
+				if ($group === null)
+					$listData[$value] = $text;
 				else
-					$listData[$group][$value]=$text;
+					$listData[$group][$value] = $text;
 			}
 		}
 		return $listData;
@@ -2367,33 +2307,26 @@ EOD;
 	 * @param mixed $defaultValue the default value to return when the attribute does not exist.
 	 * @return mixed the attribute value.
 	 */
-	public static function value($model,$attribute,$defaultValue=null)
+	public static function value($model, $attribute, $defaultValue = null)
 	{
-		if(is_scalar($attribute) || $attribute===null)
-			foreach(explode('.',(string)$attribute) as $name)
-			{
-				if(is_object($model))
-				{
+		if (is_scalar($attribute) || $attribute === null)
+			foreach (explode('.', (string)$attribute) as $name) {
+				if (is_object($model)) {
 					if ((version_compare(PHP_VERSION, '7.2.0', '>=')
-						&& is_numeric($name))
+							&& is_numeric($name))
 						|| !isset($model->$name)
-					)
-					{
+					) {
 						return $defaultValue;
+					} else {
+						$model = $model->$name;
 					}
-					else
-					{
-						$model=$model->$name;
-					}
-				}
-
-				elseif(is_array($model) && isset($model[$name]))
-					$model=$model[$name];
+				} elseif (is_array($model) && isset($model[$name]))
+					$model = $model[$name];
 				else
 					return $defaultValue;
 			}
 		else
-			return call_user_func($attribute,$model);
+			return call_user_func($attribute, $model);
 
 		return $model;
 	}
@@ -2405,7 +2338,7 @@ EOD;
 	 */
 	public static function getIdByName($name)
 	{
-		return str_replace(array('[]','][','[',']',' '),array('','_','_','','_'),$name);
+		return str_replace(array('[]', '][', '[', ']', ' '), array('', '_', '_', '', '_'), $name);
 	}
 
 	/**
@@ -2414,9 +2347,9 @@ EOD;
 	 * @param string $attribute the attribute
 	 * @return string the generated input field ID
 	 */
-	public static function activeId($model,$attribute)
+	public static function activeId($model, $attribute)
 	{
-		return self::getIdByName(self::activeName($model,$attribute));
+		return self::getIdByName(self::activeName($model, $attribute));
 	}
 
 	/**
@@ -2428,11 +2361,11 @@ EOD;
 	 */
 	public static function modelName($model)
 	{
-		if(is_callable(self::$_modelNameConverter))
-			return call_user_func(self::$_modelNameConverter,$model);
+		if (is_callable(self::$_modelNameConverter))
+			return call_user_func(self::$_modelNameConverter, $model);
 
-		$className=is_object($model) ? get_class($model) : (string)$model;
-		return trim(str_replace('\\','_',$className),'_');
+		$className = is_object($model) ? get_class($model) : (string)$model;
+		return trim(str_replace('\\', '_', $className), '_');
 	}
 
 	/**
@@ -2446,12 +2379,12 @@ EOD;
 	 */
 	public static function setModelNameConverter($converter)
 	{
-		if(is_callable($converter))
-			self::$_modelNameConverter=$converter;
-		elseif($converter===null)
-			self::$_modelNameConverter=null;
+		if (is_callable($converter))
+			self::$_modelNameConverter = $converter;
+		elseif ($converter === null)
+			self::$_modelNameConverter = null;
 		else
-			throw new CException(Yii::t('yii','The $converter argument must be a valid callback or null.'));
+			throw new CException(Yii::t('yii', 'The $converter argument must be a valid callback or null.'));
 	}
 
 	/**
@@ -2461,10 +2394,10 @@ EOD;
 	 * @param string $attribute the attribute
 	 * @return string the generated input field name
 	 */
-	public static function activeName($model,$attribute)
+	public static function activeName($model, $attribute)
 	{
-		$a=$attribute; // because the attribute name may be changed by resolveName
-		return self::resolveName($model,$a);
+		$a = $attribute; // because the attribute name may be changed by resolveName
+		return self::resolveName($model, $a);
 	}
 
 	/**
@@ -2479,35 +2412,32 @@ EOD;
 	 * @param array $htmlOptions additional HTML attributes for the HTML tag
 	 * @return string the generated input tag
 	 */
-	protected static function activeInputField($type,$model,$attribute,$htmlOptions)
+	protected static function activeInputField($type, $model, $attribute, $htmlOptions)
 	{
-		$htmlOptions['type']=$type;
-		if($type==='text'||$type==='password'||$type==='color'||$type==='date'||$type==='datetime'||
-			$type==='datetime-local'||$type==='email'||$type==='month'||$type==='number'||$type==='range'||
-			$type==='search'||$type==='tel'||$type==='time'||$type==='url'||$type==='week')
-		{
-			if(!isset($htmlOptions['maxlength']))
-			{
-				foreach($model->getValidators($attribute) as $validator)
-				{
-					if($validator instanceof CStringValidator && $validator->max!==null)
-					{
-						$htmlOptions['maxlength']=$validator->max;
+		$htmlOptions['type'] = $type;
+		if (
+			$type === 'text' || $type === 'password' || $type === 'color' || $type === 'date' || $type === 'datetime' ||
+			$type === 'datetime-local' || $type === 'email' || $type === 'month' || $type === 'number' || $type === 'range' ||
+			$type === 'search' || $type === 'tel' || $type === 'time' || $type === 'url' || $type === 'week'
+		) {
+			if (!isset($htmlOptions['maxlength'])) {
+				foreach ($model->getValidators($attribute) as $validator) {
+					if ($validator instanceof CStringValidator && $validator->max !== null) {
+						$htmlOptions['maxlength'] = $validator->max;
 						break;
 					}
 				}
-			}
-			elseif($htmlOptions['maxlength']===false)
+			} elseif ($htmlOptions['maxlength'] === false)
 				unset($htmlOptions['maxlength']);
 		}
 
-		if($type==='file')
+		if ($type === 'file')
 			unset($htmlOptions['value']);
-		elseif(!isset($htmlOptions['value']))
-			$htmlOptions['value']=self::resolveValue($model,$attribute);
-		if($model->hasErrors($attribute))
+		elseif (!isset($htmlOptions['value']))
+			$htmlOptions['value'] = self::resolveValue($model, $attribute);
+		if ($model->hasErrors($attribute))
 			self::addErrorCss($htmlOptions);
-		return self::tag('input',$htmlOptions);
+		return self::tag('input', $htmlOptions);
 	}
 
 	/**
@@ -2539,63 +2469,52 @@ EOD;
 	 * </ul>
 	 * @return string the generated list options
 	 */
-	public static function listOptions($selection,$listData,&$htmlOptions)
+	public static function listOptions($selection, $listData, &$htmlOptions)
 	{
-		$raw=isset($htmlOptions['encode']) && !$htmlOptions['encode'];
-		$content='';
-		if(isset($htmlOptions['prompt']))
-		{
-			$content.='<option value="">'.strtr($htmlOptions['prompt'],array('<'=>'&lt;','>'=>'&gt;'))."</option>\n";
+		$raw = isset($htmlOptions['encode']) && !$htmlOptions['encode'];
+		$content = '';
+		if (isset($htmlOptions['prompt'])) {
+			$content .= '<option value="">' . strtr($htmlOptions['prompt'], array('<' => '&lt;', '>' => '&gt;')) . "</option>\n";
 			unset($htmlOptions['prompt']);
 		}
-		if(isset($htmlOptions['empty']))
-		{
-			if(!is_array($htmlOptions['empty']))
-				$htmlOptions['empty']=array(''=>$htmlOptions['empty']);
-			foreach($htmlOptions['empty'] as $value=>$label)
-				$content.='<option value="'.self::encode($value).'">'.strtr($label,array('<'=>'&lt;','>'=>'&gt;'))."</option>\n";
+		if (isset($htmlOptions['empty'])) {
+			if (!is_array($htmlOptions['empty']))
+				$htmlOptions['empty'] = array('' => $htmlOptions['empty']);
+			foreach ($htmlOptions['empty'] as $value => $label)
+				$content .= '<option value="' . self::encode($value) . '">' . strtr($label, array('<' => '&lt;', '>' => '&gt;')) . "</option>\n";
 			unset($htmlOptions['empty']);
 		}
 
-		if(isset($htmlOptions['options']))
-		{
-			$options=$htmlOptions['options'];
+		if (isset($htmlOptions['options'])) {
+			$options = $htmlOptions['options'];
 			unset($htmlOptions['options']);
-		}
-		else
-			$options=array();
+		} else
+			$options = array();
 
-		$key=isset($htmlOptions['key']) ? $htmlOptions['key'] : 'primaryKey';
-		if(is_array($selection))
-		{
-			foreach($selection as $i=>$item)
-			{
-				if(is_object($item))
-					$selection[$i]=$item->$key;
+		$key = isset($htmlOptions['key']) ? $htmlOptions['key'] : 'primaryKey';
+		if (is_array($selection)) {
+			foreach ($selection as $i => $item) {
+				if (is_object($item))
+					$selection[$i] = $item->$key;
 			}
-		}
-		elseif(is_object($selection))
-			$selection=$selection->$key;
+		} elseif (is_object($selection))
+			$selection = $selection->$key;
 
-		foreach($listData as $key=>$value)
-		{
-			if(is_array($value))
-			{
-				$content.='<optgroup label="'.($raw?$key : self::encode($key))."\">\n";
-				$dummy=array('options'=>$options);
-				if(isset($htmlOptions['encode']))
-					$dummy['encode']=$htmlOptions['encode'];
-				$content.=self::listOptions($selection,$value,$dummy);
-				$content.='</optgroup>'."\n";
-			}
-			else
-			{
-				$attributes=array('value'=>(string)$key,'encode'=>!$raw);
-				if(!is_array($selection) && !strcmp($key,(string)$selection) || is_array($selection) && in_array($key,$selection))
-					$attributes['selected']='selected';
-				if(isset($options[$key]))
-					$attributes=array_merge($attributes,$options[$key]);
-				$content.=self::tag('option',$attributes,$raw?(string)$value : self::encode((string)$value))."\n";
+		foreach ($listData as $key => $value) {
+			if (is_array($value)) {
+				$content .= '<optgroup label="' . ($raw ? $key : self::encode($key)) . "\">\n";
+				$dummy = array('options' => $options);
+				if (isset($htmlOptions['encode']))
+					$dummy['encode'] = $htmlOptions['encode'];
+				$content .= self::listOptions($selection, $value, $dummy);
+				$content .= '</optgroup>' . "\n";
+			} else {
+				$attributes = array('value' => (string)$key, 'encode' => !$raw);
+				if (!is_array($selection) && !strcmp($key, (string)$selection) || is_array($selection) && in_array($key, $selection))
+					$attributes['selected'] = 'selected';
+				if (isset($options[$key]))
+					$attributes = array_merge($attributes, $options[$key]);
+				$content .= self::tag('option', $attributes, $raw ? (string)$value : self::encode((string)$value)) . "\n";
 			}
 		}
 
@@ -2628,74 +2547,68 @@ EOD;
 	 * </ul>
 	 * This parameter has been available since version 1.1.1.
 	 */
-	protected static function clientChange($event,&$htmlOptions)
+	protected static function clientChange($event, &$htmlOptions)
 	{
-		if(!isset($htmlOptions['submit']) && !isset($htmlOptions['confirm']) && !isset($htmlOptions['ajax']))
+		if (!isset($htmlOptions['submit']) && !isset($htmlOptions['confirm']) && !isset($htmlOptions['ajax']))
 			return;
 
-		if(isset($htmlOptions['live']))
-		{
-			$live=$htmlOptions['live'];
+		if (isset($htmlOptions['live'])) {
+			$live = $htmlOptions['live'];
 			unset($htmlOptions['live']);
-		}
-		else
+		} else
 			$live = self::$liveEvents;
 
-		if(isset($htmlOptions['return']) && $htmlOptions['return'])
-			$return='return true';
+		if (isset($htmlOptions['return']) && $htmlOptions['return'])
+			$return = 'return true';
 		else
-			$return='return false';
+			$return = 'return false';
 
-		if(isset($htmlOptions['on'.$event]))
-		{
-			$handler=trim($htmlOptions['on'.$event],';').';';
-			unset($htmlOptions['on'.$event]);
-		}
+		if (isset($htmlOptions['on' . $event])) {
+			$handler = trim($htmlOptions['on' . $event], ';') . ';';
+			unset($htmlOptions['on' . $event]);
+		} else
+			$handler = '';
+
+		if (isset($htmlOptions['id']))
+			$id = $htmlOptions['id'];
 		else
-			$handler='';
+			$id = $htmlOptions['id'] = isset($htmlOptions['name']) ? $htmlOptions['name'] : self::ID_PREFIX . self::$count++;
 
-		if(isset($htmlOptions['id']))
-			$id=$htmlOptions['id'];
-		else
-			$id=$htmlOptions['id']=isset($htmlOptions['name'])?$htmlOptions['name']:self::ID_PREFIX.self::$count++;
-
-		$cs=Yii::app()->getClientScript();
+		$cs = Yii::app()->getClientScript();
 		$cs->registerCoreScript('jquery');
 
-		if(isset($htmlOptions['submit']))
-		{
+		if (isset($htmlOptions['submit'])) {
 			$cs->registerCoreScript('yii');
-			$request=Yii::app()->getRequest();
-			if($request->enableCsrfValidation && isset($htmlOptions['csrf']) && $htmlOptions['csrf'])
-				$htmlOptions['params'][$request->csrfTokenName]=$request->getCsrfToken();
-			if(isset($htmlOptions['params']))
-				$params=CJavaScript::encode($htmlOptions['params']);
+			$request = Yii::app()->getRequest();
+			if ($request->enableCsrfValidation && isset($htmlOptions['csrf']) && $htmlOptions['csrf'])
+				$htmlOptions['params'][$request->csrfTokenName] = $request->getCsrfToken();
+			if (isset($htmlOptions['params']))
+				$params = CJavaScript::encode($htmlOptions['params']);
 			else
-				$params='{}';
-			if($htmlOptions['submit']!=='')
-				$url=CJavaScript::quote(self::normalizeUrl($htmlOptions['submit']));
+				$params = '{}';
+			if ($htmlOptions['submit'] !== '')
+				$url = CJavaScript::quote(self::normalizeUrl($htmlOptions['submit']));
 			else
-				$url='';
-			$handler.="jQuery.yii.submitForm(this,'$url',$params);{$return};";
+				$url = '';
+			$handler .= "jQuery.yii.submitForm(this,'$url',$params);{$return};";
 		}
 
-		if(isset($htmlOptions['ajax']))
-			$handler.=self::ajax($htmlOptions['ajax'])."{$return};";
+		if (isset($htmlOptions['ajax']))
+			$handler .= self::ajax($htmlOptions['ajax']) . "{$return};";
 
-		if(isset($htmlOptions['confirm']))
-		{
-			$confirm='confirm(\''.CJavaScript::quote($htmlOptions['confirm']).'\')';
-			if($handler!=='')
-				$handler="if($confirm) {".$handler."} else return false;";
+		if (isset($htmlOptions['confirm'])) {
+			$confirm = 'confirm(\'' . CJavaScript::quote($htmlOptions['confirm']) . '\')';
+			if ($handler !== '')
+				$handler = "if($confirm) {" . $handler . "} else return false;";
 			else
-				$handler="return $confirm;";
+				$handler = "return $confirm;";
 		}
 
-		if($live)
-			$cs->registerScript('Yii.CHtml.#' . $id,"jQuery('body').on('$event','#$id',function(){{$handler}});");
+		if ($live)
+			$cs->registerScript('Yii.CHtml.#' . $id, "jQuery('body').on('$event','#$id',function(){{$handler}});");
 		else
-			$cs->registerScript('Yii.CHtml.#' . $id,"jQuery('#$id').on('$event', function(){{$handler}});");
-		unset($htmlOptions['params'],$htmlOptions['submit'],$htmlOptions['ajax'],$htmlOptions['confirm'],$htmlOptions['return'],$htmlOptions['csrf']);
+			$cs->registerScript('Yii.CHtml.#' . $id, "jQuery('#$id').on('$event', function(){{$handler}});");
+		unset($htmlOptions['params'], $htmlOptions['submit'], $htmlOptions['ajax'], $htmlOptions['confirm'], $htmlOptions['return'], $htmlOptions['csrf']);
 	}
 
 	/**
@@ -2707,13 +2620,13 @@ EOD;
 	 * @param string $attribute the attribute
 	 * @param array $htmlOptions the HTML options
 	 */
-	public static function resolveNameID($model,&$attribute,&$htmlOptions)
+	public static function resolveNameID($model, &$attribute, &$htmlOptions)
 	{
-		if(!isset($htmlOptions['name']))
-			$htmlOptions['name']=self::resolveName($model,$attribute);
-		if(!isset($htmlOptions['id']))
-			$htmlOptions['id']=self::getIdByName($htmlOptions['name']);
-		elseif($htmlOptions['id']===false)
+		if (!isset($htmlOptions['name']))
+			$htmlOptions['name'] = self::resolveName($model, $attribute);
+		if (!isset($htmlOptions['id']))
+			$htmlOptions['id'] = self::getIdByName($htmlOptions['name']);
+		elseif ($htmlOptions['id'] === false)
 			unset($htmlOptions['id']);
 	}
 
@@ -2725,28 +2638,26 @@ EOD;
 	 * @param string $attribute the attribute
 	 * @return string the input name
 	 */
-	public static function resolveName($model,&$attribute)
+	public static function resolveName($model, &$attribute)
 	{
-		$modelName=self::modelName($model);
+		$modelName = self::modelName($model);
 
-		if(($pos=strpos((string)$attribute,'['))!==false)
-		{
-			if($pos!==0)  // e.g. name[a][b]
-				return $modelName.'['.substr($attribute,0,$pos).']'.substr($attribute,$pos);
-			if(($pos=strrpos($attribute,']'))!==false && $pos!==strlen($attribute)-1)  // e.g. [a][b]name
+		if (($pos = strpos((string)$attribute, '[')) !== false) {
+			if ($pos !== 0)  // e.g. name[a][b]
+				return $modelName . '[' . substr($attribute, 0, $pos) . ']' . substr($attribute, $pos);
+			if (($pos = strrpos($attribute, ']')) !== false && $pos !== strlen($attribute) - 1)  // e.g. [a][b]name
 			{
-				$sub=substr($attribute,0,$pos+1);
-				$attribute=substr($attribute,$pos+1);
-				return $modelName.$sub.'['.$attribute.']';
+				$sub = substr($attribute, 0, $pos + 1);
+				$attribute = substr($attribute, $pos + 1);
+				return $modelName . $sub . '[' . $attribute . ']';
 			}
-			if(preg_match('/\](\w+\[.*)$/',$attribute,$matches))
-			{
-				$name=$modelName.'['.str_replace(']','][',trim(strtr($attribute,array(']['=>']','['=>']')),']')).']';
-				$attribute=$matches[1];
+			if (preg_match('/\](\w+\[.*)$/', $attribute, $matches)) {
+				$name = $modelName . '[' . str_replace(']', '][', trim(strtr($attribute, array('][' => ']', '[' => ']')), ']')) . ']';
+				$attribute = $matches[1];
 				return $name;
 			}
 		}
-		return $modelName.'['.$attribute.']';
+		return $modelName . '[' . $attribute . ']';
 	}
 
 	/**
@@ -2758,29 +2669,26 @@ EOD;
 	 * @return mixed the attribute value
 	 * @since 1.1.3
 	 */
-	public static function resolveValue($model,$attribute)
+	public static function resolveValue($model, $attribute)
 	{
-		if(($pos=strpos($attribute,'['))!==false)
-		{
-			if($pos===0) // [a]name[b][c], should ignore [a]
+		if (($pos = strpos($attribute, '[')) !== false) {
+			if ($pos === 0) // [a]name[b][c], should ignore [a]
 			{
-				if(preg_match('/\](\w+(\[.+)?)/',$attribute,$matches))
-					$attribute=$matches[1]; // we get: name[b][c]
-				if(($pos=strpos($attribute,'['))===false)
+				if (preg_match('/\](\w+(\[.+)?)/', $attribute, $matches))
+					$attribute = $matches[1]; // we get: name[b][c]
+				if (($pos = strpos($attribute, '[')) === false)
 					return $model->$attribute;
 			}
-			$name=substr($attribute,0,$pos);
-			$value=$model->$name;
-			foreach(explode('][',rtrim(substr($attribute,$pos+1),']')) as $id)
-			{
-				if((is_array($value) || $value instanceof ArrayAccess) && isset($value[$id]))
-					$value=$value[$id];
+			$name = substr($attribute, 0, $pos);
+			$value = $model->$name;
+			foreach (explode('][', rtrim(substr($attribute, $pos + 1), ']')) as $id) {
+				if ((is_array($value) || $value instanceof ArrayAccess) && isset($value[$id]))
+					$value = $value[$id];
 				else
 					return null;
 			}
 			return $value;
-		}
-		else
+		} else
 			return $model->$attribute;
 	}
 
@@ -2790,13 +2698,13 @@ EOD;
 	 */
 	protected static function addErrorCss(&$htmlOptions)
 	{
-		if(empty(self::$errorCss))
+		if (empty(self::$errorCss))
 			return;
 
-		if(isset($htmlOptions['class']))
-			$htmlOptions['class'].=' '.self::$errorCss;
+		if (isset($htmlOptions['class']))
+			$htmlOptions['class'] .= ' ' . self::$errorCss;
 		else
-			$htmlOptions['class']=self::$errorCss;
+			$htmlOptions['class'] = self::$errorCss;
 	}
 
 	/**
@@ -2809,63 +2717,56 @@ EOD;
 	 */
 	public static function renderAttributes($htmlOptions)
 	{
-		static $specialAttributes=array(
-			'autofocus'=>1,
-			'autoplay'=>1,
-			'async'=>1,
-			'checked'=>1,
-			'controls'=>1,
-			'declare'=>1,
-			'default'=>1,
-			'defer'=>1,
-			'disabled'=>1,
-			'formnovalidate'=>1,
-			'hidden'=>1,
-			'ismap'=>1,
-			'itemscope'=>1,
-			'loop'=>1,
-			'multiple'=>1,
-			'muted'=>1,
-			'nohref'=>1,
-			'noresize'=>1,
-			'novalidate'=>1,
-			'open'=>1,
-			'readonly'=>1,
-			'required'=>1,
-			'reversed'=>1,
-			'scoped'=>1,
-			'seamless'=>1,
-			'selected'=>1,
-			'typemustmatch'=>1,
+		static $specialAttributes = array(
+			'autofocus' => 1,
+			'autoplay' => 1,
+			'async' => 1,
+			'checked' => 1,
+			'controls' => 1,
+			'declare' => 1,
+			'default' => 1,
+			'defer' => 1,
+			'disabled' => 1,
+			'formnovalidate' => 1,
+			'hidden' => 1,
+			'ismap' => 1,
+			'itemscope' => 1,
+			'loop' => 1,
+			'multiple' => 1,
+			'muted' => 1,
+			'nohref' => 1,
+			'noresize' => 1,
+			'novalidate' => 1,
+			'open' => 1,
+			'readonly' => 1,
+			'required' => 1,
+			'reversed' => 1,
+			'scoped' => 1,
+			'seamless' => 1,
+			'selected' => 1,
+			'typemustmatch' => 1,
 		);
 
-		if($htmlOptions===array())
+		if ($htmlOptions === array())
 			return '';
 
-		$html='';
-		if(isset($htmlOptions['encode']))
-		{
-			$raw=!$htmlOptions['encode'];
+		$html = '';
+		if (isset($htmlOptions['encode'])) {
+			$raw = !$htmlOptions['encode'];
 			unset($htmlOptions['encode']);
-		}
-		else
-			$raw=false;
+		} else
+			$raw = false;
 
-		foreach($htmlOptions as $name=>$value)
-		{
-			if(isset($specialAttributes[$name]))
-			{
-				if($value===false && $name==='async') {
-					$html .= ' ' . $name.'="false"';
-				}
-				elseif($value)
-				{
+		foreach ($htmlOptions as $name => $value) {
+			if (isset($specialAttributes[$name])) {
+				if ($value === false && $name === 'async') {
+					$html .= ' ' . $name . '="false"';
+				} elseif ($value) {
 					$html .= ' ' . $name;
-					if(self::$renderSpecialAttributesValue)
+					if (self::$renderSpecialAttributesValue)
 						$html .= '="' . $name . '"';
 				}
-			}
-			elseif($value!==null)
+			} elseif ($value !== null)
 				$html .= ' ' . $name . '="' . ($raw ? $value : self::encode($value)) . '"';
 		}
 

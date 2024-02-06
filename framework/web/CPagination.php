@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CPagination class file.
  *
@@ -69,16 +70,16 @@ class CPagination extends CComponent
 	/**
 	 * The default page size.
 	 */
-	const DEFAULT_PAGE_SIZE=10;
+	const DEFAULT_PAGE_SIZE = 10;
 	/**
 	 * @var string name of the GET variable storing the current page index. Defaults to 'page'.
 	 */
-	public $pageVar='page';
+	public $pageVar = 'page';
 	/**
 	 * @var string the route (controller ID and action ID) for displaying the paged contents.
 	 * Defaults to empty string, meaning using the current route.
 	 */
-	public $route='';
+	public $route = '';
 	/**
 	 * @var array of parameters (name=>value) that should be used instead of GET when generating pagination URLs.
 	 * Defaults to null, meaning using the currently available GET parameters.
@@ -94,17 +95,17 @@ class CPagination extends CComponent
 	 * Defaults to true.
 	 * @since 1.1.4
 	 */
-	public $validateCurrentPage=true;
+	public $validateCurrentPage = true;
 
-	private $_pageSize=self::DEFAULT_PAGE_SIZE;
-	private $_itemCount=0;
+	private $_pageSize = self::DEFAULT_PAGE_SIZE;
+	private $_itemCount = 0;
 	private $_currentPage;
 
 	/**
 	 * Constructor.
 	 * @param integer $itemCount total number of items.
 	 */
-	public function __construct($itemCount=0)
+	public function __construct($itemCount = 0)
 	{
 		$this->setItemCount($itemCount);
 	}
@@ -122,8 +123,8 @@ class CPagination extends CComponent
 	 */
 	public function setPageSize($value)
 	{
-		if(($this->_pageSize=$value)<=0)
-			$this->_pageSize=self::DEFAULT_PAGE_SIZE;
+		if (($this->_pageSize = $value) <= 0)
+			$this->_pageSize = self::DEFAULT_PAGE_SIZE;
 	}
 
 	/**
@@ -139,8 +140,8 @@ class CPagination extends CComponent
 	 */
 	public function setItemCount($value)
 	{
-		if(($this->_itemCount=$value)<0)
-			$this->_itemCount=0;
+		if (($this->_itemCount = $value) < 0)
+			$this->_itemCount = 0;
 	}
 
 	/**
@@ -148,31 +149,27 @@ class CPagination extends CComponent
 	 */
 	public function getPageCount()
 	{
-		return (int)(($this->_itemCount+$this->_pageSize-1)/$this->_pageSize);
+		return (int)(($this->_itemCount + $this->_pageSize - 1) / $this->_pageSize);
 	}
 
 	/**
 	 * @param boolean $recalculate whether to recalculate the current page based on the page size and item count.
 	 * @return integer the zero-based index of the current page. Defaults to 0.
 	 */
-	public function getCurrentPage($recalculate=true)
+	public function getCurrentPage($recalculate = true)
 	{
-		if($this->_currentPage===null || $recalculate)
-		{
-			if(isset($_GET[$this->pageVar]))
-			{
-				$this->_currentPage=(int)$_GET[$this->pageVar]-1;
-				if($this->validateCurrentPage)
-				{
-					$pageCount=$this->getPageCount();
-					if($this->_currentPage>=$pageCount)
-						$this->_currentPage=$pageCount-1;
+		if ($this->_currentPage === null || $recalculate) {
+			if (isset($_GET[$this->pageVar])) {
+				$this->_currentPage = (int)$_GET[$this->pageVar] - 1;
+				if ($this->validateCurrentPage) {
+					$pageCount = $this->getPageCount();
+					if ($this->_currentPage >= $pageCount)
+						$this->_currentPage = $pageCount - 1;
 				}
-				if($this->_currentPage<0)
-					$this->_currentPage=0;
-			}
-			else
-				$this->_currentPage=0;
+				if ($this->_currentPage < 0)
+					$this->_currentPage = 0;
+			} else
+				$this->_currentPage = 0;
 		}
 		return $this->_currentPage;
 	}
@@ -182,8 +179,8 @@ class CPagination extends CComponent
 	 */
 	public function setCurrentPage($value)
 	{
-		$this->_currentPage=$value;
-		$_GET[$this->pageVar]=$value+1;
+		$this->_currentPage = $value;
+		$_GET[$this->pageVar] = $value + 1;
 	}
 
 	/**
@@ -197,14 +194,14 @@ class CPagination extends CComponent
 	 * @param integer $page the page that the URL should point to. This is a zero-based index.
 	 * @return string the created URL
 	 */
-	public function createPageUrl($controller,$page)
+	public function createPageUrl($controller, $page)
 	{
-		$params=$this->params===null ? $_GET : $this->params;
-		if($page>0) // page 0 is the default
-			$params[$this->pageVar]=$page+1;
+		$params = $this->params === null ? $_GET : $this->params;
+		if ($page > 0) // page 0 is the default
+			$params[$this->pageVar] = $page + 1;
 		else
 			unset($params[$this->pageVar]);
-		return $controller->createUrl($this->route,$params);
+		return $controller->createUrl($this->route, $params);
 	}
 
 	/**
@@ -213,8 +210,8 @@ class CPagination extends CComponent
 	 */
 	public function applyLimit($criteria)
 	{
-		$criteria->limit=$this->getLimit();
-		$criteria->offset=$this->getOffset();
+		$criteria->limit = $this->getLimit();
+		$criteria->offset = $this->getOffset();
 	}
 
 	/**
@@ -224,7 +221,7 @@ class CPagination extends CComponent
 	 */
 	public function getOffset()
 	{
-		return $this->getCurrentPage()*$this->getPageSize();
+		return $this->getCurrentPage() * $this->getPageSize();
 	}
 
 	/**

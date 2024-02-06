@@ -27,5 +27,4 @@ class Staff extends CFormModel
 			'emp_id' => 'Employee',
 		);
 	}
-
 }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CForm class file.
  *
@@ -94,30 +95,30 @@ class CForm extends CFormElement implements ArrayAccess
 	 * @var string the submission method of this form. Defaults to 'post'.
 	 * This property is ignored when this form is a sub-form.
 	 */
-	public $method='post';
+	public $method = 'post';
 	/**
 	 * @var mixed the form action URL (see {@link CHtml::normalizeUrl} for details about this parameter.)
 	 * Defaults to an empty string, meaning the current request URL.
 	 * This property is ignored when this form is a sub-form.
 	 */
-	public $action='';
+	public $action = '';
 	/**
 	 * @var string the name of the class for representing a form input element. Defaults to 'CFormInputElement'.
 	 */
-	public $inputElementClass='CFormInputElement';
+	public $inputElementClass = 'CFormInputElement';
 	/**
 	 * @var string the name of the class for representing a form button element. Defaults to 'CFormButtonElement'.
 	 */
-	public $buttonElementClass='CFormButtonElement';
+	public $buttonElementClass = 'CFormButtonElement';
 	/**
 	 * @var array HTML attribute values for the form tag. When the form is embedded within another form,
 	 * this property will be used to render the HTML attribute values for the fieldset enclosing the child form.
 	 */
-	public $attributes=array();
+	public $attributes = array();
 	/**
 	 * @var boolean whether to show error summary. Defaults to false.
 	 */
-	public $showErrorSummary=false;
+	public $showErrorSummary = false;
 	/**
 	 * @var boolean|null whether error elements of the form attributes should be rendered. There are three possible
 	 * valid values: null, true and false.
@@ -149,7 +150,7 @@ class CForm extends CFormElement implements ArrayAccess
 	 * Defaults to array('class'=>'CActiveForm').
 	 * @since 1.1.1
 	 */
-	public $activeForm=array('class'=>'CActiveForm');
+	public $activeForm = array('class' => 'CActiveForm');
 
 	private $_model;
 	private $_elements;
@@ -170,14 +171,14 @@ class CForm extends CFormElement implements ArrayAccess
 	 * object (a controller or a widget), or a {@link CForm} object.
 	 * If the former, it means the form is a top-level form; if the latter, it means this form is a sub-form.
 	 */
-	public function __construct($config,$model=null,$parent=null)
+	public function __construct($config, $model = null, $parent = null)
 	{
 		$this->setModel($model);
-		if($parent===null)
-			$parent=Yii::app()->getController();
-		parent::__construct($config,$parent);
-		if($this->showErrors===null)
-			$this->showErrors=!$this->showErrorSummary;
+		if ($parent === null)
+			$parent = Yii::app()->getController();
+		parent::__construct($config, $parent);
+		if ($this->showErrors === null)
+			$this->showErrors = !$this->showErrorSummary;
 		$this->init();
 	}
 
@@ -199,10 +200,10 @@ class CForm extends CFormElement implements ArrayAccess
 	 * @return boolean whether this form is submitted.
 	 * @see loadData
 	 */
-	public function submitted($buttonName='submit',$loadData=true)
+	public function submitted($buttonName = 'submit', $loadData = true)
 	{
-		$ret=$this->clicked($this->getUniqueId()) && $this->clicked($buttonName);
-		if($ret && $loadData)
+		$ret = $this->clicked($this->getUniqueId()) && $this->clicked($buttonName);
+		if ($ret && $loadData)
 			$this->loadData();
 		return $ret;
 	}
@@ -214,7 +215,7 @@ class CForm extends CFormElement implements ArrayAccess
 	 */
 	public function clicked($name)
 	{
-		if(strcasecmp($this->getRoot()->method,'get'))
+		if (strcasecmp($this->getRoot()->method, 'get'))
 			return isset($_POST[$name]);
 		else
 			return isset($_GET[$name]);
@@ -229,9 +230,9 @@ class CForm extends CFormElement implements ArrayAccess
 	 */
 	public function validate()
 	{
-		$ret=true;
-		foreach($this->getModels() as $model)
-			$ret=$model->validate() && $ret;
+		$ret = true;
+		foreach ($this->getModels() as $model)
+			$ret = $model->validate() && $ret;
 		return $ret;
 	}
 
@@ -243,20 +244,16 @@ class CForm extends CFormElement implements ArrayAccess
 	 */
 	public function loadData()
 	{
-		if($this->_model!==null)
-		{
-			$class=CHtml::modelName($this->_model);
-			if(strcasecmp($this->getRoot()->method,'get'))
-			{
-				if(isset($_POST[$class]))
+		if ($this->_model !== null) {
+			$class = CHtml::modelName($this->_model);
+			if (strcasecmp($this->getRoot()->method, 'get')) {
+				if (isset($_POST[$class]))
 					$this->_model->setAttributes($_POST[$class]);
-			}
-			elseif(isset($_GET[$class]))
+			} elseif (isset($_GET[$class]))
 				$this->_model->setAttributes($_GET[$class]);
 		}
-		foreach($this->getElements() as $element)
-		{
-			if($element instanceof self)
+		foreach ($this->getElements() as $element) {
+			if ($element instanceof self)
 				$element->loadData();
 		}
 	}
@@ -266,9 +263,9 @@ class CForm extends CFormElement implements ArrayAccess
 	 */
 	public function getRoot()
 	{
-		$root=$this;
-		while($root->getParent() instanceof self)
-			$root=$root->getParent();
+		$root = $this;
+		while ($root->getParent() instanceof self)
+			$root = $root->getParent();
 		return $root;
 	}
 
@@ -279,7 +276,7 @@ class CForm extends CFormElement implements ArrayAccess
 	 */
 	public function getActiveFormWidget()
 	{
-		if($this->_activeForm!==null)
+		if ($this->_activeForm !== null)
 			return $this->_activeForm;
 		else
 			return $this->getRoot()->_activeForm;
@@ -291,9 +288,9 @@ class CForm extends CFormElement implements ArrayAccess
 	 */
 	public function getOwner()
 	{
-		$owner=$this->getParent();
-		while($owner instanceof self)
-			$owner=$owner->getParent();
+		$owner = $this->getParent();
+		while ($owner instanceof self)
+			$owner = $owner->getParent();
 		return $owner;
 	}
 
@@ -303,13 +300,13 @@ class CForm extends CFormElement implements ArrayAccess
 	 * @return CModel the model associated with this form. If this form does not have a model,
 	 * it will look for a model in its ancestors.
 	 */
-	public function getModel($checkParent=true)
+	public function getModel($checkParent = true)
 	{
-		if(!$checkParent)
+		if (!$checkParent)
 			return $this->_model;
-		$form=$this;
-		while($form->_model===null && $form->getParent() instanceof self)
-			$form=$form->getParent();
+		$form = $this;
+		while ($form->_model === null && $form->getParent() instanceof self)
+			$form = $form->getParent();
 		return $form->_model;
 	}
 
@@ -318,7 +315,7 @@ class CForm extends CFormElement implements ArrayAccess
 	 */
 	public function setModel($model)
 	{
-		$this->_model=$model;
+		$this->_model = $model;
 	}
 
 	/**
@@ -327,13 +324,12 @@ class CForm extends CFormElement implements ArrayAccess
 	 */
 	public function getModels()
 	{
-		$models=array();
-		if($this->_model!==null)
-			$models[]=$this->_model;
-		foreach($this->getElements() as $element)
-		{
-			if($element instanceof self)
-				$models=array_merge($models,$element->getModels());
+		$models = array();
+		if ($this->_model !== null)
+			$models[] = $this->_model;
+		foreach ($this->getElements() as $element) {
+			if ($element instanceof self)
+				$models = array_merge($models, $element->getModels());
 		}
 		return $models;
 	}
@@ -347,8 +343,8 @@ class CForm extends CFormElement implements ArrayAccess
 	 */
 	public function getElements()
 	{
-		if($this->_elements===null)
-			$this->_elements=new CFormElementCollection($this,false);
+		if ($this->_elements === null)
+			$this->_elements = new CFormElementCollection($this, false);
 		return $this->_elements;
 	}
 
@@ -363,9 +359,9 @@ class CForm extends CFormElement implements ArrayAccess
 	 */
 	public function setElements($elements)
 	{
-		$collection=$this->getElements();
-		foreach($elements as $name=>$config)
-			$collection->add($name,$config);
+		$collection = $this->getElements();
+		foreach ($elements as $name => $config)
+			$collection->add($name, $config);
 	}
 
 	/**
@@ -376,8 +372,8 @@ class CForm extends CFormElement implements ArrayAccess
 	 */
 	public function getButtons()
 	{
-		if($this->_buttons===null)
-			$this->_buttons=new CFormElementCollection($this,true);
+		if ($this->_buttons === null)
+			$this->_buttons = new CFormElementCollection($this, true);
 		return $this->_buttons;
 	}
 
@@ -390,9 +386,9 @@ class CForm extends CFormElement implements ArrayAccess
 	 */
 	public function setButtons($buttons)
 	{
-		$collection=$this->getButtons();
-		foreach($buttons as $name=>$config)
-			$collection->add($name,$config);
+		$collection = $this->getButtons();
+		foreach ($buttons as $name => $config)
+			$collection->add($name, $config);
 	}
 
 	/**
@@ -412,30 +408,25 @@ class CForm extends CFormElement implements ArrayAccess
 	 */
 	public function renderBegin()
 	{
-		if($this->getParent() instanceof self)
+		if ($this->getParent() instanceof self)
 			return '';
-		else
-		{
-			$options=$this->activeForm;
-			if(isset($options['class']))
-			{
-				$class=$options['class'];
+		else {
+			$options = $this->activeForm;
+			if (isset($options['class'])) {
+				$class = $options['class'];
 				unset($options['class']);
-			}
-			else
-				$class='CActiveForm';
-			$options['action']=$this->action;
-			$options['method']=$this->method;
-			if(isset($options['htmlOptions']))
-			{
-				foreach($this->attributes as $name=>$value)
-					$options['htmlOptions'][$name]=$value;
-			}
-			else
-				$options['htmlOptions']=$this->attributes;
+			} else
+				$class = 'CActiveForm';
+			$options['action'] = $this->action;
+			$options['method'] = $this->method;
+			if (isset($options['htmlOptions'])) {
+				foreach ($this->attributes as $name => $value)
+					$options['htmlOptions'][$name] = $value;
+			} else
+				$options['htmlOptions'] = $this->attributes;
 			ob_start();
-			$this->_activeForm=$this->getOwner()->beginWidget($class, $options);
-			return ob_get_clean() . "<div style=\"display:none\">".CHtml::hiddenField($this->getUniqueID(),1)."</div>\n";
+			$this->_activeForm = $this->getOwner()->beginWidget($class, $options);
+			return ob_get_clean() . "<div style=\"display:none\">" . CHtml::hiddenField($this->getUniqueID(), 1) . "</div>\n";
 		}
 	}
 
@@ -445,10 +436,9 @@ class CForm extends CFormElement implements ArrayAccess
 	 */
 	public function renderEnd()
 	{
-		if($this->getParent() instanceof self)
+		if ($this->getParent() instanceof self)
 			return '';
-		else
-		{
+		else {
 			ob_start();
 			$this->getOwner()->endWidget();
 			return ob_get_clean();
@@ -467,29 +457,26 @@ class CForm extends CFormElement implements ArrayAccess
 	 */
 	public function renderBody()
 	{
-		$output='';
-		if($this->title!==null)
-		{
-			if($this->getParent() instanceof self)
-			{
-				$attributes=$this->attributes;
-				unset($attributes['name'],$attributes['type']);
-				$output=CHtml::openTag('fieldset', $attributes)."<legend>".$this->title."</legend>\n";
-			}
-			else
-				$output="<fieldset>\n<legend>".$this->title."</legend>\n";
+		$output = '';
+		if ($this->title !== null) {
+			if ($this->getParent() instanceof self) {
+				$attributes = $this->attributes;
+				unset($attributes['name'], $attributes['type']);
+				$output = CHtml::openTag('fieldset', $attributes) . "<legend>" . $this->title . "</legend>\n";
+			} else
+				$output = "<fieldset>\n<legend>" . $this->title . "</legend>\n";
 		}
 
-		if($this->description!==null)
-			$output.="<div class=\"description\">\n".$this->description."</div>\n";
+		if ($this->description !== null)
+			$output .= "<div class=\"description\">\n" . $this->description . "</div>\n";
 
-		if($this->showErrorSummary && ($model=$this->getModel(false))!==null)
-			$output.=$this->getActiveFormWidget()->errorSummary($model,$this->errorSummaryHeader,$this->errorSummaryFooter)."\n";
+		if ($this->showErrorSummary && ($model = $this->getModel(false)) !== null)
+			$output .= $this->getActiveFormWidget()->errorSummary($model, $this->errorSummaryHeader, $this->errorSummaryFooter) . "\n";
 
-		$output.=$this->renderElements()."\n".$this->renderButtons()."\n";
+		$output .= $this->renderElements() . "\n" . $this->renderButtons() . "\n";
 
-		if($this->title!==null)
-			$output.="</fieldset>\n";
+		if ($this->title !== null)
+			$output .= "</fieldset>\n";
 
 		return $output;
 	}
@@ -500,9 +487,9 @@ class CForm extends CFormElement implements ArrayAccess
 	 */
 	public function renderElements()
 	{
-		$output='';
-		foreach($this->getElements() as $element)
-			$output.=$this->renderElement($element);
+		$output = '';
+		foreach ($this->getElements() as $element)
+			$output .= $this->renderElement($element);
 		return $output;
 	}
 
@@ -512,10 +499,10 @@ class CForm extends CFormElement implements ArrayAccess
 	 */
 	public function renderButtons()
 	{
-		$output='';
-		foreach($this->getButtons() as $button)
-			$output.=$this->renderElement($button);
-		return $output!=='' ? "<div class=\"row buttons\">".$output."</div>\n" : '';
+		$output = '';
+		foreach ($this->getButtons() as $button)
+			$output .= $this->renderElement($button);
+		return $output !== '' ? "<div class=\"row buttons\">" . $output . "</div>\n" : '';
 	}
 
 	/**
@@ -526,24 +513,20 @@ class CForm extends CFormElement implements ArrayAccess
 	 */
 	public function renderElement($element)
 	{
-		if(is_string($element))
-		{
-			if(($e=$this[$element])===null && ($e=$this->getButtons()->itemAt($element))===null)
+		if (is_string($element)) {
+			if (($e = $this[$element]) === null && ($e = $this->getButtons()->itemAt($element)) === null)
 				return $element;
 			else
-				$element=$e;
+				$element = $e;
 		}
-		if($element->getVisible())
-		{
-			if($element instanceof CFormInputElement)
-			{
-				if($element->type==='hidden')
-					return "<div style=\"display:none\">\n".$element->render()."</div>\n";
+		if ($element->getVisible()) {
+			if ($element instanceof CFormInputElement) {
+				if ($element->type === 'hidden')
+					return "<div style=\"display:none\">\n" . $element->render() . "</div>\n";
 				else
-					return "<div class=\"row field_{$element->name}\">\n".$element->render()."</div>\n";
-			}
-			elseif($element instanceof CFormButtonElement)
-				return $element->render()."\n";
+					return "<div class=\"row field_{$element->name}\">\n" . $element->render() . "</div>\n";
+			} elseif ($element instanceof CFormButtonElement)
+				return $element->render() . "\n";
 			else
 				return $element->render();
 		}
@@ -557,7 +540,7 @@ class CForm extends CFormElement implements ArrayAccess
 	 * @param boolean $forButtons whether the element is added to the {@link buttons} collection.
 	 * If false, it means the element is added to the {@link elements} collection.
 	 */
-	public function addedElement($name,$element,$forButtons)
+	public function addedElement($name, $element, $forButtons)
 	{
 	}
 
@@ -568,7 +551,7 @@ class CForm extends CFormElement implements ArrayAccess
 	 * @param boolean $forButtons whether the element is removed from the {@link buttons} collection
 	 * If false, it means the element is removed from the {@link elements} collection.
 	 */
-	public function removedElement($name,$element,$forButtons)
+	public function removedElement($name, $element, $forButtons)
 	{
 	}
 
@@ -580,8 +563,8 @@ class CForm extends CFormElement implements ArrayAccess
 	 */
 	protected function evaluateVisible()
 	{
-		foreach($this->getElements() as $element)
-			if($element->getVisible())
+		foreach ($this->getElements() as $element)
+			if ($element->getVisible())
 				return true;
 		return false;
 	}
@@ -592,10 +575,10 @@ class CForm extends CFormElement implements ArrayAccess
 	 */
 	protected function getUniqueId()
 	{
-		if(isset($this->attributes['id']))
-			return 'yform_'.$this->attributes['id'];
+		if (isset($this->attributes['id']))
+			return 'yform_' . $this->attributes['id'];
 		else
-			return 'yform_'.sprintf('%x',crc32(serialize(array_keys($this->getElements()->toArray()))));
+			return 'yform_' . sprintf('%x', crc32(serialize(array_keys($this->getElements()->toArray()))));
 	}
 
 	/**
@@ -629,9 +612,9 @@ class CForm extends CFormElement implements ArrayAccess
 	 * @param mixed $item the element value
 	 */
 	#[ReturnTypeWillChange]
-	public function offsetSet($offset,$item)
+	public function offsetSet($offset, $item)
 	{
-		$this->getElements()->add($offset,$item);
+		$this->getElements()->add($offset, $item);
 	}
 
 	/**

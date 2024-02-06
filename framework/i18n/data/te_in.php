@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'te_IN'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00;(¤#,##0.00)',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -52,10 +53,10 @@ return array (
     'XOF' => 'CFA',
     'XPF' => 'CFPF',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'జనవరి',
       2 => 'ఫిబ్రవరి',
       3 => 'మార్చి',
@@ -69,8 +70,8 @@ return array (
       11 => 'నవంబర్',
       12 => 'డిసెంబర్',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'జన',
       2 => 'ఫిబ్ర',
       3 => 'మార్చి',
@@ -84,8 +85,8 @@ return array (
       11 => 'నవంబర్',
       12 => 'డిసెంబర్',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       1 => 'జ',
       2 => 'ఫి',
       3 => 'మా',
@@ -100,10 +101,10 @@ return array (
       12 => 'డి',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'జ',
       2 => 'ఫి',
       3 => 'మా',
@@ -117,8 +118,8 @@ return array (
       11 => 'న',
       12 => 'డి',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'జన',
       2 => 'ఫిబ్ర',
       3 => 'మార్చి',
@@ -132,8 +133,8 @@ return array (
       11 => 'నవం',
       12 => 'డిసెం',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       1 => 'జనవరి',
       2 => 'ఫిబ్రవరి',
       3 => 'మార్చి',
@@ -148,10 +149,10 @@ return array (
       12 => 'డిసెంబర్',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'ఆదివారం',
       1 => 'సోమవారం',
       2 => 'మంగళవారం',
@@ -160,8 +161,8 @@ return array (
       5 => 'శుక్రవారం',
       6 => 'శనివారం',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'ఆది',
       1 => 'సోమ',
       2 => 'మంగళ',
@@ -170,8 +171,8 @@ return array (
       5 => 'శుక్ర',
       6 => 'శని',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'ఆ',
       1 => 'సో',
       2 => 'మ',
@@ -180,8 +181,8 @@ return array (
       5 => 'శు',
       6 => 'శ',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'ఆది',
       1 => 'సోమ',
       2 => 'మం',
@@ -191,10 +192,10 @@ return array (
       6 => 'శని',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'ఆ',
       1 => 'సో',
       2 => 'మ',
@@ -203,8 +204,8 @@ return array (
       5 => 'శు',
       6 => 'శ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'ఆది',
       1 => 'సోమ',
       2 => 'మంగళ',
@@ -213,8 +214,8 @@ return array (
       5 => 'శుక్ర',
       6 => 'శని',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'ఆది',
       1 => 'సోమ',
       2 => 'మం',
@@ -223,8 +224,8 @@ return array (
       5 => 'శుక్ర',
       6 => 'శని',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'ఆదివారం',
       1 => 'సోమవారం',
       2 => 'మంగళవారం',
@@ -234,33 +235,33 @@ return array (
       6 => 'శనివారం',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'క్రీపూ',
       1 => 'క్రీశ',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'ఈసాపూర్వ.',
       1 => 'సన్.',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'ఈసాపూర్వ.',
       1 => 'సన్.',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE d MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'd MMM y',
     'short' => 'dd-MM-yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'h:mm:ss a zzzz',
     'long' => 'h:mm:ss a z',
     'medium' => 'h:mm:ss a',
@@ -270,8 +271,8 @@ return array (
   'amName' => 'AM',
   'pmName' => 'PM',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'అఫార్',
     'ab' => 'అబ్ఖాజియన్',
     'ace' => 'ఆఖినీస్',
@@ -785,8 +786,8 @@ return array (
     'zxx' => 'ఈ లిపి లేదు',
     'zza' => 'జాజా',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'పెర్‌సో-అరబిక్',
     'armi' => 'ఇంపీరియల్ అరామాక్',
     'armn' => 'అర్మేనియన్',
@@ -918,8 +919,8 @@ return array (
     'zyyy' => 'సామాన్య',
     'zzzz' => 'అజ్ఞాత లేదా చెల్లని లిపి',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'ప్రపంచం',
     '002' => 'ఆఫ్రికా',
     '003' => 'ఉత్తర అమెరికా ఖండము',
@@ -1211,8 +1212,8 @@ return array (
     'zw' => 'జింబాబ్వే',
     'zz' => 'తెలియని లేదా చెల్లని ప్రాంతం',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

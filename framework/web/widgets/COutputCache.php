@@ -1,4 +1,5 @@
 <?php
+
 /**
  * COutputCache class file.
  *
@@ -70,7 +71,7 @@ class COutputCache extends CFilterWidget
 	/**
 	 * Prefix to the keys for storing cached data
 	 */
-	const CACHE_KEY_PREFIX='Yii.COutputCache.';
+	const CACHE_KEY_PREFIX = 'Yii.COutputCache.';
 
 	/**
 	 * @var integer number of seconds that the data can remain in cache. Defaults to 60 seconds.
@@ -81,17 +82,17 @@ class COutputCache extends CFilterWidget
 	 * Note, if cache dependency changes or cache space is limited,
 	 * the data may be purged out of cache earlier.
 	 */
-	public $duration=60;
+	public $duration = 60;
 	/**
 	 * @var boolean whether the content being cached should be differentiated according to route.
 	 * A route consists of the requested controller ID and action ID.
 	 * Defaults to true.
 	 */
-	public $varyByRoute=true;
+	public $varyByRoute = true;
 	/**
 	 * @var boolean whether the content being cached should be differentiated according to user sessions. Defaults to false.
 	 */
-	public $varyBySession=false;
+	public $varyBySession = false;
 	/**
 	 * @var array list of GET parameters that should participate in cache key calculation.
 	 * By setting this property, the output cache will use different cached data
@@ -122,7 +123,7 @@ class COutputCache extends CFilterWidget
 	 * Defaults to false.
 	 * @since 1.1.14
 	 */
-	public $varyByLanguage=false;
+	public $varyByLanguage = false;
 	/**
 	 * @var array list of request types (e.g. GET, POST) for which the cache should be enabled only.
 	 * Defaults to null, meaning all request types.
@@ -131,7 +132,7 @@ class COutputCache extends CFilterWidget
 	/**
 	 * @var string the ID of the cache application component. Defaults to 'cache' (the primary cache application component.)
 	 */
-	public $cacheID='cache';
+	public $cacheID = 'cache';
 	/**
 	 * @var mixed the dependency that the cached content depends on.
 	 * This can be either an object implementing {@link ICacheDependency} interface or an array
@@ -161,7 +162,7 @@ class COutputCache extends CFilterWidget
 	 */
 	public function filter($filterChain)
 	{
-		if(!$this->getIsContentCached())
+		if (!$this->getIsContentCached())
 			$filterChain->run();
 		$this->run();
 	}
@@ -174,10 +175,9 @@ class COutputCache extends CFilterWidget
 	 */
 	public function init()
 	{
-		if($this->getIsContentCached())
+		if ($this->getIsContentCached())
 			$this->replayActions();
-		elseif($this->_cache!==null)
-		{
+		elseif ($this->_cache !== null) {
 			$this->getController()->getCachingStack()->push($this);
 			ob_start();
 			ob_implicit_flush(false);
@@ -192,23 +192,20 @@ class COutputCache extends CFilterWidget
 	 */
 	public function run()
 	{
-		if($this->getIsContentCached())
-		{
-			if($this->getController()->isCachingStackEmpty())
+		if ($this->getIsContentCached()) {
+			if ($this->getController()->isCachingStackEmpty())
 				echo $this->getController()->processDynamicOutput($this->_content);
 			else
 				echo $this->_content;
-		}
-		elseif($this->_cache!==null)
-		{
-			$this->_content=ob_get_clean();
+		} elseif ($this->_cache !== null) {
+			$this->_content = ob_get_clean();
 			$this->getController()->getCachingStack()->pop();
-			$data=array($this->_content,$this->_actions);
-			if(is_array($this->dependency))
-				$this->dependency=Yii::createComponent($this->dependency);
-			$this->_cache->set($this->getCacheKey(),$data,$this->duration,$this->dependency);
+			$data = array($this->_content, $this->_actions);
+			if (is_array($this->dependency))
+				$this->dependency = Yii::createComponent($this->dependency);
+			$this->_cache->set($this->getCacheKey(), $data, $this->duration, $this->dependency);
 
-			if($this->getController()->isCachingStackEmpty())
+			if ($this->getController()->isCachingStackEmpty())
 				echo $this->getController()->processDynamicOutput($this->_content);
 			else
 				echo $this->_content;
@@ -220,10 +217,10 @@ class COutputCache extends CFilterWidget
 	 */
 	public function getIsContentCached()
 	{
-		if($this->_contentCached!==null)
+		if ($this->_contentCached !== null)
 			return $this->_contentCached;
 		else
-			return $this->_contentCached=$this->checkContentCache();
+			return $this->_contentCached = $this->checkContentCache();
 	}
 
 	/**
@@ -232,19 +229,18 @@ class COutputCache extends CFilterWidget
 	 */
 	protected function checkContentCache()
 	{
-		if((empty($this->requestTypes) || in_array(Yii::app()->getRequest()->getRequestType(),$this->requestTypes))
-			&& ($this->_cache=$this->getCache())!==null)
-		{
-			if($this->duration>0 && ($data=$this->_cache->get($this->getCacheKey()))!==false)
-			{
-				$this->_content=$data[0];
-				$this->_actions=$data[1];
+		if ((empty($this->requestTypes) || in_array(Yii::app()->getRequest()->getRequestType(), $this->requestTypes))
+			&& ($this->_cache = $this->getCache()) !== null
+		) {
+			if ($this->duration > 0 && ($data = $this->_cache->get($this->getCacheKey())) !== false) {
+				$this->_content = $data[0];
+				$this->_actions = $data[1];
 				return true;
 			}
-			if($this->duration==0)
+			if ($this->duration == 0)
 				$this->_cache->delete($this->getCacheKey());
-			if($this->duration<=0)
-				$this->_cache=null;
+			if ($this->duration <= 0)
+				$this->_cache = null;
 		}
 		return false;
 	}
@@ -265,7 +261,7 @@ class COutputCache extends CFilterWidget
 	 */
 	protected function getBaseCacheKey()
 	{
-		return self::CACHE_KEY_PREFIX.$this->getId().'.';
+		return self::CACHE_KEY_PREFIX . $this->getId() . '.';
 	}
 
 	/**
@@ -276,47 +272,43 @@ class COutputCache extends CFilterWidget
 	 */
 	protected function getCacheKey()
 	{
-		if($this->_key!==null)
+		if ($this->_key !== null)
 			return $this->_key;
-		else
-		{
-			$key=$this->getBaseCacheKey().'.';
-			if($this->varyByRoute)
-			{
-				$controller=$this->getController();
-				$key.=$controller->getUniqueId().'/';
-				if(($action=$controller->getAction())!==null)
-					$key.=$action->getId();
+		else {
+			$key = $this->getBaseCacheKey() . '.';
+			if ($this->varyByRoute) {
+				$controller = $this->getController();
+				$key .= $controller->getUniqueId() . '/';
+				if (($action = $controller->getAction()) !== null)
+					$key .= $action->getId();
 			}
-			$key.='.';
+			$key .= '.';
 
-			if($this->varyBySession)
-				$key.=Yii::app()->getSession()->getSessionID();
-			$key.='.';
+			if ($this->varyBySession)
+				$key .= Yii::app()->getSession()->getSessionID();
+			$key .= '.';
 
-			if(is_array($this->varyByParam) && isset($this->varyByParam[0]))
-			{
-				$params=array();
-				foreach($this->varyByParam as $name)
-				{
-					if(isset($_GET[$name]))
-						$params[$name]=$_GET[$name];
+			if (is_array($this->varyByParam) && isset($this->varyByParam[0])) {
+				$params = array();
+				foreach ($this->varyByParam as $name) {
+					if (isset($_GET[$name]))
+						$params[$name] = $_GET[$name];
 					else
-						$params[$name]='';
+						$params[$name] = '';
 				}
-				$key.=serialize($params);
+				$key .= serialize($params);
 			}
-			$key.='.';
+			$key .= '.';
 
-			if($this->varyByExpression!==null)
-				$key.=$this->evaluateExpression($this->varyByExpression);
-			$key.='.';
+			if ($this->varyByExpression !== null)
+				$key .= $this->evaluateExpression($this->varyByExpression);
+			$key .= '.';
 
-			if($this->varyByLanguage)
-				$key.=Yii::app()->language;
-			$key.='.';
+			if ($this->varyByLanguage)
+				$key .= Yii::app()->language;
+			$key .= '.';
 
-			return $this->_key=$key;
+			return $this->_key = $key;
 		}
 	}
 
@@ -329,9 +321,9 @@ class COutputCache extends CFilterWidget
 	 * @param string $method the method name
 	 * @param array $params parameters passed to the method
 	 */
-	public function recordAction($context,$method,$params)
+	public function recordAction($context, $method, $params)
 	{
-		$this->_actions[]=array($context,$method,$params);
+		$this->_actions[] = array($context, $method, $params);
 	}
 
 	/**
@@ -339,26 +331,30 @@ class COutputCache extends CFilterWidget
 	 */
 	protected function replayActions()
 	{
-		if(empty($this->_actions))
+		if (empty($this->_actions))
 			return;
-		$controller=$this->getController();
-		$cs=Yii::app()->getClientScript();
-		foreach($this->_actions as $action)
-		{
-			if($action[0]==='clientScript')
-				$object=$cs;
-			elseif($action[0]==='')
-				$object=$controller;
+		$controller = $this->getController();
+		$cs = Yii::app()->getClientScript();
+		foreach ($this->_actions as $action) {
+			if ($action[0] === 'clientScript')
+				$object = $cs;
+			elseif ($action[0] === '')
+				$object = $controller;
 			else
-				$object=$controller->{$action[0]};
-			if(method_exists($object,$action[1]))
-				call_user_func_array(array($object,$action[1]),$action[2]);
-			elseif($action[0]==='' && function_exists($action[1]))
-				call_user_func_array($action[1],$action[2]);
+				$object = $controller->{$action[0]};
+			if (method_exists($object, $action[1]))
+				call_user_func_array(array($object, $action[1]), $action[2]);
+			elseif ($action[0] === '' && function_exists($action[1]))
+				call_user_func_array($action[1], $action[2]);
 			else
-				throw new CException(Yii::t('yii','Unable to replay the action "{object}.{method}". The method does not exist.',
-					array('object'=>$action[0],
-						'method'=>$action[1])));
+				throw new CException(Yii::t(
+					'yii',
+					'Unable to replay the action "{object}.{method}". The method does not exist.',
+					array(
+						'object' => $action[0],
+						'method' => $action[1]
+					)
+				));
 		}
 	}
 }

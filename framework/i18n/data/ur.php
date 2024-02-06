@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'ur'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8671',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'PKR' => 'Rs',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'جنوری',
       2 => 'فروری',
       3 => 'مارچ',
@@ -70,8 +71,8 @@ return array (
       11 => 'نومبر',
       12 => 'دسمبر',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Month1',
       2 => 'Month2',
       3 => 'Month3',
@@ -85,8 +86,8 @@ return array (
       11 => 'Month11',
       12 => 'Month12',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       1 => 'J',
       2 => 'F',
       3 => 'M',
@@ -101,10 +102,10 @@ return array (
       12 => 'D',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'J',
       2 => 'F',
       3 => 'M',
@@ -119,10 +120,10 @@ return array (
       12 => 'D',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'اتوار',
       1 => 'پیر',
       2 => 'منگل',
@@ -131,8 +132,8 @@ return array (
       5 => 'جمعہ',
       6 => 'ہفتہ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Sun',
       1 => 'Mon',
       2 => 'Tue',
@@ -141,8 +142,8 @@ return array (
       5 => 'Fri',
       6 => 'Sat',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'S',
       1 => 'M',
       2 => 'T',
@@ -151,8 +152,8 @@ return array (
       5 => 'F',
       6 => 'S',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'اتوار',
       1 => 'سوموار',
       2 => 'منگل',
@@ -162,10 +163,10 @@ return array (
       6 => 'ہفتہ',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'S',
       1 => 'M',
       2 => 'T',
@@ -174,8 +175,8 @@ return array (
       5 => 'F',
       6 => 'S',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'اتوار',
       1 => 'سوموار',
       2 => 'منگل',
@@ -185,33 +186,33 @@ return array (
       6 => 'ہفتہ',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'ق م',
       1 => 'عیسوی سن',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'قبل مسیح',
       1 => 'عیسوی سن',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'ق م',
       1 => 'عیسوی سن',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE، d MMMM، y',
     'long' => 'd MMMM، y',
     'medium' => 'd MMM، y',
     'short' => 'd/M/yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'h:mm:ss a zzzz',
     'long' => 'h:mm:ss a z',
     'medium' => 'h:mm:ss a',
@@ -221,8 +222,8 @@ return array (
   'amName' => 'قبل دوپہر',
   'pmName' => 'بعد دوپہر',
   'orientation' => 'rtl',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ab' => 'ابقازیان',
     'ach' => 'اکولی',
     'af' => 'ایفریکانز',
@@ -404,8 +405,8 @@ return array (
     'zu' => 'زولو',
     'zxx' => 'کوئی لسانی مواد نہیں',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'فارسی عربی',
     'armn' => 'آرمینیائی',
     'beng' => 'بنگالی',
@@ -446,8 +447,8 @@ return array (
     'zyyy' => 'عام',
     'zzzz' => 'نامعلوم رسم الخط',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'دنیا',
     '002' => 'افریقہ',
     '003' => 'شمالی امریکہ',
@@ -739,8 +740,8 @@ return array (
     'zw' => 'زمبابوے',
     'zz' => 'نامعلوم علاقہ',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

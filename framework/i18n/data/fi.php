@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'fi'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8671',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => ' ',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0 %',
   'currencyFormat' => '#,##0.00 ¤',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'AUD',
     'BRL' => 'BRL',
     'CAD' => 'CAD',
@@ -52,10 +53,10 @@ return array (
     'XOF' => 'CFA',
     'XPF' => 'XPF',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'tammikuuta',
       2 => 'helmikuuta',
       3 => 'maaliskuuta',
@@ -69,8 +70,8 @@ return array (
       11 => 'marraskuuta',
       12 => 'joulukuuta',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'tammikuuta',
       2 => 'helmikuuta',
       3 => 'maaliskuuta',
@@ -84,8 +85,8 @@ return array (
       11 => 'marraskuuta',
       12 => 'joulukuuta',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       1 => 'T',
       2 => 'H',
       3 => 'M',
@@ -100,10 +101,10 @@ return array (
       12 => 'J',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'T',
       2 => 'H',
       3 => 'M',
@@ -117,8 +118,8 @@ return array (
       11 => 'M',
       12 => 'J',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'tammi',
       2 => 'helmi',
       3 => 'maalis',
@@ -132,8 +133,8 @@ return array (
       11 => 'marras',
       12 => 'joulu',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       1 => 'tammikuu',
       2 => 'helmikuu',
       3 => 'maaliskuu',
@@ -148,10 +149,10 @@ return array (
       12 => 'joulukuu',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'sunnuntaina',
       1 => 'maanantaina',
       2 => 'tiistaina',
@@ -160,8 +161,8 @@ return array (
       5 => 'perjantaina',
       6 => 'lauantaina',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'su',
       1 => 'ma',
       2 => 'ti',
@@ -170,8 +171,8 @@ return array (
       5 => 'pe',
       6 => 'la',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'S',
       1 => 'M',
       2 => 'T',
@@ -180,8 +181,8 @@ return array (
       5 => 'P',
       6 => 'L',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'su',
       1 => 'ma',
       2 => 'ti',
@@ -191,10 +192,10 @@ return array (
       6 => 'la',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'S',
       1 => 'M',
       2 => 'T',
@@ -203,8 +204,8 @@ return array (
       5 => 'P',
       6 => 'L',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'su',
       1 => 'ma',
       2 => 'ti',
@@ -213,8 +214,8 @@ return array (
       5 => 'pe',
       6 => 'la',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'su',
       1 => 'ma',
       2 => 'ti',
@@ -223,8 +224,8 @@ return array (
       5 => 'pe',
       6 => 'la',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'sunnuntai',
       1 => 'maanantai',
       2 => 'tiistai',
@@ -234,33 +235,33 @@ return array (
       6 => 'lauantai',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'eKr.',
       1 => 'jKr.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'ennen Kristuksen syntymää',
       1 => 'jälkeen Kristuksen syntymän',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'eK',
       1 => 'jK',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'cccc d. MMMM y',
     'long' => 'd. MMMM y',
     'medium' => 'd.M.y',
     'short' => 'd.M.y',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'H.mm.ss zzzz',
     'long' => 'H.mm.ss z',
     'medium' => 'H.mm.ss',
@@ -270,8 +271,8 @@ return array (
   'amName' => 'ap.',
   'pmName' => 'ip.',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'afar',
     'ab' => 'abhaasi',
     'ace' => 'atšeh',
@@ -846,8 +847,8 @@ return array (
     'zxx' => 'ei kielellistä sisältöä',
     'zza' => 'zaza',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'afak' => 'afaka',
     'arab' => 'persialaisarabialainen',
     'armi' => 'valtakunnanaramealainen',
@@ -1007,8 +1008,8 @@ return array (
     'zyyy' => 'määrittämätön',
     'zzzz' => 'tuntematon kirjoitusjärjestelmä',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'maailma',
     '002' => 'Afrikka',
     '003' => 'Pohjois-Amerikka',
@@ -1300,8 +1301,8 @@ return array (
     'zw' => 'Zimbabwe',
     'zz' => 'tuntematon alue',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

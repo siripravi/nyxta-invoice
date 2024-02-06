@@ -17,8 +17,8 @@ class User extends CActiveRecord
     const ERROR_NONE = 0;
 
     //ERROR_USERNAME_INVALID = 1;
-//ERROR_PASSWORD_INVALID = 2;
-//ERROR_UNKNOWN_IDENTITY = 100; 
+    //ERROR_PASSWORD_INVALID = 2;
+    //ERROR_UNKNOWN_IDENTITY = 100; 
     public $rememberMe;
     private $_identity;
     public $verifyPassword;
@@ -106,9 +106,11 @@ class User extends CActiveRecord
         $criteria->compare('email', $this->email, true);
         $criteria->compare('profile', $this->profile, true);
 
-        return new CActiveDataProvider($this, array(
-            'criteria' => $criteria,
-        )
+        return new CActiveDataProvider(
+            $this,
+            array(
+                'criteria' => $criteria,
+            )
         );
     }
 
@@ -166,7 +168,6 @@ class User extends CActiveRecord
             $this->password = md5($this->password);
             if (($this->level >= User::LEVEL_SUPPORT) && ($this->level < User::LEVEL_AUTHOR)) {
                 $this->homeUrl = "/support/index";
-
             } else {
                 $this->homeUrl = "/site/index";
             }
@@ -199,5 +200,4 @@ class User extends CActiveRecord
         if (!empty($user))
             return $user->username;
     }
-
 }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'en_Dsrt'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00;(¤#,##0.00)',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -52,10 +53,10 @@ return array (
     'XOF' => 'CFA',
     'XPF' => 'CFPF',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => '𐐖𐐰𐑌𐐷𐐭𐐯𐑉𐐨',
       2 => '𐐙𐐯𐐺𐑉𐐭𐐯𐑉𐐨',
       3 => '𐐣𐐪𐑉𐐽',
@@ -69,8 +70,8 @@ return array (
       11 => '𐐤𐐬𐑂𐐯𐑋𐐺𐐲𐑉',
       12 => '𐐔𐐨𐑅𐐯𐑋𐐺𐐲𐑉',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => '𐐖𐐰𐑌',
       2 => '𐐙𐐯𐐺',
       3 => '𐐣𐐪𐑉',
@@ -84,8 +85,8 @@ return array (
       11 => '𐐤𐐬𐑂',
       12 => '𐐔𐐨𐑅',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       1 => '𐐖',
       2 => '𐐙',
       3 => '𐐣',
@@ -100,10 +101,10 @@ return array (
       12 => '𐐔',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => '𐐖',
       2 => '𐐙',
       3 => '𐐣',
@@ -117,8 +118,8 @@ return array (
       11 => '𐐤',
       12 => '𐐔',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => '𐐖𐐰𐑌',
       2 => '𐐙𐐯𐐺',
       3 => '𐐣𐐪𐑉',
@@ -132,8 +133,8 @@ return array (
       11 => '𐐤𐐬𐑂',
       12 => '𐐔𐐨𐑅',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       1 => '𐐖𐐰𐑌𐐷𐐭𐐯𐑉𐐨',
       2 => '𐐙𐐯𐐺𐑉𐐭𐐯𐑉𐐨',
       3 => '𐐣𐐪𐑉𐐽',
@@ -148,10 +149,10 @@ return array (
       12 => '𐐔𐐨𐑅𐐯𐑋𐐺𐐲𐑉',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => '𐐝𐐲𐑌𐐼𐐩',
       1 => '𐐣𐐲𐑌𐐼𐐩',
       2 => '𐐓𐐭𐑆𐐼𐐩',
@@ -160,8 +161,8 @@ return array (
       5 => '𐐙𐑉𐐴𐐼𐐩',
       6 => '𐐝𐐰𐐻𐐲𐑉𐐼𐐩',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => '𐐝𐐲𐑌',
       1 => '𐐣𐐲𐑌',
       2 => '𐐓𐐭𐑆',
@@ -170,8 +171,8 @@ return array (
       5 => '𐐙𐑉𐐴',
       6 => '𐐝𐐰𐐻',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'Su',
       1 => 'Mo',
       2 => 'Tu',
@@ -181,10 +182,10 @@ return array (
       6 => 'Sa',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => '𐐝',
       1 => '𐐣',
       2 => '𐐓',
@@ -194,33 +195,33 @@ return array (
       6 => '𐐝',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => '𐐒𐐗',
       1 => '𐐈𐐔',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => '𐐒𐐲𐑁𐐬𐑉 𐐗𐑉𐐴𐑅𐐻',
       1 => '𐐈𐑌𐐬 𐐔𐐱𐑋𐐮𐑌𐐨',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => '𐐒',
       1 => '𐐈',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, MMMM d, y',
     'long' => 'MMMM d, y',
     'medium' => 'MMM d, y',
     'short' => 'M/d/yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'h:mm:ss a zzzz',
     'long' => 'h:mm:ss a z',
     'medium' => 'h:mm:ss a',
@@ -230,8 +231,8 @@ return array (
   'amName' => '𐐈𐐣',
   'pmName' => '𐐑𐐣',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'Afar',
     'ab' => 'Abkhazian',
     'ace' => 'Achinese',
@@ -810,8 +811,8 @@ return array (
     'zxx' => '𐐤𐐬 𐑊𐐨𐑍𐐶𐐮𐑅𐐻𐐮𐐿 𐐿𐐱𐑌𐐻𐐯𐑌𐐻',
     'zza' => 'Zaza',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'afak' => 'Afaka',
     'arab' => '𐐇𐑉𐐲𐐺𐐮𐐿',
     'armi' => '𐐆𐑋𐐹𐐮𐑉𐐨𐐲𐑊 𐐁𐑉𐐲𐑋𐐩𐐮𐐿',
@@ -971,8 +972,8 @@ return array (
     'zyyy' => '𐐗𐐱𐑋𐐲𐑌',
     'zzzz' => '𐐊𐑌𐐬𐑌 𐐬𐑉 𐐆𐑌𐑂𐐰𐑊𐐮𐐼 𐐝𐐿𐑉𐐮𐐹𐐻',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => '𐐎𐐲𐑉𐑊𐐼',
     '002' => '𐐈𐑁𐑉𐐲𐐿𐐲',
     '003' => '𐐤𐐱𐑉𐑃 𐐊𐑋𐐯𐑉𐐲𐐿𐐲',
@@ -1264,8 +1265,8 @@ return array (
     'zw' => '𐐞𐐮𐑋𐐺𐐪𐐺𐐶𐐩',
     'zz' => '𐐊𐑌𐐬𐑌 𐐬𐑉 𐐆𐑌𐑂𐐰𐑊𐐮𐐼 𐐡𐐨𐐾𐐲𐑌',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CHttpCacheFilter class file.
  *
@@ -53,7 +54,7 @@ class CHttpCacheFilter extends CFilter
 	 * @var string Http cache control headers. Set this to an empty string in order to keep this
 	 * header from being sent entirely.
 	 */
-	public $cacheControl='max-age=3600, public';
+	public $cacheControl = 'max-age=3600, public';
 
 	/**
 	 * Performs the pre-action filtering.
@@ -63,45 +64,37 @@ class CHttpCacheFilter extends CFilter
 	public function preFilter($filterChain)
 	{
 		// Only cache GET and HEAD requests
-		if(!in_array(Yii::app()->getRequest()->getRequestType(), array('GET', 'HEAD')))
+		if (!in_array(Yii::app()->getRequest()->getRequestType(), array('GET', 'HEAD')))
 			return true;
 
-		$lastModified=$this->getLastModifiedValue();
-		$etag=$this->getEtagValue();
+		$lastModified = $this->getLastModifiedValue();
+		$etag = $this->getEtagValue();
 
-		if($etag===false&&$lastModified===false)
+		if ($etag === false && $lastModified === false)
 			return true;
 
-		if($etag)
-			header('ETag: '.$etag);
+		if ($etag)
+			header('ETag: ' . $etag);
 
 		$this->sendCacheControlHeader();
 
 		$cacheValid = false;
-		if(isset($_SERVER['HTTP_IF_MODIFIED_SINCE'])&&isset($_SERVER['HTTP_IF_NONE_MATCH']))
-		{
-			if($this->checkLastModified($lastModified)&&$this->checkEtag($etag))
-			{
-				$cacheValid=true;
+		if (isset($_SERVER['HTTP_IF_MODIFIED_SINCE']) && isset($_SERVER['HTTP_IF_NONE_MATCH'])) {
+			if ($this->checkLastModified($lastModified) && $this->checkEtag($etag)) {
+				$cacheValid = true;
 			}
-		}
-		elseif(isset($_SERVER['HTTP_IF_MODIFIED_SINCE']))
-		{
-			if($this->checkLastModified($lastModified))
-			{
-				$cacheValid=true;
+		} elseif (isset($_SERVER['HTTP_IF_MODIFIED_SINCE'])) {
+			if ($this->checkLastModified($lastModified)) {
+				$cacheValid = true;
 			}
-		}
-		elseif(isset($_SERVER['HTTP_IF_NONE_MATCH']))
-		{
-			if($this->checkEtag($etag))
-			{
-				$cacheValid=true;
+		} elseif (isset($_SERVER['HTTP_IF_NONE_MATCH'])) {
+			if ($this->checkEtag($etag)) {
+				$cacheValid = true;
 			}
 		}
 
-		if($lastModified)
-			header('Last-Modified: '.gmdate('D, d M Y H:i:s', $lastModified).' GMT');
+		if ($lastModified)
+			header('Last-Modified: ' . gmdate('D, d M Y H:i:s', $lastModified) . ' GMT');
 
 		if ($cacheValid) {
 			$this->send304Header();
@@ -120,23 +113,24 @@ class CHttpCacheFilter extends CFilter
 	 */
 	protected function getLastModifiedValue()
 	{
-		if($this->lastModifiedExpression)
-		{
-			$value=$this->evaluateExpression($this->lastModifiedExpression);
-			if(is_numeric($value)&&$value==(int)$value)
+		if ($this->lastModifiedExpression) {
+			$value = $this->evaluateExpression($this->lastModifiedExpression);
+			if (is_numeric($value) && $value == (int)$value)
 				return $value;
-			elseif(($lastModified=strtotime($value))===false)
-				throw new CException(Yii::t('yii','Invalid expression for CHttpCacheFilter.lastModifiedExpression: The evaluation result "{value}" could not be understood by strtotime()',
-					array('{value}'=>$value)));
+			elseif (($lastModified = strtotime($value)) === false)
+				throw new CException(Yii::t(
+					'yii',
+					'Invalid expression for CHttpCacheFilter.lastModifiedExpression: The evaluation result "{value}" could not be understood by strtotime()',
+					array('{value}' => $value)
+				));
 			return $lastModified;
 		}
 
-		if($this->lastModified)
-		{
-			if(is_numeric($this->lastModified)&&$this->lastModified==(int)$this->lastModified)
+		if ($this->lastModified) {
+			if (is_numeric($this->lastModified) && $this->lastModified == (int)$this->lastModified)
 				return $this->lastModified;
-			elseif(($lastModified=strtotime($this->lastModified))===false)
-				throw new CException(Yii::t('yii','CHttpCacheFilter.lastModified contained a value that could not be understood by strtotime()'));
+			elseif (($lastModified = strtotime($this->lastModified)) === false)
+				throw new CException(Yii::t('yii', 'CHttpCacheFilter.lastModified contained a value that could not be understood by strtotime()'));
 			return $lastModified;
 		}
 		return false;
@@ -148,9 +142,9 @@ class CHttpCacheFilter extends CFilter
 	 */
 	protected function getEtagValue()
 	{
-		if($this->etagSeedExpression)
+		if ($this->etagSeedExpression)
 			return $this->generateEtag($this->evaluateExpression($this->etagSeedExpression));
-		elseif($this->etagSeed)
+		elseif ($this->etagSeed)
 			return $this->generateEtag($this->etagSeed);
 		return false;
 	}
@@ -162,7 +156,7 @@ class CHttpCacheFilter extends CFilter
 	 */
 	protected function checkEtag($etag)
 	{
-		return isset($_SERVER['HTTP_IF_NONE_MATCH'])&&$_SERVER['HTTP_IF_NONE_MATCH']==$etag;
+		return isset($_SERVER['HTTP_IF_NONE_MATCH']) && $_SERVER['HTTP_IF_NONE_MATCH'] == $etag;
 	}
 
 	/**
@@ -172,7 +166,7 @@ class CHttpCacheFilter extends CFilter
 	 */
 	protected function checkLastModified($lastModified)
 	{
-		return isset($_SERVER['HTTP_IF_MODIFIED_SINCE'])&&@strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE'])>=$lastModified;
+		return isset($_SERVER['HTTP_IF_MODIFIED_SINCE']) && @strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE']) >= $lastModified;
 	}
 
 	/**
@@ -180,7 +174,7 @@ class CHttpCacheFilter extends CFilter
 	 */
 	protected function send304Header()
 	{
-		$httpVersion=Yii::app()->request->getHttpVersion();
+		$httpVersion = Yii::app()->request->getHttpVersion();
 		header("HTTP/$httpVersion 304 Not Modified");
 	}
 
@@ -191,12 +185,11 @@ class CHttpCacheFilter extends CFilter
 	 */
 	protected function sendCacheControlHeader()
 	{
-		if(Yii::app()->session->isStarted)
-		{
+		if (Yii::app()->session->isStarted) {
 			Yii::app()->session->setCacheLimiter('public');
-			header('Pragma:',true);
+			header('Pragma:', true);
 		}
-		header('Cache-Control: '.$this->cacheControl,true);
+		header('Cache-Control: ' . $this->cacheControl, true);
 	}
 
 	/**
@@ -206,6 +199,6 @@ class CHttpCacheFilter extends CFilter
 	 */
 	protected function generateEtag($seed)
 	{
-		return '"'.base64_encode(sha1(serialize($seed),true)).'"';
+		return '"' . base64_encode(sha1(serialize($seed), true)) . '"';
 	}
 }

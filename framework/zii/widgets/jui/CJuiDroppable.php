@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CJuiDroppable class file.
  *
@@ -46,7 +47,7 @@ class CJuiDroppable extends CJuiWidget
 	/**
 	 * @var string the HTML tag name of the Droppable element. Defaults to 'div'.
 	 */
-	public $tagName='div';
+	public $tagName = 'div';
 
 	/**
 	 * Renders the open tag of the droppable element.
@@ -56,16 +57,16 @@ class CJuiDroppable extends CJuiWidget
 	{
 		parent::init();
 
-		$id=$this->getId();
-		if(isset($this->htmlOptions['id']))
-			$id=$this->htmlOptions['id'];
+		$id = $this->getId();
+		if (isset($this->htmlOptions['id']))
+			$id = $this->htmlOptions['id'];
 		else
-			$this->htmlOptions['id']=$id;
+			$this->htmlOptions['id'] = $id;
 
-		$options=CJavaScript::encode($this->options);
-		Yii::app()->getClientScript()->registerScript(__CLASS__.'#'.$id,"jQuery('#{$id}').droppable($options);");
+		$options = CJavaScript::encode($this->options);
+		Yii::app()->getClientScript()->registerScript(__CLASS__ . '#' . $id, "jQuery('#{$id}').droppable($options);");
 
-		echo CHtml::openTag($this->tagName,$this->htmlOptions)."\n";
+		echo CHtml::openTag($this->tagName, $this->htmlOptions) . "\n";
 	}
 
 	/**

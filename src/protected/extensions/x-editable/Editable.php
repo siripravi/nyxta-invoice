@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Editable class file.
  *
@@ -439,7 +440,7 @@ class Editable extends CWidget
         }
 
         //simple options set directly from config
-        foreach (array('url', 'type', 'mode', 'placement', 'emptytext', 'params', 'inputclass', 'format', 'viewformat', 'template', 'combodate', 'select2', 'viewseparator', 'showbuttons', 'send', ) as $option) {
+        foreach (array('url', 'type', 'mode', 'placement', 'emptytext', 'params', 'inputclass', 'format', 'viewformat', 'template', 'combodate', 'select2', 'viewseparator', 'showbuttons', 'send',) as $option) {
             if ($this->$option !== null) {
                 $options[$option] = $this->$option;
             }
@@ -672,15 +673,17 @@ class Editable extends CWidget
     public static function isAutotext($options, $type)
     {
         return (!isset($options['autotext']) || $options['autotext'] !== 'never')
-            && in_array($type, array(
-                'select',
-                'checklist',
-                'date',
-                'datetime',
-                'dateui',
-                'combodate',
-                'select2'
-            )
+            && in_array(
+                $type,
+                array(
+                    'select',
+                    'checklist',
+                    'date',
+                    'datetime',
+                    'dateui',
+                    'combodate',
+                    'select2'
+                )
             );
     }
 

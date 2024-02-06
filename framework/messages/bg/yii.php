@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -16,7 +17,7 @@
  * @version $Id: $
  */
 
-return array (
+return array(
   'Powered by {yii}.' => 'Задвижван от {yii}.',
   'Active record class "{class}" does not have a scope named "{scope}".' => 'Active record класа "{class}" няма scope с име "{scope}"',
   'Alias "{alias}" is invalid. Make sure it points to an existing PHP file and the file is readable.' => 'Псевдонима "{alias}" е неправилен. Уверете се, че сочи към съществуващ PHP файл и че файла е четим',

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * EditableConfig class file.
  *
@@ -46,7 +47,8 @@ class EditableConfig extends CApplicationComponent
             $this->defaults['mode'] = $this->mode;
         $defaults = CJavaScript::encode($this->defaults);
         Yii::app()->getClientScript()->registerScript(
-            'editable-defaults', 'if($.fn.editable) $.extend($.fn.editable.defaults, ' . $defaults . ');'
+            'editable-defaults',
+            'if($.fn.editable) $.extend($.fn.editable.defaults, ' . $defaults . ');'
         );
     }
 }

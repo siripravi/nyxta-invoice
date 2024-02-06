@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'kok_IN'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##,##0%',
   'currencyFormat' => '¤ #,##,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -52,10 +53,10 @@ return array (
     'XOF' => 'CFA',
     'XPF' => 'CFPF',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'जानेवारी',
       2 => 'फेब्रुवारी',
       3 => 'मार्च',
@@ -69,8 +70,8 @@ return array (
       11 => 'नोव्हेंबर',
       12 => 'डिसेंबर',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Month1',
       2 => 'Month2',
       3 => 'Month3',
@@ -85,10 +86,10 @@ return array (
       12 => 'Month12',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -103,10 +104,10 @@ return array (
       12 => '12',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'आदित्यवार',
       1 => 'सोमवार',
       2 => 'मंगळार',
@@ -115,8 +116,8 @@ return array (
       5 => 'शुक्रवार',
       6 => 'शनिवार',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'रवि',
       1 => 'सोम',
       2 => 'मंगळ',
@@ -126,10 +127,10 @@ return array (
       6 => 'शनि',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'S',
       1 => 'M',
       2 => 'T',
@@ -139,33 +140,33 @@ return array (
       6 => 'S',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'क्रिस्तपूर्व',
       1 => 'क्रिस्तशखा',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'क्रिस्तपूर्व',
       1 => 'क्रिस्तशखा',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'क्रिस्तपूर्व',
       1 => 'क्रिस्तशखा',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE d MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'dd-MM-y',
     'short' => 'd-M-yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'h:mm:ss a zzzz',
     'long' => 'h:mm:ss a z',
     'medium' => 'h:mm:ss a',
@@ -175,8 +176,8 @@ return array (
   'amName' => 'म.पू.',
   'pmName' => 'म.नं.',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'अफार',
     'ab' => 'अबखेज़ियन',
     'af' => 'अफ्रिकान्स',
@@ -318,8 +319,8 @@ return array (
     'zh' => 'चीनीस्',
     'zu' => 'जुलू',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     'in' => 'भारत',
   ),
 );

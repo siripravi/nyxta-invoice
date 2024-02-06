@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CDbExpression class file.
  *
@@ -36,17 +37,17 @@ class CDbExpression extends CComponent
 	 * are the corresponding parameter values.
 	 * @since 1.1.1
 	 */
-	public $params=array();
+	public $params = array();
 
 	/**
 	 * Constructor.
 	 * @param string $expression the DB expression
 	 * @param array $params parameters
 	 */
-	public function __construct($expression,$params=array())
+	public function __construct($expression, $params = array())
 	{
-		$this->expression=$expression;
-		$this->params=$params;
+		$this->expression = $expression;
+		$this->params = $params;
 	}
 
 	/**

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'hy_AM'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => '.',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#0%',
   'currencyFormat' => '#0.00 ¤',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -54,10 +55,10 @@ return array (
     'AMD' => 'դր.',
     'ZMW' => 'ZMW',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'հունվարի',
       2 => 'փետրվարի',
       3 => 'մարտի',
@@ -71,8 +72,8 @@ return array (
       11 => 'նոյեմբերի',
       12 => 'դեկտեմբերի',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'հնվ',
       2 => 'փտվ',
       3 => 'մրտ',
@@ -86,8 +87,8 @@ return array (
       11 => 'նոյ',
       12 => 'դեկ',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       1 => 'Հ',
       2 => 'Փ',
       3 => 'Մ',
@@ -102,10 +103,10 @@ return array (
       12 => 'Դ',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'Հ',
       2 => 'Փ',
       3 => 'Մ',
@@ -120,10 +121,10 @@ return array (
       12 => 'Դ',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'կիրակի',
       1 => 'երկուշաբթի',
       2 => 'երեքշաբթի',
@@ -132,8 +133,8 @@ return array (
       5 => 'ուրբաթ',
       6 => 'շաբաթ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'կիր',
       1 => 'երկ',
       2 => 'երք',
@@ -142,8 +143,8 @@ return array (
       5 => 'ուր',
       6 => 'շաբ',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'Կ',
       1 => 'Ե',
       2 => 'Ե',
@@ -152,8 +153,8 @@ return array (
       5 => 'Ու',
       6 => 'Շ',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'կիր',
       1 => 'երկ',
       2 => 'երք',
@@ -163,10 +164,10 @@ return array (
       6 => 'շաբ',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'Կ',
       1 => 'Ե',
       2 => 'Ե',
@@ -176,33 +177,33 @@ return array (
       6 => 'Շ',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'մ.թ.ա.',
       1 => 'մ.թ.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'մ.թ.ա.',
       1 => 'մ.թ.',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'մ.թ.ա.',
       1 => 'մ.թ.',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'd MMMM, y թ., EEEE',
     'long' => 'dd MMMM, y թ.',
     'medium' => 'dd MMM, y թ.',
     'short' => 'dd.MM.yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'H:mm:ss, zzzz',
     'long' => 'H:mm:ss, z',
     'medium' => 'H:mm:ss',
@@ -212,8 +213,8 @@ return array (
   'amName' => 'կեսօրից առաջ',
   'pmName' => 'կեսօրից հետո',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ab' => 'աբխազերեն',
     'af' => 'աֆրիկաանս',
     'am' => 'ամհարերեն',
@@ -358,8 +359,8 @@ return array (
     'zu' => 'զուլուսերեն',
     'zxx' => 'առանց լեզվային բովանդակության',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'արաբական',
     'armn' => 'հայկական',
     'beng' => 'բենգալական',
@@ -400,8 +401,8 @@ return array (
     'zyyy' => 'ընդհանուր',
     'zzzz' => 'անհայտ գիր',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'Աշխարհ',
     '002' => 'Աֆրիկա',
     '003' => 'Հյուսիսային Ամերիկա',
@@ -692,8 +693,8 @@ return array (
     'zw' => 'Զիմբաբվե',
     'zz' => 'Անհայտ տարածաշրջան',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

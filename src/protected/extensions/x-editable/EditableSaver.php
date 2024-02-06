@@ -1,4 +1,5 @@
 <?php
+
 /**
  * EditableSaver class file.
  *
@@ -125,10 +126,13 @@ class EditableSaver extends CComponent
         }
 
         if (!$this->model) {
-            throw new CException(Yii::t('EditableSaver.editable', 'Model {class} not found by primary key "{pk}"', array(
-                '{class}' => get_class($this->model),
-                '{pk}' => is_array($this->primaryKey) ? CJSON::encode($this->primaryKey) : $this->primaryKey
-            )
+            throw new CException(Yii::t(
+                'EditableSaver.editable',
+                'Model {class} not found by primary key "{pk}"',
+                array(
+                    '{class}' => get_class($this->model),
+                    '{pk}' => is_array($this->primaryKey) ? CJSON::encode($this->primaryKey) : $this->primaryKey
+                )
             ));
         }
 
@@ -152,10 +156,13 @@ class EditableSaver extends CComponent
 
         //is attribute safe
         if (!$this->model->isAttributeSafe($this->attribute)) {
-            throw new CException(Yii::t('editable', 'Model {class} rules do not allow to update attribute "{attr}"', array(
-                '{class}' => get_class($this->model),
-                '{attr}' => $this->attribute
-            )
+            throw new CException(Yii::t(
+                'editable',
+                'Model {class} rules do not allow to update attribute "{attr}"',
+                array(
+                    '{class}' => get_class($this->model),
+                    '{attr}' => $this->attribute
+                )
             ));
         }
 

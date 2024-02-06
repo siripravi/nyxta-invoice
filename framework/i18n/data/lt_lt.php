@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'lt_LT'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => ' ',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0 %',
   'currencyFormat' => '#,##0.00 ¤',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'AU$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'LTL' => 'Lt',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'sausis',
       2 => 'vasaris',
       3 => 'kovas',
@@ -70,8 +71,8 @@ return array (
       11 => 'lapkritis',
       12 => 'gruodis',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'saus.',
       2 => 'vas.',
       3 => 'kov.',
@@ -85,8 +86,8 @@ return array (
       11 => 'lapkr.',
       12 => 'gruod.',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       1 => 'S',
       2 => 'V',
       3 => 'K',
@@ -101,10 +102,10 @@ return array (
       12 => 'G',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'S',
       2 => 'V',
       3 => 'K',
@@ -118,8 +119,8 @@ return array (
       11 => 'L',
       12 => 'G',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'saus.',
       2 => 'vas.',
       3 => 'kov.',
@@ -133,8 +134,8 @@ return array (
       11 => 'lapkr.',
       12 => 'gruod.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       1 => 'sausis',
       2 => 'vasaris',
       3 => 'kovas',
@@ -149,10 +150,10 @@ return array (
       12 => 'gruodis',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'sekmadienis',
       1 => 'pirmadienis',
       2 => 'antradienis',
@@ -161,8 +162,8 @@ return array (
       5 => 'penktadienis',
       6 => 'šeštadienis',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'sk',
       1 => 'pr',
       2 => 'an',
@@ -171,8 +172,8 @@ return array (
       5 => 'pn',
       6 => 'št',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'S',
       1 => 'P',
       2 => 'A',
@@ -181,8 +182,8 @@ return array (
       5 => 'P',
       6 => 'Š',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'Sk',
       1 => 'Pr',
       2 => 'An',
@@ -192,10 +193,10 @@ return array (
       6 => 'Št',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'S',
       1 => 'P',
       2 => 'A',
@@ -204,8 +205,8 @@ return array (
       5 => 'P',
       6 => 'Š',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'sk',
       1 => 'pr',
       2 => 'an',
@@ -214,8 +215,8 @@ return array (
       5 => 'pn',
       6 => 'št',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'Sk',
       1 => 'Pr',
       2 => 'An',
@@ -224,8 +225,8 @@ return array (
       5 => 'Pn',
       6 => 'Št',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'sekmadienis',
       1 => 'pirmadienis',
       2 => 'antradienis',
@@ -235,33 +236,33 @@ return array (
       6 => 'šeštadienis',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'pr. Kr.',
       1 => 'po Kr.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'prieš Kristų',
       1 => 'po Kristaus',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'pr. Kr.',
       1 => 'po Kr.',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'y \'m\'. MMMM d \'d\'., EEEE',
     'long' => 'y \'m\'. MMMM d \'d\'.',
     'medium' => 'y MMM d',
     'short' => 'y-MM-dd',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -271,8 +272,8 @@ return array (
   'amName' => 'priešpiet',
   'pmName' => 'popiet',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'afarų',
     'ab' => 'abchazų',
     'ace' => 'ačinezų',
@@ -847,8 +848,8 @@ return array (
     'zxx' => 'nėra kalbinio turinio',
     'zza' => 'zaza',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'persų-arabų',
     'armi' => 'imperinė aramaikų',
     'armn' => 'armėnų',
@@ -979,8 +980,8 @@ return array (
     'zyyy' => 'bendri',
     'zzzz' => 'nežinomi rašmenys',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'pasaulis',
     '002' => 'Afrika',
     '003' => 'Šiaurės Amerika',
@@ -1272,8 +1273,8 @@ return array (
     'zw' => 'Zimbabvė',
     'zz' => 'nežinoma sritis',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'fmod(n,10)==1&&(fmod(n,100)<11||fmod(n,100)>19)',
     1 => '(fmod(n,10)>=2&&fmod(n,10)<=9&&fmod(fmod(n,10),1)==0)&&(fmod(n,100)<11||fmod(n,100)>19)',
     2 => 'true',

@@ -18,12 +18,14 @@
         <p id="error-message"></p>
     </div>
 
-    <?php $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
-        'id' => 'venue-form',
-        'type' => 'horizontal',
-        'enableAjaxValidation' => false,
-        'htmlOptions' => array('class' => 'form-horizontal')
-    )
+    <?php $form = $this->beginWidget(
+        'bootstrap.widgets.TbActiveForm',
+        array(
+            'id' => 'venue-form',
+            'type' => 'horizontal',
+            'enableAjaxValidation' => false,
+            'htmlOptions' => array('class' => 'form-horizontal')
+        )
     ); ?>
 
     <?php echo $form->errorSummary($model); ?>
@@ -77,7 +79,8 @@
     <div class="col-lg-12">
         <div class="form-group pull-right" style="margin-top:22px;border-bottom:none;">
             <?php echo CHtml::ajaxSubmitButton(
-                'Submit', ($model->isNewRecord) ? '/venue/create' : '/venue/update/id/' . $model->primarykey,
+                'Submit',
+                ($model->isNewRecord) ? '/venue/create' : '/venue/update/id/' . $model->primarykey,
                 array(
                     'beforeSend' => 'function(){
                                        $("#venue-err-div").hide();
@@ -86,7 +89,7 @@
                     'complete' => 'function() {
 				}',
                     //	'dataType'=>'json',
-            
+
                     'success' => 'function(data){			  //   js:alert(data);   	  
 			     	     var obj = jQuery.parseJSON(data);  
 			     	     if(obj.posted == "success") 

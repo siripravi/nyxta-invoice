@@ -33,41 +33,43 @@
             </div>
 
             <div class="back well" style="height:212px;">
-                <?php $this->widget('zii.widgets.CDetailView', array(
-                    'htmlOptions' => array(
-                        'class' => 'table table-striped table-condensed table-hover',
-                    ),
-                    'data' => $data,
-                    'attributes' => array(
-                        //'ID',
-                        array(
-                            //'header' => 'Invoice#',
-                            'name' => 'invoice_id',
-                            'type' => 'raw',
-                            //'value' => '$data->invoice->invoice_id',
-                            'value' => CHtml::link($data->invoice->invoice_id, "/invoice/update/id/" . $data->invoice->invoice_id, array("target" => "_blank")),
-
-                            //  'value' => '(isset($data->invoice))? CHtml::link($data->invoice->invoice_id,"/statement/update/id/".(isset($data->statement->id))?$data->statement->id:""):""'
+                <?php $this->widget(
+                    'zii.widgets.CDetailView',
+                    array(
+                        'htmlOptions' => array(
+                            'class' => 'table table-striped table-condensed table-hover',
                         ),
-                        /* array(
+                        'data' => $data,
+                        'attributes' => array(
+                            //'ID',
+                            array(
+                                //'header' => 'Invoice#',
+                                'name' => 'invoice_id',
+                                'type' => 'raw',
+                                //'value' => '$data->invoice->invoice_id',
+                                'value' => CHtml::link($data->invoice->invoice_id, "/invoice/update/id/" . $data->invoice->invoice_id, array("target" => "_blank")),
+
+                                //  'value' => '(isset($data->invoice))? CHtml::link($data->invoice->invoice_id,"/statement/update/id/".(isset($data->statement->id))?$data->statement->id:""):""'
+                            ),
+                            /* array(
                                            'label'  => 'Mode',
                                            'type' => 'raw',
                                            'value' => $this->getPayMode($data),
                                ),*/
-                        /* array(
+                            /* array(
                                   'label' => 'Paid',		  
                                   'type' => 'raw',
                                   'value' => Payments::makeMoney($data->amount),
                                  
                               ),	
                               'pay_date',*/
-                        'deposited_by',
-                        'details',
+                            'deposited_by',
+                            'details',
 
-                        //array( 'label' =>'User','type'=>'raw','value'=>$data->getUserName($data->cuser_id),'filter'=>''),
-                        //array( 'label' =>'Updated User','type'=>'raw','value'=>$data->getUserName($model->uuser_id))
-                    ),
-                )
+                            //array( 'label' =>'User','type'=>'raw','value'=>$data->getUserName($data->cuser_id),'filter'=>''),
+                            //array( 'label' =>'Updated User','type'=>'raw','value'=>$data->getUserName($model->uuser_id))
+                        ),
+                    )
                 ); ?>
 
             </div>

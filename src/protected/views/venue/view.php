@@ -13,25 +13,27 @@
 		</div>
 		<div class="box-body">
 
-			<?php $this->widget('zii.widgets.CDetailView', array(
-				'htmlOptions' => array(
-					'class' => 'table table-striped table-condensed table-hover',
-				),
-				'data' => $model,
-				'attributes' => array(
-					//'venue_id',
-					'ship_name',
-					'ship_add1',
-					'ship_add2',
-					'ship_city',
-					'ship_state',
-					'ship_zip',
-					'ship_pone1',
-					'ship_pone2',
-					'ship_email1',
-					'ship_details',
-				),
-			)
+			<?php $this->widget(
+				'zii.widgets.CDetailView',
+				array(
+					'htmlOptions' => array(
+						'class' => 'table table-striped table-condensed table-hover',
+					),
+					'data' => $model,
+					'attributes' => array(
+						//'venue_id',
+						'ship_name',
+						'ship_add1',
+						'ship_add2',
+						'ship_city',
+						'ship_state',
+						'ship_zip',
+						'ship_pone1',
+						'ship_pone2',
+						'ship_email1',
+						'ship_details',
+					),
+				)
 			); ?>
 		</div>
 	</div>

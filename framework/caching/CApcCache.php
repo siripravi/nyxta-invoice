@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CApcCache class file
  *
@@ -29,7 +30,7 @@ class CApcCache extends CCache
 	 * Defaults to false.
 	 * @since 1.1.17
 	 */
-	public $useApcu=false;
+	public $useApcu = false;
 
 
 	/**
@@ -41,10 +42,13 @@ class CApcCache extends CCache
 	public function init()
 	{
 		parent::init();
-		$extension=$this->useApcu ? 'apcu' : 'apc';
-		if(!extension_loaded($extension))
-			throw new CException(Yii::t('yii',"CApcCache requires PHP {extension} extension to be loaded.",
-				array('{extension}'=>$extension)));
+		$extension = $this->useApcu ? 'apcu' : 'apc';
+		if (!extension_loaded($extension))
+			throw new CException(Yii::t(
+				'yii',
+				"CApcCache requires PHP {extension} extension to be loaded.",
+				array('{extension}' => $extension)
+			));
 	}
 
 	/**
@@ -77,9 +81,9 @@ class CApcCache extends CCache
 	 * @param integer $expire the number of seconds in which the cached value will expire. 0 means never expire.
 	 * @return boolean true if the value is successfully stored into cache, false otherwise
 	 */
-	protected function setValue($key,$value,$expire)
+	protected function setValue($key, $value, $expire)
 	{
-		return $this->useApcu ? apcu_store($key,$value,$expire) : apc_store($key,$value,$expire);
+		return $this->useApcu ? apcu_store($key, $value, $expire) : apc_store($key, $value, $expire);
 	}
 
 	/**
@@ -91,9 +95,9 @@ class CApcCache extends CCache
 	 * @param integer $expire the number of seconds in which the cached value will expire. 0 means never expire.
 	 * @return boolean true if the value is successfully stored into cache, false otherwise
 	 */
-	protected function addValue($key,$value,$expire)
+	protected function addValue($key, $value, $expire)
 	{
-		return $this->useApcu ? apcu_add($key,$value,$expire) : apc_add($key,$value,$expire);
+		return $this->useApcu ? apcu_add($key, $value, $expire) : apc_add($key, $value, $expire);
 	}
 
 	/**

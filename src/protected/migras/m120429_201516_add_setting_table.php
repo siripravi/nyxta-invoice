@@ -35,7 +35,6 @@ class m120429_201516_add_setting_table extends CDbMigration
 				UNIQUE (settingkey)
 			) ENGINE = InnoDB;
 		");
-
 	}
 
 	public function down()

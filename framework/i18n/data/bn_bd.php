@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'bn_BD'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##,##0%',
   'currencyFormat' => '#,##,##0.00¤;(#,##,##0.00¤)',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'BDT' => '৳',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'জানুয়ারী',
       2 => 'ফেব্রুয়ারী',
       3 => 'মার্চ',
@@ -70,8 +71,8 @@ return array (
       11 => 'নভেম্বর',
       12 => 'ডিসেম্বর',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Month1',
       2 => 'Month2',
       3 => 'Month3',
@@ -86,10 +87,10 @@ return array (
       12 => 'Month12',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'জা',
       2 => 'ফে',
       3 => 'মা',
@@ -104,10 +105,10 @@ return array (
       12 => 'ডি',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'রবিবার',
       1 => 'সোমবার',
       2 => 'মঙ্গলবার',
@@ -116,8 +117,8 @@ return array (
       5 => 'শুক্রবার',
       6 => 'শনিবার',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'রবি',
       1 => 'সোম',
       2 => 'মঙ্গল',
@@ -126,8 +127,8 @@ return array (
       5 => 'শুক্র',
       6 => 'শনি',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'রঃ',
       1 => 'সোঃ',
       2 => 'মঃ',
@@ -137,10 +138,10 @@ return array (
       6 => 'শোঃ',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'র',
       1 => 'সো',
       2 => 'ম',
@@ -149,8 +150,8 @@ return array (
       5 => 'শু',
       6 => 'শ',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'রঃ',
       1 => 'সোঃ',
       2 => 'মঃ',
@@ -160,33 +161,33 @@ return array (
       6 => 'শোঃ',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'খৃষ্টপূর্ব',
       1 => 'খৃষ্টাব্দ',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'খৃষ্টপূর্ব',
       1 => 'খৃষ্টাব্দ',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'খৃষ্টপূর্ব',
       1 => 'খৃষ্টাব্দ',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, d MMMM, y',
     'long' => 'd MMMM, y',
     'medium' => 'd MMM, y',
     'short' => 'd/M/yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'h:mm:ss a zzzz',
     'long' => 'h:mm:ss a z',
     'medium' => 'h:mm:ss a',
@@ -196,8 +197,8 @@ return array (
   'amName' => 'পূর্বাহ্ণ',
   'pmName' => 'অপরাহ্ণ',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'আফার',
     'ab' => 'আব্খাজিয়',
     'ace' => 'আচিনিয়',
@@ -709,8 +710,8 @@ return array (
     'zxx' => 'ভাষাতাত্তিক বিষয়সূচী বহির্ভুত',
     'zza' => 'জাজা',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'ফারসি-আরবি',
     'armi' => 'আরমি',
     'armn' => 'আর্মেনীয়',
@@ -842,8 +843,8 @@ return array (
     'zyyy' => 'সাধারন',
     'zzzz' => 'অজানা বা ভুল লিপি',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'পৃথিবী',
     '002' => 'আফ্রিকা',
     '003' => 'উত্তর আমেরিক',
@@ -1135,8 +1136,8 @@ return array (
     'zw' => 'জিম্বাবুয়ে',
     'zz' => 'অজানা অথবা ভুল স্থান',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

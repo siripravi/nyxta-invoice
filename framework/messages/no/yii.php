@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -13,7 +14,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   '"{path}" is not a valid directory.' => '"{path}" er ikke en gyldig katalog',
   '&lt; Previous' => '&lt; Forrige',
   '&lt;&lt; First' => '&lt;&lt; Første',
@@ -153,7 +154,7 @@ return array (
   'The relation "{relation}" in active record class "{class}" is not specified correctly: the join table "{joinTable}" given in the foreign key cannot be found in the database.' => 'Relasjonen "{relation}" i Active Record klassen "{class}" er ikke spesifisert korrekt: Den samenslåtte ("join") tabellen  "{joinTable}" gitt i fremmednøkkelen finnes ikke i databasen',
   'The relation "{relation}" in active record class "{class}" is specified with a foreign key "{key}" that does not point to the parent table "{table}".' => 'Relasjonen "{relation}" i Active Record klassen "{class}" er spesifisert med en fremmednøkkel som ikke peker til den overordnede tabellen "{table}".',
   'The relation "{relation}" in active record class "{class}" is specified with an incomplete foreign key. The foreign key must consist of columns referencing both joining tables.' => 'Relasjonen "{relation}" i Active Record klassen "{class}" er spesifisert med en ufullstendig fremmednøkkel. Fremmednøkkelen må bestå av kolonner som refererer til begge tabeller som blir joinet.',
-  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key "{key}". The foreign key does not point to either joining table.' => 'Relasjonen "{relation}" i Active Record klassen "{class}" er spesifisert med en ugyldig fremmednøkkel "{key}". Fremmednøkkelen peker ikke til noen av tabellene i joinen.' ,
+  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key "{key}". The foreign key does not point to either joining table.' => 'Relasjonen "{relation}" i Active Record klassen "{class}" er spesifisert med en ugyldig fremmednøkkel "{key}". Fremmednøkkelen peker ikke til noen av tabellene i joinen.',
   'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key "{key}". There is no such column in the table "{table}".' => 'Relasjonen "{relation}" i Active Record klassen "{class}" er spesifisert med en ugyldig fremmednøkkel "{key}". Det er ingen slik kolonne i tabellen "{table}".',
   'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key. The columns in the key must match the primary keys of the table "{table}".' => 'Relasjonen "{relation}" i Active Record klassen "{class}" er spesifisert med en ugyldig fremmednøkkel. Kolonnene i nøkkelen må matche primærnøkkelene i tabellen "{table}".',
   'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key. The format of the foreign key must be "joinTable(fk1,fk2,...)".' => 'Relasjonen "{relation}" i Active Record klassen "{class}" er spesifisert med en ugyldig fremmednøkkel. Formatet for fremmednøkkelen må være "joinTable(fk1,fk2,...)".',

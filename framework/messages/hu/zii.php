@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -13,7 +14,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   'Home' => 'Főoldal',
   'The button type "{type}" is not supported.' => 'A "{type}" típusú gomb nem támogatott',
   'Are you sure you want to delete this item?' => 'Biztos benne hogy törli?',

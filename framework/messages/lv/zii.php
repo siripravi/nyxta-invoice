@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -13,7 +14,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   'Are you sure to delete this item?' => 'Vai patiešām vēlaties dzēst šo vienību?',
   'Delete' => 'Dzēst',
   'Displaying {start}-{end} of 1 result.|Displaying {start}-{end} of {count} results.' => '﻿Attēlo no {start}. līdz {end}. no pavisam {count} ieraksta(-iem).',

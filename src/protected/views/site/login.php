@@ -26,21 +26,25 @@
 
         <div style="padding-top:8px" class="content">
             <?php
-            $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
-                'id' => 'login-form',
-                'type' => 'vertical',
-                'enableClientValidation' => false,
-                'clientOptions' => array(
-                    'validateOnSubmit' => true,
-                ),
-                'errorMessageCssClass' => 'alert alert-danger',
-                'htmlOptions' => array()
-            )
+            $form = $this->beginWidget(
+                'bootstrap.widgets.TbActiveForm',
+                array(
+                    'id' => 'login-form',
+                    'type' => 'vertical',
+                    'enableClientValidation' => false,
+                    'clientOptions' => array(
+                        'validateOnSubmit' => true,
+                    ),
+                    'errorMessageCssClass' => 'alert alert-danger',
+                    'htmlOptions' => array()
+                )
             );
             ?>
 
-            <?php //echo $form->error($model,'username',array('errorCssClass'=>'alert alert-danger'));  ?>
-            <?php //echo $form->error($model,'password',array('errorCssClass'=>'alert alert-danger')); ?>
+            <?php //echo $form->error($model,'username',array('errorCssClass'=>'alert alert-danger'));  
+            ?>
+            <?php //echo $form->error($model,'password',array('errorCssClass'=>'alert alert-danger')); 
+            ?>
 
             <?php echo $form->textFieldRow($model, 'username', array('class' => 'form-control')); ?>
 

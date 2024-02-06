@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'sid'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2013 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '6546',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'alias' => '',
     'decimal' => '.',
     'group' => ',',
@@ -29,8 +30,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'AU$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -54,10 +55,10 @@ return array (
     'XPF' => 'CFPF',
     'ETB' => 'Br',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -71,26 +72,8 @@ return array (
       11 => '11',
       12 => '12',
     ),
-    'abbreviated' => 
-    array (
-      1 => '1',
-      2 => '2',
-      3 => '3',
-      4 => '4',
-      5 => '5',
-      6 => '6',
-      7 => '7',
-      8 => '8',
-      9 => '9',
-      10 => '10',
-      11 => '11',
-      12 => '12',
-    ),
-  ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -105,10 +88,28 @@ return array (
       12 => '12',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
+      1 => '1',
+      2 => '2',
+      3 => '3',
+      4 => '4',
+      5 => '5',
+      6 => '6',
+      7 => '7',
+      8 => '8',
+      9 => '9',
+      10 => '10',
+      11 => '11',
+      12 => '12',
+    ),
+  ),
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Sambata',
       1 => 'Sanyo',
       2 => 'Maakisanyo',
@@ -117,8 +118,8 @@ return array (
       5 => 'Arbe',
       6 => 'Qidaame',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Sam',
       1 => 'San',
       2 => 'Mak',
@@ -128,10 +129,10 @@ return array (
       6 => 'Qid',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'S',
       1 => 'S',
       2 => 'M',
@@ -141,33 +142,33 @@ return array (
       6 => 'Q',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'YIA',
       1 => 'YIG',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'YIA',
       1 => 'YIG',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'YIA',
       1 => 'YIG',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, MMMM dd, y',
     'long' => 'dd MMMM y',
     'medium' => 'dd-MMM-y',
     'short' => 'dd/MM/yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'h:mm:ss a zzzz',
     'long' => 'h:mm:ss a z',
     'medium' => 'h:mm:ss a',
@@ -177,16 +178,16 @@ return array (
   'amName' => 'soodo',
   'pmName' => 'hawwaro',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'sid' => 'Sidaamu Afo',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'latn' => 'Latin',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     'et' => 'Itiyoophiya',
   ),
 );

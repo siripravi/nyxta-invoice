@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'is_IS'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => '.',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00;(¤#,##0.00)',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'ISK' => 'kr',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'janúar',
       2 => 'febrúar',
       3 => 'mars',
@@ -70,8 +71,8 @@ return array (
       11 => 'nóvember',
       12 => 'desember',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'jan',
       2 => 'feb',
       3 => 'mar',
@@ -85,8 +86,8 @@ return array (
       11 => 'nóv',
       12 => 'des',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       1 => 'J',
       2 => 'F',
       3 => 'M',
@@ -101,10 +102,10 @@ return array (
       12 => 'D',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'J',
       2 => 'F',
       3 => 'M',
@@ -119,10 +120,10 @@ return array (
       12 => 'D',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'sunnudagur',
       1 => 'mánudagur',
       2 => 'þriðjudagur',
@@ -131,8 +132,8 @@ return array (
       5 => 'föstudagur',
       6 => 'laugardagur',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'sun',
       1 => 'mán',
       2 => 'þri',
@@ -141,8 +142,8 @@ return array (
       5 => 'fös',
       6 => 'lau',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'S',
       1 => 'M',
       2 => 'Þ',
@@ -151,8 +152,8 @@ return array (
       5 => 'F',
       6 => 'L',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'su',
       1 => 'má',
       2 => 'þr',
@@ -162,10 +163,10 @@ return array (
       6 => 'la',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'S',
       1 => 'M',
       2 => 'þ',
@@ -174,8 +175,8 @@ return array (
       5 => 'F',
       6 => 'L',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'su',
       1 => 'má',
       2 => 'þr',
@@ -185,33 +186,33 @@ return array (
       6 => 'la',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'f.Kr.',
       1 => 'e.Kr.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'fyrir Krist',
       1 => 'eftir Krist',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'f.k.',
       1 => 'e.k.',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, d. MMMM y',
     'long' => 'd. MMMM y',
     'medium' => 'd.M.y',
     'short' => 'd.M.y',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -221,8 +222,8 @@ return array (
   'amName' => 'f.h.',
   'pmName' => 'e.h.',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'aa' => 'afár',
     'ab' => 'abkasíska',
     'ace' => 'akkíska',
@@ -756,8 +757,8 @@ return array (
     'zxx' => 'ekkert tungutengt efni',
     'zza' => 'zázáíska',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'Persneskt-arabískt',
     'armi' => 'impéríska araméíska',
     'armn' => 'armenska',
@@ -857,8 +858,8 @@ return array (
     'zyyy' => 'Almennt',
     'zzzz' => 'Óþekkt letur',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'Heimurinn',
     '002' => 'Afríka',
     '003' => 'Norður-Ameríka',
@@ -1150,8 +1151,8 @@ return array (
     'zw' => 'Simbabve',
     'zz' => 'Óþekkt svæði',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

@@ -6,17 +6,20 @@
             </div>
             <div class="panel-body">
                 <?php
-                echo CHtml::link('<i class="fa fa-credit-card"></i>', '', array(
-                    "ajax" => array(
-                        'beforeSend' => 'function(){
+                echo CHtml::link(
+                    '<i class="fa fa-credit-card"></i>',
+                    '',
+                    array(
+                        "ajax" => array(
+                            'beforeSend' => 'function(){
                                                BootstrapDialog.show({
                                                title : "Customer Card Info",
                                                message: $("<div></div>").load("/customer/cards/id/' . $data->statement->customer->customer_no . '.html")
                                             });
                                                }'
-                    ),
-                    'class' => 'btn btn-primary btn-sm pull-right'
-                )
+                        ),
+                        'class' => 'btn btn-primary btn-sm pull-right'
+                    )
                 );
                 ?>
                 <?php $this->renderPartial('_custForm', array('stmt' => $data)); ?>

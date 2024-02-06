@@ -73,12 +73,13 @@ class PaymentsWidget extends CWidget
     public function run()
     {
         $pmt = new Payments;
-        $this->render('payments', array(
-            'pmt' => $pmt,
-            'stmt' => $this->model,
-            'dp' => new CArrayDataProvider($this->model->payments, array('keyField' => 'ID'))
-        )
+        $this->render(
+            'payments',
+            array(
+                'pmt' => $pmt,
+                'stmt' => $this->model,
+                'dp' => new CArrayDataProvider($this->model->payments, array('keyField' => 'ID'))
+            )
         );
     }
-
 }

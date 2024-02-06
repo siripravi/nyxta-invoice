@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'to_TO'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '‎#0%',
   'currencyFormat' => '¤ #,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'TOP' => 'T$',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Sānuali',
       2 => 'Fēpueli',
       3 => 'Maʻasi',
@@ -70,8 +71,8 @@ return array (
       11 => 'Nōvema',
       12 => 'Tīsema',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Sān',
       2 => 'Fēp',
       3 => 'Maʻa',
@@ -85,8 +86,8 @@ return array (
       11 => 'Nōv',
       12 => 'Tīs',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       1 => 'S',
       2 => 'F',
       3 => 'M',
@@ -101,10 +102,10 @@ return array (
       12 => 'T',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'S',
       2 => 'F',
       3 => 'M',
@@ -118,8 +119,8 @@ return array (
       11 => 'N',
       12 => 'T',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Sān',
       2 => 'Fēp',
       3 => 'Maʻa',
@@ -133,8 +134,8 @@ return array (
       11 => 'Nōv',
       12 => 'Tīs',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       1 => 'Sānuali',
       2 => 'Fēpueli',
       3 => 'Maʻasi',
@@ -149,10 +150,10 @@ return array (
       12 => 'Tīsema',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Sāpate',
       1 => 'Mōnite',
       2 => 'Tūsite',
@@ -161,8 +162,8 @@ return array (
       5 => 'Falaite',
       6 => 'Tokonaki',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Sāp',
       1 => 'Mōn',
       2 => 'Tūs',
@@ -171,8 +172,8 @@ return array (
       5 => 'Fal',
       6 => 'Tok',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'S',
       1 => 'M',
       2 => 'T',
@@ -181,8 +182,8 @@ return array (
       5 => 'F',
       6 => 'T',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'Sāp',
       1 => 'Mōn',
       2 => 'Tūs',
@@ -192,10 +193,10 @@ return array (
       6 => 'Tok',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'S',
       1 => 'M',
       2 => 'T',
@@ -204,8 +205,8 @@ return array (
       5 => 'F',
       6 => 'T',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Sāp',
       1 => 'Mōn',
       2 => 'Tūs',
@@ -214,8 +215,8 @@ return array (
       5 => 'Fal',
       6 => 'Tok',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'Sāp',
       1 => 'Mōn',
       2 => 'Tūs',
@@ -224,8 +225,8 @@ return array (
       5 => 'Fal',
       6 => 'Tok',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Sāpate',
       1 => 'Mōnite',
       2 => 'Tūsite',
@@ -235,33 +236,33 @@ return array (
       6 => 'Tokonaki',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'KM',
       1 => 'TS',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'ki muʻa',
       1 => 'taʻu ʻo Sīsū',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'KāMā',
       1 => 'TāSā',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE d MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'd MMM y',
     'short' => 'd/M/yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -271,8 +272,8 @@ return array (
   'amName' => 'AM',
   'pmName' => 'PM',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ab' => 'lea fakaʻapakasi',
     'ady' => 'lea fakaʻatike',
     'af' => 'lea fakaʻafilikana',
@@ -544,8 +545,8 @@ return array (
     'zu' => 'lea fakasulu',
     'zxx' => 'ʻikai ha lea',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'tohinima fakaʻalepea',
     'armn' => 'tohinima fakaʻamīnia',
     'beng' => 'tohinima fakapengila',
@@ -589,8 +590,8 @@ return array (
     'zyyy' => 'tohinima fakatatau',
     'zzzz' => 'tohinima taʻeʻiloa',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'Māmani',
     '002' => 'ʻAfilika',
     '003' => 'ʻAmelika tokelau',

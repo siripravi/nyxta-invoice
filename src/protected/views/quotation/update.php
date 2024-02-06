@@ -17,7 +17,8 @@ $assDir = Yii::app()->assetManager->publish(dirname(__FILE__) . '/assets');*/
 <?php
 Yii::import('application.controllers.InvoiceController');
 ?>
-<?php //$this->renderPartial('invoice/_hdrOps', array('stmt' => $stmt)); ?>
+<?php //$this->renderPartial('invoice/_hdrOps', array('stmt' => $stmt)); 
+?>
 <hr>
 <div class="row">
 
@@ -33,7 +34,7 @@ Yii::import('application.controllers.InvoiceController');
   ?>
 
 
-  <?php if ($stmt->primaryKey !== null): ?>
+  <?php if ($stmt->primaryKey !== null) : ?>
 
     <?php
     $id = $stmt->primaryKey;
@@ -50,4 +51,5 @@ Yii::import('application.controllers.InvoiceController');
   <?php endif; ?>
 </div>
 
-<?php //$this->renderPartial('invoice/_invRightSide', array('stmt' => $stmt, 'dueDate' => $this->calcDueDate($stmt->created, $stmt->ship_date))); ?>
+<?php //$this->renderPartial('invoice/_invRightSide', array('stmt' => $stmt, 'dueDate' => $this->calcDueDate($stmt->created, $stmt->ship_date))); 
+?>

@@ -31,12 +31,14 @@
         <div class="panel-body">
             <div id="ven-details-adrs">
                 <p class="category"><i class="pe-7s-date"></i>
-                    <?php //echo Yii::app()->dateFormatter->formatDateTime($stmt->ship_date, "medium", null);  ?>
+                    <?php //echo Yii::app()->dateFormatter->formatDateTime($stmt->ship_date, "medium", null);  
+                    ?>
                     <strong>
                         <?php echo date("F jS, Y", strtotime($stmt->statement->ship_date)); ?>
                     </strong>
 
-                    <?php //echo date("F jS, Y", strtotime($stmt->ship_date)); ?>
+                    <?php //echo date("F jS, Y", strtotime($stmt->ship_date)); 
+                    ?>
                 </p>
 
                 <div class="org"><strong>
@@ -76,7 +78,7 @@
     </div>
 </div>
 
-<?php if ($stmt->primaryKey !== null): ?>
+<?php if ($stmt->primaryKey !== null) : ?>
     <div class="col-xs-12 table-responsive">
         <div class="box box-default">
             <div class="box-header h4">Items</div>
@@ -93,7 +95,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($items as $i => $item): ?>
+                        <?php foreach ($items as $i => $item) : ?>
                             <tr>
                                 <td class="srno">
                                     <?php echo $i + 1; ?>
@@ -106,7 +108,8 @@
                                 <td class="desc">
                                     <?php echo $lines; ?>
                                 </td>
-                                <?php //endforeach;  ?>
+                                <?php //endforeach;  
+                                ?>
                                 <td class="qty">
                                     <?php echo (int) $item->QUANTITY; ?>
                                 </td>
@@ -120,31 +123,31 @@
                                 </td>
                             </tr>
                             <tr>
-                                <?php
-                                $start += 1;
+                            <?php
+                            $start += 1;
                         endforeach;
-                        ?>
+                            ?>
 
-                        <tr>
-                            <td colspan="4" class="subtotal">GRAND TOTAL</td>
-                            <td class="total">
-                                <?php echo $formatter->formatCurrency($stmt->itemsTotal, 'USD'); ?>
-                            </td>
-                        </tr>
-                        <?php if ($stmt->st_type == statement::TYPE_INVOICE): ?>
                             <tr>
-                                <td colspan="4">PAYMENTS/CREDITS</td>
+                                <td colspan="4" class="subtotal">GRAND TOTAL</td>
                                 <td class="total">
-                                    <?php echo $formatter->formatCurrency($stmt->paymentsTotal, 'USD'); ?>
+                                    <?php echo $formatter->formatCurrency($stmt->itemsTotal, 'USD'); ?>
                                 </td>
                             </tr>
-                            <tr>
-                                <td colspan="4">BALANCE DUE</td>
-                                <td class="grand">
-                                    <?php echo $formatter->formatCurrency($stmt->itemsTotal - $stmt->paymentsTotal, 'USD'); ?>
-                                </td>
-                            </tr>
-                        <?php endif; ?>
+                            <?php if ($stmt->st_type == statement::TYPE_INVOICE) : ?>
+                                <tr>
+                                    <td colspan="4">PAYMENTS/CREDITS</td>
+                                    <td class="total">
+                                        <?php echo $formatter->formatCurrency($stmt->paymentsTotal, 'USD'); ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">BALANCE DUE</td>
+                                    <td class="grand">
+                                        <?php echo $formatter->formatCurrency($stmt->itemsTotal - $stmt->paymentsTotal, 'USD'); ?>
+                                    </td>
+                                </tr>
+                            <?php endif; ?>
                     </tbody>
                     <!-- end ngRepeat: item in invoice.items -->
                 </table>

@@ -82,9 +82,11 @@ class MovEmployee extends CActiveRecord
 		$criteria->compare('mov_id', $this->mov_id);
 		$criteria->compare('emp_id', $this->emp_id);
 
-		return new CActiveDataProvider($this, array(
-			'criteria' => $criteria,
-		)
+		return new CActiveDataProvider(
+			$this,
+			array(
+				'criteria' => $criteria,
+			)
 		);
 	}
 

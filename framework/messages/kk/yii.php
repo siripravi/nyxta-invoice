@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -16,7 +17,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   'CDbConnection failed to open the DB connection.' => 'CDbConnection дерекқормен байланысты орната алмады.',
   'CDbConnection is unable to find PDO class "{className}". Make sure PDO is installed correctly.' => 'CDbConnection "{className}" PDO класын таба алмады. PDO дұрыс орнатылғанына көз жеткізіңіз.',
   'Cannot hash a password that is empty or not a string.' => 'Бос немесе жол емес парольдің хэшін жасау мүмкін емес.',

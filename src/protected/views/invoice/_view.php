@@ -6,7 +6,8 @@
 
             </div>
             <div class="panel-body">
-                <?php //echo $data->customer_no;?>
+                <?php //echo $data->customer_no;
+                ?>
                 <?php
                 echo CHtml::link(
                     '<i class="fa fa-credit-card"></i> ',
@@ -49,7 +50,7 @@
         </div>
     </div>
 
-    <?php if ($data->primaryKey !== null): ?>
+    <?php if ($data->primaryKey !== null) : ?>
         <?php
         $this->widget('application.components.widgets.invoice.InvWidget', array('pk' => $data->primaryKey));
         ?>

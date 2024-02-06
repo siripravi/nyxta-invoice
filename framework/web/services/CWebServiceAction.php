@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CWebServiceAction class file.
  *
@@ -57,7 +58,7 @@ class CWebServiceAction extends CAction
 	 * from a Web service request. If this GET parameter exists, the request is considered
 	 * as a Web service request; otherwise, it is a WSDL request.  Defaults to 'ws'.
 	 */
-	public $serviceVar='ws';
+	public $serviceVar = 'ws';
 	/**
 	 * @var array a list of PHP classes that are declared as complex types in WSDL.
 	 * This should be an array with WSDL types as keys and names of PHP classes as values.
@@ -70,7 +71,7 @@ class CWebServiceAction extends CAction
 	 * The array keys are property names of {@link CWebService} and the array values
 	 * are the corresponding property initial values.
 	 */
-	public $serviceOptions=array();
+	public $serviceOptions = array();
 
 	private $_service;
 
@@ -82,24 +83,24 @@ class CWebServiceAction extends CAction
 	 */
 	public function run()
 	{
-		$hostInfo=Yii::app()->getRequest()->getHostInfo();
-		$controller=$this->getController();
-		if(($serviceUrl=$this->serviceUrl)===null)
-			$serviceUrl=$hostInfo.$controller->createUrl($this->getId(),array($this->serviceVar=>1));
-		if(($wsdlUrl=$this->wsdlUrl)===null)
-			$wsdlUrl=$hostInfo.$controller->createUrl($this->getId());
-		if(($provider=$this->provider)===null)
-			$provider=$controller;
+		$hostInfo = Yii::app()->getRequest()->getHostInfo();
+		$controller = $this->getController();
+		if (($serviceUrl = $this->serviceUrl) === null)
+			$serviceUrl = $hostInfo . $controller->createUrl($this->getId(), array($this->serviceVar => 1));
+		if (($wsdlUrl = $this->wsdlUrl) === null)
+			$wsdlUrl = $hostInfo . $controller->createUrl($this->getId());
+		if (($provider = $this->provider) === null)
+			$provider = $controller;
 
-		$this->_service=$this->createWebService($provider,$wsdlUrl,$serviceUrl);
+		$this->_service = $this->createWebService($provider, $wsdlUrl, $serviceUrl);
 
-		if(is_array($this->classMap))
-			$this->_service->classMap=$this->classMap;
+		if (is_array($this->classMap))
+			$this->_service->classMap = $this->classMap;
 
-		foreach($this->serviceOptions as $name=>$value)
-			$this->_service->$name=$value;
+		foreach ($this->serviceOptions as $name => $value)
+			$this->_service->$name = $value;
 
-		if(isset($_GET[$this->serviceVar]))
+		if (isset($_GET[$this->serviceVar]))
 			$this->_service->run();
 		else
 			$this->_service->renderWsdl();
@@ -124,8 +125,8 @@ class CWebServiceAction extends CAction
 	 * @param string $serviceUrl the URL for the Web service.
 	 * @return CWebService the Web service instance
 	 */
-	protected function createWebService($provider,$wsdlUrl,$serviceUrl)
+	protected function createWebService($provider, $wsdlUrl, $serviceUrl)
 	{
-		return new CWebService($provider,$wsdlUrl,$serviceUrl);
+		return new CWebService($provider, $wsdlUrl, $serviceUrl);
 	}
 }

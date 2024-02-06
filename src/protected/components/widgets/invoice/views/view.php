@@ -20,7 +20,7 @@ $nginvoice = $this->beginWidget(
 
     </div>
     <section class="invoice">
-        <?php if ($this->stmt->primaryKey !== null): ?>
+        <?php if ($this->stmt->primaryKey !== null) : ?>
             <div class="card">
                 <div class="header">
                     <h4 class="title"><i class="pe-7s-note2"></i> Item Details</h4>
@@ -28,8 +28,7 @@ $nginvoice = $this->beginWidget(
                         <ng-form>
                             <fieldset ng-disabled="isSaving" ng-show="invForm.$dirty">
                                 <?php $event = null; ?>
-                                <a class="btn btn-fill btn-warning" id="submit_item_button" ng-click="load($event)"
-                                    name="myButton" role="button" aria-disabled="true"><i class="pe-7s-diskette"></i>
+                                <a class="btn btn-fill btn-warning" id="submit_item_button" ng-click="load($event)" name="myButton" role="button" aria-disabled="true"><i class="pe-7s-diskette"></i>
                                     SAVE</a>
                             </fieldset>
                         </ng-form>
@@ -55,55 +54,36 @@ $nginvoice = $this->beginWidget(
                                 <tr ng-repeat="item in invoice.items" ng-hide="item.status == 3">
                                 <tr class="grid-row ng-scope" ng-repeat="item in invoice.items" ng-hide="item.status == 3">
                                     <td>
-                                        <a class="rowOption btn btn-sm" href="javascript:void(0)" title="Insert new row"
-                                            ng-click="insertRow($index)">
+                                        <a class="rowOption btn btn-sm" href="javascript:void(0)" title="Insert new row" ng-click="insertRow($index)">
                                             <i class="pe-7s-bottom-arrow"></i>
                                         </a>
                                     </td>
                                     <td><b>{{$index + 1}}</b>
-                                        <input style="width:38px;display:none"
-                                            id="<?php echo 'StatementItems_'; ?>{{$index}}<?php echo 'sequence'; ?>"
-                                            name="<?php echo 'StatementItems['; ?>{{$index}}<?php echo ']sequence'; ?>"
-                                            placeholder="1" type="text" value="{{$index + 1}}">
+                                        <input style="width:38px;display:none" id="<?php echo 'StatementItems_'; ?>{{$index}}<?php echo 'sequence'; ?>" name="<?php echo 'StatementItems['; ?>{{$index}}<?php echo ']sequence'; ?>" placeholder="1" type="text" value="{{$index + 1}}">
                                     </td>
                                     <td>
                                         <div ng-hide="editingData[$index + 1]"> {{item.description}} </div>
-                                        <div ng-show="editingData[$index + 1] || (item.id == 0)"><textarea
-                                                style="width:423px" ng-model="item.description"
-                                                name="<?php echo 'StatementItems['; ?>{{$index}}<?php echo ']description'; ?>"
-                                                id="<?php echo 'statemetItems_'; ?>{{$index}}<?php echo '_description'; ?>"></textarea>
+                                        <div ng-show="editingData[$index + 1] || (item.id == 0)"><textarea style="width:423px" ng-model="item.description" name="<?php echo 'StatementItems['; ?>{{$index}}<?php echo ']description'; ?>" id="<?php echo 'statemetItems_'; ?>{{$index}}<?php echo '_description'; ?>"></textarea>
                                         </div>
                                     </td>
                                     <td>
                                         <div ng-hide="editingData[$index + 1]"> {{item.quantity}} </div>
-                                        <textarea ng-show="editingData[$index + 1] || (item.id == 0)" style="width:80px"
-                                            ng-change="rowTotal($index)"
-                                            class="invoiceColThreeDetails text-center ng-valid ng-dirty" id="cel3-row1"
-                                            name="<?php echo 'StatementItems['; ?>{{$index}}<?php echo ']quantity'; ?>"
-                                            ng-model="item.quantity" placeholder="0" type="text" value=""
-                                            ng-focus="item.quantity = null" ng-click="item.quantity = null"></textarea>
+                                        <textarea ng-show="editingData[$index + 1] || (item.id == 0)" style="width:80px" ng-change="rowTotal($index)" class="invoiceColThreeDetails text-center ng-valid ng-dirty" id="cel3-row1" name="<?php echo 'StatementItems['; ?>{{$index}}<?php echo ']quantity'; ?>" ng-model="item.quantity" placeholder="0" type="text" value="" ng-focus="item.quantity = null" ng-click="item.quantity = null"></textarea>
                                     </td>
                                     <td>
                                         <div ng-hide="editingData[$index + 1]"> {{item.price}} </div>
-                                        <textarea ng-show="editingData[$index + 1] || (item.id == 0)" style="width:80px"
-                                            ng-change="rowTotal($index)"
-                                            class="invoiceColFourDetails text-center ng-valid ng-dirty" id="cel4-row1"
-                                            name="<?php echo 'StatementItems['; ?>{{$index}}<?php echo ']price'; ?>"
-                                            ng-model="item.price" placeholder="0" ng-click="item.price = null"
-                                            ng-focus="item.price = null" type="text" real-time-currency></textarea>
+                                        <textarea ng-show="editingData[$index + 1] || (item.id == 0)" style="width:80px" ng-change="rowTotal($index)" class="invoiceColFourDetails text-center ng-valid ng-dirty" id="cel4-row1" name="<?php echo 'StatementItems['; ?>{{$index}}<?php echo ']price'; ?>" ng-model="item.price" placeholder="0" ng-click="item.price = null" ng-focus="item.price = null" type="text" real-time-currency></textarea>
                                     </td>
                                     <td style="font-weight:bolder">
                                         <b>{{rowTotal(item)}}</b>
                                     </td>
                                     <td>
                                         <div class="mailbox-controls" style="padding:5px;">
-                                            <a class="rowOption  btn btn-sm" href="javascript:void(0)"
-                                                title="Delete row (Ctrl+Delete)" ng-click="deleteRow($index)">
+                                            <a class="rowOption  btn btn-sm" href="javascript:void(0)" title="Delete row (Ctrl+Delete)" ng-click="deleteRow($index)">
                                                 <i class="pe-7s-junk"></i>
                                             </a>
                                             &nbsp;&nbsp;
-                                            <a class="rowOption  btn btn-sm" ng-hide="editingData[$index + 1]"
-                                                ng-click="modify($index + 1)"><i class="pe-7s-pen"></i></a>
+                                            <a class="rowOption  btn btn-sm" ng-hide="editingData[$index + 1]" ng-click="modify($index + 1)"><i class="pe-7s-pen"></i></a>
                                         </div>
                                     </td>
                                 </tr>
@@ -124,7 +104,7 @@ $nginvoice = $this->beginWidget(
                                     <th style="width:50%">Total:</th>
                                     <td>{{subTotal()}}</td>
                                 </tr>
-                                <?php if ($this->stmt->st_type == Statement::TYPE_INVOICE): ?>
+                                <?php if ($this->stmt->st_type == Statement::TYPE_INVOICE) : ?>
                                     <tr>
                                         <th>Paid</th>
                                         <td>
@@ -151,7 +131,6 @@ $nginvoice = $this->beginWidget(
 </div>
 <?php $this->endWidget('ext.yii-angularjs-helper.YiiAngularjsHelper'); ?>
 <script>
-
     // Passing parameters to the script / controller without using placeholders:
     function setYiiParams(params) {
         // (setting them by reference)

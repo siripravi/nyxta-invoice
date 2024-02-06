@@ -1,4 +1,5 @@
 <?php
+
 /**
  * TbButton class file.
  * @author Christoffer Niska <ChristofferNiska@gmail.com>
@@ -202,11 +203,13 @@ class TbButton extends CWidget
 		echo $this->createButton();
 
 		if ($this->hasDropdown()) {
-			$this->controller->widget('bootstrap.widgets.TbDropdown', array(
-				'encodeLabel' => $this->encodeLabel,
-				'items' => $this->items,
-				'htmlOptions' => $this->dropdownOptions,
-			)
+			$this->controller->widget(
+				'bootstrap.widgets.TbDropdown',
+				array(
+					'encodeLabel' => $this->encodeLabel,
+					'items' => $this->items,
+					'htmlOptions' => $this->dropdownOptions,
+				)
 			);
 		}
 	}

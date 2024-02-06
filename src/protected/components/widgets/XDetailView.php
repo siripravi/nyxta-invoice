@@ -1,4 +1,5 @@
 <?php
+
 /**
  * XDetailView class file.
  *
@@ -156,7 +157,6 @@ class XDetailView extends CDetailView
 
 				//merge label & value, since there is no label for child's block
 				$this->_aryColumns[$j] = strtr(isset($attribute['template']) ? $attribute['template'] : $this->itemTemplateMerge, $tr);
-
 			} else {
 				$tr['{value}'] = $value === null ? $this->nullDisplay : $formatter->format($value, $attribute['type']);
 

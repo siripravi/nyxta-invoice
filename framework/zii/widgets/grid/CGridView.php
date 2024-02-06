@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CGridView class file.
  *
@@ -86,9 +87,9 @@ Yii::import('zii.widgets.grid.CCheckBoxColumn');
  */
 class CGridView extends CBaseListView
 {
-	const FILTER_POS_HEADER='header';
-	const FILTER_POS_FOOTER='footer';
-	const FILTER_POS_BODY='body';
+	const FILTER_POS_HEADER = 'header';
+	const FILTER_POS_FOOTER = 'footer';
+	const FILTER_POS_BODY = 'body';
 
 	private $_formatter;
 	/**
@@ -105,14 +106,14 @@ class CGridView extends CBaseListView
 	 * Currently, these official column classes are provided: {@link CDataColumn},
 	 * {@link CLinkColumn}, {@link CButtonColumn} and {@link CCheckBoxColumn}.
 	 */
-	public $columns=array();
+	public $columns = array();
 	/**
 	 * @var array the CSS class names for the table body rows. If multiple CSS class names are given,
 	 * they will be assigned to the rows sequentially and repeatedly. This property is ignored
 	 * if {@link rowCssClassExpression} is set. Defaults to <code>array('odd', 'even')</code>.
 	 * @see rowCssClassExpression
 	 */
-	public $rowCssClass=array('odd','even');
+	public $rowCssClass = array('odd', 'even');
 	/**
 	 * @var string a PHP expression that is evaluated for every table body row and whose result
 	 * is used as the CSS class name for the row. In this expression, you can use the following variables:
@@ -162,7 +163,7 @@ class CGridView extends CBaseListView
 	 * @var boolean whether to display the table even when there is no data. Defaults to true.
 	 * The {@link emptyText} will be displayed to indicate there is no data.
 	 */
-	public $showTableOnEmpty=true;
+	public $showTableOnEmpty = true;
 	/**
 	 * @var mixed the ID of the container whose content may be updated with an AJAX response.
 	 * Defaults to null, meaning the container for this grid view instance.
@@ -187,7 +188,7 @@ class CGridView extends CBaseListView
 	 * </pre>
 	 * @since 1.1.7
 	 */
-	public $updateSelector='{page}, {sort}';
+	public $updateSelector = '{page}, {sort}';
 	/**
 	 * @var string a javascript function that will be invoked if an AJAX update error occurs.
 	 *
@@ -214,7 +215,7 @@ class CGridView extends CBaseListView
 	 * @var string the name of the GET variable that indicates the request is an AJAX request triggered
 	 * by this widget. Defaults to 'ajax'. This is effective only when {@link ajaxUpdate} is not false.
 	 */
-	public $ajaxVar='ajax';
+	public $ajaxVar = 'ajax';
 	/**
 	 * @var mixed the URL for the AJAX requests should be sent to. {@link CHtml::normalizeUrl()} will be
 	 * called on this property. If not set, the current page URL will be used for AJAX requests.
@@ -255,7 +256,7 @@ class CGridView extends CBaseListView
 	 * <code>$(gridID).yiiGridView('getSelection')</code> to retrieve the key values of the currently selected
 	 * rows (gridID is the DOM selector of the grid).
 	 */
-	public $selectableRows=1;
+	public $selectableRows = 1;
 	/**
 	 * @var string the base script URL for all grid view resources (eg javascript, CSS file, images).
 	 * Defaults to null, meaning using the integrated grid view resources (which are published as assets).
@@ -270,20 +271,20 @@ class CGridView extends CBaseListView
 	 * @var string the text to be displayed in a data cell when a data value is null. This property will NOT be HTML-encoded
 	 * when rendering. Defaults to an HTML blank.
 	 */
-	public $nullDisplay='&nbsp;';
+	public $nullDisplay = '&nbsp;';
 	/**
 	 * @var string the text to be displayed in an empty grid cell. This property will NOT be HTML-encoded when rendering. Defaults to an HTML blank.
 	 * This differs from {@link nullDisplay} in that {@link nullDisplay} is only used by {@link CDataColumn} to render
 	 * null data values.
 	 * @since 1.1.7
 	 */
-	public $blankDisplay='&nbsp;';
+	public $blankDisplay = '&nbsp;';
 	/**
 	 * @var string the CSS class name that will be assigned to the widget container element
 	 * when the widget is updating its content via AJAX. Defaults to 'grid-view-loading'.
 	 * @since 1.1.1
 	 */
-	public $loadingCssClass='grid-view-loading';
+	public $loadingCssClass = 'grid-view-loading';
 	/**
 	 * @var string the jQuery selector of filter input fields.
 	 * The token '{filter}' is recognized and it will be replaced with the grid filters selector.
@@ -299,13 +300,13 @@ class CGridView extends CBaseListView
 	 * </pre>
 	 * @since 1.1.13
 	 */
-	public $filterSelector='{filter}';
+	public $filterSelector = '{filter}';
 	/**
 	 * @var string the CSS class name for the table row element containing all filter input fields. Defaults to 'filters'.
 	 * @see filter
 	 * @since 1.1.1
 	 */
-	public $filterCssClass='filters';
+	public $filterCssClass = 'filters';
 	/**
 	 * @var string whether the filters should be displayed in the grid view. Valid values include:
 	 * <ul>
@@ -316,7 +317,7 @@ class CGridView extends CBaseListView
 	 * @see filter
 	 * @since 1.1.1
 	 */
-	public $filterPosition='body';
+	public $filterPosition = 'body';
 	/**
 	 * @var CModel the model instance that keeps the user-entered filter data. When this property is set,
 	 * the grid view will enable column-based filtering. Each data column by default will display a text field
@@ -333,7 +334,7 @@ class CGridView extends CBaseListView
 	 * in the header. Defaults to false.
 	 * @since 1.1.1
 	 */
-	public $hideHeader=false;
+	public $hideHeader = false;
 	/**
 	 * @var boolean whether to leverage the {@link https://developer.mozilla.org/en/DOM/window.history DOM history object}.  Set this property to true
 	 * to persist state of grid across page revisits.  Note, there are two limitations for this feature:
@@ -343,7 +344,7 @@ class CGridView extends CBaseListView
 	 * </ul>
 	 * @since 1.1.11
 	 */
-	public $enableHistory=false;
+	public $enableHistory = false;
 
 
 	/**
@@ -354,21 +355,20 @@ class CGridView extends CBaseListView
 	{
 		parent::init();
 
-		if(empty($this->updateSelector))
-			throw new CException(Yii::t('zii','The property updateSelector should be defined.'));
-		if(empty($this->filterSelector))
-			throw new CException(Yii::t('zii','The property filterSelector should be defined.'));
+		if (empty($this->updateSelector))
+			throw new CException(Yii::t('zii', 'The property updateSelector should be defined.'));
+		if (empty($this->filterSelector))
+			throw new CException(Yii::t('zii', 'The property filterSelector should be defined.'));
 
-		if(!isset($this->htmlOptions['class']))
-			$this->htmlOptions['class']='grid-view';
+		if (!isset($this->htmlOptions['class']))
+			$this->htmlOptions['class'] = 'grid-view';
 
-		if($this->baseScriptUrl===null)
-			$this->baseScriptUrl=Yii::app()->getAssetManager()->publish(Yii::getPathOfAlias('zii.widgets.assets')).'/gridview';
+		if ($this->baseScriptUrl === null)
+			$this->baseScriptUrl = Yii::app()->getAssetManager()->publish(Yii::getPathOfAlias('zii.widgets.assets')) . '/gridview';
 
-		if($this->cssFile!==false)
-		{
-			if($this->cssFile===null)
-				$this->cssFile=$this->baseScriptUrl.'/styles.css';
+		if ($this->cssFile !== false) {
+			if ($this->cssFile === null)
+				$this->cssFile = $this->baseScriptUrl . '/styles.css';
 			Yii::app()->getClientScript()->registerCssFile($this->cssFile);
 		}
 
@@ -380,40 +380,35 @@ class CGridView extends CBaseListView
 	 */
 	protected function initColumns()
 	{
-		if($this->columns===array())
-		{
-			if($this->dataProvider instanceof CActiveDataProvider)
-				$this->columns=$this->dataProvider->model->attributeNames();
-			elseif($this->dataProvider instanceof IDataProvider)
-			{
+		if ($this->columns === array()) {
+			if ($this->dataProvider instanceof CActiveDataProvider)
+				$this->columns = $this->dataProvider->model->attributeNames();
+			elseif ($this->dataProvider instanceof IDataProvider) {
 				// use the keys of the first row of data as the default columns
-				$data=$this->dataProvider->getData();
-				if(isset($data[0]) && is_array($data[0]))
-					$this->columns=array_keys($data[0]);
+				$data = $this->dataProvider->getData();
+				if (isset($data[0]) && is_array($data[0]))
+					$this->columns = array_keys($data[0]);
 			}
 		}
-		$id=$this->getId();
-		foreach($this->columns as $i=>$column)
-		{
-			if(is_string($column))
-				$column=$this->createDataColumn($column);
-			else
-			{
-				if(!isset($column['class']))
-					$column['class']='CDataColumn';
-				$column=Yii::createComponent($column, $this);
+		$id = $this->getId();
+		foreach ($this->columns as $i => $column) {
+			if (is_string($column))
+				$column = $this->createDataColumn($column);
+			else {
+				if (!isset($column['class']))
+					$column['class'] = 'CDataColumn';
+				$column = Yii::createComponent($column, $this);
 			}
-			if(!$column->visible)
-			{
+			if (!$column->visible) {
 				unset($this->columns[$i]);
 				continue;
 			}
-			if($column->id===null)
-				$column->id=$id.'_c'.$i;
-			$this->columns[$i]=$column;
+			if ($column->id === null)
+				$column->id = $id . '_c' . $i;
+			$this->columns[$i] = $column;
 		}
 
-		foreach($this->columns as $column)
+		foreach ($this->columns as $column)
 			$column->init();
 	}
 
@@ -425,14 +420,14 @@ class CGridView extends CBaseListView
 	 */
 	protected function createDataColumn($text)
 	{
-		if(!preg_match('/^([\w\.]+)(:(\w*))?(:(.*))?$/',$text,$matches))
-			throw new CException(Yii::t('zii','The column must be specified in the format of "Name:Type:Label", where "Type" and "Label" are optional.'));
-		$column=new CDataColumn($this);
-		$column->name=$matches[1];
-		if(isset($matches[3]) && $matches[3]!=='')
-			$column->type=$matches[3];
-		if(isset($matches[5]))
-			$column->header=$matches[5];
+		if (!preg_match('/^([\w\.]+)(:(\w*))?(:(.*))?$/', $text, $matches))
+			throw new CException(Yii::t('zii', 'The column must be specified in the format of "Name:Type:Label", where "Type" and "Label" are optional.'));
+		$column = new CDataColumn($this);
+		$column->name = $matches[1];
+		if (isset($matches[3]) && $matches[3] !== '')
+			$column->type = $matches[3];
+		if (isset($matches[5]))
+			$column->header = $matches[5];
 		return $column;
 	}
 
@@ -441,55 +436,53 @@ class CGridView extends CBaseListView
 	 */
 	public function registerClientScript()
 	{
-		$id=$this->getId();
+		$id = $this->getId();
 
-		if($this->ajaxUpdate===false)
-			$ajaxUpdate=false;
+		if ($this->ajaxUpdate === false)
+			$ajaxUpdate = false;
 		else
-			$ajaxUpdate=array_unique(preg_split('/\s*,\s*/',$this->ajaxUpdate.','.$id,-1,PREG_SPLIT_NO_EMPTY));
-		$options=array(
-			'ajaxUpdate'=>$ajaxUpdate,
-			'ajaxVar'=>$this->ajaxVar,
-			'pagerClass'=>$this->pagerCssClass,
-			'loadingClass'=>$this->loadingCssClass,
-			'filterClass'=>$this->filterCssClass,
-			'tableClass'=>$this->itemsCssClass,
-			'selectableRows'=>$this->selectableRows,
-			'enableHistory'=>$this->enableHistory,
-			'updateSelector'=>$this->updateSelector,
-			'filterSelector'=>$this->filterSelector
+			$ajaxUpdate = array_unique(preg_split('/\s*,\s*/', $this->ajaxUpdate . ',' . $id, -1, PREG_SPLIT_NO_EMPTY));
+		$options = array(
+			'ajaxUpdate' => $ajaxUpdate,
+			'ajaxVar' => $this->ajaxVar,
+			'pagerClass' => $this->pagerCssClass,
+			'loadingClass' => $this->loadingCssClass,
+			'filterClass' => $this->filterCssClass,
+			'tableClass' => $this->itemsCssClass,
+			'selectableRows' => $this->selectableRows,
+			'enableHistory' => $this->enableHistory,
+			'updateSelector' => $this->updateSelector,
+			'filterSelector' => $this->filterSelector
 		);
-		if($this->ajaxUrl!==null)
-			$options['url']=CHtml::normalizeUrl($this->ajaxUrl);
-		if($this->ajaxType!==null) {
-			$options['ajaxType']=strtoupper($this->ajaxType);
-			$request=Yii::app()->getRequest();
-			if ($options['ajaxType']=='POST' && $request->enableCsrfValidation) {
-				$options['csrfTokenName']=$request->csrfTokenName;
-				$options['csrfToken']=$request->getCsrfToken();
+		if ($this->ajaxUrl !== null)
+			$options['url'] = CHtml::normalizeUrl($this->ajaxUrl);
+		if ($this->ajaxType !== null) {
+			$options['ajaxType'] = strtoupper($this->ajaxType);
+			$request = Yii::app()->getRequest();
+			if ($options['ajaxType'] == 'POST' && $request->enableCsrfValidation) {
+				$options['csrfTokenName'] = $request->csrfTokenName;
+				$options['csrfToken'] = $request->getCsrfToken();
 			}
 		}
-		if($this->enablePagination)
-			$options['pageVar']=$this->dataProvider->getPagination()->pageVar;
-		foreach(array('beforeAjaxUpdate', 'afterAjaxUpdate', 'ajaxUpdateError', 'selectionChanged') as $event)
-		{
-			if($this->$event!==null)
-			{
-				if($this->$event instanceof CJavaScriptExpression)
-					$options[$event]=$this->$event;
+		if ($this->enablePagination)
+			$options['pageVar'] = $this->dataProvider->getPagination()->pageVar;
+		foreach (array('beforeAjaxUpdate', 'afterAjaxUpdate', 'ajaxUpdateError', 'selectionChanged') as $event) {
+			if ($this->$event !== null) {
+				if ($this->$event instanceof CJavaScriptExpression)
+					$options[$event] = $this->$event;
 				else
-					$options[$event]=new CJavaScriptExpression($this->$event);
+					$options[$event] = new CJavaScriptExpression($this->$event);
 			}
 		}
 
-		$options=CJavaScript::encode($options);
-		$cs=Yii::app()->getClientScript();
+		$options = CJavaScript::encode($options);
+		$cs = Yii::app()->getClientScript();
 		$cs->registerCoreScript('jquery');
 		$cs->registerCoreScript('bbq');
-		if($this->enableHistory)
+		if ($this->enableHistory)
 			$cs->registerCoreScript('history');
-		$cs->registerScriptFile($this->baseScriptUrl.'/jquery.yiigridview.js',CClientScript::POS_END);
-		$cs->registerScript(__CLASS__.'#'.$id,"jQuery('#$id').yiiGridView($options);");
+		$cs->registerScriptFile($this->baseScriptUrl . '/jquery.yiigridview.js', CClientScript::POS_END);
+		$cs->registerScript(__CLASS__ . '#' . $id, "jQuery('#$id').yiiGridView($options);");
 	}
 
 	/**
@@ -497,18 +490,16 @@ class CGridView extends CBaseListView
 	 */
 	public function renderItems()
 	{
-		if($this->dataProvider->getItemCount()>0 || $this->showTableOnEmpty)
-		{
+		if ($this->dataProvider->getItemCount() > 0 || $this->showTableOnEmpty) {
 			echo "<table class=\"{$this->itemsCssClass}\">\n";
 			$this->renderTableHeader();
 			ob_start();
 			$this->renderTableBody();
-			$body=ob_get_clean();
+			$body = ob_get_clean();
 			$this->renderTableFooter();
 			echo $body; // TFOOT must appear before TBODY according to the standard.
 			echo "</table>";
-		}
-		else
+		} else
 			$this->renderEmptyText();
 	}
 
@@ -517,25 +508,22 @@ class CGridView extends CBaseListView
 	 */
 	public function renderTableHeader()
 	{
-		if(!$this->hideHeader)
-		{
+		if (!$this->hideHeader) {
 			echo "<thead>\n";
 
-			if($this->filterPosition===self::FILTER_POS_HEADER)
+			if ($this->filterPosition === self::FILTER_POS_HEADER)
 				$this->renderFilter();
 
 			echo "<tr>\n";
-			foreach($this->columns as $column)
+			foreach ($this->columns as $column)
 				$column->renderHeaderCell();
 			echo "</tr>\n";
 
-			if($this->filterPosition===self::FILTER_POS_BODY)
+			if ($this->filterPosition === self::FILTER_POS_BODY)
 				$this->renderFilter();
 
 			echo "</thead>\n";
-		}
-		elseif($this->filter!==null && ($this->filterPosition===self::FILTER_POS_HEADER || $this->filterPosition===self::FILTER_POS_BODY))
-		{
+		} elseif ($this->filter !== null && ($this->filterPosition === self::FILTER_POS_HEADER || $this->filterPosition === self::FILTER_POS_BODY)) {
 			echo "<thead>\n";
 			$this->renderFilter();
 			echo "</thead>\n";
@@ -548,10 +536,9 @@ class CGridView extends CBaseListView
 	 */
 	public function renderFilter()
 	{
-		if($this->filter!==null)
-		{
+		if ($this->filter !== null) {
 			echo "<tr class=\"{$this->filterCssClass}\">\n";
-			foreach($this->columns as $column)
+			foreach ($this->columns as $column)
 				$column->renderFilterCell();
 			echo "</tr>\n";
 		}
@@ -562,19 +549,17 @@ class CGridView extends CBaseListView
 	 */
 	public function renderTableFooter()
 	{
-		$hasFilter=$this->filter!==null && $this->filterPosition===self::FILTER_POS_FOOTER;
-		$hasFooter=$this->getHasFooter();
-		if($hasFilter || $hasFooter)
-		{
+		$hasFilter = $this->filter !== null && $this->filterPosition === self::FILTER_POS_FOOTER;
+		$hasFooter = $this->getHasFooter();
+		if ($hasFilter || $hasFooter) {
 			echo "<tfoot>\n";
-			if($hasFooter)
-			{
+			if ($hasFooter) {
 				echo "<tr>\n";
-				foreach($this->columns as $column)
+				foreach ($this->columns as $column)
 					$column->renderFooterCell();
 				echo "</tr>\n";
 			}
-			if($hasFilter)
+			if ($hasFilter)
 				$this->renderFilter();
 			echo "</tfoot>\n";
 		}
@@ -585,18 +570,15 @@ class CGridView extends CBaseListView
 	 */
 	public function renderTableBody()
 	{
-		$data=$this->dataProvider->getData();
-		$n=count($data);
+		$data = $this->dataProvider->getData();
+		$n = count($data);
 		echo "<tbody>\n";
 
-		if($n>0)
-		{
-			for($row=0;$row<$n;++$row)
+		if ($n > 0) {
+			for ($row = 0; $row < $n; ++$row)
 				$this->renderTableRow($row);
-		}
-		else
-		{
-			echo '<tr><td colspan="'.count($this->columns).'" class="empty">';
+		} else {
+			echo '<tr><td colspan="' . count($this->columns) . '" class="empty">';
 			$this->renderEmptyText();
 			echo "</td></tr>\n";
 		}
@@ -609,33 +591,29 @@ class CGridView extends CBaseListView
 	 */
 	public function renderTableRow($row)
 	{
-		$htmlOptions=array();
-		if($this->rowHtmlOptionsExpression!==null)
-		{
-			$data=$this->dataProvider->data[$row];
-			$options=$this->evaluateExpression($this->rowHtmlOptionsExpression,array('row'=>$row,'data'=>$data));
-			if(is_array($options))
+		$htmlOptions = array();
+		if ($this->rowHtmlOptionsExpression !== null) {
+			$data = $this->dataProvider->data[$row];
+			$options = $this->evaluateExpression($this->rowHtmlOptionsExpression, array('row' => $row, 'data' => $data));
+			if (is_array($options))
 				$htmlOptions = $options;
 		}
 
-		if($this->rowCssClassExpression!==null)
-		{
-			$data=$this->dataProvider->data[$row];
-			$class=$this->evaluateExpression($this->rowCssClassExpression,array('row'=>$row,'data'=>$data));
-		}
-		elseif(is_array($this->rowCssClass) && ($n=count($this->rowCssClass))>0)
-			$class=$this->rowCssClass[$row%$n];
+		if ($this->rowCssClassExpression !== null) {
+			$data = $this->dataProvider->data[$row];
+			$class = $this->evaluateExpression($this->rowCssClassExpression, array('row' => $row, 'data' => $data));
+		} elseif (is_array($this->rowCssClass) && ($n = count($this->rowCssClass)) > 0)
+			$class = $this->rowCssClass[$row % $n];
 
-		if(!empty($class))
-		{
-			if(isset($htmlOptions['class']))
-				$htmlOptions['class'].=' '.$class;
+		if (!empty($class)) {
+			if (isset($htmlOptions['class']))
+				$htmlOptions['class'] .= ' ' . $class;
 			else
-				$htmlOptions['class']=$class;
+				$htmlOptions['class'] = $class;
 		}
 
-		echo CHtml::openTag('tr', $htmlOptions)."\n";
-		foreach($this->columns as $column)
+		echo CHtml::openTag('tr', $htmlOptions) . "\n";
+		foreach ($this->columns as $column)
 			$this->renderDataCell($column, $row);
 		echo "</tr>\n";
 	}
@@ -654,15 +632,15 @@ class CGridView extends CBaseListView
 	{
 		$column->renderDataCell($row);
 	}
-	
+
 	/**
 	 * @return boolean whether the table should render a footer.
 	 * This is true if any of the {@link columns} has a true {@link CGridColumn::hasFooter} value.
 	 */
 	public function getHasFooter()
 	{
-		foreach($this->columns as $column)
-			if($column->getHasFooter())
+		foreach ($this->columns as $column)
+			if ($column->getHasFooter())
 				return true;
 		return false;
 	}
@@ -672,8 +650,8 @@ class CGridView extends CBaseListView
 	 */
 	public function getFormatter()
 	{
-		if($this->_formatter===null)
-			$this->_formatter=Yii::app()->format;
+		if ($this->_formatter === null)
+			$this->_formatter = Yii::app()->format;
 		return $this->_formatter;
 	}
 
@@ -682,6 +660,6 @@ class CGridView extends CBaseListView
 	 */
 	public function setFormatter($value)
 	{
-		$this->_formatter=$value;
+		$this->_formatter = $value;
 	}
 }

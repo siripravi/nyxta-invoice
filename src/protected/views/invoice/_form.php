@@ -159,7 +159,7 @@ if (!empty($statement->customer))
         var format = '<div>' + item.text + '</div>';
         return format;
     }
-    jQuery(function () {
+    jQuery(function() {
         jQuery('#Statement_customer_no').select2({
             minimumInputLength: 2,
             placeholder: 'Search for customer',
@@ -168,21 +168,24 @@ if (!empty($statement->customer))
                 url: '/copyright.json',
                 dataType: 'json',
                 quietMillis: 250,
-                data: function (term, page) {
+                data: function(term, page) {
                     return {
                         q: term
                     };
                 },
-                results: function (data, page) {
-                    return { results: data, id: 'ItemId', text: 'ItemText' };
+                results: function(data, page) {
+                    return {
+                        results: data,
+                        id: 'ItemId',
+                        text: 'ItemText'
+                    };
                 }
             },
             formatResult: getItemFormat,
             dropdownCssClass: "bigdrop",
-            escapeMarkup: function (m) {
+            escapeMarkup: function(m) {
                 return m;
             }
         });
     });
-
 </script>

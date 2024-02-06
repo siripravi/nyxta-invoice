@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CJuiDraggable class file.
  *
@@ -46,7 +47,7 @@ class CJuiDraggable extends CJuiWidget
 	/**
 	 * @var string the name of the Draggable element. Defaults to 'div'.
 	 */
-	public $tagName='div';
+	public $tagName = 'div';
 
 	/**
 	 * Renders the open tag of the draggable element.
@@ -56,16 +57,16 @@ class CJuiDraggable extends CJuiWidget
 	{
 		parent::init();
 
-		$id=$this->getId();
-		if(isset($this->htmlOptions['id']))
-			$id=$this->htmlOptions['id'];
+		$id = $this->getId();
+		if (isset($this->htmlOptions['id']))
+			$id = $this->htmlOptions['id'];
 		else
-			$this->htmlOptions['id']=$id;
+			$this->htmlOptions['id'] = $id;
 
-		$options=CJavaScript::encode($this->options);
-		Yii::app()->getClientScript()->registerScript(__CLASS__.'#'.$id,"jQuery('#{$id}').draggable($options);");
+		$options = CJavaScript::encode($this->options);
+		Yii::app()->getClientScript()->registerScript(__CLASS__ . '#' . $id, "jQuery('#{$id}').draggable($options);");
 
-		echo CHtml::openTag($this->tagName,$this->htmlOptions)."\n";
+		echo CHtml::openTag($this->tagName, $this->htmlOptions) . "\n";
 	}
 
 	/**

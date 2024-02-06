@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'so_SO'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'SOS' => 'S',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Bisha Koobaad',
       2 => 'Bisha Labaad',
       3 => 'Bisha Saddexaad',
@@ -70,8 +71,8 @@ return array (
       11 => 'Bisha Kow iyo Tobnaad',
       12 => 'Bisha Laba iyo Tobnaad',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Kob',
       2 => 'Lab',
       3 => 'Sad',
@@ -86,10 +87,10 @@ return array (
       12 => 'LIT',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'K',
       2 => 'L',
       3 => 'S',
@@ -104,10 +105,10 @@ return array (
       12 => 'L',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Axad',
       1 => 'Isniin',
       2 => 'Talaado',
@@ -116,8 +117,8 @@ return array (
       5 => 'Jimco',
       6 => 'Sabti',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Axd',
       1 => 'Isn',
       2 => 'Tal',
@@ -127,10 +128,10 @@ return array (
       6 => 'Sab',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'A',
       1 => 'I',
       2 => 'T',
@@ -140,33 +141,33 @@ return array (
       6 => 'S',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'CK',
       1 => 'CD',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Ciise ka hor (CS)',
       1 => 'Ciise ka dib (CS)',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'CK',
       1 => 'CD',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, MMMM dd, y',
     'long' => 'dd MMMM y',
     'medium' => 'dd-MMM-y',
     'short' => 'dd/MM/yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'h:mm:ss a zzzz',
     'long' => 'h:mm:ss a z',
     'medium' => 'h:mm:ss a',
@@ -176,8 +177,8 @@ return array (
   'amName' => 'sn.',
   'pmName' => 'gn.',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'af' => 'Afrikaanays',
     'ak' => 'Akan',
     'am' => 'Axmaari',
@@ -298,14 +299,14 @@ return array (
     'zh' => 'Jayniis',
     'zu' => 'Zuulu',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'latn' => 'Laatiin',
     'zxxx' => 'Aan la qorin',
     'zzzz' => 'Far aan la aqoon amase aan saxnayn',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '014' => 'Afrikada Bari',
     '030' => 'Aasiyada Bari',
     151 => 'Yurubta Bari',
@@ -537,8 +538,8 @@ return array (
     'zw' => 'Simbaabwe',
     'zz' => 'Far aan la aqoon amase aan saxnayn',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

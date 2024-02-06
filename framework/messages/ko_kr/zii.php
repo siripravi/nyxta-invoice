@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -16,7 +17,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   'Home' => '홈',
   'The button type "{type}" is not supported.' => '버튼 타입 "{type}"은 지원하지 않습니다.',
   'Are you sure you want to delete this item?' => '이 항목을 삭제하겠습니까?',

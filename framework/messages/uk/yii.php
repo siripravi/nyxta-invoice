@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -16,7 +17,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   'CHttpCacheFilter.lastModified contained a value that could not be understood by strtotime()' => 'CHttpCacheFilter.lastModified містить значення, яке не може бути зрозумілим strtotime()',
   'CMemCache requires PHP {extension} extension to be loaded.' => 'CMemCache потребує завантаженого розширення PHP {extension}.',
   'Class name "{class}" does not match class file "{file}".' => 'Імʼя класу "{class}" не співпадає із файлом класу "{file}".',

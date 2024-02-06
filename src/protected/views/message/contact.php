@@ -1,6 +1,6 @@
-<?php if (Yii::app()->user->hasFlash('contact')): ?>
+<?php if (Yii::app()->user->hasFlash('contact')) : ?>
     <?php echo Yii::app()->user->getFlash('contact'); ?>
-<?php else: ?>
+<?php else : ?>
     <div class="card">
         <div class="header">
             <h4 class="title">
@@ -12,14 +12,16 @@
         </div>
         <div class="content">
             <?php
-            $form = $this->beginWidget('CActiveForm', array(
-                'id' => 'contact-form',
-                'enableClientValidation' => true,
-                'clientOptions' => array(
-                    'validateOnSubmit' => true,
-                ),
-                'htmlOptions' => array('class' => 'form-horizontal')
-            )
+            $form = $this->beginWidget(
+                'CActiveForm',
+                array(
+                    'id' => 'contact-form',
+                    'enableClientValidation' => true,
+                    'clientOptions' => array(
+                        'validateOnSubmit' => true,
+                    ),
+                    'htmlOptions' => array('class' => 'form-horizontal')
+                )
             );
             ?>
             <?php echo $form->errorSummary($model); ?>

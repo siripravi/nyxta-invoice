@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -13,7 +14,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   'Are you sure you want to delete this item?' => 'உறுதியாக இதை நீக்கிவிடவா?',
   'Delete' => 'நீக்கு',
   'Displaying {start}-{end} of 1 result.|Displaying {start}-{end} of {count} results.' => '{count} முடிவுகளில் {start}-{end} முடிவுகளை காண்பிக்கிறது',

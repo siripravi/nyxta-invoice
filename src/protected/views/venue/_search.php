@@ -4,10 +4,12 @@
 /* @var $form BSActiveForm */
 ?>
 
-<?php $form = $this->beginWidget('bootstrap.widgets.BsActiveForm', array(
-    'action' => Yii::app()->createUrl($this->route),
-    'method' => 'get',
-)
+<?php $form = $this->beginWidget(
+    'bootstrap.widgets.BsActiveForm',
+    array(
+        'action' => Yii::app()->createUrl($this->route),
+        'method' => 'get',
+    )
 ); ?>
 
 <?php echo $form->textFieldControlGroup($model, 'venue_id'); ?>
@@ -23,7 +25,7 @@
 <?php echo $form->textFieldControlGroup($model, 'SHIP_DETAILS', array('maxlength' => 255)); ?>
 
 <div class="form-actions">
-    <?php echo BsHtml::submitButton('Search', array('color' => BsHtml::BUTTON_COLOR_PRIMARY, )); ?>
+    <?php echo BsHtml::submitButton('Search', array('color' => BsHtml::BUTTON_COLOR_PRIMARY,)); ?>
 </div>
 
 <?php $this->endWidget(); ?>

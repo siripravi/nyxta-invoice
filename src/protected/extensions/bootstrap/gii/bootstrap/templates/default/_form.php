@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The following variables are available in this template:
  * - $this: the BootCrudCode object
@@ -17,10 +18,10 @@
 foreach ($this->tableSchema->columns as $column) {
 	if ($column->autoIncrement)
 		continue;
-	?>
+?>
 	<?php echo "<?php echo " . $this->generateActiveRow($this->modelClass, $column) . "; ?>\n"; ?>
 
-	<?php
+<?php
 }
 ?>
 <div class="form-actions">

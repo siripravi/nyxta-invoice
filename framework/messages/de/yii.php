@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -16,7 +17,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   '\'{db}\' component doesn\'t exist.' => 'Die Applikations-Komponente \'{db}\' existiert nicht.',
   '\'{db}\' component is not a valid CDbConnection instance.' => 'Die Applikations-Komponente \'{db}\' ist keine Instanz der CDbConnection Klasse.',
   'CApcCache requires PHP {extension} extension to be loaded.' => 'CApcCache erfordert, dass die PHP {extension} Erweiterung geladen wurde.',

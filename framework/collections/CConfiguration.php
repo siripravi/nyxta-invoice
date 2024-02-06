@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file contains classes implementing configuration feature.
  *
@@ -44,9 +45,9 @@ class CConfiguration extends CMap
 	 * @param mixed $data if string, it represents a config file (a PHP script returning the configuration as an array);
 	 * If array, it is config data.
 	 */
-	public function __construct($data=null)
+	public function __construct($data = null)
 	{
-		if(is_string($data))
+		if (is_string($data))
 			parent::__construct(require($data));
 		else
 			parent::__construct($data);
@@ -69,8 +70,8 @@ class CConfiguration extends CMap
 	 */
 	public function loadFromFile($configFile)
 	{
-		$data=require($configFile);
-		if($this->getCount()>0)
+		$data = require($configFile);
+		if ($this->getCount() > 0)
 			$this->mergeWith($data);
 		else
 			$this->copyFrom($data);
@@ -83,7 +84,7 @@ class CConfiguration extends CMap
 	 */
 	public function saveAsString()
 	{
-		return str_replace("\r",'',var_export($this->toArray(),true));
+		return str_replace("\r", '', var_export($this->toArray(), true));
 	}
 
 	/**
@@ -94,7 +95,7 @@ class CConfiguration extends CMap
 	 */
 	public function applyTo($object)
 	{
-		foreach($this->toArray() as $key=>$value)
-			$object->$key=$value;
+		foreach ($this->toArray() as $key => $value)
+			$object->$key = $value;
 	}
 }

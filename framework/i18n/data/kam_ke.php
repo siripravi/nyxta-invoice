@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'kam_KE'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00;(¤#,##0.00)',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'KES' => 'Ksh',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Mwai wa mbee',
       2 => 'Mwai wa kelĩ',
       3 => 'Mwai wa katatũ',
@@ -70,8 +71,8 @@ return array (
       11 => 'Mwai wa ĩkumi na ĩmwe',
       12 => 'Mwai wa ĩkumi na ilĩ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'Mbe',
       2 => 'Kel',
       3 => 'Ktũ',
@@ -86,10 +87,10 @@ return array (
       12 => 'Ĩkl',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'M',
       2 => 'K',
       3 => 'K',
@@ -104,10 +105,10 @@ return array (
       12 => 'Ĩ',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Wa kyumwa',
       1 => 'Wa kwambĩlĩlya',
       2 => 'Wa kelĩ',
@@ -116,8 +117,8 @@ return array (
       5 => 'Wa katano',
       6 => 'Wa thanthatũ',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Wky',
       1 => 'Wkw',
       2 => 'Wkl',
@@ -127,10 +128,10 @@ return array (
       6 => 'Wth',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'Y',
       1 => 'W',
       2 => 'E',
@@ -140,33 +141,33 @@ return array (
       6 => 'A',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'MY',
       1 => 'IY',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Mbee wa Yesũ',
       1 => 'Ĩtina wa Yesũ',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'MY',
       1 => 'IY',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, d MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'd MMM y',
     'short' => 'dd/MM/y',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'h:mm:ss a zzzz',
     'long' => 'h:mm:ss a z',
     'medium' => 'h:mm:ss a',
@@ -176,8 +177,8 @@ return array (
   'amName' => 'Ĩyakwakya',
   'pmName' => 'Ĩyawĩoo',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ak' => 'Kiakan',
     'am' => 'Kiamhari',
     'ar' => 'Kiarabu',
@@ -224,8 +225,8 @@ return array (
     'zh' => 'Kichina',
     'zu' => 'Kizulu',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     'ad' => 'Andora',
     'ae' => 'Falme za Kiarabu',
     'af' => 'Afuganistani',

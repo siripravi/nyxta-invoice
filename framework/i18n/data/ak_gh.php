@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'ak_GH'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'GHS' => 'GH₵',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'Sanda-Ɔpɛpɔn',
       2 => 'Kwakwar-Ɔgyefuo',
       3 => 'Ebɔw-Ɔbenem',
@@ -70,8 +71,8 @@ return array (
       11 => 'Ɔberɛfɛw-Obubuo',
       12 => 'Mumu-Ɔpɛnimba',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'S-Ɔ',
       2 => 'K-Ɔ',
       3 => 'E-Ɔ',
@@ -86,10 +87,10 @@ return array (
       12 => 'M-Ɔ',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => '1',
       2 => '2',
       3 => '3',
@@ -104,10 +105,10 @@ return array (
       12 => '12',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'Kwesida',
       1 => 'Dwowda',
       2 => 'Benada',
@@ -116,8 +117,8 @@ return array (
       5 => 'Fida',
       6 => 'Memeneda',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Kwe',
       1 => 'Dwo',
       2 => 'Ben',
@@ -127,10 +128,10 @@ return array (
       6 => 'Mem',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'K',
       1 => 'D',
       2 => 'B',
@@ -140,33 +141,33 @@ return array (
       6 => 'M',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'AK',
       1 => 'KE',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Ansa Kristo',
       1 => 'Kristo Ekyiri',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'AK',
       1 => 'KE',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, y MMMM dd',
     'long' => 'y MMMM d',
     'medium' => 'y MMM d',
     'short' => 'yy/MM/dd',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -176,8 +177,8 @@ return array (
   'amName' => 'AN',
   'pmName' => 'EW',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ak' => 'Akan',
     'am' => 'Amarik',
     'ar' => 'Arabik',
@@ -223,8 +224,8 @@ return array (
     'zh' => 'Kyaena kasa',
     'zu' => 'Zulu',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     'ad' => 'Andora',
     'ae' => 'United Arab Emirates',
     'af' => 'Afganistan',
@@ -451,8 +452,8 @@ return array (
     'zm' => 'Zambia',
     'zw' => 'Zembabwe',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => '(n>=0&&n<=1&&fmod(n,1)==0)',
     1 => 'true',
   ),

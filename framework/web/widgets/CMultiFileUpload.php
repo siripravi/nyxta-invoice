@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CMultiFileUpload class file.
  *
@@ -48,7 +49,7 @@ class CMultiFileUpload extends CInputWidget
 	/**
 	 * @var integer the maximum number of files that can be uploaded. If -1, it means no limits. Defaults to -1.
 	 */
-	public $max=-1;
+	public $max = -1;
 	/**
 	 * @var string the label for the remove button. Defaults to "Remove".
 	 */
@@ -74,7 +75,7 @@ class CMultiFileUpload extends CInputWidget
 	 * @var array additional options that can be passed to the constructor of the multifile js object.
 	 * @since 1.1.7
 	 */
-	public $options=array();
+	public $options = array();
 
 
 	/**
@@ -84,15 +85,15 @@ class CMultiFileUpload extends CInputWidget
 	 */
 	public function run()
 	{
-		list($name,$id)=$this->resolveNameID();
-		if(substr($name,-2)!=='[]')
-			$name.='[]';
-		if(isset($this->htmlOptions['id']))
-			$id=$this->htmlOptions['id'];
+		list($name, $id) = $this->resolveNameID();
+		if (substr($name, -2) !== '[]')
+			$name .= '[]';
+		if (isset($this->htmlOptions['id']))
+			$id = $this->htmlOptions['id'];
 		else
-			$this->htmlOptions['id']=$id;
+			$this->htmlOptions['id'] = $id;
 		$this->registerClientScript();
-		echo CHtml::fileField($name,'',$this->htmlOptions);
+		echo CHtml::fileField($name, '', $this->htmlOptions);
 	}
 
 	/**
@@ -100,14 +101,14 @@ class CMultiFileUpload extends CInputWidget
 	 */
 	public function registerClientScript()
 	{
-		$id=$this->htmlOptions['id'];
+		$id = $this->htmlOptions['id'];
 
-		$options=$this->getClientOptions();
-		$options=$options===array()? '' : CJavaScript::encode($options);
+		$options = $this->getClientOptions();
+		$options = $options === array() ? '' : CJavaScript::encode($options);
 
-		$cs=Yii::app()->getClientScript();
+		$cs = Yii::app()->getClientScript();
 		$cs->registerCoreScript('multifile');
-		$cs->registerScript('Yii.CMultiFileUpload#'.$id,"jQuery(\"#{$id}\").MultiFile({$options});");
+		$cs->registerScript('Yii.CMultiFileUpload#' . $id, "jQuery(\"#{$id}\").MultiFile({$options});");
 	}
 
 	/**
@@ -115,26 +116,24 @@ class CMultiFileUpload extends CInputWidget
 	 */
 	protected function getClientOptions()
 	{
-		$options=$this->options;
-		foreach(array('onFileRemove','afterFileRemove','onFileAppend','afterFileAppend','onFileSelect','afterFileSelect') as $event)
-		{
-			if(isset($options[$event]) && !($options[$event] instanceof CJavaScriptExpression))
-				$options[$event]=new CJavaScriptExpression($options[$event]);
+		$options = $this->options;
+		foreach (array('onFileRemove', 'afterFileRemove', 'onFileAppend', 'afterFileAppend', 'onFileSelect', 'afterFileSelect') as $event) {
+			if (isset($options[$event]) && !($options[$event] instanceof CJavaScriptExpression))
+				$options[$event] = new CJavaScriptExpression($options[$event]);
 		}
 
-		if($this->accept!==null)
-			$options['accept']=$this->accept;
-		if($this->max>0)
-			$options['max']=$this->max;
+		if ($this->accept !== null)
+			$options['accept'] = $this->accept;
+		if ($this->max > 0)
+			$options['max'] = $this->max;
 
-		$messages=array();
-		foreach(array('remove','denied','selected','duplicate','file') as $messageName)
-		{
-			if($this->$messageName!==null)
-				$messages[$messageName]=$this->$messageName;
+		$messages = array();
+		foreach (array('remove', 'denied', 'selected', 'duplicate', 'file') as $messageName) {
+			if ($this->$messageName !== null)
+				$messages[$messageName] = $this->$messageName;
 		}
-		if($messages!==array())
-			$options['STRING']=$messages;
+		if ($messages !== array())
+			$options['STRING'] = $messages;
 
 		return $options;
 	}

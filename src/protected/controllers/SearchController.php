@@ -67,12 +67,13 @@ class SearchController extends Controller
         if (isset($_POST['SearchForm'])) {
             $model->attributes = $_GET['SearchForm'];
         }
-        $this->render('search', array(
-            'model' => $model,
-            'dp' => $model->search(),
-        )
+        $this->render(
+            'search',
+            array(
+                'model' => $model,
+                'dp' => $model->search(),
+            )
         );
-
     }
     /**
      * Manages all models.
@@ -121,19 +122,23 @@ class SearchController extends Controller
             case 'invoices':
                 $st_type = 2;
                 $model->st_type = $st_type;
-                $this->render('admin', array(
-                    'model' => $model,
-                    'dp' => $model->search(),
-                )
+                $this->render(
+                    'admin',
+                    array(
+                        'model' => $model,
+                        'dp' => $model->search(),
+                    )
                 );
                 break;
             case 'quotes':
                 $st_type = 1;
                 $model->st_type = $st_type;
-                $this->render('admin2', array(
-                    'model' => $model,
-                    'dp' => $model->search(),
-                )
+                $this->render(
+                    'admin2',
+                    array(
+                        'model' => $model,
+                        'dp' => $model->search(),
+                    )
                 );
                 break;
         }
@@ -189,5 +194,4 @@ class SearchController extends Controller
             return '<small class="badge pull-left bg-red">U</small>'; //all fields
         }
     }
-
 }

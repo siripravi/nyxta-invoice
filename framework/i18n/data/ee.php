@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'ee'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8663',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤#,##0.00;(¤#,##0.00)',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'AU$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -53,10 +54,10 @@ return array (
     'XPF' => 'CFPF',
     'GHS' => 'GH₵',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'dzove',
       2 => 'dzodze',
       3 => 'tedoxe',
@@ -70,8 +71,8 @@ return array (
       11 => 'adeɛmekpɔxe',
       12 => 'dzome',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'dzv',
       2 => 'dzd',
       3 => 'ted',
@@ -85,8 +86,8 @@ return array (
       11 => 'ade',
       12 => 'dzm',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       1 => 'd',
       2 => 'd',
       3 => 't',
@@ -101,10 +102,10 @@ return array (
       12 => 'd',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'd',
       2 => 'd',
       3 => 't',
@@ -118,8 +119,8 @@ return array (
       11 => 'a',
       12 => 'd',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'dzv',
       2 => 'dzd',
       3 => 'ted',
@@ -133,8 +134,8 @@ return array (
       11 => 'ade',
       12 => 'dzm',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       1 => 'dzove',
       2 => 'dzodze',
       3 => 'tedoxe',
@@ -149,10 +150,10 @@ return array (
       12 => 'dzome',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'kɔsiɖa',
       1 => 'dzoɖa',
       2 => 'blaɖa',
@@ -161,8 +162,8 @@ return array (
       5 => 'fiɖa',
       6 => 'memleɖa',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'kɔs',
       1 => 'dzo',
       2 => 'bla',
@@ -171,8 +172,8 @@ return array (
       5 => 'fiɖ',
       6 => 'mem',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'k',
       1 => 'd',
       2 => 'b',
@@ -181,8 +182,8 @@ return array (
       5 => 'f',
       6 => 'm',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'kɔs',
       1 => 'dzo',
       2 => 'bla',
@@ -192,10 +193,10 @@ return array (
       6 => 'mem',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'k',
       1 => 'd',
       2 => 'b',
@@ -204,8 +205,8 @@ return array (
       5 => 'f',
       6 => 'm',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'kɔs',
       1 => 'dzo',
       2 => 'bla',
@@ -214,8 +215,8 @@ return array (
       5 => 'fiɖ',
       6 => 'mem',
     ),
-    'short' => 
-    array (
+    'short' =>
+    array(
       0 => 'kɔs',
       1 => 'dzo',
       2 => 'bla',
@@ -224,8 +225,8 @@ return array (
       5 => 'fiɖ',
       6 => 'mem',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'kɔsiɖa',
       1 => 'dzoɖa',
       2 => 'blaɖa',
@@ -235,33 +236,33 @@ return array (
       6 => 'memleɖa',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'hY',
       1 => 'Yŋ',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'Hafi Yesu Va Do ŋgɔ',
       1 => 'Yesu Ŋɔli',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'hY',
       1 => 'Yŋ',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE, MMMM d \'lia\' y',
     'long' => 'MMMM d \'lia\' y',
     'medium' => 'MMM d \'lia\', y',
     'short' => 'M/d/yy',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'a h:mm:ss zzzz',
     'long' => 'a \'ga\' h:mm:ss z',
     'medium' => 'a \'ga\' h:mm:ss',
@@ -271,8 +272,8 @@ return array (
   'amName' => 'ŋdi',
   'pmName' => 'ɣetrɔ',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'ab' => 'abkhaziagbe',
     'ady' => 'adyghegbe',
     'af' => 'afrikaangbe',
@@ -527,8 +528,8 @@ return array (
     'zu' => 'zulugbe',
     'zxx' => 'gbegbɔgblɔ manɔmee',
   ),
-  'scripts' => 
-  array (
+  'scripts' =>
+  array(
     'arab' => 'arabiagbeŋɔŋlɔ',
     'armi' => 'aramia gbeŋɔŋlɔ',
     'armn' => 'armeniagbeŋɔŋlɔ',
@@ -668,8 +669,8 @@ return array (
     'zyyy' => 'gbeŋɔŋlɔ bɔbɔ',
     'zzzz' => 'gbeŋɔŋlɔ manya',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     '001' => 'xexeme',
     '002' => 'Afrika nutome',
     '003' => 'Dziehe Amerika nutome',
@@ -960,8 +961,8 @@ return array (
     'zw' => 'Zimbabwe nutome',
     'zz' => 'nutome manya',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

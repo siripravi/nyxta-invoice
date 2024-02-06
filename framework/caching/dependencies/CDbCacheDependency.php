@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CDbCacheDependency class file.
  *
@@ -25,7 +26,7 @@ class CDbCacheDependency extends CCacheDependency
 	/**
 	 * @var string the ID of a {@link CDbConnection} application component. Defaults to 'db'.
 	 */
-	public $connectionID='db';
+	public $connectionID = 'db';
 	/**
 	 * @var string the SQL statement whose result is used to determine if the dependency has been changed.
 	 * Note, the SQL statement should return back a single value.
@@ -43,9 +44,9 @@ class CDbCacheDependency extends CCacheDependency
 	 * Constructor.
 	 * @param string $sql the SQL statement whose result is used to determine if the dependency has been changed.
 	 */
-	public function __construct($sql=null)
+	public function __construct($sql = null)
 	{
-		$this->sql=$sql;
+		$this->sql = $sql;
 	}
 
 	/**
@@ -55,7 +56,7 @@ class CDbCacheDependency extends CCacheDependency
 	 */
 	public function __sleep()
 	{
-		$this->_db=null;
+		$this->_db = null;
 		return array_keys((array)$this);
 	}
 
@@ -67,29 +68,24 @@ class CDbCacheDependency extends CCacheDependency
 	 */
 	protected function generateDependentData()
 	{
-		if($this->sql!==null)
-		{
-			$db=$this->getDbConnection();
-			$command=$db->createCommand($this->sql);
-			if(is_array($this->params))
-			{
-				foreach($this->params as $name=>$value)
-					$command->bindValue($name,$value);
+		if ($this->sql !== null) {
+			$db = $this->getDbConnection();
+			$command = $db->createCommand($this->sql);
+			if (is_array($this->params)) {
+				foreach ($this->params as $name => $value)
+					$command->bindValue($name, $value);
 			}
-			if($db->queryCachingDuration>0)
-			{
+			if ($db->queryCachingDuration > 0) {
 				// temporarily disable and re-enable query caching
-				$duration=$db->queryCachingDuration;
-				$db->queryCachingDuration=0;
-				$result=$command->queryRow();
-				$db->queryCachingDuration=$duration;
-			}
-			else
-				$result=$command->queryRow();
+				$duration = $db->queryCachingDuration;
+				$db->queryCachingDuration = 0;
+				$result = $command->queryRow();
+				$db->queryCachingDuration = $duration;
+			} else
+				$result = $command->queryRow();
 			return $result;
-		}
-		else
-			throw new CException(Yii::t('yii','CDbCacheDependency.sql cannot be empty.'));
+		} else
+			throw new CException(Yii::t('yii', 'CDbCacheDependency.sql cannot be empty.'));
 	}
 
 	/**
@@ -98,15 +94,17 @@ class CDbCacheDependency extends CCacheDependency
 	 */
 	protected function getDbConnection()
 	{
-		if($this->_db!==null)
+		if ($this->_db !== null)
 			return $this->_db;
-		else
-		{
-			if(($this->_db=Yii::app()->getComponent($this->connectionID)) instanceof CDbConnection)
+		else {
+			if (($this->_db = Yii::app()->getComponent($this->connectionID)) instanceof CDbConnection)
 				return $this->_db;
 			else
-				throw new CException(Yii::t('yii','CDbCacheDependency.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.',
-					array('{id}'=>$this->connectionID)));
+				throw new CException(Yii::t(
+					'yii',
+					'CDbCacheDependency.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.',
+					array('{id}' => $this->connectionID)
+				));
 		}
 	}
 }

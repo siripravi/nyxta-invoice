@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CJuiProgressBar class file.
  *
@@ -46,11 +47,11 @@ class CJuiProgressBar extends CJuiWidget
 	/**
 	 * @var string the name of the container element that contains the progress bar. Defaults to 'div'.
 	 */
-	public $tagName='div';
+	public $tagName = 'div';
 	/**
 	 * @var integer the percentage of the progress. This must be an integer between 0 and 100. Defaults to 0.
 	 */
-	public $value=0;
+	public $value = 0;
 
 	/**
 	 * Run this widget.
@@ -58,17 +59,17 @@ class CJuiProgressBar extends CJuiWidget
 	 */
 	public function run()
 	{
-		$id=$this->getId();
-		if(isset($this->htmlOptions['id']))
-			$id=$this->htmlOptions['id'];
+		$id = $this->getId();
+		if (isset($this->htmlOptions['id']))
+			$id = $this->htmlOptions['id'];
 		else
-			$this->htmlOptions['id']=$id;
+			$this->htmlOptions['id'] = $id;
 
-		echo CHtml::openTag($this->tagName,$this->htmlOptions);
+		echo CHtml::openTag($this->tagName, $this->htmlOptions);
 		echo CHtml::closeTag($this->tagName);
 
-		$this->options['value']=$this->value;
-		$options=CJavaScript::encode($this->options);
-		Yii::app()->getClientScript()->registerScript(__CLASS__.'#'.$id,"jQuery('#{$id}').progressbar($options);");
+		$this->options['value'] = $this->value;
+		$options = CJavaScript::encode($this->options);
+		Yii::app()->getClientScript()->registerScript(__CLASS__ . '#' . $id, "jQuery('#{$id}').progressbar($options);");
 	}
 }

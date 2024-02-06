@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -16,7 +17,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   'The property filterSelector should be defined.' => 'Свойство filterSelector должно быть определено.',
   'The property updateSelector should be defined.' => 'Свойство updateSelector должно быть определено.',
   'Are you sure you want to delete this item?' => 'Вы уверены, что хотите удалить данный элемент?',

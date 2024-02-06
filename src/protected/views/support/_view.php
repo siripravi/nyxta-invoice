@@ -4,7 +4,8 @@
             <h4 class="title"><i class="pe-7s-user"></i>Customer</h4>
         </div>
         <div class="content">
-            <?php //echo $data->customer_no;?>
+            <?php //echo $data->customer_no;
+            ?>
             <?php $this->renderPartial('_custForm', array('stmt' => $data)); ?>
 
             <div class="footer">
@@ -34,7 +35,7 @@
     </div>
 </div>
 
-<?php if ($data->primaryKey !== null): ?>
+<?php if ($data->primaryKey !== null) : ?>
     <?php
 
     $this->widget('application.components.widgets.invoice.InvWidget', array('pk' => $data->primaryKey));

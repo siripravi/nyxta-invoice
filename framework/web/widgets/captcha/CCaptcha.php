@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CCaptcha class file.
  *
@@ -43,12 +44,12 @@ class CCaptcha extends CWidget
 	 * by {@link CController::createUrl} to create the URL that would serve the CAPTCHA image.
 	 * The action has to be of {@link CCaptchaAction}.
 	 */
-	public $captchaAction='captcha';
+	public $captchaAction = 'captcha';
 	/**
 	 * @var boolean whether to display a button next to the CAPTCHA image. Clicking on the button
 	 * will cause the CAPTCHA image to be changed to a new one. Defaults to true.
 	 */
-	public $showRefreshButton=true;
+	public $showRefreshButton = true;
 	/**
 	 * @var boolean whether to allow clicking on the CAPTCHA image to refresh the CAPTCHA letters.
 	 * Defaults to false. Hint: you may want to set {@link showRefreshButton} to false if you set
@@ -56,7 +57,7 @@ class CCaptcha extends CWidget
 	 * To enhance accessibility, you may set {@link imageOptions} to provide hints to end-users that
 	 * the image is clickable.
 	 */
-	public $clickableImage=false;
+	public $clickableImage = false;
 	/**
 	 * @var string the label for the refresh button. Defaults to 'Get a new code'.
 	 */
@@ -66,15 +67,15 @@ class CCaptcha extends CWidget
 	 * The former refers to hyperlink button while the latter a normal push button.
 	 * Defaults to 'link'.
 	 */
-	public $buttonType='link';
+	public $buttonType = 'link';
 	/**
 	 * @var array HTML attributes to be applied to the rendered image element.
 	 */
-	public $imageOptions=array();
+	public $imageOptions = array();
 	/**
 	 * @var array HTML attributes to be applied to the rendered refresh button element.
 	 */
-	public $buttonOptions=array();
+	public $buttonOptions = array();
 
 
 	/**
@@ -82,13 +83,11 @@ class CCaptcha extends CWidget
 	 */
 	public function run()
 	{
-		if(self::checkRequirements('imagick') || self::checkRequirements('gd'))
-		{
+		if (self::checkRequirements('imagick') || self::checkRequirements('gd')) {
 			$this->renderImage();
 			$this->registerClientScript();
-		}
-		else
-			throw new CException(Yii::t('yii','GD with FreeType or ImageMagick PHP extensions are required.'));
+		} else
+			throw new CException(Yii::t('yii', 'GD with FreeType or ImageMagick PHP extensions are required.'));
 	}
 
 	/**
@@ -96,12 +95,12 @@ class CCaptcha extends CWidget
 	 */
 	protected function renderImage()
 	{
-		if(!isset($this->imageOptions['id']))
-			$this->imageOptions['id']=$this->getId();
+		if (!isset($this->imageOptions['id']))
+			$this->imageOptions['id'] = $this->getId();
 
-		$url=$this->getController()->createUrl($this->captchaAction,array('v'=>uniqid()));
-		$alt=isset($this->imageOptions['alt'])?$this->imageOptions['alt']:'';
-		echo CHtml::image($url,$alt,$this->imageOptions);
+		$url = $this->getController()->createUrl($this->captchaAction, array('v' => uniqid()));
+		$alt = isset($this->imageOptions['alt']) ? $this->imageOptions['alt'] : '';
+		echo CHtml::image($url, $alt, $this->imageOptions);
 	}
 
 	/**
@@ -109,39 +108,38 @@ class CCaptcha extends CWidget
 	 */
 	public function registerClientScript()
 	{
-		$cs=Yii::app()->clientScript;
-		$id=$this->imageOptions['id'];
-		$url=$this->getController()->createUrl($this->captchaAction,array(CCaptchaAction::REFRESH_GET_VAR=>true));
+		$cs = Yii::app()->clientScript;
+		$id = $this->imageOptions['id'];
+		$url = $this->getController()->createUrl($this->captchaAction, array(CCaptchaAction::REFRESH_GET_VAR => true));
 
-		$js="";
-		if($this->showRefreshButton)
-		{
+		$js = "";
+		if ($this->showRefreshButton) {
 			// reserve a place in the registered script so that any enclosing button js code appears after the captcha js
-			$cs->registerScript('Yii.CCaptcha#'.$id,'// dummy');
-			$label=$this->buttonLabel===null?Yii::t('yii','Get a new code'):$this->buttonLabel;
-			$options=$this->buttonOptions;
-			if(isset($options['id']))
-				$buttonID=$options['id'];
+			$cs->registerScript('Yii.CCaptcha#' . $id, '// dummy');
+			$label = $this->buttonLabel === null ? Yii::t('yii', 'Get a new code') : $this->buttonLabel;
+			$options = $this->buttonOptions;
+			if (isset($options['id']))
+				$buttonID = $options['id'];
 			else
-				$buttonID=$options['id']=$id.'_button';
-			if($this->buttonType==='button')
-				$html=CHtml::button($label, $options);
+				$buttonID = $options['id'] = $id . '_button';
+			if ($this->buttonType === 'button')
+				$html = CHtml::button($label, $options);
 			else
-				$html=CHtml::link($label, $url, $options);
-			$js="jQuery('#$id').after(".CJSON::encode($html).");";
-			$selector="#$buttonID";
+				$html = CHtml::link($label, $url, $options);
+			$js = "jQuery('#$id').after(" . CJSON::encode($html) . ");";
+			$selector = "#$buttonID";
 		}
 
-		if($this->clickableImage)
-			$selector=isset($selector) ? "$selector, #$id" : "#$id";
+		if ($this->clickableImage)
+			$selector = isset($selector) ? "$selector, #$id" : "#$id";
 
-		if(!isset($selector))
+		if (!isset($selector))
 			return;
 
-		$js.="
+		$js .= "
 jQuery(document).on('click', '$selector', function(){
 	jQuery.ajax({
-		url: ".CJSON::encode($url).",
+		url: " . CJSON::encode($url) . ",
 		dataType: 'json',
 		cache: false,
 		success: function(data) {
@@ -152,7 +150,7 @@ jQuery(document).on('click', '$selector', function(){
 	return false;
 });
 ";
-		$cs->registerScript('Yii.CCaptcha#'.$id,$js);
+		$cs->registerScript('Yii.CCaptcha#' . $id, $js);
 	}
 
 	/**
@@ -164,27 +162,23 @@ jQuery(document).on('click', '$selector', function(){
 	 * otherwise false
 	 * @since 1.1.5
 	 */
-	public static function checkRequirements($extension=null)
+	public static function checkRequirements($extension = null)
 	{
-		if(extension_loaded('imagick'))
-		{
-			$imagick=new Imagick();
-			$imagickFormats=$imagick->queryFormats('PNG');
+		if (extension_loaded('imagick')) {
+			$imagick = new Imagick();
+			$imagickFormats = $imagick->queryFormats('PNG');
 		}
-		if(extension_loaded('gd'))
-		{
-			$gdInfo=gd_info();
+		if (extension_loaded('gd')) {
+			$gdInfo = gd_info();
 		}
-		if($extension===null)
-		{
-			if(isset($imagickFormats) && in_array('PNG',$imagickFormats))
+		if ($extension === null) {
+			if (isset($imagickFormats) && in_array('PNG', $imagickFormats))
 				return true;
-			if(isset($gdInfo) && $gdInfo['FreeType Support'])
+			if (isset($gdInfo) && $gdInfo['FreeType Support'])
 				return true;
-		}
-		elseif($extension=='imagick' && isset($imagickFormats) && in_array('PNG',$imagickFormats))
+		} elseif ($extension == 'imagick' && isset($imagickFormats) && in_array('PNG', $imagickFormats))
 			return true;
-		elseif($extension=='gd' && isset($gdInfo) && $gdInfo['FreeType Support'])
+		elseif ($extension == 'gd' && isset($gdInfo) && $gdInfo['FreeType Support'])
 			return true;
 		return false;
 	}

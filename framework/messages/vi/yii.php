@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -16,7 +17,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
   'Adding a foreign key constraint to an existing table is not supported by SQLite.' => 'SQLite không hỗ trợ chức năng thêm khóa ngoại.',
   'Altering a DB column is not supported by SQLite.' => 'Thay đổi một cột DB không được hỗ trợ bởi SQLite.',
   'Dropping DB column is not supported by SQLite.' => 'Xóa cột DB không được hỗ trợ bởi SQLite.',

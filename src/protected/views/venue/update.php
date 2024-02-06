@@ -20,5 +20,6 @@ $this->menu = array(
 );
 ?>
 
-<?php //echo BsHtml::pageHeader('Update','Venue '.$model->venue_id) ?>
+<?php //echo BsHtml::pageHeader('Update','Venue '.$model->venue_id) 
+?>
 <?php $this->renderPartial('_form', array('model' => $model)); ?>

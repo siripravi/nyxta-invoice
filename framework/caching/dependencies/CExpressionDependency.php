@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CExpressionDependency class file.
  *
@@ -38,9 +39,9 @@ class CExpressionDependency extends CCacheDependency
 	 * Constructor.
 	 * @param string $expression the PHP expression whose result is used to determine the dependency.
 	 */
-	public function __construct($expression='true')
+	public function __construct($expression = 'true')
 	{
-		$this->expression=$expression;
+		$this->expression = $expression;
 	}
 
 	/**

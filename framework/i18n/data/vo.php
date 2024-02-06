@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'vo'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => '.',
     'group' => ',',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0%',
   'currencyFormat' => '¤ #,##0.00',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -52,10 +53,10 @@ return array (
     'XOF' => 'CFA',
     'XPF' => 'CFPF',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'janul',
       2 => 'febul',
       3 => 'mäzil',
@@ -69,8 +70,8 @@ return array (
       11 => 'novul',
       12 => 'dekul',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'jan',
       2 => 'feb',
       3 => 'mäz',
@@ -85,10 +86,10 @@ return array (
       12 => 'dek',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'J',
       2 => 'F',
       3 => 'M',
@@ -102,8 +103,8 @@ return array (
       11 => 'N',
       12 => 'D',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'jan',
       2 => 'feb',
       3 => 'mäz',
@@ -118,10 +119,10 @@ return array (
       12 => 'Dek',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'sudel',
       1 => 'mudel',
       2 => 'tudel',
@@ -130,8 +131,8 @@ return array (
       5 => 'fridel',
       6 => 'zädel',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'su.',
       1 => 'mu.',
       2 => 'tu.',
@@ -141,10 +142,10 @@ return array (
       6 => 'zä.',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'S',
       1 => 'M',
       2 => 'T',
@@ -153,8 +154,8 @@ return array (
       5 => 'F',
       6 => 'Z',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'Su',
       1 => 'Mu',
       2 => 'Tu',
@@ -164,33 +165,33 @@ return array (
       6 => 'Zä',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'b. t. kr.',
       1 => 'p. t. kr.',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'b. t. kr.',
       1 => 'p. t. kr.',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'b. t. kr.',
       1 => 'p. t. kr.',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'y MMMMa \'d\'. d\'id\'',
     'long' => 'y MMMM d',
     'medium' => 'y MMM. d',
     'short' => 'y-MM-dd',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -200,12 +201,12 @@ return array (
   'amName' => 'posz.',
   'pmName' => 'büz.',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'vo' => 'Volapük',
   ),
-  'pluralRules' => 
-  array (
+  'pluralRules' =>
+  array(
     0 => 'n==1',
     1 => 'true',
   ),

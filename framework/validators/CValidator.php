@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CValidator class file.
  *
@@ -46,26 +47,26 @@ abstract class CValidator extends CComponent
 	/**
 	 * @var array list of built-in validators (name=>class)
 	 */
-	public static $builtInValidators=array(
-		'required'=>'CRequiredValidator',
-		'filter'=>'CFilterValidator',
-		'match'=>'CRegularExpressionValidator',
-		'email'=>'CEmailValidator',
-		'url'=>'CUrlValidator',
-		'unique'=>'CUniqueValidator',
-		'compare'=>'CCompareValidator',
-		'length'=>'CStringValidator',
-		'in'=>'CRangeValidator',
-		'numerical'=>'CNumberValidator',
-		'captcha'=>'CCaptchaValidator',
-		'type'=>'CTypeValidator',
-		'file'=>'CFileValidator',
-		'default'=>'CDefaultValueValidator',
-		'exist'=>'CExistValidator',
-		'boolean'=>'CBooleanValidator',
-		'safe'=>'CSafeValidator',
-		'unsafe'=>'CUnsafeValidator',
-		'date'=>'CDateValidator',
+	public static $builtInValidators = array(
+		'required' => 'CRequiredValidator',
+		'filter' => 'CFilterValidator',
+		'match' => 'CRegularExpressionValidator',
+		'email' => 'CEmailValidator',
+		'url' => 'CUrlValidator',
+		'unique' => 'CUniqueValidator',
+		'compare' => 'CCompareValidator',
+		'length' => 'CStringValidator',
+		'in' => 'CRangeValidator',
+		'numerical' => 'CNumberValidator',
+		'captcha' => 'CCaptchaValidator',
+		'type' => 'CTypeValidator',
+		'file' => 'CFileValidator',
+		'default' => 'CDefaultValueValidator',
+		'exist' => 'CExistValidator',
+		'boolean' => 'CBooleanValidator',
+		'safe' => 'CSafeValidator',
+		'unsafe' => 'CUnsafeValidator',
+		'date' => 'CDateValidator',
 	);
 
 	/**
@@ -83,7 +84,7 @@ abstract class CValidator extends CComponent
 	 * error for the current attribute. Defaults to false.
 	 * @since 1.1.1
 	 */
-	public $skipOnError=false;
+	public $skipOnError = false;
 	/**
 	 * @var array list of scenarios that the validator should be applied.
 	 * Each array value refers to a scenario name with the same name as its array key.
@@ -100,13 +101,13 @@ abstract class CValidator extends CComponent
 	 * Defaults to true.
 	 * @since 1.1.4
 	 */
-	public $safe=true;
+	public $safe = true;
 	/**
 	 * @var boolean whether to perform client-side validation. Defaults to true.
 	 * Please refer to {@link CActiveForm::enableClientValidation} for more details about client-side validation.
 	 * @since 1.1.7
 	 */
-	public $enableClientValidation=true;
+	public $enableClientValidation = true;
 
 	/**
 	 * Validates a single attribute.
@@ -114,7 +115,7 @@ abstract class CValidator extends CComponent
 	 * @param CModel $object the data object being validated
 	 * @param string $attribute the name of the attribute to be validated.
 	 */
-	abstract protected function validateAttribute($object,$attribute);
+	abstract protected function validateAttribute($object, $attribute);
 
 
 	/**
@@ -126,59 +127,51 @@ abstract class CValidator extends CComponent
 	 * @param array $params initial values to be applied to the validator properties
 	 * @return CValidator the validator
 	 */
-	public static function createValidator($name,$object,$attributes,$params=array())
+	public static function createValidator($name, $object, $attributes, $params = array())
 	{
-		if(is_string($attributes))
-			$attributes=preg_split('/\s*,\s*/',trim($attributes, " \t\n\r\0\x0B,"),-1,PREG_SPLIT_NO_EMPTY);
+		if (is_string($attributes))
+			$attributes = preg_split('/\s*,\s*/', trim($attributes, " \t\n\r\0\x0B,"), -1, PREG_SPLIT_NO_EMPTY);
 
-		if(isset($params['on']))
-		{
-			if(is_array($params['on']))
-				$on=$params['on'];
+		if (isset($params['on'])) {
+			if (is_array($params['on']))
+				$on = $params['on'];
 			else
-				$on=preg_split('/[\s,]+/',$params['on'],-1,PREG_SPLIT_NO_EMPTY);
-		}
-		else
-			$on=array();
+				$on = preg_split('/[\s,]+/', $params['on'], -1, PREG_SPLIT_NO_EMPTY);
+		} else
+			$on = array();
 
-		if(isset($params['except']))
-		{
-			if(is_array($params['except']))
-				$except=$params['except'];
+		if (isset($params['except'])) {
+			if (is_array($params['except']))
+				$except = $params['except'];
 			else
-				$except=preg_split('/[\s,]+/',$params['except'],-1,PREG_SPLIT_NO_EMPTY);
-		}
-		else
-			$except=array();
+				$except = preg_split('/[\s,]+/', $params['except'], -1, PREG_SPLIT_NO_EMPTY);
+		} else
+			$except = array();
 
-		if(method_exists($object,$name))
-		{
-			$validator=new CInlineValidator;
-			$validator->attributes=$attributes;
-			$validator->method=$name;
-			if(isset($params['clientValidate']))
-			{
-				$validator->clientValidate=$params['clientValidate'];
+		if (method_exists($object, $name)) {
+			$validator = new CInlineValidator;
+			$validator->attributes = $attributes;
+			$validator->method = $name;
+			if (isset($params['clientValidate'])) {
+				$validator->clientValidate = $params['clientValidate'];
 				unset($params['clientValidate']);
 			}
-			$validator->params=$params;
-			if(isset($params['skipOnError']))
-				$validator->skipOnError=$params['skipOnError'];
-		}
-		else
-		{
-			$params['attributes']=$attributes;
-			if(isset(self::$builtInValidators[$name]))
-				$className=Yii::import(self::$builtInValidators[$name],true);
+			$validator->params = $params;
+			if (isset($params['skipOnError']))
+				$validator->skipOnError = $params['skipOnError'];
+		} else {
+			$params['attributes'] = $attributes;
+			if (isset(self::$builtInValidators[$name]))
+				$className = Yii::import(self::$builtInValidators[$name], true);
 			else
-				$className=Yii::import($name,true);
-			$validator=new $className;
-			foreach($params as $name=>$value)
-				$validator->$name=$value;
+				$className = Yii::import($name, true);
+			$validator = new $className;
+			foreach ($params as $name => $value)
+				$validator->$name = $value;
 		}
 
-		$validator->on=empty($on) ? array() : array_combine($on,$on);
-		$validator->except=empty($except) ? array() : array_combine($except,$except);
+		$validator->on = empty($on) ? array() : array_combine($on, $on);
+		$validator->except = empty($except) ? array() : array_combine($except, $except);
 
 		return $validator;
 	}
@@ -189,16 +182,15 @@ abstract class CValidator extends CComponent
 	 * @param array $attributes the list of attributes to be validated. Defaults to null,
 	 * meaning every attribute listed in {@link attributes} will be validated.
 	 */
-	public function validate($object,$attributes=null)
+	public function validate($object, $attributes = null)
 	{
-		if(is_array($attributes))
-			$attributes=array_intersect($this->attributes,$attributes);
+		if (is_array($attributes))
+			$attributes = array_intersect($this->attributes, $attributes);
 		else
-			$attributes=$this->attributes;
-		foreach($attributes as $attribute)
-		{
-			if(!$this->skipOnError || !$object->hasErrors($attribute))
-				$this->validateAttribute($object,$attribute);
+			$attributes = $this->attributes;
+		foreach ($attributes as $attribute) {
+			if (!$this->skipOnError || !$object->hasErrors($attribute))
+				$this->validateAttribute($object, $attribute);
 		}
 	}
 
@@ -216,7 +208,7 @@ abstract class CValidator extends CComponent
 	 * @see CActiveForm::enableClientValidation
 	 * @since 1.1.7
 	 */
-	public function clientValidateAttribute($object,$attribute)
+	public function clientValidateAttribute($object, $attribute)
 	{
 	}
 
@@ -232,7 +224,7 @@ abstract class CValidator extends CComponent
 	 */
 	public function applyTo($scenario)
 	{
-		if(isset($this->except[$scenario]))
+		if (isset($this->except[$scenario]))
 			return false;
 		return empty($this->on) || isset($this->on[$scenario]);
 	}
@@ -245,10 +237,10 @@ abstract class CValidator extends CComponent
 	 * @param string $message the error message
 	 * @param array $params values for the placeholders in the error message
 	 */
-	protected function addError($object,$attribute,$message,$params=array())
+	protected function addError($object, $attribute, $message, $params = array())
 	{
-		$params['{attribute}']=$object->getAttributeLabel($attribute);
-		$object->addError($attribute,strtr($message,$params));
+		$params['{attribute}'] = $object->getAttributeLabel($attribute);
+		$object->addError($attribute, strtr($message, $params));
 	}
 
 	/**
@@ -259,9 +251,8 @@ abstract class CValidator extends CComponent
 	 * @param boolean $trim whether to perform trimming before checking if the string is empty. Defaults to false.
 	 * @return boolean whether the value is empty
 	 */
-	protected function isEmpty($value,$trim=false)
+	protected function isEmpty($value, $trim = false)
 	{
-		return $value===null || $value===array() || $value==='' || $trim && is_scalar($value) && trim($value)==='';
+		return $value === null || $value === array() || $value === '' || $trim && is_scalar($value) && trim($value) === '';
 	}
 }
-

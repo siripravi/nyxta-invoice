@@ -85,13 +85,15 @@ class statementController extends Controller
         if ($model->st_type == Statement::TYPE_INVOICE)
             $tabarr['<i class="fa fa-money"></i>&nbsp;Payments'] = array('id' => 'view-payments', 'ajax' => '/statement/payHist/id/' . $_GET["id"]);
 
-        $this->render('view', array(
-            'paid' => $model->paid,
-            'model' => $model,
-            'tabarr' => $tabarr,
-            //	'items' => $model -> items,
-            //	'dp' => new CArrayDataProvider($model -> payments, array('keyField' => 'ID'))
-        )
+        $this->render(
+            'view',
+            array(
+                'paid' => $model->paid,
+                'model' => $model,
+                'tabarr' => $tabarr,
+                //	'items' => $model -> items,
+                //	'dp' => new CArrayDataProvider($model -> payments, array('keyField' => 'ID'))
+            )
         );
     }
 
@@ -285,7 +287,6 @@ class statementController extends Controller
                 //$valid=$item->validate() && $valid;
             }
             if ($valid) {
-
             }
         }
         /* $this->renderPartial('_lineItems', array('pkey'=>$model->primaryKey,'items' => $model->items, 'newitem' => new InvoiceItems,'stmt'=>$model,
@@ -299,14 +300,16 @@ class statementController extends Controller
         $model = $this->loadModel($id);
         $this->renderPartial('items', array(
             'model' => $model,
-            'dp' => new CArrayDataProvider($model->items, array(
-                'keyField' => 'ID',
-                'sort' => array(
-                    'attributes' => array(
-                        'sequence',
+            'dp' => new CArrayDataProvider(
+                $model->items,
+                array(
+                    'keyField' => 'ID',
+                    'sort' => array(
+                        'attributes' => array(
+                            'sequence',
+                        ),
                     ),
-                ),
-            )
+                )
             )
         ), false, true);
     }
@@ -346,9 +349,11 @@ class statementController extends Controller
     public function actionIndex()
     {
         $dataProvider = new CActiveDataProvider('statement');
-        $this->render('index', array(
-            'dataProvider' => $dataProvider,
-        )
+        $this->render(
+            'index',
+            array(
+                'dataProvider' => $dataProvider,
+            )
         );
     }
 
@@ -423,5 +428,4 @@ class statementController extends Controller
         }
         return false;
     }
-
 }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file contains classes implementing security manager feature.
  *
@@ -45,23 +46,23 @@
  */
 class CSecurityManager extends CApplicationComponent
 {
-	const STATE_VALIDATION_KEY='Yii.CSecurityManager.validationkey';
-	const STATE_ENCRYPTION_KEY='Yii.CSecurityManager.encryptionkey';
+	const STATE_VALIDATION_KEY = 'Yii.CSecurityManager.validationkey';
+	const STATE_ENCRYPTION_KEY = 'Yii.CSecurityManager.encryptionkey';
 
 	/**
 	 * @var array known minimum lengths per encryption algorithm
 	 */
-	protected static $encryptionKeyMinimumLengths=array(
-		'blowfish'=>4,
-		'arcfour'=>5,
-		'rc2'=>5,
+	protected static $encryptionKeyMinimumLengths = array(
+		'blowfish' => 4,
+		'arcfour' => 5,
+		'rc2' => 5,
 	);
 
 	/**
 	 * @var boolean if encryption key should be validated
 	 * @deprecated
 	 */
-	public $validateEncryptionKey=true;
+	public $validateEncryptionKey = true;
 
 	/**
 	 * @var string the name of the hashing algorithm to be used by {@link computeHMAC}.
@@ -71,7 +72,7 @@ class CSecurityManager extends CApplicationComponent
 	 * Defaults to 'sha1', meaning using SHA1 hash algorithm.
 	 * @since 1.1.3
 	 */
-	public $hashAlgorithm='sha1';
+	public $hashAlgorithm = 'sha1';
 	/**
 	 * @var mixed the name of the crypt algorithm to be used by {@link encrypt} and {@link decrypt}.
 	 * This will be passed as the first parameter to {@link https://php.net/manual/en/function.mcrypt-module-open.php mcrypt_module_open}.
@@ -90,7 +91,7 @@ class CSecurityManager extends CApplicationComponent
 	 *
 	 * @since 1.1.3
 	 */
-	public $cryptAlgorithm='rijndael-128';
+	public $cryptAlgorithm = 'rijndael-128';
 
 	private $_validationKey;
 	private $_encryptionKey;
@@ -100,7 +101,7 @@ class CSecurityManager extends CApplicationComponent
 	public function init()
 	{
 		parent::init();
-		$this->_mbstring=extension_loaded('mbstring');
+		$this->_mbstring = extension_loaded('mbstring');
 	}
 
 	/**
@@ -119,20 +120,20 @@ class CSecurityManager extends CApplicationComponent
 	 */
 	public function getValidationKey()
 	{
-		if($this->_validationKey!==null)
+		if ($this->_validationKey !== null)
 			return $this->_validationKey;
-		else
-		{
-			if(($key=Yii::app()->getGlobalState(self::STATE_VALIDATION_KEY))!==null)
+		else {
+			if (($key = Yii::app()->getGlobalState(self::STATE_VALIDATION_KEY)) !== null)
 				$this->setValidationKey($key);
-			else
-			{
-				if(($key=$this->generateRandomString(32,true))===false)
-					if(($key=$this->generateRandomString(32,false))===false)
-						throw new CException(Yii::t('yii',
-							'CSecurityManager::generateRandomString() cannot generate random string in the current environment.'));
+			else {
+				if (($key = $this->generateRandomString(32, true)) === false)
+					if (($key = $this->generateRandomString(32, false)) === false)
+						throw new CException(Yii::t(
+							'yii',
+							'CSecurityManager::generateRandomString() cannot generate random string in the current environment.'
+						));
 				$this->setValidationKey($key);
-				Yii::app()->setGlobalState(self::STATE_VALIDATION_KEY,$key);
+				Yii::app()->setGlobalState(self::STATE_VALIDATION_KEY, $key);
 			}
 			return $this->_validationKey;
 		}
@@ -144,10 +145,10 @@ class CSecurityManager extends CApplicationComponent
 	 */
 	public function setValidationKey($value)
 	{
-		if(!empty($value))
-			$this->_validationKey=$value;
+		if (!empty($value))
+			$this->_validationKey = $value;
 		else
-			throw new CException(Yii::t('yii','CSecurityManager.validationKey cannot be empty.'));
+			throw new CException(Yii::t('yii', 'CSecurityManager.validationKey cannot be empty.'));
 	}
 
 	/**
@@ -157,20 +158,20 @@ class CSecurityManager extends CApplicationComponent
 	 */
 	public function getEncryptionKey()
 	{
-		if($this->_encryptionKey!==null)
+		if ($this->_encryptionKey !== null)
 			return $this->_encryptionKey;
-		else
-		{
-			if(($key=Yii::app()->getGlobalState(self::STATE_ENCRYPTION_KEY))!==null)
+		else {
+			if (($key = Yii::app()->getGlobalState(self::STATE_ENCRYPTION_KEY)) !== null)
 				$this->setEncryptionKey($key);
-			else
-			{
-				if(($key=$this->generateRandomString(32,true))===false)
-					if(($key=$this->generateRandomString(32,false))===false)
-						throw new CException(Yii::t('yii',
-							'CSecurityManager::generateRandomString() cannot generate random string in the current environment.'));
+			else {
+				if (($key = $this->generateRandomString(32, true)) === false)
+					if (($key = $this->generateRandomString(32, false)) === false)
+						throw new CException(Yii::t(
+							'yii',
+							'CSecurityManager::generateRandomString() cannot generate random string in the current environment.'
+						));
 				$this->setEncryptionKey($key);
-				Yii::app()->setGlobalState(self::STATE_ENCRYPTION_KEY,$key);
+				Yii::app()->setGlobalState(self::STATE_ENCRYPTION_KEY, $key);
 			}
 			return $this->_encryptionKey;
 		}
@@ -183,7 +184,7 @@ class CSecurityManager extends CApplicationComponent
 	public function setEncryptionKey($value)
 	{
 		$this->validateEncryptionKey($value);
-		$this->_encryptionKey=$value;
+		$this->_encryptionKey = $value;
 	}
 
 	/**
@@ -205,7 +206,7 @@ class CSecurityManager extends CApplicationComponent
 	 */
 	public function setValidation($value)
 	{
-		$this->hashAlgorithm=$value;
+		$this->hashAlgorithm = $value;
 	}
 
 	/**
@@ -215,16 +216,16 @@ class CSecurityManager extends CApplicationComponent
 	 * @return string the encrypted data
 	 * @throws CException if PHP Mcrypt extension is not loaded or key is invalid
 	 */
-	public function encrypt($data,$key=null)
+	public function encrypt($data, $key = null)
 	{
-		if($key===null)
-			$key=$this->getEncryptionKey();
+		if ($key === null)
+			$key = $this->getEncryptionKey();
 		$this->validateEncryptionKey($key);
-		$module=$this->openCryptModule();
+		$module = $this->openCryptModule();
 		srand();
-		$iv=@mcrypt_create_iv(mcrypt_enc_get_iv_size($module), MCRYPT_RAND);
-		@mcrypt_generic_init($module,$key,$iv);
-		$encrypted=$iv.@mcrypt_generic($module,$data);
+		$iv = @mcrypt_create_iv(mcrypt_enc_get_iv_size($module), MCRYPT_RAND);
+		@mcrypt_generic_init($module, $key, $iv);
+		$encrypted = $iv . @mcrypt_generic($module, $data);
 		@mcrypt_generic_deinit($module);
 		@mcrypt_module_close($module);
 		return $encrypted;
@@ -237,19 +238,19 @@ class CSecurityManager extends CApplicationComponent
 	 * @return string the decrypted data
 	 * @throws CException if PHP Mcrypt extension is not loaded or key is invalid
 	 */
-	public function decrypt($data,$key=null)
+	public function decrypt($data, $key = null)
 	{
-		if($key===null)
-			$key=$this->getEncryptionKey();
+		if ($key === null)
+			$key = $this->getEncryptionKey();
 		$this->validateEncryptionKey($key);
-		$module=$this->openCryptModule();
-		$ivSize=@mcrypt_enc_get_iv_size($module);
-		$iv=$this->substr($data,0,$ivSize);
-		@mcrypt_generic_init($module,$key,$iv);
-		$decrypted=@mdecrypt_generic($module,$this->substr($data,$ivSize,$this->strlen($data)));
+		$module = $this->openCryptModule();
+		$ivSize = @mcrypt_enc_get_iv_size($module);
+		$iv = $this->substr($data, 0, $ivSize);
+		@mcrypt_generic_init($module, $key, $iv);
+		$decrypted = @mdecrypt_generic($module, $this->substr($data, $ivSize, $this->strlen($data)));
 		@mcrypt_generic_deinit($module);
 		@mcrypt_module_close($module);
-		return rtrim($decrypted,"\0");
+		return rtrim($decrypted, "\0");
 	}
 
 	/**
@@ -260,20 +261,18 @@ class CSecurityManager extends CApplicationComponent
 	 */
 	protected function openCryptModule()
 	{
-		if(extension_loaded('mcrypt'))
-		{
-			if(is_array($this->cryptAlgorithm))
-				$module=@call_user_func_array('mcrypt_module_open',$this->cryptAlgorithm);
+		if (extension_loaded('mcrypt')) {
+			if (is_array($this->cryptAlgorithm))
+				$module = @call_user_func_array('mcrypt_module_open', $this->cryptAlgorithm);
 			else
-				$module=@mcrypt_module_open($this->cryptAlgorithm,'', MCRYPT_MODE_CBC,'');
+				$module = @mcrypt_module_open($this->cryptAlgorithm, '', MCRYPT_MODE_CBC, '');
 
-			if($module===false)
-				throw new CException(Yii::t('yii','Failed to initialize the mcrypt module.'));
+			if ($module === false)
+				throw new CException(Yii::t('yii', 'Failed to initialize the mcrypt module.'));
 
 			return $module;
-		}
-		else
-			throw new CException(Yii::t('yii','CSecurityManager requires PHP mcrypt extension to be loaded in order to use data encryption feature.'));
+		} else
+			throw new CException(Yii::t('yii', 'CSecurityManager requires PHP mcrypt extension to be loaded in order to use data encryption feature.'));
 	}
 
 	/**
@@ -282,9 +281,9 @@ class CSecurityManager extends CApplicationComponent
 	 * @param string $key the private key to be used for generating HMAC. Defaults to null, meaning using {@link validationKey}.
 	 * @return string data prefixed with HMAC
 	 */
-	public function hashData($data,$key=null)
+	public function hashData($data, $key = null)
 	{
-		return $this->computeHMAC($data,$key).$data;
+		return $this->computeHMAC($data, $key) . $data;
 	}
 
 	/**
@@ -295,19 +294,17 @@ class CSecurityManager extends CApplicationComponent
 	 * @return string the real data with HMAC stripped off. False if the data
 	 * is tampered.
 	 */
-	public function validateData($data,$key=null)
+	public function validateData($data, $key = null)
 	{
 		if (!is_string($data))
 			return false;
 
-		$len=$this->strlen($this->computeHMAC('test'));
-		if($this->strlen($data)>=$len)
-		{
-			$hmac=$this->substr($data,0,$len);
-			$data2=$this->substr($data,$len,$this->strlen($data));
-			return $this->compareString($hmac,$this->computeHMAC($data2,$key))?$data2:false;
-		}
-		else
+		$len = $this->strlen($this->computeHMAC('test'));
+		if ($this->strlen($data) >= $len) {
+			$hmac = $this->substr($data, 0, $len);
+			$data2 = $this->substr($data, $len, $this->strlen($data));
+			return $this->compareString($hmac, $this->computeHMAC($data2, $key)) ? $data2 : false;
+		} else
 			return false;
 	}
 
@@ -324,35 +321,30 @@ class CSecurityManager extends CApplicationComponent
 	 * @return string the HMAC for the data.
 	 * @throws CException on unsupported hash algorithm given.
 	 */
-	public function computeHMAC($data,$key=null,$hashAlgorithm=null)
+	public function computeHMAC($data, $key = null, $hashAlgorithm = null)
 	{
-		if($key===null)
-			$key=$this->getValidationKey();
-		if($hashAlgorithm===null)
-			$hashAlgorithm=$this->hashAlgorithm;
+		if ($key === null)
+			$key = $this->getValidationKey();
+		if ($hashAlgorithm === null)
+			$hashAlgorithm = $this->hashAlgorithm;
 
-		if(function_exists('hash_hmac'))
-			return hash_hmac($hashAlgorithm,$data,$key);
+		if (function_exists('hash_hmac'))
+			return hash_hmac($hashAlgorithm, $data, $key);
 
-		if(0===strcasecmp($hashAlgorithm,'sha1'))
-		{
-			$pack='H40';
-			$func='sha1';
+		if (0 === strcasecmp($hashAlgorithm, 'sha1')) {
+			$pack = 'H40';
+			$func = 'sha1';
+		} elseif (0 === strcasecmp($hashAlgorithm, 'md5')) {
+			$pack = 'H32';
+			$func = 'md5';
+		} else {
+			throw new CException(Yii::t('yii', 'Only SHA1 and MD5 hashing algorithms are supported when using PHP 5.1.1 or below.'));
 		}
-		elseif(0===strcasecmp($hashAlgorithm,'md5'))
-		{
-			$pack='H32';
-			$func='md5';
-		}
-		else
-		{
-			throw new CException(Yii::t('yii','Only SHA1 and MD5 hashing algorithms are supported when using PHP 5.1.1 or below.'));
-		}
-		if($this->strlen($key)>64)
-			$key=pack($pack,$func($key));
-		if($this->strlen($key)<64)
-			$key=str_pad($key,64,chr(0));
-		$key=$this->substr($key,0,64);
+		if ($this->strlen($key) > 64)
+			$key = pack($pack, $func($key));
+		if ($this->strlen($key) < 64)
+			$key = str_pad($key, 64, chr(0));
+		$key = $this->substr($key, 0, 64);
 		return $func((str_repeat(chr(0x5C), 64) ^ $key) . pack($pack, $func((str_repeat(chr(0x36), 64) ^ $key) . $data)));
 	}
 
@@ -364,10 +356,10 @@ class CSecurityManager extends CApplicationComponent
 	 * @return string|boolean random string or false in case it cannot be generated.
 	 * @since 1.1.14
 	 */
-	public function generateRandomString($length,$cryptographicallyStrong=true)
+	public function generateRandomString($length, $cryptographicallyStrong = true)
 	{
-		if(($randomBytes=$this->generateRandomBytes($length+2,$cryptographicallyStrong))!==false)
-			return strtr($this->substr(base64_encode($randomBytes),0,$length),array('+'=>'_','/'=>'~'));
+		if (($randomBytes = $this->generateRandomBytes($length + 2, $cryptographicallyStrong)) !== false)
+			return strtr($this->substr(base64_encode($randomBytes), 0, $length), array('+' => '_', '/' => '~'));
 		return false;
 	}
 
@@ -388,47 +380,48 @@ class CSecurityManager extends CApplicationComponent
 	 * @return boolean|string generated random binary string or false on failure.
 	 * @since 1.1.14
 	 */
-	public function generateRandomBytes($length,$cryptographicallyStrong=true)
+	public function generateRandomBytes($length, $cryptographicallyStrong = true)
 	{
-		$bytes='';
-		if(function_exists('openssl_random_pseudo_bytes'))
-		{
-			$bytes=openssl_random_pseudo_bytes($length,$strong);
-			if($this->strlen($bytes)>=$length && ($strong || !$cryptographicallyStrong))
-				return $this->substr($bytes,0,$length);
+		$bytes = '';
+		if (function_exists('openssl_random_pseudo_bytes')) {
+			$bytes = openssl_random_pseudo_bytes($length, $strong);
+			if ($this->strlen($bytes) >= $length && ($strong || !$cryptographicallyStrong))
+				return $this->substr($bytes, 0, $length);
 		}
 
-		if(function_exists('mcrypt_create_iv') &&
-			($bytes=@mcrypt_create_iv($length, MCRYPT_DEV_URANDOM))!==false &&
-			$this->strlen($bytes)>=$length)
-		{
-			return $this->substr($bytes,0,$length);
+		if (
+			function_exists('mcrypt_create_iv') &&
+			($bytes = @mcrypt_create_iv($length, MCRYPT_DEV_URANDOM)) !== false &&
+			$this->strlen($bytes) >= $length
+		) {
+			return $this->substr($bytes, 0, $length);
 		}
 
-		if(($file=@fopen('/dev/urandom','rb'))!==false &&
-			($bytes=@fread($file,$length))!==false &&
+		if (($file = @fopen('/dev/urandom', 'rb')) !== false &&
+			($bytes = @fread($file, $length)) !== false &&
 			(fclose($file) || true) &&
-			$this->strlen($bytes)>=$length)
-		{
-			return $this->substr($bytes,0,$length);
+			$this->strlen($bytes) >= $length
+		) {
+			return $this->substr($bytes, 0, $length);
 		}
 
-		$i=0;
-		while($this->strlen($bytes)<$length &&
-			($byte=$this->generateSessionRandomBlock())!==false &&
-			++$i<3)
-		{
-			$bytes.=$byte;
+		$i = 0;
+		while (
+			$this->strlen($bytes) < $length &&
+			($byte = $this->generateSessionRandomBlock()) !== false &&
+			++$i < 3
+		) {
+			$bytes .= $byte;
 		}
-		if($this->strlen($bytes)>=$length)
-			return $this->substr($bytes,0,$length);
+		if ($this->strlen($bytes) >= $length)
+			return $this->substr($bytes, 0, $length);
 
 		if ($cryptographicallyStrong)
 			return false;
 
-		while($this->strlen($bytes)<$length)
-			$bytes.=$this->generatePseudoRandomBlock();
-		return $this->substr($bytes,0,$length);
+		while ($this->strlen($bytes) < $length)
+			$bytes .= $this->generatePseudoRandomBlock();
+		return $this->substr($bytes, 0, $length);
 	}
 
 	/**
@@ -439,34 +432,35 @@ class CSecurityManager extends CApplicationComponent
 	 */
 	public function generatePseudoRandomBlock()
 	{
-		$bytes='';
+		$bytes = '';
 
-		if (function_exists('openssl_random_pseudo_bytes')
-			&& ($bytes=openssl_random_pseudo_bytes(512))!==false
-			&& $this->strlen($bytes)>=512)
-		{
-			return $this->substr($bytes,0,512);
+		if (
+			function_exists('openssl_random_pseudo_bytes')
+			&& ($bytes = openssl_random_pseudo_bytes(512)) !== false
+			&& $this->strlen($bytes) >= 512
+		) {
+			return $this->substr($bytes, 0, 512);
 		}
 
-		for($i=0;$i<32;++$i)
-			$bytes.=pack('S',mt_rand(0,0xffff));
+		for ($i = 0; $i < 32; ++$i)
+			$bytes .= pack('S', mt_rand(0, 0xffff));
 
 		// On UNIX and UNIX-like operating systems the numerical values in `ps`, `uptime` and `iostat`
 		// ought to be fairly unpredictable. Gather the non-zero digits from those.
-		foreach(array('ps','uptime','iostat') as $command) {
-			@exec($command,$commandResult,$retVal);
-			if(is_array($commandResult) && !empty($commandResult) && $retVal==0)
-				$bytes.=preg_replace('/[^1-9]/','',implode('',$commandResult));
+		foreach (array('ps', 'uptime', 'iostat') as $command) {
+			@exec($command, $commandResult, $retVal);
+			if (is_array($commandResult) && !empty($commandResult) && $retVal == 0)
+				$bytes .= preg_replace('/[^1-9]/', '', implode('', $commandResult));
 		}
 
 		// Gather the current time's microsecond part. Note: this is only a source of entropy on
 		// the first call! If multiple calls are made, the entropy is only as much as the
 		// randomness in the time between calls.
-		$bytes.=$this->substr(microtime(),2,6);
+		$bytes .= $this->substr(microtime(), 2, 6);
 
 		// Concatenate everything gathered, mix it with sha512. hash() is part of PHP core and
 		// enabled by default but it can be disabled at compile time but we ignore that possibility here.
-		return hash('sha512',$bytes,true);
+		return hash('sha512', $bytes, true);
 	}
 
 	/**
@@ -476,8 +470,8 @@ class CSecurityManager extends CApplicationComponent
 	 */
 	public function generateSessionRandomBlock()
 	{
-		ini_set('session.entropy_length',20);
-		if(ini_get('session.entropy_length')!=20)
+		ini_set('session.entropy_length', 20);
+		if (ini_get('session.entropy_length') != 20)
 			return false;
 
 		// These calls are (supposed to be, according to PHP manual) safe even if
@@ -485,14 +479,14 @@ class CSecurityManager extends CApplicationComponent
 		@session_start();
 		@session_regenerate_id();
 
-		$bytes=session_id();
-		if(!$bytes)
+		$bytes = session_id();
+		if (!$bytes)
 			return false;
 
 		// $bytes has 20 bytes of entropy but the session manager converts the binary
 		// random bytes into something readable. We have to convert that back.
 		// SHA-1 should do it without losing entropy.
-		return sha1($bytes,true);
+		return sha1($bytes, true);
 	}
 
 	/**
@@ -503,7 +497,7 @@ class CSecurityManager extends CApplicationComponent
 	 */
 	private function strlen($string)
 	{
-		return $this->_mbstring ? mb_strlen($string,'8bit') : strlen($string);
+		return $this->_mbstring ? mb_strlen($string, '8bit') : strlen($string);
 	}
 
 	/**
@@ -514,11 +508,11 @@ class CSecurityManager extends CApplicationComponent
 	 * @param integer $length the desired portion length
 	 * @return string the extracted part of string, or FALSE on failure or an empty string.
 	 */
-	private function substr($string,$start,$length)
+	private function substr($string, $start, $length)
 	{
-		return $this->_mbstring ? mb_substr($string,$start,$length,'8bit') : substr($string,$start,$length);
+		return $this->_mbstring ? mb_substr($string, $start, $length, '8bit') : substr($string, $start, $length);
 	}
-    
+
 	/**
 	 * Checks if a key is valid for {@link cryptAlgorithm}.
 	 * @param string $key the key to check
@@ -527,32 +521,26 @@ class CSecurityManager extends CApplicationComponent
 	 */
 	protected function validateEncryptionKey($key)
 	{
-		if(is_string($key))
-		{
+		if (is_string($key)) {
 			$cryptAlgorithm = is_array($this->cryptAlgorithm) ? $this->cryptAlgorithm[0] : $this->cryptAlgorithm;
 
-			$supportedKeyLengths=@mcrypt_module_get_supported_key_sizes($cryptAlgorithm);
+			$supportedKeyLengths = @mcrypt_module_get_supported_key_sizes($cryptAlgorithm);
 
-			if($supportedKeyLengths)
-			{
-				if(!in_array($this->strlen($key),$supportedKeyLengths)) {
-					throw new CException(Yii::t('yii','Encryption key length can be {keyLengths}.',array('{keyLengths}'=>implode(',',$supportedKeyLengths))));
+			if ($supportedKeyLengths) {
+				if (!in_array($this->strlen($key), $supportedKeyLengths)) {
+					throw new CException(Yii::t('yii', 'Encryption key length can be {keyLengths}.', array('{keyLengths}' => implode(',', $supportedKeyLengths))));
 				}
-			}
-			elseif(isset(self::$encryptionKeyMinimumLengths[$cryptAlgorithm]))
-			{
-				$minLength=self::$encryptionKeyMinimumLengths[$cryptAlgorithm];
-				$maxLength=@mcrypt_module_get_algo_key_size($cryptAlgorithm);
-				if($this->strlen($key)<$minLength || $this->strlen($key)>$maxLength)
-					throw new CException(Yii::t('yii','Encryption key length must be between {minLength} and {maxLength}.',array('{minLength}'=>$minLength,'{maxLength}'=>$maxLength)));
-			}
-			else
-				throw new CException(Yii::t('yii','Failed to validate key. Supported key lengths of cipher not known.'));
-		}
-		else
-			throw new CException(Yii::t('yii','Encryption key should be a string.'));
+			} elseif (isset(self::$encryptionKeyMinimumLengths[$cryptAlgorithm])) {
+				$minLength = self::$encryptionKeyMinimumLengths[$cryptAlgorithm];
+				$maxLength = @mcrypt_module_get_algo_key_size($cryptAlgorithm);
+				if ($this->strlen($key) < $minLength || $this->strlen($key) > $maxLength)
+					throw new CException(Yii::t('yii', 'Encryption key length must be between {minLength} and {maxLength}.', array('{minLength}' => $minLength, '{maxLength}' => $maxLength)));
+			} else
+				throw new CException(Yii::t('yii', 'Failed to validate key. Supported key lengths of cipher not known.'));
+		} else
+			throw new CException(Yii::t('yii', 'Encryption key should be a string.'));
 	}
-    
+
 	/**
 	 * Decrypts legacy ciphertext which was produced by the old, broken implementation of encrypt().
 	 * @deprecated use only to convert data encrypted prior to 1.1.16
@@ -563,37 +551,34 @@ class CSecurityManager extends CApplicationComponent
 	 * @throws CException if PHP Mcrypt extension is not loaded
 	 * @throws CException if the key is missing
 	 */
-	public function legacyDecrypt($data,$key=null,$cipher='des')
+	public function legacyDecrypt($data, $key = null, $cipher = 'des')
 	{
-		if (!$key)
-		{
-			$key=Yii::app()->getGlobalState(self::STATE_ENCRYPTION_KEY);
-			if(!$key)
-				throw new CException(Yii::t('yii','No encryption key specified.'));
+		if (!$key) {
+			$key = Yii::app()->getGlobalState(self::STATE_ENCRYPTION_KEY);
+			if (!$key)
+				throw new CException(Yii::t('yii', 'No encryption key specified.'));
 			$key = md5($key);
 		}
 
-		if(extension_loaded('mcrypt'))
-		{
-			if(is_array($cipher))
-				$module=@call_user_func_array('mcrypt_module_open',$cipher);
+		if (extension_loaded('mcrypt')) {
+			if (is_array($cipher))
+				$module = @call_user_func_array('mcrypt_module_open', $cipher);
 			else
-				$module=@mcrypt_module_open($cipher,'', MCRYPT_MODE_CBC,'');
+				$module = @mcrypt_module_open($cipher, '', MCRYPT_MODE_CBC, '');
 
-			if($module===false)
-				throw new CException(Yii::t('yii','Failed to initialize the mcrypt module.'));
-		}
-		else
-			throw new CException(Yii::t('yii','CSecurityManager requires PHP mcrypt extension to be loaded in order to use data encryption feature.'));
+			if ($module === false)
+				throw new CException(Yii::t('yii', 'Failed to initialize the mcrypt module.'));
+		} else
+			throw new CException(Yii::t('yii', 'CSecurityManager requires PHP mcrypt extension to be loaded in order to use data encryption feature.'));
 
-		$derivedKey=$this->substr($key,0,@mcrypt_enc_get_key_size($module));
-		$ivSize=@mcrypt_enc_get_iv_size($module);
-		$iv=$this->substr($data,0,$ivSize);
-		@mcrypt_generic_init($module,$derivedKey,$iv);
-		$decrypted=@mdecrypt_generic($module,$this->substr($data,$ivSize,$this->strlen($data)));
+		$derivedKey = $this->substr($key, 0, @mcrypt_enc_get_key_size($module));
+		$ivSize = @mcrypt_enc_get_iv_size($module);
+		$iv = $this->substr($data, 0, $ivSize);
+		@mcrypt_generic_init($module, $derivedKey, $iv);
+		$decrypted = @mdecrypt_generic($module, $this->substr($data, $ivSize, $this->strlen($data)));
 		@mcrypt_generic_deinit($module);
 		@mcrypt_module_close($module);
-		return rtrim($decrypted,"\0");
+		return rtrim($decrypted, "\0");
 	}
 
 	/**
@@ -603,16 +588,16 @@ class CSecurityManager extends CApplicationComponent
 	 * @param string $actual user-supplied string.
 	 * @return boolean whether strings are equal.
 	 */
-	public function compareString($expected,$actual)
+	public function compareString($expected, $actual)
 	{
-		$expected.="\0";
-		$actual.="\0";
-		$expectedLength=$this->strlen($expected);
-		$actualLength=$this->strlen($actual);
-		$diff=$expectedLength-$actualLength;
-		for($i=0;$i<$actualLength;$i++)
-			$diff|=(ord($actual[$i])^ord($expected[$i%$expectedLength]));
-		return $diff===0;
+		$expected .= "\0";
+		$actual .= "\0";
+		$expectedLength = $this->strlen($expected);
+		$actualLength = $this->strlen($actual);
+		$diff = $expectedLength - $actualLength;
+		for ($i = 0; $i < $actualLength; $i++)
+			$diff |= (ord($actual[$i]) ^ ord($expected[$i % $expectedLength]));
+		return $diff === 0;
 	}
 
 	/**
@@ -626,8 +611,8 @@ class CSecurityManager extends CApplicationComponent
 	public function maskToken($token)
 	{
 		// The number of bytes in a mask is always equal to the number of bytes in a token.
-		$mask=$this->generateRandomString($this->strlen($token));
-		return strtr(base64_encode($mask.($mask^$token)),'+/','-_');
+		$mask = $this->generateRandomString($this->strlen($token));
+		return strtr(base64_encode($mask . ($mask ^ $token)), '+/', '-_');
 	}
 
 	/**
@@ -638,11 +623,11 @@ class CSecurityManager extends CApplicationComponent
 	 */
 	public function unmaskToken($maskedToken)
 	{
-		$decoded=base64_decode(strtr($maskedToken,'-_','+/'));
-		$length=$this->strlen($decoded)/2;
+		$decoded = base64_decode(strtr($maskedToken, '-_', '+/'));
+		$length = $this->strlen($decoded) / 2;
 		// Check if the masked token has an even length.
-		if(!is_int($length))
+		if (!is_int($length))
 			return '';
-		return $this->substr($decoded,$length,$length)^$this->substr($decoded,0,$length);
+		return $this->substr($decoded, $length, $length) ^ $this->substr($decoded, 0, $length);
 	}
 }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CFormElement class file.
  *
@@ -26,7 +27,7 @@ abstract class CFormElement extends CComponent
 	/**
 	 * @var array list of attributes (name=>value) for the HTML element represented by this object.
 	 */
-	public $attributes=array();
+	public $attributes = array();
 
 	private $_parent;
 	private $_visible;
@@ -43,10 +44,10 @@ abstract class CFormElement extends CComponent
 	 * @param mixed $parent the direct parent of this element.
 	 * @see configure
 	 */
-	public function __construct($config,$parent)
+	public function __construct($config, $parent)
 	{
 		$this->configure($config);
-		$this->_parent=$parent;
+		$this->_parent = $parent;
 	}
 
 	/**
@@ -76,14 +77,17 @@ abstract class CFormElement extends CComponent
 	 */
 	public function __get($name)
 	{
-		$getter='get'.$name;
-		if(method_exists($this,$getter))
+		$getter = 'get' . $name;
+		if (method_exists($this, $getter))
 			return $this->$getter();
-		elseif(isset($this->attributes[$name]))
+		elseif (isset($this->attributes[$name]))
 			return $this->attributes[$name];
 		else
-			throw new CException(Yii::t('yii','Property "{class}.{property}" is not defined.',
-				array('{class}'=>get_class($this), '{property}'=>$name)));
+			throw new CException(Yii::t(
+				'yii',
+				'Property "{class}.{property}" is not defined.',
+				array('{class}' => get_class($this), '{property}' => $name)
+			));
 	}
 
 	/**
@@ -98,10 +102,10 @@ abstract class CFormElement extends CComponent
 	 */
 	public function __isset($name)
 	{
-		$getter='get'.$name;
-		if(method_exists($this,$getter))
-			return $this->$getter()!==null;
-		elseif(isset($this->attributes[$name]))
+		$getter = 'get' . $name;
+		if (method_exists($this, $getter))
+			return $this->$getter() !== null;
+		elseif (isset($this->attributes[$name]))
 			return isset($this->attributes[$name]);
 		else
 			return false;
@@ -119,13 +123,13 @@ abstract class CFormElement extends CComponent
 	 * @param mixed $value the property or attribute value
 	 * @see __get
 	 */
-	public function __set($name,$value)
+	public function __set($name, $value)
 	{
-		$setter='set'.$name;
-		if(method_exists($this,$setter))
+		$setter = 'set' . $name;
+		if (method_exists($this, $setter))
 			$this->$setter($value);
 		else
-			$this->attributes[$name]=$value;
+			$this->attributes[$name] = $value;
 	}
 
 	/**
@@ -137,12 +141,11 @@ abstract class CFormElement extends CComponent
 	 */
 	public function configure($config)
 	{
-		if(is_string($config))
-			$config=require(Yii::getPathOfAlias($config).'.php');
-		if(is_array($config))
-		{
-			foreach($config as $name=>$value)
-				$this->$name=$value;
+		if (is_string($config))
+			$config = require(Yii::getPathOfAlias($config) . '.php');
+		if (is_array($config)) {
+			foreach ($config as $name => $value)
+				$this->$name = $value;
 		}
 	}
 
@@ -153,8 +156,8 @@ abstract class CFormElement extends CComponent
 	 */
 	public function getVisible()
 	{
-		if($this->_visible===null)
-			$this->_visible=$this->evaluateVisible();
+		if ($this->_visible === null)
+			$this->_visible = $this->evaluateVisible();
 		return $this->_visible;
 	}
 
@@ -163,7 +166,7 @@ abstract class CFormElement extends CComponent
 	 */
 	public function setVisible($value)
 	{
-		$this->_visible=$value;
+		$this->_visible = $value;
 	}
 
 	/**

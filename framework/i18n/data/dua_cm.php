@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data for 'dua_CM'.
  *
@@ -9,10 +10,10 @@
  *
  * @copyright 2008-2014 Yii Software LLC (https://www.yiiframework.com/license/)
  */
-return array (
+return array(
   'version' => '8245',
-  'numberSymbols' => 
-  array (
+  'numberSymbols' =>
+  array(
     'decimal' => ',',
     'group' => ' ',
     'list' => ';',
@@ -28,8 +29,8 @@ return array (
   'scientificFormat' => '#E0',
   'percentFormat' => '#,##0 %',
   'currencyFormat' => '#,##0.00 ¤',
-  'currencySymbols' => 
-  array (
+  'currencySymbols' =>
+  array(
     'AUD' => 'A$',
     'BRL' => 'R$',
     'CAD' => 'CA$',
@@ -52,10 +53,10 @@ return array (
     'XOF' => 'CFA',
     'XPF' => 'CFPF',
   ),
-  'monthNames' => 
-  array (
-    'wide' => 
-    array (
+  'monthNames' =>
+  array(
+    'wide' =>
+    array(
       1 => 'dimɔ́di',
       2 => 'ŋgɔndɛ',
       3 => 'sɔŋɛ',
@@ -69,8 +70,8 @@ return array (
       11 => 'tiníní',
       12 => 'eláŋgɛ́',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       1 => 'di',
       2 => 'ŋgɔn',
       3 => 'sɔŋ',
@@ -85,10 +86,10 @@ return array (
       12 => 'elá',
     ),
   ),
-  'monthNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'monthNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       1 => 'd',
       2 => 'ŋ',
       3 => 's',
@@ -103,10 +104,10 @@ return array (
       12 => 'e',
     ),
   ),
-  'weekDayNames' => 
-  array (
-    'wide' => 
-    array (
+  'weekDayNames' =>
+  array(
+    'wide' =>
+    array(
       0 => 'éti',
       1 => 'mɔ́sú',
       2 => 'kwasú',
@@ -115,8 +116,8 @@ return array (
       5 => 'ɗónɛsú',
       6 => 'esaɓasú',
     ),
-    'abbreviated' => 
-    array (
+    'abbreviated' =>
+    array(
       0 => 'ét',
       1 => 'mɔ́s',
       2 => 'kwa',
@@ -126,10 +127,10 @@ return array (
       6 => 'esa',
     ),
   ),
-  'weekDayNamesSA' => 
-  array (
-    'narrow' => 
-    array (
+  'weekDayNamesSA' =>
+  array(
+    'narrow' =>
+    array(
       0 => 'e',
       1 => 'm',
       2 => 'k',
@@ -139,33 +140,33 @@ return array (
       6 => 'e',
     ),
   ),
-  'eraNames' => 
-  array (
-    'abbreviated' => 
-    array (
+  'eraNames' =>
+  array(
+    'abbreviated' =>
+    array(
       0 => 'ɓ.Ys',
       1 => 'mb.Ys',
     ),
-    'wide' => 
-    array (
+    'wide' =>
+    array(
       0 => 'ɓoso ɓwá yáɓe lá',
       1 => 'mbúsa kwédi a Yés',
     ),
-    'narrow' => 
-    array (
+    'narrow' =>
+    array(
       0 => 'ɓ.Ys',
       1 => 'mb.Ys',
     ),
   ),
-  'dateFormats' => 
-  array (
+  'dateFormats' =>
+  array(
     'full' => 'EEEE d MMMM y',
     'long' => 'd MMMM y',
     'medium' => 'd MMM y',
     'short' => 'd/M/y',
   ),
-  'timeFormats' => 
-  array (
+  'timeFormats' =>
+  array(
     'full' => 'HH:mm:ss zzzz',
     'long' => 'HH:mm:ss z',
     'medium' => 'HH:mm:ss',
@@ -175,12 +176,12 @@ return array (
   'amName' => 'idiɓa',
   'pmName' => 'ebyámu',
   'orientation' => 'ltr',
-  'languages' => 
-  array (
+  'languages' =>
+  array(
     'dua' => 'duálá',
   ),
-  'territories' => 
-  array (
+  'territories' =>
+  array(
     'cm' => 'Cameroun',
   ),
 );

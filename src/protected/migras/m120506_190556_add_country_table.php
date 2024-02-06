@@ -329,7 +329,6 @@ class m120506_190556_add_country_table extends CDbMigration
 			$this->insert('country', array('short' => $short, 'name' => $name, 'sort_ord' => $count));
 			$count++;
 		}
-
 	}
 
 	public function down()

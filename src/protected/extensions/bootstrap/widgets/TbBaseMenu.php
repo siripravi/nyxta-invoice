@@ -1,4 +1,5 @@
 <?php
+
 /**
  * TbBaseMenu class file.
  * @author Christoffer Niska <ChristofferNiska@gmail.com>
@@ -88,11 +89,13 @@ abstract class TbBaseMenu extends CMenu
 						echo $menu;
 
 					if (isset($item['items']) && !empty($item['items'])) {
-						$this->controller->widget('bootstrap.widgets.TbDropdown', array(
-							'encodeLabel' => $this->encodeLabel,
-							'htmlOptions' => isset($item['submenuOptions']) ? $item['submenuOptions'] : $this->submenuHtmlOptions,
-							'items' => $item['items'],
-						)
+						$this->controller->widget(
+							'bootstrap.widgets.TbDropdown',
+							array(
+								'encodeLabel' => $this->encodeLabel,
+								'htmlOptions' => isset($item['submenuOptions']) ? $item['submenuOptions'] : $this->submenuHtmlOptions,
+								'items' => $item['items'],
+							)
 						);
 					}
 

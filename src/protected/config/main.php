@@ -130,8 +130,7 @@ return array(
                                  'baseUrl'=>'/themes/dashboard/js/',  
                          'js'=>array('jquery.min.js'),
                                
-                       ),*/
-            )
+                       ),*/)
         ),
         'widgetFactory' => array(
             'widgets' => array(

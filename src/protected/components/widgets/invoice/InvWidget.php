@@ -66,7 +66,6 @@ class InvWidget extends CWidget
 
         //	echo $days;
         return $dueDt;
-
     }
     // function to publish and register assets on page 
     public function publishAssets()
@@ -90,7 +89,4 @@ class InvWidget extends CWidget
 
         //Yii::app()->clientScript->registerScriptFile(Yii::app()->assetManager->publish(dirname(__FILE__).'/js/userGroups.js'));
     }
-
 }
-
-?>
