@@ -1,0 +1,80 @@
+2024/02/06 00:26:49 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/img/full-screen-image-1.jpg". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/img/full...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/img/full-screen-image-1.jpg
+HTTP_REFERER=http://nyxtainvoice.local/site/login.html
+---
+2024/02/06 00:26:49 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "favicon.png". in C:\gitrepos\nyxta-invoice\framework\web\CController.php:473
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CController.php(268): CController->missingAction('favicon.png')
+#1 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(280): CController->run('favicon.png')
+#2 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('site/favicon.pn...')
+#3 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#4 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/site/favicon.png
+HTTP_REFERER=http://nyxtainvoice.local/site/login.html
+---
+2024/02/06 00:27:41 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "favicon.ico". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('favicon.ico')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+HTTP_REFERER=http://nyxtainvoice.local/
+---
+2024/02/06 00:28:27 [warning] [getItems::run] Editable Items: '{"st_id":"17","st_type":"1","quotation_id":"QTN-45612","create_time":"2024-02-06 00:28:19","cuser_id":"1","uuser_id":"1"}'
+in C:\gitrepos\nyxta-invoice\src\protected\components\actions\getItems.php (22)
+in C:\gitrepos\nyxta-invoice\src\index.php (14)
+2024/02/06 00:32:16 [warning] [getItems::run] Editable Items: '{"st_id":"17","st_type":"1","quotation_id":"QTN-45612","create_time":"2024-02-06 00:28:19","cuser_id":"1","uuser_id":"1"}'
+in C:\gitrepos\nyxta-invoice\src\protected\components\actions\getItems.php (22)
+in C:\gitrepos\nyxta-invoice\src\index.php (14)
+2024/02/06 00:32:16 [warning] [getItems::run] Editable Items: '{"st_id":"17","st_type":"1","quotation_id":"QTN-45612","create_time":"2024-02-06 00:28:19","cuser_id":"1","uuser_id":"1"}'
+in C:\gitrepos\nyxta-invoice\src\protected\components\actions\getItems.php (22)
+in C:\gitrepos\nyxta-invoice\src\index.php (14)
+2024/02/06 00:32:25 [warning] [getItems::run] Editable Items: '{"st_id":"17","st_type":"1","quotation_id":"QTN-45612","create_time":"2024-02-06 00:28:19","cuser_id":"1","uuser_id":"1"}'
+in C:\gitrepos\nyxta-invoice\src\protected\components\actions\getItems.php (22)
+in C:\gitrepos\nyxta-invoice\src\index.php (14)
+2024/02/06 00:45:36 [warning] [getItems::run] Editable Items: '{"st_id":"17","st_type":"1","quotation_id":"QTN-45612","create_time":"2024-02-06 00:28:19","cuser_id":"1","uuser_id":"1"}'
+in C:\gitrepos\nyxta-invoice\src\protected\components\actions\getItems.php (22)
+in C:\gitrepos\nyxta-invoice\src\index.php (14)
+2024/02/06 00:51:50 [warning] [getItems::run] Editable Items: '{"st_id":"17","st_type":"1","quotation_id":"QTN-45614","create_time":"2024-02-06 00:28:19","cuser_id":"1","uuser_id":"1"}'
+in C:\gitrepos\nyxta-invoice\src\protected\components\actions\getItems.php (22)
+in C:\gitrepos\nyxta-invoice\src\index.php (14)
+2024/02/06 00:52:44 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "files/quotations/QTN-45614.pdf". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('files/quotation...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/files/quotations/QTN-45614.pdf?q=1707209564.8483
+HTTP_REFERER=http://nyxtainvoice.local/quotation/viewPdf/id/17
+---
+2024/02/06 00:56:39 [warning] [getItems::run] Editable Items: '{"st_id":"17","st_type":"1","quotation_id":"QTN-45614","create_time":"2024-02-06 00:28:19","cuser_id":"1","uuser_id":"1"}'
+in C:\gitrepos\nyxta-invoice\src\protected\components\actions\getItems.php (22)
+in C:\gitrepos\nyxta-invoice\src\index.php (14)
+2024/02/06 00:59:23 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: invoice.pack_instr. The SQL statement executed was: INSERT INTO 'invoice' ("st_id", "ref_id", "st_type", "invoice_id", "create_time", "update_time", "delv_from", "delv_to", "pick_from", "pick_to", "is_paid", "cuser_id") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11).
+in C:\gitrepos\nyxta-invoice\src\protected\models\Quotation.php (266)
+in C:\gitrepos\nyxta-invoice\src\protected\controllers\QuotationController.php (169)
+in C:\gitrepos\nyxta-invoice\src\index.php (14)
+2024/02/06 00:59:36 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: invoice.pack_instr. The SQL statement executed was: INSERT INTO 'invoice' ("st_id", "ref_id", "st_type", "invoice_id", "create_time", "update_time", "delv_from", "delv_to", "pick_from", "pick_to", "is_paid", "cuser_id") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11).
+in C:\gitrepos\nyxta-invoice\src\protected\models\Quotation.php (266)
+in C:\gitrepos\nyxta-invoice\src\protected\controllers\QuotationController.php (169)
+in C:\gitrepos\nyxta-invoice\src\index.php (14)
+2024/02/06 00:59:42 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: invoice.pack_instr. The SQL statement executed was: INSERT INTO 'invoice' ("st_id", "ref_id", "st_type", "invoice_id", "create_time", "update_time", "delv_from", "delv_to", "pick_from", "pick_to", "is_paid", "cuser_id") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11).
+in C:\gitrepos\nyxta-invoice\src\protected\models\Quotation.php (266)
+in C:\gitrepos\nyxta-invoice\src\protected\controllers\QuotationController.php (169)
+in C:\gitrepos\nyxta-invoice\src\index.php (14)
+2024/02/06 00:59:43 [warning] [getItems::run] Editable Items: '{"st_id":"17","st_type":"1","quotation_id":"QTN-45614","create_time":"2024-02-06 00:28:19","cuser_id":"1","uuser_id":"1"}'
+in C:\gitrepos\nyxta-invoice\src\protected\components\actions\getItems.php (22)
+in C:\gitrepos\nyxta-invoice\src\index.php (14)
+2024/02/06 01:00:08 [warning] [application] Failed to set unsafe attribute "invoice_id" of "SearchForm".
+in C:\gitrepos\nyxta-invoice\src\protected\controllers\InvoiceController.php (308)
+in C:\gitrepos\nyxta-invoice\src\index.php (14)
+2024/02/06 01:00:17 [warning] [getItems::run] Editable Items: '{"st_id":"16","ref_id":null,"st_type":"2","invoice_id":"INV-0010","create_time":"2024-02-05 20:18:10","update_time":"2024-02-06 01:00:17","delv_from":"2024-02-05","delv_to":"2024-02-05","pick_from":"2024-02-05","pick_to":"2024-02-05","pack_instr":"","is_paid":"0","cuser_id":"1","uuser_id":"1"}'
+in C:\gitrepos\nyxta-invoice\src\protected\components\actions\getItems.php (22)
+in C:\gitrepos\nyxta-invoice\src\index.php (14)
