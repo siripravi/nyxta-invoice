@@ -78,3 +78,6 @@ in C:\gitrepos\nyxta-invoice\src\index.php (14)
 2024/02/06 01:00:17 [warning] [getItems::run] Editable Items: '{"st_id":"16","ref_id":null,"st_type":"2","invoice_id":"INV-0010","create_time":"2024-02-05 20:18:10","update_time":"2024-02-06 01:00:17","delv_from":"2024-02-05","delv_to":"2024-02-05","pick_from":"2024-02-05","pick_to":"2024-02-05","pack_instr":"","is_paid":"0","cuser_id":"1","uuser_id":"1"}'
 in C:\gitrepos\nyxta-invoice\src\protected\components\actions\getItems.php (22)
 in C:\gitrepos\nyxta-invoice\src\index.php (14)
+2024/02/06 01:38:34 [warning] [getItems::run] Editable Items: '{"st_id":"16","ref_id":null,"st_type":"2","invoice_id":"INV-0010","create_time":"2024-02-05 20:18:10","update_time":"2024-02-06 01:38:34","delv_from":"2024-02-05","delv_to":"2024-02-05","pick_from":"2024-02-05","pick_to":"2024-02-05","pack_instr":"","is_paid":"0","cuser_id":"1","uuser_id":"1"}'
+in C:\gitrepos\nyxta-invoice\src\protected\components\actions\getItems.php (22)
+in C:\gitrepos\nyxta-invoice\src\index.php (14)
