@@ -49,3 +49,184 @@ Stack trace:
 REQUEST_URI=/assets/img/full-screen-image-1.jpg
 HTTP_REFERER=http://nyxtainvoice.local/site/login.html
 ---
+2024/02/20 02:30:15 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/img/full-screen-image-1.jpg". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/img/full...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/img/full-screen-image-1.jpg
+HTTP_REFERER=http://nyxtainvoice.local/site/login.html
+---
+2024/02/20 02:30:15 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'nyxtadb.quotation' doesn't exist. The SQL statement executed was: SELECT MAX(quotation_id)
+FROM `quotation`
+WHERE quotation_id LIKE '1%'.
+in C:\gitrepos\nyxta-invoice\src\protected\models\Statement.php (331)
+in C:\gitrepos\nyxta-invoice\src\themes\dashboard\views\layouts\bs-main.php (198)
+in C:\gitrepos\nyxta-invoice\src\protected\controllers\SiteController.php (86)
+2024/02/20 02:30:15 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/img/full-screen-image-1.jpg". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/img/full...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/img/full-screen-image-1.jpg
+HTTP_REFERER=http://nyxtainvoice.local/site/login.html
+---
+2024/02/20 02:30:15 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'nyxtadb.quotation' doesn't exist. The SQL statement executed was: SELECT MAX(quotation_id)
+FROM `quotation`
+WHERE quotation_id LIKE '1%'.
+in C:\gitrepos\nyxta-invoice\src\protected\models\Statement.php (331)
+in C:\gitrepos\nyxta-invoice\src\themes\dashboard\views\layouts\bs-main.php (198)
+in C:\gitrepos\nyxta-invoice\src\protected\controllers\SiteController.php (86)
+2024/02/20 02:30:16 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/img/full-screen-image-1.jpg". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/img/full...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/img/full-screen-image-1.jpg
+HTTP_REFERER=http://nyxtainvoice.local/site/login.html
+---
+2024/02/20 02:30:16 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'nyxtadb.quotation' doesn't exist. The SQL statement executed was: SELECT MAX(quotation_id)
+FROM `quotation`
+WHERE quotation_id LIKE '1%'.
+in C:\gitrepos\nyxta-invoice\src\protected\models\Statement.php (331)
+in C:\gitrepos\nyxta-invoice\src\themes\dashboard\views\layouts\bs-main.php (198)
+in C:\gitrepos\nyxta-invoice\src\protected\controllers\SiteController.php (86)
+2024/02/20 02:30:20 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'nyxtadb.tbl_user' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `tbl_user`.
+in C:\gitrepos\nyxta-invoice\src\protected\components\UserIdentity.php (28)
+in C:\gitrepos\nyxta-invoice\src\protected\models\LoginForm.php (51)
+in C:\gitrepos\nyxta-invoice\src\protected\controllers\SiteController.php (200)
+2024/02/20 02:30:20 [error] [exception.CDbException] CDbException: The table "tbl_user" for active record class "User" cannot be found in the database. in C:\gitrepos\nyxta-invoice\framework\db\ar\CActiveRecord.php:2309
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\db\ar\CActiveRecord.php(407): CActiveRecordMetaData->__construct(Object(User))
+#1 C:\gitrepos\nyxta-invoice\framework\db\ar\CActiveRecord.php(653): CActiveRecord->getMetaData()
+#2 C:\gitrepos\nyxta-invoice\framework\db\ar\CActiveRecord.php(1466): CActiveRecord->getTableSchema()
+#3 C:\gitrepos\nyxta-invoice\src\protected\components\UserIdentity.php(28): CActiveRecord->findByAttributes(Array)
+#4 C:\gitrepos\nyxta-invoice\src\protected\models\LoginForm.php(51): UserIdentity->authenticate()
+#5 C:\gitrepos\nyxta-invoice\framework\validators\CInlineValidator.php(43): LoginForm->authenticate('password', Array)
+#6 C:\gitrepos\nyxta-invoice\framework\validators\CValidator.php(193): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#7 C:\gitrepos\nyxta-invoice\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), Array)
+#8 C:\gitrepos\nyxta-invoice\src\protected\controllers\SiteController.php(200): CModel->validate()
+#9 C:\gitrepos\nyxta-invoice\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#10 C:\gitrepos\nyxta-invoice\framework\web\CController.php(304): CInlineAction->runWithParams(Array)
+#11 C:\gitrepos\nyxta-invoice\framework\web\CController.php(284): CController->runAction(Object(CInlineAction))
+#12 C:\gitrepos\nyxta-invoice\framework\web\CController.php(264): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(280): CController->run('login')
+#14 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('site/login')
+#15 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#16 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#17 {main}
+REQUEST_URI=/site/login.html
+HTTP_REFERER=http://nyxtainvoice.local/site/login.html
+---
+2024/02/20 02:30:20 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "favicon.ico". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('favicon.ico')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+HTTP_REFERER=http://nyxtainvoice.local/site/login.html
+---
+2024/02/20 02:30:21 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'nyxtadb.quotation' doesn't exist. The SQL statement executed was: SELECT MAX(quotation_id)
+FROM `quotation`
+WHERE quotation_id LIKE '1%'.
+in C:\gitrepos\nyxta-invoice\src\protected\models\Statement.php (331)
+in C:\gitrepos\nyxta-invoice\src\themes\dashboard\views\layouts\bs-main.php (198)
+in C:\gitrepos\nyxta-invoice\src\protected\controllers\SiteController.php (86)
+2024/02/20 02:31:33 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in C:\gitrepos\nyxta-invoice\framework\web\auth\CAccessControlFilter.php:180
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\gitrepos\nyxta-invoice\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\gitrepos\nyxta-invoice\framework\web\CController.php(1130): CFilter->filter(Object(CFilterChain))
+#3 C:\gitrepos\nyxta-invoice\framework\web\filters\CInlineFilter.php(60): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\gitrepos\nyxta-invoice\framework\web\filters\CFilterChain.php(125): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\gitrepos\nyxta-invoice\framework\web\CController.php(288): CFilterChain->run()
+#6 C:\gitrepos\nyxta-invoice\framework\web\CController.php(264): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(280): CController->run('admin')
+#8 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('payments/admin')
+#9 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#10 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/payments/admin.html
+HTTP_REFERER=http://nyxtainvoice.local/customer/admin
+---
+2024/02/20 02:34:52 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/img/full-screen-image-1.jpg". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/img/full...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/img/full-screen-image-1.jpg
+HTTP_REFERER=http://nyxtainvoice.local/site/login.html
+---
+2024/02/20 03:14:18 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in C:\gitrepos\nyxta-invoice\framework\web\auth\CAccessControlFilter.php:180
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\gitrepos\nyxta-invoice\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\gitrepos\nyxta-invoice\framework\web\CController.php(1130): CFilter->filter(Object(CFilterChain))
+#3 C:\gitrepos\nyxta-invoice\framework\web\filters\CInlineFilter.php(60): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\gitrepos\nyxta-invoice\framework\web\filters\CFilterChain.php(125): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\gitrepos\nyxta-invoice\framework\web\CController.php(288): CFilterChain->run()
+#6 C:\gitrepos\nyxta-invoice\framework\web\CController.php(264): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(280): CController->run('admin')
+#8 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('payments/admin')
+#9 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#10 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/payments/admin.html
+HTTP_REFERER=http://nyxtainvoice.local/invoice/search.html
+---
+2024/02/20 03:14:22 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in C:\gitrepos\nyxta-invoice\framework\web\auth\CAccessControlFilter.php:180
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\gitrepos\nyxta-invoice\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\gitrepos\nyxta-invoice\framework\web\CController.php(1130): CFilter->filter(Object(CFilterChain))
+#3 C:\gitrepos\nyxta-invoice\framework\web\filters\CInlineFilter.php(60): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\gitrepos\nyxta-invoice\framework\web\filters\CFilterChain.php(125): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\gitrepos\nyxta-invoice\framework\web\CController.php(288): CFilterChain->run()
+#6 C:\gitrepos\nyxta-invoice\framework\web\CController.php(264): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(280): CController->run('admin')
+#8 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('payments/admin')
+#9 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#10 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/payments/admin.html
+HTTP_REFERER=http://nyxtainvoice.local/customer/admin.html
+---
+2024/02/20 03:14:27 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in C:\gitrepos\nyxta-invoice\framework\web\auth\CAccessControlFilter.php:180
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\gitrepos\nyxta-invoice\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\gitrepos\nyxta-invoice\framework\web\CController.php(1130): CFilter->filter(Object(CFilterChain))
+#3 C:\gitrepos\nyxta-invoice\framework\web\filters\CInlineFilter.php(60): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\gitrepos\nyxta-invoice\framework\web\filters\CFilterChain.php(125): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\gitrepos\nyxta-invoice\framework\web\CController.php(288): CFilterChain->run()
+#6 C:\gitrepos\nyxta-invoice\framework\web\CController.php(264): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(280): CController->run('admin')
+#8 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('payments/admin')
+#9 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#10 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/payments/admin.html
+HTTP_REFERER=http://nyxtainvoice.local/venue/admin.html
+---
+2024/02/20 03:14:35 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in C:\gitrepos\nyxta-invoice\framework\web\auth\CAccessControlFilter.php:180
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\gitrepos\nyxta-invoice\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\gitrepos\nyxta-invoice\framework\web\CController.php(1130): CFilter->filter(Object(CFilterChain))
+#3 C:\gitrepos\nyxta-invoice\framework\web\filters\CInlineFilter.php(60): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\gitrepos\nyxta-invoice\framework\web\filters\CFilterChain.php(125): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\gitrepos\nyxta-invoice\framework\web\CController.php(288): CFilterChain->run()
+#6 C:\gitrepos\nyxta-invoice\framework\web\CController.php(264): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(280): CController->run('admin')
+#8 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('payments/admin')
+#9 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#10 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/payments/admin.html
+HTTP_REFERER=http://nyxtainvoice.local/invoice/search.html
+---

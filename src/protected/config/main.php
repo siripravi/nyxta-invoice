@@ -191,11 +191,12 @@ return array(
 
         'db' => array(
             //'connectionString' => 'sqlite:C:\yiisites\invoice.dev\protected\data\invoicedb.db',
-            'connectionString' => 'sqlite:protected/data/invoicedb.db',
-            // 'emulatePrepare' => true,
-            // 'username' => 'root',
-            // 'password' => '',
-            //  'charset' => 'utf8',
+          //  'connectionString' => 'sqlite:protected/data/invoicedb.db',
+          'connectionString' => 'mysql:host=localhost;dbname=nyxtainvoice',
+             'emulatePrepare' => true,
+             'username' => 'root',
+             'password' => '',
+              'charset' => 'utf8',
         ),
 
         'errorHandler' => array(
