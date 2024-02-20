@@ -6,3 +6,46 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/index.php?r=article/ajax-info
 ---
+2024/02/19 22:26:32 [error] [exception.CHttpException.404] CHttpException: The requested view "invoice" was not found. in C:\gitrepos\nyxta-invoice\framework\web\actions\CViewAction.php:110
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\actions\CViewAction.php(124): CViewAction->resolveView('invoice')
+#1 C:\gitrepos\nyxta-invoice\framework\web\actions\CAction.php(77): CViewAction->run()
+#2 C:\gitrepos\nyxta-invoice\framework\web\CController.php(304): CAction->runWithParams(Array)
+#3 C:\gitrepos\nyxta-invoice\framework\web\CController.php(284): CController->runAction(Object(CViewAction))
+#4 C:\gitrepos\nyxta-invoice\framework\web\CController.php(264): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(280): CController->run('page')
+#6 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('site/page')
+#7 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#8 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#9 {main}
+REQUEST_URI=/invoice
+---
+2024/02/19 22:28:10 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/img/full-screen-image-1.jpg". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/img/full...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/img/full-screen-image-1.jpg
+HTTP_REFERER=http://nyxtainvoice.local/site/login.html
+---
+2024/02/19 22:28:18 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "favicon.png". in C:\gitrepos\nyxta-invoice\framework\web\CController.php:473
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CController.php(268): CController->missingAction('favicon.png')
+#1 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(280): CController->run('favicon.png')
+#2 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('site/favicon.pn...')
+#3 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#4 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/site/favicon.png
+HTTP_REFERER=http://nyxtainvoice.local/site/login.html
+---
+2024/02/20 02:26:21 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/img/full-screen-image-1.jpg". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/img/full...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/img/full-screen-image-1.jpg
+HTTP_REFERER=http://nyxtainvoice.local/site/login.html
+---
