@@ -230,3 +230,41 @@ Stack trace:
 REQUEST_URI=/payments/admin.html
 HTTP_REFERER=http://nyxtainvoice.local/invoice/search.html
 ---
+2024/02/22 05:30:42 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/img/full-screen-image-1.jpg". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/img/full...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/img/full-screen-image-1.jpg
+HTTP_REFERER=http://cakesite.local/site/login.html
+---
+2024/02/22 05:30:42 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "favicon.png". in C:\gitrepos\nyxta-invoice\framework\web\CController.php:473
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CController.php(268): CController->missingAction('favicon.png')
+#1 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(280): CController->run('favicon.png')
+#2 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('site/favicon.pn...')
+#3 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#4 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/site/favicon.png
+HTTP_REFERER=http://cakesite.local/site/login.html
+---
+2024/02/22 05:32:02 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/img/full-screen-image-1.jpg". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/img/full...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/img/full-screen-image-1.jpg
+HTTP_REFERER=http://cakesite.local/site/login.html
+---
+2024/02/22 05:32:09 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/img/full-screen-image-1.jpg". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/img/full...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/img/full-screen-image-1.jpg
+HTTP_REFERER=http://cakesite.local/site/login.html
+---
