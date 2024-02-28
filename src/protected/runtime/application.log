@@ -297,3 +297,40 @@ Stack trace:
 REQUEST_URI=/favicon.ico
 HTTP_REFERER=http://nyxtainvoice.local/site/login.html
 ---
+2024/02/28 08:20:39 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in C:\gitrepos\nyxta-invoice\framework\web\auth\CAccessControlFilter.php:180
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\gitrepos\nyxta-invoice\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\gitrepos\nyxta-invoice\framework\web\CController.php(1130): CFilter->filter(Object(CFilterChain))
+#3 C:\gitrepos\nyxta-invoice\framework\web\filters\CInlineFilter.php(60): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\gitrepos\nyxta-invoice\framework\web\filters\CFilterChain.php(125): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\gitrepos\nyxta-invoice\framework\web\CController.php(288): CFilterChain->run()
+#6 C:\gitrepos\nyxta-invoice\framework\web\CController.php(264): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(280): CController->run('admin')
+#8 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('payments/admin')
+#9 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#10 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/payments/admin
+HTTP_REFERER=http://nyxtainvoice.local/quotation/search
+---
+2024/02/28 08:20:48 [warning] [application] Failed to set unsafe attribute "invoice_id" of "SearchForm".
+in C:\gitrepos\nyxta-invoice\src\protected\controllers\InvoiceController.php (308)
+in C:\gitrepos\nyxta-invoice\src\index.php (14)
+2024/02/28 08:20:58 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in C:\gitrepos\nyxta-invoice\framework\web\auth\CAccessControlFilter.php:180
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\gitrepos\nyxta-invoice\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\gitrepos\nyxta-invoice\framework\web\CController.php(1130): CFilter->filter(Object(CFilterChain))
+#3 C:\gitrepos\nyxta-invoice\framework\web\filters\CInlineFilter.php(60): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\gitrepos\nyxta-invoice\framework\web\filters\CFilterChain.php(125): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\gitrepos\nyxta-invoice\framework\web\CController.php(288): CFilterChain->run()
+#6 C:\gitrepos\nyxta-invoice\framework\web\CController.php(264): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(280): CController->run('admin')
+#8 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('payments/admin')
+#9 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#10 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/payments/admin.html
+HTTP_REFERER=http://nyxtainvoice.local/invoice/search.html
+---
