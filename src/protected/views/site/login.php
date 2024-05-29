@@ -21,7 +21,7 @@
     <div class="card">
         <div class="header">
             <h4 class="title"><i class="pe-7s-lock"></i>Sign In</h4>
-            <!-- <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div>  -->
+            <div style="float:right; font-size: 80%; position: relative; top:-10px"><b>Login with:admin/test123</b></div>
         </div>
 
         <div style="padding-top:8px" class="content">

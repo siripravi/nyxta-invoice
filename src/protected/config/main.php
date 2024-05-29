@@ -65,8 +65,8 @@ return array(
             )
         ),
         'db3' => array(
-            //'connectionString' => 'mysql:host=10.4.13.1:3306;dbname=yii2-invoices',
-            'connectionString' => 'mysql:host=localhost;dbname=invoicedb2',
+            'connectionString' => 'mysql:host=10.4.13.1:3306;dbname=yii2-invoices',
+            //'connectionString' => 'mysql:host=localhost;dbname=invoicedb2',
             'emulatePrepare' => true,
             'username' => 'prov',
             'password' => 'siripravi',
@@ -191,8 +191,8 @@ return array(
 
         'db' => array(
             //'connectionString' => 'sqlite:C:\yiisites\invoice.dev\protected\data\invoicedb.db',
-          //  'connectionString' => 'sqlite:protected/data/invoicedb.db',
-          'connectionString' => 'mysql:host=localhost;dbname=nyxtainvoice',
+            'connectionString' => 'sqlite:protected/data/invoicedb.db',
+         // 'connectionString' => 'mysql:host=localhost;dbname=nyxtainvoice',
              'emulatePrepare' => true,
              'username' => 'root',
              'password' => '',
