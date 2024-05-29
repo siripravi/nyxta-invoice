@@ -606,3 +606,47 @@ Stack trace:
 #17 {main}
 REQUEST_URI=/
 ---
+2024/05/28 21:55:29 [error] [exception.CDbException] CDbException: CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it in C:\gitrepos\nyxta-invoice\framework\db\CDbConnection.php:394
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\db\CDbConnection.php(347): CDbConnection->open()
+#1 C:\gitrepos\nyxta-invoice\framework\db\CDbConnection.php(326): CDbConnection->setActive(true)
+#2 C:\gitrepos\nyxta-invoice\framework\base\CModule.php(389): CDbConnection->init()
+#3 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(462): CModule->getComponent('db')
+#4 C:\gitrepos\nyxta-invoice\framework\db\ar\CActiveRecord.php(629): CApplication->getDb()
+#5 C:\gitrepos\nyxta-invoice\framework\db\ar\CActiveRecord.php(2308): CActiveRecord->getDbConnection()
+#6 C:\gitrepos\nyxta-invoice\framework\db\ar\CActiveRecord.php(407): CActiveRecordMetaData->__construct(Object(Statement))
+#7 C:\gitrepos\nyxta-invoice\framework\db\ar\CActiveRecord.php(80): CActiveRecord->getMetaData()
+#8 C:\gitrepos\nyxta-invoice\src\protected\controllers\SiteController.php(36): CActiveRecord->__construct('search')
+#9 C:\gitrepos\nyxta-invoice\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#10 C:\gitrepos\nyxta-invoice\framework\web\CController.php(304): CInlineAction->runWithParams(Array)
+#11 C:\gitrepos\nyxta-invoice\framework\web\CController.php(284): CController->runAction(Object(CInlineAction))
+#12 C:\gitrepos\nyxta-invoice\framework\web\CController.php(264): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(280): CController->run('')
+#14 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('')
+#15 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#16 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#17 {main}
+REQUEST_URI=/
+---
+2024/05/28 21:55:51 [error] [exception.CDbException] CDbException: CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it in C:\gitrepos\nyxta-invoice\framework\db\CDbConnection.php:394
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\db\CDbConnection.php(347): CDbConnection->open()
+#1 C:\gitrepos\nyxta-invoice\framework\db\CDbConnection.php(326): CDbConnection->setActive(true)
+#2 C:\gitrepos\nyxta-invoice\framework\base\CModule.php(389): CDbConnection->init()
+#3 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(462): CModule->getComponent('db')
+#4 C:\gitrepos\nyxta-invoice\framework\db\ar\CActiveRecord.php(629): CApplication->getDb()
+#5 C:\gitrepos\nyxta-invoice\framework\db\ar\CActiveRecord.php(2308): CActiveRecord->getDbConnection()
+#6 C:\gitrepos\nyxta-invoice\framework\db\ar\CActiveRecord.php(407): CActiveRecordMetaData->__construct(Object(Statement))
+#7 C:\gitrepos\nyxta-invoice\framework\db\ar\CActiveRecord.php(80): CActiveRecord->getMetaData()
+#8 C:\gitrepos\nyxta-invoice\src\protected\controllers\SiteController.php(36): CActiveRecord->__construct('search')
+#9 C:\gitrepos\nyxta-invoice\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#10 C:\gitrepos\nyxta-invoice\framework\web\CController.php(304): CInlineAction->runWithParams(Array)
+#11 C:\gitrepos\nyxta-invoice\framework\web\CController.php(284): CController->runAction(Object(CInlineAction))
+#12 C:\gitrepos\nyxta-invoice\framework\web\CController.php(264): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(280): CController->run('')
+#14 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('')
+#15 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#16 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#17 {main}
+REQUEST_URI=/
+---
