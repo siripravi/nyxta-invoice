@@ -84,7 +84,7 @@ class Movement extends ManyManyActiveRecord
 			'mov_time_start' => 'Mov Time Start',
 			'mov_time_end' => 'Mov Time End',
 			'truck_number' => 'Truck Number',
-			'description' => 'Description',
+			'description' => 'description',
 		);
 	}
 

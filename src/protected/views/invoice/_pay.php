@@ -57,15 +57,15 @@
                     </div>
 
                     <div class="span3">
-                        <?php //echo $form->labelEx($pmt,'MODE_ID',array('class'=>'title')); 
+                        <?php //echo $form->labelEx($pmt,'mode_ID',array('class'=>'title')); 
                         ?>
                         <?php
                         echo $form->dropDownList(
                             $pmt,
-                            'MODE_ID',
+                            'mode_ID',
                             CHtml::listData(
                                 Mode::model()->findAll(),
-                                'MODE_ID',
+                                'mode_ID',
                                 function ($post) {
                                     return CHtml::encode($post->mode_description);
                                 }

@@ -27,8 +27,8 @@
                             <input style="width:38px;display:none" id="<?php echo 'statementItems_'; ?>{{$index}}<?php echo 'sequence'; ?>" name="<?php echo 'statementItems['; ?>{{$index}}<?php echo ']sequence'; ?>" placeholder="1" type="text" value="{{$index + 1}}">
                         </td>
                         <td>
-                            <div ng-hide="editingData[$index + 1]"> {{item.DESCRIPTION}} </div>
-                            <div ng-show="editingData[$index + 1] || (item.ID == 0)"><textarea style="width:423px" ng-model="item.DESCRIPTION" name="<?php echo 'statementItems['; ?>{{$index}}<?php echo ']DESCRIPTION'; ?>" id="<?php echo 'statemetItems_'; ?>{{$index}}<?php echo '_DESCRIPTION'; ?>"></textarea>
+                            <div ng-hide="editingData[$index + 1]"> {{item.description}} </div>
+                            <div ng-show="editingData[$index + 1] || (item.ID == 0)"><textarea style="width:423px" ng-model="item.description" name="<?php echo 'statementItems['; ?>{{$index}}<?php echo ']description'; ?>" id="<?php echo 'statemetItems_'; ?>{{$index}}<?php echo '_description'; ?>"></textarea>
                             </div>
                         </td>
                         <td>

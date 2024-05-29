@@ -25676,7 +25676,7 @@
    * @description Normalizes and parses a URL.
    * @returns {object} Returns the normalized URL as a dictionary.
    *
-   *   | member name   | Description    |
+   *   | member name   | description    |
    *   |---------------|----------------|
    *   | href          | A normalized version of the provided URL if it was not an absolute URL |
    *   | protocol      | The protocol including the trailing colon                              |
@@ -26476,7 +26476,7 @@
  *    number) or various ISO 8601 datetime string formats (e.g. yyyy-MM-ddTHH:mm:ss.SSSZ and its
  *    shorter versions like yyyy-MM-ddTHH:mmZ, yyyy-MM-dd or yyyyMMddTHHmmssZ). If no timezone is
  *    specified in the string input, the time is considered to be in the local timezone.
- * @param {string=} format Formatting rules (see Description). If not specified,
+ * @param {string=} format Formatting rules (see description). If not specified,
  *    `mediumDate` is used.
  * @returns {string} Formatted string or the input if input is not recognized as date/millis.
  *
@@ -32246,7 +32246,7 @@
  * @scope
  * @priority 800
  * @param {*} ngSwitch|on expression to match against <tt>ng-switch-when</tt>.
- * @paramDescription
+ * @paramdescription
  * On child elements add:
  *
  * * `ngSwitchWhen`: the case statement to match against. If match then this

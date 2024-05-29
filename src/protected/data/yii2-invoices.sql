@@ -237,15 +237,15 @@ INSERT INTO `invoice` (`st_id`, `ref_id`, `st_type`, `invoice_id`, `delv_from`, 
 --
 
 CREATE TABLE IF NOT EXISTS `mode` (
-  `MODE_ID` int(11) NOT NULL,
-  `MODE_DESCRIPTION` varchar(15) NOT NULL
+  `mode_ID` int(11) NOT NULL,
+  `mode_description` varchar(15) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `mode`
 --
 
-INSERT INTO `mode` (`MODE_ID`, `MODE_DESCRIPTION`) VALUES
+INSERT INTO `mode` (`mode_ID`, `mode_description`) VALUES
 (1, 'Check'),
 (2, 'Cash'),
 (3, 'Credit Card'),
@@ -317,7 +317,7 @@ INSERT INTO `mov_employee` (`mov_id`, `emp_id`) VALUES
 CREATE TABLE IF NOT EXISTS `payments` (
   `ID` int(11) NOT NULL,
   `INVOICE_ID` int(11) NOT NULL,
-  `MODE_ID` int(11) NOT NULL,
+  `mode_ID` int(11) NOT NULL,
   `AMOUNT` decimal(10,2) DEFAULT NULL,
   `balance` float(10,2) NOT NULL,
   `PAY_DATE` varchar(20) NOT NULL,
@@ -333,7 +333,7 @@ CREATE TABLE IF NOT EXISTS `payments` (
 -- Dumping data for table `payments`
 --
 
-INSERT INTO `payments` (`ID`, `INVOICE_ID`, `MODE_ID`, `AMOUNT`, `balance`, `PAY_DATE`, `DETAILS`, `DEPOSITED_BY`, `created`, `modified`, `cuser_id`, `uuser_id`) VALUES
+INSERT INTO `payments` (`ID`, `INVOICE_ID`, `mode_ID`, `AMOUNT`, `balance`, `PAY_DATE`, `DETAILS`, `DEPOSITED_BY`, `created`, `modified`, `cuser_id`, `uuser_id`) VALUES
 (1, 1, 2, '7000.00', 0.00, '09-14-2015', 'deposited by me cash 7000', 'me', 1442230897, 1442230897, 1, 1),
 (2, 5, 3, '40000.00', 0.00, '11-25-2015', '', '', 1448449086, 1448449086, 1, 1),
 (3, 5, 1, '25000.00', 0.00, '11-25-2015', '', '', 1448449166, 1448449166, 1, 1),
@@ -498,7 +498,7 @@ CREATE TABLE IF NOT EXISTS `statement_items` (
   `ID` int(11) NOT NULL,
   `st_id` int(11) NOT NULL,
   `st_type` tinyint(4) NOT NULL,
-  `DESCRIPTION` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
   `QUANTITY` decimal(8,2) DEFAULT NULL,
   `PRICE` decimal(10,2) DEFAULT NULL,
   `status` int(11) NOT NULL,
@@ -509,7 +509,7 @@ CREATE TABLE IF NOT EXISTS `statement_items` (
 -- Dumping data for table `statement_items`
 --
 
-INSERT INTO `statement_items` (`ID`, `st_id`, `st_type`, `DESCRIPTION`, `QUANTITY`, `PRICE`, `status`, `sequence`) VALUES
+INSERT INTO `statement_items` (`ID`, `st_id`, `st_type`, `description`, `QUANTITY`, `PRICE`, `status`, `sequence`) VALUES
 (1, 1, 2, 'New pencils for item one review and update', '25.00', '12.58', 1, 1),
 (2, 1, 2, 'new latest invoice iem', '36.00', '213.25', 1, 2),
 (3, 2, 2, 'HOuse', '1.00', '2345.00', 1, 1),
@@ -701,7 +701,7 @@ ALTER TABLE `invoice`
 -- Indexes for table `mode`
 --
 ALTER TABLE `mode`
-  ADD PRIMARY KEY (`MODE_ID`);
+  ADD PRIMARY KEY (`mode_ID`);
 
 --
 -- Indexes for table `movement`
@@ -723,7 +723,7 @@ ALTER TABLE `mov_employee`
 ALTER TABLE `payments`
   ADD PRIMARY KEY (`ID`),
   ADD KEY `INVOICE_ID` (`INVOICE_ID`),
-  ADD KEY `MODE_ID` (`MODE_ID`);
+  ADD KEY `mode_ID` (`mode_ID`);
 
 --
 -- Indexes for table `quotation`
@@ -793,7 +793,7 @@ ALTER TABLE `employee`
 -- AUTO_INCREMENT for table `mode`
 --
 ALTER TABLE `mode`
-  MODIFY `MODE_ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+  MODIFY `mode_ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `movement`
 --

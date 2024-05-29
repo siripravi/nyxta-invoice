@@ -133,7 +133,7 @@
             <tbody>
                 <tr>
                     <th>Sr#</th>
-                    <th>Description</th>
+                    <th>description</th>
                     <th>Quantity</th>
                 </tr class="item-row">
                 <?php

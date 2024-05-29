@@ -24127,7 +24127,7 @@
    * @description Normalizes and parses a URL.
    * @returns {object} Returns the normalized URL as a dictionary.
    *
-   *   | member name   | Description                                                            |
+   *   | member name   | description                                                            |
    *   |---------------|------------------------------------------------------------------------|
    *   | href          | A normalized version of the provided URL if it was not an absolute URL |
    *   | protocol      | The protocol without the trailing colon                                |
@@ -25465,7 +25465,7 @@
  *    number) or various ISO 8601 datetime string formats (e.g. yyyy-MM-ddTHH:mm:ss.sssZ and its
  *    shorter versions like yyyy-MM-ddTHH:mmZ, yyyy-MM-dd or yyyyMMddTHHmmssZ). If no timezone is
  *    specified in the string input, the time is considered to be in the local timezone.
- * @param {string=} format Formatting rules (see Description). If not specified,
+ * @param {string=} format Formatting rules (see description). If not specified,
  *    `mediumDate` is used.
  * @param {string=} timezone Timezone to be used for formatting. It understands UTC/GMT and the
  *    continental US time zone abbreviations, but for general use, use a time zone offset, for
@@ -26679,12 +26679,12 @@
    *
    * The buggy way to write it:
    * ```html
-   * <img src="http://www.gravatar.com/avatar/{{hash}}" alt="Description"/>
+   * <img src="http://www.gravatar.com/avatar/{{hash}}" alt="description"/>
    * ```
    *
    * The correct way to write it:
    * ```html
-   * <img ng-src="http://www.gravatar.com/avatar/{{hash}}" alt="Description" />
+   * <img ng-src="http://www.gravatar.com/avatar/{{hash}}" alt="description" />
    * ```
    *
    * @element IMG
@@ -26705,12 +26705,12 @@
    *
    * The buggy way to write it:
    * ```html
-   * <img srcset="http://www.gravatar.com/avatar/{{hash}} 2x" alt="Description"/>
+   * <img srcset="http://www.gravatar.com/avatar/{{hash}} 2x" alt="description"/>
    * ```
    *
    * The correct way to write it:
    * ```html
-   * <img ng-srcset="http://www.gravatar.com/avatar/{{hash}} 2x" alt="Description" />
+   * <img ng-srcset="http://www.gravatar.com/avatar/{{hash}} 2x" alt="description" />
    * ```
    *
    * @element IMG
@@ -33408,15 +33408,15 @@
    *
    *       <form name="myForm" ng-model-options="{ updateOn: 'blur' }">
    *         <div>
-   *           <p id="inputDescription1">Without $rollbackViewValue():</p>
-   *           <input name="value1" aria-describedby="inputDescription1" ng-model="model.value1"
+   *           <p id="inputdescription1">Without $rollbackViewValue():</p>
+   *           <input name="value1" aria-describedby="inputdescription1" ng-model="model.value1"
    *                  ng-keydown="setEmpty($event, 'value1')">
    *           value1: "{{ model.value1 }}"
    *         </div>
    *
    *         <div>
-   *           <p id="inputDescription2">With $rollbackViewValue():</p>
-   *           <input name="value2" aria-describedby="inputDescription2" ng-model="model.value2"
+   *           <p id="inputdescription2">With $rollbackViewValue():</p>
+   *           <input name="value2" aria-describedby="inputdescription2" ng-model="model.value2"
    *                  ng-keydown="setEmpty($event, 'value2', true)">
    *           value2: "{{ model.value2 }}"
    *         </div>
@@ -34167,13 +34167,13 @@
            background: red;
          }
        </style>
-       <p id="inputDescription">
+       <p id="inputdescription">
         Update input to see transitions when valid/invalid.
         Integer is a valid value.
        </p>
        <form name="testForm" ng-controller="ExampleController">
          <input ng-model="val" ng-pattern="/^\d+$/" name="anim" class="my-input"
-                aria-describedby="inputDescription" />
+                aria-describedby="inputdescription" />
        </form>
      </file>
  * </example>

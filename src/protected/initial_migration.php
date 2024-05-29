@@ -26,14 +26,14 @@ $this->createTable('invoice', array(
 $this->addPrimaryKey('pk_invoice', 'invoice', 'st_id');
 
 $this->createTable('mode', array(
-'MODE_ID'=>'pk',
-'MODE_DESCRIPTION'=>'varchar(15) NOT NULL',
+'mode_ID'=>'pk',
+'mode_description'=>'varchar(15) NOT NULL',
 ), '');
 
 $this->createTable('payments', array(
 'id'=>'pk',
 'invoice_id'=>'int(11) NOT NULL',
-'MODE_ID'=>'int(11) NOT NULL',
+'mode_ID'=>'int(11) NOT NULL',
 'AMOUNT'=>'decimal(10,2) DEFAULT NULL',
 'balance'=>'float(10,2) NOT NULL',
 'PAY_DATE'=>'varchar(20) NOT NULL',
@@ -74,7 +74,7 @@ $this->createTable('statement_items', array(
 'ID'=>'pk',
 'st_id'=>'int(11) NOT NULL',
 'st_type'=>'int(11) NOT NULL',
-'DESCRIPTION'=>'varchar(255) NOT NULL',
+'description'=>'varchar(255) NOT NULL',
 'QUANTITY'=>'decimal(8,2) DEFAULT NULL',
 'PRICE'=>'decimal(10,2) DEFAULT NULL',
 'sequence'=>'int(11) NOT NULL',

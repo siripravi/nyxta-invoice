@@ -48,7 +48,7 @@ class EmailWidget extends CWidget
         //if(is_numeric($switch)) return $paid; //here we save an ability to search with `0` or `1` value
         //if(empty($data->paid))
         //   ;
-        switch ($data->MODE_ID) {
+        switch ($data->mode_ID) {
             case '1':
                 return '<small class="badge pull-left bg-green">Chq</small>';
                 //all fields with `switch` = 1

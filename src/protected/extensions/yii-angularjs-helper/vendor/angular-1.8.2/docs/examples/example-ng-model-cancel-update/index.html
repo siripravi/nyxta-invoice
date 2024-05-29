@@ -38,10 +38,10 @@
 
       <form name="myForm" ng-model-options="{ updateOn: 'blur' }">
         <div>
-          <p id="inputDescription1">Without $rollbackViewValue():</p>
+          <p id="inputdescription1">Without $rollbackViewValue():</p>
           <input
             name="value1"
-            aria-describedby="inputDescription1"
+            aria-describedby="inputdescription1"
             ng-model="model.value1"
             ng-keydown="setEmpty($event, 'value1')"
           />
@@ -49,10 +49,10 @@
         </div>
 
         <div>
-          <p id="inputDescription2">With $rollbackViewValue():</p>
+          <p id="inputdescription2">With $rollbackViewValue():</p>
           <input
             name="value2"
-            aria-describedby="inputDescription2"
+            aria-describedby="inputdescription2"
             ng-model="model.value2"
             ng-keydown="setEmpty($event, 'value2', true)"
           />

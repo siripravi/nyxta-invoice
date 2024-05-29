@@ -2315,14 +2315,14 @@
     $httpBackend.verifyNoOutstandingRequest = function (digest) {
       if (digest !== false) $rootScope.$digest();
       if (responses.length) {
-        var unflushedDescriptions = responses.map(function (res) {
+        var unflusheddescriptions = responses.map(function (res) {
           return res.description;
         });
         throw new Error(
           "Unflushed requests: " +
             responses.length +
             "\n  " +
-            unflushedDescriptions.join("\n  ")
+            unflusheddescriptions.join("\n  ")
         );
       }
     };

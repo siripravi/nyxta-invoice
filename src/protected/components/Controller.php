@@ -49,7 +49,7 @@ class Controller extends CController
     public static function getPayMode($data, $row = "")
     {
 
-        switch ($data->MODE_ID) {
+        switch ($data->mode_ID) {
             case '1':
                 return 'Check';
                 //all fields with `switch` = 1

@@ -101,8 +101,8 @@
                                     <?php echo $i + 1; ?>
                                 </td>
                                 <?php
-                                //$lines = explode("\n", wordwrap($item->DESCRIPTION, 80, "\n"));
-                                $lines = wordwrap($item->DESCRIPTION, 80, "<br />\n");
+                                //$lines = explode("\n", wordwrap($item->description, 80, "\n"));
+                                $lines = wordwrap($item->description, 80, "<br />\n");
                                 // foreach($lines as $line):
                                 ?>
                                 <td class="desc">

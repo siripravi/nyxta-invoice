@@ -2003,7 +2003,7 @@ Makes editable any HTML element on the page. Applied as jQuery method.
                 alert('Saved value: ' + params.newValue);
             });
             **/
-      //event itself is triggered by editableContainer. Description here is only for documentation
+      //event itself is triggered by editableContainer. description here is only for documentation
     },
 
     validate: function () {
@@ -6439,7 +6439,7 @@ Editableform based on Twitter Bootstrap
 
 /**
 Bootstrap-datepicker.  
-Description and examples: https://github.com/eternicode/bootstrap-datepicker.  
+description and examples: https://github.com/eternicode/bootstrap-datepicker.  
 For **i18n** you should include js file from here: https://github.com/eternicode/bootstrap-datepicker/tree/master/js/locales
 and set `language` option.  
 Since 1.4.0 date has different appearance in **popup** and **inline** modes. 

@@ -71,15 +71,15 @@ CREATE TABLE `invoice` (
 --
 
 CREATE TABLE `mode` (
-  `MODE_ID` int(11) NOT NULL,
-  `MODE_DESCRIPTION` varchar(15) NOT NULL
+  `mode_ID` int(11) NOT NULL,
+  `mode_description` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `mode`
 --
 
-INSERT INTO `mode` (`MODE_ID`, `MODE_DESCRIPTION`) VALUES
+INSERT INTO `mode` (`mode_ID`, `mode_description`) VALUES
 (1, 'Check'),
 (2, 'Cash'),
 (3, 'Credit Card'),
@@ -94,7 +94,7 @@ INSERT INTO `mode` (`MODE_ID`, `MODE_DESCRIPTION`) VALUES
 CREATE TABLE `payments` (
   `ID` int(11) NOT NULL,
   `INVOICE_ID` int(11) NOT NULL,
-  `MODE_ID` int(11) NOT NULL,
+  `mode_ID` int(11) NOT NULL,
   `AMOUNT` decimal(10,2) DEFAULT NULL,
   `balance` float(10,2) NOT NULL,
   `PAY_DATE` varchar(20) NOT NULL,
@@ -150,7 +150,7 @@ CREATE TABLE `statement_items` (
   `ID` int(11) NOT NULL,
   `st_id` int(11) NOT NULL,
   `st_type` int(11) NOT NULL,
-  `DESCRIPTION` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
   `QUANTITY` decimal(8,2) DEFAULT NULL,
   `PRICE` decimal(10,2) DEFAULT NULL,
   `status` int(11) NOT NULL
@@ -232,7 +232,7 @@ ALTER TABLE `invoice`
 -- Indexes for table `mode`
 --
 ALTER TABLE `mode`
-  ADD PRIMARY KEY (`MODE_ID`);
+  ADD PRIMARY KEY (`mode_ID`);
 
 --
 -- Indexes for table `payments`
@@ -240,7 +240,7 @@ ALTER TABLE `mode`
 ALTER TABLE `payments`
   ADD PRIMARY KEY (`ID`),
   ADD KEY `INVOICE_ID` (`INVOICE_ID`),
-  ADD KEY `MODE_ID` (`MODE_ID`);
+  ADD KEY `mode_ID` (`mode_ID`);
 
 --
 -- Indexes for table `quotation`
@@ -287,7 +287,7 @@ ALTER TABLE `customer`
 -- AUTO_INCREMENT for table `mode`
 --
 ALTER TABLE `mode`
-  MODIFY `MODE_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `mode_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `payments`

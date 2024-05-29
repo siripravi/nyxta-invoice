@@ -55,7 +55,7 @@ class Mode extends CActiveRecord
 	{
 		return array(
 			'mode_id' => 'Mode',
-			'mode_description' => 'Mode Description',
+			'mode_description' => 'Mode description',
 		);
 	}
 

@@ -121,7 +121,7 @@
     <thead>
       <tr>
         <th class="srno">SR#</th>
-        <th class="desc">DESCRIPTION</th>
+        <th class="desc">description</th>
         <th class="price">QTY</th>
         <th class="qty">
           <?php if (!$slip) : ?>PRICE
@@ -140,7 +140,7 @@
           <td class="srno">
             <?php echo $start; ?>
           </td>
-          <?php //$lines = explode("\n", wordwrap($item->DESCRIPTION, 80, "\n"));
+          <?php //$lines = explode("\n", wordwrap($item->description, 80, "\n"));
           $lines = wordwrap($item->description, 80, "<br />\n");
           // foreach($lines as $line):
           ?>

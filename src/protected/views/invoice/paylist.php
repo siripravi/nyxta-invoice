@@ -58,10 +58,10 @@
                     array(
                         'type' => 'select',
                         'model' => $data,
-                        'attribute' => 'MODE_ID',
+                        'attribute' => 'mode_ID',
                         'value' => array($this, 'getPayMode'),
                         'url' => $this->createUrl('payments/updatePmt'),
-                        'source' => CHtml::listData(Mode::model()->findAll(), 'MODE_ID', function ($post) {
+                        'source' => CHtml::listData(Mode::model()->findAll(), 'mode_ID', function ($post) {
                             return CHtml::encode($post->mode_description);
                         }),
                         'placement' => 'right',
