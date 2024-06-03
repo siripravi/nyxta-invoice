@@ -6,119 +6,122 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit386217c1a6f1af2dfd25c3ea7f96287a
 {
-    public static $files = array(
+    public static $files = array (
         'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
         '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        'db356362850385d08a5381de2638b5fd' => __DIR__ . '/..' . '/mpdf/mpdf/src/functions.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
     );
 
-    public static $prefixLengthsPsr4 = array(
-        's' =>
-        array(
+    public static $prefixLengthsPsr4 = array (
+        's' => 
+        array (
             'setasign\\Fpdi\\' => 14,
         ),
-        'S' =>
-        array(
+        'S' => 
+        array (
             'Symfony\\Polyfill\\Php72\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Polyfill\\Intl\\Normalizer\\' => 33,
             'Symfony\\Polyfill\\Intl\\Idn\\' => 26,
             'Symfony\\Polyfill\\Iconv\\' => 23,
         ),
-        'P' =>
-        array(
+        'P' => 
+        array (
             'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
             'PHPMailer\\PHPMailer\\' => 20,
         ),
-        'M' =>
-        array(
+        'M' => 
+        array (
+            'Mpdf\\PsrLogAwareTrait\\' => 22,
+            'Mpdf\\PsrHttpMessageShim\\' => 24,
             'Mpdf\\' => 5,
         ),
-        'H' =>
-        array(
-            'Http\\Message\\' => 13,
-        ),
-        'E' =>
-        array(
+        'E' => 
+        array (
             'Egulias\\EmailValidator\\' => 23,
         ),
-        'D' =>
-        array(
+        'D' => 
+        array (
             'Doctrine\\Deprecations\\' => 22,
             'Doctrine\\Common\\Lexer\\' => 22,
             'DeepCopy\\' => 9,
         ),
     );
 
-    public static $prefixDirsPsr4 = array(
-        'setasign\\Fpdi\\' =>
-        array(
+    public static $prefixDirsPsr4 = array (
+        'setasign\\Fpdi\\' => 
+        array (
             0 => __DIR__ . '/..' . '/setasign/fpdi/src',
         ),
-        'Symfony\\Polyfill\\Php72\\' =>
-        array(
+        'Symfony\\Polyfill\\Php72\\' => 
+        array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php72',
         ),
-        'Symfony\\Polyfill\\Mbstring\\' =>
-        array(
+        'Symfony\\Polyfill\\Mbstring\\' => 
+        array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
         ),
-        'Symfony\\Polyfill\\Intl\\Normalizer\\' =>
-        array(
+        'Symfony\\Polyfill\\Intl\\Normalizer\\' => 
+        array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer',
         ),
-        'Symfony\\Polyfill\\Intl\\Idn\\' =>
-        array(
+        'Symfony\\Polyfill\\Intl\\Idn\\' => 
+        array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-intl-idn',
         ),
-        'Symfony\\Polyfill\\Iconv\\' =>
-        array(
+        'Symfony\\Polyfill\\Iconv\\' => 
+        array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-iconv',
         ),
-        'Psr\\Log\\' =>
-        array(
+        'Psr\\Log\\' => 
+        array (
             0 => __DIR__ . '/..' . '/psr/log/src',
         ),
-        'Psr\\Http\\Message\\' =>
-        array(
+        'Psr\\Http\\Message\\' => 
+        array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
-        'PHPMailer\\PHPMailer\\' =>
-        array(
+        'PHPMailer\\PHPMailer\\' => 
+        array (
             0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
         ),
-        'Mpdf\\' =>
-        array(
+        'Mpdf\\PsrLogAwareTrait\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mpdf/psr-log-aware-trait/src',
+        ),
+        'Mpdf\\PsrHttpMessageShim\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mpdf/psr-http-message-shim/src',
+        ),
+        'Mpdf\\' => 
+        array (
             0 => __DIR__ . '/..' . '/mpdf/mpdf/src',
         ),
-        'Http\\Message\\' =>
-        array(
-            0 => __DIR__ . '/..' . '/php-http/message-factory/src',
-        ),
-        'Egulias\\EmailValidator\\' =>
-        array(
+        'Egulias\\EmailValidator\\' => 
+        array (
             0 => __DIR__ . '/..' . '/egulias/email-validator/src',
         ),
-        'Doctrine\\Deprecations\\' =>
-        array(
+        'Doctrine\\Deprecations\\' => 
+        array (
             0 => __DIR__ . '/..' . '/doctrine/deprecations/lib/Doctrine/Deprecations',
         ),
-        'Doctrine\\Common\\Lexer\\' =>
-        array(
+        'Doctrine\\Common\\Lexer\\' => 
+        array (
             0 => __DIR__ . '/..' . '/doctrine/lexer/src',
         ),
-        'DeepCopy\\' =>
-        array(
+        'DeepCopy\\' => 
+        array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
         ),
     );
 
-    public static $classMap = array(
+    public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Normalizer' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php',
         'YiiMailer' => __DIR__ . '/..' . '/vernes/yiimailer/src/YiiMailer.php',
@@ -130,6 +133,7 @@ class ComposerStaticInit386217c1a6f1af2dfd25c3ea7f96287a
             $loader->prefixLengthsPsr4 = ComposerStaticInit386217c1a6f1af2dfd25c3ea7f96287a::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit386217c1a6f1af2dfd25c3ea7f96287a::$prefixDirsPsr4;
             $loader->classMap = ComposerStaticInit386217c1a6f1af2dfd25c3ea7f96287a::$classMap;
+
         }, null, ClassLoader::class);
     }
 }

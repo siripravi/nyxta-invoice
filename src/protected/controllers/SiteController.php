@@ -249,4 +249,8 @@ class SiteController extends Controller
             )
         );
     }
+
+    public function actionPdfViewer(){
+		$this->render('pdf_viewer');
+	}
 }
