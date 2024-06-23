@@ -8,6 +8,7 @@
 Yii::setPathOfAlias('vendors', dirname(__FILE__) . '/../../vendors');
 Yii::setPathOfAlias('bootstrap', dirname(__FILE__) . '/../extensions/bootstrap');
 Yii::setPathOfAlias('editable', dirname(__FILE__) . '/../extensions/x-editable');
+Yii::setPathOfAlias('pdfjs', dirname(__FILE__) . '/../extensions/pdfJs');
 //Yii::setPathOfAlias('booster', dirname(__FILE__) . '/../../vendors/booster');
 return array(
     'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
@@ -119,7 +120,7 @@ return array(
             'mergeCss' => true, //def:true
             'compressMergedCss' => false, //def:false
              'mergeIfXhr' => true,*/
-            'coreScriptPosition' => CClientScript::POS_END,
+            'coreScriptPosition' => CClientScript::POS_HEAD,
             //  'class' => 'application.components.MultidomainClientScript',
             //  'enableMultidomainAssets' => true,
             //  'assetsSubdomain' => 'static',

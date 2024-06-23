@@ -920,3 +920,763 @@ REQUEST_URI=/invoice/doc.pdf/id/18
 in C:\gitrepos\nyxta-invoice\src\protected\components\actions\getPdf.php (35)
 in C:\gitrepos\nyxta-invoice\src\protected\components\actions\getPdf.php (35)
 in C:\gitrepos\nyxta-invoice\src\index.php (14)
+2024/06/02 22:07:24 [error] [php] include(Files.php): Failed to open stream: No such file or directory (C:\gitrepos\nyxta-invoice\framework\YiiBase.php:441)
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\YiiBase.php(441): include()
+#1 C:\gitrepos\nyxta-invoice\src\protected\views\site\index.php(4): autoload()
+#2 C:\gitrepos\nyxta-invoice\framework\web\CBaseController.php(128): require()
+#3 C:\gitrepos\nyxta-invoice\framework\web\CBaseController.php(96): SiteController->renderInternal()
+#4 C:\gitrepos\nyxta-invoice\framework\web\CController.php(854): SiteController->renderFile()
+#5 C:\gitrepos\nyxta-invoice\framework\web\CController.php(768): SiteController->renderPartial()
+#6 C:\gitrepos\nyxta-invoice\src\protected\controllers\SiteController.php(72): SiteController->render()
+#7 C:\gitrepos\nyxta-invoice\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#8 C:\gitrepos\nyxta-invoice\framework\web\CController.php(304): CInlineAction->runWithParams()
+#9 C:\gitrepos\nyxta-invoice\framework\web\CController.php(284): SiteController->runAction()
+#10 C:\gitrepos\nyxta-invoice\framework\web\CController.php(264): SiteController->runActionWithFilters()
+#11 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(280): SiteController->run()
+#12 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController()
+#13 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#14 C:\gitrepos\nyxta-invoice\src\index.php(14): CWebApplication->run()
+REQUEST_URI=/
+in C:\gitrepos\nyxta-invoice\src\protected\views\site\index.php (4)
+in C:\gitrepos\nyxta-invoice\src\protected\controllers\SiteController.php (72)
+in C:\gitrepos\nyxta-invoice\src\index.php (14)
+2024/06/02 22:07:26 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "favicon.ico". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('favicon.ico')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+HTTP_REFERER=http://nyxtainvoice.local/
+---
+2024/06/02 22:26:15 [error] [exception.CException] CException: Alias "ext.pdfJs.QPdfJs" is invalid. Make sure it points to an existing PHP file and the file is readable. in C:\gitrepos\nyxta-invoice\framework\YiiBase.php:319
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWidgetFactory.php(147): YiiBase::import('ext.pdfJs.QPdfJ...', true)
+#1 C:\gitrepos\nyxta-invoice\framework\web\CBaseController.php(147): CWidgetFactory->createWidget(Object(SiteController), 'ext.pdfJs.QPdfJ...', Array)
+#2 C:\gitrepos\nyxta-invoice\framework\web\CBaseController.php(176): CBaseController->createWidget('ext.pdfJs.QPdfJ...', Array)
+#3 C:\gitrepos\nyxta-invoice\src\protected\views\site\index.php(3): CBaseController->widget('ext.pdfJs.QPdfJ...', Array)
+#4 C:\gitrepos\nyxta-invoice\framework\web\CBaseController.php(128): require('C:\\gitrepos\\nyx...')
+#5 C:\gitrepos\nyxta-invoice\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\gitrepos\\nyx...', Array, true)
+#6 C:\gitrepos\nyxta-invoice\framework\web\CController.php(854): CBaseController->renderFile('C:\\gitrepos\\nyx...', Array, true)
+#7 C:\gitrepos\nyxta-invoice\framework\web\CController.php(768): CController->renderPartial('index', Array, true)
+#8 C:\gitrepos\nyxta-invoice\src\protected\controllers\SiteController.php(72): CController->render('index', Array)
+#9 C:\gitrepos\nyxta-invoice\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#10 C:\gitrepos\nyxta-invoice\framework\web\CController.php(304): CInlineAction->runWithParams(Array)
+#11 C:\gitrepos\nyxta-invoice\framework\web\CController.php(284): CController->runAction(Object(CInlineAction))
+#12 C:\gitrepos\nyxta-invoice\framework\web\CController.php(264): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(280): CController->run('')
+#14 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('')
+#15 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#16 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#17 {main}
+REQUEST_URI=/
+---
+2024/06/02 22:29:16 [error] [exception.CException] CException: Alias "pdfjs.QPdfJs" is invalid. Make sure it points to an existing PHP file and the file is readable. in C:\gitrepos\nyxta-invoice\framework\YiiBase.php:319
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWidgetFactory.php(147): YiiBase::import('pdfjs.QPdfJs', true)
+#1 C:\gitrepos\nyxta-invoice\framework\web\CBaseController.php(147): CWidgetFactory->createWidget(Object(SiteController), 'pdfjs.QPdfJs', Array)
+#2 C:\gitrepos\nyxta-invoice\framework\web\CBaseController.php(176): CBaseController->createWidget('pdfjs.QPdfJs', Array)
+#3 C:\gitrepos\nyxta-invoice\src\protected\views\site\index.php(3): CBaseController->widget('pdfjs.QPdfJs', Array)
+#4 C:\gitrepos\nyxta-invoice\framework\web\CBaseController.php(128): require('C:\\gitrepos\\nyx...')
+#5 C:\gitrepos\nyxta-invoice\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\gitrepos\\nyx...', Array, true)
+#6 C:\gitrepos\nyxta-invoice\framework\web\CController.php(854): CBaseController->renderFile('C:\\gitrepos\\nyx...', Array, true)
+#7 C:\gitrepos\nyxta-invoice\framework\web\CController.php(768): CController->renderPartial('index', Array, true)
+#8 C:\gitrepos\nyxta-invoice\src\protected\controllers\SiteController.php(72): CController->render('index', Array)
+#9 C:\gitrepos\nyxta-invoice\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#10 C:\gitrepos\nyxta-invoice\framework\web\CController.php(304): CInlineAction->runWithParams(Array)
+#11 C:\gitrepos\nyxta-invoice\framework\web\CController.php(284): CController->runAction(Object(CInlineAction))
+#12 C:\gitrepos\nyxta-invoice\framework\web\CController.php(264): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(280): CController->run('')
+#14 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('')
+#15 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#16 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#17 {main}
+REQUEST_URI=/
+---
+2024/06/02 22:29:17 [error] [exception.CException] CException: Alias "pdfjs.QPdfJs" is invalid. Make sure it points to an existing PHP file and the file is readable. in C:\gitrepos\nyxta-invoice\framework\YiiBase.php:319
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWidgetFactory.php(147): YiiBase::import('pdfjs.QPdfJs', true)
+#1 C:\gitrepos\nyxta-invoice\framework\web\CBaseController.php(147): CWidgetFactory->createWidget(Object(SiteController), 'pdfjs.QPdfJs', Array)
+#2 C:\gitrepos\nyxta-invoice\framework\web\CBaseController.php(176): CBaseController->createWidget('pdfjs.QPdfJs', Array)
+#3 C:\gitrepos\nyxta-invoice\src\protected\views\site\index.php(3): CBaseController->widget('pdfjs.QPdfJs', Array)
+#4 C:\gitrepos\nyxta-invoice\framework\web\CBaseController.php(128): require('C:\\gitrepos\\nyx...')
+#5 C:\gitrepos\nyxta-invoice\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\gitrepos\\nyx...', Array, true)
+#6 C:\gitrepos\nyxta-invoice\framework\web\CController.php(854): CBaseController->renderFile('C:\\gitrepos\\nyx...', Array, true)
+#7 C:\gitrepos\nyxta-invoice\framework\web\CController.php(768): CController->renderPartial('index', Array, true)
+#8 C:\gitrepos\nyxta-invoice\src\protected\controllers\SiteController.php(72): CController->render('index', Array)
+#9 C:\gitrepos\nyxta-invoice\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#10 C:\gitrepos\nyxta-invoice\framework\web\CController.php(304): CInlineAction->runWithParams(Array)
+#11 C:\gitrepos\nyxta-invoice\framework\web\CController.php(284): CController->runAction(Object(CInlineAction))
+#12 C:\gitrepos\nyxta-invoice\framework\web\CController.php(264): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(280): CController->run('')
+#14 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('')
+#15 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#16 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#17 {main}
+REQUEST_URI=/
+---
+2024/06/02 22:31:27 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ef801749/web/yii_viewer.css". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/ef801749...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/ef801749/web/yii_viewer.css
+HTTP_REFERER=http://nyxtainvoice.local/
+---
+2024/06/02 22:31:27 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ef801749/web/compatibility.js". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/ef801749...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/ef801749/web/compatibility.js
+HTTP_REFERER=http://nyxtainvoice.local/
+---
+2024/06/02 22:31:27 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ef801749/src/pdf_manager.js". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/ef801749...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/ef801749/src/pdf_manager.js
+HTTP_REFERER=http://nyxtainvoice.local/
+---
+2024/06/02 22:31:27 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ef801749/external/webL10n/l10n.js". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/ef801749...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/ef801749/external/webL10n/l10n.js
+HTTP_REFERER=http://nyxtainvoice.local/
+---
+2024/06/02 22:31:27 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ef801749/src/chunked_stream.js". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/ef801749...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/ef801749/src/chunked_stream.js
+HTTP_REFERER=http://nyxtainvoice.local/
+---
+2024/06/02 22:31:27 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ef801749/src/network.js". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/ef801749...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/ef801749/src/network.js
+HTTP_REFERER=http://nyxtainvoice.local/
+---
+2024/06/02 22:31:27 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ef801749/src/core.js". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/ef801749...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/ef801749/src/core.js
+HTTP_REFERER=http://nyxtainvoice.local/
+---
+2024/06/02 22:31:27 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ef801749/src/util.js". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/ef801749...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/ef801749/src/util.js
+HTTP_REFERER=http://nyxtainvoice.local/
+---
+2024/06/02 22:31:27 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ef801749/src/api.js". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/ef801749...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/ef801749/src/api.js
+HTTP_REFERER=http://nyxtainvoice.local/
+---
+2024/06/02 22:31:27 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ef801749/src/metadata.js". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/ef801749...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/ef801749/src/metadata.js
+HTTP_REFERER=http://nyxtainvoice.local/
+---
+2024/06/02 22:31:27 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ef801749/src/obj.js". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/ef801749...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/ef801749/src/obj.js
+HTTP_REFERER=http://nyxtainvoice.local/
+---
+2024/06/02 22:31:27 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ef801749/src/canvas.js". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/ef801749...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/ef801749/src/canvas.js
+HTTP_REFERER=http://nyxtainvoice.local/
+---
+2024/06/02 22:31:27 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ef801749/src/annotation.js". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/ef801749...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/ef801749/src/annotation.js
+HTTP_REFERER=http://nyxtainvoice.local/
+---
+2024/06/02 22:31:27 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ef801749/src/function.js". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/ef801749...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/ef801749/src/function.js
+HTTP_REFERER=http://nyxtainvoice.local/
+---
+2024/06/02 22:31:27 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ef801749/src/charsets.js". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/ef801749...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/ef801749/src/charsets.js
+HTTP_REFERER=http://nyxtainvoice.local/
+---
+2024/06/02 22:31:27 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ef801749/src/cidmaps.js". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/ef801749...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/ef801749/src/cidmaps.js
+HTTP_REFERER=http://nyxtainvoice.local/
+---
+2024/06/02 22:31:27 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ef801749/src/colorspace.js". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/ef801749...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/ef801749/src/colorspace.js
+HTTP_REFERER=http://nyxtainvoice.local/
+---
+2024/06/02 22:31:27 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ef801749/src/crypto.js". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/ef801749...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/ef801749/src/crypto.js
+HTTP_REFERER=http://nyxtainvoice.local/
+---
+2024/06/02 22:31:27 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ef801749/src/evaluator.js". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/ef801749...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/ef801749/src/evaluator.js
+HTTP_REFERER=http://nyxtainvoice.local/
+---
+2024/06/02 22:31:27 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ef801749/src/fonts.js". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/ef801749...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/ef801749/src/fonts.js
+HTTP_REFERER=http://nyxtainvoice.local/
+---
+2024/06/02 22:31:27 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ef801749/src/font_renderer.js". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/ef801749...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/ef801749/src/font_renderer.js
+HTTP_REFERER=http://nyxtainvoice.local/
+---
+2024/06/02 22:31:27 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ef801749/src/glyphlist.js". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/ef801749...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/ef801749/src/glyphlist.js
+HTTP_REFERER=http://nyxtainvoice.local/
+---
+2024/06/02 22:31:27 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ef801749/src/image.js". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/ef801749...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/ef801749/src/image.js
+HTTP_REFERER=http://nyxtainvoice.local/
+---
+2024/06/02 22:31:27 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ef801749/src/metrics.js". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/ef801749...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/ef801749/src/metrics.js
+HTTP_REFERER=http://nyxtainvoice.local/
+---
+2024/06/02 22:31:27 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ef801749/src/pattern.js". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/ef801749...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/ef801749/src/pattern.js
+HTTP_REFERER=http://nyxtainvoice.local/
+---
+2024/06/02 22:31:27 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ef801749/src/parser.js". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/ef801749...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/ef801749/src/parser.js
+HTTP_REFERER=http://nyxtainvoice.local/
+---
+2024/06/02 22:31:27 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ef801749/src/stream.js". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/ef801749...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/ef801749/src/stream.js
+HTTP_REFERER=http://nyxtainvoice.local/
+---
+2024/06/02 22:31:27 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ef801749/src/worker.js". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/ef801749...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/ef801749/src/worker.js
+HTTP_REFERER=http://nyxtainvoice.local/
+---
+2024/06/02 22:31:27 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ef801749/external/jpgjs/jpg.js". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/ef801749...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/ef801749/external/jpgjs/jpg.js
+HTTP_REFERER=http://nyxtainvoice.local/
+---
+2024/06/02 22:31:27 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ef801749/src/jpx.js". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/ef801749...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/ef801749/src/jpx.js
+HTTP_REFERER=http://nyxtainvoice.local/
+---
+2024/06/02 22:31:27 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ef801749/src/jbig2.js". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/ef801749...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/ef801749/src/jbig2.js
+HTTP_REFERER=http://nyxtainvoice.local/
+---
+2024/06/02 22:31:27 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ef801749/web/debugger.js". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/ef801749...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/ef801749/web/debugger.js
+HTTP_REFERER=http://nyxtainvoice.local/
+---
+2024/06/02 22:31:27 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ef801749/src/bidi.js". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/ef801749...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/ef801749/src/bidi.js
+HTTP_REFERER=http://nyxtainvoice.local/
+---
+2024/06/02 22:31:27 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ef801749/web/yii_viewer.js". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/ef801749...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/ef801749/web/yii_viewer.js
+HTTP_REFERER=http://nyxtainvoice.local/
+---
+2024/06/02 22:31:57 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ef801749/web/yii_viewer.css". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('assets/ef801749...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/assets/ef801749/web/yii_viewer.css
+HTTP_REFERER=http://nyxtainvoice.local/
+---
+2024/06/02 22:35:38 [error] [exception.CException] CException: Alias "pdfjs.QPdfJs" is invalid. Make sure it points to an existing PHP file and the file is readable. in C:\gitrepos\nyxta-invoice\framework\YiiBase.php:319
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWidgetFactory.php(147): YiiBase::import('pdfjs.QPdfJs', true)
+#1 C:\gitrepos\nyxta-invoice\framework\web\CBaseController.php(147): CWidgetFactory->createWidget(Object(SiteController), 'pdfjs.QPdfJs', Array)
+#2 C:\gitrepos\nyxta-invoice\framework\web\CBaseController.php(176): CBaseController->createWidget('pdfjs.QPdfJs', Array)
+#3 C:\gitrepos\nyxta-invoice\src\protected\views\site\index.php(3): CBaseController->widget('pdfjs.QPdfJs', Array)
+#4 C:\gitrepos\nyxta-invoice\framework\web\CBaseController.php(128): require('C:\\gitrepos\\nyx...')
+#5 C:\gitrepos\nyxta-invoice\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\gitrepos\\nyx...', Array, true)
+#6 C:\gitrepos\nyxta-invoice\framework\web\CController.php(854): CBaseController->renderFile('C:\\gitrepos\\nyx...', Array, true)
+#7 C:\gitrepos\nyxta-invoice\framework\web\CController.php(768): CController->renderPartial('index', Array, true)
+#8 C:\gitrepos\nyxta-invoice\src\protected\controllers\SiteController.php(72): CController->render('index', Array)
+#9 C:\gitrepos\nyxta-invoice\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#10 C:\gitrepos\nyxta-invoice\framework\web\CController.php(304): CInlineAction->runWithParams(Array)
+#11 C:\gitrepos\nyxta-invoice\framework\web\CController.php(284): CController->runAction(Object(CInlineAction))
+#12 C:\gitrepos\nyxta-invoice\framework\web\CController.php(264): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(280): CController->run('')
+#14 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('')
+#15 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#16 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#17 {main}
+REQUEST_URI=/
+---
+2024/06/02 22:36:28 [error] [exception.CException] CException: Alias "pdfjs.QPdfJs" is invalid. Make sure it points to an existing PHP file and the file is readable. in C:\gitrepos\nyxta-invoice\framework\YiiBase.php:319
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWidgetFactory.php(147): YiiBase::import('pdfjs.QPdfJs', true)
+#1 C:\gitrepos\nyxta-invoice\framework\web\CBaseController.php(147): CWidgetFactory->createWidget(Object(SiteController), 'pdfjs.QPdfJs', Array)
+#2 C:\gitrepos\nyxta-invoice\framework\web\CBaseController.php(176): CBaseController->createWidget('pdfjs.QPdfJs', Array)
+#3 C:\gitrepos\nyxta-invoice\src\protected\views\site\index.php(3): CBaseController->widget('pdfjs.QPdfJs', Array)
+#4 C:\gitrepos\nyxta-invoice\framework\web\CBaseController.php(128): require('C:\\gitrepos\\nyx...')
+#5 C:\gitrepos\nyxta-invoice\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\gitrepos\\nyx...', Array, true)
+#6 C:\gitrepos\nyxta-invoice\framework\web\CController.php(854): CBaseController->renderFile('C:\\gitrepos\\nyx...', Array, true)
+#7 C:\gitrepos\nyxta-invoice\framework\web\CController.php(768): CController->renderPartial('index', Array, true)
+#8 C:\gitrepos\nyxta-invoice\src\protected\controllers\SiteController.php(72): CController->render('index', Array)
+#9 C:\gitrepos\nyxta-invoice\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#10 C:\gitrepos\nyxta-invoice\framework\web\CController.php(304): CInlineAction->runWithParams(Array)
+#11 C:\gitrepos\nyxta-invoice\framework\web\CController.php(284): CController->runAction(Object(CInlineAction))
+#12 C:\gitrepos\nyxta-invoice\framework\web\CController.php(264): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(280): CController->run('')
+#14 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('')
+#15 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#16 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#17 {main}
+REQUEST_URI=/
+---
+2024/06/02 22:36:35 [error] [exception.CException] CException: Alias "pdfjs.QPdfJs" is invalid. Make sure it points to an existing PHP file and the file is readable. in C:\gitrepos\nyxta-invoice\framework\YiiBase.php:319
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWidgetFactory.php(147): YiiBase::import('pdfjs.QPdfJs', true)
+#1 C:\gitrepos\nyxta-invoice\framework\web\CBaseController.php(147): CWidgetFactory->createWidget(Object(SiteController), 'pdfjs.QPdfJs', Array)
+#2 C:\gitrepos\nyxta-invoice\framework\web\CBaseController.php(176): CBaseController->createWidget('pdfjs.QPdfJs', Array)
+#3 C:\gitrepos\nyxta-invoice\src\protected\views\site\index.php(3): CBaseController->widget('pdfjs.QPdfJs', Array)
+#4 C:\gitrepos\nyxta-invoice\framework\web\CBaseController.php(128): require('C:\\gitrepos\\nyx...')
+#5 C:\gitrepos\nyxta-invoice\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\gitrepos\\nyx...', Array, true)
+#6 C:\gitrepos\nyxta-invoice\framework\web\CController.php(854): CBaseController->renderFile('C:\\gitrepos\\nyx...', Array, true)
+#7 C:\gitrepos\nyxta-invoice\framework\web\CController.php(768): CController->renderPartial('index', Array, true)
+#8 C:\gitrepos\nyxta-invoice\src\protected\controllers\SiteController.php(72): CController->render('index', Array)
+#9 C:\gitrepos\nyxta-invoice\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#10 C:\gitrepos\nyxta-invoice\framework\web\CController.php(304): CInlineAction->runWithParams(Array)
+#11 C:\gitrepos\nyxta-invoice\framework\web\CController.php(284): CController->runAction(Object(CInlineAction))
+#12 C:\gitrepos\nyxta-invoice\framework\web\CController.php(264): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(280): CController->run('')
+#14 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('')
+#15 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#16 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#17 {main}
+REQUEST_URI=/
+---
+2024/06/02 22:36:40 [error] [exception.CException] CException: Alias "pdfjs.QPdfJs" is invalid. Make sure it points to an existing PHP file and the file is readable. in C:\gitrepos\nyxta-invoice\framework\YiiBase.php:319
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWidgetFactory.php(147): YiiBase::import('pdfjs.QPdfJs', true)
+#1 C:\gitrepos\nyxta-invoice\framework\web\CBaseController.php(147): CWidgetFactory->createWidget(Object(SiteController), 'pdfjs.QPdfJs', Array)
+#2 C:\gitrepos\nyxta-invoice\framework\web\CBaseController.php(176): CBaseController->createWidget('pdfjs.QPdfJs', Array)
+#3 C:\gitrepos\nyxta-invoice\src\protected\views\site\index.php(3): CBaseController->widget('pdfjs.QPdfJs', Array)
+#4 C:\gitrepos\nyxta-invoice\framework\web\CBaseController.php(128): require('C:\\gitrepos\\nyx...')
+#5 C:\gitrepos\nyxta-invoice\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\gitrepos\\nyx...', Array, true)
+#6 C:\gitrepos\nyxta-invoice\framework\web\CController.php(854): CBaseController->renderFile('C:\\gitrepos\\nyx...', Array, true)
+#7 C:\gitrepos\nyxta-invoice\framework\web\CController.php(768): CController->renderPartial('index', Array, true)
+#8 C:\gitrepos\nyxta-invoice\src\protected\controllers\SiteController.php(72): CController->render('index', Array)
+#9 C:\gitrepos\nyxta-invoice\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#10 C:\gitrepos\nyxta-invoice\framework\web\CController.php(304): CInlineAction->runWithParams(Array)
+#11 C:\gitrepos\nyxta-invoice\framework\web\CController.php(284): CController->runAction(Object(CInlineAction))
+#12 C:\gitrepos\nyxta-invoice\framework\web\CController.php(264): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(280): CController->run('')
+#14 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('')
+#15 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#16 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#17 {main}
+REQUEST_URI=/
+---
+2024/06/02 22:37:03 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "file/". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('file/')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/file/.html
+HTTP_REFERER=http://nyxtainvoice.local/assets/d6f2ad9d/src/worker_loader.js
+---
+2024/06/02 22:37:36 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "file/". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('file/')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/file/.html
+HTTP_REFERER=http://nyxtainvoice.local/assets/d6f2ad9d/src/worker_loader.js
+---
+2024/06/02 22:37:38 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "file/". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('file/')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/file/.html
+HTTP_REFERER=http://nyxtainvoice.local/assets/d6f2ad9d/src/worker_loader.js
+---
+2024/06/02 22:50:56 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "file/". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('file/')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/file/.html
+HTTP_REFERER=http://nyxtainvoice.local/assets/d6f2ad9d/src/worker_loader.js
+---
+2024/06/02 22:51:04 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "file/". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('file/')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/file/.html
+HTTP_REFERER=http://nyxtainvoice.local/assets/d6f2ad9d/src/worker_loader.js
+---
+2024/06/02 22:51:48 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "file/". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('file/')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/file/.html
+HTTP_REFERER=http://nyxtainvoice.local/assets/d6f2ad9d/src/worker_loader.js
+---
+2024/06/02 22:51:53 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "file/". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('file/')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/file/.html
+HTTP_REFERER=http://nyxtainvoice.local/assets/d6f2ad9d/src/worker_loader.js
+---
+2024/06/02 22:52:31 [error] [php] include(Files.php): Failed to open stream: No such file or directory (C:\gitrepos\nyxta-invoice\framework\YiiBase.php:441)
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\YiiBase.php(441): include()
+#1 C:\gitrepos\nyxta-invoice\src\protected\views\site\index.php(5): autoload()
+#2 C:\gitrepos\nyxta-invoice\framework\web\CBaseController.php(128): require()
+#3 C:\gitrepos\nyxta-invoice\framework\web\CBaseController.php(96): SiteController->renderInternal()
+#4 C:\gitrepos\nyxta-invoice\framework\web\CController.php(854): SiteController->renderFile()
+#5 C:\gitrepos\nyxta-invoice\framework\web\CController.php(768): SiteController->renderPartial()
+#6 C:\gitrepos\nyxta-invoice\src\protected\controllers\SiteController.php(72): SiteController->render()
+#7 C:\gitrepos\nyxta-invoice\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#8 C:\gitrepos\nyxta-invoice\framework\web\CController.php(304): CInlineAction->runWithParams()
+#9 C:\gitrepos\nyxta-invoice\framework\web\CController.php(284): SiteController->runAction()
+#10 C:\gitrepos\nyxta-invoice\framework\web\CController.php(264): SiteController->runActionWithFilters()
+#11 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(280): SiteController->run()
+#12 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController()
+#13 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#14 C:\gitrepos\nyxta-invoice\src\index.php(14): CWebApplication->run()
+REQUEST_URI=/site/index.html
+in C:\gitrepos\nyxta-invoice\src\protected\views\site\index.php (5)
+in C:\gitrepos\nyxta-invoice\src\protected\controllers\SiteController.php (72)
+in C:\gitrepos\nyxta-invoice\src\index.php (14)
+2024/06/02 22:57:14 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "files". in C:\gitrepos\nyxta-invoice\framework\web\CController.php:473
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CController.php(268): CController->missingAction('files')
+#1 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(280): CController->run('files')
+#2 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('site/files/comp...')
+#3 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#4 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/site/files/compressed.tracemonkey-pldi-09.pdf
+HTTP_REFERER=http://nyxtainvoice.local/assets/d6f2ad9d/src/worker_loader.js
+---
+2024/06/02 22:57:17 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "files". in C:\gitrepos\nyxta-invoice\framework\web\CController.php:473
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CController.php(268): CController->missingAction('files')
+#1 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(280): CController->run('files')
+#2 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('site/files/comp...')
+#3 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#4 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/site/files/compressed.tracemonkey-pldi-09.pdf
+HTTP_REFERER=http://nyxtainvoice.local/assets/d6f2ad9d/src/worker_loader.js
+---
+2024/06/02 22:58:58 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "files". in C:\gitrepos\nyxta-invoice\framework\web\CController.php:473
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CController.php(268): CController->missingAction('files')
+#1 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(280): CController->run('files')
+#2 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('site/files/comp...')
+#3 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#4 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/site/files/compressed.tracemonkey-pldi-09.pdf
+HTTP_REFERER=http://nyxtainvoice.local/assets/d6f2ad9d/src/worker_loader.js
+---
+2024/06/02 23:00:19 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "files". in C:\gitrepos\nyxta-invoice\framework\web\CController.php:473
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CController.php(268): CController->missingAction('files')
+#1 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(280): CController->run('files')
+#2 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('site/files/comp...')
+#3 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#4 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/site/files/compressed.tracemonkey-pldi-09.pdf
+HTTP_REFERER=http://nyxtainvoice.local/assets/d6f2ad9d/src/worker_loader.js
+---
+2024/06/02 23:02:33 [error] [exception.CException] CException: Property "QPdfJs.0" is not defined. in C:\gitrepos\nyxta-invoice\framework\base\CComponent.php:172
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWidgetFactory.php(160): CComponent->__set('0', '/file/5.html')
+#1 C:\gitrepos\nyxta-invoice\framework\web\CBaseController.php(147): CWidgetFactory->createWidget(Object(SiteController), 'QPdfJs', Array)
+#2 C:\gitrepos\nyxta-invoice\framework\web\CBaseController.php(176): CBaseController->createWidget('pdfjs.QPdfJs', Array)
+#3 C:\gitrepos\nyxta-invoice\src\protected\views\site\index.php(3): CBaseController->widget('pdfjs.QPdfJs', Array)
+#4 C:\gitrepos\nyxta-invoice\framework\web\CBaseController.php(128): require('C:\\gitrepos\\nyx...')
+#5 C:\gitrepos\nyxta-invoice\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\gitrepos\\nyx...', Array, true)
+#6 C:\gitrepos\nyxta-invoice\framework\web\CController.php(854): CBaseController->renderFile('C:\\gitrepos\\nyx...', Array, true)
+#7 C:\gitrepos\nyxta-invoice\framework\web\CController.php(768): CController->renderPartial('index', Array, true)
+#8 C:\gitrepos\nyxta-invoice\src\protected\controllers\SiteController.php(72): CController->render('index', Array)
+#9 C:\gitrepos\nyxta-invoice\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#10 C:\gitrepos\nyxta-invoice\framework\web\CController.php(304): CInlineAction->runWithParams(Array)
+#11 C:\gitrepos\nyxta-invoice\framework\web\CController.php(284): CController->runAction(Object(CInlineAction))
+#12 C:\gitrepos\nyxta-invoice\framework\web\CController.php(264): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(280): CController->run('index')
+#14 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('site/index')
+#15 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#16 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#17 {main}
+REQUEST_URI=/site/index.html
+HTTP_REFERER=http://nyxtainvoice.local/payments/admin.html
+---
+2024/06/02 23:02:52 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "file/view". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('file/view')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/file/5.html
+HTTP_REFERER=http://nyxtainvoice.local/assets/d6f2ad9d/src/worker_loader.js
+---
+2024/06/02 23:02:53 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "file/view". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('file/view')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/file/5.html
+HTTP_REFERER=http://nyxtainvoice.local/assets/d6f2ad9d/src/worker_loader.js
+---
+2024/06/02 23:04:28 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "files/invoices/INV0006.pdf". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('files/invoices/...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/files/invoices/INV0006.pdf.html
+HTTP_REFERER=http://nyxtainvoice.local/assets/d6f2ad9d/src/worker_loader.js
+---
+2024/06/02 23:04:30 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "files/invoices/INV0006.pdf". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('files/invoices/...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/files/invoices/INV0006.pdf.html
+HTTP_REFERER=http://nyxtainvoice.local/assets/d6f2ad9d/src/worker_loader.js
+---
+2024/06/02 23:04:31 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "files/invoices/INV0006.pdf". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('files/invoices/...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/files/invoices/INV0006.pdf.html
+HTTP_REFERER=http://nyxtainvoice.local/assets/d6f2ad9d/src/worker_loader.js
+---
+2024/06/02 23:04:31 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "files/invoices/INV0006.pdf". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('files/invoices/...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/files/invoices/INV0006.pdf.html
+HTTP_REFERER=http://nyxtainvoice.local/assets/d6f2ad9d/src/worker_loader.js
+---
+2024/06/02 23:04:36 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "files/invoices/INV0006.pdf". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('files/invoices/...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/files/invoices/INV0006.pdf.html
+HTTP_REFERER=http://nyxtainvoice.local/assets/d6f2ad9d/src/worker_loader.js
+---
+2024/06/02 23:05:24 [error] [exception.ParseError] ParseError: syntax error, unexpected token "<", expecting end of file in C:\gitrepos\nyxta-invoice\src\protected\views\site\index.php:7
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\gitrepos\\nyx...', Array, true)
+#1 C:\gitrepos\nyxta-invoice\framework\web\CController.php(854): CBaseController->renderFile('C:\\gitrepos\\nyx...', Array, true)
+#2 C:\gitrepos\nyxta-invoice\framework\web\CController.php(768): CController->renderPartial('index', Array, true)
+#3 C:\gitrepos\nyxta-invoice\src\protected\controllers\SiteController.php(72): CController->render('index', Array)
+#4 C:\gitrepos\nyxta-invoice\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#5 C:\gitrepos\nyxta-invoice\framework\web\CController.php(304): CInlineAction->runWithParams(Array)
+#6 C:\gitrepos\nyxta-invoice\framework\web\CController.php(284): CController->runAction(Object(CInlineAction))
+#7 C:\gitrepos\nyxta-invoice\framework\web\CController.php(264): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(280): CController->run('')
+#9 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('')
+#10 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#11 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/
+---
+2024/06/02 23:05:35 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "files/invoices/INV0006.pdf". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('files/invoices/...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/files/invoices/INV0006.pdf.html
+HTTP_REFERER=http://nyxtainvoice.local/assets/d6f2ad9d/src/worker_loader.js
+---
+2024/06/02 23:06:27 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "files/invoices/INV0006.pdf". in C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php:283
+Stack trace:
+#0 C:\gitrepos\nyxta-invoice\framework\web\CWebApplication.php(140): CWebApplication->runController('files/invoices/...')
+#1 C:\gitrepos\nyxta-invoice\framework\base\CApplication.php(181): CWebApplication->processRequest()
+#2 C:\gitrepos\nyxta-invoice\src\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/files/invoices/INV0006.pdf.html
+HTTP_REFERER=http://nyxtainvoice.local/assets/d6f2ad9d/src/worker_loader.js
+---
+2024/06/02 23:11:21 [warning] [application] Failed to set unsafe attribute "invoice_id" of "SearchForm".
+in C:\gitrepos\nyxta-invoice\src\protected\controllers\InvoiceController.php (308)
+in C:\gitrepos\nyxta-invoice\src\index.php (14)
+2024/06/02 23:11:29 [warning] [getItems::run] Editable Items: '{"st_id":"18","ref_id":null,"st_type":"2","invoice_id":"IV9014Z","create_time":"2024-05-28 22:28:19","update_time":"2024-06-02 23:11:29","delv_from":"2024-05-28","delv_to":"2024-05-28","pick_from":"2024-05-28","pick_to":"2024-05-28","pack_instr":"","is_paid":"0","cuser_id":"1","uuser_id":"1"}'
+in C:\gitrepos\nyxta-invoice\src\protected\components\actions\getItems.php (22)
+in C:\gitrepos\nyxta-invoice\src\index.php (14)
+2024/06/02 23:15:28 [warning] [application] Failed to set unsafe attribute "invoice_id" of "SearchForm".
+in C:\gitrepos\nyxta-invoice\src\protected\controllers\InvoiceController.php (308)
+in C:\gitrepos\nyxta-invoice\src\index.php (14)
+2024/06/02 23:15:37 [warning] [getItems::run] Editable Items: '{"st_id":"18","ref_id":null,"st_type":"2","invoice_id":"IV9014Z","create_time":"2024-05-28 22:28:19","update_time":"2024-06-02 23:15:37","delv_from":"2024-05-28","delv_to":"2024-05-28","pick_from":"2024-05-28","pick_to":"2024-05-28","pack_instr":"","is_paid":"0","cuser_id":"1","uuser_id":"1"}'
+in C:\gitrepos\nyxta-invoice\src\protected\components\actions\getItems.php (22)
+in C:\gitrepos\nyxta-invoice\src\index.php (14)
